@@ -6,7 +6,7 @@ description: "Learning Portal Home"
 permalink: /
 ---
 
-# Welcome to Learning
+# Welcome!
 
 This portal contains learning modules and practice tests.
 
