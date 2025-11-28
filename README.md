@@ -1,6 +1,6 @@
 # CDAC CCEE Learning Portal
 
-This is a Jekyll site designed to host learning materials and MCQ tests for the CDAC CCEE course. It uses the `just-the-docs` theme for easy navigation.
+This is a Jekyll site designed to host learning materials and MCQ tests. It uses the `just-the-docs` theme for easy navigation.
 
 ## Project Structure
 

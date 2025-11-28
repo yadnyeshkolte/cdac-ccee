@@ -1,5 +1,5 @@
-title: CDAC CCEE Learning
-description: Learning materials for CDAC CCEE modules.
+title: Learning
+description: Learning materials for modules.
 baseurl: "/cdac-ccee"
 url: "https://yadnyeshkolte.github.io"
 
@@ -20,7 +20,7 @@ aux_links:
   "GitHub Repository": "https://github.com/yadnyeshkolte/cdac-ccee"
 
 # Footer
-footer_content: "Copyright &copy; 2024 CDAC CCEE"
+footer_content: "Copyright &copy; @yadnyeshkolte"
 
 plugins:
   - jekyll-feed
