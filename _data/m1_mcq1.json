@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is the size of int variable?",
+    "options": ["8 bit", "16 bit", "32 bit", "64 bit"],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is not a Java features?",
+    "options": ["Dynamic", "Architecture Neutral", "Use of pointers", "Object-oriented"],
+    "answer": 2
+  },
+  {
+    "question": "The \\u0021 article referred to as a",
+    "options": ["Unicode escape sequence", "Octal escape", "Hexadecimal", "Line feed"],
+    "answer": 0
+  },
+  {
+    "question": "_____ is used to find and fix bugs in the Java programs.",
+    "options": ["JVM", "JRE", "JDK", "JDB"],
+    "answer": 3
+  }
+]

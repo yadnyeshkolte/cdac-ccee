@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="content">
+  {{ content }}
+
+  <div id="mcq-container"></div>
+  <button id="submit-btn" class="btn btn-primary fs-5 mb-4">Submit Test</button>
+
+  <div id="result-container" style="display:none; padding: 20px; background-color: #2b2b2b; color: #ffffff; border-radius: 5px; border: 1px solid #444;">
+      <h3>Results</h3>
+      <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
+      <p>Correct: <span id="correct-count">0</span></p>
+      <p>Incorrect: <span id="incorrect-count">0</span></p>
+  </div>
+</div>
+
+{% if page.mcq_data %}
+  {% assign questions = site.data[page.mcq_data] %}
+  {% if questions %}
+    <script type="application/json" id="mcq-data">
+      {{ questions | jsonify }}
+    </script>
+  {% else %}
+    <p class="text-red-500">Error: MCQ data '{{ page.mcq_data }}' not found in _data.</p>
+  {% endif %}
+{% else %}
+  <p class="text-red-500">Error: No 'mcq_data' specified in front matter.</p>
+{% endif %}
+
+<script src="{{ '/assets/js/mcq.js' | relative_url }}"></script>

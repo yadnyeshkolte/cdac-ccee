@@ -1,0 +1,552 @@
+[
+  {
+    "id": 1,
+    "question": "What does CDAC stand for?",
+    "options": [
+      "Center for Development of Advanced Computing",
+      "Computer Development and Coding",
+      "Central Digital and Analog Computing",
+      "None of the above"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 2,
+    "question": "What is the primary focus of CCEE?",
+    "options": [
+      "Cooking",
+      "Cloud Computing",
+      "Chemistry",
+      "Computing Education"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 3,
+    "question": "Which language is used for styling web pages?",
+    "options": [
+      "HTML",
+      "CSS",
+      "Python",
+      "Java"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 4,
+    "question": "Sample Question 4",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 5,
+    "question": "Sample Question 5",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 6,
+    "question": "Sample Question 6",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 7,
+    "question": "Sample Question 7",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 8,
+    "question": "Sample Question 8",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 9,
+    "question": "Sample Question 9",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 10,
+    "question": "Sample Question 10",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 11,
+    "question": "Sample Question 11",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 12,
+    "question": "Sample Question 12",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 13,
+    "question": "Sample Question 13",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 14,
+    "question": "Sample Question 14",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 15,
+    "question": "Sample Question 15",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 16,
+    "question": "Sample Question 16",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 17,
+    "question": "Sample Question 17",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 18,
+    "question": "Sample Question 18",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 19,
+    "question": "Sample Question 19",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 20,
+    "question": "Sample Question 20",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 21,
+    "question": "Sample Question 21",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 22,
+    "question": "Sample Question 22",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 23,
+    "question": "Sample Question 23",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 24,
+    "question": "Sample Question 24",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 25,
+    "question": "Sample Question 25",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 26,
+    "question": "Sample Question 26",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 27,
+    "question": "Sample Question 27",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 28,
+    "question": "Sample Question 28",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 29,
+    "question": "Sample Question 29",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 30,
+    "question": "Sample Question 30",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 31,
+    "question": "Sample Question 31",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 32,
+    "question": "Sample Question 32",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 3
+  },
+  {
+    "id": 33,
+    "question": "Sample Question 33",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 34,
+    "question": "Sample Question 34",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 35,
+    "question": "Sample Question 35",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 36,
+    "question": "Sample Question 36",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 37,
+    "question": "Sample Question 37",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 38,
+    "question": "Sample Question 38",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 39,
+    "question": "Sample Question 39",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 40,
+    "question": "Sample Question 40",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 41,
+    "question": "Sample Question 41",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 42,
+    "question": "Sample Question 42",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 43,
+    "question": "Sample Question 43",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 44,
+    "question": "Sample Question 44",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 45,
+    "question": "Sample Question 45",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 46,
+    "question": "Sample Question 46",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 47,
+    "question": "Sample Question 47",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 48,
+    "question": "Sample Question 48",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 49,
+    "question": "Sample Question 49",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 50,
+    "question": "Sample Question 50",
+    "options": [
+      "Option A",
+      "Option B",
+      "Option C",
+      "Option D"
+    ],
+    "answer": 2
+  }
+]
