@@ -2,7 +2,7 @@
 layout: mcq
 title: MCQ Test 2
 parent: Practice
-grand_parent: Module 9
+grand_parent: Module 9 - Aptitude
 nav_order: 2
 mcq_data: m9_mcq2
 ---

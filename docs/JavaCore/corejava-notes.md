@@ -1,3 +1,9 @@
+---
+layout: default
+title: Core Java Notes
+parent: Module 1 - Java Core
+nav_order: 3
+---
 # CDAC Java Learning Notes
 
 A comprehensive collection of Java concepts, Object-Oriented Programming (OOP), JDBC, File I/O, and Algorithm implementations learned during CDAC training.

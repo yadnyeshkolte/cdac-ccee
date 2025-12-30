@@ -2,7 +2,7 @@
 layout: mcq
 title: MCQ Test 2
 parent: Practice
-grand_parent: Module 4
+grand_parent: Module 4 - ADS
 nav_order: 2
 mcq_data: m4_mcq2
 ---

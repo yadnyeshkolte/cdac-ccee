@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Practice
-parent: Module 8
+parent: Module 8 - ASP.NET C#
 has_children: true
 nav_order: 10
 ---

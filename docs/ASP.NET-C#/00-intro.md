@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Topic 1
-parent: Module 8
-nav_order: 2
+title: Introduction
+parent: Module 8 - ASP.NET C#
+nav_order: 0
 ---
 
 # Topic 1 in Module 8

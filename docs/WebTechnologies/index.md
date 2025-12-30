@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module 3
+title: Module 3 - Web Technologies
 nav_order: 3
 has_children: true
 permalink: /docs/module-3

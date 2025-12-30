@@ -2,7 +2,7 @@
 layout: mcq
 title: MCQ Test 2
 parent: Practice
-grand_parent: Module 6
+grand_parent: Module 6 - Advanced Web Java
 nav_order: 2
 mcq_data: m6_mcq2
 ---

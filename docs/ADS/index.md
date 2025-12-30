@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module 4
+title: Module 4 - ADS
 nav_order: 4
 has_children: true
 permalink: /docs/module-4

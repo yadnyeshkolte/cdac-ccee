@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module 2
+title: Module 2 - Database
 nav_order: 2
 has_children: true
 permalink: /docs/module-2

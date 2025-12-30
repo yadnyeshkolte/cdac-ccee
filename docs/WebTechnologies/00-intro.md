@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Topic 1
-parent: Module 3
-nav_order: 2
+title: Introduction
+parent: Module 3 - Web Technologies
+nav_order: 0
 ---
 
 # Topic 1 in Module 3

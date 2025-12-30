@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module 1
+title: Module 1 - Java Core
 nav_order: 1
 has_children: true
 permalink: /docs/module-1

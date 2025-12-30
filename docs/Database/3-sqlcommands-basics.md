@@ -1,3 +1,9 @@
+---
+layout: default
+title: SQL Commands Basics
+parent: Module 2 - Database
+nav_order: 3
+---
 ## ACID Properties of RDBMS
 
 **A = Atomicity**

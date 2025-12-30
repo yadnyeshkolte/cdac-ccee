@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Practice
-parent: Module 5
+parent: Module 5 - Operating System
 has_children: true
 nav_order: 10
 ---

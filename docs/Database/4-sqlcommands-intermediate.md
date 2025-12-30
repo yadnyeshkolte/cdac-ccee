@@ -1,3 +1,9 @@
+---
+layout: default
+title: SQL Commands Intermediate
+parent: Module 2 - Database
+nav_order: 4
+---
 
 -----
 

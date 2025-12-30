@@ -1,3 +1,9 @@
+---
+layout: default
+title: DBT Notes
+parent: Module 2 - Database
+nav_order: 1
+---
 ### SQL Notes
 
 | DATATYPE | DESCRIPTION | USAGE |

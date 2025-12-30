@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Practice
-parent: Module 4
+parent: Module 4 - ADS
 has_children: true
 nav_order: 10
 ---

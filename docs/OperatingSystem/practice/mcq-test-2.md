@@ -2,7 +2,7 @@
 layout: mcq
 title: MCQ Test 2
 parent: Practice
-grand_parent: Module 5
+grand_parent: Module 5 - Operating System
 nav_order: 2
 mcq_data: m5_mcq2
 ---

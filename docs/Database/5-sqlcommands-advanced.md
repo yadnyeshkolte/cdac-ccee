@@ -1,3 +1,9 @@
+---
+layout: default
+title: SQL Commands Advanced
+parent: Module 2 - Database
+nav_order: 5
+---
 -----
 
 # SQL Group Functions & Group By Clause Notes

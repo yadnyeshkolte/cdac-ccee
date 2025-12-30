@@ -1,3 +1,9 @@
+---
+layout: default
+title: Constraints
+parent: Module 2 - Database
+nav_order: 9
+---
 # Database Constraints (Very IMP)
 
 ### Example Table: EMP

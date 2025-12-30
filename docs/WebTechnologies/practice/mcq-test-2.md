@@ -2,7 +2,7 @@
 layout: mcq
 title: MCQ Test 2
 parent: Practice
-grand_parent: Module 3
+grand_parent: Module 3 - Web Technologies
 nav_order: 2
 mcq_data: m3_mcq2
 ---

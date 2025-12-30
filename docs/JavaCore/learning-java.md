@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Learning Java
-parent: Module 1
+parent: Module 1 - Java Core
 nav_order: 1
 ---
 

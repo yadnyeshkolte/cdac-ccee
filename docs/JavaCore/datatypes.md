@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Datatypes in Java
-parent: Module 1
+title: Data Types
+parent: Module 1 - Java Core
 nav_order: 2
 ---
 

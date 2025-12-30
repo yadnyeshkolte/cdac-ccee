@@ -1,3 +1,9 @@
+---
+layout: default
+title: Set Operators
+parent: Module 2 - Database
+nav_order: 8
+---
 -----
 
 # Database Management Systems: SQL Concepts

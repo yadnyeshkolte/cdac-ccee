@@ -1,3 +1,9 @@
+---
+layout: default
+title: Types of Relations
+parent: Module 2 - Database
+nav_order: 7
+---
 
 
 ## 1\. Introduction to Subqueries vs. Joins

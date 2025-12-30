@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Practice
-parent: Module 7
+parent: Module 7 - C++
 has_children: true
 nav_order: 10
 ---

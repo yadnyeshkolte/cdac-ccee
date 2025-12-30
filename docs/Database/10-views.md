@@ -1,3 +1,9 @@
+---
+layout: default
+title: Views
+parent: Module 2 - Database
+nav_order: 10
+---
 
 
 # Database Management Systems: Views & Stored Objects

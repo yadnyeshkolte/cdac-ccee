@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Topic 1
-parent: Module 6
-nav_order: 2
+title: Introduction
+parent: Module 6 - Advanced Web Java
+nav_order: 0
 ---
 
 # Topic 1 in Module 6

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Mongo DBT Notes
+parent: Module 2 - Database
+nav_order: 2
+---
 ```js
 db.students.find({age:{$lte:23}},{name:1,age:1}).sort({name:-1})
 ```

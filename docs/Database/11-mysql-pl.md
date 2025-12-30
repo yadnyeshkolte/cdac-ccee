@@ -1,3 +1,9 @@
+---
+layout: default
+title: MySQL PL/SQL
+parent: Module 2 - Database
+nav_order: 11
+---
 -----
 
 # MySQL - PL (MySQL Programming Language)

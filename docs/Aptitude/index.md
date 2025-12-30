@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module 9
+title: Module 9 - Aptitude
 nav_order: 9
 has_children: true
 permalink: /docs/module-9

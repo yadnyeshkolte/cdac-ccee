@@ -1,3 +1,9 @@
+---
+layout: default
+title: Joins
+parent: Module 2 - Database
+nav_order: 6
+---
 -----
 
 # JOINS (V. IMP)
