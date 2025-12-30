@@ -6,27 +6,53 @@ layout: default
   {{ content }}
 
   <div id="mcq-container"></div>
-  <button id="submit-btn" class="btn btn-primary fs-5 mb-4">Submit Test</button>
 
-  <div id="result-container" style="display:none; padding: 20px; background-color: #2b2b2b; color: #ffffff; border-radius: 5px; border: 1px solid #444;">
-      <h3>Results</h3>
-      <p>Score: <span id="score">0</span> / <span id="total-questions">0</span></p>
-      <p>Correct: <span id="correct-count">0</span></p>
-      <p>Incorrect: <span id="incorrect-count">0</span></p>
+  <div style="text-align: center; margin-top: 2rem;">
+    <button id="submit-btn" class="btn btn-primary">
+      ✓ Submit Test
+    </button>
+  </div>
+
+  <div id="result-container" style="display:none;">
+    <h3>📊 Results</h3>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;">
+      <div style="text-align: center; padding: 1rem; background: rgba(99, 102, 241, 0.1); border-radius: 12px;">
+        <div style="font-size: 2rem; font-weight: 700; color: #818cf8;">
+          <span id="score">0</span>/<span id="total-questions">0</span>
+        </div>
+        <div style="color: #a5a5b8; font-size: 0.9rem;">Score</div>
+      </div>
+      <div style="text-align: center; padding: 1rem; background: rgba(34, 197, 94, 0.1); border-radius: 12px;">
+        <div style="font-size: 2rem; font-weight: 700; color: #4ade80;">
+          <span id="correct-count">0</span>
+        </div>
+        <div style="color: #a5a5b8; font-size: 0.9rem;">Correct</div>
+      </div>
+      <div style="text-align: center; padding: 1rem; background: rgba(244, 63, 94, 0.1); border-radius: 12px;">
+        <div style="font-size: 2rem; font-weight: 700; color: #fb7185;">
+          <span id="incorrect-count">0</span>
+        </div>
+        <div style="color: #a5a5b8; font-size: 0.9rem;">Incorrect</div>
+      </div>
+    </div>
   </div>
 </div>
 
 {% if page.mcq_data %}
-  {% assign questions = site.data[page.mcq_data] %}
-  {% if questions %}
-    <script type="application/json" id="mcq-data">
+{% assign questions = site.data[page.mcq_data] %}
+{% if questions %}
+<script type="application/json" id="mcq-data">
       {{ questions | jsonify }}
     </script>
-  {% else %}
-    <p class="text-red-500">Error: MCQ data '{{ page.mcq_data }}' not found in _data.</p>
-  {% endif %}
 {% else %}
-  <p class="text-red-500">Error: No 'mcq_data' specified in front matter.</p>
+<div class="callout-warning">
+  <strong>⚠️ Error:</strong> MCQ data '{{ page.mcq_data }}' not found in _data.
+</div>
+{% endif %}
+{% else %}
+<div class="callout-warning">
+  <strong>⚠️ Error:</strong> No 'mcq_data' specified in front matter.
+</div>
 {% endif %}
 
 <script src="{{ '/assets/js/mcq.js' | relative_url }}"></script>
