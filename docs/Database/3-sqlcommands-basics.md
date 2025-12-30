@@ -8,19 +8,19 @@ nav_order: 3
 
 **A = Atomicity**
 
-  * The entire transaction takes place at once or doesn't happen at all.
+* The entire transaction takes place at once or doesn't happen at all.
 
 **C = Consistency**
 
-  * The DB must be consistent before and after the Transaction.
+* The DB must be consistent before and after the Transaction.
 
 **I = Isolation**
 
-  * Multiple transactions occur independently without interference.
+* Multiple transactions occur independently without interference.
 
 **D = Durability**
 
-  * The changes of a successful transaction occur even if the system failure occurs.
+* The changes of a successful transaction occur even if the system failure occurs.
 
 -----
 
@@ -37,20 +37,19 @@ nav_order: 3
 
 **Data Types:**
 
-  * `varchar(20)` for names.
+* `varchar(20)` for names.
 
 ### 1\. Concat
 
-  * Concatenate (to join).
+* Concatenate (to join).
 
-<!-- end list -->
 
 ```sql
 select concat(fname, lname) from emp;
 ```
 
-  * **Output:** `ArunPurun`, `TarunArun`, etc.
-  * **Note:** No actual changes to the table (computed column).
+* **Output:** `ArunPurun`, `TarunArun`, etc.
+* **Note:** No actual changes to the table (computed column).
 
 **Nested Concat:**
 
@@ -60,20 +59,19 @@ select concat(fname, lname) from emp;
 select concat(concat(fname, ' '), lname) from emp;
 ```
 
-  * This will insert a blank space between the 2 names.
-  * This limit can be exceeded with the help of **Views**.
+* This will insert a blank space between the 2 names.
+* This limit can be exceeded with the help of **Views**.
 
 ### 2\. Upper
 
-  * **Uses:** For Presentation purposes (Reporting purposes).
+* **Uses:** For Presentation purposes (Reporting purposes).
 
-<!-- end list -->
 
 ```sql
 select upper(fname) from emp;
 ```
 
-  * Convert the name to upper-case only for display.
+* Convert the name to upper-case only for display.
 
 **Updating to Upper:**
 
@@ -81,7 +79,7 @@ select upper(fname) from emp;
 update emp set fname = upper(fname);
 ```
 
-  * Update a column to uppercase.
+* Update a column to uppercase.
 
 ### 3\. Lower
 
@@ -89,7 +87,7 @@ update emp set fname = upper(fname);
 select lower(fname) from emp;
 ```
 
-  * Convert the name to lowercase only for display.
+* Convert the name to lowercase only for display.
 
 ### 4\. Padding Functions (Lpad / Rpad)
 
@@ -99,11 +97,11 @@ select lower(fname) from emp;
 select lpad(ename, 25, '*') from emp;
 ```
 
-  * **Definition:** Left pad.
-  * **Uses:**
-      * Right justified char data column.
-      * Cheque printing.
-  * **Visual:** `***************Arun Purun` (Total length becomes 25).
+* **Definition:** Left pad.
+* **Uses:**
+    * Right justified char data column.
+    * Cheque printing.
+* **Visual:** `***************Arun Purun` (Total length becomes 25).
 
 **Rpad (Right Pad)**
 
@@ -111,12 +109,12 @@ select lpad(ename, 25, '*') from emp;
 select rpad(ename, 25, '*') from emp;
 ```
 
-  * **Definition:** Right pad.
-  * **Uses:**
-      * Left Justification of numeric data.
-      * Convert `varchar` to `char` (Convert variable length to fixed length).
-      * Cheque printing.
-      * Centre Justification (Combination of `lpad` & `rpad`)
+* **Definition:** Right pad.
+* **Uses:**
+    * Left Justification of numeric data.
+    * Convert `varchar` to `char` (Convert variable length to fixed length).
+    * Cheque printing.
+    * Centre Justification (Combination of `lpad` & `rpad`)
 
 ### 5\. Trimming Functions
 
@@ -126,8 +124,8 @@ select rpad(ename, 25, '*') from emp;
 select ltrim(ename) from emp;
 ```
 
-  * Remove data from left side [blank spaces].
-  * **Left Justification:** `(ltrim + rpad)`
+* Remove data from left side [blank spaces].
+* **Left Justification:** `(ltrim + rpad)`
 
 **Rtrim (Right Trim)**
 
@@ -135,9 +133,9 @@ select ltrim(ename) from emp;
 select rtrim(ename) from emp;
 ```
 
-  * Remove blank spaces from RHS.
-  * **Right Justification:** `(rtrim + lpad)`
-  * *Note: Convert char to varchar (convert fixed length to variable length).*
+* Remove blank spaces from RHS.
+* **Right Justification:** `(rtrim + lpad)`
+* *Note: Convert char to varchar (convert fixed length to variable length).*
 
 **Trim**
 
@@ -145,7 +143,7 @@ select rtrim(ename) from emp;
 select trim(ename) from emp;
 ```
 
-  * Remove blank spaces from both sides in MySQL.
+* Remove blank spaces from both sides in MySQL.
 
 -----
 
@@ -162,8 +160,8 @@ select substr(ename, 3) from emp;
 -- starting position
 ```
 
-  * `Arun Purun` -\> `un Purun`
-  * `Purun Arun` -\> `run Arun`
+* `Arun Purun` -\> `un Purun`
+* `Purun Arun` -\> `run Arun`
 
 **Syntax 2: Start Position + Number of Characters**
 
@@ -172,8 +170,8 @@ select substr(ename, 3, 2) from emp;
 -- Start at 3, take 2 characters
 ```
 
-  * `Arun Purun` -\> `un`
-  * `Purun Arun` -\> `ru`
+* `Arun Purun` -\> `un`
+* `Purun Arun` -\> `ru`
 
 **Syntax 3: Negative Index**
 
@@ -181,8 +179,8 @@ select substr(ename, 3, 2) from emp;
 select substr(ename, -3) from emp;
 ```
 
-  * `Arun Purun` -\> `run`
-  * `Purun Arun` -\> `run`
+* `Arun Purun` -\> `run`
+* `Purun Arun` -\> `run`
 
 ### 2\. Replace
 
@@ -190,8 +188,8 @@ select substr(ename, -3) from emp;
 select replace(ename, 'un', 'xy') from emp;
 ```
 
-  * `Arun Purun` -\> `Arxy Purxy`
-  * **Note:** Only for display.
+* `Arun Purun` -\> `Arxy Purxy`
+* **Note:** Only for display.
 
 **Uneven Replacement:**
 
@@ -199,7 +197,7 @@ select replace(ename, 'un', 'xy') from emp;
 select replace(ename, 'un', 'xyz') from emp;
 ```
 
-  * The replaced character can be more than the initial parameter or less than the initial parameter.
+* The replaced character can be more than the initial parameter or less than the initial parameter.
 
 ### 3\. Instr (In-string)
 
@@ -209,13 +207,13 @@ Returns the starting position.
 select instr(ename, 'un') from emp;
 ```
 
-  * `Arun Purun` -\> `3`
-  * `Purun Arun` -\> `4`
+* `Arun Purun` -\> `3`
+* `Purun Arun` -\> `4`
 
 **Key Rules:**
 
-  * If the string is not found, return `0`.
-  * To check if one string exists in another string.
+* If the string is not found, return `0`.
+* To check if one string exists in another string.
 
 ### 4\. Length
 
@@ -223,7 +221,7 @@ select instr(ename, 'un') from emp;
 select length(ename) from emp;
 ```
 
-  * Returns the length of ename.
+* Returns the length of ename.
 
 ### 5\. ASCII
 
@@ -233,9 +231,9 @@ Returns the ASCII value of the first letter.
 select ascii(ename) from emp;
 ```
 
-  * `Arun` -\> `65`
-  * `Bannerjee` -\> `66`
-  * `Charlie` -\> `67`
+* `Arun` -\> `65`
+* `Bannerjee` -\> `66`
+* `Charlie` -\> `67`
 
 **Specific Character:**
 
@@ -243,7 +241,7 @@ select ascii(ename) from emp;
 select ascii('z') from emp;
 ```
 
-  * Result: `122` (one for each row—computed column).
+* Result: `122` (one for each row—computed column).
 
 **Distinct ASCII:**
 
@@ -251,7 +249,7 @@ select ascii('z') from emp;
 select distinct ascii('z') from emp;
 ```
 
-  * Result: `122` (suppress all duplicates).
+* Result: `122` (suppress all duplicates).
 
 -----
 
@@ -261,10 +259,10 @@ select distinct ascii('z') from emp;
 select ascii('z') from dual;
 ```
 
-  * `Dual` is a system table.
-  * It contains only **1 row**.
-  * `Dual` is a dummy table.
-  * **Dual is present in all Databases.**
+* `Dual` is a system table.
+* It contains only **1 row**.
+* `Dual` is a dummy table.
+* **Dual is present in all Databases.**
 
 **Examples using Dual:**
 
@@ -295,7 +293,7 @@ select char(65 using utf8) from dual;
 -> A
 ```
 
-  * Where `utf8` is the given character set for U.S English, else default is Binary character set.
+* Where `utf8` is the given character set for U.S English, else default is Binary character set.
 
 -----
 
@@ -311,7 +309,7 @@ select * from emp
 where soundex(ename) = soundex('Aroon');
 ```
 
-  * This will successfully match `Arun` because they sound the same.
+* This will successfully match `Arun` because they sound the same.
 
 -----
 
@@ -335,8 +333,8 @@ Round off the number.
 select round(sal) from emp;
 ```
 
-  * `1234.567` -\> `1235`
-  * `1852.019` -\> `1852`
+* `1234.567` -\> `1235`
+* `1852.019` -\> `1852`
 
 **Round with Precision:**
 
@@ -344,8 +342,8 @@ select round(sal) from emp;
 select round(sal, 1) from emp;
 ```
 
-  * `1234.567` -\> `1234.6`
-  * `1375.618` -\> `1375.6`
+* `1234.567` -\> `1234.6`
+* `1375.618` -\> `1375.6`
 
 **Negative Rounding (Left of Decimal):**
 
@@ -353,9 +351,9 @@ select round(sal, 1) from emp;
 select round(sal, -2) from emp;
 ```
 
-  * `1234` -\> `1200`
-  * `1375` -\> `1400`
-  * `1852` -\> `1900`
+* `1234` -\> `1200`
+* `1375` -\> `1400`
+* `1852` -\> `1900`
 
 ### 2\. Truncate
 
@@ -367,12 +365,12 @@ Cutoff salary, remove decimal. Won't check rounding off.
 select truncate(sal, 0) from emp;
 ```
 
-  * `1234.567` -\> `1234`
-  * `1375.618` -\> `1375`
-  * **Uses:**
-      * Age Calc
-      * Date Calc
-      * Time Calc
+* `1234.567` -\> `1234`
+* `1375.618` -\> `1375`
+* **Uses:**
+    * Age Calc
+    * Date Calc
+    * Time Calc
 
 **Truncate with Precision:**
 
@@ -381,8 +379,8 @@ select truncate(sal, 1) from emp;
 -- remove after the 1st decimal
 ```
 
-  * `1234.567` -\> `1234.5`
-  * `1375.618` -\> `1375.6`
+* `1234.567` -\> `1234.5`
+* `1375.618` -\> `1375.6`
 
 **Truncate with Negative:**
 
@@ -390,8 +388,8 @@ select truncate(sal, 1) from emp;
 truncate(sal, -2);
 ```
 
-  * `1234` -\> `1200`
-  * `1375` -\> `1300`
+* `1234` -\> `1200`
+* `1375` -\> `1300`
 
 #### Summary Table
 
@@ -406,14 +404,14 @@ truncate(sal, -2);
 select ceil(sal) from emp;
 ```
 
-  * If there is any value at all in decimals, it will add 1 to the whole no.
-  * `1235.8` -\> `1236`
-  * `1853.01` -\> `1854`
-  * **Uses:**
-      * Bill Payment
-      * Interest Calc
-      * EMI
-  * *Note: Unlike rounding off, even if 0.1 is present, it will add 1 to the whole number.*
+* If there is any value at all in decimals, it will add 1 to the whole no.
+* `1235.8` -\> `1236`
+* `1853.01` -\> `1854`
+* **Uses:**
+    * Bill Payment
+    * Interest Calc
+    * EMI
+* *Note: Unlike rounding off, even if 0.1 is present, it will add 1 to the whole number.*
 
 ### 4\. Floor
 
@@ -421,8 +419,8 @@ select ceil(sal) from emp;
 select floor(sal) from emp;
 ```
 
-  * Removes decimal and returns lower no.
-  * `1234.9` -\> `1234`
+* Removes decimal and returns lower no.
+* `1234.9` -\> `1234`
 
 ### Truncate vs Floor on Negative Numbers
 
@@ -430,10 +428,10 @@ select floor(sal) from emp;
 select truncate(3.6, 0), floor(3.6), truncate(-3.6, 0), floor(-3.6) from dual;
 ```
 
-  * `truncate(3.6, 0)` -\> `3`
-  * `floor(3.6)` -\> `3`
-  * `truncate(-3.6, 0)` -\> `-3`
-  * `floor(-3.6)` -\> `-4` (Goes to the lower integer)
+* `truncate(3.6, 0)` -\> `3`
+* `floor(3.6)` -\> `3`
+* `truncate(-3.6, 0)` -\> `-3`
+* `floor(-3.6)` -\> `-4` (Goes to the lower integer)
 
 ### 5\. Sign
 
@@ -441,9 +439,9 @@ select truncate(3.6, 0), floor(3.6), truncate(-3.6, 0), floor(-3.6) from dual;
 select sign(-15) from dual;
 ```
 
-  * For -ve no, return `-1`
-  * For +ve no, return `1`
-  * For 0, return `0`
+* For -ve no, return `-1`
+* For +ve no, return `1`
+* For 0, return `0`
 
 **Uses:**
 a) Check if no. is +ve or -ve.
@@ -461,7 +459,7 @@ select mod(9, 5) from dual;      -- Result: 4
 mod(8.22, 2.2);                  -- Result: 1.62
 ```
 
-  * Get mod of the given nos.
+* Get mod of the given nos.
 
 ### 2\. Sqrt (Square Root)
 
@@ -469,7 +467,7 @@ mod(8.22, 2.2);                  -- Result: 1.62
 select sqrt(81) from dual;       -- Result: 9
 ```
 
-  * Only possible for +ve no. (check with sign).
+* Only possible for +ve no. (check with sign).
 
 ### 3\. Power
 
@@ -484,16 +482,16 @@ power(10, 1/3);                  -- For cube roots
 select abs(-10) from dual;       -- Result: 10
 ```
 
-  * Returns absolute value.
-  * Always positive.
+* Returns absolute value.
+* Always positive.
 
 ### 5\. Trigonometric Functions
 
-  * `sin(x)` -\> x in radians
-  * `cos(x)`
-  * `tan(x)`
+* `sin(x)` -\> x in radians
+* `cos(x)`
+* `tan(x)`
 
 ### 6\. Logarithms
 
-  * `ln(y)` -\> Natural log base `e`
-  * `log(n, m)` -\> `log_n (m)`
+* `ln(y)` -\> Natural log base `e`
+* `log(n, m)` -\> `log_n (m)`

@@ -9,7 +9,7 @@ nav_order: 4
 
 ## 📝 List Functions
 
-  * **Independent of Data type**, which means they will work with all data types.
+* **Independent of Data type**, which means they will work with all data types.
 
 | ENAME | SAL | COMM |
 | :---: | :-: | :--: |
@@ -21,36 +21,34 @@ nav_order: 4
 select * from emp where comm = null;
 ```
 
-  * Any comparison done with **NULL** returns **NULL**.
-  * **Pessimistic querying**: searching for null values (searching for something which is not there).
+* Any comparison done with **NULL** returns **NULL**.
+* **Pessimistic querying**: searching for null values (searching for something which is not there).
 
-<!-- end list -->
 
 ```sql
 select * from emp where comm is null;
 ```
 
-  * This will show the table.
-  * `is not null` will also return the corresponding table.
+* This will show the table.
+* `is not null` will also return the corresponding table.
 
-<!-- end list -->
 
 ```sql
 select sal + comm from emp;
 ```
 Any operation done with **NULL**, returns **NULL**.
-  * `5500`
-  * `NULL`
-  * `NULL`
+* `5500`
+* `NULL`
+* `NULL`
 
 ### IFNULL
 
 ```sql
 select (sal) + ifnull(comm, 0) from emp;
 ```
-  * `5500`
-  * `6000`
-  * `700`
+* `5500`
+* `6000`
+* `700`
 ```sql
 if comm is NULL then
   return 0;
@@ -65,7 +63,7 @@ end if
 | 6000 | 0 | 6000 |
 | NULL | 700 | NULL |
 
-  * **IFNULL** is **independent of datatypes**.
+* **IFNULL** is **independent of datatypes**.
 
 | Function Call | Description/Example |
 | :--- | :--- |
@@ -101,23 +99,22 @@ end if
 select sysdate() from dual;
 ```
 
-  * Returns **current date and time of the DB Server**. (`sysdate()` at last column)
+* Returns **current date and time of the DB Server**. (`sysdate()` at last column)
 
-<!-- end list -->
 
 ```sql
 select now() from dual;
 ```
 
-  * Returns **current DB server date and time**.
+* Returns **current DB server date and time**.
 
-  * **`sysdate()`** returns date and time when the statement **executed**.
+* **`sysdate()`** returns date and time when the statement **executed**.
 
-  * **`now()`** returns date and time when the statement began to **execute**.
+* **`now()`** returns date and time when the statement began to **execute**.
 
-  * `sysdate()`: Used for **date and time display**.
+* `sysdate()`: Used for **date and time display**.
 
-  * `now()`: Used to keep the log of insertion and other operations.
+* `now()`: Used to keep the log of insertion and other operations.
 
 ### Date Arithmetic
 
@@ -125,88 +122,79 @@ select now() from dual;
 select adddate(sysdate(), 1) from dual;
 ```
 
-  * 11 Sept 2024 + 1 = 12 Sept 2024
-  * `adddate(sysdate(), -1)`: Yesterday
-  * `adddate(sysdate(), 7)`: Next week
+* 11 Sept 2024 + 1 = 12 Sept 2024
+* `adddate(sysdate(), -1)`: Yesterday
+* `adddate(sysdate(), 7)`: Next week
 
-<!-- end list -->
 
 ```sql
 select datediff(sysdate(), hiredate) from emp;
 ```
 
-  * Return **number of days between the 2 dates**.
-  * Example: `324.7512` (decimal part is time as fraction of day)
+* Return **number of days between the 2 dates**.
+* Example: `324.7512` (decimal part is time as fraction of day)
 
-<!-- end list -->
 
 ```sql
 select trunc(datediff(sysdate(), hiredate) / 365, 0) "Years" from emp;
 ```
 
-  * Experience of employee.
+* Experience of employee.
 
-<!-- end list -->
 
 ```sql
 select date_add(hiredate, interval 2 month) from emp;
 ```
 
-  * Add 2 months to the hiredate
-      * (2023-10-15) + 2 months $\Rightarrow$ 2023-12-15
-      * (2023-12-31) + 2 months $\Rightarrow$ 2024-02-29
+* Add 2 months to the hiredate
+    * (2023-10-15) + 2 months $\Rightarrow$ 2023-12-15
+    * (2023-12-31) + 2 months $\Rightarrow$ 2024-02-29
 
-<!-- end list -->
 
 ```sql
 select date_add(hiredate, interval -2 month) from emp;
 ```
 
-  * **Subtract 2 months** from the date.
+* **Subtract 2 months** from the date.
 
-<!-- end list -->
 
 ```sql
 select date_add(hire_date, interval 1 year) from emp;
 ```
 
-  * Add or sub **1 year** to the hiredate.
+* Add or sub **1 year** to the hiredate.
 
-<!-- end list -->
 
 ```sql
 select last_day(hiredate) from emp;
 ```
 
-  * Returns the **last day of month**.
-  * Example: 2023-10-15 $\Rightarrow$ 2023-10-31
+* Returns the **last day of month**.
+* Example: 2023-10-15 $\Rightarrow$ 2023-10-31
 
 **Use Cases:**
 
 1.  Attendance calculation
 2.  Interest calculation
 
-<!-- end list -->
 
-  * Present only in **MySQL and Oracle**.
+* Present only in **MySQL and Oracle**.
 
-<!-- end list -->
 
 ```sql
 select dayname(sysdate()) from dual;
 ```
 
-  * Returns the **day of the week**.
+* Returns the **day of the week**.
 
-<!-- end list -->
 
 ```sql
 select addtime('2010-01-15 10:30:00', '1') from dual;
 ```
 
-  * Adding 1 sec $\Rightarrow$ `2010-01-15 10:30:01`
-  * `('2010-01-15 10:30:00', '01:30:20')` $\Rightarrow$ `2010-01-15 12:00:20`
-  * Up to 6 digit decimal would be possible (micro second)
+* Adding 1 sec $\Rightarrow$ `2010-01-15 10:30:01`
+* `('2010-01-15 10:30:00', '01:30:20')` $\Rightarrow$ `2010-01-15 12:00:20`
+* Up to 6 digit decimal would be possible (micro second)
 
 -----
 
@@ -218,7 +206,7 @@ select addtime('2010-01-15 10:30:00', '1') from dual;
 select greatest(sal, 3000) from emp;
 ```
 
-  * Returns the **greater of 2 values**.
+* Returns the **greater of 2 values**.
 
 | SAL | GREATEST(SAL, 3000) |
 | :-: | :-----------------: |
@@ -228,30 +216,28 @@ select greatest(sal, 3000) from emp;
 | 4000 | 4000 |
 | 5000 | 5000 |
 
-  * Use to set **lower limit** on some values.
-  * Example: Bonus = 10% Sal, **min bonus = 300**
+* Use to set **lower limit** on some values.
+* Example: Bonus = 10% Sal, **min bonus = 300**
 
-<!-- end list -->
 
 ```sql
 select greatest(sal * 0.1, 300) from emp;
 ```
 
-  * `select greatest(sal, 3000, 4000, 5000) from emp;` can compare **multiple values**.
-  * `greatest(val1, val2, val3, ... val255)` can compare **any values**.
-  * `greatest(col1, col2, col3, ... col255)` can compare **multiple columns**.
-  * `greatest('str1', 'str2', 'str255')`
-  * `('date1', 'date2', 'date3', ... 'date255')`
-  * `('time1', 'time2', 'time3', ... 'time255')`
-  * Can compare string, dates and times too and every other data type.
+* `select greatest(sal, 3000, 4000, 5000) from emp;` can compare **multiple values**.
+* `greatest(val1, val2, val3, ... val255)` can compare **any values**.
+* `greatest(col1, col2, col3, ... col255)` can compare **multiple columns**.
+* `greatest('str1', 'str2', 'str255')`
+* `('date1', 'date2', 'date3', ... 'date255')`
+* `('time1', 'time2', 'time3', ... 'time255')`
+* Can compare string, dates and times too and every other data type.
 
-<!-- end list -->
 
 ```sql
 set x = greatest(a, b, c, d);
 ```
 
-  * Assign the greatest value to x.
+* Assign the greatest value to x.
 
 ### LEAST
 
@@ -259,18 +245,17 @@ set x = greatest(a, b, c, d);
 select least(sal, 3000) from emp;
 ```
 
-  * Returns **smaller of the two values**.
-  * To set an **upper limit** on some value.
-  * Example: Cashback = 10% Amt, **max = 3000**
+* Returns **smaller of the two values**.
+* To set an **upper limit** on some value.
+* Example: Cashback = 10% Amt, **max = 3000**
 
-<!-- end list -->
 
 ```sql
 select least(amt * 0.1, 3000) from orders;
 ```
 
-  * `least(num1, num2, num3)`
-  * `set x = least(a, b, c, d);`
+* `least(num1, num2, num3)`
+* `set x = least(a, b, c, d);`
 
 -----
 
@@ -280,12 +265,12 @@ select least(amt * 0.1, 3000) from orders;
 select user() from dual;
 ```
 
-  * It returns the **user name** whatever you have logged in as.
-  * Will provide more info about my Environment.
+* It returns the **user name** whatever you have logged in as.
+* Will provide more info about my Environment.
 
 ### Audit Trails
 
-  * To maintain logs of operations.
+* To maintain logs of operations.
 
 | EMPNO | EMPNAME | SAL | X1 | X2 | X3 |
 | :-: | :---: | :-: | :-: | :-: | :-: |
@@ -295,7 +280,7 @@ select user() from dual;
 insert into emp values (101, 'Scott', 5000, now(), sysdate(), user());
 ```
 
-  * Shows **character set** - shows what languages are present in current installation.
+* Shows **character set** - shows what languages are present in current installation.
 
 -----
 
@@ -316,9 +301,8 @@ select
 from emp;
 ```
 
-  * If `else` is **not in the statement** and if you have some other value in the table, then it returns a **NULL** value.
+* If `else` is **not in the statement** and if you have some other value in the table, then it returns a **NULL** value.
 
-<!-- end list -->
 
 ```sql
 select
@@ -365,8 +349,8 @@ from emp
 order by 2; -- column no
 ```
 
-  * **Case only work with `=` operator.**
-  * Therefore, `!=`, `>`, `<`, `>=`, `<=`, will not be applicable in `deptno > 10` [not ok].
+* **Case only work with `=` operator.**
+* Therefore, `!=`, `>`, `<`, `>=`, `<=`, will not be applicable in `deptno > 10` [not ok].
 
 -----
 
@@ -382,14 +366,14 @@ order by 2; -- column no
 
 ### Single-Row Functions
 
-  * Will operate on **one row at a time**.
-  * Example: Character, Number, Date, List, Env Functions.
-  * `upper(ename)`, `round(sal)`, etc.
+* Will operate on **one row at a time**.
+* Example: Character, Number, Date, List, Env Functions.
+* `upper(ename)`, `round(sal)`, etc.
 
 ### Multi-Row Functions / Group Functions
 
-  * Will operate on **multiple rows at a time**.
-  * Example: `sum(sal)`.
+* Will operate on **multiple rows at a time**.
+* Example: `sum(sal)`.
 
 ### SUM()
 
@@ -397,7 +381,7 @@ order by 2; -- column no
 select sum(sal) from emp;
 ```
 
-  * Return the **summation of sal column**.
+* Return the **summation of sal column**.
 
 ### AVG()
 
@@ -409,25 +393,23 @@ select sum(sal) from emp;
 | 9000 |
 | 8000 |
 
-  * Null values are **not counted** by group functions.
-  * `ifnull` is inbuild in the group function.
+* Null values are **not counted** by group functions.
+* `ifnull` is inbuild in the group function.
 
-<!-- end list -->
 
 ```sql
 select avg(sal) from emp;
 ```
 
-  * Normally: $35000 / 5$
-  * Assuming $4^{th}$ row is NULL: $26000 / 4$
+* Normally: $35000 / 5$
+* Assuming $4^{th}$ row is NULL: $26000 / 4$
 
-<!-- end list -->
 
 ```sql
 select avg(ifnull(sal, 0)) from emp;
 ```
 
-  * If you also want to count the null values.
+* If you also want to count the null values.
 
 ### MIN() & MAX()
 
@@ -435,9 +417,8 @@ select avg(ifnull(sal, 0)) from emp;
 select min(sal) from emp;
 ```
 
-  * Return the **minimum value**.
+* Return the **minimum value**.
 
-<!-- end list -->
 
 ```sql
 select min(ifnull(sal, 0)); -- returns 0
@@ -447,7 +428,7 @@ select min(ifnull(sal, 0)); -- returns 0
 select max(sal) from emp;
 ```
 
-  * Return the **max value**.
+* Return the **max value**.
 
 ### COUNT()
 
@@ -455,14 +436,13 @@ select max(sal) from emp;
 select count(sal) from emp;
 ```
 
-  * Returns a **count of number of rows where sal is not having a NULL value**.
-  * Assuming one value is null $\Rightarrow$ 4.
+* Returns a **count of number of rows where sal is not having a NULL value**.
+* Assuming one value is null $\Rightarrow$ 4.
 
-<!-- end list -->
 
 ```sql
 select count(*) from emp;
 ```
 
-  * Returns the **count of total number of rows in table**.
-  * Example: 5
+* Returns the **count of total number of rows in table**.
+* Example: 5

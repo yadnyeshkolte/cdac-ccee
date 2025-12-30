@@ -8,8 +8,8 @@ nav_order: 7
 
 ## 1\. Introduction to Subqueries vs. Joins
 
-  * **Max Limit:** Up to 255 levels for subqueries.
-  * **Performance:** Join is generally faster than subqueries.
+* **Max Limit:** Up to 255 levels for subqueries.
+* **Performance:** Join is generally faster than subqueries.
 
 ### Single Select vs. Multiple Select
 
@@ -25,7 +25,7 @@ ORDER BY 1, 2;
 
 ### Sub-queries (Very Imp) / Nest Queries
 
-  * Also known as: Query within Query / Select within Select.
+* Also known as: Query within Query / Select within Select.
 
 **Structure:**
 
@@ -37,9 +37,9 @@ WHERE sal =
     (SELECT min(sal) FROM emp);
 ```
 
-  * **Logic:** `SAL = min(SAL)`
-  * **Execution:** Brackets are given, so the sub-query is executed first.
-  * **Flow:** Output of the Subquery is passed to the main query. The subquery itself is not displayed.
+* **Logic:** `SAL = min(SAL)`
+* **Execution:** Brackets are given, so the sub-query is executed first.
+* **Flow:** Output of the Subquery is passed to the main query. The subquery itself is not displayed.
 
 **Note:** The limit of subqueries can be exceeded with the help of **Views**.
 
@@ -72,7 +72,7 @@ WHERE sal >=
      WHERE job = 'M');
 ```
 
-  * *Note:* Fastest way according to some contexts, but depends on data.
+* *Note:* Fastest way according to some contexts, but depends on data.
 
 **Method 2: Using `ALL` (Very Slow)**
 
@@ -83,8 +83,8 @@ WHERE sal > ALL
      WHERE job = 'M');
 ```
 
-  * If multiple rows, the process will be very slow.
-  * **ALL** is a special operator -\> works like logical **AND**.
+* If multiple rows, the process will be very slow.
+* **ALL** is a special operator -\> works like logical **AND**.
 
 **Method 3: Using `MAX` (Fastest Way)**
 
@@ -102,13 +102,13 @@ WHERE sal >
 Types of relationships between tables:
 
 1.  **1:1 (One to One)**
-      * (Dept : DeptHead) or (DeptHead : Dept)
+    * (Dept : DeptHead) or (DeptHead : Dept)
 2.  **1:Many (One to Many)**
-      * (Dept : Emp) and (DeptHead : Emp)
+    * (Dept : Emp) and (DeptHead : Emp)
 3.  **Many:1 (Many to One)**
-      * (Emp : Dept)
+    * (Emp : Dept)
 4.  **Many:Many (Many to Many)**
-      * (Emp : Projects) or (Projects : Emp)
+    * (Emp : Projects) or (Projects : Emp)
 
 ### Example Data Structure
 
@@ -123,7 +123,7 @@ Types of relationships between tables:
 
 **Projects\_Emp (Intersection Table):**
 
-  * *Note:* Required for Many:Many relationships.
+* *Note:* Required for Many:Many relationships.
 
 | PRJNO | EMPNO |
 | :--- | :--- |
@@ -142,10 +142,9 @@ Types of relationships between tables:
 
 **Problem Scenario:**
 
-  * Display all rows belonging to 'Thomas'.
-  * OR: Display all rows *not* belonging to the same dept as 'Thomas'.
+* Display all rows belonging to 'Thomas'.
+* OR: Display all rows *not* belonging to the same dept as 'Thomas'.
 
-<!-- end list -->
 
 ```sql
 SELECT * FROM emp
@@ -172,8 +171,8 @@ UPDATE emp SET ... WHERE job =
 
 ### The MySQL Limitation (Important)
 
-  * **Rule:** In MySQL, you cannot Update or Delete from a table from which you are currently selecting.
-  * **Result:** It creates a problem in Read and Write consistency. The above delete and update commands will not work directly.
+* **Rule:** In MySQL, you cannot Update or Delete from a table from which you are currently selecting.
+* **Result:** It creates a problem in Read and Write consistency. The above delete and update commands will not work directly.
 
 **Solution for MySQL:**
 Make an alias for the current operated table so that reading and writing can be done in 2 different logical entities.
@@ -204,8 +203,8 @@ WHERE sal = ANY / IN
     (SELECT sal FROM emp WHERE job = 'M');
 ```
 
-  * **ANY** -\> Logical **OR** (can use logical operators)
-  * **IN** -\> Logical **OR** (in / not in)
+* **ANY** -\> Logical **OR** (can use logical operators)
+* **IN** -\> Logical **OR** (in / not in)
 
 -----
 
@@ -262,13 +261,13 @@ SELECT max(sum_sal) FROM
      GROUP BY deptno) abcd;
 ```
 
-  * **Sub query in from clause = Inline View.**
+* **Sub query in from clause = Inline View.**
 
 -----
 
 ## 8\. Correlated Sub-queries (Using EXISTS)
 
-  * **Note:** This is the exception where **Sub-query is faster than Join**.
+* **Note:** This is the exception where **Sub-query is faster than Join**.
 
 **Scenario:** Display the DNAMES that contain employees.
 
@@ -280,7 +279,7 @@ WHERE deptno IN
     (SELECT distinct deptno FROM emp);
 ```
 
-  * *Process:* Subquery executed first (retrieves distinct deptnos), then Main query runs.
+* *Process:* Subquery executed first (retrieves distinct deptnos), then Main query runs.
 
 **Solution 2: Join with DISTINCT (Better, but optimized via Correlated)**
 
@@ -289,7 +288,7 @@ SELECT distinct dname FROM emp, dept
 WHERE dept.deptno = emp.deptno;
 ```
 
-  * If you have a Join along with Distinct, to make it work faster, use **Correlated sub-queries**.
+* If you have a Join along with Distinct, to make it work faster, use **Correlated sub-queries**.
 
 **Solution 3: Correlated Sub-query (Fastest for this scenario)**
 
@@ -305,8 +304,8 @@ WHERE EXISTS
 1.  First, the **Main Query** is executed.
 2.  For **every row** returned by the main query, it will run the subquery **once**.
 3.  The subquery returns a Boolean **True** or **False** value back to the main query.
-      * If sub-query returns **True**, then main query is executed for that row (row is displayed).
-      * If sub-query returns **False**, then main query is not executed for that row.
+    * If sub-query returns **True**, then main query is executed for that row (row is displayed).
+    * If sub-query returns **False**, then main query is not executed for that row.
 
 ### Why is it faster here?
 

@@ -17,9 +17,9 @@ nav_order: 6
 | 2 | EXP | Delhi |
 | 3 | MKTG | Calcutta |
 
-  * All the data is **not** stored in one table: data is stored in multiple tables.
-  * If you want to view/combine the columns of 2 or more tables, then you will have to write a join.
-  * **No upper limit for Joins.**
+* All the data is **not** stored in one table: data is stored in multiple tables.
+* If you want to view/combine the columns of 2 or more tables, then you will have to write a join.
+* **No upper limit for Joins.**
 
 ### Basic Syntax
 
@@ -30,9 +30,9 @@ where dept.deptno = emp.deptno;
 
 ### Concept of Driving vs. Driven Table
 
-  * `dept.deptno` = `tablename.columnname`
-  * `dept` -> **Driving table** (Outer Loop)
-  * `emp` -> **Driven table** (Inner Loop)
+* `dept.deptno` = `tablename.columnname`
+* `dept` -> **Driving table** (Outer Loop)
+* `emp` -> **Driven table** (Inner Loop)
 
 **Execution Logic:**
 
@@ -55,19 +55,19 @@ where dept.deptno = emp.deptno;
 where emp.deptno = dept.deptno;
 ```
 
-  * The order of columns in the `where` clause is **not significant**; either way, the output will be the same.
+* The order of columns in the `where` clause is **not significant**; either way, the output will be the same.
 
 **Scenario A:**
 
-  * `dept` -> Driving table
-  * `emp` -> Driven table
-  * **Result:** Faster. (Lesser I/O between HD and RAM, faster it will be).
+* `dept` -> Driving table
+* `emp` -> Driven table
+* **Result:** Faster. (Lesser I/O between HD and RAM, faster it will be).
 
 **Scenario B:**
 
-  * `emp` -> Driving table
-  * `dept` -> Driven table
-  * **Result:** Slower. (More I/O between HD and RAM, the slower it will be).
+* `emp` -> Driving table
+* `dept` -> Driven table
+* **Result:** Slower. (More I/O between HD and RAM, the slower it will be).
 
 **Optimization Rule:**
 
@@ -107,7 +107,7 @@ where dept.deptno = emp.deptno
 order by 1;
 ```
 
-  * If the column name was different in both the tables then this problem would not have arisen.
+* If the column name was different in both the tables then this problem would not have arisen.
 
 #### 3. Fixing Ambiguity
 
@@ -134,8 +134,8 @@ order by 1;
 
 ### Join Logic & Common Columns
 
-  * **Common column in both the tables:** The column name need not be the same in both the tables, because the column may have a different meaning in the other table.
-      * *e.g., EXP and IMP, PURCH and SALE, EXPENSE and INCOME, etc.*
+* **Common column in both the tables:** The column name need not be the same in both the tables, because the column may have a different meaning in the other table.
+    * *e.g., EXP and IMP, PURCH and SALE, EXPENSE and INCOME, etc.*
 
 **Unrelated Logic Example:**
 
@@ -148,7 +148,7 @@ order by 1;
 **Pragmatic Logic:**
 In order for us to write the join, common column in both the tables should have the **same datatype**, and there should be some **pragmatic reason** on whose basis we are writing the join.
 
-  * *e.g., The below select statement will work but the output is meaningless:*
+* *e.g., The below select statement will work but the output is meaningless:*
     ```sql
     select dname, ename from emp, dept
     where dept.deptno = emp.empno -- Meaningless logic
@@ -190,16 +190,15 @@ order by 1;
 
 ### 1. Equi-join / Natural Join (> 90%)
 
-  * Join based on **equality condition**.
-  * **Definition:** Shows me the matching rows of both the tables.
-      * *e.g., DNAME, ENAME, CNAME, SNAME, etc.*
-  * Most frequently used join. Also known as **Natural Join**, used more than 90% of cases.
+* Join based on **equality condition**.
+* **Definition:** Shows me the matching rows of both the tables.
+    * *e.g., DNAME, ENAME, CNAME, SNAME, etc.*
+* Most frequently used join. Also known as **Natural Join**, used more than 90% of cases.
 
 ### 2. Inequi-join / Non-equi join
 
-  * Join based on **inequality condition**.
+* Join based on **inequality condition**.
 
-<!-- end list -->
 
 ```sql
 select dname, ename from emp, dept
@@ -215,9 +214,9 @@ where dept.deptno != emp.deptno; -- this shows for all rows
 | EXP | Ali |
 | ... | ... |
 
-  * **Definition:** It shows me the **non-matching** rows of both the tables.
-  * **Uses:**
-      * a) Exception Reports
+* **Definition:** It shows me the **non-matching** rows of both the tables.
+* **Uses:**
+    * a) Exception Reports
 
 **Specific Logic Example:**
 
@@ -225,7 +224,7 @@ where dept.deptno != emp.deptno; -- this shows for all rows
 where dept.deptno != emp.deptno and dname = 'TRN';
 ```
 
-  * **Output:** Employees not in TRN Dept.
+* **Output:** Employees not in TRN Dept.
 
 -----
 
@@ -236,38 +235,38 @@ select dname, ename from emp, dept
 where dept.deptno = emp.deptno (+);
 ```
 
-  * **Definition:** It shows me the matching rows of both tables and also the **non-matching rows of outer table**.
-  * **Rule:** Table which is on "Outer" / "Opposite" side of `(+)` sign.
-  * The `(+)` sign can be on LHS or RHS but **not on both sides**.
+* **Definition:** It shows me the matching rows of both tables and also the **non-matching rows of outer table**.
+* **Rule:** Table which is on "Outer" / "Opposite" side of `(+)` sign.
+* The `(+)` sign can be on LHS or RHS but **not on both sides**.
 
 **Terminology:**
 
-  * Dept Table = Parent Table / Master
-  * Emp Table = Child Table / Details
+* Dept Table = Parent Table / Master
+* Emp Table = Child Table / Details
 
 **Use Case:**
 
-  * a) Parent - Child Report (Master - Detail Report)
-  * All the rows of **Master** must be present even if the rows of **Details** are not there.
+* a) Parent - Child Report (Master - Detail Report)
+* All the rows of **Master** must be present even if the rows of **Details** are not there.
 
 **Loop Logic Visualization:**
 
-  * If `(+)` is on `emp` side:
-      * Dept (Do-while loop)
-      * Emp (For loop)
+* If `(+)` is on `emp` side:
+    * Dept (Do-while loop)
+    * Emp (For loop)
 
 **Syntax Variants:**
 **a) Half Outer Join:**
 
-  * `(+)` sign on any 1 side (LHS or RHS).
+* `(+)` sign on any 1 side (LHS or RHS).
     1.  Right Outer Join: `(+)` on RHS
     2.  Left Outer Join: `(+)` on LHS
 
 **b) Full Outer Join:**
 
-  * Shows matching rows of both tables + non-matching rows of both the tables.
-  * Logic: Nested do-while loop.
-  * **Note:** You cannot put `(+)` on both sides. You must use **UNION**.
+* Shows matching rows of both tables + non-matching rows of both the tables.
+* Logic: Nested do-while loop.
+* **Note:** You cannot put `(+)` on both sides. You must use **UNION**.
 
 **Full Outer Join Logic (Oracle Style):**
 
@@ -327,15 +326,14 @@ on (dept.deptno = emp.deptno);
 
 #### Inner Join
 
-  * By default every join is Inner Join. Putting a `(+)` sign on Oracle, or using the keyword "Outer" is what makes it an Outer Join.
-  * **Warning:** Do not mention this join in interviews, unless explicitly asked by Interviewer.
+* By default every join is Inner Join. Putting a `(+)` sign on Oracle, or using the keyword "Outer" is what makes it an Outer Join.
+* **Warning:** Do not mention this join in interviews, unless explicitly asked by Interviewer.
 
 #### 4. Cartesian Join / Cross Join
 
-  * Join **without a WHERE clause**.
-  * Also known as Nested For loop.
+* Join **without a WHERE clause**.
+* Also known as Nested For loop.
 
-<!-- end list -->
 
 ```sql
 select ename, dname from emp, dept;
@@ -344,16 +342,16 @@ select ename, dname from emp, dept;
 
 **Logic:**
 
-  * Every row of driving table is combined with each and every row of driven table.
-  * Shows me all the **combinations** (takes Cross product of both the tables and therefore also known as Cross Join).
+* Every row of driving table is combined with each and every row of driven table.
+* Shows me all the **combinations** (takes Cross product of both the tables and therefore also known as Cross Join).
 Here is the complete transcription of your notes into a Markdown file. I have preserved all tables, SQL queries, annotations, and diagrams as described in the images.
                                   
 -----
 
 ## 5\) Self Join
 
-  * Joining a table to itself.
-  * Used when parent column and child column [are] both present in the same table.
+* Joining a table to itself.
+* Used when parent column and child column [are] both present in the same table.
 
 **SQL Query:**
 
@@ -365,9 +363,9 @@ where a.mgr = b.empno;
 
 *Annotations in query:*
 
-  * `emp b`: driven
-  * `emp a`: driving
-  * `from`: *[Note: arrows indicate the flow from 'from' to the tables]*
+* `emp b`: driven
+* `emp a`: driving
+* `from`: *[Note: arrows indicate the flow from 'from' to the tables]*
 
 **Internal Processing (Present in Server RAM):**
 
@@ -389,9 +387,9 @@ where a.mgr = b.empno;
 | Kirun | Arun |
 | Thomas | Jack |
 
-  * **Note:** This Join is very rarely used.
-  * Slowest join, because driving and driven tables are just the duplicates of same table.
-  * **Use:** e.g. - here, to see Empname and their manager name.
+* **Note:** This Join is very rarely used.
+* Slowest join, because driving and driven tables are just the duplicates of same table.
+* **Use:** e.g. - here, to see Empname and their manager name.
 
 -----
 
@@ -434,6 +432,6 @@ and dept.deptno = emp.deptno;
 | EXP | Thomas | Jack |
 **Uses:**
 
-  * a) Used for print purposes.
-      * *e.g., Students table got Student Name, Subject table got Subject Name.*
-      * *While printing every Student Name is combined with each and every Subject Name.*
+* a) Used for print purposes.
+    * *e.g., Students table got Student Name, Subject table got Subject Name.*
+    * *While printing every Student Name is combined with each and every Subject Name.*

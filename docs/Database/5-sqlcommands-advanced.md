@@ -14,34 +14,34 @@ nav_order: 5
 
 **Count Function Variations:**
 
-  * **Query:**
+* **Query:**
 
     ```sql
     SELECT COUNT(*) - COUNT(sal) FROM emp;
     ```
 
-      * **Concept:** Gives the count of employees **not** receiving salary (`NULL` handling).
-      * **Performance:** `COUNT(*)` is faster as the values are already present in the RAM (metadata/indexes).
+    * **Concept:** Gives the count of employees **not** receiving salary (`NULL` handling).
+    * **Performance:** `COUNT(*)` is faster as the values are already present in the RAM (metadata/indexes).
 
-  * **Query:**
+* **Query:**
 
     ```sql
     SELECT COUNT(*) FROM emp WHERE sal IS NOT NULL;
     ```
 
-      * **Performance Note:** Due to the `WHERE` clause, searching will slow down the select statement compared to the direct subtraction method above.
+    * **Performance Note:** Due to the `WHERE` clause, searching will slow down the select statement compared to the direct subtraction method above.
 
 **Arithmetic with Group Functions:**
 
-  * **Query:**
+* **Query:**
 
     ```sql
     SELECT MAX(sal) / MIN(sal) FROM emp;
     ```
 
-      * *Calculation:* $8000 / 3000 \rightarrow 2.67$
+    * *Calculation:* $8000 / 3000 \rightarrow 2.67$
 
-  * **Rule:** Multiple Group functions can be selected together separated by arithmetic operators.
+* **Rule:** Multiple Group functions can be selected together separated by arithmetic operators.
 
 **Averages and Null Handling:**
 
@@ -51,7 +51,7 @@ nav_order: 5
     SELECT SUM(sal) / COUNT(*) FROM emp;
     ```
 
-      * *Calculation:* $26000 / 5 \rightarrow 5200$
+    * *Calculation:* $26000 / 5 \rightarrow 5200$
 
 2.  **Method 2 (Using `NVL`/`IFNULL`):**
 
@@ -59,8 +59,8 @@ nav_order: 5
     SELECT AVG(IFNULL(sal, 0)) FROM emp;
     ```
 
-      * *Result:* $5200$
-      * **Performance Note:** 1 function executed at a time. This method requires double the time compared to the arithmetic split.
+    * *Result:* $5200$
+    * **Performance Note:** 1 function executed at a time. This method requires double the time compared to the arithmetic split.
 
 -----
 
@@ -68,17 +68,17 @@ nav_order: 5
 
 ### Function Types & Data Types
 
-  * **`SUM(col)`, `AVG(col)`, `STDDEV(col)`, `VARIANCE(col)`:** work with **Number** only.
-  * **`MIN`, `MAX`, `COUNT(col)`:** work with **All Data Types** (Number, String/`ename`, Date/`hiredate`).
+* **`SUM(col)`, `AVG(col)`, `STDDEV(col)`, `VARIANCE(col)`:** work with **Number** only.
+* **`MIN`, `MAX`, `COUNT(col)`:** work with **All Data Types** (Number, String/`ename`, Date/`hiredate`).
 
 ### Summary Reports
 
-  * **Query:**
+* **Query:**
     ```sql
     SELECT COUNT(*), MIN(sal), MAX(sal), SUM(sal), AVG(sal) FROM emp;
     ```
-      * **Result:** Will show me all the totals at a glance.
-      * **Usage:** Summary Reports can give suitable aliases.
+    * **Result:** Will show me all the totals at a glance.
+    * **Usage:** Summary Reports can give suitable aliases.
 
 ### Syntax Rules
 
@@ -91,7 +91,7 @@ nav_order: 5
     ```sql
     SELECT ename, MIN(sal) FROM emp;
     ```
-      * **Error:** `ename` is not a group function. You cannot select a raw column along with a group function unless it is in a `GROUP BY` clause.
+    * **Error:** `ename` is not a group function. You cannot select a raw column along with a group function unless it is in a `GROUP BY` clause.
 
 -----
 
@@ -99,23 +99,23 @@ nav_order: 5
 
 **Assumption:** 4th row Salary is 9000.
 
-  * **Query:**
+* **Query:**
 
     ```sql
     SELECT SUM(sal) FROM emp WHERE deptno = 1;
     ```
 
-      * *Calculation:* $8 + 7 + 3 = 18000$
-      * **Execution Location:** `WHERE deptno = 1` is used for searching in the **Hard Disk (HD)** only.
-      * The `sal` column is brought into the **RAM** only.
+    * *Calculation:* $8 + 7 + 3 = 18000$
+    * **Execution Location:** `WHERE deptno = 1` is used for searching in the **Hard Disk (HD)** only.
+    * The `sal` column is brought into the **RAM** only.
 
-  * **Query:**
+* **Query:**
 
     ```sql
     SELECT AVG(sal) FROM emp WHERE job = 'C';
     ```
 
-      * *Result:* 6000
+    * *Result:* 6000
 
 -----
 
@@ -123,14 +123,14 @@ nav_order: 5
 
 1.  You cannot select a standard column along with a Group Function (unless grouped).
 2.  You cannot select single-row functions along with a Group Function (unless grouped).
-      * *Example:* `SELECT UPPER(ename), MIN(sal)...` -\> **Error**.
+    * *Example:* `SELECT UPPER(ename), MIN(sal)...` -\> **Error**.
 3.  **WHERE Clause Restriction:**
-      * **Query:**
+    * **Query:**
         ```sql
         SELECT * FROM emp WHERE sal > AVG(7000); -- OR AVG(sal)
         ```
-      * **Result:** **ERROR**.
-      * **Reason:** The `WHERE` statement is searching in the **Server HD**. `AVG` will be generated when the column is operated on by the **RAM**. You cannot use Group Functions in the `WHERE` clause.
+    * **Result:** **ERROR**.
+    * **Reason:** The `WHERE` statement is searching in the **Server HD**. `AVG` will be generated when the column is operated on by the **RAM**. You cannot use Group Functions in the `WHERE` clause.
 
 -----
 
@@ -160,8 +160,8 @@ nav_order: 5
 | 2 | C | 8000 |
 | 2 | M | 8000 |
 
-  * **Internal Logic:** Behaves like a **Nested For Loop**.
-  * After the select statement is executed, the temp table is removed from RAM.
+* **Internal Logic:** Behaves like a **Nested For Loop**.
+* After the select statement is executed, the temp table is removed from RAM.
 
 ### Rules for `GROUP BY`
 
@@ -173,7 +173,7 @@ nav_order: 5
     ```sql
     SELECT SUM(sal) FROM emp GROUP BY deptno; -- This is Valid
     ```
-      * *Note:* The column is present in the group calculation but not displayed in the final output.
+    * *Note:* The column is present in the group calculation but not displayed in the final output.
 
 -----
 
@@ -187,16 +187,16 @@ SELECT deptno, job, SUM(sal) FROM emp GROUP BY deptno, job;
 
 **Concepts:**
 
-  * **2D Query:** 1 column in `GROUP BY` (Can plot X-Y graph, Bar graph).
-  * **3D Query:** 2 columns in `GROUP BY`.
-  * **4D Query:** 3 columns in `GROUP BY`.
-  * Known as **Multi-Dimensional Queries** or **Spatial Queries**.
+* **2D Query:** 1 column in `GROUP BY` (Can plot X-Y graph, Bar graph).
+* **3D Query:** 2 columns in `GROUP BY`.
+* **4D Query:** 3 columns in `GROUP BY`.
+* Known as **Multi-Dimensional Queries** or **Spatial Queries**.
 
 **Performance Warning:**
 
-  * No upper limit on the number of columns in `GROUP BY` clause.
-  * **However:** If you have a large number of rows in the table and a large number of columns in the `GROUP BY` clause, the Select statement will be **very slow**.
-  * **Reason:** Excessive sorting must take place internally.
+* No upper limit on the number of columns in `GROUP BY` clause.
+* **However:** If you have a large number of rows in the table and a large number of columns in the `GROUP BY` clause, the Select statement will be **very slow**.
+* **Reason:** Excessive sorting must take place internally.
 
 -----
 
@@ -204,22 +204,22 @@ SELECT deptno, job, SUM(sal) FROM emp GROUP BY deptno, job;
 
 1.  **Order in `SELECT` clause:** Determines the position of the columns in the **Output** (User requirements).
 2.  **Order in `GROUP BY` clause:** Determines the **Sorting order**, the **Grouping order**, the **Summation order**, and hence the **speed of processing**.
-      * *Tip:* Write as per `COUNT(DISTINCT column_name)` from **Low to High**.
+    * *Tip:* Write as per `COUNT(DISTINCT column_name)` from **Low to High**.
 
 **Example (Optimization):**
 
-  * Consider: `COUNT(DISTINCT deptno) -> 25`
+* Consider: `COUNT(DISTINCT deptno) -> 25`
 
-  * Consider: `COUNT(DISTINCT job) -> 400`
+* Consider: `COUNT(DISTINCT job) -> 400`
 
-  * **Option A:**
+* **Option A:**
 
     ```sql
     GROUP BY deptno, job;
     -- Outer loop: Dept (25 iterations), Inner loop: Job. (FASTER)
     ```
 
-  * **Option B:**
+* **Option B:**
 
     ```sql
     GROUP BY job, deptno;
@@ -240,7 +240,7 @@ SELECT deptno, job, SUM(sal) FROM emp GROUP BY deptno, job;
     SELECT deptno, SUM(sal) FROM emp WHERE sal > 7000 GROUP BY deptno;
     ```
 
-      * `WHERE` clause is used to retrieve rows from **DB Server HD** to **Server RAM**.
+    * `WHERE` clause is used to retrieve rows from **DB Server HD** to **Server RAM**.
 
 2.  **Using `HAVING` (Specific Usage):**
 
@@ -248,14 +248,14 @@ SELECT deptno, job, SUM(sal) FROM emp GROUP BY deptno, job;
     SELECT deptno, SUM(sal) FROM emp GROUP BY deptno HAVING SUM(sal) > 17000;
     ```
 
-      * **ERROR Scenario:** `HAVING sal > 7000`.
-      * **Reason:** After summation is done, individual `SAL` does not exist in Server RAM. Only `DeptNo` and `SUM(sal)` exist in RAM.
+    * **ERROR Scenario:** `HAVING sal > 7000`.
+    * **Reason:** After summation is done, individual `SAL` does not exist in Server RAM. Only `DeptNo` and `SUM(sal)` exist in RAM.
 
 **Rules for `HAVING`:**
 
 1.  Whichever column is present in the `SELECT` clause can be used in the `HAVING` clause.
-      * *Example:* `HAVING deptno = 1`.
-      * *Note:* This will work but is **Inefficient**. (Should have used `WHERE deptno = 1` to filter earlier at the HD level).
+    * *Example:* `HAVING deptno = 1`.
+    * *Note:* This will work but is **Inefficient**. (Should have used `WHERE deptno = 1` to filter earlier at the HD level).
 2.  **Recommendation:** Only **Group Functions** should be used in the `HAVING` clause.
 
 -----
@@ -271,9 +271,8 @@ The mandatory order of execution and syntax:
 5.  `HAVING ...` (Group filtering - RAM level)
 6.  `ORDER BY ...` (Final Sorting)
 
-<!-- end list -->
 
-  * **Matrix Report:**
+* **Matrix Report:**
     ```sql
     SELECT deptno, COUNT(*), MIN(sal), MAX(sal), SUM(sal)
     FROM emp
@@ -287,8 +286,8 @@ The mandatory order of execution and syntax:
 
 **Oracle RDBMS Feature:**
 
-  * Nesting of Group functions is supported **only** in Oracle RDBMS. It is not supported in other RDBMS.
-  * **Query:**
+* Nesting of Group functions is supported **only** in Oracle RDBMS. It is not supported in other RDBMS.
+* **Query:**
     ```sql
     SELECT MAX(SUM(sal)) FROM emp GROUP BY deptno;
     -- Result: 18000
@@ -297,12 +296,12 @@ The mandatory order of execution and syntax:
 **Workaround for MySQL / Other RDBMS:**
 Since direct nesting isn't supported, use a **Subquery (Derived Table)**.
 
-  * **Logic:**
+* **Logic:**
 
     1.  `abcd` is a temporary table created after the execution of the inner `SELECT`.
     2.  After execution, it is destroyed.
 
-  * **Query:**
+* **Query:**
 
     ```sql
     SELECT MAX(sum_sal)
@@ -313,7 +312,7 @@ Since direct nesting isn't supported, use a **Subquery (Derived Table)**.
     ) AS abcd;
     ```
 
-      * *Result:* 18000
+    * *Result:* 18000
 
 -----
 

@@ -34,20 +34,20 @@ nav_order: 8
 1.  **Column Matching:** The number of columns in both `SELECT` statements must match.
 2.  **Data Types:** The corresponding data types in both `SELECT` statements must match.
 3.  **Column Names:** The name of the column in the output is taken as the **first column name** from the *first* `SELECT` statement.
-      * *Note:* To change the name, use an alias on the first `SELECT` statement.
+    * *Note:* To change the name, use an alias on the first `SELECT` statement.
 4.  **Order By:** The `ORDER BY` clause must be used on the **2nd (last)** `SELECT` statement only.
-      * `ORDER BY` applies at the very end.
+    * `ORDER BY` applies at the very end.
 5.  **Limits:** You can do these operations for any number of select statements.
-      * Max limit is up to **255** select statements.
-      * This limit of SQL can be exceeded with the help of **Views**.
+    * Max limit is up to **255** select statements.
+    * This limit of SQL can be exceeded with the help of **Views**.
 
 -----
 
 ### A. UNION
 
-  * **Function:** Combines the output of both `SELECT` statements.
-  * **Duplicates:** Suppresses duplicates (removes repeated rows).
-  * **Use Case:** Can be used to simulate a **Full Outer Join**.
+* **Function:** Combines the output of both `SELECT` statements.
+* **Duplicates:** Suppresses duplicates (removes repeated rows).
+* **Use Case:** Can be used to simulate a **Full Outer Join**.
 
 **Syntax:**
 
@@ -68,8 +68,8 @@ SELECT empno, ename FROM emp2;
 
 ### B. UNION ALL
 
-  * **Function:** Combines the output of both `SELECT` statements.
-  * **Duplicates:** No duplicates are suppressed (all rows are shown).
+* **Function:** Combines the output of both `SELECT` statements.
+* **Duplicates:** No duplicates are suppressed (all rows are shown).
 
 **Syntax:**
 
@@ -92,8 +92,8 @@ SELECT empno, ename FROM emp2;
 
 ### C. INTERSECT
 
-  * **Function:** Displays only the **common elements** in both `SELECT` statements.
-  * **Duplicates:** Suppresses duplicates.
+* **Function:** Displays only the **common elements** in both `SELECT` statements.
+* **Duplicates:** Suppresses duplicates.
 
 **Syntax:**
 
@@ -111,8 +111,8 @@ SELECT empno, ename FROM emp2;
 
 ### D. EXCEPT (or MINUS)
 
-  * **Function:** What is present in the **1st** `SELECT` but **not present** in the **2nd** `SELECT` will be displayed.
-  * **Duplicates:** Suppresses duplicates.
+* **Function:** What is present in the **1st** `SELECT` but **not present** in the **2nd** `SELECT` will be displayed.
+* **Duplicates:** Suppresses duplicates.
 
 **Syntax:**
 
@@ -133,8 +133,8 @@ SELECT empno, ename FROM emp2;
 
 **Precedence:**
 
-  * Brackets `( )` can be used to increase precedence.
-  * Example:
+* Brackets `( )` can be used to increase precedence.
+* Example:
     ```sql
     SELECT ...
     UNION
@@ -148,8 +148,8 @@ SELECT empno, ename FROM emp2;
 
 **Recursion:**
 
-  * Using set operators on the **same table** with different `SELECT` statements with different `WHERE` conditions.
-  * *Example:*
+* Using set operators on the **same table** with different `SELECT` statements with different `WHERE` conditions.
+* *Example:*
     ```sql
     SELECT job FROM emp WHERE deptno = 10
     EXCEPT
@@ -174,15 +174,15 @@ SELECT empno, ename FROM emp2;
 
 **Key Characteristics:**
 
-  * It is the actual **physical memory location** in the DB Server HD where that row is stored.
-  * When you select from the table, the order of rows in the output will always be in ascending order of `Rowid`.
-  * **Format:** `Rowid` is encrypted; it is a fixed-length string of **18 characters** (Hexadecimal).
-  * **Uniqueness:** No 2 rows of any table in the DB Server HD can have the same `Rowid`. It works as a unique identifier for every row.
-  * **Updates:** When you update the row, `Rowid` may change.
-  * **System Use:** It is the system that the RDBMS uses to distinguish between 2 rows.
-  * **Platform Availability:**
-      * Available in other RDBMS (e.g., Oracle) and you can view it.
-      * Available in MySQL internally, but you **cannot view it**.
+* It is the actual **physical memory location** in the DB Server HD where that row is stored.
+* When you select from the table, the order of rows in the output will always be in ascending order of `Rowid`.
+* **Format:** `Rowid` is encrypted; it is a fixed-length string of **18 characters** (Hexadecimal).
+* **Uniqueness:** No 2 rows of any table in the DB Server HD can have the same `Rowid`. It works as a unique identifier for every row.
+* **Updates:** When you update the row, `Rowid` may change.
+* **System Use:** It is the system that the RDBMS uses to distinguish between 2 rows.
+* **Platform Availability:**
+    * Available in other RDBMS (e.g., Oracle) and you can view it.
+    * Available in MySQL internally, but you **cannot view it**.
 
 **Usage of RowID:**
 
@@ -228,30 +228,30 @@ SELECT ename, rowid, ename, sal FROM emp;
 5.  `UNION` / `INTERSECT` / `EXCEPT`.
 6.  **Joins:** Common columns in Join operations should always be indexed.
 7.  **Selectivity:** If `SELECT` retrieves **\< 25%** of table data.
-      * *Example:*
+    * *Example:*
           * `SELECT * FROM emp WHERE empno = 1` (= 1 row, Index Recommended)
           * `SELECT * FROM emp WHERE empno > 1` (many rows, Index Not Recommended)
 8.  **Primary Key:** Your Primary Key and Unique columns should always be indexed.
 
 ### Index Properties & Behavior
 
-  * **Creation:**
+* **Creation:**
     ```sql
     CREATE INDEX i_emp_empno ON emp(empno);
     ```
-  * **Usage:** Once created, it is permanent. MySQL will automatically invoke indexes as and when required.
-  * **Execution Plan:** A plan created by MySQL as to how it is going to execute your `SELECT` statement.
-  * **DML Operations:**
-      * Indexes in MySQL will get automatically updated for all DML operations (`INSERT`, `UPDATE`, `DELETE`).
-      * *Note:* The larger the number of indexes, the **slower** would be the DML.
-  * **Duplicate Values:** Duplicate values are stored in an Index (unless specified Unique).
-  * **Count:** No upper limit on the number of Indexes per table.
+* **Usage:** Once created, it is permanent. MySQL will automatically invoke indexes as and when required.
+* **Execution Plan:** A plan created by MySQL as to how it is going to execute your `SELECT` statement.
+* **DML Operations:**
+    * Indexes in MySQL will get automatically updated for all DML operations (`INSERT`, `UPDATE`, `DELETE`).
+    * *Note:* The larger the number of indexes, the **slower** would be the DML.
+* **Duplicate Values:** Duplicate values are stored in an Index (unless specified Unique).
+* **Count:** No upper limit on the number of Indexes per table.
 
 ### Index Limitations
 
-  * **Null Values:** Null values are **not stored** in any index.
-      * If you run `SELECT * FROM emp WHERE empno IS NULL`, MySQL will do a **Full Table Scan**.
-  * **Text/Blob:** You cannot Index `Text` and `Blob` columns [size 4GB - 1 byte].
+* **Null Values:** Null values are **not stored** in any index.
+    * If you run `SELECT * FROM emp WHERE empno IS NULL`, MySQL will do a **Full Table Scan**.
+* **Text/Blob:** You cannot Index `Text` and `Blob` columns [size 4GB - 1 byte].
 
 ### Types of Indexes & Columns
 
@@ -261,8 +261,8 @@ If you have 2 or more independent columns in a `WHERE` clause, create separate i
 **2. Composite Index (Inter-dependent columns):**
 Combine 2 or more inter-dependent columns in a single index.
 
-  * **MySQL Limit:** Can combine up to **32 columns**.
-  * **Oracle Limit:** 16 columns.
+* **MySQL Limit:** Can combine up to **32 columns**.
+* **Oracle Limit:** 16 columns.
 
 **Composite Index Structure Example:**
 *Index Name: IND-Deptno-EmpNo*
@@ -277,28 +277,28 @@ Combine 2 or more inter-dependent columns in a single index.
 
 ### Administrative Commands
 
-  * **Show Indexes:**
+* **Show Indexes:**
     ```sql
     SHOW INDEXES FROM emp;
     ```
-  * **System Schema:** To see all indexes on all tables in the database, use `information_schema`.
+* **System Schema:** To see all indexes on all tables in the database, use `information_schema`.
     ```sql
     SELECT * FROM statistics; -- This table has got more detailed information
     ```
-  * **Drop Index:**
+* **Drop Index:**
     ```sql
     DROP INDEX i_emp_empno ON emp;
     ```
-  * **Drop Table:** If you drop the table/column, then the associated indexes are dropped automatically.
-  * **Reindex:** In other RDBMS, you may need to explicitly `Reindex`. MySQL is a self-managing RDBMS.
+* **Drop Table:** If you drop the table/column, then the associated indexes are dropped automatically.
+* **Reindex:** In other RDBMS, you may need to explicitly `Reindex`. MySQL is a self-managing RDBMS.
 
 -----
 
 ### Index Key Sorting
 
-  * `Indexname = max 30 chars`
-  * By default, indexes are in **Ascending** order.
-  * Postgres - indexes in descending order.
+* `Indexname = max 30 chars`
+* By default, indexes are in **Ascending** order.
+* Postgres - indexes in descending order.
 
 **Example Data Order:**
 | ROWID | DEPTNO | DNAME | LOC |
@@ -327,9 +327,9 @@ CREATE INDEX i_emp_empno ON emp(empno DESC);
 CREATE INDEX i_emp_empno_deptno ON emp(deptno, empno);
 ```
 
-  * Returns Index for Composite Index.
-  * **Important:** The order of columns is important. Typically, your **Parent column** should come first.
-  * Can also make single column descending in composite:
+* Returns Index for Composite Index.
+* **Important:** The order of columns is important. Typically, your **Parent column** should come first.
+* Can also make single column descending in composite:
     ```sql
     CREATE INDEX i_emp_deptno_empno ON emp(deptno DESC, empno);
     ```
@@ -340,8 +340,8 @@ CREATE INDEX i_emp_empno_deptno ON emp(deptno, empno);
 CREATE UNIQUE INDEX i_emp_empno ON emp(empno);
 ```
 
-  * Performs one extra function: it won't allow the user to `INSERT` or `UPDATE` duplicate values in `empno`.
-  * If duplicate values are already present in the column, the unique index **will not be created**.
+* Performs one extra function: it won't allow the user to `INSERT` or `UPDATE` duplicate values in `empno`.
+* If duplicate values are already present in the column, the unique index **will not be created**.
 
 > **MySQL Limitation:** MySQL will not allow you to create more than one index on the same column unless it is combined with other columns.
 
@@ -384,9 +384,9 @@ CREATE UNIQUE INDEX i_emp_empno ON emp(empno);
 
 ### Space Impact Example
 
-  * **EMP Table (1 Million rows):** $\approx$ 1000 MB.
-  * `DELETE FROM EMP;` + `COMMIT;`: Logic indicates rows are gone, but space is still reserved.
-  * `TRUNCATE TABLE EMP;`: Deletes all rows, commits, and deallocates the 1000MB HD space.
+* **EMP Table (1 Million rows):** $\approx$ 1000 MB.
+* `DELETE FROM EMP;` + `COMMIT;`: Logic indicates rows are gone, but space is still reserved.
+* `TRUNCATE TABLE EMP;`: Deletes all rows, commits, and deallocates the 1000MB HD space.
 
 -----
 
@@ -465,20 +465,20 @@ SELECT * FROM emp WHERE 1=2;
 
 ### Direct Operations
 
-  * Rename a table.
-  * Add a column.
-  * Drop a column.
-  * Increase width of a column.
+* Rename a table.
+* Add a column.
+* Drop a column.
+* Increase width of a column.
 
 ### Indirect Operations (Workarounds required)
 
-  * Reduce width of a column.
-  * Change datatype of a column.
-  * Copy rows from one table into another table.
-  * Copy table (for testing purposes).
-  * Copy only the structure of a table.
-  * Rename a column.
-  * Change order of columns in table structure.
+* Reduce width of a column.
+* Change datatype of a column.
+* Copy rows from one table into another table.
+* Copy table (for testing purposes).
+* Copy only the structure of a table.
+* Rename a column.
+* Change order of columns in table structure.
 
 ### Basic Examples
 
@@ -526,8 +526,8 @@ ALTER TABLE emp MODIFY ename VARCHAR(30);
 ALTER TABLE emp MODIFY ename VARCHAR(20);
 ```
 
-  * **MySQL:** Data will be truncated.
-  * **Oracle:** It won't allow this command. You can only reduce width provided the contents are `NULL`.
+* **MySQL:** Data will be truncated.
+* **Oracle:** It won't allow this command. You can only reduce width provided the contents are `NULL`.
 
 ### Oracle Approach / Workaround (For decreasing width or changing datatype)
 

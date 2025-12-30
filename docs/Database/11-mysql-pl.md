@@ -10,18 +10,18 @@ nav_order: 11
 
 **Definition:**
 
-  * MySQL-PL $\rightarrow$ MySQL Programming Language.
-  * Used for DB (Database) programming.
-      * *Example:* `HRA_CAL`, `TAX_CAL`, `Attendance_Calc`, etc.
-  * Used for processing [Server-side data processing].
-  * MySQL-PL program can be called through:
-      * MySQL Command Line Client
-      * MySQL Workbench
-      * phpMyAdmin
-      * Java, .Net, etc.
-  * *Syntax:* `call hra_calc();`
-      * It can be called through any front-end software.
-  * **Few 4 GL Features** [GL $\rightarrow$ Generation Language].
+* MySQL-PL $\rightarrow$ MySQL Programming Language.
+* Used for DB (Database) programming.
+    * *Example:* `HRA_CAL`, `TAX_CAL`, `Attendance_Calc`, etc.
+* Used for processing [Server-side data processing].
+* MySQL-PL program can be called through:
+    * MySQL Command Line Client
+    * MySQL Workbench
+    * phpMyAdmin
+    * Java, .Net, etc.
+* *Syntax:* `call hra_calc();`
+    * It can be called through any front-end software.
+* **Few 4 GL Features** [GL $\rightarrow$ Generation Language].
 
 **Comparison of RDBMS Native Languages:**
 Every RDBMS has its own native programming language:
@@ -42,13 +42,13 @@ Begin
 End;
 ```
 
-  * MySQL-PL $\rightarrow$ MySQL-PL Block Program.
+* MySQL-PL $\rightarrow$ MySQL-PL Block Program.
 
 **Nesting:**
 
-  * Execution is from **top to bottom**.
-  * **Parent Block** can contain **Child Blocks**.
-  * There is **no upper limit for nesting**.
+* Execution is from **top to bottom**.
+* **Parent Block** can contain **Child Blocks**.
+* There is **no upper limit for nesting**.
 
 -----
 
@@ -62,16 +62,16 @@ End;
 
 **Important Restrictions & Capabilities:**
 
-  * **Screen input and screen out is not allowed** (`scanf`, `printf`, etc. are not used).
-      * Used *only* for processing.
-  * You can use `Select` statement inside the block (it’s not recommended generally, but allowed).
-  * **SQL Commands Allowed inside MySQL-PL:**
-      * DDL (Data Definition Language)
-      * DML (Data Manipulation Language)
-      * DCL (Data Control Language) -\> *Note: Notes indicate limitations usually, but listed here.*
-      * DTL/TCL (Transaction Control Language)
-  * `Select` statement in Subqueries is possible.
-  * *Correction/Note:* DCL commands are **not** allowed inside MySQL-PL block.
+* **Screen input and screen out is not allowed** (`scanf`, `printf`, etc. are not used).
+    * Used *only* for processing.
+* You can use `Select` statement inside the block (it’s not recommended generally, but allowed).
+* **SQL Commands Allowed inside MySQL-PL:**
+    * DDL (Data Definition Language)
+    * DML (Data Manipulation Language)
+    * DCL (Data Control Language) -\> *Note: Notes indicate limitations usually, but listed here.*
+    * DTL/TCL (Transaction Control Language)
+* `Select` statement in Subqueries is possible.
+* *Correction/Note:* DCL commands are **not** allowed inside MySQL-PL block.
 
 **Storing the Output of MySQL-PL Program:**
 To store output, you often create a table.
@@ -85,8 +85,8 @@ Create table tempp (
 
 **Delimiters:**
 
-  * `;` $\rightarrow$ Default delimiter/terminator [Denotes the end of command].
-  * To write a block, you must change the delimiter so the `;` inside the block doesn't terminate the whole procedure early.
+* `;` $\rightarrow$ Default delimiter/terminator [Denotes the end of command].
+* To write a block, you must change the delimiter so the `;` inside the block doesn't terminate the whole procedure early.
 
 *Example:*
 
@@ -102,28 +102,28 @@ delimiter ;       -- changed back to ;
 
 **Definition:**
 
-  * MySQL-PL programs are written in the form of **Stored Procedures**.
-  * **Procedure is a routine** [set of commands] that has to be called explicitly.
-      * *Example:* `call hra_calc();`
-  * They are **Global Procedures** (stored in the DB).
-  * Can be called in MySQL Command Line Client, MySQL Workbench, Java, MS.net, etc. (Can be called through any front-end software).
+* MySQL-PL programs are written in the form of **Stored Procedures**.
+* **Procedure is a routine** [set of commands] that has to be called explicitly.
+    * *Example:* `call hra_calc();`
+* They are **Global Procedures** (stored in the DB).
+* Can be called in MySQL Command Line Client, MySQL Workbench, Java, MS.net, etc. (Can be called through any front-end software).
 
 **Characteristics:**
 
-  * Stored in the DB in **Compiled Format**.
-      * Hence the execution is **very fast**.
-  * **Hiding source code** from the end user.
-  * Execution takes place in **Server RAM**.
-      * Hence it is ideally suited for Server-side data processing.
+* Stored in the DB in **Compiled Format**.
+    * Hence the execution is **very fast**.
+* **Hiding source code** from the end user.
+* Execution takes place in **Server RAM**.
+    * Hence it is ideally suited for Server-side data processing.
 
 **Capabilities:**
 
-  * Within the stored procedure, all MySQL-PL statements are allowed.
-      * *e.g.,* `Declare variables`, `IF statements`, `loops`, etc.
-  * One procedure can call another procedure.
-  * Procedure can call itself (**Recursion**).
-  * To make it flexible, you can pass **parameters** to a procedure.
-  * **Important:** **Overloading** of stored procedures is **not allowed** because it is a stored object.
+* Within the stored procedure, all MySQL-PL statements are allowed.
+    * *e.g.,* `Declare variables`, `IF statements`, `loops`, etc.
+* One procedure can call another procedure.
+* Procedure can call itself (**Recursion**).
+* To make it flexible, you can pass **parameters** to a procedure.
+* **Important:** **Overloading** of stored procedures is **not allowed** because it is a stored object.
 
 -----
 
@@ -154,31 +154,28 @@ show create procedure abc;
 
 **3. To share procedure with other users:**
 
-  * *Scenario:*
+* *Scenario:*
 
-      * Username $\rightarrow$ `amit`, DB $\rightarrow$ `classwork`
-      * Username $\rightarrow$ `yogesh`, DB $\rightarrow$ `pune`
+    * Username $\rightarrow$ `amit`, DB $\rightarrow$ `classwork`
+    * Username $\rightarrow$ `yogesh`, DB $\rightarrow$ `pune`
 
-  * **Amit (Owner) executes:**
+* **Amit (Owner) executes:**
 
-<!-- end list -->
 
 ```sql
 amit_mysql> create procedure abc()...
 amit_mysql> grant execute on procedure classwork.abc to yogesh@localhost;
 ```
 
-  * **Yogesh (User) executes:**
+* **Yogesh (User) executes:**
 
-<!-- end list -->
 
 ```sql
 yogesh_mysql> call classwork.abc();
 ```
 
-  * **Revoking access:**
+* **Revoking access:**
 
-<!-- end list -->
 
 ```sql
 amit_mysql> revoke execute on procedure classwork.abc from yogesh@localhost;
@@ -190,12 +187,12 @@ amit_mysql> revoke execute on procedure classwork.abc from yogesh@localhost;
 
 **Naming Constraint:**
 
-  * You **cannot** create 2 or more stored procedures with the **same name** even if the Number of Parameters passed is different or the Datatype of the parameters is different. (No Overloading).
+* You **cannot** create 2 or more stored procedures with the **same name** even if the Number of Parameters passed is different or the Datatype of the parameters is different. (No Overloading).
 
 **Using `Select ... Into`:**
 
-  * **Scenario:** Using `EMP` table (Ename, Sal, Job, Deptno).
-  * **Goal:** Fetch data from a table into a variable.
+* **Scenario:** Using `EMP` table (Ename, Sal, Job, Deptno).
+* **Goal:** Fetch data from a table into a variable.
 
 *Example Code:*
 
@@ -225,15 +222,15 @@ delimiter ;
 
 **Boolean Datatype:**
 
-  * Boolean is a logical datatype.
-  * Values: `True`, `False`, `1`, `0`.
-  * If using Boolean variable, it can be directly used in the `IF` statement condition.
-      * *e.g.,* `if true then...` / `if not false then...`
+* Boolean is a logical datatype.
+* Values: `True`, `False`, `1`, `0`.
+* If using Boolean variable, it can be directly used in the `IF` statement condition.
+    * *e.g.,* `if true then...` / `if not false then...`
 
 **Functions:**
 
-  * Function is normally used for **validation purposes**.
-  * Normally returns a boolean `True` or `False` value, accordingly triggering some future processing.
+* Function is normally used for **validation purposes**.
+* Normally returns a boolean `True` or `False` value, accordingly triggering some future processing.
 
 **Loop, Leave, and Iterate statements:**
 
@@ -275,15 +272,15 @@ end; //
 delimiter ;
 ```
 
-  * **Note:** In deeply nested loops (going from innermost loop to a point outside the outermost loop), `leave loopname` is the fastest way of doing it.
+* **Note:** In deeply nested loops (going from innermost loop to a point outside the outermost loop), `leave loopname` is the fastest way of doing it.
 
 **Global Variables (User Defined Variables):**
 
-  * No need to declare.
-  * **Syntax:** `@variable_name`
-  * *Example:* `set @x = 10;`
-  * Will create it and initialize it; and it remains in the **Server RAM** till you exit (end of session).
-  * Can be used in SQL commands, MySQL-PL programs, and in front-end software also.
+* No need to declare.
+* **Syntax:** `@variable_name`
+* *Example:* `set @x = 10;`
+* Will create it and initialize it; and it remains in the **Server RAM** till you exit (end of session).
+* Can be used in SQL commands, MySQL-PL programs, and in front-end software also.
 
 **Usage:**
 
@@ -306,15 +303,15 @@ set @y = '2024-09-16';
 
 **Concept:**
 
-  * **Scenario:** Table `EMP` with multiple rows (1, A; 2, B; 3, C...).
-  * **Problem:** Normal variables can only hold one value.
-  * **Solution:** Cursor.
-      * Cursor is a **variable**.
-      * Cursor can store **multiple rows**.
-      * Used for processing multiple rows (Row by Row handling).
-      * Used for storing data temporarily.
-      * Similar to a **2D array**.
-      * It is based on `Select` statements.
+* **Scenario:** Table `EMP` with multiple rows (1, A; 2, B; 3, C...).
+* **Problem:** Normal variables can only hold one value.
+* **Solution:** Cursor.
+    * Cursor is a **variable**.
+    * Cursor can store **multiple rows**.
+    * Used for processing multiple rows (Row by Row handling).
+    * Used for storing data temporarily.
+    * Similar to a **2D array**.
+    * It is based on `Select` statements.
 
 **Cursor Declaration Syntax:**
 
@@ -333,13 +330,13 @@ from emp where deptno = 1
 order by 1; -- order by & group by can also be used
 ```
 
-  * **Multiple cursors** can be created for the same table.
-  * Cursor based on **Join**:
+* **Multiple cursors** can be created for the same table.
+* Cursor based on **Join**:
     ```sql
     declare pqr cursor for
     select dname, ename from emp, dept where ...;
     ```
-  * `Select` statement of Cursor can contain: Select col1, col2..., Where clause, computed column, Order by, Group by, Join, Sub-query, Union, etc.
+* `Select` statement of Cursor can contain: Select col1, col2..., Where clause, computed column, Order by, Group by, Join, Sub-query, Union, etc.
 
 -----
 
@@ -359,9 +356,8 @@ begin
 
 **Cursor Declaration / Definition:**
 
-  * **Important:** Cursor has to be declared **after** all the variables.
+* **Important:** Cursor has to be declared **after** all the variables.
 
-<!-- end list -->
 
 ```sql
 declare c1 cursor for select * from emp;
@@ -375,10 +371,10 @@ declare c1 cursor for select * from emp;
     open c1;
     ```
 
-      * This will open cursor `c1`.
-      * It will **execute** the select statement, and it will **populate** the cursor `c1`.
-      * Copy of `emp` into `c1` will open in **RAM**.
-      * [At this point cursor does not contain any data, this is only the declaration/execution phase].
+    * This will open cursor `c1`.
+    * It will **execute** the select statement, and it will **populate** the cursor `c1`.
+    * Copy of `emp` into `c1` will open in **RAM**.
+    * [At this point cursor does not contain any data, this is only the declaration/execution phase].
 
 2.  **Fetch (The Loop):**
 
@@ -396,7 +392,7 @@ declare c1 cursor for select * from emp;
     end while;
     ```
 
-      * **Visual Representation:**
+    * **Visual Representation:**
           * Cursor `c1` holds rows (A, 5000; B, 6000; C, 7000...).
           * `Cursor ptr` (pointer) by default points to first element.
           * `Fetch` moves the pointer down one by one.
@@ -553,10 +549,10 @@ The loop continues until `x < 5` is false (so it runs for x=4 as well).
     close c1;
     ```
 
-      * Close cursor `c1`, and **free the Server RAM**.
-      * Closing cursor is optional but **recommended** as Server RAM will be freed for other operations.
+    * Close cursor `c1`, and **free the Server RAM**.
+    * Closing cursor is optional but **recommended** as Server RAM will be freed for other operations.
 
 **Summary of Restrictions:**
 
-  * Cursor has to be declared after all the variables.
-  * You can only Fetch 1 row at a time.
+* Cursor has to be declared after all the variables.
+* You can only Fetch 1 row at a time.

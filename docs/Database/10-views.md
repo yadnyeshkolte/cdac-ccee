@@ -12,26 +12,26 @@ nav_order: 10
 
 *(From Diagram)*
 
-  * **OS:** Win 2008 Server
-  * **File System:** NTFS (New Technology File System) / OFS
-  * **Partitioning:**
-      * **C Drive:** Files & Folders
-      * **D Drive:** MySQL Database Software
+* **OS:** Win 2008 Server
+* **File System:** NTFS (New Technology File System) / OFS
+* **Partitioning:**
+    * **C Drive:** Files & Folders
+    * **D Drive:** MySQL Database Software
           * Tables, Indexes
           * 78 System Tables
-  * **Machine Name:** `sunbeaminfo.com`
-  * **IP Address:** `1...`
+* **Machine Name:** `sunbeaminfo.com`
+* **IP Address:** `1...`
 
 ## 2. Database Stored Objects
 
 **Definition:** Objects that are stored in the Database.
 
-  * **Examples:** Tables, Indexes `[Create...]`.
-  * Anything that you do with a `Create` command is a stored object.
+* **Examples:** Tables, Indexes `[Create...]`.
+* Anything that you do with a `Create` command is a stored object.
 
 ### Views `[Stored Obj]` (V. Imp)
 
-  * Present in all RDBMS (Relational Database Management Systems), and some of the DBMS also.
+* Present in all RDBMS (Relational Database Management Systems), and some of the DBMS also.
 
 ### Example Table: EMP
 
@@ -45,8 +45,8 @@ nav_order: 10
 
 **Context:**
 
-  * **User:** amit
-  * **DB Name:** classwork
+* **User:** amit
+* **DB Name:** classwork
 
 -----
 
@@ -54,16 +54,16 @@ nav_order: 10
 
 **Context:**
 
-  * **User:** yogesh -> rahul
-  * **DB Name:** pune -> karad
+* **User:** yogesh -> rahul
+* **DB Name:** pune -> karad
 
 ### Definition
 
-  * A **View** is a handle to a table.
-  * It is a Hard Disk Pointer `[Stores the address of table]`.
-  * Also known as a **Locator**.
-  * Used for **indirect access** to the table.
-  * Used for **Security Purposes**.
+* A **View** is a handle to a table.
+* It is a Hard Disk Pointer `[Stores the address of table]`.
+* Also known as a **Locator**.
+* Used for **indirect access** to the table.
+* Used for **Security Purposes**.
 
 ### Syntax
 
@@ -79,14 +79,14 @@ amit_mysql> create view v1 as
 > View Created
 ```
 
-  * **V1** = `select empno, ename from emp;`
-  * This definition is stored in the **System Table**.
+* **V1** = `select empno, ename from emp;`
+* This definition is stored in the **System Table**.
 
 ### Key Characteristics
 
-  * Once a view is created, it is **permanent**.
-  * View is a **DDL command** (Data Definition Language), no need to commit.
-  * **Viewname:** Max 30 chars.
+* Once a view is created, it is **permanent**.
+* View is a **DDL command** (Data Definition Language), no need to commit.
+* **Viewname:** Max 30 chars.
 
 ### Security Example (Granting Access)
 
@@ -113,19 +113,19 @@ amit_mysql> grant select on classwork.v1 to rahul@localhost;
 
 ## 4. System Tables & Internal Storage
 
-  * **78 System Tables** (real system tables is the source code of MySQL).
-  * Used to restrict column access.
+* **78 System Tables** (real system tables is the source code of MySQL).
+* Used to restrict column access.
 
 ### How Views Work Internally
 
-  * **View does not contain Data.**
-  * Only the definition (`def^n`) is stored; data is *not* stored.
-  * **View is a Stored Query.**
-  * The select statement on which the view is based is stored in the DB in **System Tables** in **Compiled Format**.
-  * View is an **executable format (.exe)** of the Select statement.
-      * Hence, the execution will be very **fast**.
-      * Hides the source code from the end user.
-  * Internally, System Tables are **VIEWS**.
+* **View does not contain Data.**
+* Only the definition (`def^n`) is stored; data is *not* stored.
+* **View is a Stored Query.**
+* The select statement on which the view is based is stored in the DB in **System Tables** in **Compiled Format**.
+* View is an **executable format (.exe)** of the Select statement.
+    * Hence, the execution will be very **fast**.
+    * Hides the source code from the end user.
+* Internally, System Tables are **VIEWS**.
 
 -----
 
@@ -146,9 +146,9 @@ yogesh_mysql> insert into classwork.v1 values (6, 'F');
 
 ### Important Rules for DML on Views
 
-  * DML (Data Manipulation Language) operations **can** be done on a view.
-  * Performed on a view will affect the **Base Table**.
-  * **Constraints** that are specified on the table will **always be enforced**, even if you Insert via the view.
+* DML (Data Manipulation Language) operations **can** be done on a view.
+* Performed on a view will affect the **Base Table**.
+* **Constraints** that are specified on the table will **always be enforced**, even if you Insert via the view.
 
 ### Dropping a View
 
@@ -156,9 +156,9 @@ yogesh_mysql> insert into classwork.v1 values (6, 'F');
 amit_mysql> drop view v1;
 ```
 
-  * **Note:** If you drop the table, the view remains (becomes invalid).
-  * **Note:** If you drop the view, the table remains.
-  * *Entire application is built on views.*
+* **Note:** If you drop the table, the view remains (becomes invalid).
+* **Note:** If you drop the view, the table remains.
+* *Entire application is built on views.*
 
 ### Changing the Select Statement of a View
 
@@ -191,8 +191,8 @@ amit_mysql> create view v2 as
 yogesh_mysql> select * from classwork.v2;
 ```
 
-  * Can only view rows of `deptno = 1`.
-  * Used to **restrict row access**.
+* Can only view rows of `deptno = 1`.
+* Used to **restrict row access**.
 
 ### Inserting Data with Check Option
 
@@ -203,8 +203,8 @@ yogesh_mysql> insert into classwork.v2 values (6, 'F', 6000, 1); -- Success (Mat
 yogesh_mysql> insert into classwork.v2 values (7, 'G', 6000, 2); -- Error (Violates Check)
 ```
 
-  * **View with Check Option** is similar to a Check Constraint.
-  * Used to enforce different checks for different users.
+* **View with Check Option** is similar to a Check Constraint.
+* Used to enforce different checks for different users.
 
 -----
 
@@ -217,8 +217,8 @@ create or replace view v1 as
 select ename, sal from emp;
 ```
 
-  * **Create new:** If it does not exist.
-  * **Replace:** Overrides if it already exists.
+* **Create new:** If it does not exist.
+* **Replace:** Overrides if it already exists.
 
 ### Show Tables
 
@@ -226,8 +226,8 @@ select ename, sal from emp;
 show tables;
 ```
 
-  * Will show **all** tables and views.
-  * Won't tell you which is a table and which is a view.
+* Will show **all** tables and views.
+* Won't tell you which is a table and which is a view.
 
 ### Show Full Tables
 
@@ -235,7 +235,7 @@ show tables;
 show full tables;
 ```
 
-  * To find out which is a **Table** and which is a **View**.
+* To find out which is a **Table** and which is a **View**.
 
 -----
 
@@ -248,10 +248,10 @@ create or replace view v1 as
 select ename, sal * 12 from emp;
 ```
 
-  * View based on **Computed Columns** is allowed.
-  * You can even specify an **alias** for the virtual column.
-  * **Rule:** You can only `SELECT` from this view. **DML operations are NOT allowed.**
-  * Common for all RDBMS.
+* View based on **Computed Columns** is allowed.
+* You can even specify an **alias** for the virtual column.
+* **Rule:** You can only `SELECT` from this view. **DML operations are NOT allowed.**
+* Common for all RDBMS.
 
 ### B. Joins in Views
 
@@ -263,11 +263,11 @@ where emp.deptno = dept.deptno;
 select * from v1;
 ```
 
-  * **Using views with Join:**
-      * View based on **Join** is allowed.
-      * You can only `SELECT` from this view.
-      * **DML operations are NOT allowed.**
-      * Common for all RDBMS.
+* **Using views with Join:**
+    * View based on **Join** is allowed.
+    * You can only `SELECT` from this view.
+    * **DML operations are NOT allowed.**
+    * Common for all RDBMS.
 
 ### Show Create View
 
@@ -275,8 +275,8 @@ select * from v1;
 show create view v1;
 ```
 
-  * To see the select statement on which the view is based.
-  * View based on view is allowed.
+* To see the select statement on which the view is based.
+* View based on view is allowed.
 
 -----
 
@@ -297,13 +297,12 @@ Examples:
 1.  **Join of 10 tables.**
 2.  **Sub query upto 20 levels.**
 
-<!-- end list -->
 
-  * It can be called through any Front End s/w.
+* It can be called through any Front End s/w.
 
 ### 3. Storing Complex Queries
 
-  * Complex queries can be stored in **View Definition**.
+* Complex queries can be stored in **View Definition**.
 
 -----
 
@@ -320,7 +319,7 @@ select distinct empno from emp;
 select * from v1;
 ```
 
-  * **DML operations are not allowed.**
+* **DML operations are not allowed.**
 
 ### Case 2: Group By (Aggregate Functions)
 
@@ -332,13 +331,13 @@ group by deptno;
 select * from v1;
 ```
 
-  * **DML operations are not allowed.**
+* **DML operations are not allowed.**
 
 ### Summary of Read-Only Views
 
 Both of the above can only `SELECT` from these views.
 
-  * **DML operations are not allowed.**
+* **DML operations are not allowed.**
 
 ### Final Example (Join)
 
