@@ -4,6 +4,7 @@ title: Set Operators
 parent: Module 2 - Database
 nav_order: 8
 ---
+
 -----
 
 # Database Management Systems: SQL Concepts
@@ -15,6 +16,7 @@ nav_order: 8
 **Tables used for examples:**
 
 **EMP1**
+
 | EMPNO | ENAME |
 | :--- | :--- |
 | 1 | A |
@@ -22,6 +24,7 @@ nav_order: 8
 | 3 | C |
 
 **EMP2**
+
 | EMPNO | ENAME |
 | :--- | :--- |
 | 1 | A |
@@ -58,6 +61,7 @@ SELECT empno, ename FROM emp2;
 ```
 
 **Output:**
+
 | empno | ename |
 | :--- | :--- |
 | 1 | A |
@@ -80,6 +84,7 @@ SELECT empno, ename FROM emp2;
 ```
 
 **Output:**
+
 | empno | ename |
 | :--- | :--- |
 | 1 | A |
@@ -104,6 +109,7 @@ SELECT empno, ename FROM emp2;
 ```
 
 **Output:**
+
 | empno | ename |
 | :--- | :--- |
 | 1 | A |
@@ -123,6 +129,7 @@ SELECT empno, ename FROM emp2;
 ```
 
 **Output:**
+
 | empno | ename |
 | :--- | :--- |
 | 3 | C |
@@ -301,6 +308,7 @@ Combine 2 or more inter-dependent columns in a single index.
 * Postgres - indexes in descending order.
 
 **Example Data Order:**
+
 | ROWID | DEPTNO | DNAME | LOC |
 | :--- | :--- | :--- | :--- |
 | y011 | 1 | TRN | Bombay |

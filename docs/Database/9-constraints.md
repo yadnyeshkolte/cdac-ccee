@@ -318,6 +318,7 @@ Here is the complete Markdown (`.md`) transcription of your handwritten notes. I
 **Table Data Example:**
 
 **Table: EMP**
+
 | EMPNO | ENAME | SAL | DEPTNO | MGR |
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | A | 5000 | 1 | 1 |
@@ -328,6 +329,7 @@ Here is the complete Markdown (`.md`) transcription of your handwritten notes. I
 | 6 | F | 9000 | 2 | 2 |
 
 **Table: DEPT**
+
 | DEPTNO | DNAME | LOC |
 | :--- | :--- | :--- |
 | 1 | TRN | Bombay |

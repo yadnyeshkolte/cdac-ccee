@@ -4,6 +4,7 @@ title: MySQL PL/SQL
 parent: Module 2 - Database
 nav_order: 11
 ---
+
 -----
 
 # MySQL - PL (MySQL Programming Language)
@@ -428,6 +429,7 @@ When you run `OPEN c1;`, the result set is loaded into RAM. The **Pointer** is h
 `a: NULL` | `b: NULL` | `c: NULL` | `d: NULL` | `x: 1`
 
 **3. Table `tempp` (Empty):**
+
 | fir | sec |
 | :--- | :--- |
 | (empty) | (empty) |
@@ -445,6 +447,7 @@ When you run `OPEN c1;`, the result set is loaded into RAM. The **Pointer** is h
 The Pointer moves to **Row 1**. Data is copied into variables. Variables `a` and `b` are copied to `tempp`.
 
 **Cursor `c1`:**
+
 | Row# | Col 1 | Col 2 | Col 3 | Col 4 | Pointer |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **1** | **1** | **'A'** | **5000** | **10** | **<-- HERE** |
@@ -457,6 +460,7 @@ The Pointer moves to **Row 1**. Data is copied into variables. Variables `a` and
 * `d` $\leftarrow$ 10
 
 **Table `tempp` Update:**
+
 | fir | sec |
 | :--- | :--- |
 | **1** | **'A'** |
@@ -471,6 +475,7 @@ The Pointer moves to **Row 1**. Data is copied into variables. Variables `a` and
 The Pointer moves to **Row 2**. Old variable data is overwritten by new data.
 
 **Cursor `c1`:**
+
 | Row# | Col 1 | Col 2 | Col 3 | Col 4 | Pointer |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **1** | 1 | 'A' | 5000 | 10 | |
@@ -484,6 +489,7 @@ The Pointer moves to **Row 2**. Old variable data is overwritten by new data.
 * `d` $\leftarrow$ 10
 
 **Table `tempp` Update:**
+
 | fir | sec |
 | :--- | :--- |
 | 1 | 'A' |
@@ -499,6 +505,7 @@ The Pointer moves to **Row 2**. Old variable data is overwritten by new data.
 The Pointer moves to **Row 3**.
 
 **Cursor `c1`:**
+
 | Row# | Col 1 | Col 2 | Col 3 | Col 4 | Pointer |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **2** | 2 | 'B' | 6000 | 10 | |
@@ -512,6 +519,7 @@ The Pointer moves to **Row 3**.
 * `d` $\leftarrow$ 20
 
 **Table `tempp` Update:**
+
 | fir | sec |
 | :--- | :--- |
 | 1 | 'A' |

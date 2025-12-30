@@ -20,7 +20,9 @@ nav_order: 1
 | BOOLEAN | Boolean values 0 or 1 | BOOLEAN |
 | DATE | date in format of YYYY-MM-DD ranging from 1000-01-01 to 9999-12-31 | DATE |
 | YEAR | year in 4 digits format ranging from 1901 to 2155 | YEAR |
+
 ---
+
 **Selecting Employee whose joindate is max (using all) where supcode is null**
 ```sql
  select * from emp e where e.joindate <= all(select joindate from emp where supcode is Null); -- 6
@@ -28,7 +30,9 @@ nav_order: 1
 - `all()` - selecting max from all
 - supcode `is` null - use if we have to check null value
 - `-- 6` - Its the comment **Remember to give -- and comment**
+
 ---
+
 ```sql
 select *, timestampdiff(year, e.birthdate, curdate()) as age from emp e 
 where timestampdiff(year, e.birthdate, curdate()) between 55 and 60 -- 7
@@ -41,7 +45,9 @@ order by age asc;
 - `between` `and` - It will give values only between value1 and value2
 - **We can't call aliasing column (like age) in the `where` clause**, but can write in order by
 - `order by` *value* `asc` - order the table according to ascending order `asc` - ascending or `desc` - descending
+
 ---
+
 ```sql
 where d.deptname in ('Accounts','Personal','IT');
 where d.deptname = 'Accounts' or 'Personal' or 'IT'; -- not possible
@@ -154,6 +160,7 @@ WHERE indexedPay = 5; /*
 | 9902    | Ahmad   | SALE     |    14970 |
 +---------+---------+----------+----------+ */
 ```
+
 | Function | Behavior |
 |----------|----------|
 | `ROW_NUMBER()` | Assigns unique sequential numbers, even for tied values |
@@ -162,7 +169,9 @@ WHERE indexedPay = 5; /*
 - Aggregate functions **collapse rows** unless used with `GROUP BY`.
 - Scalar functions **do not collapse rows** — they work per row.
 - Window functions **preserve rows** and allow advanced analytics.
+
 ---
+
 #### View
 ```sql
 CREATE VIEW employeeAge AS (
@@ -215,7 +224,9 @@ CREATE TABLE course (
     UNIQUE (course_code, academic_year, semester)
 );
 ```
+
 ---
+
 **Alter Table**
 **(ALTER) Adding the new column**
 ```sql
@@ -251,7 +262,9 @@ MODIFY COLUMN credits SMALLINT NOT NULL DEFAULT 3;
 ALTER TABLE course 
 RENAME COLUMN course_name TO title;
 ```
+
 ---
+
 - course is table
   
 **Update into table**
@@ -280,12 +293,16 @@ INSERT INTO course VALUES (5, 'Algorithms'); -- 2
 ```sql
 DELETE FROM course WHERE course_name = 'DBT';
 ```
+
 ---
+
 **UNION vs UNION ALL**
+
 | Operation | Description | Duplicates | Performance | Use Case |
 |-----------|-------------|------------|-------------|----------|
 | **UNION** | Combines results from multiple SELECT statements | Removes duplicates | Slower (needs to check duplicates) | When you need unique results |
 | **UNION ALL** | Combines results from multiple SELECT statements | Keeps duplicates | Faster | When duplicates are acceptable or impossible |
+
 ```sql
 -- Basic UNION
 SELECT column1, column2 FROM table1
@@ -297,6 +314,7 @@ UNION ALL
 SELECT column1, column2 FROM table2;
 ```
 **Types of JOINs**
+
 | JOIN Type | Returns | Use Case | Diagram Concept |
 |-----------|---------|----------|-----------------|
 | **INNER JOIN** | Only matching rows from both tables | Most common, when you need related data | Intersection |
@@ -331,7 +349,9 @@ FROM fall_enrollment f
 LEFT JOIN spring_enrollment s ON f.student_id = s.student_id
 WHERE s.student_id IS NULL;
 ```
+
 ---
+
 **Triggers**
 ```sql
 CREATE A TRIGGER TO CHECK EMPLOYEE SHOULD BE OLDER THAN 18

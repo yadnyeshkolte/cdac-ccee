@@ -11,6 +11,7 @@ nav_order: 6
 ### Example Data Structure
 
 **DEPT Table**
+
 | DEPTNO | DNAME | LOC |
 | :--- | :--- | :--- |
 | 1 | TRN | Bombay |
@@ -169,6 +170,7 @@ group by dname;
 ```
 
 **Output Example:**
+
 | DNAME | sum(sal) |
 | :--- | :--- |
 | TRN | 18000 |
@@ -206,6 +208,7 @@ where dept.deptno != emp.deptno; -- this shows for all rows
 ```
 
 **Data Example:**
+
 | DNAME | ENAME |
 | :--- | :--- |
 | TRN | JACK |
