@@ -1,5 +1,9 @@
 # CDAC CCEE Learning Portal
 
+`bundle install`
+
+`gem exec bundle exec jekyll serve`
+
 This is a Jekyll site designed to host learning materials and MCQ tests. It uses the `just-the-docs` theme for easy navigation.
 
 ## Project Structure
