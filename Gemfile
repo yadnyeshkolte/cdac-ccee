@@ -1,11 +1,10 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3.3"
+gem "jekyll", "~> 4.4.1"
 
-# gem "just-the-docs" # Not needed for remote_theme method, but keeping it doesn't hurt locally.
-# However, to be cleaner for GH Pages, we rely on remote-theme.
+gem "just-the-docs", "~> 0.10.0"
 
-gem "jekyll-remote-theme"
+# gem "jekyll-remote-theme"
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
