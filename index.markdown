@@ -9,13 +9,13 @@ permalink: /
 <div class="hero">
   <h1>🚀 CDAC CCEE Learning Portal</h1>
   <p>Your comprehensive resource for mastering programming concepts, database technologies, and software development skills.</p>
-  <a href="{{ '/docs/module-2' | relative_url }}" class="btn btn-primary">Start Learning</a>
+  <a href="{{ '/docs/Database/' | relative_url }}" class="btn btn-primary">Start Learning</a>
 </div>
 
 ## 📚 Learning Modules
 
 <div class="module-grid">
-  <a href="{{ '/docs/module-2' | relative_url }}" class="module-card card-indigo">
+  <a href="{{ '/docs/Database/' | relative_url }}" class="module-card card-indigo">
     <div class="icon">🗄️</div>
     <h3>Database Technologies</h3>
     <p>SQL, MongoDB, Joins, Procedures, Triggers & more</p>

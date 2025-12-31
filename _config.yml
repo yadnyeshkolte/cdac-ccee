@@ -11,9 +11,9 @@ search_enabled: true
 # Navigation
 nav_sort: case_insensitive
 
-# Aux links
-aux_links:
-  "GitHub Repository": "https://github.com/yadnyeshkolte/cdac-ccee"
+# Aux links (commented out to save header space)
+# aux_links:
+#   "GitHub Repository": "https://github.com/yadnyeshkolte/cdac-ccee"
 
 # Footer
 footer_content: "Copyright &copy; @yadnyeshkolte"

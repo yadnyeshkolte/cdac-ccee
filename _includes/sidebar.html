@@ -6,38 +6,47 @@
 <!-- Navigation Menu -->
 <nav class="site-nav">
     <ul class="nav-list">
-        {% assign pages_list = site.html_pages %}
+        {% assign sorted_pages = site.html_pages | where_exp: "item", "item.nav_order != nil" | sort: "nav_order" %}
 
-        {% if site.nav_sort == 'case_insensitive' %}
-        {% assign pages_list = pages_list | sort_natural: 'title' %}
-        {% else %}
-        {% assign pages_list = pages_list | sort: 'title' %}
+        {% for page in sorted_pages %}
+        {% unless page.parent %}
+        {% assign has_children = false %}
+        {% for child in sorted_pages %}
+        {% if child.parent == page.title %}
+        {% assign has_children = true %}
+        {% break %}
         {% endif %}
+        {% endfor %}
 
-        {% assign pages_list = pages_list | sort: 'nav_order' %}
-
-        {% for node in pages_list %}
-        {% unless node.parent %}
-        {% if node.title and node.title != "" %}
-        <li class="nav-list-item{% if page.url == node.url %} active{% endif %}">
-            {% if node.has_children %}
+        <li class="nav-list-item{% if page.url == page.url %} active{% endif %}">
+            {% if has_children %}
             <!-- Parent item with children -->
-            <button class="nav-list-expander" aria-label="Toggle {{ node.title }}">
+            <button class="nav-list-expander" aria-label="Toggle {{ page.title }}">
                 <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
             </button>
-            <a href="{{ node.url | relative_url }}"
-                class="nav-list-link{% if page.url == node.url %} active{% endif %}">
-                {{ node.title }}
+            {% endif %}
+            <a href="{{ page.url | relative_url }}"
+                class="nav-list-link{% if page.url == page.url %} active{% endif %}">
+                {{ page.title }}
             </a>
 
+            {% if has_children %}
             <!-- Child items (Level 2) -->
             <ul class="nav-list nav-list-child">
-                {% assign child_pages = pages_list | where: "parent", node.title | sort: 'nav_order' %}
-                {% for child in child_pages %}
-                <li class="nav-list-item{% if page.url == child.url %} active{% endif %}">
-                    {% if child.has_children %}
+                {% assign children = sorted_pages | where: "parent", page.title | sort: "nav_order" %}
+                {% for child in children %}
+                {% assign has_grandchildren = false %}
+                {% for grandchild in sorted_pages %}
+                {% if grandchild.parent == child.title %}
+                {% assign has_grandchildren = true %}
+                {% break %}
+                {% endif %}
+                {% endfor %}
+
+                <li class="nav-list-item">
+                    {% if has_grandchildren %}
                     <!-- Child with grandchildren -->
                     <button class="nav-list-expander" aria-label="Toggle {{ child.title }}">
                         <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2"
@@ -45,43 +54,31 @@
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
                     </button>
+                    {% endif %}
                     <a href="{{ child.url | relative_url }}"
-                        class="nav-list-link{% if page.url == child.url %} active{% endif %}">
+                        class="nav-list-link{% if child.url == page.url %} active{% endif %}">
                         {{ child.title }}
                     </a>
 
+                    {% if has_grandchildren %}
                     <!-- Grandchild items (Level 3) -->
                     <ul class="nav-list nav-list-child">
-                        {% assign grandchild_pages = pages_list | where: "parent", child.title | where: "grand_parent",
-                        node.title | sort: 'nav_order' %}
-                        {% for grandchild in grandchild_pages %}
-                        <li class="nav-list-item{% if page.url == grandchild.url %} active{% endif %}">
+                        {% assign grandchildren = sorted_pages | where: "parent", child.title | sort: "nav_order" %}
+                        {% for grandchild in grandchildren %}
+                        <li class="nav-list-item">
                             <a href="{{ grandchild.url | relative_url }}"
-                                class="nav-list-link{% if page.url == grandchild.url %} active{% endif %}">
+                                class="nav-list-link{% if grandchild.url == page.url %} active{% endif %}">
                                 {{ grandchild.title }}
                             </a>
                         </li>
                         {% endfor %}
                     </ul>
-                    {% else %}
-                    <!-- Regular child without grandchildren -->
-                    <a href="{{ child.url | relative_url }}"
-                        class="nav-list-link{% if page.url == child.url %} active{% endif %}">
-                        {{ child.title }}
-                    </a>
                     {% endif %}
                 </li>
                 {% endfor %}
             </ul>
-            {% else %}
-            <!-- Regular item without children -->
-            <a href="{{ node.url | relative_url }}"
-                class="nav-list-link{% if page.url == node.url %} active{% endif %}">
-                {{ node.title }}
-            </a>
             {% endif %}
         </li>
-        {% endif %}
         {% endunless %}
         {% endfor %}
     </ul>
