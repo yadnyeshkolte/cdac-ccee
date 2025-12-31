@@ -3,7 +3,7 @@ layout: default
 title: Module 2 - Database
 nav_order: 2
 has_children: true
-permalink: /docs/module-2
+permalink: /docs/Database/
 ---
 
 # Module 2

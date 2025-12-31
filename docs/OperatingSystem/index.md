@@ -3,7 +3,7 @@ layout: default
 title: Module 5 - Operating System
 nav_order: 5
 has_children: true
-permalink: /docs/module-5
+permalink: /docs/OperatingSystem/
 ---
 
 # Module 5

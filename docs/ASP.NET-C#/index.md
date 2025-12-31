@@ -3,7 +3,7 @@ layout: default
 title: Module 8 - ASP.NET C#
 nav_order: 8
 has_children: true
-permalink: /docs/module-8
+permalink: /docs/ASP.NET-C#/
 ---
 
 # Module 8

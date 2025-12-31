@@ -4,6 +4,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const sidebar = document.querySelector('.side-bar');
 
+    // Restore sidebar scroll position with delay to ensure DOM is ready
+    if (sidebar) {
+        const savedScrollPosition = sessionStorage.getItem('sidebarScrollPosition');
+        if (savedScrollPosition) {
+            const scrollPos = parseInt(savedScrollPosition, 10);
+
+            // First attempt - immediate after DOM ready
+            requestAnimationFrame(() => {
+                sidebar.scrollTop = scrollPos;
+            });
+
+            // Second attempt - after a short delay for slower pages
+            setTimeout(() => {
+                sidebar.scrollTop = scrollPos;
+            }, 150);
+
+            // Third attempt - final fallback
+            setTimeout(() => {
+                sidebar.scrollTop = scrollPos;
+            }, 300);
+        }
+    }
+
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', function () {
             this.classList.toggle('active');
@@ -11,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Navigation expander functionality
-    const expanders = document.querySelectorAll('.nav-list-expander');
+    // Navigation expander functionality - now on links themselves
+    const expanderLinks = document.querySelectorAll('.nav-list-expander-link');
 
-    expanders.forEach(expander => {
-        expander.addEventListener('click', function (e) {
+    expanderLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
 
@@ -28,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 childList.style.display = childList.style.display === 'block' ? 'none' : 'block';
 
                 // Save state to localStorage
-                const pageTitle = listItem.querySelector('.nav-list-link').textContent.trim();
+                const pageTitle = this.textContent.trim();
                 const isExpanded = this.classList.contains('expanded');
                 localStorage.setItem('nav-' + pageTitle, isExpanded);
             }
@@ -36,13 +59,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Restore navigation state from localStorage
-    expanders.forEach(expander => {
-        const listItem = expander.parentElement;
-        const pageTitle = listItem.querySelector('.nav-list-link').textContent.trim();
+    expanderLinks.forEach(link => {
+        const listItem = link.parentElement;
+        const pageTitle = link.textContent.trim();
         const savedState = localStorage.getItem('nav-' + pageTitle);
 
         if (savedState === 'true') {
-            expander.classList.add('expanded');
+            link.classList.add('expanded');
             const childList = listItem.querySelector('.nav-list-child');
             if (childList) {
                 childList.style.display = 'block';
@@ -56,9 +79,9 @@ document.addEventListener('DOMContentLoaded', function () {
         let parent = activeLink.closest('.nav-list-child');
         while (parent) {
             parent.style.display = 'block';
-            const parentExpander = parent.parentElement.querySelector('.nav-list-expander');
-            if (parentExpander) {
-                parentExpander.classList.add('expanded');
+            const parentLink = parent.parentElement.querySelector('.nav-list-expander-link');
+            if (parentLink) {
+                parentLink.classList.add('expanded');
             }
             parent = parent.parentElement.closest('.nav-list-child');
         }
@@ -72,5 +95,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 sidebar.classList.remove('mobile-open');
             }
         }
+    });
+
+    // Save sidebar scroll position before navigation
+    const navLinks = document.querySelectorAll('.nav-list-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            if (sidebar) {
+                sessionStorage.setItem('sidebarScrollPosition', sidebar.scrollTop);
+            }
+        });
     });
 });

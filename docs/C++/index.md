@@ -3,7 +3,7 @@ layout: default
 title: Module 7 - C++
 nav_order: 7
 has_children: true
-permalink: /docs/module-7
+permalink: /docs/C++/
 ---
 
 # Module 7

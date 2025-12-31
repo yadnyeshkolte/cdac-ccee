@@ -3,7 +3,7 @@ layout: default
 title: Module 9 - Aptitude
 nav_order: 9
 has_children: true
-permalink: /docs/module-9
+permalink: /docs/Aptitude/
 ---
 
 # Module 9

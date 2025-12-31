@@ -21,16 +21,21 @@
         <li class="nav-list-item{% if page.url == page.url %} active{% endif %}">
             {% if has_children %}
             <!-- Parent item with children -->
-            <button class="nav-list-expander" aria-label="Toggle {{ page.title }}">
-                <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+            <a href="{{ page.url | relative_url }}"
+                class="nav-list-link nav-list-expander-link{% if page.url == page.url %} active{% endif %}"
+                data-has-children="true">
+                {{ page.title }}
+                <svg class="nav-chevron" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
+                    stroke-width="2" fill="none">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
-            </button>
-            {% endif %}
+            </a>
+            {% else %}
             <a href="{{ page.url | relative_url }}"
                 class="nav-list-link{% if page.url == page.url %} active{% endif %}">
                 {{ page.title }}
             </a>
+            {% endif %}
 
             {% if has_children %}
             <!-- Child items (Level 2) -->
@@ -48,28 +53,69 @@
                 <li class="nav-list-item">
                     {% if has_grandchildren %}
                     <!-- Child with grandchildren -->
-                    <button class="nav-list-expander" aria-label="Toggle {{ child.title }}">
-                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2"
-                            fill="none">
+                    <a href="{{ child.url | relative_url }}"
+                        class="nav-list-link nav-list-expander-link{% if child.url == page.url %} active{% endif %}"
+                        data-has-children="true">
+                        {{ child.title }}
+                        <svg class="nav-chevron" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
+                            stroke-width="2" fill="none">
                             <polyline points="9 18 15 12 9 6"></polyline>
                         </svg>
-                    </button>
-                    {% endif %}
+                    </a>
+                    {% else %}
                     <a href="{{ child.url | relative_url }}"
                         class="nav-list-link{% if child.url == page.url %} active{% endif %}">
                         {{ child.title }}
                     </a>
+                    {% endif %}
 
                     {% if has_grandchildren %}
                     <!-- Grandchild items (Level 3) -->
                     <ul class="nav-list nav-list-child">
                         {% assign grandchildren = sorted_pages | where: "parent", child.title | sort: "nav_order" %}
                         {% for grandchild in grandchildren %}
+                        {% assign has_greatgrandchildren = false %}
+                        {% for greatgrandchild in sorted_pages %}
+                        {% if greatgrandchild.parent == grandchild.title %}
+                        {% assign has_greatgrandchildren = true %}
+                        {% break %}
+                        {% endif %}
+                        {% endfor %}
+
                         <li class="nav-list-item">
+                            {% if has_greatgrandchildren %}
+                            <!-- Grandchild with great-grandchildren -->
+                            <a href="{{ grandchild.url | relative_url }}"
+                                class="nav-list-link nav-list-expander-link{% if grandchild.url == page.url %} active{% endif %}"
+                                data-has-children="true">
+                                {{ grandchild.title }}
+                                <svg class="nav-chevron" viewBox="0 0 24 24" width="14" height="14"
+                                    stroke="currentColor" stroke-width="2" fill="none">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </a>
+                            {% else %}
                             <a href="{{ grandchild.url | relative_url }}"
                                 class="nav-list-link{% if grandchild.url == page.url %} active{% endif %}">
                                 {{ grandchild.title }}
                             </a>
+                            {% endif %}
+
+                            {% if has_greatgrandchildren %}
+                            <!-- Great-grandchild items (Level 4) -->
+                            <ul class="nav-list nav-list-child">
+                                {% assign greatgrandchildren = sorted_pages | where: "parent", grandchild.title | sort:
+                                "nav_order" %}
+                                {% for greatgrandchild in greatgrandchildren %}
+                                <li class="nav-list-item">
+                                    <a href="{{ greatgrandchild.url | relative_url }}"
+                                        class="nav-list-link{% if greatgrandchild.url == page.url %} active{% endif %}">
+                                        {{ greatgrandchild.title }}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
                         </li>
                         {% endfor %}
                     </ul>
