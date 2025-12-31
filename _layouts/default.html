@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+  <div class="page-wrap">
+    <!-- Sidebar Navigation -->
+    <aside class="side-bar">
+      {% include sidebar.html %}
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main">
+      <!-- Header -->
+      {% include header.html %}
+
+      <!-- Page Content -->
+      <div class="main-content-wrap">
+        <div class="main-content">
+          {{ content }}
+        </div>
+      </div>
+
+      <!-- Footer -->
+      {% include footer.html %}
+    </div>
+  </div>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script src="{{ '/assets/js/navigation.js' | relative_url }}"></script>
+</body>
+</html>

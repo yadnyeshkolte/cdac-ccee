@@ -2,9 +2,7 @@ source "https://rubygems.org"
 
 gem "jekyll", "~> 4.4.1"
 
-gem "just-the-docs", "~> 0.10.0"
-
-# gem "jekyll-remote-theme"
+# Custom theme - no external dependencies needed
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"

@@ -1,0 +1,23 @@
+<header class="site-header">
+    <div class="header-content">
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Auxiliary Navigation -->
+        {% if site.aux_links %}
+        <nav class="aux-nav">
+            <ul class="aux-nav-list">
+                {% for link in site.aux_links %}
+                <li class="aux-nav-list-item">
+                    <a href="{{ link[1] }}" target="_blank" rel="noopener noreferrer">{{ link[0] }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</header>

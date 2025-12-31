@@ -3,11 +3,7 @@ description: Learning materials for modules.
 baseurl: "/cdac-ccee"
 url: "https://yadnyeshkolte.github.io"
 
-theme: just-the-docs
-# remote_theme: just-the-docs/just-the-docs@v0.10.0
-
-# Color scheme
-color_scheme: dark
+# Custom theme - no external theme dependency
 
 # Enable search
 search_enabled: true
