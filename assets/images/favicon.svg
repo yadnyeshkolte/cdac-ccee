@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    .rocket {
+      animation: launch 2s infinite ease-in-out alternate;
+      transform-origin: center;
+    }
+    @keyframes launch {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-5px); }
+    }
+  </style>
+  <text y="80" x="5" font-size="80" class="rocket">🚀</text>
+</svg>

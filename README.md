@@ -386,8 +386,31 @@ Jump back to [Section 1](#section-1)
 
 ## 🎨 Styling & Formatting
 
-### Code Blocks
+### Buttons & UI Elements
 
+You can easily add buttons and labels to your content using these CSS classes.
+
+**Buttons**:
+```html
+<a href="#" class="btn btn-primary">Primary Button</a>
+<a href="#" class="btn btn-outline">Outline Button</a>
+<a href="#" class="btn btn-accent">Accent Button</a>
+```
+_Result:_
+[Primary Button](#){: .btn .btn-primary} [Outline Button](#){: .btn .btn-outline} [Accent Button](#){: .btn .btn-accent}
+
+**Labels/Tags**:
+```html
+<span class="label label-blue">Blue</span>
+<span class="label label-green">Green</span>
+<span class="label label-yellow">Yellow</span>
+<span class="label label-red">Red</span>
+<span class="label label-purple">Purple</span>
+```
+_Result:_
+<span class="label label-blue">Blue</span> <span class="label label-green">Green</span> <span class="label label-yellow">Yellow</span>
+
+### Code Blocks
 ```markdown
 \`\`\`java
 public class HelloWorld {
@@ -399,7 +422,6 @@ public class HelloWorld {
 ```
 
 ### Callout Boxes
-
 ```markdown
 > **Note**: This is an important note.
 
@@ -409,7 +431,6 @@ public class HelloWorld {
 ```
 
 ### Tables
-
 ```markdown
 | Header 1 | Header 2 | Header 3 |
 |----------|----------|----------|
