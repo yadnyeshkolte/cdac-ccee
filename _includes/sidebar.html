@@ -6,6 +6,7 @@
 <!-- Navigation Menu -->
 <nav class="site-nav">
     <ul class="nav-list">
+        {% assign current_page = page %}
         {% assign sorted_pages = site.html_pages | where_exp: "item", "item.nav_order != nil" | sort: "nav_order" %}
 
         {% for page in sorted_pages %}
@@ -18,11 +19,11 @@
         {% endif %}
         {% endfor %}
 
-        <li class="nav-list-item{% if page.url == page.url %} active{% endif %}">
+        <li class="nav-list-item{% if page.url == current_page.url %} active{% endif %}">
             {% if has_children %}
             <!-- Parent item with children -->
             <a href="{{ page.url | relative_url }}"
-                class="nav-list-link nav-list-expander-link{% if page.url == page.url %} active{% endif %}"
+                class="nav-list-link nav-list-expander-link{% if page.url == current_page.url %} active{% endif %}"
                 data-has-children="true">
                 {{ page.title }}
                 <svg class="nav-chevron" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
@@ -32,7 +33,7 @@
             </a>
             {% else %}
             <a href="{{ page.url | relative_url }}"
-                class="nav-list-link{% if page.url == page.url %} active{% endif %}">
+                class="nav-list-link{% if page.url == current_page.url %} active{% endif %}">
                 {{ page.title }}
             </a>
             {% endif %}
@@ -40,6 +41,12 @@
             {% if has_children %}
             <!-- Child items (Level 2) -->
             <ul class="nav-list nav-list-child">
+                <li class="nav-list-item">
+                    <a href="{{ page.url | relative_url }}"
+                        class="nav-list-link{% if page.url == current_page.url %} active{% endif %}">
+                        Introduction
+                    </a>
+                </li>
                 {% assign children = sorted_pages | where: "parent", page.title | sort: "nav_order" %}
                 {% for child in children %}
                 {% assign has_grandchildren = false %}
@@ -54,7 +61,7 @@
                     {% if has_grandchildren %}
                     <!-- Child with grandchildren -->
                     <a href="{{ child.url | relative_url }}"
-                        class="nav-list-link nav-list-expander-link{% if child.url == page.url %} active{% endif %}"
+                        class="nav-list-link nav-list-expander-link{% if child.url == current_page.url %} active{% endif %}"
                         data-has-children="true">
                         {{ child.title }}
                         <svg class="nav-chevron" viewBox="0 0 24 24" width="14" height="14" stroke="currentColor"
@@ -64,7 +71,7 @@
                     </a>
                     {% else %}
                     <a href="{{ child.url | relative_url }}"
-                        class="nav-list-link{% if child.url == page.url %} active{% endif %}">
+                        class="nav-list-link{% if child.url == current_page.url %} active{% endif %}">
                         {{ child.title }}
                     </a>
                     {% endif %}
@@ -87,7 +94,7 @@
                             {% if has_greatgrandchildren %}
                             <!-- Grandchild with great-grandchildren -->
                             <a href="{{ grandchild.url | relative_url }}"
-                                class="nav-list-link nav-list-expander-link{% if grandchild.url == page.url %} active{% endif %}"
+                                class="nav-list-link nav-list-expander-link{% if grandchild.url == current_page.url %} active{% endif %}"
                                 data-has-children="true">
                                 {{ grandchild.title }}
                                 <svg class="nav-chevron" viewBox="0 0 24 24" width="14" height="14"
@@ -97,7 +104,7 @@
                             </a>
                             {% else %}
                             <a href="{{ grandchild.url | relative_url }}"
-                                class="nav-list-link{% if grandchild.url == page.url %} active{% endif %}">
+                                class="nav-list-link{% if grandchild.url == current_page.url %} active{% endif %}">
                                 {{ grandchild.title }}
                             </a>
                             {% endif %}
@@ -111,7 +118,7 @@
                                 {% for greatgrandchild in greatgrandchildren %}
                                 <li class="nav-list-item">
                                     <a href="{{ greatgrandchild.url | relative_url }}"
-                                        class="nav-list-link{% if greatgrandchild.url == page.url %} active{% endif %}">
+                                        class="nav-list-link{% if greatgrandchild.url == current_page.url %} active{% endif %}">
                                         {{ greatgrandchild.title }}
                                     </a>
                                 </li>
