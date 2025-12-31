@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Practice
+title: Practice - Java Core
 parent: Module 1 - Java Core
 has_children: true
-nav_order: 3
+nav_order: 10
 ---
 
 # Practice

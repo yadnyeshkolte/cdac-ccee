@@ -1,58 +1,530 @@
-# CDAC CCEE Learning Portal
+# 🎓 CDAC CCEE Learning Portal
 
-`bundle install`
+A comprehensive Jekyll-based learning portal for CDAC CCEE modules with interactive MCQ tests, modern UI, and organized content structure.
 
-`gem exec bundle exec jekyll serve`
+## 🚀 Quick Start
 
-This is a Jekyll site designed to host learning materials and MCQ tests. It uses the `just-the-docs` theme for easy navigation.
+### Prerequisites
+- Ruby (2.7 or higher)
+- Bundler gem
+- Jekyll gem
 
-## Project Structure
+### Installation & Running
 
-- `docs/`: Contains the learning content organized by modules.
-  - `docs/module-1/`: Example module structure.
-  - `docs/module-1/practice/`: Contains practice tests.
-- `_data/`: Contains the JSON files for MCQ questions (e.g., `m1_mcq1.json`).
-- `assets/js/mcq.js`: Logic for rendering questions and calculating scores.
-- `_layouts/mcq.html`: The layout for MCQ test pages.
-- `_config.yml`: Jekyll configuration.
+```bash
+# Install dependencies
+bundle install
 
-## How to Add Content
+# Serve the site locally
+bundle exec jekyll serve
 
-1. Create a new directory in `docs/` for your module (e.g., `docs/module-2`).
-2. Add an `index.md` file with `has_children: true` and a `nav_order`.
-3. Add content markdown files inside that directory, specifying the `parent` module.
+# Visit the site
+# Open http://127.0.0.1:4000/cdac-ccee/ in your browser
+```
 
-## How to Add MCQ Tests
+---
 
-1. Create a JSON file in `_data/` (e.g., `m2_test1.json`) following this format:
-   ```json
-   [
-     {
-       "question": "Question text",
-       "options": ["Option A", "Option B", "Option C"],
-       "answer": 0
-     }
-   ]
-   ```
-2. Create a markdown file in your module's practice folder (e.g., `docs/module-2/practice/test1.md`).
-3. Use the `mcq` layout and reference your data file:
-   ```yaml
-   ---
-   layout: mcq
-   title: Test 1
-   parent: Practice
-   grand_parent: Module 2
-   mcq_data: m2_test1
-   ---
-   ```
+## 📁 Project Structure
 
-## Local Development
+```
+cdac-ccee/
+├── _config.yml              # Jekyll configuration
+├── _data/                   # MCQ question data (JSON files)
+│   ├── m1_mcq1.json        # Module 1, MCQ Test 1
+│   ├── m1_mcq2.json        # Module 1, MCQ Test 2
+│   ├── m2_mcq1.json        # Module 2, MCQ Test 1
+│   └── ...
+├── _includes/              # Reusable HTML components
+│   ├── sidebar.html        # Navigation sidebar
+│   ├── header.html         # Site header
+│   └── footer.html         # Site footer
+├── _layouts/               # Page layouts
+│   ├── default.html        # Default page layout
+│   ├── mcq.html           # MCQ test page layout
+│   └── page.html          # Simple page layout
+├── assets/                 # Static assets
+│   ├── css/
+│   │   └── custom.css     # Custom styling
+│   └── js/
+│       ├── navigation.js  # Navigation functionality
+│       └── mcq.js         # MCQ test logic
+├── docs/                   # Learning content
+│   ├── JavaCore/          # Module 1 - Java Core
+│   │   ├── index.md       # Module landing page
+│   │   ├── 00-intro.md    # Introduction
+│   │   ├── datatypes.md   # Content pages
+│   │   └── practice/      # Practice tests
+│   │       ├── index.md   # Practice landing page
+│   │       ├── mcq-test-1.md
+│   │       └── mcq-test-2.md
+│   ├── Database/          # Module 2 - Database
+│   ├── WebTechnologies/   # Module 3
+│   └── ...                # Other modules
+├── index.markdown          # Home page
+└── about.markdown          # About page
+```
 
-1. Install Jekyll and Bundler: `gem install jekyll bundler`
-2. Install dependencies: `bundle install`
-3. Serve the site: `bundle exec jekyll serve`
-4. Visit `http://127.0.0.1:4000/cdac-ccee/`
+---
 
-## Deployment
+## 📝 How to Add New Content
 
-The site is configured to be deployed to `https://yadnyeshkolte.github.io/cdac-ccee`. Ensure GitHub Pages is enabled for your repository.
+### 1. Adding a New Module
+
+**Step 1**: Create the module directory
+```bash
+mkdir -p docs/YourModuleName
+mkdir -p docs/YourModuleName/practice
+```
+
+**Step 2**: Create `docs/YourModuleName/index.md`
+```yaml
+---
+layout: default
+title: Module X - Your Module Name
+nav_order: X
+has_children: true
+permalink: /docs/YourModuleName/
+---
+
+# Module X: Your Module Name
+
+Welcome to Module X. Brief description of what this module covers.
+```
+
+**Step 3**: Create `docs/YourModuleName/practice/index.md`
+```yaml
+---
+layout: default
+title: Practice
+parent: Module X - Your Module Name
+has_children: true
+nav_order: 10
+---
+
+# Practice
+
+Practice what you have learned in Module X.
+```
+
+### 2. Adding a New Note/Content Page
+
+Create a new markdown file in your module directory:
+
+**File**: `docs/YourModuleName/topic-name.md`
+```yaml
+---
+layout: default
+title: Topic Name
+parent: Module X - Your Module Name
+nav_order: 1
+---
+
+# Topic Name
+
+Your content here...
+
+## Subtopic 1
+Content...
+
+## Subtopic 2
+Content...
+```
+
+**Navigation Order Tips**:
+- `nav_order: 0` - Introduction pages
+- `nav_order: 1-9` - Content pages
+- `nav_order: 10` - Practice section
+
+### 3. Adding Nested Content (Sub-sections)
+
+For content with sub-pages:
+
+**Parent Page**: `docs/YourModuleName/main-topic.md`
+```yaml
+---
+layout: default
+title: Main Topic
+parent: Module X - Your Module Name
+has_children: true
+nav_order: 2
+---
+
+# Main Topic
+Overview of the main topic...
+```
+
+**Child Page**: `docs/YourModuleName/main-topic/subtopic.md`
+```yaml
+---
+layout: default
+title: Subtopic Name
+parent: Main Topic
+grand_parent: Module X - Your Module Name
+nav_order: 1
+---
+
+# Subtopic Name
+Detailed content...
+```
+
+---
+
+## 📝 How to Add New Content
+
+### Adding New Notes/Content Pages
+
+**Step 1**: Navigate to your module directory
+```bash
+cd docs/YourModuleName/
+```
+
+**Step 2**: Create a new markdown file with a descriptive name
+```bash
+# Example: For a topic about "Inheritance in Java"
+touch inheritance.md
+```
+
+**Step 3**: Add the front matter and content
+
+**File**: `docs/JavaCore/inheritance.md`
+```yaml
+---
+layout: default
+title: Inheritance in Java
+parent: Module 1 - Java Core
+nav_order: 5
+---
+
+# Inheritance in Java
+
+## What is Inheritance?
+Inheritance is a fundamental OOP concept...
+
+## Types of Inheritance
+1. Single Inheritance
+2. Multilevel Inheritance
+3. Hierarchical Inheritance
+
+## Code Example
+\```java
+class Parent {
+    void display() {
+        System.out.println("Parent class");
+    }
+}
+
+class Child extends Parent {
+    void show() {
+        System.out.println("Child class");
+    }
+}
+\```
+
+## Key Points
+- Use `extends` keyword for inheritance
+- Java supports single inheritance only
+- Use `super` to access parent class members
+```
+
+**Front Matter Explanation**:
+- `layout: default` - Uses the default page layout (required)
+- `title` - Display name in navigation and page header
+- `parent` - Must match the module title exactly (case-sensitive)
+- `nav_order` - Order in the navigation (lower numbers appear first)
+
+**Navigation Order Guidelines**:
+- `0` - Introduction/Overview pages
+- `1-9` - Main content pages
+- `10` - Practice section
+- Use increments of 1 for sequential topics
+
+---
+
+## 🎯 How to Add MCQ Tests
+
+### Step-by-Step Guide
+
+**Step 1**: Create the question data file in `_data/` directory
+
+**File**: `_data/m1_mcq3.json`
+```json
+[
+  {
+    "question": "What is polymorphism in Java?",
+    "options": [
+      "Ability to take many forms",
+      "Ability to hide data",
+      "Ability to inherit properties",
+      "Ability to create objects"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which keyword is used for inheritance in Java?",
+    "options": [
+      "implements",
+      "extends",
+      "inherits",
+      "super"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the default value of a boolean variable?",
+    "options": [
+      "true",
+      "false",
+      "0",
+      "null"
+    ],
+    "answer": 1
+  }
+]
+```
+
+**JSON Format Rules**:
+- Array of question objects
+- Each question must have:
+  - `question`: String - The question text
+  - `options`: Array of 4 strings - Answer choices
+  - `answer`: Number - Index of correct answer (0-3, zero-based)
+- Ensure valid JSON syntax (use a JSON validator if needed)
+
+**Step 2**: Create the MCQ test page in the module's practice directory
+
+**File**: `docs/JavaCore/practice/mcq-test-3.md`
+```yaml
+---
+layout: mcq
+title: MCQ Test 3
+parent: Practice
+grand_parent: Module 1 - Java Core
+nav_order: 3
+mcq_data: m1_mcq3
+---
+
+# MCQ Test 3
+
+This test covers advanced Java concepts including polymorphism and inheritance.
+```
+
+**Front Matter Explanation**:
+- `layout: mcq` - Uses the MCQ layout (required for tests)
+- `title` - Display name (e.g., "MCQ Test 3")
+- `parent: Practice` - Must be exactly "Practice"
+- `grand_parent` - Must match the module title exactly
+- `nav_order` - Test number (1, 2, 3, ...)
+- `mcq_data: m1_mcq3` - References the JSON file (without .json extension)
+
+### MCQ Naming Convention
+
+Follow this pattern for consistency:
+
+**Data Files**: `_data/mX_mcqY.json`
+- `X` = Module number (1-9)
+- `Y` = Test number (1, 2, 3, ...)
+
+**Test Pages**: `docs/ModuleName/practice/mcq-test-Y.md`
+- `Y` = Test number (1, 2, 3, ...)
+
+**Examples**:
+| Module | Test | Data File | Test Page |
+|--------|------|-----------|-----------|
+| Module 1 | Test 1 | `m1_mcq1.json` | `docs/JavaCore/practice/mcq-test-1.md` |
+| Module 2 | Test 3 | `m2_mcq3.json` | `docs/Database/practice/mcq-test-3.md` |
+| Module 5 | Test 2 | `m5_mcq2.json` | `docs/OperatingSystem/practice/mcq-test-2.md` |
+
+### Quick Checklist for Adding MCQs
+
+- [ ] Create JSON file in `_data/` with correct naming (`mX_mcqY.json`)
+- [ ] Validate JSON syntax (all questions have 4 options, answer index is 0-3)
+- [ ] Create markdown file in `docs/ModuleName/practice/`
+- [ ] Set `layout: mcq` in front matter
+- [ ] Set `parent: Practice` (exactly as shown)
+- [ ] Set `grand_parent` to match module title exactly
+- [ ] Set `mcq_data` to match JSON filename (without .json)
+- [ ] Test the MCQ in browser before committing
+
+---
+
+## 🔗 Linking Best Practices
+
+### Internal Links
+
+**Link to another page in the same module**:
+```markdown
+See [Data Types]({{ '/docs/JavaCore/datatypes' | relative_url }}) for more info.
+```
+
+**Link to a page in another module**:
+```markdown
+Check out [SQL Basics]({{ '/docs/Database/3-sqlcommands-basics' | relative_url }}).
+```
+
+**Link to home page**:
+```markdown
+[Back to Home]({{ '/' | relative_url }})
+```
+
+### External Links
+
+```markdown
+[Official Java Documentation](https://docs.oracle.com/javase/)
+```
+
+### Anchor Links (Same Page)
+
+```markdown
+## Section 1
+Content...
+
+## Section 2
+Jump back to [Section 1](#section-1)
+```
+
+---
+
+## 🎨 Styling & Formatting
+
+### Code Blocks
+
+```markdown
+\`\`\`java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+\`\`\`
+```
+
+### Callout Boxes
+
+```markdown
+> **Note**: This is an important note.
+
+> **Tip**: Pro tip for better understanding.
+
+> **Warning**: Be careful with this approach.
+```
+
+### Tables
+
+```markdown
+| Header 1 | Header 2 | Header 3 |
+|----------|----------|----------|
+| Cell 1   | Cell 2   | Cell 3   |
+| Cell 4   | Cell 5   | Cell 6   |
+```
+
+---
+
+## 🔧 Configuration
+
+### Site Configuration (`_config.yml`)
+
+```yaml
+title: Learning
+description: Learning materials for modules.
+baseurl: "/cdac-ccee"
+url: "https://yadnyeshkolte.github.io"
+
+# Navigation
+nav_sort: case_insensitive
+
+# Search
+search_enabled: true
+```
+
+### Navigation Order
+
+Pages are sorted by `nav_order` in the front matter:
+- Lower numbers appear first
+- `nav_order: 0` - Home page
+- `nav_order: 1-9` - Modules
+- `nav_order: 100` - About page
+
+---
+
+## 📊 Current Modules
+
+| Module | Directory | MCQ Tests |
+|--------|-----------|-----------|
+| Module 1 - Java Core | `docs/JavaCore/` | 2 tests |
+| Module 2 - Database | `docs/Database/` | 2 tests |
+| Module 3 - Web Technologies | `docs/WebTechnologies/` | 2 tests |
+| Module 4 - ADS | `docs/ADS/` | 2 tests |
+| Module 5 - Operating System | `docs/OperatingSystem/` | 2 tests |
+| Module 6 - Advanced Web Java | `docs/Adv.WebJava/` | 2 tests |
+| Module 7 - C++ | `docs/C++/` | 2 tests |
+| Module 8 - ASP.NET C# | `docs/ASP.NET-C#/` | 2 tests |
+| Module 9 - Aptitude | `docs/Aptitude/` | 2 tests |
+
+---
+
+## 🐛 Troubleshooting
+
+### MCQ Test Not Showing Questions
+
+1. Check that the `mcq_data` value matches the JSON filename (without .json)
+2. Verify the JSON file exists in `_data/` directory
+3. Ensure JSON is valid (use a JSON validator)
+4. Check browser console for JavaScript errors
+
+### Navigation Not Working
+
+1. Verify `parent` and `grand_parent` match exactly (case-sensitive)
+2. Check that parent pages have `has_children: true`
+3. Ensure `nav_order` is set correctly
+
+### Page Not Found (404)
+
+1. Check the `permalink` in the module's `index.md`
+2. Ensure permalink matches the directory structure
+3. Verify the file has the correct front matter
+
+---
+
+## 🚀 Deployment
+
+### GitHub Pages
+
+1. Push your changes to the `main` branch
+2. Go to repository Settings → Pages
+3. Set source to `main` branch
+4. Site will be available at `https://yadnyeshkolte.github.io/cdac-ccee/`
+
+### Local Testing Before Deploy
+
+```bash
+# Build the site
+bundle exec jekyll build
+
+# Check the _site directory for generated files
+ls _site/
+
+# Serve and test
+bundle exec jekyll serve
+```
+
+---
+
+## 📄 License
+
+Copyright © @yadnyeshkolte
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test locally
+5. Submit a pull request
+
+---
+
+## 📞 Support
+
+For issues or questions, please open an issue on GitHub.

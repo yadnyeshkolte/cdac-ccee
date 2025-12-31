@@ -1,7 +1,7 @@
 ---
 layout: mcq
 title: MCQ Test 1
-parent: Practice
+parent: Practice - Java Core
 grand_parent: Module 1 - Java Core
 nav_order: 1
 mcq_data: m1_mcq1
