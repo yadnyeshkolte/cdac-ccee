@@ -155,6 +155,191 @@
 
   <!-- Mobile Menu Toggle Script -->
   <script src="{{ '/assets/js/navigation.js' | relative_url }}"></script>
+
+  <!-- Mermaid Diagram Support -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <!-- SVG Pan Zoom -->
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Initialize Mermaid with custom dark theme - dark rich colors
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'base',
+        securityLevel: 'loose',
+        themeVariables: {
+          darkMode: true,
+          fontFamily: 'Inter, sans-serif',
+          background: '#0a0a12',
+          primaryColor: '#7f1d1d', /* Dark Red */
+          primaryTextColor: '#f0f0f5',
+          primaryBorderColor: '#991b1b',
+          lineColor: '#6366f1',
+
+          secondaryColor: '#14532d', /* Dark Green */
+          secondaryTextColor: '#f0f0f5',
+          secondaryBorderColor: '#166534',
+
+          tertiaryColor: '#1e3a8a', /* Dark Blue */
+          tertiaryTextColor: '#f0f0f5',
+          tertiaryBorderColor: '#1d4ed8',
+
+          // Edges and nodes
+          mainBkg: '#1a1a2e',
+          nodeBorder: '#6366f1',
+          clusterBkg: '#1a1a2e',
+          clusterBorder: '#6366f1',
+          defaultLinkColor: '#818cf8',
+          titleColor: '#f0f0f5',
+          textColor: '#f0f0f5',
+
+          // Git graph colors - dark versions
+          git0: '#991b1b',
+          git1: '#166534',
+          git2: '#1e40af',
+          git3: '#7c2d12',
+          git4: '#581c87',
+          git5: '#0f766e',
+          git6: '#854d0e',
+          git7: '#be123c',
+
+          // Mindmap
+          cScale0: '#7f1d1d',
+          cScale1: '#14532d',
+          cScale2: '#1e3a8a',
+          cScale3: '#78350f'
+        },
+        flowchart: {
+          useMaxWidth: true,
+          htmlLabels: true,
+          curve: 'basis'
+        }
+      });
+
+      // Process mermaid blocks
+      const codeBlocks = document.querySelectorAll('pre > code.language-mermaid');
+
+      codeBlocks.forEach(function (codeBlock, index) {
+        const pre = codeBlock.parentElement;
+        const rawCode = codeBlock.textContent;
+
+        // Create wrapper
+        const wrapper = document.createElement('div');
+        wrapper.className = 'mermaid-wrapper';
+        wrapper.style.position = 'relative';
+        wrapper.style.marginBottom = '2rem';
+        wrapper.style.background = 'var(--bg-elevated)';
+        wrapper.style.borderRadius = '12px';
+        wrapper.style.border = '1px solid var(--border-color)';
+        wrapper.style.overflow = 'hidden';
+
+        // Create toolbar
+        const toolbar = document.createElement('div');
+        toolbar.className = 'mermaid-toolbar';
+        toolbar.innerHTML = `
+          <button class="mermaid-btn" id="zoom-in-${index}" title="Zoom In">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+          </button>
+          <button class="mermaid-btn" id="zoom-out-${index}" title="Zoom Out">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+          </button>
+          <button class="mermaid-btn" id="reset-${index}" title="Reset Zoom">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+          </button>
+          <button class="mermaid-btn" id="copy-${index}" title="Copy Code">
+             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          </button>
+        `;
+
+        // Create mermaid container
+        const mermaidDiv = document.createElement('div');
+        mermaidDiv.className = 'mermaid';
+        mermaidDiv.textContent = rawCode;
+        mermaidDiv.id = `mermaid-${index}`;
+        // Important: Remove default padding/border from mermaid div as wrapper handles it
+        mermaidDiv.style.padding = '0';
+        mermaidDiv.style.margin = '0';
+        mermaidDiv.style.border = 'none';
+        mermaidDiv.style.background = 'transparent';
+
+        wrapper.appendChild(toolbar);
+        wrapper.appendChild(mermaidDiv);
+        pre.parentNode.replaceChild(wrapper, pre);
+
+        // Copy functionality
+        toolbar.querySelector(`#copy-${index}`).addEventListener('click', (e) => {
+          e.stopPropagation(); // Prevent affecting zoom
+          navigator.clipboard.writeText(rawCode).then(() => {
+            const btn = toolbar.querySelector(`#copy-${index}`);
+            // Save original icon
+            const originalIcon = btn.innerHTML;
+            btn.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+            setTimeout(() => {
+              btn.innerHTML = originalIcon;
+            }, 2000);
+          });
+        });
+      });
+
+      // Run mermaid
+      mermaid.run().then(() => {
+        // Initialize Pan Zoom after rendering
+        document.querySelectorAll('.mermaid-wrapper').forEach((wrapper, index) => {
+          const mermaidContainer = wrapper.querySelector('.mermaid');
+          const svg = mermaidContainer.querySelector('svg');
+
+          if (svg) {
+            // Ensure SVG fills container
+            svg.style.width = '100%';
+            svg.style.height = '100%';
+            svg.style.minHeight = '300px';
+
+            // Initialize svg-pan-zoom
+            // We use try-catch because some simple diagrams might fail or if svg is not valid
+            try {
+              const panZoom = svgPanZoom(svg, {
+                zoomEnabled: true,
+                controlIconsEnabled: false,
+                fit: true,
+                center: true,
+                minZoom: 0.5,
+                maxZoom: 10,
+                dblClickZoomEnabled: false // Disable double click zoom
+              });
+
+              // Bind toolbar buttons with stopPropagation
+              const bindButton = (id, action) => {
+                const btn = wrapper.querySelector(`#${id}`);
+                if (btn) {
+                  btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    action();
+                  });
+                }
+              };
+
+              bindButton(`zoom-in-${index}`, () => panZoom.zoomIn());
+              bindButton(`zoom-out-${index}`, () => panZoom.zoomOut());
+              bindButton(`reset-${index}`, () => {
+                panZoom.resize();
+                panZoom.fit();
+                panZoom.center();
+              });
+
+              // Initial fit
+              panZoom.resize();
+              panZoom.fit();
+              panZoom.center();
+            } catch (err) {
+              console.error("Mermaid PanZoom Error:", err);
+            }
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

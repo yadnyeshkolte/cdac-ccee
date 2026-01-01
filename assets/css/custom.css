@@ -1398,3 +1398,118 @@ hr {
     border: 1px solid #ddd;
   }
 }
+
+/* ============ Mermaid Diagrams ============ */
+.mermaid {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  text-align: center;
+  overflow: hidden;
+  /* Changed for pan-zoom */
+  position: relative;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Force Dark Theme Colors (Override inline styles) */
+/* Nodes */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon,
+.mermaid .node path {
+  fill: var(--bg-surface) !important;
+  stroke: var(--primary-400) !important;
+  stroke-width: 2px !important;
+}
+
+/* Text */
+.mermaid .node .label {
+  color: var(--text-primary) !important;
+  fill: var(--text-primary) !important;
+}
+
+.mermaid .edgeLabel {
+  background-color: var(--bg-base) !important;
+  color: var(--text-secondary) !important;
+}
+
+/* Edges */
+.mermaid .edgePath .path {
+  stroke: var(--text-secondary) !important;
+  stroke-width: 2px !important;
+}
+
+/* Markers (Arrowheads) */
+.mermaid marker path {
+  fill: var(--text-secondary) !important;
+  stroke: var(--text-secondary) !important;
+}
+
+/* Toolbar Styles */
+.mermaid-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background: var(--bg-elevated);
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.mermaid-wrapper:hover .mermaid-toolbar {
+  opacity: 1;
+}
+
+.mermaid-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.mermaid-btn svg {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.mermaid-btn:hover {
+  background: var(--primary-500);
+  color: white;
+  border-color: var(--primary-500);
+}
+
+/* Specific colors for specific node types if needed, using CSS variables */
+.mermaid .node.section rect {
+  fill: var(--bg-surface) !important;
+}
+
+/* Ensure mermaid diagrams are responsive on mobile */
+@media (max-width: 768px) {
+  .mermaid {
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+}
