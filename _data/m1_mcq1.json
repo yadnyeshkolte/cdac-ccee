@@ -1,22 +1,312 @@
 [
   {
-    "question": "What is the size of int variable?",
-    "options": ["8 bit", "16 bit", "32 bit", "64 bit"],
+    "question": "Which of the following is true with respect to the programs written in Java?",
+    "options": [
+      "They are compiled into object code by JVM",
+      "They are compiled into byte code by Java Compiler",
+      "They are compiled and interpreted by the Java Compiler",
+      "They are interpreted by JAVAC"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of these is not a method of Object class?",
+    "options": [
+      "wait()",
+      "sleep()",
+      "notify()",
+      "equals()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Determine the output of the following program: public class SattePeSatta { public static void main(String[] ar) { RuntimeException bhaagMilka = null; throw bhaagMilka; } }",
+    "options": [
+      "Compilation fails, because the main() method does not declare that it throws RuntimeException in its declaration.",
+      "Successfully compiles, but throws java.lang.RuntimeException when executed.",
+      "Successfully compiles, but throws java.lang.NullPointerException when executed.",
+      "Successfully compiles, and executes completely will no output on console."
+    ],
     "answer": 2
   },
   {
-    "question": "Which of the following is not a Java features?",
-    "options": ["Dynamic", "Architecture Neutral", "Use of pointers", "Object-oriented"],
+    "question": "Determine the output of the following program: public class TheImmutableStringClass { public static void main(String[] ar) { String a, b, c; c = new String(\"hum\"); a = new String(\"tum\"); b = a; a = new String(\"dum\"); c = b; System.out.println(c); } }",
+    "options": [
+      "hum",
+      "tum",
+      "hum tum",
+      "No output"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Determine the output of the following program: abstract class AlexanderTheGreat { public static void main(String[] args) { System.out.println(\" will conquer the World !!!\"); } }",
+    "options": [
+      "Compile-time exception",
+      "Runtime exception",
+      "Compiles, but with warnings",
+      "executes without any issues"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which of the following statement is most correct with respect to interfaces in Java 8?",
+    "options": [
+      "can have non-abstract methods only if they are declared using default keyword",
+      "can have non-abstract methods only if they are declared using static keyword",
+      "can have non-abstract methods only if they are declared using anyone default or static keyword",
+      "can have non-abstract methods only if they are declared using both default and static keywords"
+    ],
     "answer": 2
   },
   {
-    "question": "The \\u0021 article referred to as a",
-    "options": ["Unicode escape sequence", "Octal escape", "Hexadecimal", "Line feed"],
+    "question": "Determine the output of the following program: class JigglyWiggly { public static void main(String a[]) { try { System.exit(1); } finally { System.out.println(\"HuHaHuHa\"); } } }",
+    "options": [
+      "HuHaHuHa",
+      "Program terminates without executing the finally block",
+      "The program will not compile",
+      "The program will throw an error at runtime"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Determine the output of the following program: class Abracadabra { int pataKaro; public static void main(String[] a) { Abracadabra kuchBhi; System.out.println(kuchBhi.pataKaro); } }",
+    "options": [
+      "Compile-time exception: The local variable kuchBhi may not have been initialized",
+      "Runtime exception: NullPointerException",
+      "Runtime exception: The variable pataKaro cannot be found",
+      "Compile-time exception: The variable pataKaro may not have been initialized"
+    ],
     "answer": 0
   },
   {
-    "question": "_____ is used to find and fix bugs in the Java programs.",
-    "options": ["JVM", "JRE", "JDK", "JDB"],
+    "question": "Determine the output of the following code snippet: int i = 0; int j = i++ + ++i + --i + i; System.out.print(i); System.out.print(\" \"+j);",
+    "options": [
+      "1 3",
+      "1 4",
+      "1 5",
+      "1 6"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Determine the output of the following program: class Appette { Appette() { this(10); } Appette(int i) { this(); } public static void main(String[] a) { Appette i = new Appette(); } }",
+    "options": [
+      "Compile-time exception",
+      "Runtime exception",
+      "No output",
+      "Compilation succeeds"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What will be the output of the program? class Test { public static void main(String [] args) { int x = 0; int y = 0; for (int z = 0; z < 5; z++) { if (( ++x > 2 ) && (++y > 2)) { x++; } } System.out.println(x + \" \" +y); } }",
+    "options": [
+      "5 2",
+      "5 3",
+      "6 3",
+      "6 4"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What will be the output of the program? class Test { public static void main(String [] args) { int x=20; String sup = (x < 15) ? \"small\" : (x < 22)? \"tiny\" : \"huge\"; System.out.println(sup); } }",
+    "options": [
+      "small",
+      "tiny",
+      "huge",
+      "Compilation fails"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What will be the output of the program? class Equals { public static void main(String [] args) { int x = 100; double y = 100.1; boolean b = (x = y); System.out.println(b); } }",
+    "options": [
+      "true",
+      "false",
+      "Compilation fails",
+      "An exception is thrown at runtime"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "You want subclasses in any package to have access to members of a superclass. Which is the most restrictive access that accomplishes this objective?",
+    "options": [
+      "public",
+      "private",
+      "protected",
+      "transient"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Consider the following scenario: A given String needs to be searched, in text file, and report the number of occurrences with corresponding line numbers. Which of the following stream classes can be used to implement the above requirement?",
+    "options": [
+      "FileInputStream and PipedInputStream",
+      "FileInputStream and InputStreamReader",
+      "InputStreamReader and FilterInputStream",
+      "FileReader and BufferedReader"
+    ],
     "answer": 3
+  },
+  {
+    "question": "What will be the output of the program? public class Foo { public static void main(String[] args) { try { return; } finally { System.out.println( \"Finally\" ); } } }",
+    "options": [
+      "Finally",
+      "Compilation fails.",
+      "The code runs with no output.",
+      "An exception is thrown at runtime."
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What will be the output of the program? class Bitwise { public static void main(String [] args) { int x = 11 & 9; int y = x ^ 3; System.out.println( y | 12 ); } }",
+    "options": [
+      "0",
+      "7",
+      "8",
+      "14"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which of the following is FALSE regarding Serialization in Java?",
+    "options": [
+      "java.io.Serializable has to be implemented for serializing an object",
+      "Fields that are marked as transient will not be serialized",
+      "java.io.IOException may occur during serialization",
+      "Serialization is platform and architecture dependent"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the purpose of Thread.join()?",
+    "options": [
+      "It allows one thread to wait for completion of another thread",
+      "It is used to interrupt another thread",
+      "It suspends the activity of the current thread immediately",
+      "It makes the current thread to sleep immediately"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following can be used to implement a dynamically resizable array that does not have a default size?",
+    "options": [
+      "Vector",
+      "ArrayList",
+      "Arrays",
+      "HashMap"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the default priority of a Thread in Java?",
+    "options": [
+      "MIN priority",
+      "MAX priority",
+      "NORM priority",
+      "priority can't be determined"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "In order to create a thread using Runnable interface which method has to be implemented in our class?",
+    "options": [
+      "public void run() throws Exception",
+      "public void run()",
+      "public void run(Runnable r)",
+      "public void run(Runnable r,String s)"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following will ensure that the elements of the collection will be stored in the order they were inserted?",
+    "options": [
+      "LinkedHashSet",
+      "HashSet",
+      "TreeSet",
+      "Vector"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following will ensure that the elements always remain in a sorted order?",
+    "options": [
+      "HashMap",
+      "TreeMap",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which interface is used to iterate through a given collection?",
+    "options": [
+      "Iterator",
+      "Iterate",
+      "Iterater",
+      "Iteratar"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following collection store the data in key value pair?",
+    "options": [
+      "HashMap",
+      "TreeSet",
+      "LinkedList",
+      "SortedSet"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following collection will not accommodate duplicate values?",
+    "options": [
+      "ArrayList",
+      "LinkedList",
+      "HashSet",
+      "TreeList"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Under which of the following scenarios a checked exception is thrown?",
+    "options": [
+      "5th element of an array is accessed and is of size 3",
+      "A file that actually does not exist and is opened for reading",
+      "method is called on a String object which assigned to null",
+      "Given username and password is checked with database and found invalid"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following statement is true?",
+    "options": [
+      "To call the sleep() method, a thread must own the lock of the object which the call is to be made.",
+      "To call the join() method, a thread must own the lock of the object on which the call is to be made",
+      "To call the wait() method, a thread must own the lock of the object on which the call is to be made.",
+      "To call the yield() method, a thread must own the lock of the object on which the call is to be made."
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following statements is true?",
+    "options": [
+      "program can suggest that garbage collection be performed but cannot force it",
+      "Garbage collection is platform independent",
+      "The automatic garbage collection of the JVM prevents programs from ever running out of memory",
+      "Java doesn't support garbage collection"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following statements is INCORRECT regarding Instance Initialization Block?",
+    "options": [
+      "A class can have more than one instance block",
+      "An instance block cannot initialise the class members",
+      "Instance blocks are executed before constructors",
+      "Instance blocks are executed for every created instance"
+    ],
+    "answer": 1
   }
 ]

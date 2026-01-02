@@ -1,21 +1,401 @@
 [
   {
-    "question": "Sample Question 1 for Module 1",
+    "question": "What is the size of an int variable in Java?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "8 bit",
+      "16 bit",
+      "32 bit",
+      "64 bit"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is NOT a feature of the Java language?",
+    "options": [
+      "Platform Independent",
+      "Object-Oriented",
+      "Use of pointers",
+      "Robust"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which loop structure is guaranteed to execute at least once?",
+    "options": [
+      "for loop",
+      "while loop",
+      "do-while loop",
+      "enhanced for loop"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "In Java, converting a larger data type (e.g., double) to a smaller one (e.g., int) is known as what?",
+    "options": [
+      "Widening conversion",
+      "Narrowing conversion",
+      "Auto-boxing",
+      "Promotion"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the default value of a boolean variable in Java?",
+    "options": [
+      "true",
+      "false",
+      "0",
+      "null"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which keyword is used to inherit a class in Java?",
+    "options": [
+      "implement",
+      "extends",
+      "inherits",
+      "super"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which access modifier allows visibility within the same package and to subclasses in different packages?",
+    "options": [
+      "public",
+      "private",
+      "protected",
+      "default"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the primary difference between a String and a StringBuffer?",
+    "options": [
+      "String is mutable, StringBuffer is immutable",
+      "StringBuffer is thread-safe and mutable",
+      "String can be subclassed",
+      "There is no difference"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method is called automatically when an object is created?",
+    "options": [
+      "init",
+      "main",
+      "constructor",
+      "finalize"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which collection class allows a single null key and multiple null values?",
+    "options": [
+      "Hashtable",
+      "Vector",
+      "HashMap",
+      "TreeMap"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the initial capacity of an ArrayList if not specified?",
+    "options": [
+      "5",
+      "10",
+      "16",
+      "20"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which interface does the Vector class implement?",
+    "options": [
+      "Set",
+      "List",
+      "Map",
+      "Queue"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which keyword is used to prevent a method from being overridden?",
+    "options": [
+      "static",
+      "abstract",
+      "final",
+      "volatile"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the purpose of the 'finally' block in exception handling?",
+    "options": [
+      "To handle the exception",
+      "To specify the exception type",
+      "To execute code regardless of whether an exception occurs",
+      "To throw a new exception"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of these is a Checked Exception?",
+    "options": [
+      "NullPointerException",
+      "ArrayIndexOutOfBoundsException",
+      "IOException",
+      "ArithmeticException"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the root interface of the Collection hierarchy?",
+    "options": [
+      "List",
+      "Set",
+      "Collection",
+      "Map"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which Map implementation maintains the insertion order of elements?",
+    "options": [
+      "HashMap",
+      "TreeMap",
+      "LinkedHashMap",
+      "Hashtable"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the result of '15 >> 2' in Java?",
+    "options": [
+      "30",
+      "60",
+      "3",
+      "7"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which new feature in Java 8 allows methods to be defined in interfaces?",
+    "options": [
+      "Abstract methods",
+      "Default methods",
+      "Final methods",
+      "Native methods"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the purpose of the 'transient' keyword?",
+    "options": [
+      "To prevent a variable from being serialized",
+      "To make a variable thread-safe",
+      "To make a variable constant",
+      "To allow access across packages"
     ],
     "answer": 0
   },
   {
-    "question": "Sample Question 2 for Module 1",
+    "question": "Which method is used to start a thread execution?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "run()",
+      "start()",
+      "init()",
+      "execute()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the problem with the deprecated 'suspend()' method in Threads?",
+    "options": [
+      "It consumes too much memory",
+      "It terminates the thread immediately",
+      "It is prone to deadlocks",
+      "It ignores thread priority"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which JDBC driver type converts JDBC calls into ODBC calls?",
+    "options": [
+      "Type-1",
+      "Type-2",
+      "Type-3",
+      "Type-4"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "In JDBC, which interface is used to execute stored procedures?",
+    "options": [
+      "Statement",
+      "PreparedStatement",
+      "CallableStatement",
+      "ResultSet"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which JSP implicit object is used to write content to the client?",
+    "options": [
+      "request",
+      "response",
+      "out",
+      "writer"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which JSTL tag is used for iteration, similar to a for loop?",
+    "options": [
+      "<c:if>",
+      "<c:choose>",
+      "<c:forEach>",
+      "<c:loop>"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the main purpose of the Session Façade design pattern?",
+    "options": [
+      "To display data to the user",
+      "To encapsulate complex business logic interactions",
+      "To manage database connections directly",
+      "To handle HTTP requests"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which Java 8 feature allows JavaScript to be executed on the JVM?",
+    "options": [
+      "Rhino",
+      "Nashorn",
+      "V8",
+      "SpiderMonkey"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method in the Object class is used to return a string representation of the object?",
+    "options": [
+      "getString()",
+      "print()",
+      "toString()",
+      "valueOf()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does the 'synchronized' keyword ensure in multithreading?",
+    "options": [
+      "Faster execution",
+      "That only one thread accesses a resource at a time",
+      "That threads run in parallel",
+      "That deadlocks are prevented"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which class is the superclass of all Exception classes?",
+    "options": [
+      "RuntimeException",
+      "Error",
+      "Throwable",
+      "String"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is a Marker Interface in Java?",
+    "options": [
+      "An interface with only static methods",
+      "An interface with no fields or methods",
+      "An interface with default methods",
+      "An interface used for marking errors"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which layout manager is the default for a Frame?",
+    "options": [
+      "FlowLayout",
+      "BorderLayout",
+      "GridLayout",
+      "CardLayout"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the return type of the 'hashCode()' method?",
+    "options": [
+      "long",
+      "Object",
+      "int",
+      "String"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which stream class is used to read characters from a file?",
+    "options": [
+      "FileInputStream",
+      "FileReader",
+      "ObjectInputStream",
+      "DataInputStream"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which operator is used to check if an object is an instance of a specific class?",
+    "options": [
+      "typeof",
+      "instanceof",
+      "isA",
+      "check"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the size of a char data type in Java?",
+    "options": [
+      "8 bit",
+      "16 bit",
+      "32 bit",
+      "Depends on the OS"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of these is NOT a valid main method signature?",
+    "options": [
+      "public static void main(String[] args)",
+      "static public void main(String[] args)",
+      "public void static main(String[] args)",
+      "public static void main(String... args)"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which package contains the lightweight UI components (Swing)?",
+    "options": [
+      "java.awt",
+      "javax.swing",
+      "java.ui",
+      "java.applet"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does the 'super' keyword refer to?",
+    "options": [
+      "Current class object",
+      "Parent class object",
+      "Static method",
+      "Abstract class"
     ],
     "answer": 1
   }
