@@ -2,13 +2,105 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#6366f1">
 
+{% assign page_title = page.title | default: site.title %}
+{% assign page_description = page.description | default: site.description %}
+{% assign page_url = page.url | absolute_url %}
+{% assign site_url = site.url | append: site.baseurl %}
+
 <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 
-{% if site.description %}
-<meta name="description" content="{{ site.description }}">
+<!-- Primary Meta Tags -->
+<meta name="title" content="{{ page_title }}{% if page.title %} | {{ site.title }}{% endif %}">
+<meta name="description" content="{{ page_description }}">
+<meta name="keywords"
+    content="CDAC, CCEE, C-CAT, C-DAC exam preparation, Java programming, Data Structures, Algorithms, Database Technologies, SQL, MongoDB, Web Technologies, HTML, CSS, JavaScript, C++, Operating Systems, ASP.NET, C#, MCQ practice, programming notes, CDAC study material, CDAC entrance exam, computer science notes, interview preparation">
+<meta name="author" content="Yadnyesh Kolte">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English">
+<meta name="revisit-after" content="7 days">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ page_url }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ page_url }}">
+<meta property="og:title" content="{{ page_title }}{% if page.title %} | {{ site.title }}{% endif %}">
+<meta property="og:description" content="{{ page_description }}">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="{{ site_url }}/assets/images/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt"
+    content="CDAC CCEE Learning Portal - Study materials for programming and computer science">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="{{ page_url }}">
+<meta name="twitter:title" content="{{ page_title }}{% if page.title %} | {{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{{ page_description }}">
+<meta name="twitter:image" content="{{ site_url }}/assets/images/og-image.png">
+<meta name="twitter:image:alt" content="CDAC CCEE Learning Portal">
+
+<!-- Additional SEO -->
+<meta name="application-name" content="{{ site.title }}">
+<meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Structured Data / JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "description": "{{ site.description }}",
+  "url": "{{ site_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "Yadnyesh Kolte",
+    "url": "https://yadnyeshkolte.github.io"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Yadnyesh Kolte"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site_url }}/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+{% if page.layout == 'page' or page.layout == 'default' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ page_title }}",
+  "description": "{{ page_description }}",
+  "url": "{{ page_url }}",
+  "author": {
+    "@type": "Person",
+    "name": "Yadnyesh Kolte"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Yadnyesh Kolte"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page_url }}"
+  }
+}
+</script>
 {% endif %}
 
-<!-- SEO Tags -->
+<!-- SEO Tags from jekyll-seo-tag -->
 {% seo %}
 
 <!-- Google Fonts -->

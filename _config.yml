@@ -1,7 +1,23 @@
-title: Learning
-description: Learning materials for modules.
+title: CDAC CCEE Learning Portal
+description: "Free CDAC C-CAT and CCEE exam preparation materials. Comprehensive notes, MCQ practice tests, and study resources for Java, Data Structures, Algorithms, Database, Web Technologies, C++, Operating Systems, and more."
 baseurl: "/cdac-ccee"
 url: "https://yadnyeshkolte.github.io"
+
+# Author and Social
+author:
+  name: Yadnyesh Kolte
+  url: https://yadnyeshkolte.github.io
+
+# GitHub Repository
+github_username: yadnyeshkolte
+repository: yadnyeshkolte/cdac-ccee
+
+# Social/Open Graph
+social:
+  name: Yadnyesh Kolte
+  links:
+    - https://github.com/yadnyeshkolte
+    - https://yadnyeshkolte.github.io
 
 # Custom theme - no external theme dependency
 
@@ -17,6 +33,10 @@ nav_sort: case_insensitive
 
 # Footer
 footer_content: "Copyright &copy; @yadnyeshkolte"
+
+# SEO Settings
+lang: en
+tagline: "Master programming concepts for CDAC C-CAT & CCEE exams"
 
 plugins:
   - jekyll-feed
