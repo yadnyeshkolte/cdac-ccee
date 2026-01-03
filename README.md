@@ -1,4 +1,4 @@
-# 🎓 CDAC CCEE Learning Portal
+# 🎓 CDAC CCEE Learning Docs
 
 A comprehensive Jekyll-based learning portal for CDAC CCEE modules with interactive MCQ tests, modern UI, and organized content structure.
 
