@@ -1,0 +1,76 @@
+{% comment %}
+MCQ Navigation Auto-Generator
+
+This include automatically detects MCQ data files for a given module
+and generates navigation links. It scans _data/ for mX_mcqY.json files
+based on the module_prefix parameter.
+
+Usage in practice/index.md:
+{% include mcq-navigation.html module_prefix="m1" module_dir="JavaCore" %}
+
+Parameters:
+- module_prefix: The module prefix (e.g., "m1", "m6")
+- module_dir: The module directory name (e.g., "JavaCore", "Database")
+{% endcomment %}
+
+<div class="mcq-navigation">
+    <h3>📝 Available MCQ Tests</h3>
+    <div class="mcq-grid">
+        {% assign prefix = include.module_prefix %}
+        {% assign dir = include.module_dir %}
+
+        {% comment %} Check for up to 10 MCQ tests per module {% endcomment %}
+        {% for i in (1..10) %}
+        {% assign data_name = prefix | append: "_mcq" | append: i %}
+        {% assign data = site.data[data_name] %}
+        {% if data %}
+        <a href="{{ '/docs/' | append: dir | append: '/practice/mcq-test-' | append: i | relative_url }}"
+            class="mcq-card">
+            <span class="mcq-badge">Test {{ i }}</span>
+            <span class="mcq-count">{{ data.size }} questions</span>
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    .mcq-navigation h3 {
+        margin-bottom: 1rem;
+    }
+
+    .mcq-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+    }
+
+    .mcq-card {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1.25rem;
+        background: var(--bg-elevated);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .mcq-card:hover {
+        border-color: var(--primary-400);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    }
+
+    .mcq-badge {
+        color: var(--text-primary);
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .mcq-count {
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        margin-top: 0.25rem;
+    }
+</style>

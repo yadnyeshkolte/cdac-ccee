@@ -1068,6 +1068,43 @@ hr {
   border: none !important;
 }
 
+/* MCQ Markdown/Code Styling */
+.mcq-question-text,
+.mcq-option-text {
+  display: inline;
+}
+
+.mcq-question-text code,
+.mcq-option-text code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  background: rgba(99, 102, 241, 0.2);
+  color: var(--amber-400);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.question-block h3 .mcq-question-text code {
+  font-size: 0.8em;
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* For longer code blocks in questions */
+.mcq-question-text code:only-child,
+.mcq-question-text>code:first-child:last-child {
+  display: block;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--bg-surface);
+  border-radius: 8px;
+  line-height: 1.5;
+}
+
 /* ============ Aux Links ============ */
 .aux-nav {
   display: flex;

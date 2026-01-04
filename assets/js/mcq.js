@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('mcq-container');
     const submitBtn = document.getElementById('submit-btn');
     const resultContainer = document.getElementById('result-container');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     totalSpan.textContent = questions.length;
 
-    // Render questions with modern styling
+    // Render questions with modern styling and markdown support
     questions.forEach((q, index) => {
         const questionDiv = document.createElement('div');
         questionDiv.className = 'question-block';
@@ -50,19 +50,31 @@ document.addEventListener('DOMContentLoaded', function() {
             font-size: 0.85rem;
             font-weight: 600;
             margin-right: 10px;
+            flex-shrink: 0;
         `;
         qNumber.textContent = index + 1;
 
         const qTitle = document.createElement('h3');
         qTitle.style.display = 'flex';
-        qTitle.style.alignItems = 'center';
+        qTitle.style.alignItems = 'flex-start';
+
+        // Create question text span with markdown support
+        const qText = document.createElement('span');
+        qText.className = 'mcq-question-text';
+        // Use marked.parseInline for inline markdown (backticks, bold, etc.)
+        if (typeof marked !== 'undefined' && marked.parseInline) {
+            qText.innerHTML = marked.parseInline(q.question);
+        } else {
+            qText.textContent = q.question;
+        }
+
         qTitle.appendChild(qNumber);
-        qTitle.appendChild(document.createTextNode(q.question));
+        qTitle.appendChild(qText);
         questionDiv.appendChild(qTitle);
 
         const optionsDiv = document.createElement('div');
         optionsDiv.style.marginTop = '1rem';
-        
+
         q.options.forEach((opt, optIndex) => {
             const wrapper = document.createElement('div');
             wrapper.style.marginBottom = '0.5rem';
@@ -87,12 +99,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 font-size: 0.8rem;
                 font-weight: 600;
                 margin-right: 10px;
+                flex-shrink: 0;
             `;
             optionLetter.textContent = String.fromCharCode(65 + optIndex); // A, B, C, D
 
+            // Create option text span with markdown support
+            const optText = document.createElement('span');
+            optText.className = 'mcq-option-text';
+            if (typeof marked !== 'undefined' && marked.parseInline) {
+                optText.innerHTML = marked.parseInline(opt);
+            } else {
+                optText.textContent = opt;
+            }
+
             label.appendChild(input);
             label.appendChild(optionLetter);
-            label.appendChild(document.createTextNode(opt));
+            label.appendChild(optText);
             wrapper.appendChild(label);
             optionsDiv.appendChild(wrapper);
         });
@@ -114,7 +136,7 @@ document.addEventListener('DOMContentLoaded', function() {
         container.appendChild(questionDiv);
     });
 
-    submitBtn.addEventListener('click', function() {
+    submitBtn.addEventListener('click', function () {
         let correctCount = 0;
         let incorrectCount = 0;
 

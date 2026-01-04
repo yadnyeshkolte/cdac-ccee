@@ -285,10 +285,33 @@ class Child extends Parent {
 **JSON Format Rules**:
 - Array of question objects
 - Each question must have:
-  - `question`: String - The question text
-  - `options`: Array of 4 strings - Answer choices
+  - `question`: String - The question text (supports inline markdown!)
+  - `options`: Array of 4 strings - Answer choices (supports inline markdown!)
   - `answer`: Number - Index of correct answer (0-3, zero-based)
 - Ensure valid JSON syntax (use a JSON validator if needed)
+
+### 💡 Markdown Support in Questions
+
+You can use **backticks** for inline code in questions and options. This is perfect for programming questions!
+
+**Example with code:**
+```json
+{
+  "question": "What will be the output? `public class Foo { public static void main(String[] args) { try { return; } finally { System.out.println(\"Finally\"); } } }`",
+  "options": [
+    "`Finally`",
+    "Compilation fails.",
+    "The code runs with no output.",
+    "An exception is thrown at runtime."
+  ],
+  "answer": 0
+}
+```
+
+**Supported Markdown:**
+- Inline code: `` `code here` ``
+- Bold: `**bold text**`
+- Italic: `*italic text*`
 
 **Step 2**: Create the MCQ test page in the module's practice directory
 
@@ -344,6 +367,20 @@ Follow this pattern for consistency:
 - [ ] Set `grand_parent` to match module title exactly
 - [ ] Set `mcq_data` to match JSON filename (without .json)
 - [ ] Test the MCQ in browser before committing
+
+### 🔄 Automatic MCQ Navigation
+
+Use the `mcq-navigation` include in your practice `index.md` to automatically list all available MCQ tests for a module:
+
+```markdown
+{% include mcq-navigation.html module_prefix="m1" module_dir="JavaCore" %}
+```
+
+**Parameters:**
+- `module_prefix`: The module data file prefix (e.g., `m1`, `m6`, `m9`)
+- `module_dir`: The module directory name in `docs/` (e.g., `JavaCore`, `Database`)
+
+This will automatically detect all `mX_mcqY.json` files and display them with question counts!
 
 ---
 
@@ -467,7 +504,25 @@ Pages are sorted by `nav_order` in the front matter:
 
 ---
 
-## 📊 Current Modules
+## 📊 Module Reference
+
+### Module Number to Directory Mapping
+
+Use this table to map module numbers to their directories when adding MCQ files:
+
+| Module No | Module Name | Directory | Data File Prefix |
+|-----------|-------------|-----------|------------------|
+| **M1** | Java Core | `docs/JavaCore/` | `m1_` |
+| **M2** | Database | `docs/Database/` | `m2_` |
+| **M3** | Web Technologies | `docs/WebTechnologies/` | `m3_` |
+| **M4** | ADS (Algorithms & Data Structures) | `docs/ADS/` | `m4_` |
+| **M5** | Operating System | `docs/OperatingSystem/` | `m5_` |
+| **M6** | Advanced Web Java | `docs/Adv.WebJava/` | `m6_` |
+| **M7** | C++ | `docs/C++/` | `m7_` |
+| **M8** | ASP.NET C# | `docs/ASP.NET-C#/` | `m8_` |
+| **M9** | Aptitude | `docs/Aptitude/` | `m9_` |
+
+### Current MCQ Tests
 
 | Module | Directory | MCQ Tests |
 |--------|-----------|-----------|
