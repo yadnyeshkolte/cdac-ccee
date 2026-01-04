@@ -202,10 +202,10 @@
   {
     "question": "Which method is used to start a thread execution?",
     "options": [
-      "run()",
-      "start()",
-      "init()",
-      "execute()"
+      "`run()`",
+      "`start()`",
+      "`init()`",
+      "`execute()`"
     ],
     "answer": 1
   },
@@ -252,10 +252,10 @@
   {
     "question": "Which JSTL tag is used for iteration, similar to a for loop?",
     "options": [
-      "<c:if>",
-      "<c:choose>",
-      "<c:forEach>",
-      "<c:loop>"
+      "`<c:if>`",
+      "`<c:choose>`",
+      "`<c:forEach>`",
+      "`<c:loop>`"
     ],
     "answer": 2
   },
@@ -282,10 +282,10 @@
   {
     "question": "Which method in the Object class is used to return a string representation of the object?",
     "options": [
-      "getString()",
-      "print()",
-      "toString()",
-      "valueOf()"
+      "`getString()`",
+      "`print()`",
+      "`toString()`",
+      "`valueOf()`"
     ],
     "answer": 2
   },
@@ -330,12 +330,12 @@
     "answer": 1
   },
   {
-    "question": "What is the return type of the 'hashCode()' method?",
+    "question": "What is the return type of the `hashCode()` method?",
     "options": [
-      "long",
-      "Object",
-      "int",
-      "String"
+      "`long`",
+      "`Object`",
+      "`int`",
+      "`String`"
     ],
     "answer": 2
   },
@@ -352,10 +352,10 @@
   {
     "question": "Which operator is used to check if an object is an instance of a specific class?",
     "options": [
-      "typeof",
-      "instanceof",
-      "isA",
-      "check"
+      "`typeof`",
+      "`instanceof`",
+      "`isA`",
+      "`check`"
     ],
     "answer": 1
   },
@@ -372,10 +372,10 @@
   {
     "question": "Which of these is NOT a valid main method signature?",
     "options": [
-      "public static void main(String[] args)",
-      "static public void main(String[] args)",
-      "public void static main(String[] args)",
-      "public static void main(String... args)"
+      "`public static void main(String[] args)`",
+      "`static public void main(String[] args)`",
+      "`public void static main(String[] args)`",
+      "`public static void main(String... args)`"
     ],
     "answer": 2
   },

@@ -12,15 +12,15 @@
   {
     "question": "Which of these is not a method of Object class?",
     "options": [
-      "wait()",
-      "sleep()",
-      "notify()",
-      "equals()"
+      "`wait()`",
+      "`sleep()`",
+      "`notify()`",
+      "`equals()`"
     ],
     "answer": 1
   },
   {
-    "question": "Determine the output of the following program: public class SattePeSatta { public static void main(String[] ar) { RuntimeException bhaagMilka = null; throw bhaagMilka; } }",
+    "question": "Determine the output of the following program: `public class SattePeSatta { public static void main(String[] ar) { RuntimeException bhaagMilka = null; throw bhaagMilka; } }`",
     "options": [
       "Compilation fails, because the main() method does not declare that it throws RuntimeException in its declaration.",
       "Successfully compiles, but throws java.lang.RuntimeException when executed.",
@@ -30,7 +30,7 @@
     "answer": 2
   },
   {
-    "question": "Determine the output of the following program: public class TheImmutableStringClass { public static void main(String[] ar) { String a, b, c; c = new String(\"hum\"); a = new String(\"tum\"); b = a; a = new String(\"dum\"); c = b; System.out.println(c); } }",
+    "question": "Determine the output of the following program: `public class TheImmutableStringClass { public static void main(String[] ar) { String a, b, c; c = new String(\"hum\"); a = new String(\"tum\"); b = a; a = new String(\"dum\"); c = b; System.out.println(c); } }`",
     "options": [
       "hum",
       "tum",
@@ -40,7 +40,7 @@
     "answer": 1
   },
   {
-    "question": "Determine the output of the following program: abstract class AlexanderTheGreat { public static void main(String[] args) { System.out.println(\" will conquer the World !!!\"); } }",
+    "question": "Determine the output of the following program: `abstract class AlexanderTheGreat { public static void main(String[] args) { System.out.println(\" will conquer the World !!!\"); } }`",
     "options": [
       "Compile-time exception",
       "Runtime exception",
@@ -60,7 +60,7 @@
     "answer": 2
   },
   {
-    "question": "Determine the output of the following program: class JigglyWiggly { public static void main(String a[]) { try { System.exit(1); } finally { System.out.println(\"HuHaHuHa\"); } } }",
+    "question": "Determine the output of the following program: `class JigglyWiggly { public static void main(String a[]) { try { System.exit(1); } finally { System.out.println(\"HuHaHuHa\"); } } }`",
     "options": [
       "HuHaHuHa",
       "Program terminates without executing the finally block",
@@ -70,7 +70,7 @@
     "answer": 1
   },
   {
-    "question": "Determine the output of the following program: class Abracadabra { int pataKaro; public static void main(String[] a) { Abracadabra kuchBhi; System.out.println(kuchBhi.pataKaro); } }",
+    "question": "Determine the output of the following program: `class Abracadabra { int pataKaro; public static void main(String[] a) { Abracadabra kuchBhi; System.out.println(kuchBhi.pataKaro); } }`",
     "options": [
       "Compile-time exception: The local variable kuchBhi may not have been initialized",
       "Runtime exception: NullPointerException",
@@ -80,7 +80,7 @@
     "answer": 0
   },
   {
-    "question": "Determine the output of the following code snippet: int i = 0; int j = i++ + ++i + --i + i; System.out.print(i); System.out.print(\" \"+j);",
+    "question": "Determine the output of the following code snippet: `int i = 0; int j = i++ + ++i + --i + i; System.out.print(i); System.out.print(\" \"+j);`",
     "options": [
       "1 3",
       "1 4",
@@ -90,7 +90,7 @@
     "answer": 1
   },
   {
-    "question": "Determine the output of the following program: class Appette { Appette() { this(10); } Appette(int i) { this(); } public static void main(String[] a) { Appette i = new Appette(); } }",
+    "question": "Determine the output of the following program: `class Appette { Appette() { this(10); } Appette(int i) { this(); } public static void main(String[] a) { Appette i = new Appette(); } }`",
     "options": [
       "Compile-time exception",
       "Runtime exception",
@@ -100,7 +100,7 @@
     "answer": 0
   },
   {
-    "question": "What will be the output of the program? class Test { public static void main(String [] args) { int x = 0; int y = 0; for (int z = 0; z < 5; z++) { if (( ++x > 2 ) && (++y > 2)) { x++; } } System.out.println(x + \" \" +y); } }",
+    "question": "What will be the output of the program? `class Test { public static void main(String [] args) { int x = 0; int y = 0; for (int z = 0; z < 5; z++) { if (( ++x > 2 ) && (++y > 2)) { x++; } } System.out.println(x + \" \" +y); } }`",
     "options": [
       "5 2",
       "5 3",
@@ -110,7 +110,7 @@
     "answer": 2
   },
   {
-    "question": "What will be the output of the program? class Test { public static void main(String [] args) { int x=20; String sup = (x < 15) ? \"small\" : (x < 22)? \"tiny\" : \"huge\"; System.out.println(sup); } }",
+    "question": "What will be the output of the program? `class Test { public static void main(String [] args) { int x=20; String sup = (x < 15) ? \"small\" : (x < 22)? \"tiny\" : \"huge\"; System.out.println(sup); } }`",
     "options": [
       "small",
       "tiny",
@@ -120,7 +120,7 @@
     "answer": 1
   },
   {
-    "question": "What will be the output of the program? class Equals { public static void main(String [] args) { int x = 100; double y = 100.1; boolean b = (x = y); System.out.println(b); } }",
+    "question": "What will be the output of the program? `class Equals { public static void main(String [] args) { int x = 100; double y = 100.1; boolean b = (x = y); System.out.println(b); } }`",
     "options": [
       "true",
       "false",
@@ -150,7 +150,7 @@
     "answer": 3
   },
   {
-    "question": "What will be the output of the program? public class Foo { public static void main(String[] args) { try { return; } finally { System.out.println( \"Finally\" ); } } }",
+    "question": "What will be the output of the program? `public class Foo { public static void main(String[] args) { try { return; } finally { System.out.println( \"Finally\" ); } } }`",
     "options": [
       "Finally",
       "Compilation fails.",
@@ -160,7 +160,7 @@
     "answer": 0
   },
   {
-    "question": "What will be the output of the program? class Bitwise { public static void main(String [] args) { int x = 11 & 9; int y = x ^ 3; System.out.println( y | 12 ); } }",
+    "question": "What will be the output of the program? `class Bitwise { public static void main(String [] args) { int x = 11 & 9; int y = x ^ 3; System.out.println( y | 12 ); } }`",
     "options": [
       "0",
       "7",
