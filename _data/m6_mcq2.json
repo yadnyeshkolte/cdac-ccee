@@ -1,21 +1,341 @@
 [
   {
-    "question": "Sample Question 1 for Module 6",
+    "question": "Which method is used to forward a request to another resource?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "response.sendRedirect()",
+      "request.forward()",
+      "dispatcher.forward()",
+      "context.send()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Difference between forward() and sendRedirect() is:",
+    "options": [
+      "forward() goes via client, sendRedirect() does not",
+      "forward() is faster, internal; sendRedirect() is client-based",
+      "sendRedirect() supports session; forward() does not",
+      "Both are same"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is true about JSP?",
+    "options": [
+      "JSP is a replacement for JavaScript",
+      "JSP is used to create static web pages",
+      "JSP separates UI from business logic",
+      "JSP is used for server installation"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the correct order of JSP lifecycle?",
+    "options": [
+      "service() → destroy() → init() → compile()",
+      "translate → compile → init → service → destroy",
+      "compile → service → destroy",
+      "init → translate → destroy"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which file extension is used for JSP?",
+    "options": [
+      ".java",
+      ".jsp",
+      ".xml",
+      ".jhtml"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In MVC, the 'Controller' is typically implemented using:",
+    "options": [
+      "HTML",
+      "Servlet",
+      "JSP",
+      "JavaBean"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which component in MVC is responsible for business logic?",
+    "options": [
+      "View",
+      "Controller",
+      "Model",
+      "DAO"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which pattern does MVC follow?",
+    "options": [
+      "Singleton",
+      "Factory",
+      "Front Controller",
+      "Model-View-Controller"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which element is used to insert Java code into a JSP page?",
+    "options": [
+      "<% ... %>",
+      "${ ... }",
+      "<%= ... %>",
+      "<jsp:script>"
     ],
     "answer": 0
   },
   {
-    "question": "Sample Question 2 for Module 6",
+    "question": "Which element outputs value in JSP?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "<% out.print() %>",
+      "<%= ... %>",
+      "<scriptlet>",
+      "${ ... }"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which directive is used to include reusable code from another JSP?",
+    "options": [
+      "<%@ include file=\"...\" %>",
+      "<jsp:forward>",
+      "<jsp:include>",
+      "<include>"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following is not an implicit object in JSP?",
+    "options": [
+      "request",
+      "response",
+      "config",
+      "system"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which scope is valid until the user closes the browser?",
+    "options": [
+      "page",
+      "request",
+      "session",
+      "application"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which scope is used for variables only within the current JSP file?",
+    "options": [
+      "page",
+      "request",
+      "session",
+      "application"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "To handle errors in JSP, which directive is used?",
+    "options": [
+      "<%@ errorHandler %>",
+      "<%@ errorPage=\"error.jsp\" %>",
+      "<jsp:catch>",
+      "<error-page>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does <%@ page isErrorPage=\"true\" %> do?",
+    "options": [
+      "Prevents errors in JSP",
+      "Indicates the JSP is used for displaying errors",
+      "Logs errors to file",
+      "Disables Java code"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which syntax is used in Expression Language (EL)?",
+    "options": [
+      "<% ... %>",
+      "${ ... }",
+      "<%= ... %>",
+      "{{ ... }}"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In EL, ${param.name} returns:",
+    "options": [
+      "Request parameter value with name 'name'",
+      "Cookie value",
+      "Session attribute",
+      "JSP error code"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the purpose of JSTL?",
+    "options": [
+      "To embed SQL directly in JSP",
+      "To simplify common tasks like loops, formatting",
+      "To design graphics",
+      "To compile Java files"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which JSTL tag is used for looping?",
+    "options": [
+      "<c:loop>",
+      "<jstl:for>",
+      "<c:forEach>",
+      "<jsp:repeat>"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which library must be included for JSTL core tags?",
+    "options": [
+      "sql.jar",
+      "javax.el",
+      "c.tld",
+      "core.tld"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which tag prints value of a variable in JSTL?",
+    "options": [
+      "<c:value>",
+      "<c:out>",
+      "<c:print>",
+      "<c:write>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Hibernate is an implementation of:",
+    "options": [
+      "JDBC",
+      "ORM (Object Relational Mapping)",
+      "Servlet",
+      "SQL Parser"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is NOT a benefit of Hibernate?",
+    "options": [
+      "Automatic table creation",
+      "Portability",
+      "Reduces database interaction",
+      "Simplifies transaction handling"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which configuration file is required in a Hibernate project?",
+    "options": [
+      "hibernate.properties",
+      "persistence.xml",
+      "hibernate.cfg.xml",
+      "orm.xml"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is a core interface in Hibernate?",
+    "options": [
+      "SessionFactory",
+      "EntityResolver",
+      "JdbcContext",
+      "ORMManager"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Hibernate Session object is used for:",
+    "options": [
+      "Compiling JSP",
+      "Performing CRUD operations",
+      "Formatting data",
+      "Generating JavaBeans"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the role of the Transaction interface in Hibernate?",
+    "options": [
+      "UI Rendering",
+      "Managing cache",
+      "Managing database transactions",
+      "Validating mappings"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which annotation marks a class as an entity in Hibernate?",
+    "options": [
+      "@Persistent",
+      "@Entity",
+      "@MappedClass",
+      "@HibernateClass"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which annotation is used to specify the primary key?",
+    "options": [
+      "@Id",
+      "@Primary",
+      "@PK",
+      "@Key"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the first state of an object in Hibernate lifecycle?",
+    "options": [
+      "Persistent",
+      "Detached",
+      "Transient",
+      "Removed"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which annotation is used to map a class to a database table?",
+    "options": [
+      "@Table",
+      "@DatabaseTable",
+      "@JoinTable",
+      "@EntityTable"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "To map a One-to-Many relationship, which annotation is used?",
+    "options": [
+      "@OneToOne",
+      "@ManyToOne",
+      "@OneToMany",
+      "@RelationManyOne"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which annotation is used for specifying join column in relationships?",
+    "options": [
+      "@PrimaryJoinColumn",
+      "@JoinColumn",
+      "@ForeignKey",
+      "@ColumnLink"
     ],
     "answer": 1
   }

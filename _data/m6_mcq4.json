@@ -1,0 +1,283 @@
+[
+    
+    {
+    "question": "The @Query annotation is used for:",
+    "options": [
+      "Creating tables",
+      "Writing custom SQL or JPQL queries",
+      "Injecting dependencies",
+      "Defining REST endpoints"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the parent interface of JpaRepository?",
+    "options": [
+      "Repository",
+      "CrudRepository",
+      "PagingAndSortingRepository",
+      "All of the above"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which method is automatically provided by JpaRepository?",
+    "options": [
+      "findUserById(int id)",
+      "selectUser(int id)",
+      "get()",
+      "search()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which annotation is used to define a JPA repository?",
+    "options": [
+      "@Repository",
+      "@Component",
+      "@JpaRepository",
+      "@Entity"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the return type of findAll() in CrudRepository?",
+    "options": [
+      "List<Object>",
+      "Iterable<T>",
+      "void",
+      "Stream<T>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following allows pagination and sorting?",
+    "options": [
+      "CrudRepository",
+      "JpaRepository",
+      "PagingAndSortingRepository",
+      "Both B and C"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "In Spring Data, method names starting with findBy followed by field name will:",
+    "options": [
+      "Automatically create an SQL trigger",
+      "Automatically map to database column",
+      "Automatically generate the query",
+      "Throw runtime exception"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which Spring Boot starter is used for integrating JPA?",
+    "options": [
+      "spring-boot-starter-web",
+      "spring-boot-starter-data-jpa",
+      "spring-boot-starter-security",
+      "spring-boot-starter-thymeleaf"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does AOP stand for in Spring Framework?",
+    "options": [
+      "Application Oriented Programming",
+      "Aspect Oriented Programming",
+      "Attribute Oriented Programming",
+      "Annotation Oriented Programming"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In AOP, what is a \"Join Point\"?",
+    "options": [
+      "The code written inside an aspect",
+      "A location in the application where an aspect can be applied",
+      "A configuration point",
+      "An interface for dependency injection"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is used to define reusable functionality in AOP?",
+    "options": [
+      "Bean",
+      "JoinPoint",
+      "Aspect",
+      "Scope"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is \"Advice\" in Spring AOP?",
+    "options": [
+      "The point where exception occurs",
+      "The action taken by an aspect at a particular join point",
+      "The controller in MVC",
+      "The view technology used"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which annotation is used to declare a class as an aspect in Spring AOP?",
+    "options": [
+      "@Aspect",
+      "@JoinPoint",
+      "@AOP",
+      "@Advice"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which advice type is executed after the method returns successfully?",
+    "options": [
+      "@Before",
+      "@After",
+      "@Around",
+      "@AfterReturning"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the purpose of Pointcut in AOP?",
+    "options": [
+      "To define the target bean",
+      "To declare where the advice should be applied",
+      "To manage exceptions",
+      "To build REST services"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which protocol is primarily used in RESTful web services?",
+    "options": [
+      "FTP",
+      "SMTP",
+      "HTTP",
+      "TCP"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which annotation is used to define a REST controller in Spring Boot?",
+    "options": [
+      "@Controller",
+      "@RestController",
+      "@WebController",
+      "@Service"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which annotation is used to map HTTP GET requests in Spring?",
+    "options": [
+      "@Get",
+      "@GetRequest",
+      "@RequestMapping(method=RequestMethod.GET)",
+      "@GET"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which format is typically used for data exchange in RESTful APIs?",
+    "options": [
+      "HTML",
+      "XML",
+      "JSON",
+      "CSV"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What tool is commonly used to test REST APIs manually?",
+    "options": [
+      "Eclipse",
+      "Visual Studio",
+      "Postman",
+      "GitHub"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which annotation is used to map HTTP POST requests in Spring Boot?",
+    "options": [
+      "@PostMapping",
+      "@PostRequest",
+      "@RequestPost",
+      "@Post"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "In REST terminology, what does CRUD stand for?",
+    "options": [
+      "Create, Read, Update, Delete",
+      "Compute, Run, Update, Deploy",
+      "Create, Route, Upload, Delete",
+      "Construct, Retrieve, Use, Drop"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which class is used to invoke REST APIs from within Spring Boot?",
+    "options": [
+      "HttpClient",
+      "RestService",
+      "RestTemplate",
+      "WebSocket"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which HTTP method is used to delete a resource in REST?",
+    "options": [
+      "REMOVE",
+      "DELETE",
+      "DROP",
+      "ERASE"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the main difference between REST and SOAP?",
+    "options": [
+      "SOAP is faster than REST",
+      "REST uses XML only, SOAP uses JSON",
+      "REST is lightweight and uses multiple formats like JSON/XML",
+      "SOAP is used only in microservices"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which annotation is used to bind path variables in Spring REST controllers?",
+    "options": [
+      "@RequestParam",
+      "@PathVariable",
+      "@Variable",
+      "@Param"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which Spring Boot dependency is required for RESTful web services?",
+    "options": [
+      "spring-boot-web-starter",
+      "spring-rest",
+      "spring-core",
+      "spring-mvc-web"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the correct return type of a REST API method in Spring Boot to send data as JSON?",
+    "options": [
+      "Model",
+      "String",
+      "ResponseEntity<?> or POJO",
+      "View"
+    ],
+    "answer": 2
+  }
+]

@@ -1,0 +1,252 @@
+[
+  {
+    "question": "Which method is called only once during the life cycle of a servlet?",
+    "options": [
+      "doGet()",
+      "doPost()",
+      "init()",
+      "service()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the correct way to redirect a client to a different URL from a servlet?",
+    "options": [
+      "response.forward()",
+      "request.redirect()",
+      "response.sendRedirect(\"newPage.jsp\")",
+      "RequestDispatcher.sendRedirect()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the default value of session in HttpServlet?",
+    "options": [
+      "true",
+      "false",
+      "null",
+      "session is not part of HttpServlet"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following methods is used to read form data sent via GET method?",
+    "options": [
+      "getParameterValues()",
+      "getAttribute()",
+      "getInitParameter()",
+      "getParameter()"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the role of web.xml in servlets?",
+    "options": [
+      "To load static resources",
+      "To define HTML templates",
+      "To configure servlet mappings",
+      "To define Java classes"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "The service() method of a servlet is:",
+    "options": [
+      "Automatically called when the servlet is instantiated",
+      "Called each time the servlet receives a request",
+      "Called once during the lifetime",
+      "Used to close the servlet"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is returned by request.getContextPath()?",
+    "options": [
+      "Name of servlet",
+      "Path to web.xml",
+      "Root context of web app",
+      "Complete URI"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which interface must a class implement to become a servlet?",
+    "options": [
+      "HttpServlet",
+      "Servlet",
+      "RequestDispatcher",
+      "ServletConfig"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which status code is returned by default when a servlet runs successfully?",
+    "options": [
+      "200",
+      "404",
+      "500",
+      "403"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the correct way to forward a request from one servlet to another?",
+    "options": [
+      "response.sendRedirect()",
+      "request.sendForward()",
+      "RequestDispatcher.forward()",
+      "ServletContext.include()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does <%= %> represent in JSP?",
+    "options": [
+      "Declaration tag",
+      "Directive tag",
+      "Expression tag",
+      "Scriptlet tag"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which JSP tag is used to include another file during page translation?",
+    "options": [
+      "<jsp:include>",
+      "<%@ include file=\"...\" %>",
+      "<jsp:directive>",
+      "<jsp:forward>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is not an implicit object in JSP?",
+    "options": [
+      "application",
+      "session",
+      "request",
+      "driver"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "The correct syntax for a JSP declaration is:",
+    "options": [
+      "<%! int x = 10; %>",
+      "<%= int x = 10; %>",
+      "<% int x = 10; %>",
+      "<jsp:declaration>int x=10;</jsp:declaration>"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which directive is used to define the scripting language in JSP?",
+    "options": [
+      "<%@ language=\"java\" %>",
+      "<%@ scriptingLanguage=\"java\" %>",
+      "<%@ page language=\"java\" %>",
+      "<jsp:language=\"java\">"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is not a step in JDBC connection?",
+    "options": [
+      "Load the driver",
+      "Create a database",
+      "Establish connection",
+      "Execute queries"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does executeUpdate() return?",
+    "options": [
+      "Boolean",
+      "ResultSet",
+      "Object",
+      "Integer"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which package contains JDBC classes and interfaces?",
+    "options": [
+      "javax.jdbc",
+      "java.sql",
+      "org.sql",
+      "java.jdbc"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which statement is true about PreparedStatement?",
+    "options": [
+      "It is used to call stored procedures",
+      "It prevents SQL injection",
+      "It is slower than Statement",
+      "It does not allow parameters"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method is used to establish a connection in JDBC?",
+    "options": [
+      "Driver.getConnection()",
+      "Connection.getConnection()",
+      "DriverManager.getConnection()",
+      "ResultSet.getConnection()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is used to configure database connection in Hibernate?",
+    "options": [
+      "hibernate.db.cfg",
+      "hibernate.xml",
+      "hibernate.cfg.xml",
+      "persistence.xml"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which annotation is used to map a class as an entity?",
+    "options": [
+      "@HibernateEntity",
+      "@Table",
+      "@Entity",
+      "@Bean"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the purpose of SessionFactory in Hibernate?",
+    "options": [
+      "To store session data",
+      "To manage database connections",
+      "To create Session objects",
+      "To build tables"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which Hibernate method is used to save an object in DB?",
+    "options": [
+      "session.store()",
+      "session.add()",
+      "session.insert()",
+      "session.save()"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What does Hibernate use to map Java classes to database tables?",
+    "options": [
+      "XML only",
+      "Annotations only",
+      "Both XML and annotations",
+      "None of the above"
+    ],
+    "answer": 2
+  }
+]

@@ -1,0 +1,402 @@
+[
+    {
+    "question": "A Many-to-Many relationship requires a:",
+    "options": [
+      "Join table",
+      "Foreign key only",
+      "Mapping XML only",
+      "View file"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which Hibernate mapping is used for List or Set inside an entity?",
+    "options": [
+      "Component Mapping",
+      "Collection Mapping",
+      "One-to-One",
+      "Association Mapping"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Component Mapping in Hibernate maps:",
+    "options": [
+      "Separate table for child object",
+      "Inner classes or reusable embedded objects",
+      "Static constants",
+      "DAO classes"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does HQL stand for?",
+    "options": [
+      "Hibernate Query Language",
+      "High-level Query Language",
+      "Hibernate Quick Lookup",
+      "Hibernate Question Language"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following is valid HQL syntax?",
+    "options": [
+      "SELECT * FROM employee",
+      "SELECT e FROM Employee e",
+      "GET ALL FROM Employee",
+      "FETCH * FROM employee"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which annotation is used to define a named query?",
+    "options": [
+      "@NamedHQL",
+      "@NamedQuery",
+      "@QueryName",
+      "@QueryStatic"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Criteria API is used for:",
+    "options": [
+      "Logging queries",
+      "Creating dynamic queries without HQL",
+      "Validating annotations",
+      "Mapping XML files"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method is used to create criteria queries in Hibernate 5+?",
+    "options": [
+      "session.criteriaBuilder()",
+      "session.createCriteria()",
+      "session.query()",
+      "session.newQuery()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "The core concept of the Spring Framework is:",
+    "options": [
+      "Event handling",
+      "Object cloning",
+      "Inversion of Control (IoC)",
+      "AWT Components"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which module handles database access in Spring?",
+    "options": [
+      "Spring ORM",
+      "Spring Web",
+      "Spring Context",
+      "Spring AOP"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which annotation is used to define a Spring Bean?",
+    "options": [
+      "@Service",
+      "@Bean",
+      "@Autowired",
+      "@ComponentScan"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Inversion of Control (IoC) refers to:",
+    "options": [
+      "Manual object creation",
+      "Application controlling framework",
+      "Framework controlling object creation",
+      "Creating controller objects only"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the default scope of a Spring Bean?",
+    "options": [
+      "prototype",
+      "request",
+      "singleton",
+      "session"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which annotation is used for automatic dependency injection?",
+    "options": [
+      "@Inject",
+      "@Autowired",
+      "@Resource",
+      "@Required"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which interface acts as a Spring IoC container?",
+    "options": [
+      "BeanFactory",
+      "ApplicationContext",
+      "ContextLoader",
+      "BeanContext"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which scope creates a new bean for every request?",
+    "options": [
+      "singleton",
+      "prototype",
+      "session",
+      "request"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which configuration file is commonly used for XML-based bean configuration?",
+    "options": [
+      "beans.xml",
+      "application.properties",
+      "web.xml",
+      "context.xml"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is NOT a valid autowire mode in Spring XML?",
+    "options": [
+      "byName",
+      "byType",
+      "constructor",
+      "autoScan"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which design pattern does Spring MVC implement?",
+    "options": [
+      "DAO",
+      "MVC",
+      "Front Controller",
+      "Proxy"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the role of DispatcherServlet?",
+    "options": [
+      "Access database",
+      "Manage JSP view",
+      "Act as Front Controller",
+      "Create models"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which component is responsible for mapping URLs to controllers?",
+    "options": [
+      "HandlerMapping",
+      "ViewResolver",
+      "ApplicationContext",
+      "ComponentScan"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which annotation maps a method to a web request in Spring MVC?",
+    "options": [
+      "@Controller",
+      "@Service",
+      "@RequestMapping",
+      "@GetMapping"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which object is returned by a controller method to bind model and view?",
+    "options": [
+      "Model",
+      "ModelMap",
+      "ModelAndView",
+      "ViewContext"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Thymeleaf is a:",
+    "options": [
+      "JavaScript engine",
+      "REST API library",
+      "View template engine",
+      "File upload module"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which annotation is used for form validation in Spring?",
+    "options": [
+      "@Valid",
+      "@FormCheck",
+      "@Verify",
+      "@ValidateInput"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Spring i18n support is implemented using:",
+    "options": [
+      "XML-only files",
+      "LocaleResolver and MessageSource",
+      "Resource bundles in web.xml",
+      "JSTL only"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "To load values from .properties files in Spring, which annotation is used?",
+    "options": [
+      "@LoadProperties",
+      "@Property",
+      "@PropertySource",
+      "@ConfigFile"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "For file upload in Spring MVC, you typically use:",
+    "options": [
+      "FileUploadServlet",
+      "@MultipartConfig",
+      "CommonsMultipartResolver",
+      "ServletUploader"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the primary advantage of using Spring Boot?",
+    "options": [
+      "It enforces strict coding standards",
+      "It reduces boilerplate configuration",
+      "It uses XML for all configuration",
+      "It only supports monolithic apps"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which file is used by Maven to manage project dependencies?",
+    "options": [
+      "build.gradle",
+      "pom.xml",
+      "application.yml",
+      "settings.xml"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In Spring Boot, which annotation is used to declare a class as a Spring Boot application?",
+    "options": [
+      "@EnableAutoConfiguration",
+      "@ComponentScan",
+      "@SpringBootApplication",
+      "@Configuration"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Spring Boot provides which default embedded server?",
+    "options": [
+      "Jetty",
+      "Tomcat",
+      "WebLogic",
+      "Netty"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which annotation is used to create a REST controller in Spring Boot?",
+    "options": [
+      "@RestController",
+      "@Controller",
+      "@Service",
+      "@Component"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which file holds Spring Boot configuration values?",
+    "options": [
+      "boot.xml",
+      "pom.xml",
+      "application.properties",
+      "spring.xml"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What command is used to run a Spring Boot application using Maven?",
+    "options": [
+      "mvn run",
+      "mvn spring:run",
+      "mvn spring-boot:run",
+      "mvn start"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the role of @GetMapping(\"/path\") in Spring Boot?",
+    "options": [
+      "Maps a POST request",
+      "Maps a GET request to the provided path",
+      "Maps an error handler",
+      "Maps application.properties"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Thymeleaf is primarily used for:",
+    "options": [
+      "Security",
+      "Logging",
+      "Template rendering in web views",
+      "Dependency injection"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is NOT a feature of Spring Boot?",
+    "options": [
+      "Auto Configuration",
+      "Embedded Web Server",
+      "Complex XML configuration",
+      "Starter Dependencies"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Spring Data JPA is built on top of:",
+    "options": [
+      "JDBC",
+      "Spring JDBC",
+      "JPA (Java Persistence API)",
+      "Hibernate only"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which interface provides basic CRUD operations in Spring Data JPA?",
+    "options": [
+      "JpaRepository",
+      "CrudOperations",
+      "CrudRepository",
+      "DataRepository"
+    ],
+    "answer": 2
+  }
+]

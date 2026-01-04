@@ -1,22 +1,382 @@
 [
   {
-    "question": "Sample Question 1 for Module 6",
+    "question": "Which package contains JDBC classes and interfaces?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "java.sql",
+      "javax.sql",
+      "java.jdbc",
+      "org.jdbc"
     ],
     "answer": 0
   },
   {
-    "question": "Sample Question 2 for Module 6",
+    "question": "Which component establishes a connection with the database in JDBC?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "DriverManager",
+      "Statement",
+      "Connection",
+      "ResultSet"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the correct order of JDBC workflow?",
+    "options": [
+      "Connect → Execute → Load Driver → Close",
+      "Load Driver → Connect → Execute → Close",
+      "Execute → Load Driver → Connect → Close",
+      "Load Driver → Execute → Connect → Close"
     ],
     "answer": 1
+  },
+  {
+    "question": "Which is not a valid JDBC driver type?",
+    "options": [
+      "Type 1",
+      "Type 2",
+      "Type 3",
+      "Type 5"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which class is used to execute a static SQL query?",
+    "options": [
+      "Statement",
+      "PreparedStatement",
+      "CallableStatement",
+      "ResultSet"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "PreparedStatement is preferred over Statement because:",
+    "options": [
+      "It is faster",
+      "It prevents SQL Injection",
+      "It supports precompilation",
+      "All of the above"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What does executeUpdate() return?",
+    "options": [
+      "ResultSet",
+      "Boolean",
+      "int (number of rows affected)",
+      "void"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which interface is used to retrieve data from a database?",
+    "options": [
+      "Statement",
+      "Connection",
+      "ResultSet",
+      "DriverManager"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "To execute a stored procedure using JDBC, we use:",
+    "options": [
+      "Statement",
+      "PreparedStatement",
+      "CallableStatement",
+      "ResultSet"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which method is used to retrieve a string from a ResultSet?",
+    "options": [
+      "getValue()",
+      "getString()",
+      "getResult()",
+      "fetchString()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "SQL Injection can be prevented by using:",
+    "options": [
+      "Statement",
+      "Stored Procedures",
+      "PreparedStatement",
+      "Both b and c"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which is an example of SQL Injection?",
+    "options": [
+      "' OR '1'='1",
+      "SELECT * FROM students",
+      "DROP TABLE users;",
+      "SELECT COUNT(*) FROM users;"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "PreparedStatement binds values using:",
+    "options": [
+      "? placeholders",
+      "${} syntax",
+      ": parameters",
+      "None of the above"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which interface is used to call stored procedures in JDBC?",
+    "options": [
+      "CallableStatement",
+      "PreparedStatement",
+      "Statement",
+      "StoredProcedure"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Syntax to call a stored procedure proc_name with 2 params in JDBC:",
+    "options": [
+      "{call proc_name(?, ?)}",
+      "CALL proc_name(?, ?)",
+      "EXEC proc_name(?, ?)",
+      "RUN proc_name(?, ?)"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "DAO stands for:",
+    "options": [
+      "Data Access Operation",
+      "Database Admin Object",
+      "Data Access Object",
+      "Direct Access Object"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the main benefit of DAO pattern?",
+    "options": [
+      "Tightly couples UI and DB",
+      "Encourages direct SQL in UI",
+      "Separation of concerns and reusability",
+      "Reduces JDBC driver size"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "DAO classes primarily interact with:",
+    "options": [
+      "UI classes",
+      "Database",
+      "Network layer",
+      "Cache"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method disables auto-commit in JDBC?",
+    "options": [
+      "setCommit(false)",
+      "commit(false)",
+      "setAutoCommit(false)",
+      "disableCommit()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which two methods control transaction in JDBC?",
+    "options": [
+      "commit(), rollback()",
+      "begin(), close()",
+      "execute(), commit()",
+      "setSavepoint(), release()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What does a J2EE container manage?",
+    "options": [
+      "UI",
+      "Database only",
+      "Components lifecycle and services",
+      "HTML rendering"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is used to package a J2EE web application?",
+    "options": [
+      ".zip",
+      ".exe",
+      ".war",
+      ".jar"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which one is NOT part of a J2EE Web Application?",
+    "options": [
+      "web.xml",
+      "index.html",
+      "MyServlet.java",
+      "sqlserver.exe"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Web application lifecycle starts with:",
+    "options": [
+      "Server boot",
+      "User login",
+      "WAR deployment",
+      "Application exit"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which tool can be used to deploy a WAR file on a server?",
+    "options": [
+      "JConsole",
+      "Tomcat Manager",
+      "NetBeans",
+      "GitHub"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which technology is used for platform-independent web service support in J2EE?",
+    "options": [
+      "RMI",
+      "WSDL",
+      "SOAP/REST",
+      "JMX"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Servlets run on which side of the web architecture?",
+    "options": [
+      "Client",
+      "Server",
+      "Proxy",
+      "Database"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The correct order of Servlet Lifecycle methods is:",
+    "options": [
+      "service() → init() → destroy()",
+      "init() → service() → destroy()",
+      "init() → destroy() → service()",
+      "destroy() → init() → service()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method is called once in the servlet lifecycle?",
+    "options": [
+      "service()",
+      "init()",
+      "doGet()",
+      "doPost()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Servlets are superior to CGI because they are:",
+    "options": [
+      "Platform independent",
+      "Faster (multi-threaded)",
+      "Written in Java",
+      "More secure"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which class must all HTTP Servlets extend?",
+    "options": [
+      "Servlet",
+      "HttpServlet",
+      "WebServlet",
+      "ServletContext"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Servlet annotation to declare servlet is:",
+    "options": [
+      "@WebServlet",
+      "@ServletMapping",
+      "@Controller",
+      "@ServletConfig"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "HttpServletRequest is used to:",
+    "options": [
+      "Send HTTP response",
+      "Send data to the browser",
+      "Read request data",
+      "Destroy the servlet"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is not part of the Servlet API?",
+    "options": [
+      "HttpServletRequest",
+      "HttpServletResponse",
+      "JOptionPane",
+      "ServletContext"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is used to uniquely identify a session in HttpSession?",
+    "options": [
+      "User IP",
+      "Session ID (JSESSIONID)",
+      "Cookie path",
+      "Thread ID"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method is used to get session in a servlet?",
+    "options": [
+      "request.getSession()",
+      "response.getSession()",
+      "getServletSession()",
+      "getSessionContext()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What happens when a cookie is disabled in the browser?",
+    "options": [
+      "Session tracking fails",
+      "HttpSession stops working",
+      "URL rewriting is used as fallback",
+      "Servlet crashes"
+    ],
+    "answer": 2
+  },
+    {
+    "question": "Which interface tracks session data server-side?",
+    "options": [
+      "CookieManager",
+      "SessionContext",
+      "HttpSession",
+      "SessionBean"
+    ],
+    "answer": 2
   }
 ]
