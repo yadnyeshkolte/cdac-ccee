@@ -368,19 +368,44 @@ Follow this pattern for consistency:
 - [ ] Set `mcq_data` to match JSON filename (without .json)
 - [ ] Test the MCQ in browser before committing
 
-### 🔄 Automatic MCQ Navigation
+### 🔄 Automatic MCQ Navigation (Enabled on All Modules!)
 
-Use the `mcq-navigation` include in your practice `index.md` to automatically list all available MCQ tests for a module:
+The `mcq-navigation` include is now enabled on ALL modules! It automatically detects MCQ files in `_data/` and displays navigation cards with question counts on each module's Practice page.
 
-```markdown
-{% include mcq-navigation.html module_prefix="m1" module_dir="JavaCore" %}
+**How to Add a New MCQ Test (Simplified):**
+
+1. **Create JSON file**: `_data/mX_mcqY.json` (e.g., `m6_mcq3.json`)
+2. **Create test page**: `docs/ModuleName/practice/mcq-test-Y.md`
+
+**Test page template** (just copy and adjust):
+```yaml
+---
+layout: mcq
+title: MCQ Test 3
+parent: Practice
+grand_parent: Module 6 - Advanced Web Java
+nav_order: 3
+mcq_data: m6_mcq3
+---
+
+# MCQ Test 3
+
+Description of this test.
 ```
 
-**Parameters:**
-- `module_prefix`: The module data file prefix (e.g., `m1`, `m6`, `m9`)
-- `module_dir`: The module directory name in `docs/` (e.g., `JavaCore`, `Database`)
+**Auto-Navigation Already Enabled For:**
 
-This will automatically detect all `mX_mcqY.json` files and display them with question counts!
+| Module | Include in practice/index.md |
+|--------|------------------------------|
+| M1 - Java Core | `{% include mcq-navigation.html module_prefix="m1" module_dir="JavaCore" %}` |
+| M2 - Database | `{% include mcq-navigation.html module_prefix="m2" module_dir="Database" %}` |
+| M3 - Web Technologies | `{% include mcq-navigation.html module_prefix="m3" module_dir="WebTechnologies" %}` |
+| M4 - ADS | `{% include mcq-navigation.html module_prefix="m4" module_dir="ADS" %}` |
+| M5 - Operating System | `{% include mcq-navigation.html module_prefix="m5" module_dir="OperatingSystem" %}` |
+| M6 - Advanced Web Java | `{% include mcq-navigation.html module_prefix="m6" module_dir="Adv.WebJava" %}` |
+| M7 - C++ | `{% include mcq-navigation.html module_prefix="m7" module_dir="C++" %}` |
+| M8 - ASP.NET C# | `{% include mcq-navigation.html module_prefix="m8" module_dir="ASP.NET-C#" %}` |
+| M9 - Aptitude | `{% include mcq-navigation.html module_prefix="m9" module_dir="Aptitude" %}` |
 
 ---
 

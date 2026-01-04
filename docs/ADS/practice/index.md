@@ -9,3 +9,5 @@ nav_order: 10
 # Practice Questions for Module 4
 
 Test your knowledge.
+
+{% include mcq-navigation.html module_prefix="m4" module_dir="ADS" %}

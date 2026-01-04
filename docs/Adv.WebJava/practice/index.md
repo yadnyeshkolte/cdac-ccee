@@ -9,3 +9,5 @@ nav_order: 10
 # Practice Questions for Module 6
 
 Test your knowledge.
+
+{% include mcq-navigation.html module_prefix="m6" module_dir="Adv.WebJava" %}

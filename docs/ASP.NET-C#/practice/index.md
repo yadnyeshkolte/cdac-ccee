@@ -9,3 +9,5 @@ nav_order: 10
 # Practice Questions for Module 8
 
 Test your knowledge.
+
+{% include mcq-navigation.html module_prefix="m8" module_dir="ASP.NET-C#" %}
