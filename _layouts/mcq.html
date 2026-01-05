@@ -55,5 +55,86 @@ layout: default
 </div>
 {% endif %}
 
+<!-- Prism.js for syntax highlighting -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+<style>
+  /* Enhanced code block styling for MCQ */
+  .mcq-code-block {
+    background: #1e1e2e !important;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin: 0.75rem 0;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .mcq-code-block code {
+    background: transparent !important;
+    padding: 0 !important;
+    color: #e2e8f0;
+    white-space: pre;
+    display: block;
+  }
+
+  /* Syntax highlighting colors override for better visibility */
+  .mcq-code-block .token.keyword {
+    color: #c678dd;
+    font-weight: 600;
+  }
+
+  .mcq-code-block .token.function {
+    color: #61afef;
+  }
+
+  .mcq-code-block .token.string {
+    color: #98c379;
+  }
+
+  .mcq-code-block .token.number {
+    color: #d19a66;
+  }
+
+  .mcq-code-block .token.operator {
+    color: #56b6c2;
+  }
+
+  .mcq-code-block .token.punctuation {
+    color: #abb2bf;
+  }
+
+  .mcq-code-block .token.comment {
+    color: #5c6370;
+    font-style: italic;
+  }
+
+  .mcq-code-block .token.class-name {
+    color: #e5c07b;
+  }
+
+  .mcq-code-block .token.boolean {
+    color: #d19a66;
+  }
+
+  /* Inline code styling */
+  .mcq-question-text code,
+  .mcq-option-text code {
+    background: rgba(99, 102, 241, 0.15);
+    color: #c4b5fd;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.9em;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+  }
+</style>
+
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-java.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-csharp.min.js"></script>
 <script src="{{ '/assets/js/mcq.js' | relative_url }}"></script>

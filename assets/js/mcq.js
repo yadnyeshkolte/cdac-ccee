@@ -34,6 +34,147 @@ document.addEventListener('DOMContentLoaded', function () {
 
     totalSpan.textContent = questions.length;
 
+    // Function to format code with proper indentation and syntax highlighting
+    function formatCodeInText(text) {
+        // Check if text contains code (backticks)
+        if (!text.includes('`')) {
+            return text;
+        }
+
+        // Split text into parts (regular text and code)
+        const parts = [];
+        let currentIndex = 0;
+        const codeRegex = /`([^`]+)`/g;
+        let match;
+
+        while ((match = codeRegex.exec(text)) !== null) {
+            // Add text before code
+            if (match.index > currentIndex) {
+                parts.push({ type: 'text', content: text.substring(currentIndex, match.index) });
+            }
+
+            // Check if this looks like a multi-statement code block (function definition, etc.)
+            const code = match[1];
+            const isMultiStatement = code.includes('{') || code.includes(';') ||
+                code.length > 60 || code.includes('if') ||
+                code.includes('for') || code.includes('while');
+
+            if (isMultiStatement) {
+                parts.push({ type: 'codeblock', content: code });
+            } else {
+                parts.push({ type: 'inline', content: code });
+            }
+
+            currentIndex = match.index + match[0].length;
+        }
+
+        // Add remaining text
+        if (currentIndex < text.length) {
+            parts.push({ type: 'text', content: text.substring(currentIndex) });
+        }
+
+        // Build HTML
+        let html = '';
+        for (const part of parts) {
+            if (part.type === 'text') {
+                html += part.content;
+            } else if (part.type === 'inline') {
+                html += `<code>${escapeHtml(part.content)}</code>`;
+            } else if (part.type === 'codeblock') {
+                const formatted = formatCodeBlock(part.content);
+                const highlighted = highlightCode(formatted);
+                html += `<pre class="mcq-code-block"><code class="language-java">${highlighted}</code></pre>`;
+            }
+        }
+
+        return html;
+    }
+
+    // Escape HTML special characters
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // Format code block with proper indentation
+    function formatCodeBlock(code) {
+        // Step 1: Normalize whitespace
+        let formatted = code.replace(/\s+/g, ' ').trim();
+
+        // Step 2: Add newlines after ALL semicolons (we'll handle for-loops specially)
+        // First, protect for-loop semicolons by replacing them temporarily
+        formatted = formatted.replace(/for\s*\([^)]+\)/g, match => match.replace(/;/g, '§'));
+
+        // Now add newlines after all remaining semicolons
+        formatted = formatted.replace(/;/g, ';\n');
+
+        // Restore for-loop semicolons
+        formatted = formatted.replace(/§/g, ';');
+
+        // Step 3: Add newlines around braces
+        formatted = formatted
+            // Newline after opening brace
+            .replace(/\{\s*/g, ' {\n')
+            // Newline before closing brace  
+            .replace(/\s*\}/g, '\n}')
+            // Newline after closing brace (unless followed by else/catch/finally)
+            .replace(/\}(?!\s*(else|catch|finally))/g, '}\n');
+
+        // Step 4: Handle else/else if properly
+        formatted = formatted
+            .replace(/\}\s*else\s+if/g, '} else if')
+            .replace(/\}\s*else\s*\{/g, '} else {')
+            .replace(/\belse\s*\{/g, 'else {');
+
+        // Step 5: Clean up - remove empty lines and excessive spaces
+        formatted = formatted
+            .replace(/\n\s*\n/g, '\n')
+            .replace(/^\s+|\s+$/gm, '')
+            .trim();
+
+        // Step 6: Apply indentation
+        const lines = formatted.split('\n');
+        let indent = 0;
+        const indentedLines = [];
+
+        for (let line of lines) {
+            line = line.trim();
+            if (!line) continue;
+
+            // Count braces to determine indent change
+            const openBraces = (line.match(/\{/g) || []).length;
+            const closeBraces = (line.match(/\}/g) || []).length;
+
+            // Decrease indent BEFORE adding line if it starts with }
+            if (line.startsWith('}') || line.startsWith('} else')) {
+                indent = Math.max(0, indent - closeBraces);
+                indentedLines.push('    '.repeat(indent) + line);
+                indent += openBraces;
+            } else {
+                indentedLines.push('    '.repeat(indent) + line);
+                indent += openBraces - closeBraces;
+            }
+
+            indent = Math.max(0, indent);
+        }
+
+        return indentedLines.join('\n');
+    }
+
+    // Apply syntax highlighting using Prism
+    function highlightCode(code) {
+        if (typeof Prism !== 'undefined' && Prism.highlight) {
+            try {
+                return Prism.highlight(code, Prism.languages.java || Prism.languages.clike, 'java');
+            } catch (e) {
+                return escapeHtml(code);
+            }
+        }
+        return escapeHtml(code);
+    }
+
+
     // Create progress indicator
     const progressContainer = document.createElement('div');
     progressContainer.id = 'progress-container';
@@ -213,12 +354,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // Create question text span with markdown support
         const qText = document.createElement('span');
         qText.className = 'mcq-question-text';
-        // Use marked.parseInline for inline markdown (backticks, bold, etc.)
-        if (typeof marked !== 'undefined' && marked.parseInline) {
-            qText.innerHTML = marked.parseInline(q.question);
-        } else {
-            qText.textContent = q.question;
-        }
+        // Use our custom formatter for proper code block display
+        qText.innerHTML = formatCodeInText(q.question);
 
         qTitle.appendChild(qNumber);
         qTitle.appendChild(qText);
@@ -266,11 +403,8 @@ document.addEventListener('DOMContentLoaded', function () {
             // Create option text span with markdown support
             const optText = document.createElement('span');
             optText.className = 'mcq-option-text';
-            if (typeof marked !== 'undefined' && marked.parseInline) {
-                optText.innerHTML = marked.parseInline(opt);
-            } else {
-                optText.textContent = opt;
-            }
+            // Use our custom formatter for consistent code display
+            optText.innerHTML = formatCodeInText(opt);
 
             label.appendChild(input);
             label.appendChild(optionLetter);
