@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const dataScript = document.getElementById('mcq-data');
 
     let questions = [];
+    let answeredQuestions = new Set(); // Track which questions have been answered
+    let correctCount = 0;
+    let incorrectCount = 0;
 
     if (dataScript) {
         try {
@@ -31,11 +34,160 @@ document.addEventListener('DOMContentLoaded', function () {
 
     totalSpan.textContent = questions.length;
 
+    // Create progress indicator
+    const progressContainer = document.createElement('div');
+    progressContainer.id = 'progress-container';
+    progressContainer.style.cssText = `
+        position: sticky;
+        top: 70px;
+        z-index: 100;
+        background: rgba(26, 26, 46, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(99, 102, 241, 0.2);
+    `;
+
+    const progressText = document.createElement('div');
+    progressText.id = 'progress-text';
+    progressText.style.cssText = `
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+    `;
+    progressText.innerHTML = `
+        <span>Progress: <strong id="answered-count">0</strong>/${questions.length}</span>
+        <span style="color: #4ade80;">✓ <span id="live-correct">0</span></span>
+        <span style="color: #fb7185;">✗ <span id="live-incorrect">0</span></span>
+    `;
+
+    const progressBar = document.createElement('div');
+    progressBar.style.cssText = `
+        height: 6px;
+        background: rgba(99, 102, 241, 0.2);
+        border-radius: 3px;
+        overflow: hidden;
+    `;
+
+    const progressFill = document.createElement('div');
+    progressFill.id = 'progress-fill';
+    progressFill.style.cssText = `
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        border-radius: 3px;
+        transition: width 0.3s ease;
+    `;
+
+    progressBar.appendChild(progressFill);
+    progressContainer.appendChild(progressText);
+    progressContainer.appendChild(progressBar);
+    container.parentNode.insertBefore(progressContainer, container);
+
+    // Function to update progress
+    function updateProgress() {
+        const answeredCount = document.getElementById('answered-count');
+        const liveCorrect = document.getElementById('live-correct');
+        const liveIncorrect = document.getElementById('live-incorrect');
+        const progressFill = document.getElementById('progress-fill');
+
+        answeredCount.textContent = answeredQuestions.size;
+        liveCorrect.textContent = correctCount;
+        liveIncorrect.textContent = incorrectCount;
+        progressFill.style.width = `${(answeredQuestions.size / questions.length) * 100}%`;
+
+        // Update submit button text
+        submitBtn.textContent = `📊 See Final Results (${answeredQuestions.size}/${questions.length} answered)`;
+
+        // Check if all questions are answered
+        if (answeredQuestions.size === questions.length) {
+            showFinalResults();
+        }
+    }
+
+    // Function to show final results
+    function showFinalResults() {
+        scoreSpan.textContent = correctCount;
+        correctSpan.textContent = correctCount;
+        incorrectSpan.textContent = incorrectCount;
+        resultContainer.style.display = 'block';
+
+        // Scroll to results smoothly
+        setTimeout(() => {
+            resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+
+        // Update button state
+        submitBtn.disabled = true;
+        submitBtn.textContent = "✓ Test Completed!";
+        submitBtn.style.background = 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)';
+        submitBtn.style.boxShadow = '0 4px 15px rgba(34, 197, 94, 0.3)';
+        submitBtn.style.cursor = 'default';
+    }
+
+    // Function to evaluate a single question
+    function evaluateQuestion(index, selectedValue) {
+        const q = questions[index];
+        const feedbackDiv = document.getElementById(`feedback-${index}`);
+        const questionBlock = feedbackDiv.parentElement;
+
+        feedbackDiv.style.display = 'block';
+        answeredQuestions.add(index);
+
+        // Disable all options for this question
+        const questionInputs = document.querySelectorAll(`input[name="question-${index}"]`);
+        questionInputs.forEach(input => {
+            input.disabled = true;
+            const label = input.parentElement;
+            label.style.cursor = 'not-allowed';
+
+            // Highlight correct answer
+            if (parseInt(input.value) === q.answer) {
+                label.style.background = 'rgba(34, 197, 94, 0.15)';
+                label.style.border = '1px solid rgba(34, 197, 94, 0.4)';
+                label.style.borderRadius = '8px';
+                label.style.padding = '0.5rem';
+                label.style.margin = '-0.5rem';
+            }
+
+            // Highlight wrong selection
+            if (parseInt(input.value) === selectedValue && selectedValue !== q.answer) {
+                label.style.background = 'rgba(244, 63, 94, 0.15)';
+                label.style.border = '1px solid rgba(244, 63, 94, 0.4)';
+                label.style.borderRadius = '8px';
+                label.style.padding = '0.5rem';
+                label.style.margin = '-0.5rem';
+            }
+        });
+
+        if (selectedValue === q.answer) {
+            correctCount++;
+            feedbackDiv.textContent = '✓ Correct! Well done!';
+            feedbackDiv.style.background = 'rgba(34, 197, 94, 0.15)';
+            feedbackDiv.style.color = '#4ade80';
+            feedbackDiv.style.border = '1px solid rgba(34, 197, 94, 0.3)';
+            questionBlock.style.borderLeft = '4px solid #4ade80';
+        } else {
+            incorrectCount++;
+            feedbackDiv.innerHTML = `✗ Incorrect. <span style="color: #a5a5b8;">The correct answer is: </span><strong style="color: #4ade80;">${String.fromCharCode(65 + q.answer)}. ${q.options[q.answer]}</strong>`;
+            feedbackDiv.style.background = 'rgba(244, 63, 94, 0.15)';
+            feedbackDiv.style.color = '#fb7185';
+            feedbackDiv.style.border = '1px solid rgba(244, 63, 94, 0.3)';
+            questionBlock.style.borderLeft = '4px solid #fb7185';
+        }
+
+        updateProgress();
+    }
+
     // Render questions with modern styling and markdown support
     questions.forEach((q, index) => {
         const questionDiv = document.createElement('div');
         questionDiv.className = 'question-block';
-        questionDiv.style.animation = `fadeIn 0.5s ease-out ${index * 0.1}s both`;
+        questionDiv.style.animation = `fadeIn 0.5s ease-out ${index * 0.05}s both`;
+        questionDiv.style.transition = 'border-left 0.3s ease';
 
         const qNumber = document.createElement('span');
         qNumber.style.cssText = `
@@ -80,11 +232,19 @@ document.addEventListener('DOMContentLoaded', function () {
             wrapper.style.marginBottom = '0.5rem';
 
             const label = document.createElement('label');
+            label.style.transition = 'all 0.2s ease';
 
             const input = document.createElement('input');
             input.type = 'radio';
             input.name = `question-${index}`;
             input.value = optIndex;
+
+            // Add instant evaluation on selection
+            input.addEventListener('change', function () {
+                if (!answeredQuestions.has(index)) {
+                    evaluateQuestion(index, optIndex);
+                }
+            });
 
             const optionLetter = document.createElement('span');
             optionLetter.style.cssText = `
@@ -136,60 +296,45 @@ document.addEventListener('DOMContentLoaded', function () {
         container.appendChild(questionDiv);
     });
 
+    // Update initial button text
+    submitBtn.textContent = `📊 See Final Results (0/${questions.length} answered)`;
+
+    // Submit button now shows results for any unanswered questions too
     submitBtn.addEventListener('click', function () {
-        let correctCount = 0;
-        let incorrectCount = 0;
-
+        // Evaluate any unanswered questions as skipped
         questions.forEach((q, index) => {
-            const selected = document.querySelector(`input[name="question-${index}"]:checked`);
-            const feedbackDiv = document.getElementById(`feedback-${index}`);
-            feedbackDiv.style.display = 'block';
+            if (!answeredQuestions.has(index)) {
+                const feedbackDiv = document.getElementById(`feedback-${index}`);
+                const questionBlock = feedbackDiv.parentElement;
 
-            if (selected) {
-                const selectedValue = parseInt(selected.value);
-                if (selectedValue === q.answer) {
-                    correctCount++;
-                    feedbackDiv.textContent = '✓ Correct!';
-                    feedbackDiv.style.background = 'rgba(34, 197, 94, 0.15)';
-                    feedbackDiv.style.color = '#4ade80';
-                    feedbackDiv.style.border = '1px solid rgba(34, 197, 94, 0.3)';
-                } else {
-                    incorrectCount++;
-                    feedbackDiv.innerHTML = `✗ Incorrect. <span style="color: #a5a5b8;">Correct: </span><strong>${q.options[q.answer]}</strong>`;
-                    feedbackDiv.style.background = 'rgba(244, 63, 94, 0.15)';
-                    feedbackDiv.style.color = '#fb7185';
-                    feedbackDiv.style.border = '1px solid rgba(244, 63, 94, 0.3)';
-                }
-            } else {
-                incorrectCount++; // Treat unanswered as incorrect
-                feedbackDiv.innerHTML = `⊘ Skipped. <span style="color: #a5a5b8;">Correct: </span><strong>${q.options[q.answer]}</strong>`;
+                feedbackDiv.style.display = 'block';
+                answeredQuestions.add(index);
+                incorrectCount++;
+
+                feedbackDiv.innerHTML = `⊘ Skipped. <span style="color: #a5a5b8;">The correct answer is: </span><strong style="color: #4ade80;">${String.fromCharCode(65 + q.answer)}. ${q.options[q.answer]}</strong>`;
                 feedbackDiv.style.background = 'rgba(245, 158, 11, 0.15)';
                 feedbackDiv.style.color = '#fbbf24';
                 feedbackDiv.style.border = '1px solid rgba(245, 158, 11, 0.3)';
+                questionBlock.style.borderLeft = '4px solid #fbbf24';
+
+                // Disable and highlight correct answer
+                const questionInputs = document.querySelectorAll(`input[name="question-${index}"]`);
+                questionInputs.forEach(input => {
+                    input.disabled = true;
+                    const label = input.parentElement;
+                    label.style.cursor = 'not-allowed';
+
+                    if (parseInt(input.value) === q.answer) {
+                        label.style.background = 'rgba(34, 197, 94, 0.15)';
+                        label.style.border = '1px solid rgba(34, 197, 94, 0.4)';
+                        label.style.borderRadius = '8px';
+                        label.style.padding = '0.5rem';
+                        label.style.margin = '-0.5rem';
+                    }
+                });
             }
         });
 
-        scoreSpan.textContent = correctCount;
-        correctSpan.textContent = correctCount;
-        incorrectSpan.textContent = incorrectCount;
-        resultContainer.style.display = 'block';
-
-        // Scroll to results smoothly
-        resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-        // Update button state
-        submitBtn.disabled = true;
-        submitBtn.textContent = "✓ Test Submitted";
-        submitBtn.style.background = 'linear-gradient(135deg, #374151 0%, #1f2937 100%)';
-        submitBtn.style.boxShadow = 'none';
-        submitBtn.style.cursor = 'not-allowed';
-
-        // Disable all inputs
-        const allInputs = document.querySelectorAll('input[type="radio"]');
-        allInputs.forEach(input => {
-            input.disabled = true;
-            input.parentElement.style.cursor = 'not-allowed';
-            input.parentElement.style.opacity = '0.7';
-        });
+        showFinalResults();
     });
 });
