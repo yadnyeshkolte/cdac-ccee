@@ -1,252 +1,342 @@
 [
   {
-    "question": "Which method is called only once during the life cycle of a servlet?",
+    "question": "Priority Queue with Heap gives both insertion and retrieval at:",
     "options": [
-      "doGet()",
-      "doPost()",
-      "init()",
-      "service()"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What is the correct way to redirect a client to a different URL from a servlet?",
-    "options": [
-      "response.forward()",
-      "request.redirect()",
-      "response.sendRedirect(\"newPage.jsp\")",
-      "RequestDispatcher.sendRedirect()"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What is the default value of session in HttpServlet?",
-    "options": [
-      "true",
-      "false",
-      "null",
-      "session is not part of HttpServlet"
+      "log n",
+      "n",
+      "n^2",
+      "2^n"
     ],
     "answer": 0
   },
   {
-    "question": "Which of the following methods is used to read form data sent via GET method?",
+    "question": "Cutting down the height of recursion tree is the algorithm design technique called as:",
     "options": [
-      "getParameterValues()",
-      "getAttribute()",
-      "getInitParameter()",
-      "getParameter()"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "What is the role of web.xml in servlets?",
-    "options": [
-      "To load static resources",
-      "To define HTML templates",
-      "To configure servlet mappings",
-      "To define Java classes"
+      "Backtracking",
+      "Greedy approach",
+      "Dynamic programming",
+      "Divide and Conquer"
     ],
     "answer": 2
   },
   {
-    "question": "The service() method of a servlet is:",
+    "question": "If value of Left Subtree, value of node and value of Right Subtree are in strict order for all nodes in the tree, then we have a:",
     "options": [
-      "Automatically called when the servlet is instantiated",
-      "Called each time the servlet receives a request",
-      "Called once during the lifetime",
-      "Used to close the servlet"
+      "AVL Tree",
+      "Binary Search Tree",
+      "Red Black Tree",
+      "Hierarchical Tree"
     ],
     "answer": 1
   },
   {
-    "question": "What is returned by request.getContextPath()?",
+    "question": "The time complexity of merging two sorted arrays is:",
     "options": [
-      "Name of servlet",
-      "Path to web.xml",
-      "Root context of web app",
-      "Complete URI"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which interface must a class implement to become a servlet?",
-    "options": [
-      "HttpServlet",
-      "Servlet",
-      "RequestDispatcher",
-      "ServletConfig"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which status code is returned by default when a servlet runs successfully?",
-    "options": [
-      "200",
-      "404",
-      "500",
-      "403"
+      "O(n)",
+      "O(nlogn)",
+      "O(n^2)",
+      "O(logn)"
     ],
     "answer": 0
   },
   {
-    "question": "What is the correct way to forward a request from one servlet to another?",
+    "question": "Solving the problem of a Maze is:",
     "options": [
-      "response.sendRedirect()",
-      "request.sendForward()",
-      "RequestDispatcher.forward()",
-      "ServletContext.include()"
+      "Brute force technique",
+      "Dynamic programming",
+      "Backtracking algorithm",
+      "Greedy Approach"
     ],
     "answer": 2
   },
   {
-    "question": "What does <%= %> represent in JSP?",
+    "question": "Determine the maximum number of comparisons required to find the items with minimal and maximal weights among 2n items:",
     "options": [
-      "Declaration tag",
-      "Directive tag",
-      "Expression tag",
-      "Scriptlet tag"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which JSP tag is used to include another file during page translation?",
-    "options": [
-      "<jsp:include>",
-      "<%@ include file=\"...\" %>",
-      "<jsp:directive>",
-      "<jsp:forward>"
+      "O(2n-1)",
+      "O(3n-2)",
+      "O(2n-2)",
+      "O(3n-1)"
     ],
     "answer": 1
   },
   {
-    "question": "Which of the following is not an implicit object in JSP?",
+    "question": "Find the minimal complexity for an algorithm that finds the minimum weight element among a collection:",
     "options": [
-      "application",
-      "session",
-      "request",
-      "driver"
+      "O(nlogn)",
+      "O(n^2)",
+      "O(logn)",
+      "O(n-1)"
     ],
     "answer": 3
   },
   {
-    "question": "The correct syntax for a JSP declaration is:",
+    "question": "A tree in which every node has either 0 or 2 children is called:",
     "options": [
-      "<%! int x = 10; %>",
-      "<%= int x = 10; %>",
-      "<% int x = 10; %>",
-      "<jsp:declaration>int x=10;</jsp:declaration>"
+      "Complete Binary Tree",
+      "Strictly Binary Tree",
+      "Unbalanced Binary Tree",
+      "Binary Search Tree"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Bubble Sort gives the best case when the array is:",
+    "options": [
+      "Random",
+      "Already sorted",
+      "Small",
+      "Big"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Determine the functionality of the following code snippet: `public static String olympics(String tokyo) { if (tokyo.length() == 1) return tokyo; else return tokyo.charAt(tokyo.length()-1) + olympics(tokyo.substring(0,tokyo.length()-1)); }`",
+    "options": [
+      "Arranges the characters of the String in descending order",
+      "Arranges the characters of the String in ascending order",
+      "Finds whether the string is a palindrome",
+      "Reverses a String"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "A sorted (ascending order) singly linked list has n nodes. Determine the best case time complexity of inserting an element (new node) into the list such that the sorted order remains:",
+    "options": [
+      "O(log n)",
+      "O(1)",
+      "O(nlogn)",
+      "O(n)"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Determine the output of the following program: `int sarapatta(int parambarai) { if (parambarai==0 || parambarai==1) return parambarai; else return (1*sarapatta(parambarai-2)+ 2*sarapatta(parambarai-1)); }` when called with `sarapatta(10)`",
+    "options": [
+      "7823",
+      "3278",
+      "7832",
+      "2378"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "In a Graph, the sum of degrees is:",
+    "options": [
+      "2 * number of edges",
+      "number of edges / 2",
+      "2 * number of vertices",
+      "number of vertices / 2"
     ],
     "answer": 0
   },
   {
-    "question": "Which directive is used to define the scripting language in JSP?",
+    "question": "The collision resolution technique in Hashing where the next immediate vacant slot is looked for is called:",
     "options": [
-      "<%@ language=\"java\" %>",
-      "<%@ scriptingLanguage=\"java\" %>",
-      "<%@ page language=\"java\" %>",
-      "<jsp:language=\"java\">"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which of the following is not a step in JDBC connection?",
-    "options": [
-      "Load the driver",
-      "Create a database",
-      "Establish connection",
-      "Execute queries"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What does executeUpdate() return?",
-    "options": [
-      "Boolean",
-      "ResultSet",
-      "Object",
-      "Integer"
+      "Quadratic Probing",
+      "Rehashing",
+      "Double Hashing",
+      "Linear Probing"
     ],
     "answer": 3
   },
   {
-    "question": "Which package contains JDBC classes and interfaces?",
+    "question": "In tree traversal, root -> left -> right traversal style is called as:",
     "options": [
-      "javax.jdbc",
-      "java.sql",
-      "org.sql",
-      "java.jdbc"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which statement is true about PreparedStatement?",
-    "options": [
-      "It is used to call stored procedures",
-      "It prevents SQL injection",
-      "It is slower than Statement",
-      "It does not allow parameters"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which method is used to establish a connection in JDBC?",
-    "options": [
-      "Driver.getConnection()",
-      "Connection.getConnection()",
-      "DriverManager.getConnection()",
-      "ResultSet.getConnection()"
+      "Post order traversal",
+      "Depth First traversal",
+      "Pre Order Traversal",
+      "Breadth First Traversal"
     ],
     "answer": 2
   },
   {
-    "question": "Which of the following is used to configure database connection in Hibernate?",
+    "question": "f(n) represents time complexity. If `c1 g(n) <= f(n) <= c2 g(n)` then:",
     "options": [
-      "hibernate.db.cfg",
-      "hibernate.xml",
-      "hibernate.cfg.xml",
-      "persistence.xml"
+      "f(n) = O(g(n))",
+      "f(n) = Omega(g(n))",
+      "f(n) = Theta(g(n))",
+      "f(n) = Delta(g(n))"
     ],
     "answer": 2
   },
   {
-    "question": "Which annotation is used to map a class as an entity?",
+    "question": "Determine the output of the following program: `int choudary(int n, int r) { if(n>0) return((n%r)+choudary(n/r,r)); else return 0; }` when called with `choudary(420, 4)`",
     "options": [
-      "@HibernateEntity",
-      "@Table",
-      "@Entity",
-      "@Bean"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What is the purpose of SessionFactory in Hibernate?",
-    "options": [
-      "To store session data",
-      "To manage database connections",
-      "To create Session objects",
-      "To build tables"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which Hibernate method is used to save an object in DB?",
-    "options": [
-      "session.store()",
-      "session.add()",
-      "session.insert()",
-      "session.save()"
+      "2",
+      "3",
+      "5",
+      "6"
     ],
     "answer": 3
   },
   {
-    "question": "What does Hibernate use to map Java classes to database tables?",
+    "question": "Determine the algorithm implemented in the following code snippet: `if(b>c) return -1; temp=(b+c)/2; if(a==data[temp])...`",
     "options": [
-      "XML only",
-      "Annotations only",
-      "Both XML and annotations",
-      "None of the above"
+      "Insertion Sort",
+      "Binary Search",
+      "Max Heapify",
+      "Selection Sort"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Determine the output of the following recursive program when called with `mocktail(5)`:",
+    "options": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "All the internal nodes have both the children and all the leaves are at same level, then the tree is a:",
+    "options": [
+      "Complete Binary Tree",
+      "Max Heap",
+      "Min Heap",
+      "AVL Tree"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "The 'push' operation is associated with which data structure?",
+    "options": [
+      "Heap",
+      "Stack",
+      "Queue",
+      "Array"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The maximum number of edges in a simple graph of n vertices is:",
+    "options": [
+      "n(n-1)/2",
+      "n(n+1)/2",
+      "(n-1)/2",
+      "(n+1)/2"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Derive the Pre-order traversal of the tree whose Post order traversal is `9,8,12,20,15,10` and Inorder traversal is `8,9,10,12,15,20`:",
+    "options": [
+      "8, 10, 9, 15, 12, 20",
+      "10, 8, 9, 15, 12, 20",
+      "8, 10, 9, 12, 15, 20",
+      "10, 8, 9, 12, 15, 20"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The Stack is empty and a `pop()` operation is performed. What will the data structure report?",
+    "options": [
+      "Top",
+      "Underflow",
+      "Empty",
+      "Overflow"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The First Come First Serve Process scheduling algorithm is a representation of which data structure?",
+    "options": [
+      "Heap",
+      "Stack",
+      "Queue",
+      "Array"
     ],
     "answer": 2
+  },
+  {
+    "question": "`{'m','a','d'}` are the initial contents of a stack. On this stack the following operations are performed: `{ push('a'), pop, push('m'), pop, push('l'), pop, pop}`. What will be present content of the stack from bottom to top?",
+    "options": [
+      "{'m'}",
+      "{'m','a'}",
+      "{'m','a','d','a'}",
+      "{'m','a','d'}"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is the correct ascending order of the complexity expressions?",
+    "options": [
+      "n < 2n < nlogn < n^2 < 2^n < n!",
+      "n < nlogn < 2n < n^2 < 2^n < n!",
+      "2n < n < nlogn < n^2 < n! < 2^n",
+      "n < nlogn < n^2 < 2^n < n!"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Determine the sorting algorithm implemented in the following code snippet with nested loops and logic: `tmp < data[j-1]`",
+    "options": [
+      "Insertion Sort",
+      "Selection Sort",
+      "Bubble Sort",
+      "Shell Sort"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Determine the postfix notation for the infix notation: `(a+b) * (c+d)`",
+    "options": [
+      "abcd++*",
+      "ab+cd+*",
+      "abcd+*+",
+      "ab+cd*+"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "The Fractional Knapsack problem is an example for:",
+    "options": [
+      "Brute force technique",
+      "Dynamic programming",
+      "Backtracking algorithm",
+      "Greedy Approach"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Determine the output of the following program when called with `foodie(888)`:",
+    "options": [
+      "1110111000",
+      "1101111000",
+      "1100111000",
+      "1101101000"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is not a linear data structure?",
+    "options": [
+      "Array",
+      "Linked List",
+      "Tree",
+      "Vector"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Determine n0 where the expression `(6n^2)` becomes greater than `(100n+300)` for n>0:",
+    "options": [
+      "20",
+      "21",
+      "22",
+      "23"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which of the following sorting algorithms has the best, average and worst case time complexities as O(n^2)?",
+    "options": [
+      "Merge Sort",
+      "Heap Sort",
+      "Insertion Sort",
+      "Selection Sort"
+    ],
+    "answer": 3
   }
 ]
