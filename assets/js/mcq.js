@@ -102,6 +102,25 @@ document.addEventListener('DOMContentLoaded', function () {
         // Step 1: Normalize whitespace
         let formatted = code.replace(/\s+/g, ' ').trim();
 
+        // Step 1.5: Handle single-line if/else without braces
+        // Pattern: if (condition) statement; -> if (condition) { statement; }
+        formatted = formatted.replace(
+            /\bif\s*\(([^)]+)\)\s*([^{;]+;)/g,
+            'if ($1) {\n$2\n}'
+        );
+
+        // Pattern: else statement; -> else { statement; }
+        formatted = formatted.replace(
+            /\belse\s+(?!if)([^{;]+;)/g,
+            'else {\n$1\n}'
+        );
+
+        // Pattern: else if (condition) statement; -> else if (condition) { statement; }
+        formatted = formatted.replace(
+            /\belse\s+if\s*\(([^)]+)\)\s*([^{;]+;)/g,
+            'else if ($1) {\n$2\n}'
+        );
+
         // Step 2: Add newlines after ALL semicolons (we'll handle for-loops specially)
         // First, protect for-loop semicolons by replacing them temporarily
         formatted = formatted.replace(/for\s*\([^)]+\)/g, match => match.replace(/;/g, '§'));
@@ -121,11 +140,12 @@ document.addEventListener('DOMContentLoaded', function () {
             // Newline after closing brace (unless followed by else/catch/finally)
             .replace(/\}(?!\s*(else|catch|finally))/g, '}\n');
 
-        // Step 4: Handle else/else if properly
+        // Step 4: Handle else/else if properly - keep them on same line as closing brace
         formatted = formatted
+            .replace(/\}\s*\n\s*else\s+if/g, '} else if')
+            .replace(/\}\s*\n\s*else/g, '} else')
             .replace(/\}\s*else\s+if/g, '} else if')
-            .replace(/\}\s*else\s*\{/g, '} else {')
-            .replace(/\belse\s*\{/g, 'else {');
+            .replace(/\}\s*else\s*\{/g, '} else {');
 
         // Step 5: Clean up - remove empty lines and excessive spaces
         formatted = formatted
