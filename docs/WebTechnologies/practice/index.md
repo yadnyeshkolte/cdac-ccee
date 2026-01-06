@@ -3,7 +3,7 @@ layout: default
 title: Practice
 parent: Module 3 - Web Technologies
 has_children: true
-nav_order: 10
+nav_order: 100
 ---
 
 # Practice Questions for Module 3
