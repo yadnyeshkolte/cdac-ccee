@@ -1,0 +1,452 @@
+[
+    {
+        "question": "What is React?",
+        "options": [
+            "A JavaScript framework",
+            "A JavaScript library for building UIs",
+            "A backend framework",
+            "A database"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is JSX?",
+        "options": [
+            "JavaScript XML syntax extension",
+            "A new JavaScript version",
+            "A CSS preprocessor",
+            "A testing framework"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which method renders React elements to the DOM?",
+        "options": [
+            "React.render()",
+            "ReactDOM.render()",
+            "ReactDOM.createRoot().render()",
+            "Both B and C"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "What is the correct way to create a React component?",
+        "options": [
+            "function myComponent() {}",
+            "function MyComponent() {}",
+            "const myComponent = () => {}",
+            "class myComponent {}"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which attribute is used instead of 'class' in JSX?",
+        "options": [
+            "Class",
+            "class",
+            "className",
+            "cssClass"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "How do you pass data from parent to child component?",
+        "options": [
+            "state",
+            "props",
+            "context",
+            "events"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which hook is used to manage state in function components?",
+        "options": [
+            "useEffect",
+            "useState",
+            "useContext",
+            "useReducer"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does useState() return?",
+        "options": [
+            "Current state only",
+            "Setter function only",
+            "Array with state and setter",
+            "Object with state and setter"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which hook handles side effects in React?",
+        "options": [
+            "useState",
+            "useEffect",
+            "useMemo",
+            "useCallback"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "When does useEffect with empty dependency array run?",
+        "options": [
+            "Every render",
+            "Only on mount",
+            "Only on unmount",
+            "Never"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the purpose of the key prop in lists?",
+        "options": [
+            "Styling elements",
+            "Identifying elements uniquely",
+            "Sorting elements",
+            "Filtering elements"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method is used to update state in class components?",
+        "options": [
+            "this.state = {}",
+            "this.setState()",
+            "this.updateState()",
+            "this.changeState()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the Virtual DOM?",
+        "options": [
+            "A copy of the real DOM in memory",
+            "A new browser API",
+            "A JavaScript file",
+            "A CSS framework"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which hook is used to access DOM elements?",
+        "options": [
+            "useState",
+            "useEffect",
+            "useRef",
+            "useMemo"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What does useRef.current contain?",
+        "options": [
+            "Previous state",
+            "DOM element reference",
+            "Current props",
+            "Any mutable value"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Which hook memoizes expensive calculations?",
+        "options": [
+            "useCallback",
+            "useMemo",
+            "useEffect",
+            "useReducer"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which hook memoizes functions?",
+        "options": [
+            "useMemo",
+            "useCallback",
+            "useRef",
+            "useEffect"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the purpose of useReducer?",
+        "options": [
+            "Managing complex state logic",
+            "Reducing array elements",
+            "Reducing component size",
+            "Reducing re-renders"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which hook consumes context values?",
+        "options": [
+            "useProvider",
+            "useContext",
+            "useConsumer",
+            "useStore"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does React.memo() do?",
+        "options": [
+            "Memoizes state",
+            "Prevents unnecessary re-renders",
+            "Stores data in memory",
+            "Creates a memo component"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which component catches JavaScript errors?",
+        "options": [
+            "ErrorHandler",
+            "ErrorBoundary",
+            "TryCatch",
+            "SafeComponent"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is React Router used for?",
+        "options": [
+            "State management",
+            "Client-side routing",
+            "API calls",
+            "Testing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which component wraps the app for React Router?",
+        "options": [
+            "Router",
+            "BrowserRouter",
+            "RouteProvider",
+            "RouterProvider"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which hook gets URL parameters in React Router?",
+        "options": [
+            "useParams",
+            "useQuery",
+            "useLocation",
+            "useRoute"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which hook enables programmatic navigation?",
+        "options": [
+            "useHistory",
+            "useNavigate",
+            "useRedirect",
+            "useLocation"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Redux used for?",
+        "options": [
+            "Routing",
+            "State management",
+            "UI styling",
+            "Testing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What are the three principles of Redux?",
+        "options": [
+            "Components, Props, State",
+            "Single source of truth, State is read-only, Changes via pure functions",
+            "Actions, Reducers, Store",
+            "Create, Read, Update, Delete"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is an action in Redux?",
+        "options": [
+            "A function that updates state",
+            "A plain object with type property",
+            "A component",
+            "A reducer function"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does a reducer do in Redux?",
+        "options": [
+            "Reduces component size",
+            "Takes state and action, returns new state",
+            "Dispatches actions",
+            "Connects components"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does the store hold in Redux?",
+        "options": [
+            "Only actions",
+            "Only reducers",
+            "The entire application state",
+            "Component references"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which method sends an action to the store?",
+        "options": [
+            "store.send()",
+            "store.dispatch()",
+            "store.emit()",
+            "store.action()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which hook reads state from Redux store?",
+        "options": [
+            "useStore",
+            "useSelector",
+            "useRedux",
+            "useState"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which hook returns the dispatch function?",
+        "options": [
+            "useAction",
+            "useDispatch",
+            "useReducer",
+            "useStore"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Redux Toolkit?",
+        "options": [
+            "A testing library",
+            "Official recommended way to write Redux",
+            "A UI component library",
+            "A routing library"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which Redux Toolkit function creates a slice?",
+        "options": [
+            "createReducer()",
+            "createSlice()",
+            "createStore()",
+            "createAction()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does createAsyncThunk handle?",
+        "options": [
+            "Synchronous actions",
+            "Asynchronous operations",
+            "Error handling",
+            "Routing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which component provides Redux store to React app?",
+        "options": [
+            "StoreProvider",
+            "Provider",
+            "ReduxProvider",
+            "Store"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What are selectors in Redux?",
+        "options": [
+            "Functions that select elements",
+            "Functions that extract state data",
+            "Components that select data",
+            "Hooks for selection"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the purpose of combineReducers?",
+        "options": [
+            "Combine actions",
+            "Combine multiple reducers into one",
+            "Combine components",
+            "Combine stores"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which pattern allows code splitting in React?",
+        "options": [
+            "React.memo",
+            "React.lazy",
+            "React.split",
+            "React.async"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which component shows fallback while lazy component loads?",
+        "options": [
+            "Loading",
+            "Fallback",
+            "Suspense",
+            "Lazy"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is the correct syntax for conditional rendering?",
+        "options": [
+            "if (condition) <Component />",
+            "{condition && <Component />}",
+            "<if condition><Component /></if>",
+            "condition ? <Component />"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does event.preventDefault() prevent in forms?",
+        "options": [
+            "State update",
+            "Form submission and page reload",
+            "Event bubbling",
+            "Component re-render"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a controlled component in React?",
+        "options": [
+            "Component with lifecycle methods",
+            "Component whose value is controlled by state",
+            "Component that controls others",
+            "Component with Redux"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is lifting state up in React?",
+        "options": [
+            "Moving state to global store",
+            "Moving state to common ancestor",
+            "Moving state to child component",
+            "Moving state to context"
+        ],
+        "answer": 1
+    }
+]

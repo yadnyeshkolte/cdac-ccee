@@ -1,21 +1,451 @@
 [
   {
-    "question": "Sample Question 1 for Module 3",
+    "question": "What does HTTP stand for?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "HyperText Transfer Protocol",
+      "HyperText Transmission Protocol",
+      "High Transfer Text Protocol",
+      "HyperLink Transfer Protocol"
     ],
     "answer": 0
   },
   {
-    "question": "Sample Question 2 for Module 3",
+    "question": "Which HTTP method is idempotent?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "POST",
+      "PUT",
+      "PATCH",
+      "None of the above"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What HTTP status code indicates 'Not Found'?",
+    "options": [
+      "400",
+      "401",
+      "403",
+      "404"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which port is default for HTTPS?",
+    "options": [
+      "80",
+      "8080",
+      "443",
+      "3000"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "DNS stands for:",
+    "options": [
+      "Domain Name Service",
+      "Domain Name System",
+      "Dynamic Name Server",
+      "Digital Network System"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which HTTP header is used to specify the content type?",
+    "options": [
+      "Accept",
+      "Content-Type",
+      "Authorization",
+      "Cache-Control"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which HTTP method is used to retrieve data?",
+    "options": [
+      "POST",
+      "PUT",
+      "GET",
+      "DELETE"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does SSL/TLS provide?",
+    "options": [
+      "Speed optimization",
+      "Data compression",
+      "Encryption and security",
+      "Caching"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which HTML5 tag is used for navigation?",
+    "options": [
+      "<navigation>",
+      "<nav>",
+      "<menu>",
+      "<navbar>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is NOT a semantic HTML5 element?",
+    "options": [
+      "<article>",
+      "<div>",
+      "<section>",
+      "<header>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which HTML5 input type is used for email validation?",
+    "options": [
+      "type=\"text\"",
+      "type=\"email\"",
+      "type=\"mail\"",
+      "type=\"validate\""
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which attribute makes an input field required?",
+    "options": [
+      "validate",
+      "mandatory",
+      "required",
+      "needed"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which HTML5 API is used to store data in the browser?",
+    "options": [
+      "Cookie API",
+      "Web Storage API",
+      "File API",
+      "Database API"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the difference between localStorage and sessionStorage?",
+    "options": [
+      "localStorage stores more data",
+      "sessionStorage persists after browser close",
+      "localStorage persists after browser close",
+      "No difference"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which HTML5 element is used for drawing graphics?",
+    "options": [
+      "<svg>",
+      "<canvas>",
+      "<graphics>",
+      "<draw>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which attribute is used to specify alternative text for images?",
+    "options": [
+      "title",
+      "alt",
+      "description",
+      "text"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which HTML5 element is used for main content?",
+    "options": [
+      "<content>",
+      "<body>",
+      "<main>",
+      "<article>"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which input type is used for selecting a date?",
+    "options": [
+      "type=\"calendar\"",
+      "type=\"date\"",
+      "type=\"datetime\"",
+      "type=\"picker\""
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which CSS property is used to change text color?",
+    "options": [
+      "text-color",
+      "font-color",
+      "color",
+      "foreground"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which CSS selector has the highest specificity?",
+    "options": [
+      "Class selector",
+      "Element selector",
+      "ID selector",
+      "Attribute selector"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the correct order of the box model from inside to outside?",
+    "options": [
+      "Margin, Border, Padding, Content",
+      "Content, Padding, Border, Margin",
+      "Padding, Content, Border, Margin",
+      "Content, Border, Padding, Margin"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which CSS property is used to make elements float?",
+    "options": [
+      "align",
+      "position",
+      "float",
+      "display"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which value of position removes element from normal flow?",
+    "options": [
+      "relative",
+      "static",
+      "absolute",
+      "sticky"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which CSS property controls the stacking order of elements?",
+    "options": [
+      "order",
+      "stack",
+      "z-index",
+      "layer"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which unit is relative to the root element's font size?",
+    "options": [
+      "em",
+      "rem",
+      "px",
+      "%"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which CSS property creates smooth transitions?",
+    "options": [
+      "animation",
+      "transform",
+      "transition",
+      "smooth"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which pseudo-class selects the first child element?",
+    "options": [
+      ":first",
+      ":first-child",
+      ":first-element",
+      ":child-first"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which CSS property is used to hide an element but keep its space?",
+    "options": [
+      "display: none",
+      "visibility: hidden",
+      "opacity: 0",
+      "Both B and C"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which is a valid way to include an external CSS file?",
+    "options": [
+      "<style src=\"style.css\">",
+      "<link rel=\"stylesheet\" href=\"style.css\">",
+      "<css href=\"style.css\">",
+      "<include file=\"style.css\">"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does box-sizing: border-box do?",
+    "options": [
+      "Adds extra border",
+      "Includes padding and border in width",
+      "Removes border",
+      "Makes border thicker"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which Bootstrap class creates a responsive container?",
+    "options": [
+      ".wrapper",
+      ".container",
+      ".responsive",
+      ".box"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How many columns does Bootstrap's grid system have?",
+    "options": [
+      "8",
+      "10",
+      "12",
+      "16"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which Bootstrap class makes an image responsive?",
+    "options": [
+      ".img-responsive",
+      ".img-fluid",
+      ".responsive-img",
+      ".fluid-img"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which Bootstrap breakpoint prefix is for medium devices?",
+    "options": [
+      "sm",
+      "md",
+      "lg",
+      "xl"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which Bootstrap class creates a primary button?",
+    "options": [
+      ".btn-primary",
+      ".button-primary",
+      ".primary-btn",
+      ".btn-blue"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which Bootstrap class hides element on mobile?",
+    "options": [
+      ".hidden-mobile",
+      ".d-none d-md-block",
+      ".mobile-hidden",
+      ".hide-sm"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which Bootstrap class adds margin to all sides?",
+    "options": [
+      ".margin-3",
+      ".m-3",
+      ".mg-3",
+      ".mar-3"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the viewport meta tag used for?",
+    "options": [
+      "SEO optimization",
+      "Responsive design on mobile",
+      "Faster loading",
+      "Browser caching"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which CSS at-rule is used for responsive design?",
+    "options": [
+      "@responsive",
+      "@screen",
+      "@media",
+      "@device"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which approach designs for mobile first then scales up?",
+    "options": [
+      "Desktop-first",
+      "Mobile-first",
+      "Responsive-first",
+      "Adaptive-first"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which Bootstrap container type is full-width?",
+    "options": [
+      ".container",
+      ".container-fluid",
+      ".container-full",
+      ".container-wide"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which pseudo-element adds content before an element?",
+    "options": [
+      ":before",
+      "::before",
+      "::first",
+      ":start"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which CSS function is used for calculations?",
+    "options": [
+      "compute()",
+      "math()",
+      "calc()",
+      "eval()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which CSS property creates a flexible box layout?",
+    "options": [
+      "display: box",
+      "display: flexible",
+      "display: flex",
+      "display: flexbox"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which CSS property creates a grid layout?",
+    "options": [
+      "display: table",
+      "display: grid",
+      "display: columns",
+      "display: layout"
     ],
     "answer": 1
   }

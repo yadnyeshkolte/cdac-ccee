@@ -1,22 +1,452 @@
 [
   {
-    "question": "Sample Question 1 for Module 3",
+    "question": "Which keyword declares a block-scoped variable in JavaScript?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "var",
+      "let",
+      "const",
+      "Both B and C"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the result of typeof null?",
+    "options": [
+      "null",
+      "undefined",
+      "object",
+      "NaN"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which operator checks both value and type equality?",
+    "options": [
+      "==",
+      "===",
+      "!=",
+      "="
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does NaN stand for?",
+    "options": [
+      "Not a Null",
+      "No assigned Number",
+      "Not a Number",
+      "Null and Number"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which method adds an element to the end of an array?",
+    "options": [
+      "push()",
+      "pop()",
+      "shift()",
+      "unshift()"
     ],
     "answer": 0
   },
   {
-    "question": "Sample Question 2 for Module 3",
+    "question": "Which array method returns a new array with transformed elements?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "forEach()",
+      "filter()",
+      "map()",
+      "reduce()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does the spread operator (...) do?",
+    "options": [
+      "Spreads elements of an array/object",
+      "Multiplies numbers",
+      "Creates a range",
+      "Deletes elements"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which string method finds the first occurrence of a substring?",
+    "options": [
+      "find()",
+      "search()",
+      "indexOf()",
+      "locate()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is hoisting in JavaScript?",
+    "options": [
+      "Moving code to server",
+      "Declaration moved to top of scope",
+      "Code optimization",
+      "Memory allocation"
     ],
     "answer": 1
+  },
+  {
+    "question": "Which method converts an object to JSON string?",
+    "options": [
+      "JSON.parse()",
+      "JSON.stringify()",
+      "JSON.convert()",
+      "JSON.toString()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method parses a JSON string to JavaScript object?",
+    "options": [
+      "JSON.parse()",
+      "JSON.stringify()",
+      "JSON.convert()",
+      "JSON.toObject()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Arrow functions do NOT have their own:",
+    "options": [
+      "return statement",
+      "parameters",
+      "this binding",
+      "variables"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is a closure in JavaScript?",
+    "options": [
+      "A closed function",
+      "Function with access to outer scope",
+      "Private variable",
+      "Nested loop"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which keyword is used to create a class in JavaScript?",
+    "options": [
+      "function",
+      "object",
+      "class",
+      "prototype"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which method is called when a class instance is created?",
+    "options": [
+      "init()",
+      "new()",
+      "constructor()",
+      "create()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which keyword is used to inherit from a parent class?",
+    "options": [
+      "inherits",
+      "extends",
+      "implements",
+      "prototype"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How do you call the parent class constructor?",
+    "options": [
+      "parent()",
+      "base()",
+      "super()",
+      "this.parent()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which method selects an element by ID?",
+    "options": [
+      "document.querySelector('#id')",
+      "document.getElementById('id')",
+      "document.getElement('id')",
+      "Both A and B"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which property gets or sets the HTML inside an element?",
+    "options": [
+      "textContent",
+      "innerHTML",
+      "innerText",
+      "value"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method adds an event listener to an element?",
+    "options": [
+      "element.onEvent()",
+      "element.addEvent()",
+      "element.addEventListener()",
+      "element.listen()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does event.preventDefault() do?",
+    "options": [
+      "Stops event propagation",
+      "Prevents default browser action",
+      "Removes event listener",
+      "Cancels the event"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does event.stopPropagation() do?",
+    "options": [
+      "Prevents default action",
+      "Stops event bubbling",
+      "Removes event listener",
+      "Delays event handling"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which phase comes first in DOM event propagation?",
+    "options": [
+      "Target phase",
+      "Bubbling phase",
+      "Capturing phase",
+      "Handling phase"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which method creates a new HTML element?",
+    "options": [
+      "document.newElement()",
+      "document.createElement()",
+      "document.addElement()",
+      "document.makeElement()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which property accesses the parent element?",
+    "options": [
+      "element.parent",
+      "element.parentNode",
+      "element.container",
+      "element.parentElement"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is event delegation?",
+    "options": [
+      "Removing event listeners",
+      "Handling events on parent for children",
+      "Preventing events",
+      "Creating custom events"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which jQuery method selects elements?",
+    "options": [
+      "select()",
+      "find()",
+      "$()",
+      "get()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which jQuery method adds a class to an element?",
+    "options": [
+      "addClass()",
+      "setClass()",
+      "addClassName()",
+      "class()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which jQuery method hides an element with animation?",
+    "options": [
+      "hide()",
+      "fadeOut()",
+      "slideUp()",
+      "All of the above"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the jQuery equivalent of document.ready?",
+    "options": [
+      "$(document).load()",
+      "$(document).ready()",
+      "$.ready()",
+      "$(function() {})"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which jQuery method gets the value of an input?",
+    "options": [
+      "text()",
+      "html()",
+      "val()",
+      "value()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does AJAX stand for?",
+    "options": [
+      "Asynchronous JavaScript And XML",
+      "Advanced JavaScript And XML",
+      "Async JSON And XHTML",
+      "Application JavaScript And XML"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which XMLHttpRequest property contains the response data?",
+    "options": [
+      "response",
+      "responseText",
+      "data",
+      "result"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What readyState value indicates the request is complete?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which method sends an HTTP request using Fetch API?",
+    "options": [
+      "fetch()",
+      "get()",
+      "request()",
+      "http()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What does response.json() return?",
+    "options": [
+      "JSON string",
+      "JavaScript object",
+      "Promise",
+      "XMLHttpRequest"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which library is used for making HTTP requests?",
+    "options": [
+      "jQuery",
+      "Axios",
+      "Fetch",
+      "All of the above"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the default behavior of Axios with JSON?",
+    "options": [
+      "Returns raw text",
+      "Auto-parses JSON",
+      "Requires manual parsing",
+      "Returns XML"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which Axios feature modifies all requests/responses?",
+    "options": [
+      "Middleware",
+      "Plugins",
+      "Interceptors",
+      "Handlers"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Does fetch() reject on HTTP errors (4xx, 5xx)?",
+    "options": [
+      "Yes, always",
+      "No, only on network errors",
+      "Yes, for 5xx only",
+      "Depends on configuration"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method cancels a fetch request?",
+    "options": [
+      "fetch.cancel()",
+      "AbortController",
+      "request.abort()",
+      "Fetch cannot be canceled"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which HTML5 API provides client-side storage?",
+    "options": [
+      "Web Storage API",
+      "File API",
+      "Cache API",
+      "Database API"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the maximum size limit of localStorage?",
+    "options": [
+      "4KB",
+      "5MB",
+      "50MB",
+      "No limit"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method removes an item from localStorage?",
+    "options": [
+      "localStorage.delete()",
+      "localStorage.remove()",
+      "localStorage.removeItem()",
+      "localStorage.clear()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which Promise method runs after both success and failure?",
+    "options": [
+      "then()",
+      "catch()",
+      "finally()",
+      "complete()"
+    ],
+    "answer": 2
   }
 ]

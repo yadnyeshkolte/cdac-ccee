@@ -1,0 +1,452 @@
+[
+    {
+        "question": "What is Node.js?",
+        "options": [
+            "A JavaScript framework",
+            "A JavaScript runtime environment",
+            "A JavaScript library",
+            "A web browser"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which JavaScript engine does Node.js use?",
+        "options": [
+            "SpiderMonkey",
+            "Chakra",
+            "V8",
+            "JavaScriptCore"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which global object is available in Node.js instead of window?",
+        "options": [
+            "document",
+            "global",
+            "process",
+            "window"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which variable contains the current directory path?",
+        "options": [
+            "__filename",
+            "__dirname",
+            "__path",
+            "__folder"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which function is used to import modules in CommonJS?",
+        "options": [
+            "import()",
+            "include()",
+            "require()",
+            "load()"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which property is used to export modules in CommonJS?",
+        "options": [
+            "exports",
+            "module.exports",
+            "return",
+            "Both A and B"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "How do you access command line arguments in Node.js?",
+        "options": [
+            "process.args",
+            "process.argv",
+            "process.arguments",
+            "process.params"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method is used to read a file synchronously?",
+        "options": [
+            "fs.readFile()",
+            "fs.readFileSync()",
+            "fs.read()",
+            "fs.readSync()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which fs method writes data to a file?",
+        "options": [
+            "fs.write()",
+            "fs.writeFile()",
+            "fs.save()",
+            "fs.create()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does fs.appendFile() do?",
+        "options": [
+            "Creates a new file",
+            "Overwrites file content",
+            "Adds content to end of file",
+            "Reads file content"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which method creates a directory?",
+        "options": [
+            "fs.createDir()",
+            "fs.mkdir()",
+            "fs.makeDir()",
+            "fs.newDir()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method deletes a file?",
+        "options": [
+            "fs.delete()",
+            "fs.remove()",
+            "fs.unlink()",
+            "fs.rm()"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is a stream in Node.js?",
+        "options": [
+            "A type of variable",
+            "A flow of data in chunks",
+            "A synchronous operation",
+            "A callback function"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method connects readable and writable streams?",
+        "options": [
+            "connect()",
+            "link()",
+            "pipe()",
+            "transfer()"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What module is used to create an HTTP server?",
+        "options": [
+            "server",
+            "http",
+            "net",
+            "web"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method creates an HTTP server in Node.js?",
+        "options": [
+            "http.createServer()",
+            "http.newServer()",
+            "http.server()",
+            "http.listen()"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What does res.end() do in HTTP response?",
+        "options": [
+            "Starts the response",
+            "Sets headers",
+            "Signals response is complete",
+            "Sets status code"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which property contains HTTP request method?",
+        "options": [
+            "req.type",
+            "req.method",
+            "req.httpMethod",
+            "req.action"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which module provides utilities for file paths?",
+        "options": [
+            "fs",
+            "url",
+            "path",
+            "util"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What does path.join() do?",
+        "options": [
+            "Joins strings",
+            "Joins path segments safely",
+            "Joins arrays",
+            "Joins files"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method converts callback function to Promise?",
+        "options": [
+            "util.promisify()",
+            "Promise.convert()",
+            "async.wrap()",
+            "callback.toPromise()"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is npm?",
+        "options": [
+            "Node Package Manager",
+            "New Project Manager",
+            "Node Process Manager",
+            "Network Package Manager"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which file contains project dependencies?",
+        "options": [
+            "dependencies.json",
+            "package.json",
+            "node_modules.json",
+            "config.json"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which command initializes a new Node.js project?",
+        "options": [
+            "npm start",
+            "npm create",
+            "npm init",
+            "npm new"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which command installs all dependencies from package.json?",
+        "options": [
+            "npm install",
+            "npm get",
+            "npm download",
+            "npm fetch"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which flag installs a dependency for development only?",
+        "options": [
+            "--dev",
+            "--development",
+            "--save-dev",
+            "-D"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is the event loop in Node.js?",
+        "options": [
+            "A for loop",
+            "A mechanism for handling async operations",
+            "A while loop",
+            "A recursive function"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method schedules a callback in the next event loop iteration?",
+        "options": [
+            "setTimeout(fn, 0)",
+            "setImmediate(fn)",
+            "process.nextTick(fn)",
+            "Both B and C"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Which callback is executed first: process.nextTick or setImmediate?",
+        "options": [
+            "setImmediate",
+            "process.nextTick",
+            "They run at the same time",
+            "Depends on the code"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Express.js?",
+        "options": [
+            "A database",
+            "A web framework for Node.js",
+            "A template engine",
+            "A testing library"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method creates an Express application?",
+        "options": [
+            "express.create()",
+            "new Express()",
+            "express()",
+            "Express.app()"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which Express method handles GET requests?",
+        "options": [
+            "app.get()",
+            "app.GET()",
+            "app.fetch()",
+            "app.retrieve()"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "How do you access URL parameters in Express?",
+        "options": [
+            "req.params",
+            "req.query",
+            "req.body",
+            "req.args"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "How do you access query string parameters in Express?",
+        "options": [
+            "req.params",
+            "req.query",
+            "req.body",
+            "req.search"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which middleware parses JSON request body?",
+        "options": [
+            "express.bodyParser()",
+            "express.json()",
+            "body.parse()",
+            "json.parser()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method sends a JSON response in Express?",
+        "options": [
+            "res.send()",
+            "res.json()",
+            "res.write()",
+            "res.sendJSON()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does next() do in Express middleware?",
+        "options": [
+            "Ends the request",
+            "Sends a response",
+            "Passes control to next middleware",
+            "Starts the server"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "How many parameters does error-handling middleware have?",
+        "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which Express method serves static files?",
+        "options": [
+            "express.static()",
+            "express.files()",
+            "express.serve()",
+            "express.public()"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which method creates a modular router in Express?",
+        "options": [
+            "express.router()",
+            "express.Router()",
+            "new Router()",
+            "app.router()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does res.status(404).send() do?",
+        "options": [
+            "Sends status 404 only",
+            "Sends response with 404 status",
+            "Throws an error",
+            "Redirects to 404 page"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method redirects to another URL in Express?",
+        "options": [
+            "res.redirect()",
+            "res.forward()",
+            "res.goto()",
+            "res.navigate()"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which version range symbol allows minor updates?",
+        "options": [
+            "~",
+            "^",
+            "*",
+            ">"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does package-lock.json do?",
+        "options": [
+            "Locks npm version",
+            "Locks exact dependency versions",
+            "Locks package.json",
+            "Prevents npm updates"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which keyword imports ES modules?",
+        "options": [
+            "require",
+            "import",
+            "include",
+            "use"
+        ],
+        "answer": 1
+    }
+]
