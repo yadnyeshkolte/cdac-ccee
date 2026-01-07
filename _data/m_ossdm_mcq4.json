@@ -1,0 +1,402 @@
+[
+    {
+        "question": "What is Version Control System (VCS)?",
+        "options": [
+            "A system to control software versions for sale",
+            "A system that tracks changes to files over time",
+            "A programming language",
+            "An operating system"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which type of VCS is Git?",
+        "options": [
+            "Local",
+            "Centralized",
+            "Distributed",
+            "Cloud-based only"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What command initializes a new Git repository?",
+        "options": [
+            "`git start`",
+            "`git init`",
+            "`git create`",
+            "`git new`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What are the three states of files in Git?",
+        "options": [
+            "New, Old, Deleted",
+            "Modified, Staged, Committed",
+            "Created, Updated, Removed",
+            "Local, Remote, Cloud"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What command adds files to the staging area?",
+        "options": [
+            "`git commit`",
+            "`git add`",
+            "`git stage`",
+            "`git push`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does `git commit -m \"message\"` do?",
+        "options": [
+            "Sends code to remote server",
+            "Saves staged changes to the local repository with a message",
+            "Downloads code from server",
+            "Creates a new branch"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What command shows the status of files in Git?",
+        "options": [
+            "`git log`",
+            "`git status`",
+            "`git show`",
+            "`git info`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does `git clone` do?",
+        "options": [
+            "Creates a copy of a remote repository locally",
+            "Deletes a repository",
+            "Merges two branches",
+            "Creates a backup"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What command creates a new branch?",
+        "options": [
+            "`git new branch-name`",
+            "`git branch branch-name`",
+            "`git create branch-name`",
+            "`git make branch-name`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What command switches to a different branch?",
+        "options": [
+            "`git branch branch-name`",
+            "`git checkout branch-name` or `git switch branch-name`",
+            "`git move branch-name`",
+            "`git goto branch-name`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the purpose of `git merge`?",
+        "options": [
+            "To delete a branch",
+            "To combine changes from one branch into another",
+            "To create a new repository",
+            "To push to remote"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does `git push` do?",
+        "options": [
+            "Downloads changes from remote",
+            "Uploads local commits to a remote repository",
+            "Creates a new branch",
+            "Reverts changes"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does `git pull` do?",
+        "options": [
+            "Pushes to remote",
+            "Fetches and merges changes from remote to local",
+            "Creates a branch",
+            "Deletes remote"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is HEAD in Git?",
+        "options": [
+            "The first commit",
+            "A pointer to the current branch/commit",
+            "The remote server",
+            "The repository name"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What file specifies files to ignore in Git?",
+        "options": [
+            "`.gitconfig`",
+            "`.gitignore`",
+            "`.gitexclude`",
+            "`.gitskip`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Software Engineering?",
+        "options": [
+            "Writing code only",
+            "Systematic application of engineering principles to software development",
+            "Hardware design",
+            "Network configuration"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the difference between Software Process and Software Product?",
+        "options": [
+            "No difference",
+            "Process is how software is built; Product is what is built",
+            "Product is how software is built",
+            "Process is the final deliverable"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which is the first phase of SDLC?",
+        "options": [
+            "Design",
+            "Planning/Requirements",
+            "Testing",
+            "Deployment"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the Waterfall Model?",
+        "options": [
+            "An iterative model",
+            "A sequential linear model where each phase must be completed before the next",
+            "An agile methodology",
+            "A testing framework"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the main disadvantage of the Waterfall Model?",
+        "options": [
+            "Too flexible",
+            "Inflexible to changes and late testing",
+            "Too fast",
+            "No documentation"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does the V-Model emphasize?",
+        "options": [
+            "Speed of development",
+            "Verification and Validation with testing at each stage",
+            "No documentation",
+            "Customer feedback"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the Spiral Model known for?",
+        "options": [
+            "Speed",
+            "Risk analysis and iterative development",
+            "No planning",
+            "Single iteration"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What are Functional Requirements?",
+        "options": [
+            "How the system should perform",
+            "What the system should do - features and capabilities",
+            "System hardware needs",
+            "User interface design"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What are Non-Functional Requirements?",
+        "options": [
+            "Features of the system",
+            "Quality attributes like performance, security, usability",
+            "User stories",
+            "Test cases"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Cohesion in software design?",
+        "options": [
+            "Dependencies between modules",
+            "How closely related elements within a module are",
+            "Code complexity",
+            "Number of functions"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Coupling in software design?",
+        "options": [
+            "Relatedness within a module",
+            "Degree of dependency between modules",
+            "Code documentation",
+            "Testing coverage"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the ideal design goal for Cohesion and Coupling?",
+        "options": [
+            "High cohesion, high coupling",
+            "High cohesion, low coupling",
+            "Low cohesion, high coupling",
+            "Low cohesion, low coupling"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Modularity?",
+        "options": [
+            "Writing code in one file",
+            "Dividing software into separate, independent modules",
+            "Using no functions",
+            "Global variables only"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is UML?",
+        "options": [
+            "Universal Machine Language",
+            "Unified Modeling Language - visual language for modeling software",
+            "User Management Layer",
+            "Update Manipulation Logic"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does a Use Case Diagram show?",
+        "options": [
+            "Database structure",
+            "System functionality from user perspective",
+            "Code structure",
+            "Network topology"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does a Class Diagram represent?",
+        "options": [
+            "User interactions",
+            "Classes, their attributes, methods, and relationships",
+            "Time sequences",
+            "State changes"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does a Sequence Diagram show?",
+        "options": [
+            "Class hierarchies",
+            "Object interactions over time",
+            "Database tables",
+            "File structure"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Encapsulation in OOP?",
+        "options": [
+            "Inheritance of properties",
+            "Bundling data and methods together, hiding internal details",
+            "Multiple implementations",
+            "Creating objects"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Inheritance in OOP?",
+        "options": [
+            "Hiding data",
+            "Creating new classes from existing classes",
+            "Method overloading",
+            "Object creation"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Polymorphism in OOP?",
+        "options": [
+            "Single implementation",
+            "Same interface with different implementations",
+            "Data hiding",
+            "Code reuse"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Abstraction in OOP?",
+        "options": [
+            "Showing all details",
+            "Hiding complex details and showing only essential features",
+            "Creating duplicates",
+            "Deleting objects"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What command shows the commit history in Git?",
+        "options": [
+            "`git status`",
+            "`git log`",
+            "`git history`",
+            "`git commits`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a merge conflict in Git?",
+        "options": [
+            "When Git cannot automatically combine changes from different branches",
+            "A branch deletion error",
+            "A push failure",
+            "A network error"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is the Git Flow branching strategy?",
+        "options": [
+            "Single branch development",
+            "A workflow with main, develop, feature, release, and hotfix branches",
+            "No branches used",
+            "Random branching"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Git tag used for?",
+        "options": [
+            "Deleting commits",
+            "Marking specific points in history (like releases)",
+            "Creating branches",
+            "Pushing code"
+        ],
+        "answer": 1
+    }
+]

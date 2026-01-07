@@ -1,0 +1,402 @@
+[
+    {
+        "question": "What is the Agile Manifesto?",
+        "options": [
+            "A software documentation standard",
+            "A set of four values and twelve principles for iterative software development",
+            "A programming language",
+            "A testing framework"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which is NOT one of the four Agile values?",
+        "options": [
+            "Individuals and interactions over processes and tools",
+            "Working software over comprehensive documentation",
+            "Detailed planning over responding to change",
+            "Customer collaboration over contract negotiation"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is a Sprint in Scrum?",
+        "options": [
+            "A final release",
+            "A time-boxed iteration (usually 2-4 weeks) to complete work",
+            "A meeting type",
+            "A debugging session"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the role of a Scrum Master?",
+        "options": [
+            "Write code",
+            "Facilitate the Scrum process and remove impediments",
+            "Create product features",
+            "Manage the budget"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the role of the Product Owner in Scrum?",
+        "options": [
+            "Write code",
+            "Represent stakeholders and prioritize the product backlog",
+            "Test the software",
+            "Facilitate meetings"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Product Backlog?",
+        "options": [
+            "A list of bugs",
+            "A prioritized list of features and requirements for the product",
+            "A testing checklist",
+            "A deployment plan"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Sprint Backlog?",
+        "options": [
+            "All product requirements",
+            "Work items selected for the current sprint",
+            "Completed features",
+            "Bug reports"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the Daily Standup (Daily Scrum)?",
+        "options": [
+            "A weekly planning session",
+            "A short daily meeting where team members share progress and blockers",
+            "A monthly review",
+            "A code review session"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Sprint Retrospective?",
+        "options": [
+            "Planning the next sprint",
+            "A meeting to reflect on the sprint and identify improvements",
+            "Product demonstration",
+            "Code review"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Sprint Review/Demo?",
+        "options": [
+            "Planning session",
+            "Meeting to demonstrate completed work to stakeholders",
+            "Retrospective",
+            "Daily standup"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Extreme Programming (XP)?",
+        "options": [
+            "A complex programming language",
+            "An Agile methodology focusing on technical practices like TDD and pair programming",
+            "A testing framework",
+            "A deployment tool"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is pair programming?",
+        "options": [
+            "Two developers working on different features",
+            "Two developers working together at one workstation",
+            "Remote programming",
+            "Code review"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is DevOps?",
+        "options": [
+            "A programming language",
+            "A culture and set of practices combining development and operations",
+            "A database system",
+            "An operating system"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Continuous Integration (CI)?",
+        "options": [
+            "Manual code merging",
+            "Practice of frequently merging code changes with automated testing",
+            "Deploying once a year",
+            "Writing documentation"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Continuous Delivery (CD)?",
+        "options": [
+            "Manual deployment",
+            "Practice of keeping code always deployable through automation",
+            "Writing code daily",
+            "Testing annually"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Continuous Deployment?",
+        "options": [
+            "Manual release process",
+            "Automatically deploying every change that passes tests to production",
+            "Weekly deployments",
+            "No testing before deployment"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Docker?",
+        "options": [
+            "A programming language",
+            "A containerization platform for packaging applications",
+            "A database",
+            "An operating system"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Docker container?",
+        "options": [
+            "A virtual machine",
+            "A lightweight, standalone package containing an application and its dependencies",
+            "A physical server",
+            "A database instance"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Docker image?",
+        "options": [
+            "A running container",
+            "A read-only template used to create containers",
+            "A virtual machine snapshot",
+            "A backup file"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Dockerfile?",
+        "options": [
+            "A running container",
+            "A text file with instructions to build a Docker image",
+            "A configuration database",
+            "A network setting"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which command builds a Docker image?",
+        "options": [
+            "`docker run`",
+            "`docker build`",
+            "`docker create`",
+            "`docker make`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which command runs a Docker container?",
+        "options": [
+            "`docker build`",
+            "`docker run`",
+            "`docker start`",
+            "`docker execute`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which command lists running Docker containers?",
+        "options": [
+            "`docker images`",
+            "`docker ps`",
+            "`docker list`",
+            "`docker containers`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which command lists Docker images?",
+        "options": [
+            "`docker ps`",
+            "`docker images`",
+            "`docker list`",
+            "`docker show`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does `docker pull` do?",
+        "options": [
+            "Removes an image",
+            "Downloads an image from a registry",
+            "Starts a container",
+            "Builds an image"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does `docker push` do?",
+        "options": [
+            "Downloads an image",
+            "Uploads an image to a registry",
+            "Deletes a container",
+            "Runs a container"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Docker Hub?",
+        "options": [
+            "A code editor",
+            "A public registry for Docker images",
+            "A programming language",
+            "A local storage"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What command stops a running container?",
+        "options": [
+            "`docker kill`",
+            "`docker stop`",
+            "`docker end`",
+            "`docker halt`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What command removes a Docker container?",
+        "options": [
+            "`docker delete`",
+            "`docker rm`",
+            "`docker remove`",
+            "`docker destroy`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What command removes a Docker image?",
+        "options": [
+            "`docker rm`",
+            "`docker rmi`",
+            "`docker delete`",
+            "`docker remove`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is YAML?",
+        "options": [
+            "A programming language",
+            "A human-readable data serialization format",
+            "A database",
+            "An operating system"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Docker Compose used for?",
+        "options": [
+            "Writing code",
+            "Defining and running multi-container Docker applications",
+            "Building images only",
+            "Network monitoring"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Docker Swarm?",
+        "options": [
+            "A single container",
+            "Docker's native clustering and orchestration tool",
+            "A programming language",
+            "A testing framework"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the difference between Agile and Waterfall?",
+        "options": [
+            "No difference",
+            "Agile is iterative and flexible; Waterfall is sequential and rigid",
+            "Waterfall is iterative",
+            "Agile requires no planning"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a User Story in Agile?",
+        "options": [
+            "A bug report",
+            "A short description of a feature from user's perspective",
+            "A technical document",
+            "A test case"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the typical format of a User Story?",
+        "options": [
+            "Technical requirements list",
+            "As a [user], I want [feature] so that [benefit]",
+            "Code documentation",
+            "Test script"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Velocity in Scrum?",
+        "options": [
+            "Speed of coding",
+            "Amount of work a team can complete in a sprint",
+            "Network speed",
+            "Deployment frequency"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Jira commonly used for?",
+        "options": [
+            "Writing code",
+            "Project management and issue tracking for Agile teams",
+            "Database management",
+            "Network configuration"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the main benefit of containerization?",
+        "options": [
+            "Faster coding",
+            "Consistent environment across development, testing, and production",
+            "More storage",
+            "Better network"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the `-d` flag in `docker run -d`?",
+        "options": [
+            "Delete mode",
+            "Detached mode - run container in background",
+            "Debug mode",
+            "Development mode"
+        ],
+        "answer": 1
+    }
+]

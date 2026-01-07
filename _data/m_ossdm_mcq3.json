@@ -1,0 +1,402 @@
+[
+    {
+        "question": "Which type of memory is the fastest?",
+        "options": [
+            "Hard Disk",
+            "RAM",
+            "Cache",
+            "Registers"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "What is the purpose of memory management in an OS?",
+        "options": [
+            "To manage user accounts",
+            "To allocate and deallocate memory to processes efficiently",
+            "To manage network connections",
+            "To compile programs"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is contiguous memory allocation?",
+        "options": [
+            "Memory scattered in different locations",
+            "Each process gets a single continuous block of memory",
+            "No memory allocation",
+            "Shared memory between processes"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In First Fit allocation, where is memory allocated?",
+        "options": [
+            "Smallest available hole",
+            "Largest available hole",
+            "First hole that is big enough",
+            "Last hole in memory"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "In Best Fit allocation, where is memory allocated?",
+        "options": [
+            "First available hole",
+            "Smallest hole that is big enough",
+            "Largest available hole",
+            "Random hole"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In Worst Fit allocation, where is memory allocated?",
+        "options": [
+            "Smallest available hole",
+            "First available hole",
+            "Largest available hole",
+            "Middle hole"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is internal fragmentation?",
+        "options": [
+            "Free memory between allocated blocks",
+            "Wasted space within an allocated block",
+            "Memory outside the system",
+            "Disk fragmentation"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is external fragmentation?",
+        "options": [
+            "Wasted space inside allocated blocks",
+            "Free memory scattered in small blocks that cannot be used",
+            "Memory on external devices",
+            "Cache fragmentation"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is compaction?",
+        "options": [
+            "Compressing files",
+            "Moving processes to combine free memory into one block",
+            "Deleting unused files",
+            "Encrypting data"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is paging in memory management?",
+        "options": [
+            "Printing pages",
+            "Dividing memory into fixed-size blocks called frames and processes into pages",
+            "Reading from disk",
+            "Network pagination"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a page in paging?",
+        "options": [
+            "A web page",
+            "A fixed-size block of a process's logical memory",
+            "A disk sector",
+            "A printed document"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a frame in paging?",
+        "options": [
+            "A picture frame",
+            "A fixed-size block of physical memory",
+            "A network packet",
+            "A process boundary"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does a page table contain?",
+        "options": [
+            "Process names",
+            "Mapping of page numbers to frame numbers",
+            "User passwords",
+            "File names"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is TLB (Translation Lookaside Buffer)?",
+        "options": [
+            "Disk buffer",
+            "A fast cache for page table entries",
+            "Network buffer",
+            "Print buffer"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the purpose of the dirty bit?",
+        "options": [
+            "Indicates file corruption",
+            "Indicates if a page has been modified",
+            "Shows page location",
+            "Marks deleted pages"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is segmentation?",
+        "options": [
+            "Dividing memory into variable-sized segments based on logical divisions",
+            "Dividing network packets",
+            "File splitting",
+            "Process termination"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is the main difference between paging and segmentation?",
+        "options": [
+            "No difference",
+            "Paging uses fixed-size blocks, segmentation uses variable-size blocks",
+            "Segmentation uses fixed-size blocks",
+            "Paging is faster"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does a segment table contain?",
+        "options": [
+            "Page numbers",
+            "Segment base address and limit (size)",
+            "Process IDs",
+            "File locations"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is virtual memory?",
+        "options": [
+            "Memory on a virtual machine",
+            "Technique that allows execution of processes not completely in memory",
+            "Memory in the cloud",
+            "Cache memory"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is demand paging?",
+        "options": [
+            "Loading all pages at once",
+            "Loading pages only when they are needed (on demand)",
+            "Deleting unused pages",
+            "Encrypting pages"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a page fault?",
+        "options": [
+            "A damaged page",
+            "When a requested page is not in physical memory",
+            "A printing error",
+            "A software bug"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What happens when a page fault occurs?",
+        "options": [
+            "System crashes",
+            "OS loads the required page from disk to memory",
+            "Process terminates",
+            "User gets an error message"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In FIFO page replacement, which page is replaced?",
+        "options": [
+            "Least recently used",
+            "First page that was loaded",
+            "Most frequently used",
+            "Random page"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In LRU page replacement, which page is replaced?",
+        "options": [
+            "First loaded page",
+            "Least Recently Used page",
+            "Most recently used",
+            "Largest page"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the Optimal page replacement algorithm?",
+        "options": [
+            "Replace the oldest page",
+            "Replace the page that will not be used for the longest time in future",
+            "Replace random page",
+            "Replace most used page"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Why is Optimal page replacement not practical?",
+        "options": [
+            "It's too slow",
+            "It requires future knowledge of page references",
+            "It uses too much memory",
+            "It causes page faults"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is thrashing?",
+        "options": [
+            "Fast computing",
+            "System spends more time swapping pages than executing",
+            "Network congestion",
+            "Disk error"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What are the necessary conditions for deadlock? (Coffman conditions)",
+        "options": [
+            "Speed, Memory, Disk",
+            "Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait",
+            "Priority, Age, Size",
+            "Read, Write, Execute"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Mutual Exclusion in deadlock?",
+        "options": [
+            "Resources can be shared",
+            "At least one resource must be held in a non-sharable mode",
+            "All resources are free",
+            "No process holds resources"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Hold and Wait condition?",
+        "options": [
+            "Processes don't hold resources",
+            "A process holds resources while waiting for additional ones",
+            "Processes wait without holding",
+            "No waiting in the system"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Circular Wait?",
+        "options": [
+            "Processes running in a loop",
+            "A set of processes where each waits for a resource held by the next",
+            "Waiting for user input",
+            "Timer expiration"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "How can deadlock be prevented?",
+        "options": [
+            "By increasing memory",
+            "By ensuring at least one of the four necessary conditions cannot hold",
+            "By adding more CPUs",
+            "By upgrading the OS"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the Banker's Algorithm used for?",
+        "options": [
+            "Banking transactions",
+            "Deadlock avoidance",
+            "Memory allocation",
+            "Process scheduling"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a semaphore?",
+        "options": [
+            "A traffic light",
+            "A synchronization variable used to control access to shared resources",
+            "A network protocol",
+            "A file type"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What are the two operations on a semaphore?",
+        "options": [
+            "open and close",
+            "wait (P) and signal (V)",
+            "read and write",
+            "lock and unlock"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a mutex?",
+        "options": [
+            "A type of file",
+            "A binary semaphore for mutual exclusion",
+            "A network device",
+            "A memory type"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the Producer-Consumer problem?",
+        "options": [
+            "Economic theory",
+            "Synchronization problem where producers add to buffer and consumers remove from it",
+            "Manufacturing issue",
+            "Network routing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the difference between deadlock and starvation?",
+        "options": [
+            "No difference",
+            "Deadlock: processes wait forever for each other; Starvation: process waits indefinitely due to scheduling",
+            "Starvation is worse",
+            "Deadlock is faster"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the formula for calculating physical address from logical address in paging?",
+        "options": [
+            "Page number + Offset",
+            "(Frame number × Page size) + Offset",
+            "Frame number - Page number",
+            "Offset × Page size"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the EAT (Effective Access Time) formula when TLB is used?",
+        "options": [
+            "Memory access time only",
+            "(Hit ratio × TLB access) + (Miss ratio × (TLB access + Memory access))",
+            "TLB access + Memory access",
+            "Page fault time only"
+        ],
+        "answer": 1
+    }
+]

@@ -1,0 +1,402 @@
+[
+    {
+        "question": "What is Software Testing?",
+        "options": [
+            "Writing code",
+            "Process of evaluating software to find defects and verify it meets requirements",
+            "Deploying software",
+            "Designing UI"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the difference between Verification and Validation?",
+        "options": [
+            "No difference",
+            "Verification: Are we building the product right? Validation: Are we building the right product?",
+            "Both check for bugs",
+            "Verification is for hardware only"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the difference between Quality Assurance (QA) and Quality Control (QC)?",
+        "options": [
+            "No difference",
+            "QA is process-oriented (prevention); QC is product-oriented (detection)",
+            "QC is prevention, QA is detection",
+            "Both are the same"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is STLC (Software Testing Life Cycle)?",
+        "options": [
+            "A programming language",
+            "A sequence of activities performed during testing process",
+            "A deployment tool",
+            "A database"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is White-Box Testing?",
+        "options": [
+            "Testing without knowing the code",
+            "Testing with knowledge of internal code structure",
+            "Testing by end users",
+            "Random testing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Black-Box Testing?",
+        "options": [
+            "Testing internal code structure",
+            "Testing without knowledge of internal implementation",
+            "Testing only UI colors",
+            "Testing in dark mode"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Grey-Box Testing?",
+        "options": [
+            "Testing only at night",
+            "Combination of White-Box and Black-Box testing",
+            "Testing gray screens",
+            "No testing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Unit Testing?",
+        "options": [
+            "Testing the entire system",
+            "Testing individual components or units in isolation",
+            "Testing integration",
+            "Testing by users"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Integration Testing?",
+        "options": [
+            "Testing individual units",
+            "Testing combined modules/components together",
+            "Testing by end users",
+            "Final release testing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is System Testing?",
+        "options": [
+            "Testing modules separately",
+            "Testing the complete integrated system",
+            "Unit testing",
+            "Code review"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Acceptance Testing?",
+        "options": [
+            "Testing by developers",
+            "Testing by end users/customers to verify system meets requirements",
+            "Integration testing",
+            "Performance testing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Regression Testing?",
+        "options": [
+            "Testing new features only",
+            "Re-testing to ensure new changes haven't broken existing functionality",
+            "Initial testing",
+            "Final testing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Selenium?",
+        "options": [
+            "A programming language",
+            "A web browser automation tool for testing",
+            "A database",
+            "An operating system"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is WebDriver in Selenium?",
+        "options": [
+            "A web server",
+            "An interface to create and execute tests in browsers",
+            "A database driver",
+            "A network driver"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method is used to find an element by ID in Selenium?",
+        "options": [
+            "`driver.getElement(id)`",
+            "`driver.findElement(By.id(\"id\"))`",
+            "`driver.locateById(id)`",
+            "`driver.searchId(id)`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is XPath in Selenium?",
+        "options": [
+            "A programming language",
+            "A syntax to navigate through elements in an XML/HTML document",
+            "A file path",
+            "A network path"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which locator is fastest in Selenium?",
+        "options": [
+            "XPath",
+            "ID",
+            "CSS Selector",
+            "Name"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What method is used to enter text in a text field in Selenium?",
+        "options": [
+            "`element.type()`",
+            "`element.sendKeys()`",
+            "`element.input()`",
+            "`element.write()`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What method is used to click an element in Selenium?",
+        "options": [
+            "`element.press()`",
+            "`element.click()`",
+            "`element.tap()`",
+            "`element.select()`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Jenkins?",
+        "options": [
+            "A programming language",
+            "An open-source automation server for CI/CD",
+            "A database",
+            "A web browser"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Jenkins Pipeline?",
+        "options": [
+            "A network cable",
+            "A suite of plugins to implement CI/CD workflows",
+            "A type of database",
+            "A testing framework"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Jenkins Job?",
+        "options": [
+            "A career opportunity",
+            "A runnable task or project configured in Jenkins",
+            "A database query",
+            "A user role"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Jenkins Slave/Agent?",
+        "options": [
+            "A backup server",
+            "A machine that executes builds delegated by the master",
+            "A user type",
+            "A testing tool"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Kubernetes?",
+        "options": [
+            "A programming language",
+            "A container orchestration platform for managing containerized applications",
+            "A database",
+            "A web server"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Kubernetes Pod?",
+        "options": [
+            "A network cable",
+            "The smallest deployable unit containing one or more containers",
+            "A database table",
+            "A user group"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Kubernetes Node?",
+        "options": [
+            "A code point",
+            "A worker machine (physical or virtual) that runs Pods",
+            "A database record",
+            "A network hub"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Kubernetes Cluster?",
+        "options": [
+            "A group of files",
+            "A set of nodes that run containerized applications",
+            "A database group",
+            "A team of developers"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Kubernetes Service?",
+        "options": [
+            "Customer support",
+            "An abstraction to expose an application running in Pods",
+            "A backup service",
+            "A logging tool"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What command is used to apply configuration in Kubernetes?",
+        "options": [
+            "`kubectl run`",
+            "`kubectl apply`",
+            "`kubectl start`",
+            "`kubectl execute`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What command lists Pods in Kubernetes?",
+        "options": [
+            "`kubectl list pods`",
+            "`kubectl get pods`",
+            "`kubectl show pods`",
+            "`kubectl pods`"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Kubernetes Dashboard?",
+        "options": [
+            "A code editor",
+            "A web-based UI for managing Kubernetes clusters",
+            "A testing tool",
+            "A database viewer"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Kubernetes Deployment?",
+        "options": [
+            "Sending code to production",
+            "A resource to manage replica sets and pod updates declaratively",
+            "A testing phase",
+            "A documentation type"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the purpose of a Test Plan?",
+        "options": [
+            "Writing code",
+            "A document describing testing scope, approach, resources, and schedule",
+            "A deployment script",
+            "A user manual"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a Test Case?",
+        "options": [
+            "A container for tests",
+            "A set of conditions to verify a specific feature works correctly",
+            "A bug report",
+            "A code file"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Smoke Testing?",
+        "options": [
+            "Testing in extreme heat",
+            "Initial testing to check if basic functionality works",
+            "Final testing",
+            "Performance testing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Sanity Testing?",
+        "options": [
+            "Testing user sanity",
+            "Quick testing after minor changes to verify specific functionality",
+            "Complete system testing",
+            "Load testing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Performance Testing?",
+        "options": [
+            "Testing code quality",
+            "Testing system performance under various workloads",
+            "Unit testing",
+            "Code review"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is Load Testing?",
+        "options": [
+            "Testing weight limits",
+            "Testing system behavior under expected load",
+            "Testing UI",
+            "Testing database"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a bug or defect in software testing?",
+        "options": [
+            "A feature request",
+            "A flaw in software causing incorrect or unexpected behavior",
+            "A user comment",
+            "A documentation error"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does CI/CD stand for?",
+        "options": [
+            "Code Integration / Code Deployment",
+            "Continuous Integration / Continuous Delivery (or Deployment)",
+            "Control Interface / Control Data",
+            "Customer Input / Customer Demand"
+        ],
+        "answer": 1
+    }
+]
