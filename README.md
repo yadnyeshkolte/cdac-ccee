@@ -401,7 +401,7 @@ Description of this test.
 | M2 - Database | `{% include mcq-navigation.html module_prefix="m2" module_dir="Database" %}` |
 | M3 - Web Technologies | `{% include mcq-navigation.html module_prefix="m3" module_dir="WebTechnologies" %}` |
 | M4 - ADS | `{% include mcq-navigation.html module_prefix="m4" module_dir="ADS" %}` |
-| M5 - Operating System | `{% include mcq-navigation.html module_prefix="m5" module_dir="OperatingSystem" %}` |
+| M5 - OS & SDM | `{% include mcq-navigation.html module_prefix="m5" module_dir="OS-SDM" %}` |
 | M6 - Advanced Web Java | `{% include mcq-navigation.html module_prefix="m6" module_dir="Adv.WebJava" %}` |
 | M7 - C++ | `{% include mcq-navigation.html module_prefix="m7" module_dir="C++" %}` |
 | M8 - ASP.NET C# | `{% include mcq-navigation.html module_prefix="m8" module_dir="ASP.NET-C#" %}` |
@@ -541,7 +541,7 @@ Use this table to map module numbers to their directories when adding MCQ files:
 | **M2** | Database | `docs/Database/` | `m2_` |
 | **M3** | Web Technologies | `docs/WebTechnologies/` | `m3_` |
 | **M4** | ADS (Algorithms & Data Structures) | `docs/ADS/` | `m4_` |
-| **M5** | Operating System | `docs/OperatingSystem/` | `m5_` |
+| **M5** | OS & SDM (OS + Software Development) | `docs/OS-SDM/` | `m5_` |
 | **M6** | Advanced Web Java | `docs/Adv.WebJava/` | `m6_` |
 | **M7** | C++ | `docs/C++/` | `m7_` |
 | **M8** | ASP.NET C# | `docs/ASP.NET-C#/` | `m8_` |
@@ -553,10 +553,10 @@ Use this table to map module numbers to their directories when adding MCQ files:
 |--------|-----------|-----------|
 | Module 1 - Java Core | `docs/JavaCore/` | 2 tests |
 | Module 2 - Database | `docs/Database/` | 2 tests |
-| Module 3 - Web Technologies | `docs/WebTechnologies/` | 2 tests |
+| Module 3 - Web Technologies | `docs/WebTechnologies/` | 4 tests |
 | Module 4 - ADS | `docs/ADS/` | 2 tests |
-| Module 5 - Operating System | `docs/OperatingSystem/` | 2 tests |
-| Module 6 - Advanced Web Java | `docs/Adv.WebJava/` | 2 tests |
+| Module 5 - OS & SDM | `docs/OS-SDM/` | 6 tests (240 questions) |
+| Module 6 - Advanced Web Java | `docs/Adv.WebJava/` | 5 tests |
 | Module 7 - C++ | `docs/C++/` | 2 tests |
 | Module 8 - ASP.NET C# | `docs/ASP.NET-C#/` | 2 tests |
 | Module 9 - Aptitude | `docs/Aptitude/` | 2 tests |
