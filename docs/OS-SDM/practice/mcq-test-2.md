@@ -4,7 +4,7 @@ title: MCQ Test 2
 parent: Practice
 grand_parent: Module 5 - OS & SDM
 nav_order: 2
-mcq_data: m_ossdm_mcq2
+mcq_data: m5_mcq2
 ---
 
 # MCQ Test 2: Shell Programming & Processes

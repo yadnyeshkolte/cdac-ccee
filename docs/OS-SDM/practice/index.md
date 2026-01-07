@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Practice
-parent: OS & Software Development
+parent: Module 5 - OS & SDM
 has_children: true
 nav_order: 10
 ---
@@ -21,4 +21,4 @@ Test your knowledge with **240 CCEE-focused MCQs** covering all topics from the 
 | [MCQ Test 5](mcq-test-5.html) | Agile, DevOps, Docker | 40 |
 | [MCQ Test 6](mcq-test-6.html) | Testing, Selenium, Jenkins, Kubernetes | 40 |
 
-{% include mcq-navigation.html module_prefix="m_ossdm" module_dir="OS-SDM" %}
+{% include mcq-navigation.html module_prefix="m5" module_dir="OS-SDM" %}
