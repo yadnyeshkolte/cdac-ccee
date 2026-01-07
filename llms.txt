@@ -1,0 +1,68 @@
+# CDAC CCEE Learning Portal
+
+> Free, comprehensive study materials for CDAC C-CAT and CCEE exam preparation.
+
+## About This Site
+
+This is a free learning portal containing:
+- Comprehensive notes for all CDAC CCEE modules
+- Interactive MCQ practice tests (1000+ questions)
+- Code examples with syntax highlighting
+- Diagrams and visual explanations
+
+## Topics Covered
+
+### Programming Languages
+- Java Core (OOP, Collections, Threads, I/O)
+- C++ (STL, Memory Management, OOP)
+- JavaScript (ES6+, DOM, Node.js)
+- C# and ASP.NET
+
+### Web Development
+- HTML5, CSS3, Responsive Design
+- React.js, Node.js
+- Servlets, JSP, Spring Framework
+
+### Database Technologies
+- SQL (MySQL, PostgreSQL)
+- MongoDB (NoSQL)
+- Joins, Stored Procedures, Triggers
+
+### Algorithms & Data Structures
+- Arrays, Linked Lists, Stacks, Queues
+- Trees, Graphs, Heaps
+- Sorting & Searching Algorithms
+- Time & Space Complexity
+
+### Operating Systems
+- Linux/Unix Commands
+- Shell Programming
+- Process Management, CPU Scheduling
+- Memory Management, Paging
+- Deadlock Prevention
+
+### Software Development
+- Git Version Control
+- SDLC Models (Waterfall, Agile, Scrum)
+- DevOps, Docker, Kubernetes
+- Software Testing, Selenium, Jenkins
+
+## URL Structure
+
+- Homepage: https://yadnyeshkolte.github.io/cdac-ccee/
+- Java Notes: https://yadnyeshkolte.github.io/cdac-ccee/docs/JavaCore/
+- Database Notes: https://yadnyeshkolte.github.io/cdac-ccee/docs/Database/
+- Web Technologies: https://yadnyeshkolte.github.io/cdac-ccee/docs/WebTechnologies/
+- OS & SDM: https://yadnyeshkolte.github.io/cdac-ccee/docs/OS-SDM/
+- C++: https://yadnyeshkolte.github.io/cdac-ccee/docs/C++/
+- ADS: https://yadnyeshkolte.github.io/cdac-ccee/docs/ADS/
+
+## Contact
+
+- Author: Yadnyesh Kolte
+- GitHub: https://github.com/yadnyeshkolte
+- Portfolio: https://yadnyeshkolte.github.io
+
+## License
+
+Open educational resource - free to use for learning purposes.

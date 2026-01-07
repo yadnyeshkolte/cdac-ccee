@@ -41,4 +41,5 @@ tagline: "Master programming concepts for CDAC C-CAT & CCEE exams"
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
   # - jekyll-remote-theme
