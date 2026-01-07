@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Session 8 - Virtual Memory
-parent: OS & Software Development
+parent: Module 5 - OS & SDM
 nav_order: 6
 ---
 

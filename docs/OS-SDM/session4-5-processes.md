@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Sessions 4-5 - Processes
-parent: OS & Software Development
+parent: Module 5 - OS & SDM
 nav_order: 4
 ---
 

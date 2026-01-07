@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Sessions 6-7 - Memory Management
-parent: OS & Software Development
+parent: Module 5 - OS & SDM
 nav_order: 5
 ---
 

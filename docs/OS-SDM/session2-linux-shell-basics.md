@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Session 2 - Introduction to Linux & Shell Programming
-parent: OS & Software Development
+parent: Module 5 - OS & SDM
 nav_order: 2
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-title: OS & Software Development
-nav_order: 2
+title: Module 5 - OS & SDM
+nav_order: 5
 has_children: true
 ---
 

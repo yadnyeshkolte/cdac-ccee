@@ -2,7 +2,7 @@
 layout: mcq
 title: MCQ Test 3
 parent: Practice
-grand_parent: OS & Software Development
+grand_parent: Module 5 - OS & SDM
 nav_order: 3
 mcq_data: m_ossdm_mcq3
 ---
