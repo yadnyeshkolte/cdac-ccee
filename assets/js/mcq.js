@@ -55,11 +55,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Check if this looks like a multi-statement code block (function definition, etc.)
             const code = match[1];
-            const isMultiStatement = code.includes('{') || code.includes(';') ||
-                code.length > 60 || code.includes('if') ||
-                code.includes('for') || code.includes('while');
+            // Only treat as code block if it has actual code structure:
+            // - Has braces AND semicolons (actual statements)
+            // - OR is very long (>80 chars) and has some code indicators
+            // Short keywords like 'if', 'while', 'for' alone should remain inline
+            const hasBraces = code.includes('{') || code.includes('}');
+            const hasSemicolons = code.includes(';');
+            const isActualCodeBlock = (hasBraces && hasSemicolons) ||
+                (code.length > 80 && (hasBraces || hasSemicolons));
 
-            if (isMultiStatement) {
+            if (isActualCodeBlock) {
                 parts.push({ type: 'codeblock', content: code });
             } else {
                 parts.push({ type: 'inline', content: code });
