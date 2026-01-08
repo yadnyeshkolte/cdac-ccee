@@ -93,26 +93,37 @@ int main() {
 
 ## 3. How Virtual Functions Work (VTable)
 
+```mermaid
+graph LR
+    subgraph Animal_Object["Animal Object"]
+        A_vptr["vptr"]
+    end
+    
+    subgraph Animal_VTable["Animal VTable"]
+        A_speak["&Animal::speak()"]
+    end
+    
+    A_vptr --> A_speak
+    
+    subgraph Dog_Object["Dog Object"]
+        D_vptr["vptr"]
+        D_base["(Animal part)"]
+    end
+    
+    subgraph Dog_VTable["Dog VTable"]
+        D_speak["&Dog::speak()"]
+    end
+    
+    D_vptr --> D_speak
+    
+    style Animal_VTable fill:#e3f2fd
+    style Dog_VTable fill:#e8f5e9
 ```
-+----------------+
-|   Animal       |
-+----------------+        +------------------+
-| vptr --------->|------->| &Animal::speak() |
-+----------------+        +------------------+
-                               VTable
 
-+----------------+
-|   Dog          |
-+----------------+        +------------------+
-| vptr --------->|------->| &Dog::speak()    |
-+----------------+        +------------------+
-| (Animal part)  |             VTable
-+----------------+
-```
-
+**How it works:**
 - Each class with virtual functions has a **VTable** (Virtual Table)
-- Each object has a hidden **vptr** (Virtual Pointer)
-- At runtime, the correct function is looked up in the VTable
+- Each object has a hidden **vptr** (Virtual Pointer) pointing to its class's VTable
+- At runtime, when a virtual function is called through a pointer, the vptr is used to find the correct function in the VTable
 
 ---
 

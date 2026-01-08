@@ -46,6 +46,46 @@ int main() {
 
 ## 2. Types of Inheritance
 
+### Visual Overview: All Inheritance Types
+
+```mermaid
+graph TB
+    subgraph Single["1️⃣ Single"]
+        S_P[Parent] --> S_C[Child]
+    end
+    
+    subgraph Multiple["2️⃣ Multiple"]
+        M_F[Father] --> M_C[Child]
+        M_M[Mother] --> M_C
+    end
+    
+    subgraph Multilevel["3️⃣ Multilevel"]
+        ML_G[Grandparent] --> ML_P[Parent]
+        ML_P --> ML_C[Child]
+    end
+    
+    subgraph Hierarchical["4️⃣ Hierarchical"]
+        H_A[Animal] --> H_D[Dog]
+        H_A --> H_C[Cat]
+    end
+    
+    subgraph Hybrid["5️⃣ Hybrid/Diamond"]
+        HY_A[A] --> HY_B[B]
+        HY_A --> HY_C[C]
+        HY_B --> HY_D[D]
+        HY_C --> HY_D
+    end
+    
+    style S_P fill:#e3f2fd
+    style M_F fill:#e8f5e9
+    style M_M fill:#fce4ec
+    style ML_G fill:#fff3e0
+    style H_A fill:#f3e5f5
+    style HY_A fill:#ffebee
+```
+
+---
+
 ### 1. Single Inheritance
 One derived class inherits from one base class.
 
@@ -59,12 +99,6 @@ class Child : public Parent {
 public:
     void childMethod() { cout << "Child method" << endl; }
 };
-```
-
-```
-    Parent
-       ↓
-     Child
 ```
 
 ### 2. Multiple Inheritance
@@ -94,12 +128,6 @@ int main() {
 }
 ```
 
-```
-   Father    Mother
-      ↘      ↙
-        Child
-```
-
 ### 3. Multilevel Inheritance
 Chain of inheritance (grandparent → parent → child).
 
@@ -127,14 +155,6 @@ int main() {
 }
 ```
 
-```
-  Grandparent
-       ↓
-    Parent
-       ↓
-     Child
-```
-
 ### 4. Hierarchical Inheritance
 Multiple derived classes from single base class.
 
@@ -155,12 +175,6 @@ public:
 };
 ```
 
-```
-      Animal
-     ↙     ↘
-   Dog      Cat
-```
-
 ### 5. Hybrid Inheritance
 Combination of multiple inheritance types.
 
@@ -169,14 +183,6 @@ class A { public: void a() {} };
 class B : public A { public: void b() {} };
 class C : public A { public: void c() {} };
 class D : public B, public C { public: void d() {} };
-```
-
-```
-        A
-      ↙   ↘
-     B     C
-      ↘   ↙
-        D
 ```
 
 ---
@@ -216,6 +222,28 @@ class DerivedPrivate : private Base {
 ## 4. The Diamond Problem
 
 Occurs in hybrid/multiple inheritance when two parent classes share a common ancestor.
+
+```mermaid
+graph TB
+    subgraph Problem["⚠️ Diamond Problem"]
+        A1[Animal<br/>weight, eat] --> M1[Mammal]
+        A1 --> B1[Bird]
+        M1 --> BAT1[Bat]
+        B1 --> BAT1
+    end
+    
+    subgraph Solution["✅ Virtual Inheritance Solution"]
+        A2[Animal<br/>Single Copy] --> M2[Mammal<br/>virtual public]
+        A2 --> B2[Bird<br/>virtual public]
+        M2 --> BAT2[Bat]
+        B2 --> BAT2
+    end
+    
+    style A1 fill:#ffcdd2
+    style A2 fill:#c8e6c9
+    style BAT1 fill:#ffcdd2
+    style BAT2 fill:#c8e6c9
+```
 
 ```cpp
 class Animal {

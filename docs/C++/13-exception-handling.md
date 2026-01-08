@@ -19,6 +19,23 @@ nav_order: 11
 
 A mechanism to handle **runtime errors** gracefully without crashing the program.
 
+```mermaid
+graph TD
+    A["🚀 Code Execution"] --> B{"Exception<br/>Thrown?"}
+    B -->|No| C["✅ Normal Flow"]
+    B -->|Yes| D["🔴 throw exception"]
+    D --> E["🔍 Look for catch"]
+    E --> F{"Matching<br/>catch found?"}
+    F -->|Yes| G["✅ Handle Exception"]
+    F -->|No| H["⬆️ Propagate to caller"]
+    H --> E
+    G --> I["Continue Execution"]
+    
+    style A fill:#e3f2fd
+    style D fill:#ffcdd2
+    style G fill:#c8e6c9
+```
+
 ```cpp
 // Without exception handling
 int divide(int a, int b) {
@@ -329,6 +346,27 @@ When exception is thrown:
 2. If not found, destroy local objects (call destructors)
 3. Move to calling function
 4. Repeat until catch is found or main() exits
+
+```mermaid
+graph TB
+    subgraph CallStack["📚 Call Stack"]
+        M["main()"] --> F1["func1() - L1 created"]
+        F1 --> F2["func2() - L2 created"]
+        F2 --> F3["func3() - L3 created"]
+        F3 --> E["🔴 throw exception"]
+    end
+    
+    subgraph Unwinding["⬆️ Stack Unwinding"]
+        E --> D3["~L3() called"]
+        D3 --> D2["~L2() called"]
+        D2 --> D1["~L1() called"]
+        D1 --> C["catch block in main()"]
+    end
+    
+    style E fill:#ffcdd2
+    style C fill:#c8e6c9
+```
+
 
 ```cpp
 class Logger {

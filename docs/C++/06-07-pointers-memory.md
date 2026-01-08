@@ -224,6 +224,29 @@ int main() {
 ## 7. Dynamic Memory Allocation
 
 ### Stack vs Heap
+
+```mermaid
+graph LR
+    subgraph STACK["📚 STACK Memory"]
+        direction TB
+        S1["Local variables"]
+        S2["Function parameters"]
+        S3["Return addresses"]
+        S4["Auto cleanup ✓"]
+    end
+    
+    subgraph HEAP["🗄️ HEAP Memory"]
+        direction TB
+        H1["Dynamic allocation"]
+        H2["new/delete"]
+        H3["Larger size"]
+        H4["Manual cleanup ⚠️"]
+    end
+    
+    style STACK fill:#e8f5e9
+    style HEAP fill:#fff3e0
+```
+
 | Stack | Heap |
 |-------|------|
 | Automatic allocation | Manual allocation |
@@ -231,6 +254,7 @@ int main() {
 | Limited size | Large size |
 | LIFO order | No order |
 | Compiler managed | Programmer managed |
+
 
 ### `new` Operator
 ```cpp

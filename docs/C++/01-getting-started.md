@@ -290,6 +290,73 @@ int main() {
 }
 ```
 
+### Exercise 7: Add Binary Numbers
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+string addBinary(string a, string b) {
+    string result = "";
+    int carry = 0;
+    int i = a.length() - 1;
+    int j = b.length() - 1;
+    
+    while (i >= 0 || j >= 0 || carry) {
+        int sum = carry;
+        if (i >= 0) sum += a[i--] - '0';
+        if (j >= 0) sum += b[j--] - '0';
+        
+        result = char(sum % 2 + '0') + result;
+        carry = sum / 2;
+    }
+    return result;
+}
+
+int main() {
+    string bin1, bin2;
+    cout << "Enter first binary number: ";
+    cin >> bin1;
+    cout << "Enter second binary number: ";
+    cin >> bin2;
+    
+    cout << "Sum = " << addBinary(bin1, bin2) << endl;
+    return 0;
+}
+// Example: 1010 + 1011 = 10101
+```
+
+### Exercise 8: Add Characters (Character Arithmetic)
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    char ch1, ch2;
+    
+    cout << "Enter first character: ";
+    cin >> ch1;
+    cout << "Enter second character: ";
+    cin >> ch2;
+    
+    // Characters are stored as ASCII values
+    int sum = ch1 + ch2;
+    
+    cout << "ASCII of '" << ch1 << "' = " << (int)ch1 << endl;
+    cout << "ASCII of '" << ch2 << "' = " << (int)ch2 << endl;
+    cout << "Sum of ASCII values = " << sum << endl;
+    cout << "Sum as character = " << (char)sum << endl;
+    
+    // Character arithmetic examples
+    cout << "\n--- Character Arithmetic ---" << endl;
+    cout << "'A' + 1 = " << (char)('A' + 1) << " (B)" << endl;
+    cout << "'a' - 'A' = " << ('a' - 'A') << " (difference: 32)" << endl;
+    cout << "'5' - '0' = " << ('5' - '0') << " (converts char to int)" << endl;
+    
+    return 0;
+}
+```
+
 ---
 
 ## 🎯 Key Points to Remember

@@ -24,6 +24,21 @@ nav_order: 6
 | **Inheritance** | Deriving new classes from existing ones |
 | **Polymorphism** | Same interface, different implementations |
 
+```mermaid
+graph TB
+    subgraph OOP["🏛️ Four Pillars of OOP"]
+        E["📦 Encapsulation<br/>Data + Methods bundled<br/>Private/Public access"]
+        A["🎭 Abstraction<br/>Hide complexity<br/>Show only essentials"]
+        I["🧬 Inheritance<br/>Reuse code<br/>Parent → Child"]
+        P["🔀 Polymorphism<br/>Many forms<br/>Same interface"]
+    end
+    
+    style E fill:#e1f5fe
+    style A fill:#f3e5f5
+    style I fill:#e8f5e9
+    style P fill:#fff3e0
+```
+
 ---
 
 ## 2. Classes and Objects
