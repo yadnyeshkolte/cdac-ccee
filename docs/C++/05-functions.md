@@ -139,6 +139,7 @@ int main() {
 ```
 
 ### Comparison Table
+
 | Aspect | Call by Value | Call by Reference | Call by Pointer |
 |--------|---------------|-------------------|-----------------|
 | Syntax | `func(int x)` | `func(int& x)` | `func(int* x)` |

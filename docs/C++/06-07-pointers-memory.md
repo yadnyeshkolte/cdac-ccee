@@ -41,6 +41,8 @@ int* a, b, c;      // Only 'a' is pointer!
 ```
 
 ### Pointer Operations
+
+
 | Operation | Syntax | Meaning |
 |-----------|--------|---------|
 | Address-of | `&x` | Get address of x |

@@ -27,6 +27,7 @@ The **Standard Template Library** provides:
 ## 2. STL Containers
 
 ### Sequence Containers
+
 | Container | Description | Access |
 |-----------|-------------|--------|
 | `vector` | Dynamic array | Random O(1) |
@@ -36,6 +37,7 @@ The **Standard Template Library** provides:
 | `forward_list` | Singly linked list | Sequential O(n) |
 
 ### Associative Containers
+
 | Container | Description | Ordered |
 |-----------|-------------|---------|
 | `set` | Unique keys | Yes |
@@ -44,12 +46,14 @@ The **Standard Template Library** provides:
 | `multimap` | Key-value pairs, duplicate keys | Yes |
 
 ### Unordered Containers (C++11)
+
 | Container | Description | Hash-based |
 |-----------|-------------|------------|
 | `unordered_set` | Unique keys | Yes |
 | `unordered_map` | Key-value pairs | Yes |
 
 ### Container Adapters
+
 | Container | Description | Underlying |
 |-----------|-------------|------------|
 | `stack` | LIFO | deque/vector/list |

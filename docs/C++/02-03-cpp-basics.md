@@ -66,6 +66,7 @@ int class;           // ❌ Reserved keyword
 ## 2. Data Types
 
 ### Primitive Data Types
+
 | Type | Size | Range |
 |------|------|-------|
 | `bool` | 1 byte | true/false |
