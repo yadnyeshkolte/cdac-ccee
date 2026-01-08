@@ -12,7 +12,84 @@ permalink: /docs/C++/
 **Objective**: Learn object-oriented programming using C++  
 **Text Book**: C++ Primer Plus by Stephen Prata / Pearson
 
----
+## 📚 Quick Access to Notes
+
+<div class="module-content-grid">
+  <a href="{{ '/docs/C++/01-getting-started' | relative_url }}" class="content-link">
+    <span class="link-icon">📖</span>
+    <span class="link-text">Session 1: Getting Started</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/02-03-cpp-basics' | relative_url }}" class="content-link">
+    <span class="link-icon">📖</span>
+    <span class="link-text">Sessions 2-3: C++ Basics</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/04-control-structures' | relative_url }}" class="content-link">
+    <span class="link-icon">📖</span>
+    <span class="link-text">Session 4: Control Structures</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/05-functions' | relative_url }}" class="content-link">
+    <span class="link-icon">📖</span>
+    <span class="link-text">Session 5: Functions</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/06-07-pointers-memory' | relative_url }}" class="content-link">
+    <span class="link-icon">🔗</span>
+    <span class="link-text">Sessions 6-7: Pointers & Memory</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/08-oop-concepts' | relative_url }}" class="content-link">
+    <span class="link-icon">🔷</span>
+    <span class="link-text">Session 8: OOP Concepts</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/09-constructors-destructors' | relative_url }}" class="content-link">
+    <span class="link-icon">🔷</span>
+    <span class="link-text">Session 9: Constructors & Destructors</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/10-inheritance' | relative_url }}" class="content-link">
+    <span class="link-icon">🔀</span>
+    <span class="link-text">Session 10: Inheritance</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/11-polymorphism' | relative_url }}" class="content-link">
+    <span class="link-icon">🔀</span>
+    <span class="link-text">Session 11: Polymorphism</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/12-virtual-functions' | relative_url }}" class="content-link">
+    <span class="link-icon">⚙️</span>
+    <span class="link-text">Session 12: Virtual Functions</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/13-exception-handling' | relative_url }}" class="content-link">
+    <span class="link-icon">⚠️</span>
+    <span class="link-text">Session 13: Exception Handling</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/14-console-io' | relative_url }}" class="content-link">
+    <span class="link-icon">💻</span>
+    <span class="link-text">Session 14: Console I/O</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/15-file-handling' | relative_url }}" class="content-link">
+    <span class="link-icon">📁</span>
+    <span class="link-text">Session 15: File Handling</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/16-templates' | relative_url }}" class="content-link">
+    <span class="link-icon">🧩</span>
+    <span class="link-text">Session 16: Templates</span>
+  </a>
+  
+  <a href="{{ '/docs/C++/17-18-stl-rtti' | relative_url }}" class="content-link">
+    <span class="link-icon">📦</span>
+    <span class="link-text">Sessions 17-18: STL & RTTI</span>
+  </a>
+</div>
 
 ## 🎯 Practice Tests
 
@@ -27,33 +104,6 @@ permalink: /docs/C++/
     <span class="link-text">MCQ Test 2 (40 Qs)</span>
   </a>
 </div>
-
----
-
-## 📚 Session Notes
-
-### Foundation (Sessions 1-5)
-- [Session 1: Getting Started]({{ '/docs/C++/01-getting-started' | relative_url }}) - C++ intro, history, first program
-- [Sessions 2-3: C++ Basics]({{ '/docs/C++/02-03-cpp-basics' | relative_url }}) - Tokens, operators, static/const members
-- [Session 4: Control Structures]({{ '/docs/C++/04-control-structures' | relative_url }}) - if/switch, loops, arrays
-- [Session 5: Functions]({{ '/docs/C++/05-functions' | relative_url }}) - Call by reference, inline, recursion
-
-### Memory & OOP (Sessions 6-9)
-- [Sessions 6-7: Pointers & Memory]({{ '/docs/C++/06-07-pointers-memory' | relative_url }}) - Pointers, new/delete, this pointer
-- [Session 8: OOP Concepts]({{ '/docs/C++/08-oop-concepts' | relative_url }}) - Classes, objects, access specifiers, namespaces
-- [Session 9: Constructors & Destructors]({{ '/docs/C++/09-constructors-destructors' | relative_url }}) - Copy constructor, Rule of Three
-
-### Inheritance & Polymorphism (Sessions 10-12)
-- [Session 10: Inheritance]({{ '/docs/C++/10-inheritance' | relative_url }}) - All types, diamond problem, virtual base class
-- [Session 11: Polymorphism]({{ '/docs/C++/11-polymorphism' | relative_url }}) - Operator overloading, friend functions
-- [Session 12: Virtual Functions]({{ '/docs/C++/12-virtual-functions' | relative_url }}) - Abstract classes, interfaces, type casting
-
-### Advanced Topics (Sessions 13-18)
-- [Session 13: Exception Handling]({{ '/docs/C++/13-exception-handling' | relative_url }}) - try-catch-throw, custom exceptions
-- [Session 14: Console I/O]({{ '/docs/C++/14-console-io' | relative_url }}) - Streams, manipulators, formatting
-- [Session 15: File Handling]({{ '/docs/C++/15-file-handling' | relative_url }}) - Text and binary files
-- [Session 16: Templates]({{ '/docs/C++/16-templates' | relative_url }}) - Function and class templates
-- [Sessions 17-18: STL & RTTI]({{ '/docs/C++/17-18-stl-rtti' | relative_url }}) - Containers, algorithms, typeid
 
 ---
 

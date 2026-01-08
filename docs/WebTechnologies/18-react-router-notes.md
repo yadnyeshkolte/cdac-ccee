@@ -248,6 +248,7 @@ function App() {
 
 ## 🔄 useLocation Hook
 
+{% raw %}
 ```jsx
 import { useLocation } from 'react-router-dom';
 
@@ -275,6 +276,7 @@ function Checkout() {
     return <div>From: {from}</div>;
 }
 ```
+{% endraw %}
 
 ---
 
@@ -365,6 +367,7 @@ function App() {
 
 ### Compound Components:
 
+{% raw %}
 ```jsx
 // Parent manages state, children consume via context
 const TabContext = createContext();
@@ -430,6 +433,7 @@ function App() {
     );
 }
 ```
+{% endraw %}
 
 ---
 

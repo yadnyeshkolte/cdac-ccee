@@ -296,6 +296,7 @@ function TodoApp() {
 
 ### Creating Context:
 
+{% raw %}
 ```jsx
 import { createContext, useContext, useState } from 'react';
 
@@ -347,9 +348,11 @@ function App() {
     );
 }
 ```
+{% endraw %}
 
 ### Auth Context Example:
 
+{% raw %}
 ```jsx
 const AuthContext = createContext();
 
@@ -390,6 +393,7 @@ function Dashboard() {
     );
 }
 ```
+{% endraw %}
 
 ---
 

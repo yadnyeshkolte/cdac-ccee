@@ -343,6 +343,7 @@ for (int i = 0; i < 2; i++) {
 ```
 
 ### Matrix Operations
+{% raw %}
 ```cpp
 // Matrix Addition
 int A[2][2] = {{1, 2}, {3, 4}};
@@ -365,6 +366,7 @@ for (int i = 0; i < 2; i++) {
     }
 }
 ```
+{% endraw %}
 
 ---
 

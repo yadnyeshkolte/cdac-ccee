@@ -233,6 +233,7 @@ function UserCard(props) {
 
 ### Default Props:
 
+{% raw %}
 ```jsx
 // Method 1: Default parameters
 function Button({ text = 'Click Me', color = 'blue' }) {
@@ -249,6 +250,7 @@ Button.defaultProps = {
     color: 'blue'
 };
 ```
+{% endraw %}
 
 ### Children Props:
 
@@ -374,6 +376,7 @@ function Comment({ author, text, date }) {
 
 ### Inline Styles:
 
+{% raw %}
 ```jsx
 function Button() {
     const style = {
@@ -391,6 +394,7 @@ function Button() {
 // Inline
 <div style={{ marginTop: '20px', fontSize: '16px' }}>
 ```
+{% endraw %}
 
 ### CSS Classes:
 
