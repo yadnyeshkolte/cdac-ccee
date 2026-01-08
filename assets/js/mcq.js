@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function formatCodeInText(text) {
         // Check if text contains code (backticks)
         if (!text.includes('`')) {
-            return text;
+            // No code blocks - just escape HTML and return
+            return escapeHtml(text);
         }
 
         // Split text into parts (regular text and code)
@@ -82,7 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let html = '';
         for (const part of parts) {
             if (part.type === 'text') {
-                html += part.content;
+                // Escape HTML in regular text to prevent rendering of HTML tags
+                html += escapeHtml(part.content);
             } else if (part.type === 'inline') {
                 html += `<code>${escapeHtml(part.content)}</code>`;
             } else if (part.type === 'codeblock') {
