@@ -1,21 +1,401 @@
 [
   {
-    "question": "Sample Question 1 for Module 7",
+    "question": "Which of the following is NOT a feature of C++?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "Object-Oriented Programming",
+      "Platform Independence like Java",
+      "Operator Overloading",
+      "Multiple Inheritance"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the correct way to declare a constant in C++?",
+    "options": [
+      "constant int x = 5;",
+      "const int x = 5;",
+      "int const x == 5;",
+      "final int x = 5;"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which operator is used for dynamic memory allocation in C++?",
+    "options": [
+      "malloc()",
+      "alloc",
+      "new",
+      "create"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the output of: `cout << 5/2;`?",
+    "options": [
+      "2.5",
+      "2",
+      "3",
+      "2.0"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which header file is required for using `cout` and `cin`?",
+    "options": [
+      "<stdio.h>",
+      "<conio.h>",
+      "<iostream>",
+      "<stdlib.h>"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does the `::` operator represent in C++?",
+    "options": [
+      "Pointer operator",
+      "Scope resolution operator",
+      "Reference operator",
+      "Assignment operator"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is a valid C++ identifier?",
+    "options": [
+      "2variable",
+      "variable-name",
+      "_variable_name",
+      "class"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the size of `bool` data type in C++?",
+    "options": [
+      "4 bytes",
+      "2 bytes",
+      "1 byte",
+      "8 bytes"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which loop is guaranteed to execute at least once?",
+    "options": [
+      "for loop",
+      "while loop",
+      "do-while loop",
+      "foreach loop"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the purpose of the `break` statement?",
+    "options": [
+      "Skip the current iteration",
+      "Exit from the loop or switch",
+      "Return a value from function",
+      "Continue to next iteration"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which keyword is used to define an inline function?",
+    "options": [
+      "inline",
+      "inlined",
+      "static",
+      "fast"
     ],
     "answer": 0
   },
   {
-    "question": "Sample Question 2 for Module 7",
+    "question": "What is function overloading?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "Functions with same name and same parameters",
+      "Functions with different names",
+      "Functions with same name but different parameters",
+      "Functions calling themselves"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does `&` mean when used in function parameter like `void func(int &x)`?",
+    "options": [
+      "Pointer to x",
+      "Address of x",
+      "Reference to x (call by reference)",
+      "Value of x"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is NOT a valid storage class in C++?",
+    "options": [
+      "auto",
+      "register",
+      "extern",
+      "dynamic"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the default return type of main() in C++?",
+    "options": [
+      "void",
+      "int",
+      "float",
+      "No return type needed"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How do you declare a pointer to an integer in C++?",
+    "options": [
+      "int ptr;",
+      "int *ptr;",
+      "ptr int;",
+      "*int ptr;"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the output of `cout << *(&x);` if `int x = 10;`?",
+    "options": [
+      "Address of x",
+      "10",
+      "Garbage value",
+      "Compilation error"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which operator is used to access members through a pointer?",
+    "options": [
+      ".",
+      "->",
+      "::",
+      "&"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the purpose of `this` pointer in C++?",
+    "options": [
+      "Points to the base class",
+      "Points to the current object",
+      "Points to the parent function",
+      "Points to the main function"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How do you free dynamically allocated memory in C++?",
+    "options": [
+      "free()",
+      "delete",
+      "remove",
+      "destroy"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the correct syntax for delete operator with arrays?",
+    "options": [
+      "delete arr;",
+      "delete[] arr;",
+      "delete(arr);",
+      "free(arr);"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which access specifier makes members accessible only within the same class?",
+    "options": [
+      "public",
+      "protected",
+      "private",
+      "internal"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is encapsulation in OOP?",
+    "options": [
+      "Inheriting from parent class",
+      "Binding data and functions together",
+      "Creating multiple objects",
+      "Overloading operators"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which keyword is used to inherit from a class?",
+    "options": [
+      "extends",
+      "implements",
+      "inherits",
+      ": (colon)"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is a namespace used for in C++?",
+    "options": [
+      "Allocating memory",
+      "Avoiding name conflicts",
+      "Defining macros",
+      "Creating objects"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which constructor is called when an object is created from another object?",
+    "options": [
+      "Default constructor",
+      "Parameterized constructor",
+      "Copy constructor",
+      "Static constructor"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the syntax for a destructor?",
+    "options": [
+      "~ClassName()",
+      "!ClassName()",
+      "delete ClassName()",
+      "destroy ClassName()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "When is a destructor automatically called?",
+    "options": [
+      "When object is created",
+      "When object goes out of scope",
+      "When function is called",
+      "At the start of program"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Can a class have multiple constructors in C++?",
+    "options": [
+      "No, only one is allowed",
+      "Yes, through constructor overloading",
+      "Only in derived classes",
+      "Only with different names"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What happens if you don't define any constructor?",
+    "options": [
+      "Compilation error",
+      "Compiler provides default constructor",
+      "Runtime error",
+      "Program won't run"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which statement about static members is TRUE?",
+    "options": [
+      "Each object has its own copy",
+      "They are shared by all objects of the class",
+      "They cannot be accessed without object",
+      "They must be initialized inside the class"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the difference between `new` and `malloc()`?",
+    "options": [
+      "new is slower than malloc",
+      "new calls constructor, malloc doesn't",
+      "malloc returns typed pointer, new doesn't",
+      "There is no difference"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is an enumeration (`enum`) in C++?",
+    "options": [
+      "A type of loop",
+      "A user-defined type with named constants",
+      "A type of pointer",
+      "A class template"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does `typedef` do in C++?",
+    "options": [
+      "Defines a new type",
+      "Creates an alias for an existing type",
+      "Deletes a type",
+      "Converts one type to another"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is the correct way to access a static member function?",
+    "options": [
+      "object.staticFunc()",
+      "Class::staticFunc()",
+      "Both A and B",
+      "static::func()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the output of `sizeof('A')` in C++?",
+    "options": [
+      "1 byte",
+      "2 bytes",
+      "4 bytes",
+      "8 bytes"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which operator cannot be overloaded in C++?",
+    "options": [
+      "+",
+      "[]",
+      "::",
+      "<<"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the default access specifier for class members?",
+    "options": [
+      "public",
+      "protected",
+      "private",
+      "internal"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "How many times will this loop execute: `for(int i=0; i<5; ++i)`?",
+    "options": [
+      "4 times",
+      "5 times",
+      "6 times",
+      "Infinite loop"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the correct way to declare a 2D array in C++?",
+    "options": [
+      "int arr[3,4];",
+      "int arr[3][4];",
+      "int arr(3)(4);",
+      "array<int>[3][4];"
     ],
     "answer": 1
   }

@@ -1,22 +1,402 @@
 [
   {
-    "question": "Sample Question 1 for Module 7",
+    "question": "Which type of inheritance is NOT supported in C++?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "Single inheritance",
+      "Multiple inheritance",
+      "Hybrid inheritance",
+      "All are supported"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the diamond problem in C++?",
+    "options": [
+      "Memory allocation issue",
+      "Ambiguity in multiple inheritance when two parent classes have same base",
+      "Pointer dereferencing error",
+      "Template compilation error"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How is the diamond problem resolved in C++?",
+    "options": [
+      "Using interfaces",
+      "Using virtual base class",
+      "Using abstract class",
+      "It cannot be resolved"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "In multilevel inheritance, the class at the bottom can access:",
+    "options": [
+      "Only its immediate parent's members",
+      "Members of all ancestor classes based on access specifiers",
+      "Only public members of all classes",
+      "Only private members"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which inheritance type involves a diamond-shaped hierarchy?",
+    "options": [
+      "Single",
+      "Multiple",
+      "Hybrid",
+      "Hierarchical"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is polymorphism in C++?",
+    "options": [
+      "Ability of a class to have multiple constructors",
+      "Ability to take different forms",
+      "Ability to allocate memory dynamically",
+      "Ability to inherit from multiple classes"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is an example of compile-time polymorphism?",
+    "options": [
+      "Virtual functions",
+      "Function overloading",
+      "Abstract class",
+      "Runtime binding"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which is an example of runtime polymorphism?",
+    "options": [
+      "Function overloading",
+      "Operator overloading",
+      "Virtual functions",
+      "Templates"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the purpose of a `friend` function?",
+    "options": [
+      "To make function public",
+      "To access private members of a class from outside",
+      "To create inline function",
+      "To override virtual function"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which operators can be overloaded using friend functions?",
+    "options": [
+      "Only unary operators",
+      "Only binary operators",
+      "Both unary and binary operators",
+      "No operators can use friend"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What keyword is used to declare a virtual function?",
+    "options": [
+      "virtual",
+      "abstract",
+      "override",
+      "dynamic"
     ],
     "answer": 0
   },
   {
-    "question": "Sample Question 2 for Module 7",
+    "question": "What is a pure virtual function?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "A virtual function with a body",
+      "A virtual function initialized with = 0",
+      "A private virtual function",
+      "A static virtual function"
     ],
     "answer": 1
+  },
+  {
+    "question": "A class with at least one pure virtual function is called:",
+    "options": [
+      "Final class",
+      "Base class",
+      "Abstract class",
+      "Derived class"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Can you create an object of an abstract class?",
+    "options": [
+      "Yes, always",
+      "No, never",
+      "Only through pointers",
+      "Only in derived classes"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the purpose of `dynamic_cast`?",
+    "options": [
+      "Convert int to float",
+      "Safe downcasting in inheritance hierarchy",
+      "Remove const qualifier",
+      "Reinterpret memory"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which cast is used to remove the const qualifier?",
+    "options": [
+      "static_cast",
+      "dynamic_cast",
+      "const_cast",
+      "reinterpret_cast"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the correct syntax for throwing an exception?",
+    "options": [
+      "throw exception;",
+      "raise exception;",
+      "exception.throw();",
+      "exit(exception);"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which block is used to handle exceptions?",
+    "options": [
+      "try-except",
+      "try-catch",
+      "try-handle",
+      "try-error"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What happens if an exception is not caught?",
+    "options": [
+      "Program continues normally",
+      "Compiler warning",
+      "Program terminates abnormally",
+      "Exception is ignored"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "How do you re-throw an exception in C++?",
+    "options": [
+      "throw;",
+      "rethrow;",
+      "throw again;",
+      "continue throw;"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which is the base class for all standard exceptions?",
+    "options": [
+      "exception",
+      "error",
+      "throwable",
+      "std_error"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the purpose of `endl` in C++?",
+    "options": [
+      "End program",
+      "End function",
+      "Insert newline and flush buffer",
+      "End loop"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which manipulator sets the width of output field?",
+    "options": [
+      "setw()",
+      "setwidth()",
+      "width()",
+      "setsize()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What header is required for setw() and setprecision()?",
+    "options": [
+      "<iostream>",
+      "<iomanip>",
+      "<cstdio>",
+      "<string>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which stream class is used for file input in C++?",
+    "options": [
+      "ofstream",
+      "ifstream",
+      "fstream",
+      "iostream"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which stream class is used for file output in C++?",
+    "options": [
+      "ofstream",
+      "ifstream",
+      "istream",
+      "ostream"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the default file opening mode?",
+    "options": [
+      "ios::binary",
+      "ios::app",
+      "ios::in for ifstream, ios::out for ofstream",
+      "ios::trunc"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which function is used to check if file opened successfully?",
+    "options": [
+      "is_open()",
+      "check_open()",
+      "opened()",
+      "success()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What mode is used to append data to a file?",
+    "options": [
+      "ios::out",
+      "ios::in",
+      "ios::app",
+      "ios::trunc"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is a function template in C++?",
+    "options": [
+      "A function with no return type",
+      "A function that works with any data type",
+      "A virtual function",
+      "A recursive function"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which keyword is used to define a template?",
+    "options": [
+      "generic",
+      "template",
+      "type",
+      "class"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is template specialization?",
+    "options": [
+      "Creating template for all types",
+      "Creating specific implementation for particular type",
+      "Removing template",
+      "Optimizing template"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which STL container provides LIFO order?",
+    "options": [
+      "queue",
+      "stack",
+      "vector",
+      "list"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which STL container provides FIFO order?",
+    "options": [
+      "stack",
+      "queue",
+      "set",
+      "map"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the main feature of `std::vector`?",
+    "options": [
+      "Fixed size array",
+      "Dynamic array that can grow",
+      "Linked list",
+      "Binary tree"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which STL container stores key-value pairs?",
+    "options": [
+      "set",
+      "vector",
+      "map",
+      "list"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is RTTI in C++?",
+    "options": [
+      "Runtime Type Information",
+      "Real Time Type Interface",
+      "Reference Type Template Inheritance",
+      "Runtime Template Type Inference"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which operator is used to get runtime type information?",
+    "options": [
+      "typeof",
+      "instanceof",
+      "typeid",
+      "gettype"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does `auto` keyword do in C++11?",
+    "options": [
+      "Declares automatic storage",
+      "Automatically deduces variable type",
+      "Creates automatic function",
+      "Enables auto memory management"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which function is used to get the size of a vector?",
+    "options": [
+      "length()",
+      "count()",
+      "size()",
+      "capacity()"
+    ],
+    "answer": 2
   }
 ]
