@@ -1,0 +1,202 @@
+[
+    {
+        "question": "Which is the most correct Javascript/Regular expression pattern to check for exactly a 6-digit zip code (no other text allowed)?",
+        "options": [
+            "/\\d\\d\\d\\d\\d\\d/",
+            "/[0-9]+/",
+            "/[0-9]*/",
+            "/^\\d{6}$/"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "In React, what is a common use case for 'ref' in an uncontrolled component?",
+        "options": [
+            "To bind the function",
+            "To refer to a function",
+            "To refer to an external JavaScript file",
+            "To directly access the underlying DOM"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Which of the following is default scope in Node.js application?",
+        "options": [
+            "Local",
+            "Global",
+            "Remote",
+            "Public"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which is the correct way to declare an internal/embedded style sheet?",
+        "options": [
+            "<link> p {color:red; text-align:center; } </link>",
+            "<style> p {color:red; text-align:center; } </style>",
+            "<css> p {color:red; text-align:center; } </css>",
+            "<class> p {color:red; text-align:center; } </class>"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the correct JavaScript code to change the content of a div with id 'div1'?",
+        "options": [
+            "document.getElement(\"div1\").innerHTML = \"Changed content\";",
+            "document.getElementById(\"div1\").innerHTML = \"Changed content\";",
+            "document.getElementByTagName(\"div\").innerHTML = \"Changed content\";",
+            "document.getElementById(\"div1\").value = \"Changed content\";"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Identify the wrong statement about Promises:",
+        "options": [
+            "A promise has three possible states",
+            "A promise is used to handle the asynchronous result of an operation",
+            "A promise has four possible outcomes",
+            "With promises, we can defer the execution of a code block until an async request is completed"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which JavaScript function is used to register a function to be invoked after the specified number of milliseconds?",
+        "options": [
+            "setInterval()",
+            "setTimeout()",
+            "setMilliSeconds()",
+            "setTime()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What will be the console output of: `x = 10; function myFunction() { console.log(x); } var x = 20; myFunction();`",
+        "options": [
+            "10",
+            "20",
+            "undefined",
+            "Error"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a 'React' component? (Choose the most appropriate option)",
+        "options": [
+            "It's a javascript function which typically returns HTML (JSX) code that should be displayed",
+            "It's a replacement for standard HTML which is supported by modern browsers",
+            "It's a Javascript function that must not return anything",
+            "A React component takes a mandatory input and returns normal HTML"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which of the following statements is true for React.js?",
+        "options": [
+            "State can be managed with class components only",
+            "State can be managed with functional components only",
+            "State can be managed with both class & functional components",
+            "State can't be managed with class or functional components, redux is required."
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which is the correct way to create a textarea in a HTML form?",
+        "options": [
+            "<textarea name=\"address\">Please write your address</textarea>",
+            "<input type=\"textarea\" name=\"address\" rows=5 cols=10>Please write your address</input>",
+            "<input type=\"text\" multiple=\"true\" name=\"address\">Please write your address</input>",
+            "<textarea name=\"address\" rows=5 cols=10>Please write your address</textarea>"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "What is the Javascript code to display 'Hello World' in a popup box with a single 'ok' button?",
+        "options": [
+            "confirm(\"Hello World\")",
+            "alertBox(\"Hello World\")",
+            "prompt(\"Hello World\")",
+            "alert(\"Hello World\")"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Which is the name of the function that is used to change the state of a class-based React component?",
+        "options": [
+            "this.setState()",
+            "this.changeState()",
+            "this.setXXX(), where XXX can be any function name",
+            "this.state = (new value)"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which of the following is a software application used for accessing information on the World Wide Web?",
+        "options": [
+            "Web Server",
+            "Application Server",
+            "Web Browser",
+            "Domain Name Server"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "When you modify the state of a React component, what happens?",
+        "options": [
+            "Does nothing, you have to call the render method to rerender the component",
+            "Automatically re-renders",
+            "Is recreated from scratch",
+            "State is read-only, you cannot modify state."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Given array destructuring: `const [x, y, z] = [1, 2, 3, 4];`, what is the value of z?",
+        "options": [
+            "3",
+            "4",
+            "1",
+            "undefined"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which of the following is a valid HTML syntax for creating multi-line text input control?",
+        "options": [
+            "<input type=\"text\">",
+            "<textarea>",
+            "<input type=\"textarea\">",
+            "<textbox>"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which HTTP status code range indicates a redirection?",
+        "options": [
+            "2xx",
+            "3xx",
+            "4xx",
+            "5xx"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which is the correct way to import a module in Node.js ES modules syntax?",
+        "options": [
+            "const app = require('./myapp');",
+            "import app from './myapp';",
+            "const app = import('./myapp');",
+            "const app = include('./myapp');"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the correct JavaScript code to change font color of all paragraphs to blue using DOM?",
+        "options": [
+            "document.getElementsByTagName(\"p\").style.color=\"blue\"",
+            "Use a loop over document.getElementsByTagName(\"p\") and set style.color=\"blue\"",
+            "document.getElementById(\"p\").style.color=\"blue\"",
+            "document.querySelector(\"p\").color=\"blue\""
+        ],
+        "answer": 1
+    }
+]

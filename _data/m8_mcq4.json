@@ -1,0 +1,202 @@
+[
+    {
+        "question": "Which component in ASP.NET MVC can be used to pass data between controller to view?",
+        "options": [
+            "ViewData[\"DateTime\"]=DateTime.Now.ToString();",
+            "ViewState[\"DateTime\"]=DateTime.Now.ToString();",
+            "ViewBag[\"DateTime\"]=DateTime.Now.ToString();",
+            "DataView[\"DateTime\"]=DateTime.Now.ToString();"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "How to Print value from Controller to View in MVC?",
+        "options": [
+            "ViewBag.ECMDetail = \"my message\"; and in view @ViewBag.ECMDetail",
+            "ViewBag.ECMDetail = \"my message\"; and in view ViewBag.ECMDetail",
+            "ViewBag.ECMDetail = \"my message\"; and in view ViewBag.Title",
+            "None of the above"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Inheritance is __________ in nature.",
+        "options": [
+            "Commutative",
+            "Associative",
+            "Transitive",
+            "Iterative"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is the correct definition of extension methods?",
+        "options": [
+            "Static methods that extend functionality without creating derived type, recompiling, or modifying original type, called as instance methods",
+            "Static methods that allows developers to extend functionality of an existing type",
+            "Static methods that allows developers to extend functionality and are instance methods",
+            "None of the above"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is the output? `int i = 5; method1(ref i); method2(out j);` where method1 doubles x and method2 sets x=36?",
+        "options": [
+            "36, 10",
+            "10, 36",
+            "0, 0",
+            "36, 0"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Where should you add a view that will be returned by action methods in multiple controllers?",
+        "options": [
+            "Shared",
+            "Default",
+            "Master",
+            "None of the above"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which operator signifies the destructor operator?",
+        "options": [
+            "::",
+            ":",
+            "~",
+            "&"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "If you want outside users of your class to raise an event, what do you do?",
+        "options": [
+            "Add a public method to your class that raises the event",
+            "Make the event public",
+            "Use a public delegate instead of an event",
+            "Use a custom event accessor to give access to outside users"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is the output of LINQ query that extracts chars from strings, orders them, and prints? (strings: alpha, beta, gamma)",
+        "options": [
+            "a a l h a b g m m a p e t a",
+            "a a a a a b e g h l m m p t",
+            "a g h l m m p t a a a a a b e",
+            "Run time error"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "__________ parameters allow you to give a method parameter a default value.",
+        "options": [
+            "optional",
+            "named",
+            "out",
+            "ref"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which LINQ expression displays books where Price > 50 and QuantityInStock > 100?",
+        "options": [
+            "from b in Books select b where b.QuantityInStock > 100 AND b.Price > 50.00",
+            "from b in Books where b.QuantityInStock > 100 && b.Price > 50.00 select b",
+            "from books b select books where b.QuantityInStock > 100 AND b.Price > 50.00",
+            "from books b where b.QuantityInStock > 100 AND b.Price > 50.00 select books"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Find the error: `public int Employee() { EmpId = 1001; }`",
+        "options": [
+            "No Error",
+            "Return type is not possible in constructor",
+            "Access specifier is not possible in constructor",
+            "Constructor must have different name than class"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "List<T>.Contains(T) method return type is:",
+        "options": [
+            "int",
+            "Boolean",
+            "void",
+            "var"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Statements about MSIL: (i) MSIL includes instructions to load, initialize, invoke methods (ii) MSIL is collected as byte codes and converted to .NET assembly",
+        "options": [
+            "i-True, ii-False",
+            "i-False, ii-True",
+            "i-True, ii-True",
+            "i-False, ii-False"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "The infrastructure that supports dynamic operations at run time is called:",
+        "options": [
+            "CLR",
+            "CTS",
+            "CLS",
+            "DLR"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Which modifier do you use in a base class to require any derived class to implement a class member?",
+        "options": [
+            "Abstract",
+            "Virtual",
+            "Must Override",
+            "Sealed"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "The C# compiler used in .NET CORE is:",
+        "options": [
+            "csc.exe",
+            "Roslyn",
+            "Typescript",
+            "core.exe"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In LINQ, which keyword stores the result of a sub-expression for reuse in upcoming clauses?",
+        "options": [
+            "let",
+            "var",
+            "dynamic",
+            "generic expression"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which collection type uses strongly typed members, FIFO order, stores values, and uses zero-based indices?",
+        "options": [
+            "Stack<T>",
+            "Queue<T>",
+            "LinkedList<T>",
+            "Dictionary<K,V>"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "IsNullOrEmpty() checks if string is null or empty. A string is null if not assigned, empty if assigned:",
+        "options": [
+            "null, \"\", String.Empty",
+            "\"\", null, String.Empty",
+            "null, String.Empty, \"\"",
+            "\"\", String.Empty, null"
+        ],
+        "answer": 0
+    }
+]

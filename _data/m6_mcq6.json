@@ -1,0 +1,202 @@
+[
+    {
+        "question": "How many ServletContext objects are available for an entire web application?",
+        "options": [
+            "One each per servlet",
+            "One each per request",
+            "One each per response",
+            "Only one"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "In SpringBoot application the class which has main method, should be annotated with:",
+        "options": [
+            "@EnableSpringApplication",
+            "@SpringApplication",
+            "@SpringBootApplication",
+            "@EnableSpringBootApplication"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which of these JDBC mechanisms allows us to define checkpoints for a transaction?",
+        "options": [
+            "CheckPoint",
+            "CommitPoint",
+            "Savepoint",
+            "RollbackPoint"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is the correct declaration of getConnection() method in DriverManager class?",
+        "options": [
+            "getConnection(String url, String info) throws SQLException",
+            "getConnection(String urls[]) throws SQLException",
+            "getConnection(String url, String user, String password) throws SQLException",
+            "getConnection(String url) throws SQLException"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "The ability to invoke a RESTful method multiple times without changing the state of the server on subsequent invocations is known as:",
+        "options": [
+            "Idempotence",
+            "Immutability",
+            "Statefulness",
+            "Uniformity"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is TRUE about the cascading and cascade mode attributes in JPA Entities?",
+        "options": [
+            "Cascade mode attributes can be specified for the association annotations (like @OneToMany) in an entity",
+            "The cascading direction is from the target entity to the source entity",
+            "PERSIST, DELETE are the only valid cascading mode attributes",
+            "Cascading is not supported in JPA"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which annotation can be used for testing spring boot application, which creates the entire context without starting the server?",
+        "options": [
+            "@Test",
+            "@WebMvcTest",
+            "@SpringBootTest",
+            "@SpringBootIntegrationTest"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "How is the dynamic interception of requests and responses to transform the information done?",
+        "options": [
+            "servlet container",
+            "servlet config",
+            "servlet context",
+            "servlet filter"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "What is a POM file in a Maven project?",
+        "options": [
+            "A file that contains the compiled bytecode of the classes in your project",
+            "A package that stores resources like images for the Java project",
+            "A file that points to the media resources used by a Java project",
+            "A file that stores the structure and dependencies for your Maven project"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Any client request to access resources in the WEB-INF/ directory must be returned with:",
+        "options": [
+            "BAD_REQUEST",
+            "SC_NOT_FOUND",
+            "SC_INTERNAL_SERVER_ERROR",
+            "ESC_BAD_REQUEST"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which type of JDBC driver makes use of the database native protocol?",
+        "options": [
+            "JDBC-ODBC Bridge plus ODBC driver",
+            "Native-API, partly Java driver",
+            "JDBC-Net, pure Java driver",
+            "Native-protocol, pure Java driver"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Which method is best suited to call on JDBC connection object when same SQL statement needs to be executed frequently with different parameters?",
+        "options": [
+            "createStatement()",
+            "prepareStatement()",
+            "prepareCall()",
+            "nativeSQL()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which level of cache is represented by Hibernate Session object?",
+        "options": [
+            "First Level Cache",
+            "Second Level Cache",
+            "Query Cache",
+            "Database Cache"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "In Servlet3.0 which annotation is used to declare a Servlet Component with URL pattern '/hello'?",
+        "options": [
+            "@WebServlet",
+            "@Servlet(\"/hello\")",
+            "@Servlet",
+            "@WebServlet(\"/hello\")"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Before forwarding a request to 'processingservlet', which step do you need to carry out?",
+        "options": [
+            "HttpServletResponse resp = myReq.next(\"processingservlet\");",
+            "RequestDispatcher rd = myReq.getRequestDispatcher(\"processingservlet\");",
+            "HttpServletRequest nextReq = myReq.next(\"processingservlet\");",
+            "HttpServlet htpServ = myReq.next(\"processingservlet\");"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which annotation in JPA is used to link two tables through a relation table?",
+        "options": [
+            "@JoinTable",
+            "@LinkTable",
+            "@RelationTable",
+            "@JoinColumn"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which of the following is not a valid attribute of <jsp:useBean> Action tag?",
+        "options": [
+            "id",
+            "class",
+            "type",
+            "property"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Which of the following cannot be supplied as automatic configuration in Spring Boot?",
+        "options": [
+            "Request Handler",
+            "Dispatcher Servlet",
+            "View Resolver",
+            "Handler Mapping"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which annotation is recommended for partial update of resource in Spring boot rest controller?",
+        "options": [
+            "@GetMapping",
+            "@PostMapping",
+            "@PutMapping",
+            "@PatchMapping"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "What is correct about JSP Scriptlets?",
+        "options": [
+            "A loop must start in one Scriptlet and end in it",
+            "Instructions in a Scriptlet must follow Java syntax",
+            "Semicolon is not required at the end of each statement in a Scriptlet",
+            "Both A and B are correct"
+        ],
+        "answer": 1
+    }
+]

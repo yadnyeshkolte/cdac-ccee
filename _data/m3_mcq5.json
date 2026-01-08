@@ -1,0 +1,202 @@
+[
+    {
+        "question": "Given a flex container of width 1000px containing three items with `flex-basis: 200px`. Item 1 has `flex-grow: 1`, Item 2 has `flex-grow: 1`, and Item 3 has `flex-grow: 2`. What is the computed width of Item 3?",
+        "options": [
+            "200px",
+            "300px",
+            "400px",
+            "350px"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which CSS pseudo-class selector allows you to group selectors WITHOUT increasing specificity?",
+        "options": [
+            ":is()",
+            ":where()",
+            ":not()",
+            ":has()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In the HTML5 Constraint Validation API, what is the side effect of calling `input.setCustomValidity('Error')`?",
+        "options": [
+            "It shows a popup immediately.",
+            "It prevents the form from submitting but registers the input as valid in CSS.",
+            "It marks the input as invalid and prevents form submission until setCustomValidity('') is called.",
+            "It automatically focuses the input field."
+        ],
+        "answer": 2
+    },
+    {
+        "question": "With `box-sizing: border-box`, if you have a `div` with `width: 200px`, `padding: 20px`, and `border: 5px solid`, what is the width of the content area?",
+        "options": [
+            "200px",
+            "175px",
+            "150px",
+            "250px"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is the difference between CSS Grid `repeat(auto-fill, minmax(100px, 1fr))` and `repeat(auto-fit, minmax(100px, 1fr))` when there are few items?",
+        "options": [
+            "auto-fit leaves empty tracks at the end; auto-fill stretches items to fill the row.",
+            "auto-fill creates as many tracks as fit into the container, even if empty; auto-fit collapses empty tracks to 0.",
+            "They behave exactly the same.",
+            "auto-fill works only on columns; auto-fit works on rows."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the output of: `const shape = { radius: 10, diameter() { return this.radius * 2; }, perimeter: () => 2 * Math.PI * this.radius }; console.log(shape.diameter()); console.log(shape.perimeter());`",
+        "options": [
+            "20 and 62.83...",
+            "20 and NaN",
+            "NaN and 62.83...",
+            "20 and undefined"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Consider the 'Temporal Dead Zone' (TDZ). Which statement is true regarding `let` and `const` variables?",
+        "options": [
+            "They are not hoisted at all.",
+            "They are hoisted but not initialized, causing a ReferenceError if accessed before declaration.",
+            "They are initialized with 'undefined' like var.",
+            "They are only accessible inside the block if declared at the top."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What happens when you use Destructuring assignment with a default value on a variable that is `null`? `const { a = 10 } = { a: null }; console.log(a);`",
+        "options": [
+            "10",
+            "null",
+            "undefined",
+            "Throw Error"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In the Promise API, what does `Promise.all()` do if one of the passed promises rejects?",
+        "options": [
+            "It waits for all others to finish, then throws an AggregateError.",
+            "It returns an array with the success values and the error object.",
+            "It immediately rejects with the error of the failed promise (fail-fast).",
+            "It ignores the rejection and returns the resolved values only."
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is the output sequence? `console.log('A'); setTimeout(() => console.log('B'), 0); Promise.resolve().then(() => console.log('C')); console.log('D');`",
+        "options": [
+            "A, B, C, D",
+            "A, D, B, C",
+            "A, D, C, B",
+            "A, C, D, B"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Regarding ES Modules: What is the key difference between a default export and a named export regarding 'live bindings'?",
+        "options": [
+            "Only default exports support live bindings.",
+            "Only named exports support live bindings; default exports import the value at the time of import.",
+            "Both behave exactly the same.",
+            "Named exports are read-only, default exports are mutable."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "When using `Array.prototype.reduce()` on an empty array without an initial value, what happens?",
+        "options": [
+            "It returns undefined.",
+            "It returns null.",
+            "It throws a TypeError.",
+            "It returns an empty array."
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What makes `WeakMap` keys different from `Map` keys?",
+        "options": [
+            "WeakMap keys can be primitives or objects.",
+            "WeakMap keys are not enumerable and must be objects (or registered symbols).",
+            "WeakMap keys prevent garbage collection of the object.",
+            "WeakMap has a .size property."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the result of `Symbol('key') === Symbol('key')`?",
+        "options": [
+            "true",
+            "false",
+            "undefined",
+            "TypeError"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In a Generator function, what does the `yield` keyword actually do?",
+        "options": [
+            "It terminates the function permanently.",
+            "It pauses the function execution and returns a value to the caller, saving the stack frame.",
+            "It runs a separate thread.",
+            "It creates a Promise automatically."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Inside an I/O callback (like fs.readFile), which timer is guaranteed to execute first between setTimeout and setImmediate?",
+        "options": [
+            "setTimeout always.",
+            "setImmediate always.",
+            "It is non-deterministic.",
+            "They run in parallel."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What happens if you recursively call `process.nextTick()`?",
+        "options": [
+            "It causes a stack overflow immediately.",
+            "It starves the Event Loop, preventing I/O operations from running.",
+            "Node.js automatically throttles it.",
+            "It behaves exactly like a recursive setImmediate."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "When piping streams `readStream.pipe(writeStream)`, what happens if an error occurs in the `readStream`?",
+        "options": [
+            "The error automatically propagates to the writeStream.",
+            "The Node process crashes unless a global handler is set.",
+            "The stream closes, but the error does NOT propagate to writeStream; you must attach error listeners to both.",
+            "The writeStream destroys the readStream."
+        ],
+        "answer": 2
+    },
+    {
+        "question": "In Express, what is the specific signature required for an Error Handling Middleware?",
+        "options": [
+            "(req, res, next)",
+            "(err, req, res)",
+            "(err, req, res, next)",
+            "(req, res, err, next)"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is the difference between `res.send({a:1})` and `res.json({a:1})` in Express?",
+        "options": [
+            "No difference.",
+            "res.json enforces JSON content-type and handles formatting options; res.send inspects the argument type.",
+            "res.send cannot send objects.",
+            "res.json is deprecated."
+        ],
+        "answer": 1
+    }
+]

@@ -1,0 +1,202 @@
+[
+    {
+        "question": "Which annotation in JPA is used to specify primary key – foreign key relation between two entities?",
+        "options": [
+            "@JoinColumn",
+            "@IdClass",
+            "@EmbeddedId",
+            "@MapsId"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which annotation is applied on the unique Id of an entity to get its value generated?",
+        "options": [
+            "@Generator",
+            "@GeneratedValue",
+            "@IdGenerator",
+            "@Sequence"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which of the following statements is FALSE about Hibernate SessionFactory?",
+        "options": [
+            "It is a class",
+            "It is a factory of session objects",
+            "It is a thread safe object",
+            "It represents second level cache"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which is the right sequence of stages in the JSP life cycle?",
+        "options": [
+            "Initialization, Cleanup, Compilation, Execution",
+            "Initialization, Compilation, Cleanup, Execution",
+            "Compilation, Initialization, Execution, Cleanup",
+            "Cleanup, Compilation, Initialization, Execution"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Choose the inheritance model which is NOT available in Hibernate:",
+        "options": [
+            "Table Per sub-class",
+            "Table Per class hierarchy",
+            "Table Per Object",
+            "Tables Per Concrete Class"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is the outcome if auto-commit is not explicitly set and executeUpdate is used for insert?",
+        "options": [
+            "An error is thrown as executeUpdate is not meant for inserts",
+            "The rows are inserted, but not committed",
+            "The rows are inserted and committed",
+            "An error is thrown since we need to explicitly set a value for auto-commit"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which of the following is NOT a valid phase in maven default build lifecycle?",
+        "options": [
+            "clean",
+            "validate",
+            "compile",
+            "install"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "The return type of getParameterNames() of HttpServletRequest object is:",
+        "options": [
+            "Array of Strings",
+            "java.util.ArrayList",
+            "java.util.Enumeration",
+            "String"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "How would you configure a RESTful URL parameter for searching a book based on its ID?",
+        "options": [
+            "GET /{id}/books/",
+            "GET /books/{id}",
+            "GET /book?id={id}",
+            "GET /books?id={id}"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which of the following can be used to test APIs in web service?",
+        "options": [
+            "Postback tool",
+            "Writing Web application using RestTemplate",
+            "Writing web application using RestManager",
+            "Writing web application using RestMan"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which of the following is NOT a disadvantage of Hibernate?",
+        "options": [
+            "Hibernate may be slower than JDBC, if caching is not used properly",
+            "Hibernate's connection pool is not great",
+            "Need to learn HQL syntax",
+            "Hibernate provides automatic support for transactions"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "When a container loads a JSP, which method is invoked during the Initialization phase?",
+        "options": [
+            "jspInit() is invoked before servicing any requests",
+            "Container invokes _jspService() during Initialization phase",
+            "Both of the above",
+            "None of the above"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "In hibernate, which annotation is used to represent primary key?",
+        "options": [
+            "@Id",
+            "@GeneratedValue",
+            "@Entity",
+            "@Key"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "For an around advice in Spring AOP, what is the correct combination of annotations for Line 4 (Pointcut) and Line 7 (Around)?",
+        "options": [
+            "@Pointcut(\"expression(...)\") and @Around(\"businessMethods()\")",
+            "@Around(\"businessMethods()\") and @Pointcut(\"expression(...)\")",
+            "@Around(\"businessMethods()\") and @Pointcut(\"execution(...)\")",
+            "@Pointcut(\"execution(* com.demo.dao.*.*(..))\") and @Around(\"businessMethods()\")"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "In spring MVC, which class works as frontend controller?",
+        "options": [
+            "DispatcherServlet",
+            "All Classes annotated with @Controller",
+            "ViewResolver",
+            "HandlerMapping"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which of the following is NOT a valid value for hibernate.hbm2ddl.auto property?",
+        "options": [
+            "create-drop",
+            "drop",
+            "update",
+            "create"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which of the following is NOT a valid JSP Action tag?",
+        "options": [
+            "jsp:plugin",
+            "jsp:include",
+            "jsp:useProperty",
+            "jsp:useBean"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which dependency artifact Id must be added to see the actuators in Spring Boot?",
+        "options": [
+            "spring-boot-secure-actuators",
+            "spring-boot-start-web-services",
+            "spring-boot-starter-actuator",
+            "spring-boot-dev-tools"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which problem can be solved using Lookup Method Injection in Spring?",
+        "options": [
+            "Singleton to Prototype dependency",
+            "Prototype to Singleton dependency",
+            "Singleton to Singleton dependency",
+            "Prototype to Prototype dependency"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "In which situation does Hibernate Criteria API NOT provide a benefit?",
+        "options": [
+            "Allows to use aggregate functions",
+            "Cannot order the result set",
+            "Allows to fetch only selected columns of result",
+            "Can add conditions while fetching results"
+        ],
+        "answer": 1
+    }
+]

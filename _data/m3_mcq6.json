@@ -1,0 +1,202 @@
+[
+    {
+        "question": "In Express middleware, what does calling `next('route')` do?",
+        "options": [
+            "It behaves exactly like next().",
+            "It skips all remaining middleware in the current stack and jumps to the next route handler.",
+            "It restarts the request from the beginning.",
+            "It triggers a 404 error."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "If Module A requires B, and B requires A (Circular Dependency), what does A get when it requires B?",
+        "options": [
+            "Infinite Loop / Stack Overflow.",
+            "A gets a copy of B that is partially loaded (only exports defined up to that line).",
+            "Node throws a CircularDependencyError.",
+            "A gets an empty object."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which Node.js method is safest for creating a Buffer from untrusted data to avoid leaking sensitive memory?",
+        "options": [
+            "Buffer.allocUnsafe()",
+            "new Buffer()",
+            "Buffer.alloc()",
+            "Buffer.from()"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "How does the Node.js `cluster` module share memory between worker processes?",
+        "options": [
+            "They share the global object.",
+            "They do NOT share memory; they are separate processes.",
+            "They share a specific SharedArrayBuffer automatically.",
+            "They share the Heap but not the Stack."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Why is `fs.watch` often discouraged for production file watching on generic platforms?",
+        "options": [
+            "It is synchronous and blocks the event loop.",
+            "It has inconsistent behavior across platforms (e.g., duplicate events, missing filenames).",
+            "It cannot watch directories.",
+            "It requires root privileges."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In React 18, automatic batching applies to which of the following that it did NOT apply to in React 17?",
+        "options": [
+            "Native Event Handlers and React Event Handlers.",
+            "Promises, setTimeout, and Native Event Handlers.",
+            "Only React Event Handlers.",
+            "Only useEffect."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "When does the cleanup function of a `useEffect` run?",
+        "options": [
+            "Only when the component unmounts.",
+            "Before the effect runs (on updates) and on unmount.",
+            "After the new effect runs.",
+            "Immediately after the state changes."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Why might `const value = { data: 'test' }` passed to a Context Provider cause performance issues?",
+        "options": [
+            "Context cannot hold objects.",
+            "It creates a new object reference on every render, forcing all Consumers to re-render.",
+            "It violates the immutability rule.",
+            "It causes an infinite loop."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In Redux Toolkit (RTK), why does `state.push(payload)` work in a reducer, despite Redux requiring immutability?",
+        "options": [
+            "RTK disables immutability checks.",
+            "RTK uses the 'Immer' library internally to draft a proxy state.",
+            "JavaScript arrays are immutable by default.",
+            "It is actually a bug."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the primary difference between `useEffect` and `useLayoutEffect`?",
+        "options": [
+            "useLayoutEffect runs asynchronously.",
+            "useLayoutEffect runs synchronously after DOM mutation but before the browser paints.",
+            "useEffect runs before the DOM is updated.",
+            "There is no difference."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which of the following describes the 'Stale Closure' problem in React Hooks?",
+        "options": [
+            "Memory leaks caused by unclosed sockets.",
+            "A useEffect or useCallback capturing an old version of a state variable because it was missing from the dependency array.",
+            "A component that refuses to unmount.",
+            "Using var instead of let."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does `React.memo` do by default?",
+        "options": [
+            "Deeply compares all props.",
+            "Shallow compares props to skip re-rendering if they haven't changed.",
+            "Memoizes the state of the component.",
+            "Caches the component in LocalStorage."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In React portals (`ReactDOM.createPortal`), how does event bubbling behave?",
+        "options": [
+            "Events bubble up the DOM tree (to the portal destination).",
+            "Events bubble up the React component tree (to the component that rendered the Portal).",
+            "Events do not bubble at all.",
+            "Events are captured but not bubbled."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "When using `useReducer`, is the `initialState` argument re-calculated on every render?",
+        "options": [
+            "Yes, always.",
+            "No, only if you pass a function as the third argument (lazy init).",
+            "No, React automatically memoizes it.",
+            "Yes, but it is cheap so it doesn't matter."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the purpose of the `key` prop in React lists?",
+        "options": [
+            "It provides a unique CSS ID.",
+            "It helps React identify which items have changed, added, or removed during reconciliation.",
+            "It allows direct DOM access.",
+            "It sorts the list automatically."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Why is `index` generally a bad `key` for lists?",
+        "options": [
+            "It is not a string.",
+            "If the list is reordered or filtered, the index changes, causing React to mix up component state between items.",
+            "It causes syntax errors.",
+            "It is too slow to calculate."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Can Error Boundaries catch errors inside Event Handlers?",
+        "options": [
+            "Yes, they catch all errors.",
+            "Yes, but only in production.",
+            "No, they only catch errors during rendering, lifecycle methods, and constructors.",
+            "No, you must use try/catch inside event handlers."
+        ],
+        "answer": 3
+    },
+    {
+        "question": "What is 'Prop Drilling' and how does Context API solve it?",
+        "options": [
+            "Passing data from parent to direct child.",
+            "Passing data through multiple layers of components that don't need it, just to reach a deep child.",
+            "Using incorrect prop types.",
+            "Drilling holes in the Virtual DOM."
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In React, what is the argument passed to the `setState` function if you use the functional update form `setCount(c => c + 1)`?",
+        "options": [
+            "The initial state.",
+            "The state at the time the function was created.",
+            "The most current state value pending in the update queue.",
+            "The value 0."
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is the return value of `useRef`?",
+        "options": [
+            "The current value directly.",
+            "A mutable object with a .current property.",
+            "An immutable object.",
+            "A DOM node."
+        ],
+        "answer": 1
+    }
+]

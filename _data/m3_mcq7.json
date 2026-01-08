@@ -1,0 +1,202 @@
+[
+    {
+        "question": "Given the following Javascript code with a Promise that resolves after 3 seconds, what is the output?",
+        "options": [
+            "done! Error!",
+            "done!",
+            "Error!",
+            "Incorrect code, there is no catch() block"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which of the following Javascript method returns true if its argument is not a number?",
+        "options": [
+            "isNaN()",
+            "NaN()",
+            "isNumber()",
+            "isFinite()"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Given a Node.js Express app with `app.get('/:name', ...)` listening on port 3500, which URL returns 'Welcome to CDAC'?",
+        "options": [
+            "http://localhost/CDAC",
+            "http://localhost:3500/CDAC",
+            "http://localhost?name=CDAC",
+            "http://localhost:3500?name=CDAC"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which statement about React Props and Context is WRONG?",
+        "options": [
+            "Props provides a way to pass data through the component tree without having to pass context down manually at every level.",
+            "Context provides a way to pass data through the component tree without having to pass props down manually at every level.",
+            "In React, the data is passed top-down(parent to child) via props.",
+            "Context is designed to share data that can be considered \"global\" for a tree of React components."
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is the correct way in jQuery to iterate through all paragraphs and display their contents?",
+        "options": [
+            "$(\"p\").forEach(function(){ console.log($(this).text()) });",
+            "$(\"p\").iterate(function(){ console.log($(this).text()) });",
+            "$(\"p\").each(function(){ console.log($(this).text()) });",
+            "$(\"p\").loop(function(){ console.log($(this).text()) });"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which security attack allows an attacker to induce a victim user to perform actions they do not intend to?",
+        "options": [
+            "Cross-Site Scripting (XSS)",
+            "Cross-site request forgery (CSRF)",
+            "SQL Injection",
+            "Insecure deserialization"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which is the correct way to read the contents of a file asynchronously in Node.js using fs module?",
+        "options": [
+            "fs.readFile('test.txt', function (data) { console.log(data.toString()); });",
+            "var data = fs.readFileSync('test.txt'); console.log(data.toString());",
+            "var data = fs.readFile('test.txt'); console.log(data.toString());",
+            "fs.readFile('test.txt', function (err, data) { if (err) return console.error(err); console.log(data.toString()); });"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Which is the correct way to create a hyperlink in HTML?",
+        "options": [
+            "<a>http://www.someserver.com</a>",
+            "<a name=\"http://www.someserver.com\">SomeServer.com</a>",
+            "<a url=\"http://www.someserver.com\">SomeServer.com</a>",
+            "<a href=\"http://www.someserver.com\">SomeServer.com</a>"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Identify the correct statement about var and let in JavaScript:",
+        "options": [
+            "Both var and let are used to create function scoped variable.",
+            "Both var and let are used to create block scoped variable.",
+            "Using let we can create block scoped variable.",
+            "The variable created using var keyword is not global scoped."
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which is a valid jQuery syntax to show current element?",
+        "options": [
+            "$(current).show()",
+            "$(this).show()",
+            "$(current).enable()",
+            "$(this).enable()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which is the correct JQuery code to apply a background color of blue to all h3 elements?",
+        "options": [
+            "$(\"h3\").style(\"background-color\",\"blue\");",
+            "$(\"h3\").addClass(\"background-color\",\"blue\");",
+            "$(\"h3\").css(\"background-color\",\"blue\");",
+            "$(\"h3\").layout(\"background-color\",\"blue\");"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What will be the return value for typeof(null) in javascript?",
+        "options": [
+            "NaN",
+            "object",
+            "null",
+            "string"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which of the below is NOT a valid datatype in Javascript?",
+        "options": [
+            "Undefined",
+            "Float",
+            "Boolean",
+            "Number"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Identify the correct command to run a REPL session in Node.",
+        "options": [
+            "node init",
+            "node",
+            "node start",
+            "node repl"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What value of XMLHttpRequest.readyState in Ajax is checked for response readiness?",
+        "options": [
+            "4",
+            "3",
+            "2",
+            "1"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "How can you make properties and methods available outside the module file in Node.js?",
+        "options": [
+            "module.export",
+            "module.exports",
+            "module.ng.exports",
+            "module.expose"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which file in a Node.js application contains information about project dependencies?",
+        "options": [
+            "pom.xml",
+            "pom.json",
+            "package.xml",
+            "package.json"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Which function is used as a shortcut for jQuery?",
+        "options": [
+            "&",
+            "$",
+            "@",
+            "#"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "In jQuery, $.hide() is equivalent to:",
+        "options": [
+            "document.hide()",
+            "jQuery.hide()",
+            "javascript.hide()",
+            "jq.hide()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which is the default port on which the development server for React runs on?",
+        "options": [
+            "3050",
+            "8080",
+            "3000",
+            "8000"
+        ],
+        "answer": 2
+    }
+]

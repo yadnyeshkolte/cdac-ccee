@@ -1,0 +1,202 @@
+[
+    {
+        "question": "In C#, having unreachable code is always a/an:",
+        "options": [
+            "Method",
+            "Warning",
+            "Error",
+            "Iterative"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the output? `overload obj = new overload(); int a = obj.add(6); int b = obj.add(6, 7);` where add(int a) returns a+1 and add(int a, int b) returns a+2?",
+        "options": [
+            "8 8",
+            "0 2",
+            "8 10",
+            "7 8"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "What is the output of 2D array loop where arr[i, j] = i * 2 + i * 2 for i = 0,1,2?",
+        "options": [
+            "0, 0, 0  4, 4, 4  8, 8, 8",
+            "4, 4, 4  8, 8, 8  12, 12, 12",
+            "8, 8, 8  12, 12, 12  16, 16, 16",
+            "0, 0, 0  1, 1, 1  2, 2, 2"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "When dividing by zero in array elements, which exception is thrown?",
+        "options": [
+            "DivideByZeroException",
+            "FormatException",
+            "IndexOutOfBoundsException",
+            "None from the options"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which ensures complete interoperability among applications, regardless of the language used?",
+        "options": [
+            "CLR",
+            "CLS",
+            "CTS",
+            "FCL"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which keyword is used to overload user defined types?",
+        "options": [
+            "Op",
+            "Opoverload",
+            "operator",
+            "Operatoroverload"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which of the following are valid states of Thread? (Unstarted, Runnable, Running, Not Runnable, Dead)",
+        "options": [
+            "1,2,3,4,5",
+            "1,2,4,5",
+            "1,2,3,5",
+            "1,2,3,4"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "C# treats the multiple catch statements like cases in a __________ statement.",
+        "options": [
+            "If",
+            "Switch",
+            "For",
+            "While"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which is the valid code for creating a SqlConnection Object?",
+        "options": [
+            "SqlConnection conn = new SqlConnection(connectionString);",
+            "SqlConnect conn = new SqlConnection(connectionString);",
+            "SqlConnection conn = new SqlConnect(connectionString);",
+            "All of the above"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which statement is TRUE about managed and unmanaged code? (i) Managed code is executed by CLR (ii) Managed compiles to machine code (iii) Unmanaged has no security/memory management",
+        "options": [
+            "i-True, ii-False, iii-False",
+            "i-False, ii-True, iii-False",
+            "i-True, ii-False, iii-True",
+            "i-False, ii-False, iii-True"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "How do you manage states in ASP.NET MVC application?",
+        "options": [
+            "Application",
+            "Session",
+            "ViewBag",
+            "All of the above"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "What does `object Invoke(object obj, object[] parameters)` specify?",
+        "options": [
+            "Calling a type using invoke()",
+            "Arguments passed to the method in the array parameters",
+            "The value returned by the invoked method is returned by Invoke()",
+            "All of the mentioned"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Which methods are NOT supported for dynamic types?",
+        "options": [
+            "Anonymous",
+            "Static",
+            "Abstract",
+            "Extension"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "How do you get information from a form that is submitted using the 'post' method?",
+        "options": [
+            "Request.QueryString",
+            "Request.Form",
+            "Response.write",
+            "Response.writeln"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "The reason that C# does not support multiple inheritances is because of:",
+        "options": [
+            "Method collision",
+            "Name collision",
+            "Function collision",
+            "Interface collision"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which is NOT a type of contract in WCF?",
+        "options": [
+            "Service Contract",
+            "Operation Contract",
+            "Security Contract",
+            "None of the above"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Choose the INCORRECT statement about delegates:",
+        "options": [
+            "delegates are not type safe",
+            "delegates can be used to implement callback notification",
+            "delegate is a user defined type",
+            "delegates permits execution of a method in an asynchronous manner"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "The ________ keyword is new to C# 4.0, used to tell the compiler a variable's type can change or is not known until runtime:",
+        "options": [
+            "Covariance",
+            "dynamic",
+            "Contravariance",
+            "Object"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Choose the correct statement about Indexers:",
+        "options": [
+            "Indexers are location indicators",
+            "Indexers are used to access class objects",
+            "Indexer is a form of property and works in the same way as a property",
+            "All of the mentioned"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "How to check Request coming from which controller using MVC ASP.Net?",
+        "options": [
+            "HttpContext.Current.Request.RequestContext.Values[\"Controller\"]",
+            "HttpContext.Current.Request.RequestContext.RouteData.Values[\"Controller\"]",
+            "RouteData.Values[\"Controller\"]",
+            "None of the above"
+        ],
+        "answer": 1
+    }
+]
