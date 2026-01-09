@@ -742,6 +742,95 @@ app.Use(async (context, next) =>
 
 ---
 
+## 🌍 Localization (Session 20)
+
+**Localization (L10n)** is the process of adapting an application to different languages and cultures.
+
+### Configuring Localization
+```csharp
+// Program.cs
+builder.Services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+builder.Services.AddControllersWithViews()
+    .AddViewLocalization()
+    .AddDataAnnotationsLocalization();
+
+// ...
+
+var supportedCultures = new[] { "en-US", "fr-FR", "es-ES" };
+app.UseRequestLocalization(new RequestLocalizationOptions()
+    .SetDefaultCulture("en-US")
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures));
+```
+
+### Resource Files
+Create `.resx` files in `Resources` folder:
+- `Controllers.HomeController.fr.resx` -> Key: "Welcome", Value: "Bienvenue"
+- `Views.Home.Index.fr.resx` -> Key: "Title", Value: "Titre"
+
+### Using Localizer
+```csharp
+// Controller
+public class HomeController : Controller
+{
+    private readonly IStringLocalizer<HomeController> _localizer;
+
+    public HomeController(IStringLocalizer<HomeController> localizer)
+    {
+        _localizer = localizer;
+    }
+
+    public IActionResult Index()
+    {
+        ViewData["Title"] = _localizer["Welcome"];
+        return View();
+    }
+}
+```
+
+```html
+<!-- View -->
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<h1>@Localizer["Title"]</h1>
+```
+
+---
+
+## 🚀 Deployment (Session 20)
+
+Deploying an ASP.NET Core application involves publishing the app and hosting it on a server (IIS, Nginx, Docker, Azure).
+
+### Publishing
+```bash
+# Publish to folder
+dotnet publish -c Release -o ./publish
+
+# Self-contained (no .NET runtime required on server)
+dotnet publish -c Release -r win-x64 --self-contained true
+```
+
+### Hosting Models
+1.  **Kestrel**: Cross-platform web server included in ASP.NET Core. Fast, but usually sits behind a reverse proxy.
+2.  **IIS (In-Process)**: Runs inside IIS worker process (`w3wp.exe`). Highest performance on Windows.
+3.  **IIS (Out-of-Process)**: Kestrel runs the app, IIS acts as proxy.
+
+### web.config (generated on publish)
+```xml
+<configuration>
+  <system.webServer>
+    <handlers>
+      <add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModuleV2" resourceType="Unspecified" />
+    </handlers>
+    <aspNetCore processPath="dotnet" arguments=".\MyApp.dll" stdoutLogEnabled="false" hostingModel="inprocess" />
+  </system.webServer>
+</configuration>
+```
+
+---
+
 ## 💡 Key MCQ Points
 
 > **Critical Points for CCEE:**

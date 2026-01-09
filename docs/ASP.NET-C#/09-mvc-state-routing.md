@@ -250,6 +250,50 @@ var cart = HttpContext.Session.GetObject<ShoppingCart>("Cart");
 
 ---
 
+## 🗄️ Application State (IMemoryCache)
+
+In ASP.NET Core, "Application State" (global data shared across all users) is handled using **Dependency Injection (Singleton services)** or **IMemoryCache**. The old `HttpContext.Application` is no longer available.
+
+### Using IMemoryCache
+```csharp
+// Program.cs
+builder.Services.AddMemoryCache();
+
+// Controller
+public class HomeController : Controller
+{
+    private readonly IMemoryCache _cache;
+
+    public HomeController(IMemoryCache cache)
+    {
+        _cache = cache;
+    }
+
+    public IActionResult Index()
+    {
+        // Get or Create
+        string timestamp = _cache.GetOrCreate("GlobalTimestamp", entry =>
+        {
+            entry.SlidingExpiration = TimeSpan.FromHours(1);
+            return DateTime.Now.ToString();
+        });
+
+        return View("Index", timestamp);
+    }
+}
+```
+
+### Application State vs Session vs Cache
+
+| Feature | Session | Application (Singleton/Cache) |
+|---------|---------|-------------------------------|
+| **Scope** | Single User | All Users |
+| **Duration** | User Session | App Lifetime / Expiration |
+| **Storage** | Server Memory / Dist. Cache | Server Memory |
+| **Use Case** | User Cart, User Prefs | Global Config, Reference Data |
+
+---
+
 ## ❓ Query String
 
 ```csharp
