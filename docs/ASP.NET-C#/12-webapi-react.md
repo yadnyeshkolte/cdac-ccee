@@ -658,6 +658,7 @@ useEffect(() => {
 
 ### useContext
 ```jsx
+{% raw %}
 // Create context
 const AuthContext = React.createContext();
 
@@ -677,6 +678,7 @@ function Header() {
     const { user } = useContext(AuthContext);
     return <div>Welcome, {user?.name}</div>;
 }
+{% endraw %}
 ```
 
 ---
