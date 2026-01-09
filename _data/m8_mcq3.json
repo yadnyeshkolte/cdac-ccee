@@ -1,202 +1,402 @@
 [
     {
-        "question": "In C#, having unreachable code is always a/an:",
+        "question": "What does MVC stand for?",
         "options": [
-            "Method",
-            "Warning",
-            "Error",
-            "Iterative"
+            "Model View Component",
+            "Model View Controller",
+            "Multiple View Controller",
+            "Main View Container"
         ],
         "answer": 1
     },
     {
-        "question": "What is the output? `overload obj = new overload(); int a = obj.add(6); int b = obj.add(6, 7);` where add(int a) returns a+1 and add(int a, int b) returns a+2?",
+        "question": "Which component handles user input in MVC?",
         "options": [
-            "8 8",
-            "0 2",
-            "8 10",
-            "7 8"
+            "Model",
+            "View",
+            "Controller",
+            "Router"
         ],
-        "answer": 3
+        "answer": 2
     },
     {
-        "question": "What is the output of 2D array loop where arr[i, j] = i * 2 + i * 2 for i = 0,1,2?",
+        "question": "What is the default folder for controller classes in ASP.NET MVC?",
         "options": [
-            "0, 0, 0  4, 4, 4  8, 8, 8",
-            "4, 4, 4  8, 8, 8  12, 12, 12",
-            "8, 8, 8  12, 12, 12  16, 16, 16",
-            "0, 0, 0  1, 1, 1  2, 2, 2"
+            "Views",
+            "Models",
+            "Controllers",
+            "App_Code"
         ],
-        "answer": 0
+        "answer": 2
     },
     {
-        "question": "When dividing by zero in array elements, which exception is thrown?",
+        "question": "Which attribute marks a method as a POST handler?",
         "options": [
-            "DivideByZeroException",
-            "FormatException",
-            "IndexOutOfBoundsException",
-            "None from the options"
-        ],
-        "answer": 0
-    },
-    {
-        "question": "Which ensures complete interoperability among applications, regardless of the language used?",
-        "options": [
-            "CLR",
-            "CLS",
-            "CTS",
-            "FCL"
+            "[PostMethod]",
+            "[HttpPost]",
+            "[Post]",
+            "[FormPost]"
         ],
         "answer": 1
     },
     {
-        "question": "Which keyword is used to overload user defined types?",
+        "question": "What does @RenderBody() do in a layout page?",
         "options": [
-            "Op",
-            "Opoverload",
-            "operator",
-            "Operatoroverload"
-        ],
-        "answer": 2
-    },
-    {
-        "question": "Which of the following are valid states of Thread? (Unstarted, Runnable, Running, Not Runnable, Dead)",
-        "options": [
-            "1,2,3,4,5",
-            "1,2,4,5",
-            "1,2,3,5",
-            "1,2,3,4"
-        ],
-        "answer": 2
-    },
-    {
-        "question": "C# treats the multiple catch statements like cases in a __________ statement.",
-        "options": [
-            "If",
-            "Switch",
-            "For",
-            "While"
+            "Renders the header",
+            "Renders the child view content",
+            "Renders the footer",
+            "Renders scripts"
         ],
         "answer": 1
     },
     {
-        "question": "Which is the valid code for creating a SqlConnection Object?",
+        "question": "Which file sets the default layout for all views?",
         "options": [
-            "SqlConnection conn = new SqlConnection(connectionString);",
-            "SqlConnect conn = new SqlConnection(connectionString);",
-            "SqlConnection conn = new SqlConnect(connectionString);",
-            "All of the above"
+            "_Layout.cshtml",
+            "_ViewStart.cshtml",
+            "_ViewImports.cshtml",
+            "Web.config"
         ],
-        "answer": 0
+        "answer": 1
     },
     {
-        "question": "Which statement is TRUE about managed and unmanaged code? (i) Managed code is executed by CLR (ii) Managed compiles to machine code (iii) Unmanaged has no security/memory management",
+        "question": "What is ViewBag in ASP.NET MVC?",
         "options": [
-            "i-True, ii-False, iii-False",
-            "i-False, ii-True, iii-False",
-            "i-True, ii-False, iii-True",
-            "i-False, ii-False, iii-True"
+            "A session storage",
+            "A dynamic object for passing data to views",
+            "A database connection",
+            "A cookie storage"
         ],
-        "answer": 2
+        "answer": 1
     },
     {
-        "question": "How do you manage states in ASP.NET MVC application?",
+        "question": "What is the difference between ViewData and ViewBag?",
         "options": [
-            "Application",
-            "Session",
+            "ViewData is dynamic, ViewBag is dictionary",
+            "ViewBag is dynamic, ViewData is dictionary",
+            "Both are the same",
+            "ViewData survives redirect, ViewBag doesn't"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which storage mechanism survives a redirect?",
+        "options": [
+            "ViewData",
             "ViewBag",
-            "All of the above"
-        ],
-        "answer": 3
-    },
-    {
-        "question": "What does `object Invoke(object obj, object[] parameters)` specify?",
-        "options": [
-            "Calling a type using invoke()",
-            "Arguments passed to the method in the array parameters",
-            "The value returned by the invoked method is returned by Invoke()",
-            "All of the mentioned"
-        ],
-        "answer": 3
-    },
-    {
-        "question": "Which methods are NOT supported for dynamic types?",
-        "options": [
-            "Anonymous",
-            "Static",
-            "Abstract",
-            "Extension"
-        ],
-        "answer": 3
-    },
-    {
-        "question": "How do you get information from a form that is submitted using the 'post' method?",
-        "options": [
-            "Request.QueryString",
-            "Request.Form",
-            "Response.write",
-            "Response.writeln"
-        ],
-        "answer": 1
-    },
-    {
-        "question": "The reason that C# does not support multiple inheritances is because of:",
-        "options": [
-            "Method collision",
-            "Name collision",
-            "Function collision",
-            "Interface collision"
-        ],
-        "answer": 0
-    },
-    {
-        "question": "Which is NOT a type of contract in WCF?",
-        "options": [
-            "Service Contract",
-            "Operation Contract",
-            "Security Contract",
-            "None of the above"
+            "TempData",
+            "ViewState"
         ],
         "answer": 2
     },
     {
-        "question": "Choose the INCORRECT statement about delegates:",
+        "question": "What is the purpose of [ValidateAntiForgeryToken] attribute?",
         "options": [
-            "delegates are not type safe",
-            "delegates can be used to implement callback notification",
-            "delegate is a user defined type",
-            "delegates permits execution of a method in an asynchronous manner"
+            "Validate user input",
+            "Prevent CSRF attacks",
+            "Encrypt form data",
+            "Validate model state"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which Razor syntax outputs HTML-encoded text?",
+        "options": [
+            "@Html.Raw()",
+            "@Model.Property",
+            "@{ }",
+            "@@"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does @Html.Raw() do?",
+        "options": [
+            "Encodes HTML output",
+            "Outputs unencoded HTML (dangerous)",
+            "Creates a raw data type",
+            "Validates HTML"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which data annotation makes a property required?",
+        "options": [
+            "[NotNull]",
+            "[Required]",
+            "[Mandatory]",
+            "[MustHave]"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "How do you check if model validation passed in a controller?",
+        "options": [
+            "Model.IsValid",
+            "ModelState.IsValid",
+            "Validation.Success",
+            "Request.IsValid"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the purpose of [Authorize] attribute?",
+        "options": [
+            "Authorize database access",
+            "Require authentication to access the action",
+            "Authorize CORS",
+            "Authorize API keys"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which attribute allows unauthenticated access to an action?",
+        "options": [
+            "[Public]",
+            "[NoAuth]",
+            "[AllowAnonymous]",
+            "[Anonymous]"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is a Partial View in ASP.NET MVC?",
+        "options": [
+            "A view that loads partially",
+            "A reusable view component",
+            "A view without layout",
+            "An incomplete view"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method renders a partial view asynchronously?",
+        "options": [
+            "Html.Partial()",
+            "Html.PartialAsync()",
+            "Html.RenderPartial()",
+            "Html.RenderPartialAsync()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is a View Component in ASP.NET Core?",
+        "options": [
+            "A JavaScript component",
+            "A replacement for Child Actions with its own logic",
+            "A CSS component",
+            "A database component"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which route constraint ensures a parameter is an integer?",
+        "options": [
+            "{id:number}",
+            "{id:int}",
+            "{id:integer}",
+            "{id:numeric}"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is attribute routing in ASP.NET MVC?",
+        "options": [
+            "Routing defined in RouteConfig",
+            "Routing defined using [Route] attribute on actions",
+            "Routing defined in web.config",
+            "Default routing"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does [ApiController] attribute provide?",
+        "options": [
+            "Only API functionality",
+            "Automatic model validation and binding source inference",
+            "Database access",
+            "Authentication"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which ADO.NET method returns a single value?",
+        "options": [
+            "ExecuteReader()",
+            "ExecuteScalar()",
+            "ExecuteNonQuery()",
+            "ExecuteXmlReader()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which ADO.NET method returns the number of rows affected?",
+        "options": [
+            "ExecuteReader()",
+            "ExecuteScalar()",
+            "ExecuteNonQuery()",
+            "ExecuteXmlReader()"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is SqlDataReader used for?",
+        "options": [
+            "Writing data to database",
+            "Reading data in a forward-only, read-only manner",
+            "Updating database schema",
+            "Creating stored procedures"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What fills a DataSet with data from a database?",
+        "options": [
+            "SqlCommand",
+            "SqlConnection",
+            "SqlDataAdapter",
+            "SqlDataReader"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which filter type runs before and after action execution?",
+        "options": [
+            "Authorization Filter",
+            "Action Filter",
+            "Exception Filter",
+            "Result Filter"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which filter handles exceptions globally?",
+        "options": [
+            "IAuthorizationFilter",
+            "IActionFilter",
+            "IExceptionFilter",
+            "IResourceFilter"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is bundling in ASP.NET MVC?",
+        "options": [
+            "Packaging the application",
+            "Combining multiple CSS/JS files into one",
+            "Creating bundles of data",
+            "Bundling controllers"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is minification?",
+        "options": [
+            "Making files smaller by removing whitespace and comments",
+            "Minimizing database size",
+            "Reducing view size",
+            "Compressing images"
         ],
         "answer": 0
     },
     {
-        "question": "The ________ keyword is new to C# 4.0, used to tell the compiler a variable's type can change or is not known until runtime:",
+        "question": "What prevents XSS attacks in Razor?",
         "options": [
-            "Covariance",
-            "dynamic",
-            "Contravariance",
-            "Object"
+            "HTML encoding by default",
+            "CSRF tokens",
+            "SSL/TLS",
+            "Authentication"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What is the purpose of @Html.AntiForgeryToken()?",
+        "options": [
+            "Generate CSRF protection token",
+            "Encrypt form data",
+            "Authenticate users",
+            "Validate model"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which session method stores complex objects?",
+        "options": [
+            "Session.SetObject()",
+            "Session.SetString() with JSON serialization",
+            "Session.SetComplex()",
+            "Session.Store()"
         ],
         "answer": 1
     },
     {
-        "question": "Choose the correct statement about Indexers:",
+        "question": "What does TempData.Peek() do?",
         "options": [
-            "Indexers are location indicators",
-            "Indexers are used to access class objects",
-            "Indexer is a form of property and works in the same way as a property",
-            "All of the mentioned"
-        ],
-        "answer": 3
-    },
-    {
-        "question": "How to check Request coming from which controller using MVC ASP.Net?",
-        "options": [
-            "HttpContext.Current.Request.RequestContext.Values[\"Controller\"]",
-            "HttpContext.Current.Request.RequestContext.RouteData.Values[\"Controller\"]",
-            "RouteData.Values[\"Controller\"]",
-            "None of the above"
+            "Removes and returns the value",
+            "Returns value without removing it",
+            "Checks if key exists",
+            "Clears all TempData"
         ],
         "answer": 1
+    },
+    {
+        "question": "Which tag helper binds form input to model property?",
+        "options": [
+            "asp-model",
+            "asp-for",
+            "asp-bind",
+            "asp-property"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the purpose of asp-validation-for?",
+        "options": [
+            "Display validation message for a property",
+            "Validate server-side",
+            "Add validation rules",
+            "Skip validation"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which cookie option prevents JavaScript access?",
+        "options": [
+            "Secure",
+            "HttpOnly",
+            "SameSite",
+            "Path"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does Secure cookie option do?",
+        "options": [
+            "Encrypts cookie value",
+            "Only sends cookie over HTTPS",
+            "Validates cookie",
+            "Expires cookie immediately"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which method is used to sign in a user with cookie authentication?",
+        "options": [
+            "HttpContext.Login()",
+            "HttpContext.SignInAsync()",
+            "HttpContext.Authenticate()",
+            "HttpContext.CreateSession()"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What does UseStatusCodePagesWithReExecute() provide?",
+        "options": [
+            "Custom error pages for different status codes",
+            "Redirect to error page",
+            "Log errors",
+            "Throw exceptions"
+        ],
+        "answer": 0
     }
 ]

@@ -1,21 +1,401 @@
 [
   {
-    "question": "Sample Question 1 for Module 8",
+    "question": "What is the CLR in .NET Framework?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "Common Library Repository",
+      "Common Language Runtime",
+      "Central Language Repository",
+      "Common Logic Runtime"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which component of CLR is responsible for converting IL code to native machine code?",
+    "options": [
+      "Garbage Collector",
+      "Class Loader",
+      "JIT Compiler",
+      "Security Manager"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does CTS stand for in .NET?",
+    "options": [
+      "Common Type System",
+      "Central Type Structure",
+      "Common Typing Standards",
+      "Central Type System"
     ],
     "answer": 0
   },
   {
-    "question": "Sample Question 2 for Module 8",
+    "question": "Which of the following is NOT a generation in .NET Garbage Collection?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "Generation 0",
+      "Generation 1",
+      "Generation 2",
+      "Generation 3"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "What is the primary purpose of CLS (Common Language Specification)?",
+    "options": [
+      "Memory management",
+      "Language interoperability",
+      "Code compilation",
+      "Security enforcement"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "An assembly in .NET contains which of the following?",
+    "options": [
+      "IL code and metadata only",
+      "IL code, metadata, and manifest",
+      "Source code and manifest",
+      "Native code and metadata"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the difference between an EXE and a DLL assembly?",
+    "options": [
+      "DLL has an entry point, EXE doesn't",
+      "EXE has an entry point, DLL doesn't",
+      "Both have entry points",
+      "Neither has entry points"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which .NET implementation is cross-platform?",
+    "options": [
+      ".NET Framework",
+      ".NET Core",
+      "Visual Basic",
+      "IIS"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the default access modifier for class members in C#?",
+    "options": [
+      "public",
+      "protected",
+      "internal",
+      "private"
+    ],
+    "answer": 3
+  },
+  {
+    "question": "Which keyword is used to define a method that can be overridden?",
+    "options": [
+      "abstract",
+      "virtual",
+      "override",
+      "new"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the correct way to declare a readonly property in C#?",
+    "options": [
+      "public int Value { get; }",
+      "public readonly int Value { get; set; }",
+      "public int Value { readonly get; set; }",
+      "readonly public int Value { get; set; }"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which keyword is used to prevent a class from being inherited?",
+    "options": [
+      "static",
+      "abstract",
+      "sealed",
+      "final"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the purpose of the 'params' keyword in C#?",
+    "options": [
+      "Define optional parameters",
+      "Pass variable number of arguments",
+      "Define named parameters",
+      "Define output parameters"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "When is a static constructor called?",
+    "options": [
+      "Every time an object is created",
+      "Only when explicitly called",
+      "Once, before first use of the type",
+      "Never automatically"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the difference between 'override' and 'new' keywords?",
+    "options": [
+      "new is for hiding, override is for polymorphism",
+      "override is for hiding, new is for polymorphism",
+      "Both are the same",
+      "new works with virtual methods only"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Which access modifier allows access only within the same assembly?",
+    "options": [
+      "public",
+      "protected",
+      "internal",
+      "private"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the base class for all types in C#?",
+    "options": [
+      "System.Type",
+      "System.Base",
+      "System.Object",
+      "System.Root"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "An abstract class in C# can:",
+    "options": [
+      "Be instantiated directly",
+      "Contain only abstract methods",
+      "Contain both abstract and non-abstract methods",
+      "Not have a constructor"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which of the following is true about interfaces in C#?",
+    "options": [
+      "Interfaces can contain fields",
+      "Interfaces can have constructors",
+      "A class can implement multiple interfaces",
+      "Interface methods are private by default"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What happens when you explicitly implement an interface method?",
+    "options": [
+      "It becomes public",
+      "It can only be accessed through the interface type",
+      "It becomes static",
+      "It throws an exception"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is a value type in C#?",
+    "options": [
+      "class",
+      "string",
+      "struct",
+      "delegate"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the purpose of the 'ref' keyword?",
+    "options": [
+      "To pass by value",
+      "To pass by reference (must be initialized)",
+      "To create a reference type",
+      "To return multiple values"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the difference between 'ref' and 'out' parameters?",
+    "options": [
+      "out must be initialized, ref doesn't need to be",
+      "ref must be initialized before passing, out must be assigned in method",
+      "Both are the same",
+      "ref is for value types, out is for reference types"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does the ?? operator do in C#?",
+    "options": [
+      "Logical AND",
+      "Logical OR",
+      "Null coalescing",
+      "Null checking"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does ^1 represent in C# array indexing?",
+    "options": [
+      "First element",
+      "Last element",
+      "XOR operation",
+      "Array length"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which attribute is used for bitwise enum operations?",
+    "options": [
+      "[Serializable]",
+      "[Flags]",
+      "[Bitwise]",
+      "[Enum]"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How do you declare a nullable value type?",
+    "options": [
+      "int? x = null;",
+      "nullable int x = null;",
+      "int x = nullable;",
+      "null int x;"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the default underlying type for an enum in C#?",
+    "options": [
+      "byte",
+      "short",
+      "int",
+      "long"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which collection type allows only unique elements?",
+    "options": [
+      "List<T>",
+      "Dictionary<K,V>",
+      "HashSet<T>",
+      "Queue<T>"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What does LIFO stand for in the context of Stack<T>?",
+    "options": [
+      "Last In First Out",
+      "Last In Fetch Out",
+      "List In First Out",
+      "Late Input First Output"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the purpose of IDisposable interface?",
+    "options": [
+      "To compare objects",
+      "To dispose unmanaged resources",
+      "To serialize objects",
+      "To clone objects"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method must be overridden when implementing IComparable<T>?",
+    "options": [
+      "Compare()",
+      "CompareTo()",
+      "Equals()",
+      "GetHashCode()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is a delegate in C#?",
+    "options": [
+      "A class that cannot be inherited",
+      "A type-safe function pointer",
+      "A static class",
+      "An abstract method"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which built-in delegate returns void?",
+    "options": [
+      "Func<T>",
+      "Action<T>",
+      "Predicate<T>",
+      "Comparison<T>"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the return type of Predicate<T> delegate?",
+    "options": [
+      "void",
+      "T",
+      "bool",
+      "int"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "In multicast delegates, methods are called in which order?",
+    "options": [
+      "Random order",
+      "Reverse order of addition",
+      "Order they were added",
+      "Alphabetical order"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is a lambda expression?",
+    "options": [
+      "A named method",
+      "An anonymous function using => syntax",
+      "A static method",
+      "A virtual method"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which constraint ensures a type has a parameterless constructor?",
+    "options": [
+      "where T : class",
+      "where T : struct",
+      "where T : new()",
+      "where T : base"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the purpose of GAC in .NET?",
+    "options": [
+      "Garbage Automatic Collection",
+      "Global Assembly Cache for shared assemblies",
+      "General Application Container",
+      "Global Access Control"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which tool is used to view IL code in an assembly?",
+    "options": [
+      "ILAsm",
+      "ILDASM",
+      "ILView",
+      "ILReader"
     ],
     "answer": 1
   }

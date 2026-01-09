@@ -1,22 +1,402 @@
 [
   {
-    "question": "Sample Question 1 for Module 8",
+    "question": "Which LINQ method forces immediate execution?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "Where()",
+      "Select()",
+      "ToList()",
+      "OrderBy()"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is deferred execution in LINQ?",
+    "options": [
+      "Query executes immediately when defined",
+      "Query executes only when results are iterated",
+      "Query is never executed",
+      "Query executes in parallel"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which LINQ operator is used to remove duplicate elements?",
+    "options": [
+      "Unique()",
+      "Distinct()",
+      "RemoveDuplicates()",
+      "Single()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does AsParallel() do in LINQ?",
+    "options": [
+      "Sorts data in parallel",
+      "Enables PLINQ for parallel processing",
+      "Creates parallel collections",
+      "Disables deferred execution"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which extension method is required for creating an extension method?",
+    "options": [
+      "static class with static method and 'this' keyword",
+      "abstract class with abstract method",
+      "sealed class with virtual method",
+      "interface with default implementation"
     ],
     "answer": 0
   },
   {
-    "question": "Sample Question 2 for Module 8",
+    "question": "What are anonymous types in C#?",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "Types without names defined at runtime",
+      "Types with read-only properties created using new { }",
+      "Abstract types",
+      "Generic types"
     ],
     "answer": 1
+  },
+  {
+    "question": "What is the purpose of partial classes?",
+    "options": [
+      "To create incomplete classes",
+      "To split class definition across multiple files",
+      "To create abstract classes",
+      "To create sealed classes"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which FileMode creates a new file or overwrites if it exists?",
+    "options": [
+      "FileMode.CreateNew",
+      "FileMode.Create",
+      "FileMode.OpenOrCreate",
+      "FileMode.Append"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does FileMode.CreateNew do if the file already exists?",
+    "options": [
+      "Overwrites the file",
+      "Opens the file",
+      "Throws an exception",
+      "Appends to the file"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which class is used to read text from a file line by line?",
+    "options": [
+      "FileStream",
+      "StreamReader",
+      "BinaryReader",
+      "TextReader"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is reflection used for in .NET?",
+    "options": [
+      "Garbage collection",
+      "Examining and manipulating type information at runtime",
+      "Memory management",
+      "Code compilation"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which method creates an instance dynamically using reflection?",
+    "options": [
+      "Type.Create()",
+      "Activator.CreateInstance()",
+      "Object.New()",
+      "Assembly.CreateType()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the purpose of custom attributes in C#?",
+    "options": [
+      "To add metadata to code elements",
+      "To create custom types",
+      "To handle exceptions",
+      "To manage memory"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What does ThreadStart delegate represent?",
+    "options": [
+      "A method with one object parameter",
+      "A method with no parameters and no return value",
+      "A method that returns a value",
+      "A method with multiple parameters"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the purpose of Thread.Join()?",
+    "options": [
+      "To start a new thread",
+      "To wait for a thread to complete",
+      "To terminate a thread",
+      "To pause a thread"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which of the following is used for thread synchronization?",
+    "options": [
+      "lock keyword",
+      "async keyword",
+      "await keyword",
+      "static keyword"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the purpose of ThreadPool?",
+    "options": [
+      "To store thread data",
+      "To efficiently manage and reuse worker threads",
+      "To create permanent threads",
+      "To debug threads"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which class provides atomic operations for thread-safe updates?",
+    "options": [
+      "Monitor",
+      "Interlocked",
+      "Mutex",
+      "Semaphore"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does the 'async' keyword indicate?",
+    "options": [
+      "Method runs synchronously",
+      "Method contains await expressions and may run asynchronously",
+      "Method is static",
+      "Method is virtual"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the return type of an async method that returns no value?",
+    "options": [
+      "void",
+      "Task",
+      "Task<void>",
+      "AsyncTask"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does Task.WhenAll() do?",
+    "options": [
+      "Waits for the first task to complete",
+      "Waits for all tasks to complete",
+      "Cancels all tasks",
+      "Starts all tasks"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is CancellationToken used for?",
+    "options": [
+      "To start tasks",
+      "To cooperatively cancel asynchronous operations",
+      "To pause tasks",
+      "To resume tasks"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does ConfigureAwait(false) do?",
+    "options": [
+      "Prevents async execution",
+      "Doesn't capture the synchronization context",
+      "Forces synchronous execution",
+      "Throws an exception"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which Parallel method executes actions in parallel?",
+    "options": [
+      "Parallel.Run()",
+      "Parallel.Invoke()",
+      "Parallel.Execute()",
+      "Parallel.Start()"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the default value of IsBackground property for a new Thread?",
+    "options": [
+      "true",
+      "false",
+      "null",
+      "undefined"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What happens to background threads when the main thread exits?",
+    "options": [
+      "They continue running",
+      "They are terminated",
+      "They become foreground threads",
+      "An exception is thrown"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the purpose of Monitor.Enter() and Monitor.Exit()?",
+    "options": [
+      "Thread creation",
+      "Thread synchronization",
+      "Thread termination",
+      "Thread pooling"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does 'checked' keyword do in C#?",
+    "options": [
+      "Enables null checking",
+      "Enables overflow checking",
+      "Enables type checking",
+      "Enables bounds checking"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the default behavior for integer overflow in C#?",
+    "options": [
+      "Throws exception",
+      "Wraps around silently",
+      "Returns zero",
+      "Returns maximum value"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which block always executes regardless of exception?",
+    "options": [
+      "try",
+      "catch",
+      "finally",
+      "throw"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is the correct way to rethrow an exception preserving stack trace?",
+    "options": [
+      "throw ex;",
+      "throw;",
+      "rethrow ex;",
+      "throw new Exception(ex);"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "User-defined exceptions should inherit from which class?",
+    "options": [
+      "Object",
+      "Error",
+      "Exception",
+      "Throwable"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "What is an event in C#?",
+    "options": [
+      "A type of method",
+      "A restricted delegate that can only be invoked by the containing class",
+      "A type of property",
+      "A type of field"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "How do you subscribe to an event?",
+    "options": [
+      "event = handler;",
+      "event += handler;",
+      "event.Add(handler);",
+      "event.Subscribe(handler);"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the standard event delegate in .NET?",
+    "options": [
+      "EventDelegate",
+      "EventHandler",
+      "ActionHandler",
+      "FuncHandler"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What is the null-conditional operator for safe event invocation?",
+    "options": [
+      "event?.Invoke()",
+      "event!.Invoke()",
+      "event??.Invoke()",
+      "event.?Invoke()"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "What is the purpose of EventArgs?",
+    "options": [
+      "To store event results",
+      "To pass event data to handlers",
+      "To cancel events",
+      "To create events"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which exception is thrown when dividing by zero with integers?",
+    "options": [
+      "ArithmeticException",
+      "DivideByZeroException",
+      "OverflowException",
+      "InvalidOperationException"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "What does TryParse return when parsing fails?",
+    "options": [
+      "null",
+      "false",
+      "throws exception",
+      "default value"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which LINQ method returns the first element or default value if empty?",
+    "options": [
+      "First()",
+      "Single()",
+      "FirstOrDefault()",
+      "ElementAt()"
+    ],
+    "answer": 2
   }
 ]
