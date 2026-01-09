@@ -659,4 +659,32 @@ graph LR
 
 ---
 
+## Assignment
+
+### 1. Create a Test Plan
+Create a comprehensive Test Plan for the web application project developed in the Software Engineering sessions. Your test plan should include:
+- **Scope**: Features to be tested and not tested.
+- **Strategy**: Tools (Selenium, JUnit), types of testing (Functional, UI).
+- **Resources**: Team roles and responsibilities.
+- **Schedule**: Timeline aligned with Sprints.
+- **Risks**: Potential risks and mitigation plans.
+
+### 2. Document Use Cases
+Document at least 5 key use cases for your project. Example format:
+- **Use Case Name**: Login
+- **Actor**: Registered User
+- **Pre-condition**: User is on login page
+- **Flow**: Enter credentials -> Click Login -> Verify Dashboard
+- **Post-condition**: User session started
+
+### 3. Create Test Case Document
+Create a detailed Test Case document for the Sprints designed in SE sessions. Provide at least 10 test cases covering valid and invalid scenarios.
+
+| TC ID | Scenario | Pre-condition | Test Steps | Test Data | Expected Result |
+|-------|----------|---------------|------------|-----------|-----------------|
+| TC01 | Verify Login | Reg User | Enter user/pass | user: admin | Success |
+| TC02 | Invalid Login | Reg User | Enter wrong pass | pass: wrong | Error Msg |
+
+---
+
 *End of Session 13: STLC, V-Model, and Testing Types*

@@ -539,5 +539,19 @@ mindmap
 | Proactive | Reactive | Reactive |
 
 ---
+## Assignment
+
+### Read More Testing Concepts
+As per the syllabus, students are encouraged to research the following advanced testing concepts used in the industry:
+
+1.  **Agile Testing**: How testing fits into Scrum sprints.
+2.  **DevSecOps**: Integrating security testing into DevOps pipelines.
+3.  **Chaos Engineering**: Intentional failure injection (e.g., Netflix Chaos Monkey).
+4.  **AI in Testing**: Using AI/ML for test generation and self-healing tests.
+5.  **Shift-Left vs Shift-Right**: Testing early vs testing in production.
+6.  **TDD (Test Driven Development)**: Writing tests before code.
+7.  **BDD (Behavior Driven Development)**: Using Gherkin syntax (Given/When/Then).
+
+---
 
 *End of Session 12: Software Testing Fundamentals*

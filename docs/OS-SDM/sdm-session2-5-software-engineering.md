@@ -379,9 +379,20 @@ graph LR
 | **Validation** | Ensuring requirements are correct | Reviews, walkthroughs, prototypes |
 | **Management** | Handling requirement changes | Version control, traceability matrix |
 
-### Requirement Analysis Modeling
+### Requirement Analysis Modelling
 
-#### Use Case Diagram
+Analysis modeling provides the first technical representation of a system. It uses a combination of text and diagrams to represent requirements (data, function, and behavior) in a way that is relatively easy to understand, and more importantly, straightforward to review for correctness, completeness, and consistency.
+
+**Types of Analysis Models:**
+
+| Model Type | Description | Diagrams |
+|------------|-------------|----------|
+| **Scenario-based** | Depicts how user interacts with system | Use Case Diagrams, User Stories |
+| **Class-based** | Defines objects, attributes, and relationships | Class Diagrams, CRC Cards |
+| **Flow-oriented** | Shows how data is transformed | Data Flow Diagrams (DFD) |
+| **Behavioral** | Shows how system changes state | State Diagrams, Sequence Diagrams |
+
+#### Use Case Diagram (Scenario-based)
 
 ```mermaid
 graph TD
@@ -398,7 +409,7 @@ graph TD
     style F fill:#ff6b6b
 ```
 
-#### Data Flow Diagram (DFD)
+#### Data Flow Diagram (DFD) (Flow-oriented)
 
 ```mermaid
 graph LR
@@ -439,30 +450,32 @@ mindmap
 
 | Characteristic | Description |
 |----------------|-------------|
-| **Correctness** | Design implements all requirements |
-| **Efficiency** | Optimal use of resources |
-| **Understandability** | Easy to comprehend |
-| **Maintainability** | Easy to modify and extend |
-| **Modularity** | Well-defined, independent modules |
-| **Flexibility** | Adapts to changes |
+| **Correctness** | Design implements all requirements and adheres to specifications |
+| **Robustness** | Ability to handle errors and unexpected inputs gracefully |
+| **Efficiency** | Optimal use of resources (CPU, Memory, Network) |
+| **Understandability** | Easy to comprehend by other developers |
+| **Maintainability** | Easy to modify, fix bugs, and extend features |
+| **Modularity** | Well-defined, independent modules with clear interfaces |
+| **Flexibility** | Adapts to changes in requirements or environment |
 
-### Function Oriented vs Object Oriented
+### Function Oriented vs Object Oriented System
 
 | Aspect | Function Oriented | Object Oriented |
 |--------|-------------------|-----------------|
-| **Focus** | Functions/Procedures | Objects and Classes |
-| **Data & Functions** | Separate | Encapsulated together |
-| **Unit** | Function | Object |
-| **Reusability** | Limited | High (through inheritance) |
-| **Paradigm** | Procedural | OOP |
-| **Examples** | C, Pascal | Java, C++, Python |
-| **Modeling** | DFD, Structure charts | Class diagrams, Use cases |
+| **Focus** | Functions/Procedures/Logic | Objects/Data/Classes |
+| **Decomposition** | Top-down (Main → Sub-functions) | Bottom-up (Objects → System) |
+| **Data & Functions** | Separate (Global data often used) | Encapsulated together |
+| **Unit** | Function | Class/Object |
+| **Reusability** | Limited | High (Inheritance, Polymorphism) |
+| **Maintenance** | Difficult for large systems | Easier due to modularity |
+| **Modeling Tools** | DFD, Structure charts | UML (Class, Sequence, etc.) |
+| **Examples** | C, Pascal, Fortran | Java, C++, C#, Python |
 
-### Design Principles
+### Design Principles: Modularity, Cohesion, Coupling, Layering
 
 #### 1. Modularity
 
-Dividing system into discrete modules that can be developed independently.
+Dividing system into discrete modules that can be developed, tested, and maintained independently. "Divide and Conquer" strategy.
 
 ```mermaid
 graph TD
@@ -478,80 +491,44 @@ graph TD
     style A fill:#ff6b6b
 ```
 
-**Benefits:**
-- Easier to understand
-- Parallel development
-- Easier testing
-- Code reuse
+#### 2. Cohesion (Internal Strength)
 
-#### 2. Cohesion
-
-How closely related are elements within a module.
+Measure of how closely related the elements within a module are. **Goal: High Cohesion.**
 
 | Cohesion Type | Description | Quality |
 |---------------|-------------|---------|
-| **Functional** | All elements contribute to single task | Best ✅ |
-| **Sequential** | Output of one is input to another | Good |
-| **Communicational** | Elements work on same data | Good |
-| **Procedural** | Elements executed in sequence | Medium |
-| **Temporal** | Elements executed at same time | Poor |
-| **Logical** | Elements of same category | Poor |
-| **Coincidental** | Random grouping | Worst ❌ |
+| **Functional** | All elements contribute to a single, well-defined task | Best ✅ |
+| **Sequential** | Output of one element is input to the next | Good |
+| **Communicational** | Elements operate on the same data | Good |
+| **Procedural** | Elements are executed in a specific sequence | Medium |
+| **Temporal** | Elements are executed at same time (e.g., startup) | Poor |
+| **Logical** | Elements of same category (e.g., all inputs) | Poor |
+| **Coincidental** | Random grouping, no meaningful relationship | Worst ❌ |
 
-**High Cohesion (Good):**
-```java
-class Calculator {
-    int add(int a, int b) { return a + b; }
-    int subtract(int a, int b) { return a - b; }
-    int multiply(int a, int b) { return a * b; }
-}
-```
+#### 3. Coupling (External Dependency)
 
-**Low Cohesion (Bad):**
-```java
-class Utility {
-    void calculateSalary() { }
-    void sendEmail() { }
-    void drawChart() { }
-    void validateUser() { }
-}
-```
-
-#### 3. Coupling
-
-Degree of interdependence between modules.
+Measure of interdependence between modules. **Goal: Low Coupling.**
 
 | Coupling Type | Description | Quality |
 |---------------|-------------|---------|
-| **Data** | Modules share only data | Best ✅ |
-| **Stamp** | Modules share data structure | Good |
-| **Control** | One module controls another | Medium |
-| **External** | Modules depend on external items | Poor |
+| **Data** | Modules pass data only (parameters) | Best ✅ |
+| **Stamp** | Modules pass data structures (objects) | Good |
+| **Control** | One module controls logic of another (flags) | Medium |
+| **External** | Modules depend on external environment/files | Poor |
 | **Common** | Modules share global data | Poor |
-| **Content** | One module modifies another | Worst ❌ |
+| **Content** | One module modifies internal data of another | Worst ❌ |
 
-```mermaid
-graph LR
-    subgraph "Low Coupling - Good"
-        A1[Module A] -.-> B1[Module B]
-    end
-    
-    subgraph "High Coupling - Bad"
-        A2[Module A] === B2[Module B]
-    end
-```
-
-**Goal: High Cohesion + Low Coupling**
+**Design Goal:** High Cohesion + Low Coupling = Maintainable System
 
 #### 4. Layering
 
-Organizing system into horizontal layers.
+Organizing system into hierarchical layers where each layer provides services to the layer above it.
 
 ```mermaid
 graph TD
-    A[Presentation Layer] --> B[Business Logic Layer]
-    B --> C[Data Access Layer]
-    C --> D[Database]
+    A[Presentation Layer<br/>(UI, Views)] --> B[Business Logic Layer<br/>(Services, Rules)]
+    B --> C[Data Access Layer<br/>(Repositories, SQL)]
+    C --> D[Database<br/>(MySQL, MongoDB)]
     
     style A fill:#4ecdc4
     style B fill:#ffe66d
@@ -559,15 +536,31 @@ graph TD
     style D fill:#ff6b6b
 ```
 
-| Layer | Responsibility |
-|-------|----------------|
-| **Presentation** | User interface, input/output |
-| **Business Logic** | Application rules, processing |
-| **Data Access** | Database operations, storage |
+### Design Models
 
----
+Design engineering encompasses several distinct models that describe different aspects of the system:
 
-## UML (Unified Modeling Language)
+1.  **Data Design**:
+    *   Creates data structures and database schemas.
+    *   Translates data objects defined in analysis phase into implementation structures.
+    *   Example: ER Diagrams, Database Schema.
+
+2.  **Architectural Design**:
+    *   Defines relationship between major structural elements (modules).
+    *   Selects architectural styles/patterns (MVC, Microservices, Layered).
+    *   Example: Deployment Diagram, Device graphs.
+
+3.  **Interface Design**:
+    *   Describes how software communicates with users (UI), other systems (API), and itself (Internal Interfaces).
+    *   Example: Wireframes, API Specifications (Swagger).
+
+4.  **Component-Level Design**:
+    *   Transforms structural elements into procedural descriptions of software components.
+    *   Example: Pseudo-code, Flowcharts for algorithms.
+
+### UML (Unified Modeling Language)
+
+**UML** is a standardized modeling language consisting of an integrated set of diagrams, developed to help system and software developers for specifying, visualizing, constructing, and documenting the artifacts of software systems.
 
 ### UML Diagram Types
 
