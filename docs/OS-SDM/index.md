@@ -47,7 +47,28 @@ This combined module covers Operating System concepts with Linux environment, Sh
 **Evaluation:** 65 marks (CCEE: 25 + Lab: 20 + Internals: 20)
 
 ### Sessions
-1. [Complete SDM Guide](complete-guide.html)
+
+#### Git (4 hours)
+1. [Session 1: Git & Version Control](sdm-session1-git.html)
+
+#### Software Engineering (8 hours)
+2. [Sessions 2-5: Software Engineering](sdm-session2-5-software-engineering.html)
+
+#### Agile Development (6 hours)
+3. [Sessions 6-8: Agile Development](sdm-session6-8-agile.html)
+
+#### DevOps & Containerization (6 hours)
+4. [Sessions 9-10: DevOps & Docker](sdm-session9-10-devops-docker.html)
+5. [Session 11: Kubernetes](sdm-session11-kubernetes.html)
+
+#### Testing & Integration (14 hours)
+6. [Session 12: Testing Fundamentals](sdm-session12-testing-intro.html)
+7. [Session 13: Testing Types & STLC](sdm-session13-testing-types.html)
+8. [Sessions 14-15: Selenium WebDriver](sdm-session14-15-selenium.html)
+9. [Session 16: Jenkins & CI/CD](sdm-session16-jenkins.html)
+
+#### Complete Reference
+- [Complete SDM Guide](complete-guide.html)
 
 ### Key SDM Topics for CCEE
 - Git commands and workflows
