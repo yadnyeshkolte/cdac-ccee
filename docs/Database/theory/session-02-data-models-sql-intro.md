@@ -33,6 +33,15 @@ flowchart TB
 | **Logical** | Detailed structure independent of DBMS | Tables, columns, relationships | Relational schema with PKs, FKs |
 | **Physical** | Actual implementation in specific DBMS | Storage, partitions, indexes | MySQL table with InnoDB engine |
 
+### Database Design Phases
+
+The process of designing a database involves several distinct phases:
+
+1.  **Requirements Analysis**: Gathering financial and functional requirements.
+2.  **Conceptual Design**: Creating a high-level model (ER Diagram) independent of any DBMS.
+3.  **Logical Design**: Converting the conceptual model into a DBMS-specific structure (Relational Schema/Tables).
+4.  **Physical Design**: Implementing the schema on specific hardware/software (Indexing, Storage Engines).
+
 ## Entity-Relationship Diagram (ERD)
 
 ### Basic Components
@@ -105,6 +114,20 @@ erDiagram
 | M:N Relationship | Junction/Bridge table with FKs |
 | Composite Attribute | Multiple columns |
 | Multi-valued Attribute | Separate table |
+
+### Keys in RDBMS
+
+Keys are fundamental to the relational model for identifying and relating data.
+
+| Key Type | Definition | Example |
+|---|---|---|
+| **Super Key** | Any set of attributes that uniquely identifies a row. | (ID), (ID, Name), (Phone) |
+| **Candidate Key** | A minimal Super Key (no unnecessary attributes). | ID, Phone, Email |
+| **Primary Key** | The specific Candidate Key chosen to identify rows. | ID |
+| **Alternate Key** | Candidate Keys NOT chosen as Primary Key. | Phone, Email |
+| **Foreign Key** | Attribute linking to the Primary Key of another table. | Dept_ID |
+| **Composite Key** | A Primary Key consisting of multiple columns. | (Order_ID, Product_ID) |
+
 
 ---
 
@@ -254,7 +277,8 @@ TRUNCATE TABLE employees;
 1. **Conceptual Model** = High-level, business view (ERD)
 2. **Logical Model** = Tables, relationships (schema)
 3. **Physical Model** = Storage details (indexes, files)
-4. **ERD Components**: Entity (rectangle), Attribute (ellipse), Relationship (diamond)
+4. **Design Phases**: Req -> Conceptual (ERD) -> Logical (Tables) -> Physical
+5. **ERD Components**: Entity (rectangle), Attribute (ellipse), Relationship (diamond)
 5. **Cardinality**: 1:1, 1:N (1:Many), M:N (Many:Many)
 6. **Codd's Rules**: 12 rules (0-12) for true RDBMS
 7. **Rule 1**: All data stored in tables

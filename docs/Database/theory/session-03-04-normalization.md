@@ -228,7 +228,17 @@ When a non-key attribute determines part of the primary key.
 1. Must be in **BCNF**
 2. No **multi-valued dependencies** (MVDs)
 
-**Multi-valued Dependency**: X ↠ Y means for each X, there's a set of Y values independent of other attributes.
+2. No **multi-valued dependencies** (MVDs)
+
+### Multi-valued Dependency (MVD)
+
+A **Multi-valued Dependency (MVD)** occurs when one attribute uniquely determines a **set** of values for another attribute, independently of other attributes in the table.
+
+**Notation**: `X ↠ Y` (read as "X multidetermines Y")
+
+**Formal Rule**: For a table with attributes (A, B, C), if for a single value of A, there are multiple values of B, and this set of values for B is independent of C, then `A ↠ B`.
+
+> **Key Concept**: 4NF is about removing redundancy caused by two or more independent multi-valued facts about the same entity.
 
 ### Example
 
@@ -249,6 +259,17 @@ A student can have multiple hobbies AND multiple phones (independent of each oth
 1. Must be in **4NF**
 2. No **join dependencies**
 3. Cannot decompose further without losing information
+
+2. No **join dependencies**
+3. Cannot decompose further without losing information
+
+### Join Dependency (JD)
+
+A **Join Dependency (JD)** exists if a table can be decomposed into smaller tables, which can then be rejoined (using Natural Join) to reconstruct the original table exactly, without generating spurious (fake) rows.
+
+**Notation**: `* (R1, R2, ... Rn)`
+
+> **Key Concept**: 5NF deals with cases where information can be reconstructed from smaller pieces but isn't strictly an MVD. It ensures that a table is free of redundancy that can be removed by decomposing it into *any* number of smaller tables.
 
 > **5NF** is also called **Project-Join Normal Form (PJNF)**
 

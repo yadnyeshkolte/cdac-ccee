@@ -48,6 +48,8 @@ graph TD
 | **Cartesian Product** | × | All combinations | CROSS JOIN |
 | **Join** | ⋈ | Match tuples on condition | JOIN |
 
+> **Note**: `INTERSECT` and `EXCEPT` were introduced in **MySQL 8.0.31**. In older versions, you must use `JOIN` or `NOT IN` workarounds.
+
 ### Set Operations Requirements
 
 For UNION, INTERSECT, MINUS:
