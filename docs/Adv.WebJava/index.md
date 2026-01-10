@@ -10,6 +10,15 @@ permalink: /docs/Adv.WebJava/
 
 Welcome to Module 6! This module covers Servlets, JSP, Spring Framework, and Enterprise Java development.
 
+## 📚 Theory Notes
+
+<div class="module-content-grid">
+  <a href="{{ '/docs/Adv.WebJava/theory/' | relative_url }}" class="content-link notes">
+    <span class="link-icon">📘</span>
+    <span class="link-text">All Theory Notes</span>
+  </a>
+</div>
+
 ## 🎯 Practice Tests
 
 <div class="module-content-grid">
