@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Sessions 14-17: Spring Framework"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 6
-permalink: /docs/Adv.WebJava/theory/session-14-17-spring/
+permalink: /docs/Adv.WebJava/session-14-17-spring/
 ---
 
 # Sessions 14-17: Spring Framework

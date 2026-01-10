@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Sessions 26-27: Testing & Spring Security"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 11
-permalink: /docs/Adv.WebJava/theory/session-26-27-testing-security/
+permalink: /docs/Adv.WebJava/session-26-27-testing-security/
 ---
 
 # Sessions 26-27: Testing & Spring Security

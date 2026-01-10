@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Sessions 24-25: REST Services"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 10
-permalink: /docs/Adv.WebJava/theory/session-24-25-rest-services/
+permalink: /docs/Adv.WebJava/session-24-25-rest-services/
 ---
 
 # Sessions 24-25: Building REST Services with Spring

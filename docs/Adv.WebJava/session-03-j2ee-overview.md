@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Session 3: J2EE Overview"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 2
-permalink: /docs/Adv.WebJava/theory/session-03-j2ee-overview/
+permalink: /docs/Adv.WebJava/session-03-j2ee-overview/
 ---
 
 # Session 3: J2EE Overview

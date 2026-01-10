@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Sessions 18-20: Spring Boot"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 7
-permalink: /docs/Adv.WebJava/theory/session-18-20-spring-boot/
+permalink: /docs/Adv.WebJava/session-18-20-spring-boot/
 ---
 
 # Sessions 18-20: Spring Boot

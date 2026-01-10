@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Sessions 4-7: Servlets"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 3
-permalink: /docs/Adv.WebJava/theory/session-04-07-servlets/
+permalink: /docs/Adv.WebJava/session-04-07-servlets/
 ---
 
 # Sessions 4-7: Servlets

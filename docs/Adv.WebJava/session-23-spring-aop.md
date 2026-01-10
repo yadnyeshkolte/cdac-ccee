@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Session 23: Spring AOP"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 9
-permalink: /docs/Adv.WebJava/theory/session-23-spring-aop/
+permalink: /docs/Adv.WebJava/session-23-spring-aop/
 ---
 
 # Session 23: Spring AOP

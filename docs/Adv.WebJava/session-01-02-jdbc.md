@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Sessions 1-2: JDBC & Transaction Management"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 1
-permalink: /docs/Adv.WebJava/theory/session-01-02-jdbc/
+permalink: /docs/Adv.WebJava/session-01-02-jdbc/
 ---
 
 # Sessions 1-2: JDBC & Transaction Management

@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Sessions 21-22: Spring Data JPA"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 8
-permalink: /docs/Adv.WebJava/theory/session-21-22-spring-data/
+permalink: /docs/Adv.WebJava/session-21-22-spring-data/
 ---
 
 # Sessions 21-22: Spring Data JPA

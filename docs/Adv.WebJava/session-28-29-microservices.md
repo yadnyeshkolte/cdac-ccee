@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Sessions 28-29: Microservices"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 12
-permalink: /docs/Adv.WebJava/theory/session-28-29-microservices/
+permalink: /docs/Adv.WebJava/session-28-29-microservices/
 ---
 
 # Sessions 28-29: Microservices

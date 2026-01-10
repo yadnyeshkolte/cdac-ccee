@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Sessions 8-9: JSP"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 4
-permalink: /docs/Adv.WebJava/theory/session-08-09-jsp/
+permalink: /docs/Adv.WebJava/session-08-09-jsp/
 ---
 
 # Sessions 8-9: JavaServer Pages (JSP)

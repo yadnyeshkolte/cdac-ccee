@@ -1,10 +1,9 @@
 ---
 layout: default
 title: "Sessions 10-13: Hibernate Framework"
-parent: Theoretical Notes
-grand_parent: Module 6 - Advanced Web Java
+parent: Module 6 - Advanced Web Java
 nav_order: 5
-permalink: /docs/Adv.WebJava/theory/session-10-13-hibernate/
+permalink: /docs/Adv.WebJava/session-10-13-hibernate/
 ---
 
 # Sessions 10-13: Hibernate Framework
