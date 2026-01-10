@@ -1,402 +1,442 @@
 [
   {
-    "question": "Which of the following is NOT a feature of C++?",
+    "question": "Which of the following statements regarding the 'static' storage class specifier in C++ is strictly true?",
     "options": [
-      "Object-Oriented Programming",
-      "Platform Independence like Java",
-      "Operator Overloading",
-      "Multiple Inheritance"
+      "Static data members can only be accessed by static member functions.",
+      "Static local variables are initialized every time the function is called.",
+      "Static data members must be defined outside the class scope to allocate memory (prior to C++17 inline variables).",
+      "A static member function can access non-static data members via the 'this' pointer."
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "Static members are declared inside the class but must be defined (allocated) outside. Static functions do not have a 'this' pointer."
   },
   {
-    "question": "What is the correct way to declare a constant in C++?",
+    "question": "What is the output of the following code snippet considering C++ operator precedence?\n```cpp\nint x = 5, y = 10, z = 15;\nint result = x + y * z / x - y;\ncout << result;\n```",
     "options": [
-      "constant int x = 5;",
-      "const int x = 5;",
-      "int const x == 5;",
-      "final int x = 5;"
+      "25",
+      "35",
+      "20",
+      "Compiler Error"
     ],
-    "answer": 1
+    "answer": 0,
+    "explanation": "Precedence: (*) and (/) are equal and higher than (+) and (-). Associativity L to R. 1. y*z=150. 2. 150/5=30. 3. 5+30=35. 4. 35-10=25."
   },
   {
-    "question": "Which operator is used for dynamic memory allocation in C++?",
+    "question": "Identify the valid C++17 variable initialization syntax from the options below:",
     "options": [
-      "malloc()",
-      "alloc",
-      "new",
-      "create"
+      "`int x{5.5};`",
+      "`auto x = {10, 20};`",
+      "`int x(5.5);`",
+      "`int x = {5.5};`"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "List initialization (braces {}) forbids narrowing conversions (double to int). Only `int x(5.5);` allows truncation warning but compiles. `auto x = {10,20}` creates an initializer_list."
   },
   {
-    "question": "What is the output of: `cout << 5/2;`?",
+    "question": "What is the output of the following loop?\n```cpp\nfor(int i = 0; i < 3; i++) {\n    switch(i) {\n        case 0: cout << \"A\";\n        case 1: cout << \"B\"; continue;\n        case 2: cout << \"C\";\n    }\n    cout << \"-\";\n}\n```",
     "options": [
-      "2.5",
-      "2",
-      "3",
-      "2.0"
+      "AB-C-",
+      "ABBC-",
+      "ABC-",
+      "AB-B-C-"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "i=0: Prints A, falls through to Case 1, prints B. Continue hits loop increment. i=1: Prints B. Continue hits loop. i=2: Prints C, falls out of switch, prints -. Output: ABBC-"
   },
   {
-    "question": "Which header file is required for using `cout` and `cin`?",
+    "question": "Consider the following function with default arguments. Which call is illegal?\n```cpp\nvoid display(int a, int b = 10, int c = 20);\n```",
     "options": [
-      "<stdio.h>",
-      "<conio.h>",
-      "<iostream>",
-      "<stdlib.h>"
+      "`display(1);`",
+      "`display(1, 2);`",
+      "`display(1, , 30);`",
+      "`display(1, 2, 3);`"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "C++ does not support skipping arguments in the middle (like `1, , 30`). Arguments are matched positionally from left to right."
   },
   {
-    "question": "What does the `::` operator represent in C++?",
+    "question": "What happens when you return a reference to a local variable from a function?\n```cpp\nint& func() {\n    int x = 10;\n    return x;\n}\n```",
     "options": [
-      "Pointer operator",
-      "Scope resolution operator",
-      "Reference operator",
-      "Assignment operator"
+      "It returns a copy of x.",
+      "It causes a compile-time error invariably.",
+      "It returns a dangling reference (Undefined Behavior).",
+      "The lifetime of x is extended to the caller's scope."
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "Local variables are destroyed when the function stack frame pops. Returning a reference to it points to garbage memory."
   },
   {
-    "question": "Which of the following is a valid C++ identifier?",
+    "question": "Analyze the pointer arithmetic output:\n```cpp\nint arr[] = {10, 20, 30, 40, 50};\nint *p = arr;\ncout << (*p++) << \" \" << (++*p);\n```",
     "options": [
-      "2variable",
-      "variable-name",
-      "_variable_name",
-      "class"
+      "10 21",
+      "11 21",
+      "10 11",
+      "20 21"
     ],
-    "answer": 2
+    "answer": 0,
+    "explanation": "`*p++`: Returns *p (10), then increments pointer p. `++*p`: p now points to 20. Pre-increment value at p (20 -> 21) and print. Result: 10 21."
   },
   {
-    "question": "What is the size of `bool` data type in C++?",
+    "question": "Which of the following creates a 'constant pointer to an integer' (pointer cannot change, value can)?",
     "options": [
-      "4 bytes",
-      "2 bytes",
-      "1 byte",
-      "8 bytes"
+      "`const int* p;`",
+      "`int const * p;`",
+      "`int * const p;`",
+      "`const int * const p;`"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Read from right to left: `int * const p` is a const pointer to int. The pointer address is locked."
   },
   {
-    "question": "Which loop is guaranteed to execute at least once?",
+    "question": "Regarding memory management, what is the key difference between 'malloc' and 'new'?",
     "options": [
-      "for loop",
-      "while loop",
-      "do-while loop",
-      "foreach loop"
+      "malloc calls the constructor, new does not.",
+      "new calls the constructor, malloc does not.",
+      "malloc returns a typed pointer, new returns void*.",
+      "There is no functional difference."
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "`new` calculates size, allocates memory, AND calls the constructor. `malloc` only allocates bytes and returns void*."
   },
   {
-    "question": "What is the purpose of the `break` statement?",
+    "question": "What happens if you use `delete` on a pointer allocated with `new int[5]`?",
     "options": [
-      "Skip the current iteration",
-      "Exit from the loop or switch",
-      "Return a value from function",
-      "Continue to next iteration"
+      "It correctly frees all memory.",
+      "It frees only the first integer.",
+      "Undefined Behavior (usually memory leak or corruption).",
+      "Compiler Error."
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "Mismatched deallocation. `new[]` must be matched with `delete[]`. Using simple `delete` is undefined behavior."
   },
   {
-    "question": "Which keyword is used to define an inline function?",
+    "question": "What is the output of the following Constructor logic?\n```cpp\nclass A {\npublic:\n    A() { cout << \"0\"; }\n    A(int x) { cout << x; }\n};\n\nclass B {\n    A a;\npublic:\n    B() { cout << \"B\"; }\n};\n\nint main() {\n    B obj;\n}\n```",
     "options": [
-      "inline",
-      "inlined",
+      "B",
+      "B0",
+      "0B",
+      "Compiler Error"
+    ],
+    "answer": 2,
+    "explanation": "Members are initialized BEFORE the constructor body of the container class. A's default ctor prints '0', then B's body prints 'B'."
+  },
+  {
+    "question": "In which scenario is the Copy Constructor called implicitly?",
+    "options": [
+      "When an object is passed by value to a function.",
+      "When an object is returned by reference.",
+      "When an object is assigned to an existing object (A = B).",
+      "When an object is created with new."
+    ],
+    "answer": 0,
+    "explanation": "Pass-by-value requires a copy. Assignment to existing object calls Assignment Operator (=), not Copy Ctor."
+  },
+  {
+    "question": "What is the purpose of a 'private destructor'?",
+    "options": [
+      "To prevent the class from being inherited.",
+      "To prevent object creation on the stack.",
+      "To prevent object creation on the heap.",
+      "To allow only friend classes to delete the object."
+    ],
+    "answer": 1,
+    "explanation": "Stack objects are automatically destroyed when going out of scope. If the destructor is private, the compiler cannot call it, so stack allocation is forbidden."
+  },
+  {
+    "question": "Predict the output regarding execution order in inheritance:\n```cpp\nclass Base {\npublic:\n    Base() { cout<<\"B\"; }\n};\n\nclass Derived : public Base {\npublic:\n    Derived() { cout<<\"D\"; }\n};\n\nint main() {\n    Derived d;\n}\n```",
+    "options": [
+      "BD",
+      "DB",
+      "D",
+      "B"
+    ],
+    "answer": 0,
+    "explanation": "Base class constructor executes first, then Derived class constructor."
+  },
+  {
+    "question": "In the 'Diamond Problem' (Multiple Inheritance), what keyword resolves the ambiguity of duplicate base class copies?",
+    "options": [
       "static",
-      "fast"
+      "virtual",
+      "abstract",
+      "override"
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "Virtual Inheritance (`class B : virtual public A`) ensures only one instance of the base class A exists in the hierarchy."
   },
   {
-    "question": "What is function overloading?",
+    "question": "If a base class method is protected, and derived publicly, what is its visibility in the derived class?",
     "options": [
-      "Functions with same name and same parameters",
-      "Functions with different names",
-      "Functions with same name but different parameters",
-      "Functions calling themselves"
+      "Public",
+      "Private",
+      "Protected",
+      "Inaccessible"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Public inheritance preserves visibility. Protected stays Protected. Private stays Private (but inaccessible)."
   },
   {
-    "question": "What does `&` mean when used in function parameter like `void func(int &x)`?",
+    "question": "What is the output? (Function Overloading)\n```cpp\nvoid fun(int x) { cout << \"Int\"; }\nvoid fun(float x) { cout << \"Float\"; }\n\nint main() {\n    fun(3.5);\n}\n```",
     "options": [
-      "Pointer to x",
-      "Address of x",
-      "Reference to x (call by reference)",
-      "Value of x"
+      "Int",
+      "Float",
+      "Ambiguity Error",
+      "Double"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "3.5 is a `double` literal. It can convert to int or float with equal rank. Result is Ambiguity Error."
   },
   {
-    "question": "Which of the following is NOT a valid storage class in C++?",
+    "question": "Which operator CANNOT be overloaded in C++?",
     "options": [
-      "auto",
-      "register",
-      "extern",
-      "dynamic"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "What is the default return type of main() in C++?",
-    "options": [
-      "void",
-      "int",
-      "float",
-      "No return type needed"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "How do you declare a pointer to an integer in C++?",
-    "options": [
-      "int ptr;",
-      "int *ptr;",
-      "ptr int;",
-      "*int ptr;"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What is the output of `cout << *(&x);` if `int x = 10;`?",
-    "options": [
-      "Address of x",
-      "10",
-      "Garbage value",
-      "Compilation error"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which operator is used to access members through a pointer?",
-    "options": [
-      ".",
+      "+=",
       "->",
       "::",
-      "&"
+      "[]"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "The scope resolution operator (::), dot operator (.), ternary (?:), and sizeof cannot be overloaded."
   },
   {
-    "question": "What is the purpose of `this` pointer in C++?",
+    "question": "Output of the following Virtual Function code:\n```cpp\nclass Base {\npublic:\n    void show() { cout<<\"B\"; }\n};\n\nclass Derived : public Base {\npublic:\n    void show() { cout<<\"D\"; }\n};\n\nint main() {\n    Base *b = new Derived();\n    b->show();\n}\n```",
     "options": [
-      "Points to the base class",
-      "Points to the current object",
-      "Points to the parent function",
-      "Points to the main function"
+      "B",
+      "D",
+      "BD",
+      "Compiler Error"
     ],
-    "answer": 1
+    "answer": 0,
+    "explanation": "The function `show()` is NOT declared virtual in Base. This is early binding (compile time). The pointer type (Base) determines the call."
   },
   {
-    "question": "How do you free dynamically allocated memory in C++?",
+    "question": "What is the side effect of not having a Virtual Destructor in a Base class when deleting a Derived object via a Base pointer?",
     "options": [
-      "free()",
-      "delete",
-      "remove",
-      "destroy"
+      "Compile Time Error",
+      "Derived class destructor is not called (Partial Destruction)",
+      "Base class destructor is not called",
+      "Program crashes immediately"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "If the destructor is not virtual, `delete basePtr` only calls `~Base()`. Resources in `Derived` are leaked."
   },
   {
-    "question": "What is the correct syntax for delete operator with arrays?",
+    "question": "Which cast is best suited for safe downcasting in a polymorphic hierarchy?",
     "options": [
-      "delete arr;",
-      "delete[] arr;",
-      "delete(arr);",
-      "free(arr);"
+      "static_cast",
+      "dynamic_cast",
+      "reinterpret_cast",
+      "const_cast"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "`dynamic_cast` performs a runtime check. If the cast fails (invalid downcast), it returns nullptr (for pointers)."
   },
   {
-    "question": "Which access specifier makes members accessible only within the same class?",
+    "question": "Can a Pure Virtual Function have a body (definition) in the Abstract Base Class?",
     "options": [
-      "public",
-      "protected",
-      "private",
-      "internal"
+      "No, never.",
+      "Yes, but it can only be called statically.",
+      "Yes, but it makes the class concrete.",
+      "No, it causes syntax error."
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "Yes. Pure virtual functions can have a body (e.g., a default implementation), but the class remains abstract. Derived classes can call it via `Base::function()`."
   },
   {
-    "question": "What is encapsulation in OOP?",
+    "question": "What happens if an exception is thrown inside a Destructor during stack unwinding (caused by another exception)?",
     "options": [
-      "Inheriting from parent class",
-      "Binding data and functions together",
-      "Creating multiple objects",
-      "Overloading operators"
+      "The new exception replaces the old one.",
+      "The program calls std::terminate().",
+      "The exception is ignored.",
+      "It is handled by the nearest catch block."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Throwing an exception while another is active (during stack unwinding) is fatal. C++ calls `std::terminate` immediately."
   },
   {
-    "question": "Which keyword is used to inherit from a class?",
+    "question": "Output of the catch block logic:\n```cpp\ntry {\n    throw 20;\n}\ncatch (int e) {\n    cout << \"Int\";\n}\ncatch (...) {\n    cout << \"Default\";\n}\n```",
     "options": [
-      "extends",
-      "implements",
-      "inherits",
-      ": (colon)"
+      "Int",
+      "Default",
+      "IntDefault",
+      "Compiler Error"
     ],
-    "answer": 3
+    "answer": 0,
+    "explanation": "Handlers are checked in order. `throw 20` matches `int`. The ellipsis `...` is only entered if no specific type matches."
   },
   {
-    "question": "What is a namespace used for in C++?",
+    "question": "Which stream manipulator is used to turn off the skipping of whitespace in cin?",
     "options": [
-      "Allocating memory",
-      "Avoiding name conflicts",
-      "Defining macros",
-      "Creating objects"
+      "std::ws",
+      "std::noskipws",
+      "std::skipws",
+      "std::left"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "`std::noskipws` forces the stream to read whitespace characters (spaces, tabs, newlines) instead of ignoring them."
   },
   {
-    "question": "Which constructor is called when an object is created from another object?",
+    "question": "If you open a file with `ios::ate` mode, what happens?",
     "options": [
-      "Default constructor",
-      "Parameterized constructor",
-      "Copy constructor",
-      "Static constructor"
+      "The content is deleted.",
+      "The file pointer is positioned at the end, but you can move it back.",
+      "The file pointer is locked at the end (Append only).",
+      "File creation fails if it exists."
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "`ate` (At The End) moves the cursor to the end upon opening, but allows seeking anywhere. `app` (Append) forces all writes to be at the end."
   },
   {
-    "question": "What is the syntax for a destructor?",
+    "question": "Which function is used to get the current position of the 'get' pointer in a file stream?",
     "options": [
-      "~ClassName()",
-      "!ClassName()",
-      "delete ClassName()",
-      "destroy ClassName()"
+      "seekp()",
+      "tellp()",
+      "seekg()",
+      "tellg()"
     ],
-    "answer": 0
+    "answer": 3,
+    "explanation": "`tellg()` (tell get) returns the position of the input pointer. `tellp()` (tell put) is for the output pointer."
   },
   {
-    "question": "When is a destructor automatically called?",
+    "question": "What is 'Template Specialization'?",
     "options": [
-      "When object is created",
-      "When object goes out of scope",
-      "When function is called",
-      "At the start of program"
+      "Creating a template that works for all types.",
+      "Defining a specific implementation for a particular data type.",
+      "Inheriting from a template class.",
+      "Using multiple template arguments."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Specialization allows defining distinct behavior for a specific type (e.g., `vector<bool>` is specialized to use bits)."
   },
   {
-    "question": "Can a class have multiple constructors in C++?",
+    "question": "Identify the valid syntax for a class template:",
     "options": [
-      "No, only one is allowed",
-      "Yes, through constructor overloading",
-      "Only in derived classes",
-      "Only with different names"
+      "`template <class T> class MyClass { ... };`",
+      "`class <T> MyClass { ... };`",
+      "`template MyClass<T> { ... };`",
+      "`MyClass template<T> { ... };`"
     ],
-    "answer": 1
+    "answer": 0,
+    "explanation": "Standard syntax: `template <class T>` or `template <typename T>` precedes the class definition."
   },
   {
-    "question": "What happens if you don't define any constructor?",
+    "question": "In `std::vector`, what is the difference between `size()` and `capacity()`?",
     "options": [
-      "Compilation error",
-      "Compiler provides default constructor",
-      "Runtime error",
-      "Program won't run"
+      "No difference.",
+      "size() is elements used, capacity() is total memory allocated.",
+      "size() is bytes, capacity() is elements.",
+      "capacity() is always smaller than size()."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Vectors allocate extra memory to avoid reallocating on every push_back. `capacity` >= `size`."
   },
   {
-    "question": "Which statement about static members is TRUE?",
+    "question": "What does the `std::map` subscript operator `[]` do if the key does not exist?\n```cpp\nmap<int, int> m;\ncout << m[5];\n```",
     "options": [
-      "Each object has its own copy",
-      "They are shared by all objects of the class",
-      "They cannot be accessed without object",
-      "They must be initialized inside the class"
+      "Throws an exception.",
+      "Returns garbage value.",
+      "Inserts the key with a default value (0) and returns it.",
+      "Returns null."
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "This is a classic gotcha. Accessing a non-existent key via `[]` creates the entry with a default constructed value."
   },
   {
-    "question": "What is the difference between `new` and `malloc()`?",
+    "question": "Which STL container is implemented as a Doubly Linked List?",
     "options": [
-      "new is slower than malloc",
-      "new calls constructor, malloc doesn't",
-      "malloc returns typed pointer, new doesn't",
-      "There is no difference"
+      "std::vector",
+      "std::deque",
+      "std::list",
+      "std::stack"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "`std::list` is a doubly linked list. `std::vector` is a dynamic array. `std::deque` is often chunks of arrays."
   },
   {
-    "question": "What is an enumeration (`enum`) in C++?",
+    "question": "For RTTI (typeid) to work correctly at runtime, the class must have:",
     "options": [
-      "A type of loop",
-      "A user-defined type with named constants",
-      "A type of pointer",
-      "A class template"
+      "At least one static function.",
+      "At least one virtual function.",
+      "Inheritance from std::exception.",
+      "A specific constructor."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "RTTI relies on the vtable. A class must be polymorphic (have at least one virtual function) to store type info at runtime."
   },
   {
-    "question": "What does `typedef` do in C++?",
+    "question": "What is the complexity of searching in `std::unordered_map` (average case)?",
     "options": [
-      "Defines a new type",
-      "Creates an alias for an existing type",
-      "Deletes a type",
-      "Converts one type to another"
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n log n)"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "`unordered_map` is a Hash Table. Average access is constant time O(1). `std::map` (Tree) is O(log n)."
   },
   {
-    "question": "Which is the correct way to access a static member function?",
+    "question": "Predict output:\n```cpp\nint x = 10;\nvoid fun() {\n    int x = 2;\n    {\n        int x = 1;\n        cout << x << ::x;\n    }\n}\n```",
     "options": [
-      "object.staticFunc()",
-      "Class::staticFunc()",
-      "Both A and B",
-      "static::func()"
+      "1 2",
+      "1 10",
+      "2 10",
+      "1 1"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "Inner `x` is 1. `::x` refers to the Global Scope x (10), bypassing the function-local x (2)."
   },
   {
-    "question": "What is the output of `sizeof('A')` in C++?",
+    "question": "What happens here?\n```cpp\nconst int a = 10;\nint *p = (int*)&a;\n*p = 20;\ncout << a;\n```",
     "options": [
-      "1 byte",
-      "2 bytes",
-      "4 bytes",
-      "8 bytes"
+      "10",
+      "20",
+      "Undefined Behavior",
+      "Compiler Error"
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": "Casting away const and modifying the underlying variable is Undefined Behavior. Compilers might optimize `a` to 10 in the register, ignoring the memory write."
   },
   {
-    "question": "Which operator cannot be overloaded in C++?",
+    "question": "Output of destructor order:\n```cpp\nstruct A { ~A() { cout<<\"A\"; } };\nstruct B { ~B() { cout<<\"B\"; } };\n\nint main() {\n    A a;\n    B b;\n}\n```",
     "options": [
-      "+",
-      "[]",
-      "::",
-      "<<"
+      "AB",
+      "BA",
+      "A",
+      "B"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "Stack objects are destroyed in reverse order of creation (LIFO). b created last, destroyed first."
   },
   {
-    "question": "What is the default access specifier for class members?",
+    "question": "Reference to pointer syntax check:\n```cpp\nint a = 10;\nint *p = &a;\nint* &ref = p; // Is ref an alias for p?\n```",
     "options": [
-      "public",
-      "protected",
-      "private",
-      "internal"
+      "Yes",
+      "No, Syntax Error",
+      "No, it's a pointer to a reference",
+      "Only in C++20"
     ],
-    "answer": 2
+    "answer": 0,
+    "explanation": "`int* &ref` reads as: ref is a reference (&) to a pointer (*) to int. It allows changing where p points."
   },
   {
-    "question": "How many times will this loop execute: `for(int i=0; i<5; ++i)`?",
+    "question": "What prints?\n```cpp\nchar *s = \"CDAC\";\ncout << (int)s[0];\n```",
     "options": [
-      "4 times",
-      "5 times",
-      "6 times",
-      "Infinite loop"
+      "C",
+      "67",
+      "Address of C",
+      "Error"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "s[0] is 'C'. Casting char 'C' to int yields its ASCII value (67)."
   },
   {
-    "question": "What is the correct way to declare a 2D array in C++?",
+    "question": "Final tricky one: Object slicing\n```cpp\nclass Base { public: int i=10; };\nclass Derived : public Base { public: int j=20; };\n\nvoid func(Base b) { cout << b.i; }\n\nint main() {\n    Derived d;\n    func(d);\n}\n```",
     "options": [
-      "int arr[3,4];",
-      "int arr[3][4];",
-      "int arr(3)(4);",
-      "array<int>[3][4];"
+      "10",
+      "20",
+      "30",
+      "Compiler Error"
     ],
-    "answer": 1
+    "answer": 0,
+    "explanation": "`func` takes Base by value. When `d` is passed, it is 'sliced'. Only the Base part is copied. `b.i` is 10. `j` is lost."
   }
 ]
