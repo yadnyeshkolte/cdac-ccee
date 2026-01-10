@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Set Operators
-parent: Module 2 - Database
+parent: Practical Notes
+grand_parent: Module 2 - Database
 nav_order: 8
+permalink: /docs/Database/practical/8-set-operators/
 ---
 
 -----

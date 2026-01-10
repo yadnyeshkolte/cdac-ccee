@@ -1,8 +1,10 @@
 ---
 layout: default
 title: SQL Commands Advanced
-parent: Module 2 - Database
+parent: Practical Notes
+grand_parent: Module 2 - Database
 nav_order: 5
+permalink: /docs/Database/practical/5-sqlcommands-advanced/
 ---
 -----
 

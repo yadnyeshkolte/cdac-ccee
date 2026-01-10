@@ -1,8 +1,10 @@
 ---
 layout: default
 title: MySQL PL/SQL
-parent: Module 2 - Database
+parent: Practical Notes
+grand_parent: Module 2 - Database
 nav_order: 11
+permalink: /docs/Database/practical/11-mysql-pl/
 ---
 
 -----

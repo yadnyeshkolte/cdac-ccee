@@ -1,8 +1,10 @@
 ---
 layout: default
 title: SQL Commands Basics
-parent: Module 2 - Database
+parent: Practical Notes
+grand_parent: Module 2 - Database
 nav_order: 3
+permalink: /docs/Database/practical/3-sqlcommands-basics/
 ---
 ## ACID Properties of RDBMS
 

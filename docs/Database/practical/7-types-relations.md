@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Types of Relations
-parent: Module 2 - Database
+parent: Practical Notes
+grand_parent: Module 2 - Database
 nav_order: 7
+permalink: /docs/Database/practical/7-types-relations/
 ---
 
 

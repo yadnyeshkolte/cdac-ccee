@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Views
-parent: Module 2 - Database
+parent: Practical Notes
+grand_parent: Module 2 - Database
 nav_order: 10
+permalink: /docs/Database/practical/10-views/
 ---
 
 

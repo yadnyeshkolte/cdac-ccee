@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Mongo DBT Notes
-parent: Module 2 - Database
+parent: Practical Notes
+grand_parent: Module 2 - Database
 nav_order: 2
+permalink: /docs/Database/practical/2-mongo-dbt-notes/
 ---
 ```js
 db.students.find({age:{$lte:23}},{name:1,age:1}).sort({name:-1})

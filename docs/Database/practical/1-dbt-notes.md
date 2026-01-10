@@ -1,8 +1,10 @@
 ---
 layout: default
 title: DBT Notes
-parent: Module 2 - Database
+parent: Practical Notes
+grand_parent: Module 2 - Database
 nav_order: 1
+permalink: /docs/Database/practical/1-dbt-notes/
 ---
 ### SQL Notes
 

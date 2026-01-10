@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Constraints
-parent: Module 2 - Database
+parent: Practical Notes
+grand_parent: Module 2 - Database
 nav_order: 9
+permalink: /docs/Database/practical/9-constraints/
 ---
 # Database Constraints (Very IMP)
 
