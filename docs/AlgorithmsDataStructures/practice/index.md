@@ -10,4 +10,4 @@ nav_order: 10
 
 Test your knowledge.
 
-{% include mcq-navigation.html module_prefix="m4" module_dir="ADS" %}
+{% include mcq-navigation.html module_prefix="m4" module_dir="AlgorithmsDataStructures" %}

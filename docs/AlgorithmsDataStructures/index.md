@@ -1,8 +1,9 @@
 ---
 layout: default
-title: ADS Study Guide
-parent: Module 4 - ADS
-nav_order: 10
+title: Module 4 - ADS
+nav_order: 4
+has_children: true
+permalink: /docs/ADS/
 ---
 
 # Algorithms and Data Structures Using Java - CDAC CCEE 2026

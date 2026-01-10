@@ -1325,6 +1325,7 @@ public class SinglyLinkedList {
          *          break;
          *      }
          *      temp = temp.next;
+         *      count++;
          * }
          * newnode.next = temp.next;
          * temp.next = newnode;
