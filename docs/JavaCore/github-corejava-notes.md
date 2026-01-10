@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Core Java Notes
+title: GitHub Core Java Notes (Legacy)
 parent: Module 1 - Java Core
-nav_order: 3
+nav_order: 30
 ---
 # CDAC Java Learning Notes
 

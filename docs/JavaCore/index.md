@@ -10,7 +10,106 @@ permalink: /docs/JavaCore/
 
 Welcome to Module 1! This module covers the fundamentals of Java programming, including OOP concepts, data types, and core Java features.
 
-## 📚 Quick Access to Notes
+## 📚 Session-wise Notes
+
+<div class="module-content-grid">
+  <a href="{{ '/docs/JavaCore/session-01-introduction' | relative_url }}" class="content-link">
+    <span class="link-icon">1️⃣</span>
+    <span class="link-text">Session 1: Introduction to Java</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-02-03-basic-programming' | relative_url }}" class="content-link">
+    <span class="link-icon">2️⃣</span>
+    <span class="link-text">Sessions 2-3: Basic Programming</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-04-oop-concepts' | relative_url }}" class="content-link">
+    <span class="link-icon">4️⃣</span>
+    <span class="link-text">Session 4: OOP Concepts</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-05-static-reference' | relative_url }}" class="content-link">
+    <span class="link-icon">5️⃣</span>
+    <span class="link-text">Session 5: Static & Reference</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-06-constructors-memory' | relative_url }}" class="content-link">
+    <span class="link-icon">6️⃣</span>
+    <span class="link-text">Session 6: Constructors & Memory</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-07-inheritance-polymorphism' | relative_url }}" class="content-link">
+    <span class="link-icon">7️⃣</span>
+    <span class="link-text">Session 7: Inheritance & Polymorphism</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-08-abstract-interface' | relative_url }}" class="content-link">
+    <span class="link-icon">8️⃣</span>
+    <span class="link-text">Session 8: Abstract & Interfaces</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-09-10-advanced-oop' | relative_url }}" class="content-link">
+    <span class="link-icon">9️⃣</span>
+    <span class="link-text">Sessions 9-10: Advanced OOP</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-11-packages-access' | relative_url }}" class="content-link">
+    <span class="link-icon">🔟</span>
+    <span class="link-text">Session 11: Packages & Access</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-12-garbage-collection' | relative_url }}" class="content-link">
+    <span class="link-icon">♻️</span>
+    <span class="link-text">Session 12: Garbage Collection</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-13-14-wrapper-string' | relative_url }}" class="content-link">
+    <span class="link-icon">📦</span>
+    <span class="link-text">Sessions 13-14: Wrapper & String</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-15-16-exception-handling' | relative_url }}" class="content-link">
+    <span class="link-icon">⚠️</span>
+    <span class="link-text">Sessions 15-16: Exception Handling</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-17-io-nio' | relative_url }}" class="content-link">
+    <span class="link-icon">📁</span>
+    <span class="link-text">Session 17: IO & NIO</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-18-object-util' | relative_url }}" class="content-link">
+    <span class="link-icon">📅</span>
+    <span class="link-text">Session 18: Object Class & util</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-19-22-collections-list-queue' | relative_url }}" class="content-link">
+    <span class="link-icon">📋</span>
+    <span class="link-text">Sessions 19-22: Collections - List & Queue</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-23-26-collections-set-map-stream' | relative_url }}" class="content-link">
+    <span class="link-icon">🗺️</span>
+    <span class="link-text">Sessions 23-26: Set, Map, Stream</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-27-multithreading-basics' | relative_url }}" class="content-link">
+    <span class="link-icon">🧵</span>
+    <span class="link-text">Session 27: Multithreading Basics</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-28-29-synchronization' | relative_url }}" class="content-link">
+    <span class="link-icon">🔒</span>
+    <span class="link-text">Sessions 28-29: Synchronization</span>
+  </a>
+  
+  <a href="{{ '/docs/JavaCore/session-30-generics-reflection' | relative_url }}" class="content-link">
+    <span class="link-icon">🔧</span>
+    <span class="link-text">Session 30: Generics & Reflection</span>
+  </a>
+</div>
+
+## 📖 Additional Notes
 
 <div class="module-content-grid">
   <a href="{{ '/docs/JavaCore/learning-java' | relative_url }}" class="content-link">
@@ -23,9 +122,9 @@ Welcome to Module 1! This module covers the fundamentals of Java programming, in
     <span class="link-text">Data Types</span>
   </a>
   
-  <a href="{{ '/docs/JavaCore/corejava-notes' | relative_url }}" class="content-link">
+  <a href="{{ '/docs/JavaCore/github-corejava-notes' | relative_url }}" class="content-link">
     <span class="link-icon">📝</span>
-    <span class="link-text">Core Java Notes</span>
+    <span class="link-text">GitHub Notes (Legacy)</span>
   </a>
 </div>
 
