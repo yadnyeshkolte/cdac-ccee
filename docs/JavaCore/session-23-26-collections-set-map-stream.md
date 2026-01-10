@@ -240,6 +240,64 @@ public class ConcurrentDemo {
 }
 ```
 
+### 🧠 Deep Dive: ConcurrentHashMap Internals
+
+**Why is it faster than Hashtable?**
+
+1.  **Lock Stripping (Java 7)**:
+    *   Instead of locking the entire map (like Hashtable), it divides the map into segments (default 16).
+    *   Only the segment containing the key is locked during write.
+    *   Allows multiple threads to write concurrently to different segments.
+
+2.  **CAS + Synchronized (Java 8+)**:
+    *   Removed Segments. Now uses **CAS (Compare-And-Swap)** for lock-free insertion at empty buckets.
+    *   Uses `synchronized` on the **Node (bucket head)** only when collision occurs.
+    *   Retrieval (`get`) is non-blocking and lock-free!
+
+```mermaid
+flowchart TB
+    subgraph Java7["Java 7 (Lock Stripping)"]
+        Seg1["Segment 1<br/>(Locked)"]
+        Seg2["Segment 2<br/>(Free)"]
+        Seg3["Segment 3<br/>(Free)"]
+        T1["Thread 1"] --> Seg1
+        T2["Thread 2"] --> Seg2
+    end
+    
+    subgraph Java8["Java 8+ (CAS + Linked Nodes)"]
+        Node1["Node A<br/>(CAS)"]
+        Node2["Node B<br/>(Sync Locked)"]
+        Node3["Node C<br/>(No Lock)"]
+        T3["Thread 3"] -->|CAS Success| Node1
+        T4["Thread 4"] -->|Wait on Lock| Node2
+    end
+```
+
+### 🚨 Fail-Fast vs. Fail-Safe Iterators
+
+| Feature | Fail-Fast Iterator | Fail-Safe Iterator |
+|---------|--------------------|--------------------|
+| **Behavior** | Throws exception if collection modified during iteration | Works on a copy or supports concurrent modification |
+| **Exception** | `ConcurrentModificationException` | None |
+| **Collections** | ArrayList, HashMap, HashSet, Vector | ConcurrentHashMap, CopyOnWriteArrayList |
+| **Consistency** | Strict consistency | Weak consistency (may not see latest updates) |
+
+```java
+// Fail-Fast Example
+List<String> list = new ArrayList<>();
+list.add("A");
+Iterator<String> it = list.iterator();
+list.add("B"); // Modification outside iterator
+// it.next(); // Throws ConcurrentModificationException
+
+// Fail-Safe Example
+ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
+map.put("A", "1");
+Iterator<String> it2 = map.keySet().iterator();
+map.put("B", "2"); // Concurrent modification allowed
+it2.next(); // No exception
+```
+
 ---
 
 ## 🌊 Java 8 Stream API
