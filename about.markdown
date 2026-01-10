@@ -18,7 +18,7 @@ permalink: /about/
 
 ---
 
-## 👨‍💻 About the Creator
+## 👨‍💻 About the Developer
 
 <div style="display: flex; align-items: center; gap: 20px; margin: 20px 0;">
   <img src="https://github.com/yadnyeshkolte.png" alt="Yadnyesh Kolte" style="width: 120px; height: 120px; border-radius: 50%;">
