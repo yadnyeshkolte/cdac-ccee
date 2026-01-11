@@ -1,402 +1,442 @@
 [
   {
-    "question": "Which type of inheritance is NOT supported in C++?",
+    "question": "Consider the following code snippet regarding C++ tokens and operators. What is the output?\n```cpp\nint x = 10, y = 20;\nif (x++ > 10 && ++y > 20) {\n    cout << \"True \";\n} else {\n    cout << \"False \";\n}\ncout << x << \" \" << y;\n```",
     "options": [
-      "Single inheritance",
-      "Multiple inheritance",
-      "Hybrid inheritance",
-      "All are supported"
+      "True 11 21",
+      "False 11 20",
+      "False 11 21",
+      "False 10 20"
     ],
-    "answer": 3
+    "answer": 1,
+    "explanation": "The condition `x++ > 10` evaluates to 10 > 10 (False). Due to short-circuit evaluation in logical AND (`&&`), the second part `++y` is NEVER executed. x increments to 11, y remains 20."
   },
   {
-    "question": "What is the diamond problem in C++?",
+    "question": "Which of the following correctly describes the storage duration of a static local variable?",
     "options": [
-      "Memory allocation issue",
-      "Ambiguity in multiple inheritance when two parent classes have same base",
-      "Pointer dereferencing error",
-      "Template compilation error"
+      "It is created when the function is called and destroyed when the function returns.",
+      "It is created at program startup and destroyed at program termination, regardless of function calls.",
+      "It is initialized the first time control passes through its declaration and destroyed at program termination.",
+      "It is allocated on the heap and must be manually deleted."
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "Static local variables have static storage duration but local scope. They are initialized only once (thread-safe in C++11+) when execution first reaches the declaration."
   },
   {
-    "question": "How is the diamond problem resolved in C++?",
+    "question": "Analyze the loop behavior in the following snippet using C++ implicit type conversion rules:\n```cpp\nunsigned int i = 10;\nwhile (i >= 0) {\n    if (i == 0) { cout << i; break; }\n    cout << i << \" \";\n    i--;\n}\n```",
     "options": [
-      "Using interfaces",
-      "Using virtual base class",
-      "Using abstract class",
-      "It cannot be resolved"
+      "Prints 10 down to 0 and terminates.",
+      "Infinite loop printing 10 down to 0, then large numbers.",
+      "Compilation Error: Condition always true.",
+      "Runtime Error."
     ],
-    "answer": 1
+    "answer": 0,
+    "explanation": "While `i >= 0` is always true for an unsigned int (making it seem infinite), the internal `if (i == 0) break;` provides a valid exit condition before `i` wraps around."
   },
   {
-    "question": "In multilevel inheritance, the class at the bottom can access:",
+    "question": "What is the output of the following pointer arithmetic code?\n```cpp\nint arr[] = {10, 20, 30, 40, 50};\nint *p = arr;\ncout << *(p++ + 1);\n```",
     "options": [
-      "Only its immediate parent's members",
-      "Members of all ancestor classes based on access specifiers",
-      "Only public members of all classes",
-      "Only private members"
+      "20",
+      "30",
+      "10",
+      "40"
     ],
-    "answer": 1
+    "answer": 0,
+    "explanation": "Post-increment `p++` returns the original value of `p` (pointing to 10). Then `+ 1` is added to that original address, pointing to 20. Dereferencing gives 20. `p` is incremented afterwards."
   },
   {
-    "question": "Which inheritance type involves a diamond-shaped hierarchy?",
+    "question": "Regarding C++ references, which statement is INVALID?",
     "options": [
-      "Single",
-      "Multiple",
-      "Hybrid",
-      "Hierarchical"
+      "References cannot be NULL.",
+      "A reference must be initialized when declared (unless it's a class member or parameter).",
+      "Once a reference is bound to an object, it can be reseated to refer to a different object.",
+      "A const reference can bind to a temporary object."
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "References in C++ are 'aliases' and cannot be reseated. Once initialized to an object, they refer to that object forever. Assigning to them assigns to the underlying object."
   },
   {
-    "question": "What is polymorphism in C++?",
+    "question": "Identify the undefined behavior in this memory management snippet:\n```cpp\nint* ptr = new int[5];\nptr[0] = 100;\ndelete ptr;\n```",
     "options": [
-      "Ability of a class to have multiple constructors",
-      "Ability to take different forms",
-      "Ability to allocate memory dynamically",
-      "Ability to inherit from multiple classes"
+      "Assignment to ptr[0] is illegal.",
+      "Using `delete` instead of `delete[]` on an array.",
+      "The pointer is not set to nullptr after delete.",
+      "No undefined behavior exists."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Memory allocated with `new[]` MUST be deallocated with `delete[]`. Using scalar `delete` results in Undefined Behavior (often only the first element is destructed or heap corruption occurs)."
   },
   {
-    "question": "Which is an example of compile-time polymorphism?",
+    "question": "What happens in the following function call regarding default arguments?\n```cpp\nvoid func(int a, int b = 10, int c = 20) { cout << a + b + c; }\n// Inside main:\nfunc(1, 2);\n```",
     "options": [
-      "Virtual functions",
-      "Function overloading",
-      "Abstract class",
-      "Runtime binding"
+      "Output: 13",
+      "Output: 23",
+      "Output: 33",
+      "Compilation Error"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "`a` becomes 1. `b` is passed as 2 (overriding default 10). `c` uses default 20. Total: 1 + 2 + 20 = 23."
   },
   {
-    "question": "Which is an example of runtime polymorphism?",
+    "question": "What is the primary restriction of an `inline` function?",
     "options": [
-      "Function overloading",
-      "Operator overloading",
-      "Virtual functions",
-      "Templates"
+      "It cannot have loops or switch statements.",
+      "It cannot be recursive.",
+      "It is merely a request to the compiler, which the compiler may ignore.",
+      "It cannot return a value."
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "`inline` is a hint/request. Modern compilers may ignore it if the function is complex, or inline functions that aren't marked inline (Link Time Optimization)."
   },
   {
-    "question": "What is the purpose of a `friend` function?",
+    "question": "Predict the output regarding static members:\n```cpp\nclass Demo {\n    static int count;\npublic:\n    Demo() { count++; }\n    static int getCount() { return count; }\n};\nint Demo::count = 0;\n\nint main() {\n    Demo d1, d2;\n    Demo d3;\n    cout << Demo::getCount();\n    return 0;\n}\n```",
     "options": [
-      "To make function public",
-      "To access private members of a class from outside",
-      "To create inline function",
-      "To override virtual function"
+      "0",
+      "1",
+      "3",
+      "Compilation Error"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "Static members are shared across all instances. Three objects (d1, d2, d3) are created, incrementing the shared `count` to 3."
   },
   {
-    "question": "Which operators can be overloaded using friend functions?",
+    "question": "What is the issue with this Copy Constructor signature?\n```cpp\nclass Test {\npublic:\n    Test(Test t) { /* code */ } \n};\n```",
     "options": [
-      "Only unary operators",
-      "Only binary operators",
-      "Both unary and binary operators",
-      "No operators can use friend"
+      "It is valid.",
+      "It causes infinite recursion during compilation/linking.",
+      "It cannot access private members of `t`.",
+      "It must return a Test object."
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "Passing by value `Test t` requires making a copy, which calls the copy constructor, which requires making a copy... causing infinite recursion. It MUST be passed by reference `Test(const Test &t)`."
   },
   {
-    "question": "What keyword is used to declare a virtual function?",
+    "question": "When does the compiler generate a default copy constructor?",
     "options": [
-      "virtual",
-      "abstract",
-      "override",
-      "dynamic"
+      "Always, if the user doesn't define one.",
+      "Only if the class has no pointer members.",
+      "Only if no move constructor or move assignment operator is declared (rules vary by standard), and no user-defined copy constructor exists.",
+      "Only if the class inherits from a base class."
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": "Standard C++ rules: If you define a move operation, the implicit copy constructor is deleted. Otherwise, if you don't define one, the compiler generates a member-wise copy."
   },
   {
-    "question": "What is a pure virtual function?",
+    "question": "In the context of 'Protected Inheritance' (`class D : protected B`), which statement is true?",
     "options": [
-      "A virtual function with a body",
-      "A virtual function initialized with = 0",
-      "A private virtual function",
-      "A static virtual function"
+      "Public members of B become private in D.",
+      "Public members of B become protected in D.",
+      "Protected members of B become public in D.",
+      "Private members of B become protected in D."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Protected inheritance tightens access: Public base members become Protected in the derived class. Private members remain inaccessible."
   },
   {
-    "question": "A class with at least one pure virtual function is called:",
+    "question": "Solve the 'Diamond Problem' output (Virtual Inheritance construction order):\n```cpp\nstruct A { A() { cout << \"A\"; } };\nstruct B : virtual A { B() { cout << \"B\"; } };\nstruct C : virtual A { C() { cout << \"C\"; } };\nstruct D : B, C { D() { cout << \"D\"; } };\n// main:\nD obj;\n```",
     "options": [
-      "Final class",
-      "Base class",
-      "Abstract class",
-      "Derived class"
+      "ABCD",
+      "ABC D",
+      "AB CD",
+      "ABCD (Order of B/C depends on inheritance list)"
     ],
-    "answer": 2
+    "answer": 0,
+    "explanation": "Virtual base classes are initialized FIRST and only ONCE. Order: A (virtual base), then B, then C (order of D declaration `D : B, C`), then D. Output: ABCD."
   },
   {
-    "question": "Can you create an object of an abstract class?",
+    "question": "What is the output? (Tricky: Default Arguments + Virtual Functions)\n```cpp\nclass Base {\npublic:\n    virtual void show(int x = 10) { cout << \"Base:\" << x; }\n};\nclass Derived : public Base {\npublic:\n    void show(int x = 20) override { cout << \"Derived:\" << x; }\n};\n\nint main() {\n    Base* b = new Derived();\n    b->show();\n}\n```",
     "options": [
-      "Yes, always",
-      "No, never",
-      "Only through pointers",
-      "Only in derived classes"
+      "Base:10",
+      "Derived:20",
+      "Derived:10",
+      "Base:20"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "Default arguments are statically bound (at compile time) based on the pointer type (`Base*`). The function body is dynamically bound (runtime) to `Derived`. Result: Derived's body using Base's default arg (10)."
   },
   {
-    "question": "What is the purpose of `dynamic_cast`?",
+    "question": "If a class has virtual functions, what does the compiler covertly add to the class structure?",
     "options": [
-      "Convert int to float",
-      "Safe downcasting in inheritance hierarchy",
-      "Remove const qualifier",
-      "Reinterpret memory"
+      "A static integer ID.",
+      "A pointer to the Virtual Method Table (vptr).",
+      "A reference to the base class.",
+      "A copy of all virtual functions."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "The compiler adds a hidden pointer (vptr) to the object, pointing to the vtable, enabling dynamic dispatch."
   },
   {
-    "question": "Which cast is used to remove the const qualifier?",
+    "question": "Why must the destructor of a polymorphic base class be declared `virtual`?",
+    "options": [
+      "To allow the class to be instantiated.",
+      "To ensure the derived class destructor is called when deleting via a base pointer.",
+      "To prevent the class from being abstract.",
+      "It is not required, just good practice."
+    ],
+    "answer": 1,
+    "explanation": "If the base destructor is non-virtual, `delete base_ptr` results in Undefined Behavior (usually only Base destructor runs), leaking Derived resources."
+  },
+  {
+    "question": "Which cast should be used to safely convert a base pointer to a derived pointer at runtime?",
     "options": [
       "static_cast",
+      "reinterpret_cast",
       "dynamic_cast",
-      "const_cast",
-      "reinterpret_cast"
+      "const_cast"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "`dynamic_cast` performs a runtime check (using RTTI). If the cast is illegal, it returns `nullptr`. `static_cast` does no runtime check and is unsafe for downcasting."
   },
   {
-    "question": "What is the correct syntax for throwing an exception?",
+    "question": "Can a Pure Virtual Function have a function body definition in the Base class?",
     "options": [
-      "throw exception;",
-      "raise exception;",
-      "exception.throw();",
-      "exit(exception);"
+      "No, never.",
+      "Yes, but it can only be called statically using Scope Resolution (::).",
+      "Yes, and it will be called automatically by the derived class.",
+      "Yes, but only if the class is not abstract."
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "Pure virtual functions CAN have bodies (e.g., a default implementation), but the class remains abstract. Derived classes must override it, but can call `Base::pureFunc()` explicitly."
   },
   {
-    "question": "Which block is used to handle exceptions?",
+    "question": "What happens if a destructor throws an exception while the stack is already unwinding due to another exception?",
     "options": [
-      "try-except",
-      "try-catch",
-      "try-handle",
-      "try-error"
+      "The new exception replaces the old one.",
+      "The new exception is ignored.",
+      "std::terminate() is called immediately.",
+      "The program waits for the first catch block."
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "C++ does not support two active exceptions simultaneously. If a destructor throws during unwinding, the runtime calls `std::terminate()`."
   },
   {
-    "question": "What happens if an exception is not caught?",
+    "question": "Analyze the catch block matching:\n```cpp\ntry {\n    throw 'a';\n} catch (int x) {\n    cout << \"Int\";\n} catch (long x) {\n    cout << \"Long\";\n} catch (...) {\n    cout << \"Universal\";\n}\n```",
     "options": [
-      "Program continues normally",
-      "Compiler warning",
-      "Program terminates abnormally",
-      "Exception is ignored"
+      "Int",
+      "Long",
+      "Universal",
+      "Compilation Error"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "The thrown type is `char`. It does not implicitly convert to `int` or `long` during exception matching (unlike function overloading). It falls through to `catch(...)`."
   },
   {
-    "question": "How do you re-throw an exception in C++?",
+    "question": "In Template Metaprogramming, when does 'Template Specialization' occur?",
     "options": [
-      "throw;",
-      "rethrow;",
-      "throw again;",
-      "continue throw;"
+      "At Runtime.",
+      "At Compile Time.",
+      "At Link Time.",
+      "At Load Time."
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "Templates are a compile-time mechanism. The compiler generates specific code for the types used."
   },
   {
-    "question": "Which is the base class for all standard exceptions?",
+    "question": "Consider: `template <typename T> void f(T x)` and `void f(int x)`. If we call `f(10)`, which is called?",
     "options": [
-      "exception",
-      "error",
-      "throwable",
-      "std_error"
+      "The template version.",
+      "The non-template (ordinary) version.",
+      "Ambiguity Error.",
+      "Depends on optimization level."
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "Non-template functions are preferred over template functions during overload resolution if the match is exact."
   },
   {
-    "question": "What is the purpose of `endl` in C++?",
+    "question": "Which stream class is used for performing both input and output on files?",
     "options": [
-      "End program",
-      "End function",
-      "Insert newline and flush buffer",
-      "End loop"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which manipulator sets the width of output field?",
-    "options": [
-      "setw()",
-      "setwidth()",
-      "width()",
-      "setsize()"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "What header is required for setw() and setprecision()?",
-    "options": [
-      "<iostream>",
-      "<iomanip>",
-      "<cstdio>",
-      "<string>"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which stream class is used for file input in C++?",
-    "options": [
-      "ofstream",
       "ifstream",
+      "ofstream",
       "fstream",
       "iostream"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "`fstream` inherits from `iostream` capabilities and handles file buffers for both reading and writing."
   },
   {
-    "question": "Which stream class is used for file output in C++?",
+    "question": "What does `cin.peek()` do?",
     "options": [
-      "ofstream",
-      "ifstream",
-      "istream",
-      "ostream"
+      "Reads the next character and removes it from the stream.",
+      "Returns the next character without removing it from the stream.",
+      "Returns true if the stream is empty.",
+      "Skips the next character."
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "`peek()` inspects the next character in the input buffer without extracting/advancing the stream pointer."
   },
   {
-    "question": "What is the default file opening mode?",
+    "question": "What is the time complexity of searching for an element in `std::vector` (unsorted) vs `std::set`?",
     "options": [
-      "ios::binary",
-      "ios::app",
-      "ios::in for ifstream, ios::out for ofstream",
-      "ios::trunc"
+      "O(N) vs O(N)",
+      "O(1) vs O(log N)",
+      "O(N) vs O(log N)",
+      "O(log N) vs O(1)"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Vector is a dynamic array (linear search O(N)). Set is typically a Red-Black Tree (O(log N))."
   },
   {
-    "question": "Which function is used to check if file opened successfully?",
+    "question": "Which STL container invalidates ALL iterators upon insertion (if capacity is exceeded)?",
     "options": [
-      "is_open()",
-      "check_open()",
-      "opened()",
-      "success()"
+      "std::list",
+      "std::vector",
+      "std::deque",
+      "std::map"
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "If `std::vector` exceeds capacity, it reallocates new memory and moves all elements, invalidating all pointers/iterators to the old memory."
   },
   {
-    "question": "What mode is used to append data to a file?",
+    "question": "What happens if you try to modify the 'key' of a map element via an iterator? `it->first = 10;`",
     "options": [
-      "ios::out",
-      "ios::in",
-      "ios::app",
-      "ios::trunc"
+      "It works fine.",
+      "Compilation Error.",
+      "Runtime Error.",
+      "Undefined Behavior."
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "Keys in `std::map` are `const`. Modifying them would break the tree structure ordering. You must remove and re-insert to change a key."
   },
   {
-    "question": "What is a function template in C++?",
+    "question": "What is the output of `typeid(*p).name()` if `p` is a pointer to a polymorphic base class but points to `nullptr`?",
     "options": [
-      "A function with no return type",
-      "A function that works with any data type",
-      "A virtual function",
-      "A recursive function"
+      "Name of Base class.",
+      "Name of Derived class.",
+      "Standard undefined string.",
+      "Throws `std::bad_typeid` exception."
     ],
-    "answer": 1
+    "answer": 3,
+    "explanation": "Applying `typeid` to a dereferenced null pointer of a polymorphic type throws `std::bad_typeid`."
   },
   {
-    "question": "Which keyword is used to define a template?",
+    "question": "Regarding C++17, what is `std::optional` used for?",
     "options": [
-      "generic",
-      "template",
-      "type",
-      "class"
+      "To optimize loop unrolling.",
+      "To represent a value that may or may not be present, avoiding null pointers or magic numbers.",
+      "To create optional function arguments.",
+      "To replace try-catch blocks."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "`std::optional<T>` is a type-safe wrapper that contains either a value of type T or nothing (`std::nullopt`)."
   },
   {
-    "question": "What is template specialization?",
+    "question": "What does the keyword `mutable` allow in C++?",
     "options": [
-      "Creating template for all types",
-      "Creating specific implementation for particular type",
-      "Removing template",
-      "Optimizing template"
+      "Allows a variable to be changed by multiple threads without locking.",
+      "Allows a member variable to be modified inside a `const` member function.",
+      "Allows a variable to change type at runtime.",
+      "Allows a class to inherit from a final class."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "`mutable` is the escape hatch for logical constness vs bitwise constness. It allows modification of specific members (like mutexes or cache counters) even if the object is const."
   },
   {
-    "question": "Which STL container provides LIFO order?",
+    "question": "What is 'Object Slicing'?",
     "options": [
-      "queue",
-      "stack",
-      "vector",
-      "list"
+      "Splitting a class into two classes.",
+      "Assigning a derived object to a base object by value, losing the derived part.",
+      "Using `delete` on part of an array.",
+      "Casting a pointer to `void*`."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "`Base b = derived_obj;` copies only the Base part of `derived_obj`. The Derived-specific data and vptr are stripped/reset."
   },
   {
-    "question": "Which STL container provides FIFO order?",
+    "question": "What is the return type of `new int[10]`?",
     "options": [
-      "stack",
-      "queue",
-      "set",
-      "map"
+      "int",
+      "int*",
+      "int[]",
+      "void*"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "`new T[]` returns a pointer to the first element, so `int*`."
   },
   {
-    "question": "What is the main feature of `std::vector`?",
+    "question": "Can a constructor be virtual?",
     "options": [
-      "Fixed size array",
-      "Dynamic array that can grow",
-      "Linked list",
-      "Binary tree"
+      "Yes.",
+      "No.",
+      "Only in abstract classes.",
+      "Only in derived classes."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "No. To create an object, we need the exact type. Vtables are set up *during* construction. A 'virtual constructor' idiom exists (using static create methods), but the language feature does not."
   },
   {
-    "question": "Which STL container stores key-value pairs?",
+    "question": "What does `std::move` actually do?",
     "options": [
-      "set",
-      "vector",
-      "map",
-      "list"
+      "Moves memory from one location to another immediately.",
+      "Performs a bitwise swap.",
+      "Performs a static_cast to an r-value reference.",
+      "Deletes the source object."
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "`std::move` is a cast. It casts its argument to an r-value reference, allowing the compiler to select move constructors/assignment operators."
   },
   {
-    "question": "What is RTTI in C++?",
+    "question": "Is it safe to `delete this` in a member function?",
     "options": [
-      "Runtime Type Information",
-      "Real Time Type Interface",
-      "Reference Type Template Inheritance",
-      "Runtime Template Type Inference"
+      "Never.",
+      "Yes, provided you don't access members afterwards and the object was allocated via new.",
+      "Yes, but only in the destructor.",
+      "Yes, but only in static functions."
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "It is legal, but extremely dangerous. The object must have been allocated on the heap, and no member variables or virtual functions can be touched after the delete statement."
   },
   {
-    "question": "Which operator is used to get runtime type information?",
+    "question": "What is the output?\n```cpp\nstruct A { \n    ~A() { cout << \"~A\"; } \n};\nint main() {\n    A* a = new A[2];\n    delete a;\n}\n```",
     "options": [
-      "typeof",
-      "instanceof",
-      "typeid",
-      "gettype"
+      "~A",
+      "~A~A",
+      "Undefined Behavior",
+      "Compilation Error"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Allocated with `new[]`, deleted with `delete` (scalar). This is UB. It might crash or only destroy the first element."
   },
   {
-    "question": "What does `auto` keyword do in C++11?",
+    "question": "In C++, `struct` vs `class`:",
     "options": [
-      "Declares automatic storage",
-      "Automatically deduces variable type",
-      "Creates automatic function",
-      "Enables auto memory management"
+      "Structs cannot have member functions.",
+      "Structs pass by value, Classes pass by reference.",
+      "Struct members are public by default; Class members are private by default.",
+      "Structs cannot inherit."
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "The ONLY technical difference in C++ is default access (public for struct, private for class) and default inheritance mode."
   },
   {
-    "question": "Which function is used to get the size of a vector?",
+    "question": "What is the output of this 'const' pointer logic?\n```cpp\nint x = 10;\nint y = 20;\nint * const p = &x;\n*p = 15;\np = &y;\n```",
     "options": [
-      "length()",
-      "count()",
-      "size()",
-      "capacity()"
+      "x becomes 15, p points to y.",
+      "Compilation Error at `*p = 15`",
+      "Compilation Error at `p = &y`",
+      "Runtime Error"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "`int * const p` is a CONST POINTER to an int. You can change the value (`*p = 15` is valid), but you cannot change where it points (`p = &y` is invalid)."
+  },
+  {
+    "question": "How do you prevent a class from being inherited from (C++11)?",
+    "options": [
+      "Use `private` inheritance.",
+      "Use the `final` keyword.",
+      "Make the constructor private.",
+      "Use the `sealed` keyword."
+    ],
+    "answer": 1,
+    "explanation": "`class Name final { ... };` prevents derivation."
+  },
+  {
+    "question": "What is the output?\n```cpp\nvoid func(char *p) { cout << \"Pointer\"; }\nvoid func(int i)   { cout << \"Int\"; }\n\nint main() {\n    func(NULL);\n}\n```",
+    "options": [
+      "Pointer",
+      "Int",
+      "Ambiguous",
+      "Compilation Error"
+    ],
+    "answer": 1,
+    "explanation": "In older C++, `NULL` is typically 0 (integer). So `func(int)` is the exact match. C++11 introduced `nullptr` to solve this and call the pointer version."
   }
 ]
