@@ -1,402 +1,442 @@
 [
   {
-    "question": "What is the size of an int variable in Java?",
+    "question": "If user wants to store Employee class objects in a HashSet, which method needs to be overridden to check whether two Employee objects are same? Note: If name of employee is same, then objects are considered as same.",
     "options": [
-      "8 bit",
-      "16 bit",
-      "32 bit",
-      "64 bit"
+      "hashCode()",
+      "equals()",
+      "compareTo()",
+      "Both A and B"
     ],
-    "answer": 2
+    "answer": 3,
+    "explanation": "In a HashSet, uniqueness is determined by first checking the hashCode() and then equals(). Both must be overridden to ensure logical equality (e.g., based on name) works correctly."
   },
   {
-    "question": "Which of the following is NOT a feature of the Java language?",
+    "question": "Which of the following statements is not true regarding serialization in java?",
     "options": [
-      "Platform Independent",
-      "Object-Oriented",
-      "Use of pointers",
-      "Robust"
+      "Static data members cannot be serialized; only non-static data members are saved via serialization.",
+      "For serializing object, writeObject method of ObjectOutputStream class is used.",
+      "To serialize its object, class should implement java.io.Serializable interface.",
+      "None of the above"
     ],
-    "answer": 2
+    "answer": 3,
+    "explanation": "All statements A, B, and C are effectively true. Static members belong to the class and are not serialized. writeObject is the standard method. Serializable interface is a marker requirement. Therefore, 'None of the above' is the answer to 'which is not true'."
   },
   {
-    "question": "Which loop structure is guaranteed to execute at least once?",
+    "question": "What will be the output of the below code?\n```java\npublic static void main(String[] args){\n    String[] arr = {\"ispace\",\".\", \"iphone\", \".\" };\n    List<String> list = Arrays.asList(arr);\n    arr[3]=\".com\";\n    for (String word: list) {\n        System.out.print(word);\n    }\n}\n```",
     "options": [
-      "for loop",
-      "while loop",
-      "do-while loop",
-      "enhanced for loop"
+      "ispace.iphone.",
+      "ispace.iphone.com",
+      "compilation error at line 1",
+      "compilation error at line 2"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "Arrays.asList returns a list backed by the original array. Modifying the array (arr[3] = \".com\") updates the list view. The output concatenates: 'ispace', '.', 'iphone', '.com'."
   },
   {
-    "question": "In Java, converting a larger data type (e.g., double) to a smaller one (e.g., int) is known as what?",
+    "question": "What will be the output of the following code snippet?\n```java\nString x = \"xyz\";\nx.toUpperCase();\nString y = x.replace('Y', 'y');\ny = y + \"abc\";\nSystem.out.println(y);\n```",
     "options": [
-      "Widening conversion",
-      "Narrowing conversion",
-      "Auto-boxing",
-      "Promotion"
+      "abcXyZ",
+      "abcxyz",
+      "xyzabc",
+      "XyZabc"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "Strings are immutable. x.toUpperCase() returns a new string but x remains 'xyz'. x.replace('Y', 'y') does nothing as 'Y' is not in 'xyz', so y is 'xyz'. y + 'abc' becomes 'xyzabc'."
   },
   {
-    "question": "What is the default value of a boolean variable in Java?",
+    "question": "Which of the following is true for code snippets a and b?\n```java\n(a)\npublic class A {\n    public static void main(String args[]){\n        String s3=\"Value1\";\n        String s2 = \"Value2\";\n        for (int i=0; i<100000; ++i){\n            s3 = s3 + s2;\n        }\n    }\n}\n\n(b)\npublic class B {\n    public static void main(String args[]){\n        StringBuffer s3 = new StringBuffer(\"Value1\");\n        String s2 = \"Value2\";\n        for (int i=0; i<100000; ++i) {\n            s3.append(s2);\n        }\n    }\n}\n```",
     "options": [
-      "true",
-      "false",
+      "Both (a) and (b) will compile and run successfully, (a) code block will perform better than (b) block.",
+      "Both (a) and (b) will compile and run successfully, (b) code block will perform better than (a) block.",
+      "Compilation error in (a).",
+      "Runtime exception in (b)."
+    ],
+    "answer": 1,
+    "explanation": "String concatenation in a loop (a) creates a new String object every iteration (O(n^2) complexity effectively), whereas StringBuffer (b) modifies the buffer in place (O(n)). (b) is much more performant."
+  },
+  {
+    "question": "What will be the output of the following program?\n```java\nimport java.io.*;\nclass House implements Serializable {\n    public House(int number) {\n        super();\n        this.number = number;\n    }\n    Wall wall;\n    int number;\n}\nclass Wall {\n    int length;\n    int breadth;\n    int color;\n}\npublic class TestSer {\n    public static void main(String[] args) throws Exception {\n        FileOutputStream fileStream = new FileOutputStream(\"Rectangle.ser\");\n        ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);\n        House h = new House(1);\n        h.wall = new Wall();\n        objectStream.writeObject(h);\n        objectStream.close();\n    }\n}\n```",
+    "options": [
+      "Compile time error",
+      "Runtime time exception",
+      "Will compile and run successfully",
+      "None of these"
+    ],
+    "answer": 1,
+    "explanation": "House is Serializable, but it contains a reference to Wall, which is NOT Serializable. Attempting to serialize h will throw a java.io.NotSerializableException at runtime."
+  },
+  {
+    "question": "What happens if constructor of class A is made private?",
+    "options": [
+      "Any class can instantiate objects of class A",
+      "Objects of class A can be instantiated only within the class where it is declared",
+      "Inherited class can instantiate objects of class A",
+      "Classes within the same package as class A can instantiate objects of class A"
+    ],
+    "answer": 1,
+    "explanation": "A private constructor prevents instantiation from outside the class, including subclasses and other classes in the same package."
+  },
+  {
+    "question": "Which of the following uses newFixedThreadPool() method to create fixed thread pool in Executor Framework?",
+    "options": [
+      "ExecutorService",
+      "Executors",
+      "Callable",
+      "Runnable"
+    ],
+    "answer": 1,
+    "explanation": "Executors is the factory class that contains static methods like newFixedThreadPool(), newCachedThreadPool(), etc."
+  },
+  {
+    "question": "What happens if ServerSocket is not able to listen on the specified port?",
+    "options": [
+      "The system exits gracefully with appropriate message",
+      "The system will wait till port is free",
+      "IOException is thrown while opening the socket",
+      "PortOccupiedException is thrown"
+    ],
+    "answer": 2,
+    "explanation": "If the port is already in use or cannot be bound, the constructor throws a java.net.BindException, which is a subclass of IOException."
+  },
+  {
+    "question": "Which of the following method will make a thread to wait till other thread finishes the execution?",
+    "options": [
+      "yield()",
+      "suspend()",
+      "sleep(1000)",
+      "join()"
+    ],
+    "answer": 3,
+    "explanation": "The join() method allows one thread to wait for the completion of another."
+  },
+  {
+    "question": "What happens when myMethod method is invoked?\n```java\ninterface MyInterface {\n    int x = 35;\n}\nclass Test implements MyInterface {\n    public void myMethod() {\n        System.out.println(x);\n        x = 78;\n    }\n}\n```",
+    "options": [
+      "prints 35",
+      "prints 78",
+      "compilation error",
+      "runtime error"
+    ],
+    "answer": 2,
+    "explanation": "Variables declared in an interface are implicitly public, static, and final. You cannot reassign 'x' (x = 78), so this causes a compilation error."
+  },
+  {
+    "question": "What will be the output of the following java program?\n```java\nclass Test {\n    public static void main(String args[]) {\n        int localValue = 5;\n        calculate(localValue);\n        System.out.println(localValue);\n    }\n    static void calculate(int calcValue){\n        calcValue = calcValue * 100;\n    }\n}\n```",
+    "options": [
+      "Compiler error",
+      "Runtime Exception",
+      "500",
+      "5"
+    ],
+    "answer": 3,
+    "explanation": "Primitives are passed by value in Java. The 'calculate' method receives a copy of the value. Modifying the copy does not affect the original 'localValue' in main."
+  },
+  {
+    "question": "What will be the output of following code snippet?\n```java\npublic class MyClass {\n    public static void main(String[] args) {\n        List<Number> numberList = new ArrayList<Number>();\n        numberList.add(2);\n        numberList.add(3);\n        foo(numberList);\n    }\n    static void foo(List<? super Double> numList) {\n        System.out.print(numList.get(0));\n        System.out.print(numList.get(1));\n    }\n}\n```",
+    "options": [
+      "Runtime Exception",
+      "IndexOutOfBoundsException",
+      "Compile time error",
+      "23"
+    ],
+    "answer": 3,
+    "explanation": "List<Number> matches List<? super Double> because Number is a superclass of Double. Inside foo, we can get elements (as Objects). Printing them invokes toString(), outputting '23'."
+  },
+  {
+    "question": "In reflection ______ method is used to create objects of any class at runtime.",
+    "options": [
+      "Class.forName()",
+      "getConstructor()",
+      "getObject method of Class",
+      "All of the above"
+    ],
+    "answer": 1,
+    "explanation": "While Class.newInstance() was used historically, the modern standard is Class.getConstructor().newInstance(). Class.forName() only loads the class."
+  },
+  {
+    "question": "To execute a stored procedure \"insertDetails\" in a database server, which of the following code snippet can be used?",
+    "options": [
+      "Statement stmt = connection.createStatement(); stmt.execute(\"insertDetails\");",
+      "CallableStatement clbstmt = connection.prepareCall(\"{call insertDetails()}\"); clbstmt.execute();",
+      "StoreProcedureStatement sps = connection.getStoredProcedure(\"insertDetails\");",
+      "PrepareStatement ps = connection.prepareStatement(\"insertDetails\");"
+    ],
+    "answer": 1,
+    "explanation": "CallableStatement is designed for stored procedures. The standard syntax is \"{call procedureName()}\"."
+  },
+  {
+    "question": "Reason(s) why we need Wrapper Classes is /are:",
+    "options": [
+      "null is a possible value",
+      "use it in a Collection",
+      "Helper methods",
+      "All of these"
+    ],
+    "answer": 3,
+    "explanation": "Wrapper classes allow primitives to be treated as Objects (needed for Collections), support null (useful for database/logic), and provide utility methods."
+  },
+  {
+    "question": "What will be the output of below program?\n```java\nclass Animal {\n    String name;\n    public Animal() {\n        super();\n        this.name = \"Default Name\";\n    }\n    public static void main(String[] args) {\n        Animal animal = new Animal();\n        System.out.println(animal);\n    }\n}\n```",
+    "options": [
+      "Compile time error",
+      "Runtime exception",
+      "Default Name",
+      "printing the hash code for animal object"
+    ],
+    "answer": 3,
+    "explanation": "The class does not override toString(). The default Object.toString() prints the class name followed by the hash code (e.g., Animal@1b6d3586)."
+  },
+  {
+    "question": "Which of the following statement(s) is (are) true for channels in NIO class hierarchy?",
+    "options": [
+      "Channels can read from Buffers",
+      "Channels can write to Buffers",
+      "Channels support asynchronous I/O",
+      "All of the above"
+    ],
+    "answer": 3,
+    "explanation": "NIO Channels are bidirectional, can read/write to Buffers, and support asynchronous I/O (AsynchronousFileChannel, etc.)."
+  },
+  {
+    "question": "What is the output from the following code?\n```java\nString s = \"Advanced Computing\";\nString s1 = s.substring(0,7);\nString s2 = s1.substring(2);\nString s3 = s2.substring(0,3);\nSystem.out.println(s3);\n```",
+    "options": [
+      "van",
+      "nce",
+      "computing",
+      "ad"
+    ],
+    "answer": 0,
+    "explanation": "s='Advanced Computing'. s1=s.substring(0,7) is 'Advance'. s2=s1.substring(2) is 'vance' (starts at index 2 'v'). s3=s2.substring(0,3) is 'van' (indices 0,1,2 of 'vance')."
+  },
+  {
+    "question": "Predict the output of the following Java Program.\n```java\npublic class Juggler extends Thread {\n    public static void main(String[] args) {\n        try{ \n            Thread t = new Thread(new Juggler());\n            Thread t2 = new Thread(new Juggler()); \n        } catch (Exception e) { }\n    }\n    public void run() {\n        for (int i=0; i<2; i++) {\n            try{ Thread.sleep(500); System.out.print(\"e\"); }\n            catch (Exception e) { System.out.print(\"e2 \"); }\n            System.out.print(\"T\"+i);\n        }\n    }\n}\n```",
+    "options": [
+      "e2 e",
+      "T0T1T0T1",
+      "No Output",
+      "T0T0T1T1"
+    ],
+    "answer": 2,
+    "explanation": "The threads t and t2 are created but the start() method is never called on them. Thus, the run() method never executes. No output is produced."
+  },
+  {
+    "question": "Predict the output of the following Java Program.\n```java\nclass Clidder {\n    private final void flipper() {\n        System.out.println(\"Clidder\");\n    }\n}\npublic class Clidlet extends Clidder {\n    public final void flipper() {\n        System.out.println(\"Clidlet\");\n    }\n    public static void main(String[] args) {\n        new Clidlet().flipper();\n    }\n}\n```",
+    "options": [
+      "Clidlet",
+      "Clidder",
+      "Compile Error",
+      "Runtime Error"
+    ],
+    "answer": 0,
+    "explanation": "A private method is NOT visible to subclasses. Therefore, Clidlet is NOT overriding flipper(), it is defining a NEW method. This is valid. main calls new Clidlet().flipper(). Output: Clidlet."
+  },
+  {
+    "question": "What will be the output of the following program?\n```java\npublic class TestMap{\n    public static void main(String[] args) {\n        Map<String, String> map = new HashMap<String, String>();\n        map.put(\"key1\",\"value1\");\n        map.put(\"key2\", \"value2\");\n        map.put(\"key3\", \"value3\");\n        Iterator<String> iterator = map.keySet().iterator();\n        while(iterator.hasNext()){\n            System.out.println(map.get(iterator.next()));\n            map.put(\"key4\", \"value4\");\n        }\n    }\n}\n```",
+    "options": [
+      "value1 value2 value3 value4",
+      "value1 ... Exception in thread \"main\" java.util.ConcurrentModificationException",
+      "ConcurrentModificationException immediately",
+      "Compiler error"
+    ],
+    "answer": 1,
+    "explanation": "The code modifies the map (map.put) while iterating over it using an iterator. This causes a ConcurrentModificationException. The exception happens after the first modification check in the loop, so 'value1' might print before the crash."
+  },
+  {
+    "question": "Which exception must be caught for below statement?\n```java\nFileReader f = new FileReader(\"demo\");\n```",
+    "options": [
+      "IOException",
+      "FileNotFoundException",
+      "EOFException",
+      "InputTypeMismatchException"
+    ],
+    "answer": 1,
+    "explanation": "The FileReader constructor throws FileNotFoundException (a subclass of IOException), which is a checked exception and must be handled."
+  },
+  {
+    "question": "What will be the output of the following try catch block?\n```java\nclass Test {\n    public static void main(String args[]){\n        try{\n            double x = 0.0;\n            throw new Exception(\"Thrown\");\n            return;\n        }\n        catch(Exception e){\n            System.out.println(\"Exception caught\");\n            return;\n        }\n        finally{\n            System.out.println(\"finally\");\n        }\n    }\n}\n```",
+    "options": [
+      "Exception caught finally",
+      "Thrown Exception caught finally",
+      "Unreachable statement error at line 6",
+      "Runtime Exception"
+    ],
+    "answer": 2,
+    "explanation": "The line 'return;' after 'throw new Exception' is unreachable code. The compiler will complain with an unreachable statement error."
+  },
+  {
+    "question": "How many user threads will gets created when we execute the below program?\n```java\npublic class TestMain{\n    public static void main(String[] args) {\n        System.out.println(\"In main method\");\n        Thread t1 = new Thread(\"thread1\");\n        Thread t2 = new Thread(\"thread2\");\n        t1.start();\n        t2.start();\n    }\n}\n```",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2,
+    "explanation": "There is the main thread, plus t1 and t2 started by the main thread. Total = 3 user threads."
+  },
+  {
+    "question": "___ class object is used for Authentication in session while using Java Mail API.",
+    "options": [
+      "Authenticator",
+      "Multipart",
+      "Transport",
+      "None of these"
+    ],
+    "answer": 0,
+    "explanation": "javax.mail.Authenticator is used to provide authentication (username/password) to the Session."
+  },
+  {
+    "question": "What will be the output of the below code?\n```java\ntry{\n    int myNum = 0;\n    myNum = Integer.parseInt(\"123A\");\n}\ncatch(Exception e){\n    System.out.print(myNum);\n}\n```",
+    "options": [
       "0",
-      "null"
+      "123A",
+      "NumberFormatException",
+      "Compilation Error"
     ],
-    "answer": 1
+    "answer": 3,
+    "explanation": "Variable 'myNum' is declared inside the try block. It is not accessible in the catch block. This causes a compilation error."
   },
   {
-    "question": "Which keyword is used to inherit a class in Java?",
+    "question": "What will be the output of the following java program?\n```java\npublic static void lambdaExpressionPredicate () {\n    List<Integer> numbers = Arrays.asList(1, 3, 4, 6, 2, 7);\n    numbers.stream()\n           .filter((number) -> (number % 2 == 0))\n           .forEach(number -> System.out.print(number + \" \"));\n}\n```",
     "options": [
-      "implement",
-      "extends",
-      "inherits",
-      "super"
+      "1 3 7",
+      "1 2 3 4 6 7",
+      "1 3 7",
+      "4 6 2"
     ],
-    "answer": 1
+    "answer": 3,
+    "explanation": "The filter condition (number % 2 == 0) selects even numbers. From the list {1,3,4,6,2,7}, the even numbers are 4, 6, and 2."
   },
   {
-    "question": "Which access modifier allows visibility within the same package and to subclasses in different packages?",
+    "question": "What will be the output of following code?\n```java\nclass Demo {\n    public void show() {\n        ArrayList<String> list = new ArrayList<String>();\n        list.add(\"banana\");\n        list.add(\"apple\");\n        Iterator itr = list.iterator();\n        Collections.sort(list);\n        while (itr.hasNext()) {\n            System.out.print(itr.next() + \" \");\n        }\n    }\n}\n```",
+    "options": [
+      "Compile Error",
+      "apple banana",
+      "banana apple",
+      "ConcurrentModificationException"
+    ],
+    "answer": 3,
+    "explanation": "The list is structurally modified (sorted) after the iterator is created. Calling itr.next() detects this change and throws ConcurrentModificationException."
+  },
+  {
+    "question": "What will be the output of the below code?\n```java\nabstract class Bird{\n    static void showAge(){\n        int age = 15;\n        System.out.println(age);\n    }\n}\npublic class AngryBird extends Bird {\n    public static void main(String args[]){\n        AngryBird a = new AngryBird();\n        a.showAge();\n    }\n}\n```",
+    "options": [
+      "Compilation succeeds and give output 15",
+      "Compilation fails",
+      "Runtime Exception",
+      "No output"
+    ],
+    "answer": 0,
+    "explanation": "Static methods are inherited (hidden) by subclasses. Calling a.showAge() (where a is an instance) is valid Java syntax for calling a static method (though class access Bird.showAge() is preferred). It prints 15."
+  },
+  {
+    "question": "What will be the output of the program?\n```java\nclass Client {\n    private int id;\n    public Client(int id) { this.id = id; }\n    public static void main(String args[]){\n        Client client1 = new Client(25);\n        Client client2 = new Client(25);\n        System.out.println(client1 == client2);\n    }\n}\n```",
+    "options": [
+      "True",
+      "False",
+      "Compile Error",
+      "Runtime Exception"
+    ],
+    "answer": 1,
+    "explanation": "The '==' operator compares object references (memory addresses). Since client1 and client2 are new separate objects, they are not equal."
+  },
+  {
+    "question": "You want subclasses in any package to have access to members of a superclass. Which is the most restrictive access that accomplishes this objective?",
     "options": [
       "public",
-      "private",
       "protected",
+      "private",
       "default"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "'protected' access allows subclasses in different packages to access the member, while 'public' allows everyone. 'protected' is more restrictive than 'public' but still allows inheritance access."
   },
   {
-    "question": "What is the primary difference between a String and a StringBuffer?",
+    "question": "If user wants to read data in string format from a file which of the following classes can be used?",
     "options": [
-      "String is mutable, StringBuffer is immutable",
-      "StringBuffer is thread-safe and mutable",
-      "String can be subclassed",
-      "There is no difference"
+      "DataInputStream",
+      "BufferedReader",
+      "ObjectOutputStream",
+      "Both A and B"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "BufferedReader (specifically readLine()) is designed for reading character/String data. DataInputStream is for binary primitive data."
   },
   {
-    "question": "Which method is called automatically when an object is created?",
+    "question": "wait(), notify() & notifyAll() are methods of which of the following class or interface?",
     "options": [
-      "init",
-      "main",
-      "constructor",
-      "finalize"
+      "Thread class",
+      "Runnable interface",
+      "Object class",
+      "None of these"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "These methods are used for inter-thread communication on locks, and since every object in Java has a monitor, these methods are defined in the Object class."
   },
   {
-    "question": "Which collection class allows a single null key and multiple null values?",
+    "question": "Which of the following is FALSE about abstract classes in Java?",
     "options": [
-      "Hashtable",
-      "Vector",
-      "HashMap",
-      "TreeMap"
+      "Abstract class must have at least one abstract method",
+      "Abstract class can have constructors",
+      "A class can be declared abstract even without any abstract method",
+      "Abstract class cannot have static methods"
     ],
-    "answer": 2
+    "answer": 3,
+    "explanation": "Abstract classes CAN have static methods. Therefore, statement D is False."
   },
   {
-    "question": "What is the initial capacity of an ArrayList if not specified?",
+    "question": "Which of the following is right way of calling getData function?\n```java\ninterface MyCompare<T,F> {\n    F getData(T a);\n}\n```",
     "options": [
-      "5",
-      "10",
-      "16",
-      "20"
+      "MyCompare<String, String> ob=s->{return s.toUpperCase();}",
+      "MyCompare<Integer, String> ob=i->{return i.toString();}",
+      "MyCompare<String, Integer> ob=s->{return s.length();}",
+      "All of the above"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "s.length() returns an integer. Only option C defines F as Integer, matching the return type of the lambda expression."
   },
   {
-    "question": "Which interface does the Vector class implement?",
+    "question": "Which of the following can help in avoiding NullPointerException and null checks in java 8?",
     "options": [
-      "Set",
-      "List",
-      "Map",
-      "Queue"
+      "Optional",
+      "Required",
+      "NotNull",
+      "NotRequired"
     ],
-    "answer": 1
+    "answer": 0,
+    "explanation": "Java 8 introduced java.util.Optional<T> to represent a value that may or may not be present, avoiding explicit null checks."
   },
   {
-    "question": "Which keyword is used to prevent a method from being overridden?",
+    "question": "Which of the following is the method provided by the Object class?",
     "options": [
-      "static",
-      "abstract",
-      "final",
-      "volatile"
+      "getClass()",
+      "hashCode()",
+      "equals()",
+      "All of the above"
     ],
-    "answer": 2
+    "answer": 3,
+    "explanation": "Object is the root class and provides all these methods."
   },
   {
-    "question": "What is the purpose of the 'finally' block in exception handling?",
+    "question": "Which of the following will open file in append mode?",
     "options": [
-      "To handle the exception",
-      "To specify the exception type",
-      "To execute code regardless of whether an exception occurs",
-      "To throw a new exception"
+      "new BufferedOutputStream(new FileOutputStream(\"test.txt\"))",
+      "new FileOutputStream(\"test.txt\", false)",
+      "new BufferedOutputStream(new FileOutputStream(\"test.txt\", true))",
+      "new FileInputStream(\"test.txt\", true)"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "FileOutputStream has a constructor taking a boolean 'append' flag. Setting it to true opens the file in append mode."
   },
   {
-    "question": "Which of these is a Checked Exception?",
+    "question": "Which of the following is a correct difference between HashMap and ConcurrentHashMap?",
     "options": [
-      "NullPointerException",
-      "ArrayIndexOutOfBoundsException",
-      "IOException",
-      "ArithmeticException"
+      "HashMap maintains insertion order, ConcurrentHashMap does not",
+      "HashMap is synchronized, ConcurrentHashMap is not",
+      "HashMap can have one null key, ConcurrentHashMap does not allow null keys/values",
+      "None of these"
     ],
-    "answer": 2
-  },
-  {
-    "question": "What is the root interface of the Collection hierarchy?",
-    "options": [
-      "List",
-      "Set",
-      "Collection",
-      "Map"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which Map implementation maintains the insertion order of elements?",
-    "options": [
-      "HashMap",
-      "TreeMap",
-      "LinkedHashMap",
-      "Hashtable"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What is the result of '15 >> 2' in Java?",
-    "options": [
-      "30",
-      "60",
-      "3",
-      "7"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which new feature in Java 8 allows methods to be defined in interfaces?",
-    "options": [
-      "Abstract methods",
-      "Default methods",
-      "Final methods",
-      "Native methods"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What is the purpose of the 'transient' keyword?",
-    "options": [
-      "To prevent a variable from being serialized",
-      "To make a variable thread-safe",
-      "To make a variable constant",
-      "To allow access across packages"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "Which method is used to start a thread execution?",
-    "options": [
-      "`run()`",
-      "`start()`",
-      "`init()`",
-      "`execute()`"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What is the problem with the deprecated 'suspend()' method in Threads?",
-    "options": [
-      "It consumes too much memory",
-      "It terminates the thread immediately",
-      "It is prone to deadlocks",
-      "It ignores thread priority"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which JDBC driver type converts JDBC calls into ODBC calls?",
-    "options": [
-      "Type-1",
-      "Type-2",
-      "Type-3",
-      "Type-4"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "In JDBC, which interface is used to execute stored procedures?",
-    "options": [
-      "Statement",
-      "PreparedStatement",
-      "CallableStatement",
-      "ResultSet"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which JSP implicit object is used to write content to the client?",
-    "options": [
-      "request",
-      "response",
-      "out",
-      "writer"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which JSTL tag is used for iteration, similar to a for loop?",
-    "options": [
-      "`<c:if>`",
-      "`<c:choose>`",
-      "`<c:forEach>`",
-      "`<c:loop>`"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What is the main purpose of the Session Façade design pattern?",
-    "options": [
-      "To display data to the user",
-      "To encapsulate complex business logic interactions",
-      "To manage database connections directly",
-      "To handle HTTP requests"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which Java 8 feature allows JavaScript to be executed on the JVM?",
-    "options": [
-      "Rhino",
-      "Nashorn",
-      "V8",
-      "SpiderMonkey"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which method in the Object class is used to return a string representation of the object?",
-    "options": [
-      "`getString()`",
-      "`print()`",
-      "`toString()`",
-      "`valueOf()`"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What does the 'synchronized' keyword ensure in multithreading?",
-    "options": [
-      "Faster execution",
-      "That only one thread accesses a resource at a time",
-      "That threads run in parallel",
-      "That deadlocks are prevented"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which class is the superclass of all Exception classes?",
-    "options": [
-      "RuntimeException",
-      "Error",
-      "Throwable",
-      "String"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What is a Marker Interface in Java?",
-    "options": [
-      "An interface with only static methods",
-      "An interface with no fields or methods",
-      "An interface with default methods",
-      "An interface used for marking errors"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which layout manager is the default for a Frame?",
-    "options": [
-      "FlowLayout",
-      "BorderLayout",
-      "GridLayout",
-      "CardLayout"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What is the return type of the `hashCode()` method?",
-    "options": [
-      "`long`",
-      "`Object`",
-      "`int`",
-      "`String`"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which stream class is used to read characters from a file?",
-    "options": [
-      "FileInputStream",
-      "FileReader",
-      "ObjectInputStream",
-      "DataInputStream"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which operator is used to check if an object is an instance of a specific class?",
-    "options": [
-      "`typeof`",
-      "`instanceof`",
-      "`isA`",
-      "`check`"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What is the size of a char data type in Java?",
-    "options": [
-      "8 bit",
-      "16 bit",
-      "32 bit",
-      "Depends on the OS"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which of these is NOT a valid main method signature?",
-    "options": [
-      "`public static void main(String[] args)`",
-      "`static public void main(String[] args)`",
-      "`public void static main(String[] args)`",
-      "`public static void main(String... args)`"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which package contains the lightweight UI components (Swing)?",
-    "options": [
-      "java.awt",
-      "javax.swing",
-      "java.ui",
-      "java.applet"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What does the 'super' keyword refer to?",
-    "options": [
-      "Current class object",
-      "Parent class object",
-      "Static method",
-      "Abstract class"
-    ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "ConcurrentHashMap does not support null keys or null values to avoid ambiguity in concurrent environments. HashMap supports one null key."
   }
 ]
