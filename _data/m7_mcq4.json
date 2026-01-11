@@ -1,0 +1,442 @@
+[
+    {
+        "question": "Consider the following C++ code snippet. What will be the output on a standard 64-bit system?\n```cpp\nint a = 5;\nvoid* ptr = &a;\ncout << *(int*)ptr + 1 << \" \" << sizeof(ptr);\n```",
+        "options": [
+            "6 4",
+            "6 8",
+            "Compile Error",
+            "Address of a plus 1"
+        ],
+        "answer": 1,
+        "explanation": "Even though 'a' is an int, a void pointer on a 64-bit system always occupies 8 bytes."
+    },
+    {
+        "question": "In C++17, which initialization method is preferred to avoid the 'Most Vexing Parse'?",
+        "options": [
+            "int x(5);",
+            "int x = 5;",
+            "int x{5};",
+            "int x = int(5);"
+        ],
+        "answer": 2,
+        "explanation": "Uniform initialization using curly braces {} prevents the compiler from mistaking variable declarations for function prototypes."
+    },
+    {
+        "question": "What happens when a 'const' member function tries to modify a 'mutable' data member?",
+        "options": [
+            "Compilation Error",
+            "Undefined Behavior",
+            "Successful modification",
+            "Logical Error"
+        ],
+        "answer": 2,
+        "explanation": "The 'mutable' keyword is specifically designed to allow member modification within const-qualified functions (e.g., for caching or mutexes)."
+    },
+    {
+        "question": "Dry run this pointer arithmetic snippet:\n```cpp\nint arr[] = {10, 20, 30, 40};\nint *p = arr;\ncout << *(p++) << \" \" << *++p;\n```",
+        "options": [
+            "10 20",
+            "10 30",
+            "20 30",
+            "20 20"
+        ],
+        "answer": 1,
+        "explanation": "p++ returns 10 then increments to &arr[1]. ++p then increments to &arr[2] and returns 30."
+    },
+    {
+        "question": "Which operator cannot be overloaded in C++?",
+        "options": [
+            "->",
+            "[]",
+            "::",
+            "()"
+        ],
+        "answer": 2,
+        "explanation": "Scope resolution (::), Member Access (.), Ternary (?:), and sizeof cannot be overloaded to maintain language integrity."
+    },
+    {
+        "question": "In a class with multiple inheritance, if two base classes have a function with the same signature, how is it resolved in the derived class?",
+        "options": [
+            "Compiler chooses the first one",
+            "It's a compile-time ambiguity error",
+            "Virtual inheritance is mandatory",
+            "The derived class automatically overrides both"
+        ],
+        "answer": 1,
+        "explanation": "This is a classic 'Diamond-adjacent' ambiguity; the user must explicitly scope the call (Base1::func()) or override it."
+    },
+    {
+        "question": "What is the output of the following dynamic memory code?\n```cpp\nint *p = new int[5]{1,2,3,4,5};\ndelete p;\n// What happened here?\n```",
+        "options": [
+            "Entire array deleted",
+            "Memory leak for 4 integers",
+            "Runtime Crash immediately",
+            "Undefined behavior, only first element deleted"
+        ],
+        "answer": 3,
+        "explanation": "Using 'delete' instead of 'delete[]' for an array allocated with 'new[]' results in undefined behavior, usually leaking subsequent elements."
+    },
+    {
+        "question": "A class 'A' has a virtual destructor. Class 'B' derives from 'A'. We execute: `A* obj = new B(); delete obj;` What is the sequence?",
+        "options": [
+            "~A() then ~B()",
+            "~B() then ~A()",
+            "Only ~A()",
+            "Only ~B()"
+        ],
+        "answer": 1,
+        "explanation": "Virtual destructors ensure that the most derived destructor is called first, followed by base destructors."
+    },
+    {
+        "question": "What is the primary difference between 'static_cast' and 'reinterpret_cast'?",
+        "options": [
+            "static_cast is for pointers only",
+            "reinterpret_cast performs runtime checks",
+            "static_cast respects class hierarchies; reinterpret_cast is a raw bit cast",
+            "There is no difference"
+        ],
+        "answer": 2,
+        "explanation": "static_cast is safer as it checks if the conversion is valid at compile time; reinterpret_cast simply reinterprets the bit pattern."
+    },
+    {
+        "question": "Identify the result of this lambda expression (C++11):\n```cpp\nint k = 10;\nauto f = [k](int n) mutable { k += n; return k; };\ncout << f(5) << \" \" << k;\n```",
+        "options": [
+            "15 15",
+            "15 10",
+            "10 10",
+            "Compile Error"
+        ],
+        "answer": 1,
+        "explanation": "The lambda captures 'k' by value. 'mutable' allows modifying the local copy inside the lambda, but the original 'k' remains 10."
+    },
+    {
+        "question": "Which STL container provides 'amortized' O(1) time complexity for insertion at the end?",
+        "options": [
+            "std::list",
+            "std::map",
+            "std::vector",
+            "std::set"
+        ],
+        "answer": 2,
+        "explanation": "Vector insertion is O(1) unless it needs to reallocate, in which case it's O(n), averaging out to amortized O(1)."
+    },
+    {
+        "question": "What is 'Object Slicing' in C++?",
+        "options": [
+            "Deleting half an object",
+            "Passing a derived object by value to a base class parameter",
+            "Using private inheritance",
+            "Pointer arithmetic errors"
+        ],
+        "answer": 1,
+        "explanation": "When passed by value, the 'derived' parts are stripped away, leaving only the 'base' portion of the object."
+    },
+    {
+        "question": "Analyze this Constructor code:\n```cpp\nclass Test {\npublic:\n    Test() { cout << \"A\"; }\n    Test(const Test& t) { cout << \"B\"; }\n};\nTest t1; Test t2 = t1;\n```",
+        "options": [
+            "AA",
+            "AB",
+            "BA",
+            "BB"
+        ],
+        "answer": 1,
+        "explanation": "t1 uses the default constructor (A). t2 is initialized from t1, triggering the Copy Constructor (B)."
+    },
+    {
+        "question": "What is the size of an empty class in C++?",
+        "options": [
+            "0 bytes",
+            "1 byte",
+            "4 bytes",
+            "Depends on compiler"
+        ],
+        "answer": 1,
+        "explanation": "C++ requires empty classes to have a non-zero size (usually 1 byte) to ensure distinct addresses for different objects."
+    },
+    {
+        "question": "What does the 'this' pointer point to?",
+        "options": [
+            "The class itself",
+            "The current object being operated on",
+            "The base class",
+            "The static memory area"
+        ],
+        "answer": 1,
+        "explanation": "'this' is a constant pointer to the object for which the non-static member function was invoked."
+    },
+    {
+        "question": "Dry run this logic snippet:\n```cpp\nint x = 1, y = 2;\nint z = x > y ? x++ : y++;\ncout << x << y << z;\n```",
+        "options": [
+            "132",
+            "232",
+            "122",
+            "222"
+        ],
+        "answer": 0,
+        "explanation": "The condition is false. Only y++ is executed. z gets the value of y (2) before increment. x remains 1, y becomes 3."
+    },
+    {
+        "question": "In Exception Handling, what happens if an exception is thrown inside a destructor during stack unwinding?",
+        "options": [
+            "It is caught by the next catch block",
+            "The program calls std::terminate()",
+            "Destructor is skipped",
+            "The exception is ignored"
+        ],
+        "answer": 1,
+        "explanation": "Throwing another exception while one is already active (during stack unwinding) causes immediate program termination."
+    },
+    {
+        "question": "Which keyword allows a derived class to access protected members of a base class?",
+        "options": [
+            "public",
+            "protected",
+            "private",
+            "Derived classes access them by default"
+        ],
+        "answer": 3,
+        "explanation": "Protected members are accessible by derived classes and the base class itself, but not from the outside."
+    },
+    {
+        "question": "What is a 'Pure Virtual Function'?",
+        "options": [
+            "A function with no body",
+            "A function defined as = 0",
+            "A function that can't be overridden",
+            "A function in a static class"
+        ],
+        "answer": 1,
+        "explanation": "A pure virtual function makes a class abstract and must be overridden by concrete derived classes."
+    },
+    {
+        "question": "Consider: `char* p = \"Hello\"; p[0] = 'M';` What happens?",
+        "options": [
+            "Success: p becomes 'Mello'",
+            "Compile Error",
+            "Runtime Error (Access Violation)",
+            "p points to 'M'"
+        ],
+        "answer": 2,
+        "explanation": "String literals are stored in read-only memory. Modifying them via a char* is undefined behavior, usually crashing."
+    },
+    {
+        "question": "What is the purpose of 'Virtual Inheritance'?",
+        "options": [
+            "To speed up polymorphic calls",
+            "To solve the Diamond Problem (duplicate base objects)",
+            "To allow private members to be inherited",
+            "To prevent class instantiation"
+        ],
+        "answer": 1,
+        "explanation": "Virtual inheritance ensures only one instance of a common base class is present in the final derived object."
+    },
+    {
+        "question": "Analyze this template code:\n```cpp\ntemplate <typename T>\nT add(T a, T b) { return a + b; }\ncout << add(5, 4.5);\n```",
+        "options": [
+            "9.5",
+            "9",
+            "Compile Error",
+            "10"
+        ],
+        "answer": 2,
+        "explanation": "Template deduction fails because T cannot be both 'int' (5) and 'double' (4.5) simultaneously. Explicit call add<double>(5, 4.5) would work."
+    },
+    {
+        "question": "How many times is 'Destructor' called here?\n```cpp\nclass MyClass { ... };\nMyClass obj1;\nMyClass *ptr = new MyClass();\nMyClass obj2 = obj1;\n```",
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "answer": 1,
+        "explanation": "Only stack objects obj1 and obj2 are automatically destroyed. The 'new' object requires an explicit 'delete' call."
+    },
+    {
+        "question": "In STL, what is the difference between 'size()' and 'capacity()' of a vector?",
+        "options": [
+            "They are synonyms",
+            "size is used; capacity is total allocated memory",
+            "capacity is used; size is total",
+            "size is for elements; capacity is for bytes"
+        ],
+        "answer": 1,
+        "explanation": "Size is the number of elements currently in the vector; capacity is the total space allocated before a resize is needed."
+    },
+    {
+        "question": "What is the 'Default Access Specifier' for a C++ 'struct'?",
+        "options": [
+            "private",
+            "public",
+            "protected",
+            "internal"
+        ],
+        "answer": 1,
+        "explanation": "The only difference between a class and a struct in C++ is that struct members are public by default."
+    },
+    {
+        "question": "What will this output?\n```cpp\nint a = 10, b = 20;\nint &ref = a;\nref = b;\ncout << a << \" \" << ref;\n```",
+        "options": [
+            "10 20",
+            "20 20",
+            "10 10",
+            "Compile Error"
+        ],
+        "answer": 1,
+        "explanation": "References cannot be reseated. 'ref = b' actually assigns the value of b to 'a'."
+    },
+    {
+        "question": "Which stream manipulator is used to set the number of digits after the decimal point?",
+        "options": [
+            "setwidth()",
+            "setprecision()",
+            "fixed()",
+            "Both B and C"
+        ],
+        "answer": 3,
+        "explanation": "std::fixed combined with std::setprecision(n) ensures exactly 'n' digits appear after the decimal."
+    },
+    {
+        "question": "What is a 'Friend Function'?",
+        "options": [
+            "A member function of the same class",
+            "A non-member function that can access private members",
+            "A function in a global namespace",
+            "A function that inherits from the class"
+        ],
+        "answer": 1,
+        "explanation": "Friendship is granted by the class, allowing an external function access to its internals."
+    },
+    {
+        "question": "What is the output of `cout << 10 + \"A\";` ?",
+        "options": [
+            "10A",
+            "75",
+            "Address offset by 10 from \"A\"",
+            "Error"
+        ],
+        "answer": 2,
+        "explanation": "\"A\" is a char pointer. Adding 10 performs pointer arithmetic, leading to memory 10 bytes past the string literal."
+    },
+    {
+        "question": "Identify the correct way to declare a 'Pointer to a Function' that returns an int and takes an int?",
+        "options": [
+            "int *ptr(int);",
+            "int (*ptr)(int);",
+            "int ptr*(int);",
+            "void *ptr(int);"
+        ],
+        "answer": 1,
+        "explanation": "The parentheses around (*ptr) are essential to indicate it's a pointer to a function, not a function returning a pointer."
+    },
+    {
+        "question": "What is the 'V-Table' (Virtual Table)?",
+        "options": [
+            "A table for storing variables",
+            "A lookup table for dynamic dispatch of virtual functions",
+            "A table of constant values",
+            "A debugging tool"
+        ],
+        "answer": 1,
+        "explanation": "Compilers use V-Tables to resolve which function implementation to call at runtime for polymorphic objects."
+    },
+    {
+        "question": "Analyze the 'Explicit' keyword purpose:\n```cpp\nclass Box {\npublic:\n    explicit Box(int size) { ... }\n};\nBox b = 10; // Line X\n```",
+        "options": [
+            "Line X works fine",
+            "Line X fails (prevents implicit conversion)",
+            "Explicit is for destructors only",
+            "Box b(10) also fails"
+        ],
+        "answer": 1,
+        "explanation": "'explicit' prevents the compiler from using the constructor for implicit type conversions (like int to Box)."
+    },
+    {
+        "question": "In C++, 'inline' functions are:",
+        "options": [
+            "Guaranteed to be expanded by the compiler",
+            "A suggestion to the compiler for optimization",
+            "Always slower than normal functions",
+            "Only allowed for member functions"
+        ],
+        "answer": 1,
+        "explanation": "Inline is a hint; the compiler may ignore it if the function is too complex (e.g., contains loops or recursion)."
+    },
+    {
+        "question": "What does 'std::move' actually do in C++11?",
+        "options": [
+            "Physically moves data in memory",
+            "Copies data then deletes original",
+            "Casts its argument to an rvalue reference",
+            "Nothing, it's a placeholder"
+        ],
+        "answer": 2,
+        "explanation": "std::move doesn't move anything; it just tells the compiler 'you can treat this as an rvalue', enabling move constructors."
+    },
+    {
+        "question": "What is the output?\n```cpp\n#define SQUARE(x) x*x\ncout << SQUARE(5+1);\n```",
+        "options": [
+            "36",
+            "11",
+            "26",
+            "Error"
+        ],
+        "answer": 1,
+        "explanation": "Macros are simple text replacement: 5+1*5+1 = 5+5+1 = 11. Proper macro: #define SQUARE(x) ((x)*(x))"
+    },
+    {
+        "question": "Which file handling mode allows writing at the end of the file without erasing content?",
+        "options": [
+            "ios::out",
+            "ios::ate",
+            "ios::app",
+            "ios::trunc"
+        ],
+        "answer": 2,
+        "explanation": "ios::app (append) moves the file pointer to the end before every write operation."
+    },
+    {
+        "question": "What is the result of `sizeof(char)` on any C++ compliant system?",
+        "options": [
+            "1",
+            "2",
+            "4",
+            "System dependent"
+        ],
+        "answer": 0,
+        "explanation": "The C++ standard guarantees that sizeof(char) is always 1."
+    },
+    {
+        "question": "Which of these is NOT a valid RTTI (Run-Time Type Information) feature?",
+        "options": [
+            "typeid",
+            "dynamic_cast",
+            "std::type_info",
+            "static_cast"
+        ],
+        "answer": 3,
+        "explanation": "static_cast is a compile-time feature and does not use RTTI."
+    },
+    {
+        "question": "Identify the error in this snippet:\n```cpp\nconst int p = 10;\nint *ptr = &p;\n```",
+        "options": [
+            "Syntax error in p",
+            "Cannot assign const address to non-const pointer",
+            "ptr is missing *",
+            "No error"
+        ],
+        "answer": 1,
+        "explanation": "Assigning &p (const int*) to ptr (int*) discards qualifiers. Requires a const_cast or changing ptr to 'const int*'."
+    },
+    {
+        "question": "What is 'RAII' in C++?",
+        "options": [
+            "Runtime Array Initialized Instance",
+            "Resource Acquisition Is Initialization",
+            "Recursive Algorithm for Internal Inheritance",
+            "Random Access Interface Information"
+        ],
+        "answer": 1,
+        "explanation": "RAII is the core C++ idiom where resource management (files, memory) is tied to object lifetime (constructor/destructor)."
+    }
+]
