@@ -531,6 +531,77 @@ function App() {
 
 ---
 
+## 🧩 Composition vs Inheritance
+
+React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.
+
+### Containment (Children Prop):
+Some components don't know their children ahead of time (e.g., Sidebar, Dialog). Use `children` prop to pass elements directly.
+
+```jsx
+function FancyBorder(props) {
+  return (
+    <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
+    </div>
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">Welcome</h1>
+      <p className="Dialog-message">Thank you for visiting our spacecraft!</p>
+    </FancyBorder>
+  );
+}
+```
+
+### Specialization:
+Sometimes we think about components as being "special cases" of other components. For example, `WelcomeDialog` is a special case of `Dialog`.
+
+```jsx
+function Dialog(props) {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">{props.title}</h1>
+      <p className="Dialog-message">{props.message}</p>
+    </FancyBorder>
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    <Dialog title="Welcome" message="Thank you for visiting our spacecraft!" />
+  );
+}
+```
+
+**Note**: Facebook uses React in thousands of components, and they haven't found any use cases where inheritance would be recommended over composition.
+
+---
+
+## 🧠 Thinking in React
+
+React is a new way of thinking about building web apps.
+
+### Step 1: Break The UI Into A Component Hierarchy
+Draw boxes around every component (and subcomponent) in the mock and give them all names.
+
+### Step 2: Build A Static Version in React
+Build components that reuse other components and pass data using props. Don't use state at all to build this static version.
+
+### Step 3: Identify The Minimal (but complete) Representation Of UI State
+Think of the minimal set of mutable state that your app needs. DRY (Don't Repeat Yourself).
+
+### Step 4: Identify Where Your State Should Live
+Identify every component that renders something based on that state. Find a common owner component (a single component above all the components that need the state in the hierarchy).
+
+### Step 5: Add Inverse Data Flow
+Pass callbacks down to child components so they can update the state in the parent.
+
+---
+
 ## ⚡ Performance Optimization
 
 ### React.memo:

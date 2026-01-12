@@ -533,6 +533,56 @@ function ContactForm() {
 
 ---
 
+## 🏗️ Lifting State Up
+
+When several components need to reflect the same changing data, we recommend lifting the shared state up to their closest common ancestor.
+
+### The Problem:
+Two sibling components need access to the same state, but state is local to each component.
+
+### The Solution:
+Move the state to the parent component and pass it down via props.
+
+```jsx
+// Parent Component - Holds the state
+function Calculator() {
+    const [temperature, setTemperature] = useState('');
+
+    return (
+        <div>
+            <TemperatureInput 
+                scale="c" 
+                temperature={temperature} 
+                onTemperatureChange={setTemperature} 
+            />
+            <TemperatureInput 
+                scale="f" 
+                temperature={temperature} 
+                onTemperatureChange={setTemperature} 
+            />
+        </div>
+    );
+}
+
+// Child Component - Receives state and updater via props
+function TemperatureInput({ scale, temperature, onTemperatureChange }) {
+    const handleChange = (e) => {
+        onTemperatureChange(e.target.value);
+    };
+
+    return (
+        <fieldset>
+            <legend>Enter temperature in {scale}:</legend>
+            <input value={temperature} onChange={handleChange} />
+        </fieldset>
+    );
+}
+```
+
+**Key Takeaway**: There should be a "single source of truth" for any data that changes in a React application.
+
+---
+
 ## 🔁 Class Component Lifecycle
 
 For understanding older code and concepts.
