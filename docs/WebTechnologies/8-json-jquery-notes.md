@@ -13,6 +13,7 @@ nav_order: 8
 
 ### JSON vs JavaScript Object:
 
+
 | Feature | JSON | JavaScript Object |
 |---------|------|-------------------|
 | Keys | Must be quoted strings | Can be unquoted |
@@ -261,6 +262,7 @@ $(() => {
 ```
 
 ### jQuery vs Vanilla JS:
+
 
 | Task | jQuery | Vanilla JS |
 |------|--------|------------|

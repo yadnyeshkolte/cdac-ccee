@@ -663,6 +663,7 @@ export const store = configureStore({
 
 ## 🔄 Redux vs Context vs useState
 
+
 | Feature | useState | Context | Redux |
 |---------|----------|---------|-------|
 | Scope | Component | Subtree | Global |

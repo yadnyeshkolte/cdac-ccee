@@ -184,6 +184,7 @@ const module = await import('./math.mjs');
 
 ### CommonJS vs ES Modules:
 
+
 | Feature | CommonJS | ES Modules |
 |---------|----------|------------|
 | Syntax | `require()`, `module.exports` | `import`, `export` |
@@ -199,6 +200,7 @@ const module = await import('./math.mjs');
 ## 📦 npm (Node Package Manager)
 
 ### npm Commands:
+
 
 | Command | Description |
 |---------|-------------|
@@ -277,6 +279,7 @@ MAJOR.MINOR.PATCH
 ```
 
 ### Version Ranges:
+
 
 | Syntax | Meaning |
 |--------|---------|

@@ -87,6 +87,7 @@ Problem: Find the largest number in an array
 
 **Common Problem-Solving Strategies:**
 
+
 | Strategy | Description | When to Use |
 |----------|-------------|-------------|
 | **Divide and Conquer** | Break problem into smaller sub-problems | Large, complex problems |
@@ -500,6 +501,7 @@ graph TD
 ```
 
 ### Common Problem Patterns
+
 
 | Pattern | Description | Example |
 |---------|-------------|---------|

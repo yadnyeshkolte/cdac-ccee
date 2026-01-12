@@ -50,6 +50,7 @@ graph TD
 
 ## 2. Tree Terminology
 
+
 | Term | Definition | Example |
 |------|------------|---------|
 | **Root** | Top node with no parent | 50 |
@@ -362,6 +363,7 @@ public class BST {
 
 ### BST Complexity
 
+
 | Operation | Average | Worst Case |
 |-----------|---------|------------|
 | **Search** | O(log n) | O(n) |
@@ -424,6 +426,7 @@ A   x      →       y   C
 ```
 
 ### AVL Complexity
+
 
 | Operation | Time |
 |-----------|------|

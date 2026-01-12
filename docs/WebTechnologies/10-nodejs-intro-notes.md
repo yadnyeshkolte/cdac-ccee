@@ -22,6 +22,7 @@ nav_order: 10
 
 ## 🌐 Browser JS vs Node.js
 
+
 | Feature | Browser JavaScript | Node.js |
 |---------|-------------------|---------|
 | Environment | Browser | Server |
@@ -34,6 +35,7 @@ nav_order: 10
 | Engine | V8 (Chrome), SpiderMonkey (Firefox) | V8 |
 
 ### Global Objects in Node.js:
+
 
 | Object | Description |
 |--------|-------------|
@@ -270,6 +272,7 @@ $ node
 ```
 
 ### REPL Commands:
+
 
 | Command | Description |
 |---------|-------------|

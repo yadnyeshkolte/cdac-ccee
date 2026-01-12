@@ -48,6 +48,7 @@ nav_order: 2
 
 ### Text Formatting Tags:
 
+
 | Tag | Purpose | Example |
 |-----|---------|---------|
 | `<h1>` to `<h6>` | Headings (h1 largest) | `<h1>Main Title</h1>` |
@@ -89,6 +90,8 @@ nav_order: 2
 ```
 
 ### Target Attribute Values:
+
+
 | Value | Behavior |
 |-------|----------|
 | `_self` | Same window (default) |
@@ -118,6 +121,8 @@ nav_order: 2
 ```
 
 ### Image Formats:
+
+
 | Format | Best For | Transparency | Animation |
 |--------|----------|--------------|-----------|
 | JPEG | Photos | ❌ | ❌ |
@@ -203,6 +208,8 @@ nav_order: 2
 ```
 
 ### Table Attributes:
+
+
 | Attribute | Purpose | Example |
 |-----------|---------|---------|
 | `colspan` | Span multiple columns | `<td colspan="2">` |
@@ -234,6 +241,8 @@ nav_order: 2
 ```
 
 ### iframe Attributes:
+
+
 | Attribute | Purpose |
 |-----------|---------|
 | `src` | URL to embed |
@@ -268,6 +277,7 @@ nav_order: 2
 ```
 
 ### Semantic Elements:
+
 
 | Element | Purpose |
 |---------|---------|
@@ -304,6 +314,8 @@ nav_order: 2
 ```
 
 ### Form Attributes:
+
+
 | Attribute | Purpose |
 |-----------|---------|
 | `action` | URL to submit form data |
@@ -314,6 +326,8 @@ nav_order: 2
 | `target` | Where to display response |
 
 ### enctype Values:
+
+
 | Value | Use Case |
 |-------|----------|
 | `application/x-www-form-urlencoded` | Default, text data |
@@ -358,6 +372,7 @@ nav_order: 2
 ```
 
 ### Input Attributes:
+
 
 | Attribute | Purpose | Example |
 |-----------|---------|---------|
@@ -477,6 +492,8 @@ nav_order: 2
 ```
 
 ### Audio/Video Attributes:
+
+
 | Attribute | Purpose |
 |-----------|---------|
 | `controls` | Show player controls |
@@ -593,6 +610,7 @@ sessionStorage.clear();
 
 ### LocalStorage vs SessionStorage:
 
+
 | Feature | localStorage | sessionStorage |
 |---------|--------------|----------------|
 | Lifetime | Permanent | Until tab closes |
@@ -601,6 +619,7 @@ sessionStorage.clear();
 | Server Access | ❌ | ❌ |
 
 ### Cookies vs Web Storage:
+
 
 | Feature | Cookies | Web Storage |
 |---------|---------|-------------|
@@ -670,6 +689,8 @@ document
 ```
 
 ### DOM Node Types:
+
+
 | Type | Description | Example |
 |------|-------------|---------|
 | Element | HTML tags | `<div>`, `<p>` |

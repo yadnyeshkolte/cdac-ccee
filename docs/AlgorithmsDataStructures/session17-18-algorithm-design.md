@@ -404,6 +404,7 @@ graph TD
 
 ## 9. Complexity Classes
 
+
 | Class | Time | Examples |
 |-------|------|----------|
 | **P** | Polynomial | Sorting, Searching |
@@ -437,6 +438,7 @@ graph TD
 ## 📝 Quick Reference
 
 ### Paradigm Selection
+
 
 | Problem | Technique |
 |---------|-----------|

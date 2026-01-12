@@ -73,6 +73,7 @@ const allParagraphs = document.querySelectorAll('p');
 
 ### HTMLCollection vs NodeList:
 
+
 | Feature | HTMLCollection | NodeList |
 |---------|----------------|----------|
 | Live updates | ✅ Yes | ❌ No (usually) |
@@ -165,6 +166,7 @@ element.innerText = 'Visible text only';
 ```
 
 ### textContent vs innerHTML vs innerText:
+
 
 | Property | HTML Parsed | Hidden Content | Performance |
 |----------|-------------|----------------|-------------|
@@ -343,6 +345,7 @@ element.style.removeProperty('--primary-color');
 ## 🎯 DOM Events
 
 ### Event Types:
+
 
 | Category | Events |
 |----------|--------|
@@ -624,6 +627,7 @@ input.addEventListener('blur', (e) => console.log('Blurred'));
 
 ### Validation Attributes:
 
+
 | Attribute | Description |
 |-----------|-------------|
 | `required` | Field must have value |
@@ -736,6 +740,7 @@ const regex2 = new RegExp('pattern', 'flags');
 ```
 
 ### Flags:
+
 
 | Flag | Description |
 |------|-------------|

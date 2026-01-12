@@ -93,6 +93,7 @@ Step 1: mid = 5, arr[5] = 23 ✓ Found!
 
 ## 2. Sorting Algorithms Overview
 
+
 | Algorithm | Best | Average | Worst | Space | Stable |
 |-----------|------|---------|-------|-------|--------|
 | **Bubble Sort** | O(n) | O(n²) | O(n²) | O(1) | Yes |

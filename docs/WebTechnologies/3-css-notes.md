@@ -55,6 +55,7 @@ h1 {
 
 ### Comparison:
 
+
 | Method | Pros | Cons |
 |--------|------|------|
 | **Inline** | Quick changes, highest priority | No reusability, hard to maintain |
@@ -67,6 +68,7 @@ h1 {
 
 ### Basic Selectors:
 
+
 | Selector | Syntax | Description | Example |
 |----------|--------|-------------|---------|
 | Universal | `*` | All elements | `* { margin: 0; }` |
@@ -75,6 +77,7 @@ h1 {
 | ID | `#id` | By id attribute | `#header { height: 100px; }` |
 
 ### Attribute Selectors:
+
 
 | Selector | Description | Example |
 |----------|-------------|---------|
@@ -87,6 +90,7 @@ h1 {
 | `[attr*=value]` | Contains | `[class*="btn"]` |
 
 ### Combinator Selectors:
+
 
 | Selector | Description | Example |
 |----------|-------------|---------|
@@ -159,6 +163,7 @@ Specificity determines which CSS rule applies when conflicts occur.
 
 ### Specificity Hierarchy (Highest to Lowest):
 
+
 | Level | Selector Type | Example |
 |-------|---------------|---------|
 | 1 | Inline styles | `style="..."` |
@@ -177,6 +182,7 @@ d = Number of element/pseudo-element selectors
 ```
 
 ### Examples:
+
 
 | Selector | Specificity | Score |
 |----------|-------------|-------|
@@ -280,6 +286,7 @@ div {
 
 ## 📐 Display Property
 
+
 | Value | Behavior |
 |-------|----------|
 | `block` | Full width, new line, accepts width/height |
@@ -291,6 +298,8 @@ div {
 | `table` | Behaves like `<table>` |
 
 ### Default Display Values:
+
+
 | Block Elements | Inline Elements |
 |----------------|-----------------|
 | `<div>`, `<p>`, `<h1-6>` | `<span>`, `<a>`, `<strong>` |
@@ -317,6 +326,7 @@ div {
 ## 📍 CSS Positioning
 
 ### Position Values:
+
 
 | Value | Description |
 |-------|-------------|
@@ -499,6 +509,8 @@ background: radial-gradient(ellipse at center, red, blue);
 ## 📏 CSS Units
 
 ### Absolute Units:
+
+
 | Unit | Description |
 |------|-------------|
 | `px` | Pixels |
@@ -506,6 +518,8 @@ background: radial-gradient(ellipse at center, red, blue);
 | `cm`, `mm`, `in` | Physical units |
 
 ### Relative Units:
+
+
 | Unit | Relative To |
 |------|-------------|
 | `%` | Parent element |
@@ -574,6 +588,8 @@ text-shadow:
 ```
 
 ### Timing Functions:
+
+
 | Function | Description |
 |----------|-------------|
 | `linear` | Constant speed |

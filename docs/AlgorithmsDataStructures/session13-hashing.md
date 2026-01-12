@@ -244,6 +244,7 @@ int probe(int key, int i) {
 
 ## 6. Complexity Analysis
 
+
 | Method | Average | Worst |
 |--------|---------|-------|
 | **Chaining** | O(1 + α) | O(n) |

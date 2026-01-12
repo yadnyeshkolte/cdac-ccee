@@ -47,6 +47,7 @@ nav_order: 5
 
 ### Declaration Keywords:
 
+
 | Keyword | Scope | Reassignable | Hoisting |
 |---------|-------|--------------|----------|
 | `var` | Function | Yes | Hoisted (undefined) |
@@ -97,6 +98,7 @@ const z = 15;
 
 ### Primitive Types (Immutable):
 
+
 | Type | Example | typeof |
 |------|---------|--------|
 | String | `'Hello'`, `"World"` | `"string"` |
@@ -108,6 +110,7 @@ const z = 15;
 | Symbol | `Symbol('id')` | `"symbol"` |
 
 ### Non-Primitive (Reference Types):
+
 
 | Type | Example | typeof |
 |------|---------|--------|
@@ -145,6 +148,7 @@ Number.isNaN('hello')   // false (strict)
 
 ### Arithmetic Operators:
 
+
 | Operator | Description | Example |
 |----------|-------------|---------|
 | `+` | Addition | `5 + 3 = 8` |
@@ -157,6 +161,7 @@ Number.isNaN('hello')   // false (strict)
 | `--` | Decrement | `x--` or `--x` |
 
 ### Comparison Operators:
+
 
 | Operator | Description | Example |
 |----------|-------------|---------|
@@ -171,6 +176,7 @@ Number.isNaN('hello')   // false (strict)
 
 ### Logical Operators:
 
+
 | Operator | Description | Example |
 |----------|-------------|---------|
 | `&&` | AND | `true && false` → `false` |
@@ -179,6 +185,7 @@ Number.isNaN('hello')   // false (strict)
 | `??` | Nullish coalescing | `null ?? 'default'` → `'default'` |
 
 ### Assignment Operators:
+
 
 | Operator | Example | Equivalent |
 |----------|---------|------------|
@@ -283,6 +290,7 @@ let str3 = `Template literal ${variable}`;  // ES6
 
 ### String Properties & Methods:
 
+
 | Property/Method | Description | Example |
 |-----------------|-------------|---------|
 | `length` | String length | `'hello'.length` → `5` |
@@ -350,6 +358,7 @@ let bigInt = 9007199254740991n;
 
 ### Special Number Values:
 
+
 | Value | Description |
 |-------|-------------|
 | `Infinity` | Positive infinity |
@@ -361,6 +370,7 @@ let bigInt = 9007199254740991n;
 | `Number.MIN_SAFE_INTEGER` | -(2^53 - 1) |
 
 ### Number Methods:
+
 
 | Method | Description | Example |
 |--------|-------------|---------|
@@ -375,6 +385,7 @@ let bigInt = 9007199254740991n;
 | `isInteger(val)` | Check integer | `Number.isInteger(5)` → `true` |
 
 ### Math Object:
+
 
 | Method | Description | Example |
 |--------|-------------|---------|
@@ -428,6 +439,7 @@ let date6 = new Date(1705276800000);
 ```
 
 ### Date Methods:
+
 
 | Method | Description |
 |--------|-------------|
@@ -499,6 +511,7 @@ arr.at(-2);  // 40 (second last)
 ```
 
 ### Array Properties & Methods:
+
 
 | Method | Description | Mutates | Returns |
 |--------|-------------|---------|---------|
@@ -606,6 +619,7 @@ let [x = 10, y = 20] = [5];  // x=5, y=20
 ## ⏱️ JavaScript Scope
 
 ### Scope Types:
+
 
 | Scope | Description |
 |-------|-------------|

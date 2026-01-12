@@ -90,6 +90,7 @@ xhr.send(data);
 
 ### ReadyState Values:
 
+
 | Value | State | Description |
 |-------|-------|-------------|
 | 0 | UNSENT | XHR created, open() not called |
@@ -99,6 +100,7 @@ xhr.send(data);
 | 4 | DONE | Operation complete |
 
 ### XHR Properties:
+
 
 | Property | Description |
 |----------|-------------|
@@ -658,6 +660,7 @@ controller.abort();
 ---
 
 ## 📊 Comparison: XHR vs Fetch vs Axios
+
 
 | Feature | XMLHttpRequest | Fetch API | Axios |
 |---------|---------------|-----------|-------|

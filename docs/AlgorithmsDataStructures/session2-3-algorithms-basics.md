@@ -104,6 +104,7 @@ graph TD
 
 **Types of Loops:**
 
+
 | Loop Type | Use Case | Example |
 |-----------|----------|---------|
 | **for** | Known iterations | `for(int i=0; i<n; i++)` |
@@ -157,6 +158,7 @@ graph LR
 ```
 
 #### Complexity Comparison
+
 
 | Notation | Name | Example | n=10 | n=100 | n=1000 |
 |----------|------|---------|------|-------|--------|
@@ -288,6 +290,7 @@ graph TD
 **Real-World Analogy:** Stack of plates - you add/remove from the top only.
 
 ### 5.2 Stack Operations
+
 
 | Operation | Description | Time Complexity |
 |-----------|-------------|-----------------|
@@ -457,6 +460,7 @@ graph LR
 **Real-World Analogy:** Queue at a ticket counter - first person in line is served first.
 
 ### 6.2 Queue Operations
+
 
 | Operation | Description | Time Complexity |
 |-----------|-------------|-----------------|
@@ -955,6 +959,7 @@ public int[] nextGreaterElement(int[] nums) {
 - **Recursive calls**: Check recurrence relation
 
 ### Stack vs Queue
+
 
 | Feature | Stack | Queue |
 |---------|-------|-------|

@@ -65,6 +65,7 @@ class Node {
 
 ### Comparison Table
 
+
 | Feature | Array | Linked List |
 |---------|-------|-------------|
 | **Memory** | Contiguous | Non-contiguous |
@@ -851,6 +852,7 @@ public Node removeNthFromEnd(Node head, int n) {
 
 ### Singly Linked List
 
+
 | Operation | Time | Space |
 |-----------|------|-------|
 | Insert at beginning | O(1) | O(1) |
@@ -863,6 +865,7 @@ public Node removeNthFromEnd(Node head, int n) {
 
 ### Doubly Linked List
 
+
 | Operation | Time | Space |
 |-----------|------|-------|
 | Insert at beginning | O(1) | O(1) |
@@ -872,6 +875,7 @@ public Node removeNthFromEnd(Node head, int n) {
 | Traverse backward | O(n) | O(1) |
 
 ### Circular Linked List
+
 
 | Operation | Time | Space |
 |-----------|------|-------|
@@ -930,6 +934,7 @@ public Node removeNthFromEnd(Node head, int n) {
 ## 📝 Quick Revision
 
 ### Key Differences
+
 
 | Feature | Singly | Doubly | Circular |
 |---------|--------|--------|----------|

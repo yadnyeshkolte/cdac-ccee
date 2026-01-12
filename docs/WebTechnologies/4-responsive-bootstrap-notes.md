@@ -26,6 +26,7 @@ nav_order: 4
 
 ### Viewport Properties:
 
+
 | Property | Description |
 |----------|-------------|
 | `width=device-width` | Set viewport to device width |
@@ -70,6 +71,7 @@ nav_order: 4
 ```
 
 ### Media Types:
+
 
 | Type | Description |
 |------|-------------|
@@ -197,6 +199,7 @@ Bootstrap uses a **12-column grid system** that's responsive across breakpoints.
 
 ### Grid Breakpoints:
 
+
 | Breakpoint | Class Prefix | Width |
 |------------|--------------|-------|
 | Extra Small | (none) | < 576px |
@@ -219,6 +222,7 @@ Bootstrap uses a **12-column grid system** that's responsive across breakpoints.
 ```
 
 ### Container Types:
+
 
 | Class | Behavior |
 |-------|----------|

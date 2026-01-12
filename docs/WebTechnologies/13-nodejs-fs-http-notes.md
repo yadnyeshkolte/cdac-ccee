@@ -354,6 +354,7 @@ server.listen(PORT, () => {
 
 ### Request Object Properties:
 
+
 | Property | Description |
 |----------|-------------|
 | `req.method` | HTTP method (GET, POST, etc.) |
@@ -363,6 +364,7 @@ server.listen(PORT, () => {
 | `req.socket` | Socket object |
 
 ### Response Object Methods:
+
 
 | Method | Description |
 |--------|-------------|

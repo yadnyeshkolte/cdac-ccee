@@ -193,6 +193,7 @@ app.use('/users', usersRouter);
 
 ### Request Object (req):
 
+
 | Property | Description |
 |----------|-------------|
 | `req.params` | Route parameters |
@@ -209,6 +210,7 @@ app.use('/users', usersRouter);
 | `req.get(header)` | Get header value |
 
 ### Response Object (res):
+
 
 | Method | Description |
 |--------|-------------|

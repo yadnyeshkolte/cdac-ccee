@@ -9,6 +9,7 @@ nav_order: 1
 
 ## 📚 Brief History of the Internet
 
+
 | Year | Event |
 |------|-------|
 | 1969 | ARPANET - First network connecting 4 universities |
@@ -44,12 +45,14 @@ User Request → Browser → ISP → DNS → Server → Response → Browser →
 
 **IP Address** - Unique numerical address for every device on the Internet.
 
+
 | Version | Format | Example |
 |---------|--------|---------|
 | IPv4 | 32-bit (4 octets) | `192.168.1.1` |
 | IPv6 | 128-bit (8 groups) | `2001:0db8:85a3:0000:0000:8a2e:0370:7334` |
 
 ### Port Numbers:
+
 | Port | Protocol/Service |
 |------|------------------|
 | 80 | HTTP |
@@ -81,6 +84,7 @@ Protocol│   Domain  Port    Path
 ```
 
 ### Common TLDs:
+
 | TLD | Purpose |
 |-----|---------|
 | .com | Commercial |
@@ -107,6 +111,7 @@ Protocol│   Domain  Port    Path
 
 ### HTTP Versions Comparison:
 
+
 | Feature | HTTP/1.0 | HTTP/1.1 | HTTP/2.0 |
 |---------|----------|----------|----------|
 | Connections | New connection per request | Persistent connections (Keep-Alive) | Multiplexing (single connection) |
@@ -120,6 +125,7 @@ Protocol│   Domain  Port    Path
 
 ## 📨 HTTP Methods (Verbs)
 
+
 | Method | Purpose | Idempotent | Safe | Request Body |
 |--------|---------|------------|------|--------------|
 | **GET** | Retrieve data | ✅ Yes | ✅ Yes | ❌ No |
@@ -131,6 +137,7 @@ Protocol│   Domain  Port    Path
 | **OPTIONS** | Get supported methods | ✅ Yes | ✅ Yes | ❌ No |
 
 ### GET vs POST:
+
 
 | Aspect | GET | POST |
 |--------|-----|------|
@@ -148,6 +155,7 @@ Protocol│   Domain  Port    Path
 
 ### Categories:
 
+
 | Range | Category | Meaning |
 |-------|----------|---------|
 | 1xx | Informational | Request received, continuing |
@@ -157,6 +165,7 @@ Protocol│   Domain  Port    Path
 | 5xx | Server Error | Server failed to fulfill request |
 
 ### Important Status Codes:
+
 
 | Code | Message | Description |
 |------|---------|-------------|
@@ -192,6 +201,7 @@ Protocol│   Domain  Port    Path
 - Reliability - Failed requests don't affect others
 
 ### Maintaining State:
+
 
 | Technique | Storage | Duration | Size Limit |
 |-----------|---------|----------|------------|
@@ -245,6 +255,7 @@ A **Web Server** is software that serves web content to clients.
 
 ### Popular Web Servers:
 
+
 | Server | Platform | Key Features |
 |--------|----------|--------------|
 | **Apache HTTP Server** | Cross-platform | Open source, .htaccess, modules |
@@ -254,6 +265,7 @@ A **Web Server** is software that serves web content to clients.
 | **Node.js** | Cross-platform | JavaScript runtime, event-driven |
 
 ### Apache vs Nginx:
+
 
 | Feature | Apache | Nginx |
 |---------|--------|-------|

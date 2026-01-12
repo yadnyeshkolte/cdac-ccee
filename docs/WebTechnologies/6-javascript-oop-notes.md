@@ -128,6 +128,7 @@ console.log(person.firstName);  // 'Jane'
 
 ## 📋 Object Methods
 
+
 | Method | Description |
 |--------|-------------|
 | `Object.keys(obj)` | Array of property names |
@@ -260,6 +261,7 @@ const process = (data) => {
 ```
 
 ### Arrow Function Differences:
+
 
 | Feature | Regular Function | Arrow Function |
 |---------|------------------|----------------|

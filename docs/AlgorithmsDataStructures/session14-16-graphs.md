@@ -46,6 +46,7 @@ graph LR
 
 ## 2. Graph Terminology
 
+
 | Term | Definition |
 |------|------------|
 | **Vertex (Node)** | A point in the graph |

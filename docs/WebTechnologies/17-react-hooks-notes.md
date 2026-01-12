@@ -91,6 +91,7 @@ function Timer() {
 
 ### useRef vs useState:
 
+
 | useRef | useState |
 |--------|----------|
 | Does NOT trigger re-render | Triggers re-render |
@@ -280,6 +281,7 @@ function TodoApp() {
 ```
 
 ### useState vs useReducer:
+
 
 | useState | useReducer |
 |----------|------------|

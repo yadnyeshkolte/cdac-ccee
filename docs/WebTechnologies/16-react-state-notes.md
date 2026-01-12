@@ -13,6 +13,7 @@ nav_order: 16
 
 ### Props vs State:
 
+
 | Props | State |
 |-------|-------|
 | Passed from parent | Managed within component |
@@ -336,6 +337,7 @@ function List() {
 
 ### Common Events:
 
+
 | Event | Handler |
 |-------|---------|
 | Click | `onClick` |
@@ -637,6 +639,7 @@ class Clock extends React.Component {
 ```
 
 ### Lifecycle to Hooks Mapping:
+
 
 | Class Lifecycle | Hook Equivalent |
 |-----------------|-----------------|
