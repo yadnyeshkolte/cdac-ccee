@@ -40,52 +40,124 @@ Welcome to Module 3! This module covers the complete MERN stack: HTML, CSS, Java
 
 ### Web Fundamentals
 
-| Session | Topic | Notes |
-|---------|-------|-------|
-| 1 | Architecture of Web | [Web Architecture](1-web-architecture-notes) |
-| 2 | HTML5 Fundamentals | [HTML5 Notes](2-html5-notes) |
-| 3 | CSS3 Styling | [CSS3 Notes](3-css-notes) |
-| 4 | Responsive Design & Bootstrap | [Bootstrap Notes](4-responsive-bootstrap-notes) |
+### Web Fundamentals
+
+<div class="module-content-grid">
+  <a href="{{ '/docs/WebTechnologies/1-web-architecture-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">🏛️</span>
+    <span class="link-text">Session 1: Web Architecture</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/2-html5-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">🌐</span>
+    <span class="link-text">Session 2: HTML5 Fundamentals</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/3-css-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">🎨</span>
+    <span class="link-text">Session 3: CSS3 Styling</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/4-responsive-bootstrap-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">📱</span>
+    <span class="link-text">Session 4: Responsive & Bootstrap</span>
+  </a>
+</div>
 
 ### JavaScript Core
 
-| Session | Topic | Notes |
-|---------|-------|-------|
-| 5-6 | JavaScript Basics | [JS Basics](5-javascript-basics-notes) |
-| 7-8 | JavaScript OOP | [JS OOP](6-javascript-oop-notes) |
-| 9-10 | DOM & Forms | [JS DOM](7-javascript-dom-notes) |
+<div class="module-content-grid">
+  <a href="{{ '/docs/WebTechnologies/5-javascript-basics-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">📜</span>
+    <span class="link-text">Sessions 5-6: JavaScript Basics</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/6-javascript-oop-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">🧩</span>
+    <span class="link-text">Sessions 7-8: JavaScript OOP</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/7-javascript-dom-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">🖱️</span>
+    <span class="link-text">Sessions 9-10: DOM & Forms</span>
+  </a>
+</div>
 
 ### JSON, jQuery & AJAX
 
-| Session | Topic | Notes |
-|---------|-------|-------|
-| 11 | JSON & jQuery | [JSON/jQuery Notes](8-json-jquery-notes) |
-| 12 | AJAX & Axios | [AJAX Notes](9-ajax-axios-notes) |
+<div class="module-content-grid">
+  <a href="{{ '/docs/WebTechnologies/8-json-jquery-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">🔄</span>
+    <span class="link-text">Session 11: JSON & jQuery</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/9-ajax-axios-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">📡</span>
+    <span class="link-text">Session 12: AJAX & Axios</span>
+  </a>
+</div>
 
 ### Node.js
 
-| Session | Topic | Notes |
-|---------|-------|-------|
-| 13 | Introduction to Node.js | [Node.js Intro](10-nodejs-intro-notes) |
-| 14-15 | Async Programming | [Async Notes](11-nodejs-async-notes) |
-| 16 | Modules & npm | [Modules Notes](12-nodejs-modules-notes) |
-| 17 | File System & HTTP | [fs/http Notes](13-nodejs-fs-http-notes) |
+<div class="module-content-grid">
+  <a href="{{ '/docs/WebTechnologies/10-nodejs-intro-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">🟢</span>
+    <span class="link-text">Session 13: Node.js Intro</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/11-nodejs-async-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">⏳</span>
+    <span class="link-text">Sessions 14-15: Async Programming</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/12-nodejs-modules-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">📦</span>
+    <span class="link-text">Session 16: Modules & npm</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/13-nodejs-fs-http-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">📂</span>
+    <span class="link-text">Session 17: File System & HTTP</span>
+  </a>
+</div>
 
 ### Express.js
 
-| Session | Topic | Notes |
-|---------|-------|-------|
-| 18 | Express.js Framework | [Express Notes](14-express-notes) |
+<div class="module-content-grid">
+  <a href="{{ '/docs/WebTechnologies/14-express-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">🚂</span>
+    <span class="link-text">Session 18: Express.js Framework</span>
+  </a>
+</div>
 
 ### React & Redux
 
-| Session | Topic | Notes |
-|---------|-------|-------|
-| 19 | React Introduction | [React Intro](15-react-intro-notes) |
-| 20-22 | State, Lifecycle & Events | [React State](16-react-state-notes) |
-| 23-24 | React Hooks | [React Hooks](17-react-hooks-notes) |
-| 25-26 | React Router & Patterns | [React Router](18-react-router-notes) |
-| 27-28 | Redux State Management | [Redux Notes](19-redux-notes) |
+<div class="module-content-grid">
+  <a href="{{ '/docs/WebTechnologies/15-react-intro-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">⚛️</span>
+    <span class="link-text">Session 19: React Introduction</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/16-react-state-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">💾</span>
+    <span class="link-text">Sessions 20-22: State & Events</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/17-react-hooks-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">🪝</span>
+    <span class="link-text">Sessions 23-24: React Hooks</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/18-react-router-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">🛣️</span>
+    <span class="link-text">Sessions 25-26: React Router</span>
+  </a>
+  
+  <a href="{{ '/docs/WebTechnologies/19-redux-notes' | relative_url }}" class="content-link">
+    <span class="link-icon">🔄</span>
+    <span class="link-text">Sessions 27-28: Redux</span>
+  </a>
+</div>
 
 ---
 

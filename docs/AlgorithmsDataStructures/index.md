@@ -28,22 +28,52 @@ Welcome to the comprehensive study notes for **Algorithms and Data Structures Us
 
 ## 📑 Session-wise Navigation
 
-### Foundation (Sessions 1-3)
-- [Session 1: Problem Solving & Computational Thinking](session1-problem-solving.md)
-- [Sessions 2-3: Algorithms & Data Structures (Stacks, Queues)](session2-3-algorithms-basics.md)
+<div class="module-content-grid">
+  <a href="{{ '/docs/ADS/session1-problem-solving' | relative_url }}" class="content-link">
+    <span class="link-icon">🧩</span>
+    <span class="link-text">Session 1: Problem Solving</span>
+  </a>
 
-### Linear Data Structures (Sessions 4-6)
-- [Sessions 4-5: Linked List Data Structures](session4-5-linked-lists.md)
-- [Session 6: Recursion](session6-recursion.md)
+  <a href="{{ '/docs/ADS/session2-3-algorithms-basics' | relative_url }}" class="content-link">
+    <span class="link-icon">⚙️</span>
+    <span class="link-text">Sessions 2-3: Algorithms & Data Structures</span>
+  </a>
 
-### Non-Linear Data Structures (Sessions 7-13)
-- [Sessions 7-9: Trees & Applications](session7-9-trees.md)
-- [Sessions 10-12: Searching and Sorting Algorithms](session10-12-searching-sorting.md)
-- [Session 13: Hash Functions and Hash Tables](session13-hashing.md)
+  <a href="{{ '/docs/ADS/session4-5-linked-lists' | relative_url }}" class="content-link">
+    <span class="link-icon">⛓️</span>
+    <span class="link-text">Sessions 4-5: Linked Lists</span>
+  </a>
 
-### Advanced Topics (Sessions 14-18)
-- [Sessions 14-16: Graphs and Applications](session14-16-graphs.md)
-- [Sessions 17-18: Algorithm Design Techniques](session17-18-algorithm-design.md)
+  <a href="{{ '/docs/ADS/session6-recursion' | relative_url }}" class="content-link">
+    <span class="link-icon">🔄</span>
+    <span class="link-text">Session 6: Recursion</span>
+  </a>
+
+  <a href="{{ '/docs/ADS/session7-9-trees' | relative_url }}" class="content-link">
+    <span class="link-icon">🌳</span>
+    <span class="link-text">Sessions 7-9: Trees & Applications</span>
+  </a>
+
+  <a href="{{ '/docs/ADS/session10-12-searching-sorting' | relative_url }}" class="content-link">
+    <span class="link-icon">🔍</span>
+    <span class="link-text">Sessions 10-12: Searching & Sorting</span>
+  </a>
+
+  <a href="{{ '/docs/ADS/session13-hashing' | relative_url }}" class="content-link">
+    <span class="link-icon">#️⃣</span>
+    <span class="link-text">Session 13: Hash Functions</span>
+  </a>
+
+  <a href="{{ '/docs/ADS/session14-16-graphs' | relative_url }}" class="content-link">
+    <span class="link-icon">🕸️</span>
+    <span class="link-text">Sessions 14-16: Graphs</span>
+  </a>
+
+  <a href="{{ '/docs/ADS/session17-18-algorithm-design' | relative_url }}" class="content-link">
+    <span class="link-icon">🧠</span>
+    <span class="link-text">Sessions 17-18: Algorithm Design</span>
+  </a>
+</div>
 
 ---
 
