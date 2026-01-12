@@ -1,452 +1,442 @@
 [
   {
-    "question": "Which keyword declares a block-scoped variable in JavaScript?",
+    "question": "In the context of RESTful architecture and HTTP, which of the following statements regarding the 'idempotency' of methods is TRUE?",
     "options": [
-      "var",
-      "let",
-      "const",
-      "Both B and C"
+      "POST is idempotent because calling it multiple times results in the same state.",
+      "PUT is idempotent; calling it multiple times with the same data updates the resource once and leaves it unchanged subsequently.",
+      "DELETE is not idempotent because the resource is gone after the first call.",
+      "GET is not idempotent because the server log grows with every request."
     ],
-    "answer": 3
+    "answer": 1,
+    "explanation": "Idempotency means making the same request multiple times has the same effect as making it once. PUT is idempotent (replace target). POST is NOT idempotent (creates multiple resources). DELETE is idempotent (deleting a deleted record returns same final state: gone)."
   },
   {
-    "question": "What is the result of typeof null?",
+    "question": "A user attempts to access a secure banking page but receives an HTTP 403 Forbidden status. How is this legally different from a 401 Unauthorized?",
     "options": [
-      "null",
-      "undefined",
-      "object",
+      "403 means the server is down; 401 means the database is locked.",
+      "401 implies the user is unknown (authentication failed); 403 implies the user is known but lacks permissions (authorization failed).",
+      "403 is a client-side error; 401 is a server-side error.",
+      "There is no functional difference; they are interchangeable."
+    ],
+    "answer": 1,
+    "explanation": "The trick lies in AuthN vs AuthZ. 401 indicates 'Who are you?' (Authentication). 403 indicates 'I know who you are, but you can't come in' (Authorization)."
+  },
+  {
+    "question": "How does HTTP/2 primarily improve page load speed compared to HTTP/1.1 regarding connection handling?",
+    "options": [
+      "It compresses the HTML content more aggressively using GZIP.",
+      "It opens a new TCP connection for every image to download them in parallel.",
+      "It uses Multiplexing to allow multiple requests and responses to overlap over a single TCP connection.",
+      "It removes the need for DNS lookups entirely."
+    ],
+    "answer": 2,
+    "explanation": "HTTP/1.1 suffers from Head-of-Line blocking. HTTP/2 introduces Multiplexing, allowing binary frames from multiple streams to share one connection."
+  },
+  {
+    "question": "You need to implement a user registration form where a 'website' field is optional, but if filled, it must automatically validate as a proper URL format without writing custom JavaScript. Which HTML5 attribute combination is correct?",
+    "options": [
+      "<input type='text' validate='url' />",
+      "<input type='url' pattern='https://.*' />",
+      "<input type='link' required='false' />",
+      "<input type='url' />"
+    ],
+    "answer": 3,
+    "explanation": "The `type='url'` automatically triggers browser validation for valid URI schemes. `pattern` is optional for stricter rules, but `type='url'` is the baseline requirement."
+  },
+  {
+    "question": "Consider the HTML5 Semantic elements. Which structure best represents a standalone blog post shown on a news feed page?",
+    "options": [
+      "<div class='post'> inside a <span>",
+      "<section> containing a <div>",
+      "<article> containing a <header>, <p>, and <footer>",
+      "<aside> containing the main text"
+    ],
+    "answer": 2,
+    "explanation": "<article> is designed for self-contained content that could be syndicated (like a blog post). <section> is for grouping thematically related content."
+  },
+  {
+    "question": "What is the primary behavior of the `defer` attribute in a `<script>` tag?",
+    "options": [
+      "It executes the script immediately, blocking HTML parsing.",
+      "It downloads the script in parallel with HTML parsing and executes it only after the HTML is fully parsed, in order.",
+      "It prevents the script from accessing the DOM.",
+      "It only works for inline scripts, not external ones."
+    ],
+    "answer": 1,
+    "explanation": "`defer` downloads scripts asynchronously but waits until HTML parsing is complete to execute them in the order they appear. `async` downloads and executes immediately when ready."
+  },
+  {
+    "question": "In HTML5 Canvas, which method is strictly required to begin a new drawing path to ensure previous styles don't bleed into the new shape?",
+    "options": [
+      "ctx.startShape()",
+      "ctx.beginPath()",
+      "ctx.clearPath()",
+      "ctx.moveTo(0,0)"
+    ],
+    "answer": 1,
+    "explanation": "Without calling `beginPath()`, the canvas adds new drawing commands to the *existing* path list, causing previous shapes to be redrawn or recolored."
+  },
+  {
+    "question": "Given the following CSS specificity scenario, what color will the `<p>` element be?\n\nHTML: `<div id=\"container\" class=\"box\"><p class=\"text\">Hello</p></div>`\nCSS:\n1. `#container .text { color: red; }`\n2. `.box p { color: blue; }`\n3. `p { color: green !important; }`",
+    "options": [
+      "Red",
+      "Blue",
+      "Green",
+      "Black (Default)"
+    ],
+    "answer": 2,
+    "explanation": "Although Selector 1 (ID + Class = 110) is stronger than Selector 2 (Class + Element = 11), the `!important` flag in Selector 3 overrides normal specificity rules."
+  },
+  {
+    "question": "You are using Flexbox. You have a container with `flex-direction: column`. You want to center the items horizontally (perpendicular to the main axis). Which property do you use?",
+    "options": [
+      "justify-content: center",
+      "align-items: center",
+      "text-align: center",
+      "align-content: center"
+    ],
+    "answer": 1,
+    "explanation": "In a column layout, the Main Axis is vertical. `justify-content` handles the Main Axis (Vertical). `align-items` handles the Cross Axis (Horizontal)."
+  },
+  {
+    "question": "Which CSS pseudo-class matches an element that has no siblings?",
+    "options": [
+      ":empty",
+      ":only-child",
+      ":root",
+      ":single-of-type"
+    ],
+    "answer": 1,
+    "explanation": "`:only-child` selects an element if it is the only child of its parent. `:empty` selects elements with no children (text/nodes)."
+  },
+  {
+    "question": "In the CSS Box Model, if an element has `width: 100px`, `padding: 10px`, `border: 5px`, and `box-sizing: border-box`, what is the width of the actual content area?",
+    "options": [
+      "130px",
+      "100px",
+      "70px",
+      "85px"
+    ],
+    "answer": 2,
+    "explanation": "With `border-box`, the defined width (100px) includes padding and border. Content = Width - (Padding*2) - (Border*2) = 100 - 20 - 10 = 70px."
+  },
+  {
+    "question": "In the Bootstrap Grid system, you have a row containing `<div class=\"col-md-4\">` and `<div class=\"col-md-6\">`. How much empty space (in columns) remains in that row on a medium screen?",
+    "options": [
+      "0 columns",
+      "2 columns",
+      "12 columns",
+      "The elements will overlap"
+    ],
+    "answer": 1,
+    "explanation": "Bootstrap uses a 12-column grid. 4 + 6 = 10. Remaining space = 12 - 10 = 2 columns."
+  },
+  {
+    "question": "Which Bootstrap class is used to hide an element on mobile devices but show it on tablets and larger screens?",
+    "options": [
+      ".d-none .d-md-block",
+      ".hidden-xs .visible-md",
+      ".hide-mobile",
+      ".d-block .d-sm-none"
+    ],
+    "answer": 0,
+    "explanation": "Bootstrap 4/5 logic: `d-none` hides it on all screens (xs and up). `d-md-block` overrides that display to 'block' starting at the 'md' breakpoint."
+  },
+  {
+    "question": "What is the specific purpose of the viewport meta tag `<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">` in RWD?",
+    "options": [
+      "It enables the GPS location services.",
+      "It tells the browser to set the page width equal to the screen width and prevents initial zooming out.",
+      "It forces the browser to load the desktop version of the CSS.",
+      "It imports the media queries library."
+    ],
+    "answer": 1,
+    "explanation": "Without this tag, mobile browsers assume a desktop width (usually 980px) and zoom out. This tag aligns CSS pixels with device pixels."
+  },
+  {
+    "question": "What is the output of the following JavaScript code?\n```javascript\nconsole.log(1 + '2' - 1);\n```",
+    "options": [
+      "2",
+      "12",
+      "11",
       "NaN"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Order of operations: 1 + '2' triggers concatenation -> '12'. Then '12' - 1 triggers subtraction (numeric coercion) -> 11."
   },
   {
-    "question": "Which operator checks both value and type equality?",
+    "question": "Identify the concept used in this code:\n```javascript\nfunction outer() {\n  let count = 0;\n  return function inner() {\n    count++;\n    return count;\n  }\n}\n```",
     "options": [
-      "==",
-      "===",
-      "!=",
-      "="
+      "Hoisting",
+      "Recursion",
+      "Closure",
+      "Prototypal Inheritance"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "A closure is created when the inner function remembers and accesses the scope (variable `count`) of its outer function even after the outer function has finished executing."
   },
   {
-    "question": "What does NaN stand for?",
+    "question": "Which Array method should be used if you want to check if *at least one* element in an array passes a test?",
     "options": [
-      "Not a Null",
-      "No assigned Number",
-      "Not a Number",
-      "Null and Number"
+      "arr.every()",
+      "arr.filter()",
+      "arr.some()",
+      "arr.map()"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "`some()` returns true if at least one element meets the condition. `every()` requires all elements to meet it."
   },
   {
-    "question": "Which method adds an element to the end of an array?",
+    "question": "What is the difference between `==` and `===` in JavaScript?",
     "options": [
-      "push()",
-      "pop()",
-      "shift()",
-      "unshift()"
+      "`==` compares values without type conversion; `===` converts types.",
+      "`==` allows type coercion; `===` requires both value and type to be identical.",
+      "`===` is a logical OR operator.",
+      "There is no difference in modern browsers."
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "The strict equality operator `===` does not perform type conversion (e.g., 5 === '5' is false). The abstract equality operator `==` does (e.g., 5 == '5' is true)."
   },
   {
-    "question": "Which array method returns a new array with transformed elements?",
+    "question": "Regarding the DOM Event Propagation, what is the sequence of phases?",
     "options": [
-      "forEach()",
-      "filter()",
-      "map()",
-      "reduce()"
+      "Target -> Capturing -> Bubbling",
+      "Bubbling -> Target -> Capturing",
+      "Capturing -> Target -> Bubbling",
+      "There is only one phase: Execution"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Events flow down from the window to the target (Capturing), hit the target (Target), and then flow back up (Bubbling)."
   },
   {
-    "question": "What does the spread operator (...) do?",
+    "question": "How do you correctly create a new object that inherits properties from an existing object `protoObj` in ES5/ES6?",
     "options": [
-      "Spreads elements of an array/object",
-      "Multiplies numbers",
-      "Creates a range",
-      "Deletes elements"
+      "let newObj = Object.create(protoObj);",
+      "let newObj = new protoObj();",
+      "let newObj = Object.assign({}, protoObj);",
+      "let newObj = protoObj.clone();"
     ],
-    "answer": 0
+    "answer": 0,
+    "explanation": "`Object.create(protoObj)` creates a new object with the specified prototype object and properties. `Object.assign` performs a shallow copy, not inheritance."
   },
   {
-    "question": "Which string method finds the first occurrence of a substring?",
+    "question": "What will `console.log(this)` output inside a standard arrow function defined within a global object?",
     "options": [
-      "find()",
-      "search()",
-      "indexOf()",
-      "locate()"
+      "The object itself.",
+      "Undefined.",
+      "The Window/Global object (lexical scope).",
+      "The function body."
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Arrow functions do not have their own `this`. They inherit `this` from the enclosing lexical scope (in this case, the global scope/window)."
   },
   {
-    "question": "What is hoisting in JavaScript?",
+    "question": "In ES6, what is the result of using the Spread operator `...` on a string? e.g. `[...'hello']`",
     "options": [
-      "Moving code to server",
-      "Declaration moved to top of scope",
-      "Code optimization",
-      "Memory allocation"
+      "It creates an error.",
+      "It creates an array: ['h', 'e', 'l', 'l', 'o']",
+      "It creates a string: 'h e l l o'",
+      "It creates an object: {0:'h', 1:'e' ...}"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "The spread operator expands an iterable (like a string) into individual elements. For a string, it breaks it into characters."
   },
   {
-    "question": "Which method converts an object to JSON string?",
+    "question": "Which of the following is a VALID JSON format?",
     "options": [
-      "JSON.parse()",
-      "JSON.stringify()",
-      "JSON.convert()",
-      "JSON.toString()"
+      "{ name: 'John', age: 30 }",
+      "{ 'name': \"John\", 'age': 30 }",
+      "{ \"name\": \"John\", \"age\": 30 }",
+      "{ \"name\": \"John\", \"func\": function() { return 1; } }"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "JSON requires double quotes for keys and string values. Single quotes are invalid. Functions are not allowed in JSON data types."
   },
   {
-    "question": "Which method parses a JSON string to JavaScript object?",
+    "question": "In jQuery, what does the method chaining `$('#p1').css('color', 'red').slideUp(2000);` rely on?",
     "options": [
-      "JSON.parse()",
-      "JSON.stringify()",
-      "JSON.convert()",
-      "JSON.toObject()"
+      "The DOM rendering engine speed.",
+      "Each method returning the original jQuery object (`this`).",
+      "Global variables storing the state.",
+      "Asynchronous callbacks."
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "Chaining works because almost all jQuery setter/modification methods return the jQuery object they were called on."
   },
   {
-    "question": "Arrow functions do NOT have their own:",
+    "question": "What is the jQuery equivalent of the JavaScript `document.querySelectorAll('.btn')`?",
     "options": [
-      "return statement",
-      "parameters",
-      "this binding",
-      "variables"
+      "$('#btn')",
+      "$('.btn')",
+      "jQuery.getAll('.btn')",
+      "$('btn')"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "The `$` function with a CSS selector string acts as the query selector. `.btn` selects by class."
   },
   {
-    "question": "What is a closure in JavaScript?",
-    "options": [
-      "A closed function",
-      "Function with access to outer scope",
-      "Private variable",
-      "Nested loop"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which keyword is used to create a class in JavaScript?",
-    "options": [
-      "function",
-      "object",
-      "class",
-      "prototype"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which method is called when a class instance is created?",
-    "options": [
-      "init()",
-      "new()",
-      "constructor()",
-      "create()"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which keyword is used to inherit from a parent class?",
-    "options": [
-      "inherits",
-      "extends",
-      "implements",
-      "prototype"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "How do you call the parent class constructor?",
-    "options": [
-      "parent()",
-      "base()",
-      "super()",
-      "this.parent()"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which method selects an element by ID?",
-    "options": [
-      "document.querySelector('#id')",
-      "document.getElementById('id')",
-      "document.getElement('id')",
-      "Both A and B"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "Which property gets or sets the HTML inside an element?",
-    "options": [
-      "textContent",
-      "innerHTML",
-      "innerText",
-      "value"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which method adds an event listener to an element?",
-    "options": [
-      "element.onEvent()",
-      "element.addEvent()",
-      "element.addEventListener()",
-      "element.listen()"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What does event.preventDefault() do?",
-    "options": [
-      "Stops event propagation",
-      "Prevents default browser action",
-      "Removes event listener",
-      "Cancels the event"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What does event.stopPropagation() do?",
-    "options": [
-      "Prevents default action",
-      "Stops event bubbling",
-      "Removes event listener",
-      "Delays event handling"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which phase comes first in DOM event propagation?",
-    "options": [
-      "Target phase",
-      "Bubbling phase",
-      "Capturing phase",
-      "Handling phase"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which method creates a new HTML element?",
-    "options": [
-      "document.newElement()",
-      "document.createElement()",
-      "document.addElement()",
-      "document.makeElement()"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which property accesses the parent element?",
-    "options": [
-      "element.parent",
-      "element.parentNode",
-      "element.container",
-      "element.parentElement"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "What is event delegation?",
-    "options": [
-      "Removing event listeners",
-      "Handling events on parent for children",
-      "Preventing events",
-      "Creating custom events"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which jQuery method selects elements?",
-    "options": [
-      "select()",
-      "find()",
-      "$()",
-      "get()"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which jQuery method adds a class to an element?",
-    "options": [
-      "addClass()",
-      "setClass()",
-      "addClassName()",
-      "class()"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "Which jQuery method hides an element with animation?",
-    "options": [
-      "hide()",
-      "fadeOut()",
-      "slideUp()",
-      "All of the above"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "What is the jQuery equivalent of document.ready?",
-    "options": [
-      "$(document).load()",
-      "$(document).ready()",
-      "$.ready()",
-      "$(function() {})"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which jQuery method gets the value of an input?",
-    "options": [
-      "text()",
-      "html()",
-      "val()",
-      "value()"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What does AJAX stand for?",
-    "options": [
-      "Asynchronous JavaScript And XML",
-      "Advanced JavaScript And XML",
-      "Async JSON And XHTML",
-      "Application JavaScript And XML"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "Which XMLHttpRequest property contains the response data?",
-    "options": [
-      "response",
-      "responseText",
-      "data",
-      "result"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What readyState value indicates the request is complete?",
+    "question": "When using the `XMLHttpRequest` object, which `readyState` value indicates that the operation is complete?",
     "options": [
       "1",
-      "2",
       "3",
-      "4"
+      "4",
+      "200"
     ],
-    "answer": 3
+    "answer": 2,
+    "explanation": "`readyState` 4 means DONE. Note that status 200 is an HTTP status code, not the readyState."
   },
   {
-    "question": "Which method sends an HTTP request using Fetch API?",
+    "question": "Why is Axios often preferred over the native Fetch API?",
     "options": [
-      "fetch()",
-      "get()",
-      "request()",
-      "http()"
+      "Axios is a built-in browser feature.",
+      "Axios automatically transforms JSON data and handles errors (rejects promises) on HTTP 4xx/5xx status codes.",
+      "Fetch cannot perform POST requests.",
+      "Axios is faster because it uses UDP."
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "Fetch requires manual JSON parsing (`.json()`) and does not treat 404/500 errors as Promise rejections. Axios handles both automatically."
   },
   {
-    "question": "What does response.json() return?",
+    "question": "In Node.js, `fs.readFile` is asynchronous. What mechanism does it use to return the data once reading is finished?",
     "options": [
-      "JSON string",
-      "JavaScript object",
-      "Promise",
-      "XMLHttpRequest"
+      "Return statement",
+      "Global variables",
+      "Callback function (Error-First pattern)",
+      "Synchronous blocking"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "The standard pattern is `fs.readFile(path, (err, data) => { ... })`. It uses the event loop to execute the callback upon completion."
   },
   {
-    "question": "Which library is used for making HTTP requests?",
+    "question": "Which core module in Node.js provides the `EventEmitter` class?",
     "options": [
-      "jQuery",
-      "Axios",
-      "Fetch",
-      "All of the above"
+      "fs",
+      "events",
+      "stream",
+      "http"
     ],
-    "answer": 3
+    "answer": 1,
+    "explanation": "The `events` module exports the `EventEmitter` class, which is central to Node.js event-driven architecture."
   },
   {
-    "question": "What is the default behavior of Axios with JSON?",
+    "question": "In an Express.js application, what happens if you define a middleware function but fail to call `next()`?",
     "options": [
-      "Returns raw text",
-      "Auto-parses JSON",
-      "Requires manual parsing",
-      "Returns XML"
+      "The application crashes immediately.",
+      "The request hangs and eventually times out because control is not passed to the next middleware.",
+      "Express automatically skips to the next route.",
+      "It returns a 404 error."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Middleware functions are sequential. If `next()` is not called and no response is sent, the request is left hanging."
   },
   {
-    "question": "Which Axios feature modifies all requests/responses?",
+    "question": "How do you access the dynamic URL parameter `id` in the Express route `app.get('/users/:id', ...)`?",
     "options": [
-      "Middleware",
-      "Plugins",
-      "Interceptors",
-      "Handlers"
+      "req.body.id",
+      "req.query.id",
+      "req.params.id",
+      "req.url.id"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "`req.params` holds route parameters (defined with :). `req.query` holds query string parameters (after ?)."
   },
   {
-    "question": "Does fetch() reject on HTTP errors (4xx, 5xx)?",
+    "question": "What is the purpose of `package.json` in a Node.js project?",
     "options": [
-      "Yes, always",
-      "No, only on network errors",
-      "Yes, for 5xx only",
-      "Depends on configuration"
+      "To store the database credentials.",
+      "To hold the actual source code of the modules.",
+      "To list project metadata and manage dependencies/versions.",
+      "To configure the V8 engine memory limits."
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "It is the manifest file that defines the project name, scripts, and list of dependencies (npm packages)."
   },
   {
-    "question": "Which method cancels a fetch request?",
+    "question": "In React, why must adjacent JSX elements be wrapped in a parent tag or Fragment `<>`?",
     "options": [
-      "fetch.cancel()",
-      "AbortController",
-      "request.abort()",
-      "Fetch cannot be canceled"
+      "It is a CSS limitation.",
+      "Functions can only return a single value (a single root object).",
+      "To prevent XSS attacks.",
+      "To make the code readable."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "JSX compiles to `React.createElement()` calls. A JS function cannot return two separate function calls simultaneously; they must be nested in one root."
   },
   {
-    "question": "Which HTML5 API provides client-side storage?",
+    "question": "Which React Hook is essentially the combination of `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`?",
     "options": [
-      "Web Storage API",
-      "File API",
-      "Cache API",
-      "Database API"
+      "useState",
+      "useReducer",
+      "useEffect",
+      "useContext"
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": "`useEffect` handles side effects. The dependency array determines when it runs (mount, update) and the return function handles cleanup (unmount)."
   },
   {
-    "question": "What is the maximum size limit of localStorage?",
+    "question": "What is 'Prop Drilling' in React?",
     "options": [
-      "4KB",
-      "5MB",
-      "50MB",
-      "No limit"
+      "A tool to install packages.",
+      "The process of passing data from a parent to a deeply nested child through intermediate components that don't need the data.",
+      "A method to debug props.",
+      "Directly modifying the DOM."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "It refers to the tedious passing of props down multiple layers. It is often solved using Context API or Redux."
   },
   {
-    "question": "Which method removes an item from localStorage?",
+    "question": "In Redux, what is the 'Reducer' responsible for?",
     "options": [
-      "localStorage.delete()",
-      "localStorage.remove()",
-      "localStorage.removeItem()",
-      "localStorage.clear()"
+      "Triggering API calls.",
+      "Storing the global state.",
+      "Dispatching actions.",
+      "Calculating the new state based on the old state and an action."
     ],
-    "answer": 2
+    "answer": 3,
+    "explanation": "A reducer is a pure function `(state, action) => newState`. It determines *how* the state changes."
   },
   {
-    "question": "Which Promise method runs after both success and failure?",
+    "question": "Why is it strictly prohibited to mutate State directly in React (e.g., `this.state.count = 5`)?",
     "options": [
-      "then()",
-      "catch()",
-      "finally()",
-      "complete()"
+      "It causes a memory leak.",
+      "React won't know the data changed and won't re-render the component.",
+      "It throws a syntax error.",
+      "It deletes the component."
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "React relies on state update functions (`setState` or `useState` setter) to trigger the Reconciliation process (diffing algorithm) and update the UI."
+  },
+  {
+    "question": "What is the purpose of the `key` prop in React Lists?",
+    "options": [
+      "To style the list items.",
+      "To identify which items have changed, are added, or are removed, helping React optimize updates.",
+      "It is a database ID.",
+      "To sort the list automatically."
+    ],
+    "answer": 1,
+    "explanation": "Keys help React identify which items in a list have changed, are added, or are removed, preventing unnecessary re-renders of the whole list."
+  },
+  {
+    "question": "What does the `useRef` hook return?",
+    "options": [
+      "The current state value.",
+      "A mutable object with a `.current` property that persists across renders.",
+      "A reference to the Redux store.",
+      "A DOM element automatically."
+    ],
+    "answer": 1,
+    "explanation": "`useRef` returns a mutable ref object. It is often used to access DOM elements directly or store values that don't trigger re-renders."
+  },
+  {
+    "question": "In the context of Higher-Order Components (HOC) in React, what is an HOC?",
+    "options": [
+      "A component that returns another component.",
+      "A component located at the top of the tree.",
+      "A component with high priority.",
+      "A Redux middleware."
+    ],
+    "answer": 0,
+    "explanation": "An HOC is a function that takes a component and returns a new component, usually enhancing it with extra props or logic."
   }
 ]
