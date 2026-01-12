@@ -7,7 +7,7 @@ nav_order: 1
 
 # Session 1: Problem Solving & Computational Thinking
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})
 
 ---
 

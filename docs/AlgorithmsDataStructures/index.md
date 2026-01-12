@@ -3,7 +3,6 @@ layout: default
 title: Module 4 - ADS
 nav_order: 4
 has_children: true
-permalink: /docs/ADS/
 ---
 
 # Algorithms and Data Structures Using Java - CDAC CCEE 2026
@@ -29,47 +28,47 @@ Welcome to the comprehensive study notes for **Algorithms and Data Structures Us
 ## 📑 Session-wise Navigation
 
 <div class="module-content-grid">
-  <a href="{{ '/docs/ADS/session1-problem-solving' | relative_url }}" class="content-link">
+  <a href="{{ '/docs/AlgorithmsDataStructures/session1-problem-solving' | relative_url }}" class="content-link">
     <span class="link-icon">🧩</span>
     <span class="link-text">Session 1: Problem Solving</span>
   </a>
 
-  <a href="{{ '/docs/ADS/session2-3-algorithms-basics' | relative_url }}" class="content-link">
+  <a href="{{ '/docs/AlgorithmsDataStructures/session2-3-algorithms-basics' | relative_url }}" class="content-link">
     <span class="link-icon">⚙️</span>
     <span class="link-text">Sessions 2-3: Algorithms & Data Structures</span>
   </a>
 
-  <a href="{{ '/docs/ADS/session4-5-linked-lists' | relative_url }}" class="content-link">
+  <a href="{{ '/docs/AlgorithmsDataStructures/session4-5-linked-lists' | relative_url }}" class="content-link">
     <span class="link-icon">⛓️</span>
     <span class="link-text">Sessions 4-5: Linked Lists</span>
   </a>
 
-  <a href="{{ '/docs/ADS/session6-recursion' | relative_url }}" class="content-link">
+  <a href="{{ '/docs/AlgorithmsDataStructures/session6-recursion' | relative_url }}" class="content-link">
     <span class="link-icon">🔄</span>
     <span class="link-text">Session 6: Recursion</span>
   </a>
 
-  <a href="{{ '/docs/ADS/session7-9-trees' | relative_url }}" class="content-link">
+  <a href="{{ '/docs/AlgorithmsDataStructures/session7-9-trees' | relative_url }}" class="content-link">
     <span class="link-icon">🌳</span>
     <span class="link-text">Sessions 7-9: Trees & Applications</span>
   </a>
 
-  <a href="{{ '/docs/ADS/session10-12-searching-sorting' | relative_url }}" class="content-link">
+  <a href="{{ '/docs/AlgorithmsDataStructures/session10-12-searching-sorting' | relative_url }}" class="content-link">
     <span class="link-icon">🔍</span>
     <span class="link-text">Sessions 10-12: Searching & Sorting</span>
   </a>
 
-  <a href="{{ '/docs/ADS/session13-hashing' | relative_url }}" class="content-link">
+  <a href="{{ '/docs/AlgorithmsDataStructures/session13-hashing' | relative_url }}" class="content-link">
     <span class="link-icon">#️⃣</span>
     <span class="link-text">Session 13: Hash Functions</span>
   </a>
 
-  <a href="{{ '/docs/ADS/session14-16-graphs' | relative_url }}" class="content-link">
+  <a href="{{ '/docs/AlgorithmsDataStructures/session14-16-graphs' | relative_url }}" class="content-link">
     <span class="link-icon">🕸️</span>
     <span class="link-text">Sessions 14-16: Graphs</span>
   </a>
 
-  <a href="{{ '/docs/ADS/session17-18-algorithm-design' | relative_url }}" class="content-link">
+  <a href="{{ '/docs/AlgorithmsDataStructures/session17-18-algorithm-design' | relative_url }}" class="content-link">
     <span class="link-icon">🧠</span>
     <span class="link-text">Sessions 17-18: Algorithm Design</span>
   </a>
@@ -182,8 +181,8 @@ graph TD
 
 ### Text Book
 - **Data Abstraction and Problem Solving with Java: Walls and Mirrors**
-  - Authors: Janet Prichard, Frank M. Carrano
-  - Publisher: Pearson
+   - Authors: Janet Prichard, Frank M. Carrano
+   - Publisher: Pearson
 
 ### References
 - **Introduction to Algorithms** by Cormen, Leiserson, Rivest, and Stein

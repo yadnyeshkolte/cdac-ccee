@@ -7,7 +7,7 @@ nav_order: 3
 
 # Sessions 4 & 5: Linked List Data Structures
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})
 
 ---
 
@@ -116,10 +116,10 @@ graph TD
 
 ```mermaid
 graph LR
-    H[Head] --> A[10 | →]
-    A --> B[20 | →]
-    B --> C[30 | →]
-    C --> D[40 | null]
+    H[Head] --> A["10 | →"]
+    A --> B["20 | →"]
+    B --> C["30 | →"]
+    C --> D["40 | null"]
     
     style H fill:#4dabf7
     style D fill:#ff6b6b
@@ -311,10 +311,10 @@ sequenceDiagram
 
 ```mermaid
 graph LR
-    H[Head] --> A[null ← | 10 | →]
-    A <--> B[← | 20 | →]
-    B <--> C[← | 30 | →]
-    C <--> D[← | 40 | → null]
+    H[Head] --> A["null ← | 10 | →"]
+    A <--> B["← | 20 | →"]
+    B <--> C["← | 30 | →"]
+    C <--> D["← | 40 | → null"]
     
     style H fill:#4dabf7
     style D fill:#ff6b6b
@@ -434,10 +434,10 @@ public class DoublyLinkedList {
 
 ```mermaid
 graph LR
-    H[Head] --> A[10 | →]
-    A --> B[20 | →]
-    B --> C[30 | →]
-    C --> D[40 | →]
+    H[Head] --> A["10 | →"]
+    A --> B["20 | →"]
+    B --> C["30 | →"]
+    C --> D["40 | →"]
     D --> A
     
     style H fill:#4dabf7
@@ -518,10 +518,10 @@ public class CircularLinkedList {
 
 ```mermaid
 graph LR
-    H[Head] --> A[← | 10 | →]
-    A <--> B[← | 20 | →]
-    B <--> C[← | 30 | →]
-    C <--> D[← | 40 | →]
+    H[Head] --> A["← | 10 | →"]
+    A <--> B["← | 20 | →"]
+    B <--> C["← | 30 | →"]
+    C <--> D["← | 40 | →"]
     D <--> A
     
     style H fill:#4dabf7
@@ -954,4 +954,4 @@ public Node removeNthFromEnd(Node head, int n) {
 
 [← Previous: Sessions 2-3]({{ '/docs/AlgorithmsDataStructures/session2-3-algorithms-basics' | relative_url }}) | [Next: Session 6 →]({{ '/docs/AlgorithmsDataStructures/session6-recursion' | relative_url }})
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})

@@ -7,7 +7,7 @@ nav_order: 6
 
 # Sessions 10, 11 & 12: Searching and Sorting Algorithms
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})
 
 ---
 
@@ -408,4 +408,4 @@ Unstable: [(2,d), (3,b), (5,c), (5,a)]  ✗ Order changed
 
 [← Previous: Sessions 7-9]({{ '/docs/AlgorithmsDataStructures/session7-9-trees' | relative_url }}) | [Next: Session 13 →]({{ '/docs/AlgorithmsDataStructures/session13-hashing' | relative_url }})
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})

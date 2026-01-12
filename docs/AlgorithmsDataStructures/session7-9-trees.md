@@ -7,7 +7,7 @@ nav_order: 5
 
 # Sessions 7, 8 & 9: Trees & Applications
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})
 
 ---
 
@@ -563,4 +563,4 @@ TreeNode LCA(TreeNode root, int n1, int n2) {
 
 [← Previous: Session 6]({{ '/docs/AlgorithmsDataStructures/session6-recursion' | relative_url }}) | [Next: Sessions 10-12 →]({{ '/docs/AlgorithmsDataStructures/session10-12-searching-sorting' | relative_url }})
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})

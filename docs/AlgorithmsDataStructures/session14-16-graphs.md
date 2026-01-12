@@ -7,7 +7,7 @@ nav_order: 8
 
 # Sessions 14, 15 & 16: Graphs and Applications
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})
 
 ---
 
@@ -419,4 +419,4 @@ void kruskalMST() {
 
 [← Previous: Session 13]({{ '/docs/AlgorithmsDataStructures/session13-hashing' | relative_url }}) | [Next: Sessions 17-18 →]({{ '/docs/AlgorithmsDataStructures/session17-18-algorithm-design' | relative_url }})
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})

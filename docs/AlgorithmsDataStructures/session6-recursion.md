@@ -7,7 +7,7 @@ nav_order: 4
 
 # Session 6: Recursion
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})
 
 ---
 
@@ -810,4 +810,4 @@ void generateBinary(int n, String current) {
 
 [← Previous: Sessions 4-5]({{ '/docs/AlgorithmsDataStructures/session4-5-linked-lists' | relative_url }}) | [Next: Sessions 7-9 →]({{ '/docs/AlgorithmsDataStructures/session7-9-trees' | relative_url }})
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})

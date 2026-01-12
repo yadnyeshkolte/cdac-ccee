@@ -62,7 +62,7 @@ permalink: /
     <p>STL, Memory Management, OOP & more</p>
   </a>
 
-  <a href="{{ '/docs/ADS/' | relative_url }}" class="module-card card-indigo">
+  <a href="{{ '/docs/AlgorithmsDataStructures/' | relative_url }}" class="module-card card-indigo">
     <div class="icon">📊</div>
     <h3>Data Structures</h3>
     <p>Arrays, Trees, Graphs, Sorting & Algorithms</p>
@@ -122,9 +122,9 @@ permalink: /
   <div class="access-card">
     <h3>📊 Module 4 - ADS</h3>
     <div class="access-links">
-      <a href="{{ '/docs/ADS/' | relative_url }}" class="access-link notes">📖 All Notes</a>
-      <a href="{{ '/docs/ADS/practice/mcq-test-1' | relative_url }}" class="access-link mcq">🎯 MCQ Test 1</a>
-      <a href="{{ '/docs/ADS/practice/mcq-test-2' | relative_url }}" class="access-link mcq">🎯 MCQ Test 2</a>
+      <a href="{{ '/docs/AlgorithmsDataStructures/' | relative_url }}" class="access-link notes">📖 All Notes</a>
+      <a href="{{ '/docs/AlgorithmsDataStructures/practice/mcq-test-1' | relative_url }}" class="access-link mcq">🎯 MCQ Test 1</a>
+      <a href="{{ '/docs/AlgorithmsDataStructures/practice/mcq-test-2' | relative_url }}" class="access-link mcq">🎯 MCQ Test 2</a>
     </div>
   </div>
 

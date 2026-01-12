@@ -7,7 +7,7 @@ nav_order: 2
 
 # Sessions 2 & 3: Algorithms & Data Structures (Stacks, Queues)
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})
 
 ---
 
@@ -973,4 +973,4 @@ public int[] nextGreaterElement(int[] nums) {
 
 [← Previous: Session 1]({{ '/docs/AlgorithmsDataStructures/session1-problem-solving' | relative_url }}) | [Next: Sessions 4-5 →]({{ '/docs/AlgorithmsDataStructures/session4-5-linked-lists' | relative_url }})
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})

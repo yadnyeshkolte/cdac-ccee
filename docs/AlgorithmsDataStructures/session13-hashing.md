@@ -7,7 +7,7 @@ nav_order: 7
 
 # Session 13: Hash Functions and Hash Tables
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})
 
 ---
 
@@ -299,4 +299,4 @@ mindmap
 
 [← Previous: Sessions 10-12]({{ '/docs/AlgorithmsDataStructures/session10-12-searching-sorting' | relative_url }}) | [Next: Sessions 14-16 →]({{ '/docs/AlgorithmsDataStructures/session14-16-graphs' | relative_url }})
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})

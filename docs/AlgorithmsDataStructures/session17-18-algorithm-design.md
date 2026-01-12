@@ -7,7 +7,7 @@ nav_order: 9
 
 # Sessions 17 & 18: Algorithm Design Techniques
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})
 
 ---
 
@@ -26,13 +26,13 @@ nav_order: 9
 ```mermaid
 mindmap
   root((Algorithm<br/>Design))
-    Divide & Conquer
+    "Divide & Conquer"
       Merge Sort
       Quick Sort
       Binary Search
     Greedy
       Dijkstra
-      Prim's MST
+      "Prim's MST"
       Huffman Coding
     Dynamic Programming
       Fibonacci
@@ -42,7 +42,7 @@ mindmap
       N-Queens
       Sudoku
       Maze
-    Branch & Bound
+    "Branch & Bound"
       TSP
       Job Assignment
 ```
@@ -453,4 +453,4 @@ graph TD
 
 [← Previous: Sessions 14-16]({{ '/docs/AlgorithmsDataStructures/session14-16-graphs' | relative_url }})
 
-[← Back to Module Index]({{ '/docs/ADS/' | relative_url }})
+[← Back to Module Index]({{ '/docs/AlgorithmsDataStructures/' | relative_url }})
