@@ -1,452 +1,442 @@
 [
   {
-    "question": "What does HTTP stand for?",
+    "question": "In the context of HTTP/1.1 vs HTTP/2, which of the following statements accurately describes the 'Head-of-Line Blocking' problem?",
     "options": [
-      "HyperText Transfer Protocol",
-      "HyperText Transmission Protocol",
-      "High Transfer Text Protocol",
-      "HyperLink Transfer Protocol"
+      "In HTTP/1.1, multiple requests can be sent, but responses must be received in order, causing delays if the first packet is lost.",
+      "HTTP/2 solves this by using separate TCP connections for every image on the page.",
+      "HTTP/1.1 requires the browser to download CSS before HTML, blocking the rendering path.",
+      "HTTP/2 encrypts headers, making it impossible for firewalls to block specific lines of traffic."
     ],
-    "answer": 0
+    "answer": 0,
+    "explanation": "HTTP/1.1 pipelining suffers from Head-of-Line blocking at the application layer. If request 1 stalls, requests 2 and 3 are blocked. HTTP/2 uses multiplexing streams to solve this."
   },
   {
-    "question": "Which HTTP method is idempotent?",
+    "question": "You are designing a semantic HTML5 blog post. Which structure represents the most semantically correct hierarchy for accessibility and SEO?\n\n**Option A:**\n```html\n<article>\n  <div>My Blog</div>\n  <div>Content...</div>\n  <div>Author Info</div>\n</article>\n```\n\n**Option B:**\n```html\n<article>\n  <header>My Blog</header>\n  <section>Content...</section>\n  <footer>Author Info</footer>\n</article>\n```",
     "options": [
-      "POST",
-      "PUT",
-      "PATCH",
-      "None of the above"
+      "Option A",
+      "Option B",
+      "Both are semantically identical.",
+      "Neither; <section> should be inside <footer>."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Option B uses semantic tags (<header>, <section>, <footer>) inside the <article>, which provides meaningful structure to screen readers. Option A relies on generic <div> tags."
   },
   {
-    "question": "What HTTP status code indicates 'Not Found'?",
+    "question": "Regarding HTML5 form validation, what happens if you apply the `novalidate` attribute to the `<form>` tag but use `required` attributes on individual input fields?",
     "options": [
-      "400",
-      "401",
-      "403",
-      "404"
+      "The browser will still perform validation but will not show error messages.",
+      "The browser will ignore all HTML5 validation attributes (like required, min, max) upon submission.",
+      "The form will fail to submit because of conflicting attributes.",
+      "The `novalidate` attribute is ignored if `required` is present."
     ],
-    "answer": 3
+    "answer": 1,
+    "explanation": "`novalidate` on the form element disables the browser's native validation mechanism, allowing you to implement custom JavaScript validation without interference."
   },
   {
-    "question": "Which port is default for HTTPS?",
+    "question": "In the CSS Box Model, if an element has `width: 200px`, `padding: 20px`, `border: 5px solid`, and `box-sizing: border-box`, what is the actual width of the content area?",
     "options": [
-      "80",
-      "8080",
-      "443",
-      "3000"
+      "250px",
+      "200px",
+      "150px",
+      "175px"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "With `border-box`, the `width` property includes padding and border. Content Width = Total Width (200) - Left/Right Padding (40) - Left/Right Border (10) = 150px."
   },
   {
-    "question": "DNS stands for:",
+    "question": "Consider the following CSS specificity scenario. Which color will the `<p>` element display?\n```css\n#demo { color: blue; } \n.text { color: red !important; } \np { color: green; }\n```\n```html\n<p id=\"demo\" class=\"text\">Hello</p>\n```",
     "options": [
-      "Domain Name Service",
-      "Domain Name System",
-      "Dynamic Name Server",
-      "Digital Network System"
+      "Blue",
+      "Red",
+      "Green",
+      "Black (default)"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Although ID (#demo) usually has higher specificity than Class (.text), the `!important` flag overrides normal specificity rules."
   },
   {
-    "question": "Which HTTP header is used to specify the content type?",
+    "question": "In the Bootstrap Grid System (12-column), you want 3 columns on a desktop. The first takes 50% width, and the other two share the remaining space equally. Which classes are correct?",
     "options": [
-      "Accept",
-      "Content-Type",
-      "Authorization",
-      "Cache-Control"
+      "col-lg-6, col-lg-3, col-lg-3",
+      "col-md-5, col-md-3, col-md-3",
+      "col-lg-6, col-lg-4, col-lg-2",
+      "col-6, col-3, col-3"
     ],
-    "answer": 1
+    "answer": 0,
+    "explanation": "50% of 12 columns is 6. The remaining 6 columns divided by 2 is 3. So: 6 + 3 + 3 = 12."
   },
   {
-    "question": "Which HTTP method is used to retrieve data?",
+    "question": "Which Bootstrap class would you use to create a navigational bar that collapses into a hamburger menu on smaller screens?",
     "options": [
-      "POST",
-      "PUT",
-      "GET",
-      "DELETE"
+      ".navbar-responsive",
+      ".navbar-expand-*",
+      ".nav-collapse",
+      ".menu-toggle"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "The `.navbar-expand-{breakpoint}` class dictates at which screen width the navbar stops being collapsed (vertical) and becomes horizontal."
   },
   {
-    "question": "What does SSL/TLS provide?",
+    "question": "Analyze the output of the following JavaScript code snippet involving type coercion:\n```javascript\nconsole.log(1 + \"2\" - 1);\n```",
     "options": [
-      "Speed optimization",
-      "Data compression",
-      "Encryption and security",
-      "Caching"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which HTML5 tag is used for navigation?",
-    "options": [
-      "<navigation>",
-      "<nav>",
-      "<menu>",
-      "<navbar>"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which is NOT a semantic HTML5 element?",
-    "options": [
-      "<article>",
-      "<div>",
-      "<section>",
-      "<header>"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which HTML5 input type is used for email validation?",
-    "options": [
-      "type=\"text\"",
-      "type=\"email\"",
-      "type=\"mail\"",
-      "type=\"validate\""
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which attribute makes an input field required?",
-    "options": [
-      "validate",
-      "mandatory",
-      "required",
-      "needed"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which HTML5 API is used to store data in the browser?",
-    "options": [
-      "Cookie API",
-      "Web Storage API",
-      "File API",
-      "Database API"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What is the difference between localStorage and sessionStorage?",
-    "options": [
-      "localStorage stores more data",
-      "sessionStorage persists after browser close",
-      "localStorage persists after browser close",
-      "No difference"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which HTML5 element is used for drawing graphics?",
-    "options": [
-      "<svg>",
-      "<canvas>",
-      "<graphics>",
-      "<draw>"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which attribute is used to specify alternative text for images?",
-    "options": [
-      "title",
-      "alt",
-      "description",
-      "text"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which HTML5 element is used for main content?",
-    "options": [
-      "<content>",
-      "<body>",
-      "<main>",
-      "<article>"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which input type is used for selecting a date?",
-    "options": [
-      "type=\"calendar\"",
-      "type=\"date\"",
-      "type=\"datetime\"",
-      "type=\"picker\""
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which CSS property is used to change text color?",
-    "options": [
-      "text-color",
-      "font-color",
-      "color",
-      "foreground"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which CSS selector has the highest specificity?",
-    "options": [
-      "Class selector",
-      "Element selector",
-      "ID selector",
-      "Attribute selector"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What is the correct order of the box model from inside to outside?",
-    "options": [
-      "Margin, Border, Padding, Content",
-      "Content, Padding, Border, Margin",
-      "Padding, Content, Border, Margin",
-      "Content, Border, Padding, Margin"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which CSS property is used to make elements float?",
-    "options": [
-      "align",
-      "position",
-      "float",
-      "display"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which value of position removes element from normal flow?",
-    "options": [
-      "relative",
-      "static",
-      "absolute",
-      "sticky"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which CSS property controls the stacking order of elements?",
-    "options": [
-      "order",
-      "stack",
-      "z-index",
-      "layer"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which unit is relative to the root element's font size?",
-    "options": [
-      "em",
-      "rem",
-      "px",
-      "%"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which CSS property creates smooth transitions?",
-    "options": [
-      "animation",
-      "transform",
-      "transition",
-      "smooth"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which pseudo-class selects the first child element?",
-    "options": [
-      ":first",
-      ":first-child",
-      ":first-element",
-      ":child-first"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which CSS property is used to hide an element but keep its space?",
-    "options": [
-      "display: none",
-      "visibility: hidden",
-      "opacity: 0",
-      "Both B and C"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "Which is a valid way to include an external CSS file?",
-    "options": [
-      "<style src=\"style.css\">",
-      "<link rel=\"stylesheet\" href=\"style.css\">",
-      "<css href=\"style.css\">",
-      "<include file=\"style.css\">"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What does box-sizing: border-box do?",
-    "options": [
-      "Adds extra border",
-      "Includes padding and border in width",
-      "Removes border",
-      "Makes border thicker"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which Bootstrap class creates a responsive container?",
-    "options": [
-      ".wrapper",
-      ".container",
-      ".responsive",
-      ".box"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "How many columns does Bootstrap's grid system have?",
-    "options": [
-      "8",
-      "10",
+      "11",
       "12",
-      "16"
+      "2",
+      "NaN"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "`1 + '2'` results in the string '12' (concatenation). Then `'12' - 1` triggers numeric coercion (subtraction converts strings to numbers), resulting in the number 12."
   },
   {
-    "question": "Which Bootstrap class makes an image responsive?",
+    "question": "What is the output of this code regarding closures and `var` vs `let`?\n```javascript\nfor (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 100);\n}\n```",
     "options": [
-      ".img-responsive",
-      ".img-fluid",
-      ".responsive-img",
-      ".fluid-img"
+      "0 1 2",
+      "1 2 3",
+      "3 3 3",
+      "0 0 0"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "`var` has function scope (or global here), so the variable `i` is shared across all iterations. By the time the `setTimeout` callbacks run, the loop has finished and `i` is 3."
   },
   {
-    "question": "Which Bootstrap breakpoint prefix is for medium devices?",
+    "question": "In JavaScript, what is the primary difference between `==` and `===`?",
     "options": [
-      "sm",
-      "md",
-      "lg",
-      "xl"
+      "`==` checks value and type; `===` checks only value.",
+      "`===` checks value and type; `==` performs type coercion before checking value.",
+      "`==` is used for strings; `===` is used for numbers.",
+      "There is no difference; they are aliases."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Strict equality (`===`) requires both operands to be of the same type and value. Abstract equality (`==`) attempts to convert types to match before comparing."
   },
   {
-    "question": "Which Bootstrap class creates a primary button?",
+    "question": "Which Array method would you use to check if *at least one* element in an array passes a specific condition?",
     "options": [
-      ".btn-primary",
-      ".button-primary",
-      ".primary-btn",
-      ".btn-blue"
+      ".every()",
+      ".filter()",
+      ".some()",
+      ".map()"
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": "`.some()` returns true if at least one element satisfies the predicate. `.every()` requires all elements to satisfy it."
   },
   {
-    "question": "Which Bootstrap class hides element on mobile?",
+    "question": "Consider the following Object logic. What is the output?\n```javascript\nconst user = {\n  name: \"Alice\",\n  getName: () => {\n    return this.name;\n  }\n};\nconsole.log(user.getName());\n```",
     "options": [
-      ".hidden-mobile",
-      ".d-none d-md-block",
-      ".mobile-hidden",
-      ".hide-sm"
+      "Alice",
+      "undefined",
+      "null",
+      "Throws an Error"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Arrow functions do not have their own `this`. They inherit `this` from the lexical scope (usually the window/global object in this context), not the object `user`."
   },
   {
-    "question": "Which Bootstrap class adds margin to all sides?",
+    "question": "Which of the following correctly describes the behavior of `event.stopPropagation()`?",
     "options": [
-      ".margin-3",
-      ".m-3",
-      ".mg-3",
-      ".mar-3"
+      "It prevents the default browser behavior (like submitting a form).",
+      "It stops the event from bubbling up to parent elements.",
+      "It stops the event listener from ever running again.",
+      "It immediately reloads the DOM."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "`stopPropagation()` prevents the event from traveling up the DOM tree (Bubbling phase). `preventDefault()` stops the default browser action."
   },
   {
-    "question": "What is the viewport meta tag used for?",
+    "question": "In ES6, what is the correct syntax to merge two arrays `arr1` and `arr2` into a new array?",
     "options": [
-      "SEO optimization",
-      "Responsive design on mobile",
-      "Faster loading",
-      "Browser caching"
+      "const newArr = arr1 + arr2;",
+      "const newArr = [...arr1, ...arr2];",
+      "const newArr = arr1.merge(arr2);",
+      "const newArr = [arr1, arr2];"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "The spread operator `...` expands the elements of both arrays into a new array literal. Option D creates a nested array."
   },
   {
-    "question": "Which CSS at-rule is used for responsive design?",
+    "question": "Which of the following strings is a VALID JSON format?",
     "options": [
-      "@responsive",
-      "@screen",
-      "@media",
-      "@device"
+      "{ name: 'John', age: 30 }",
+      "{ \"name\": \"John\", \"age\": 30, }",
+      "{ \"name\": \"John\", \"age\": 30 }",
+      "{ 'name': 'John', 'age': 30 }"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "JSON requires double quotes around keys and string values. Single quotes are invalid. Trailing commas (Option B) are also invalid in standard JSON."
   },
   {
-    "question": "Which approach designs for mobile first then scales up?",
+    "question": "In jQuery, which method is efficient for handling events on elements that do not exist yet (dynamically added elements)?",
     "options": [
-      "Desktop-first",
-      "Mobile-first",
-      "Responsive-first",
-      "Adaptive-first"
+      ".click()",
+      ".on() using event delegation",
+      ".bind()",
+      ".live()"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Using `$(parent).on('click', 'child', handler)` allows the parent to capture events from children that are added to the DOM after the page load."
   },
   {
-    "question": "Which Bootstrap container type is full-width?",
+    "question": "When using Axios, which property of the response object contains the actual JSON data sent by the server?",
     "options": [
-      ".container",
-      ".container-fluid",
-      ".container-full",
-      ".container-wide"
+      "response.json",
+      "response.body",
+      "response.data",
+      "response.result"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "Axios automatically parses JSON and places the payload in the `data` property of the response object."
   },
   {
-    "question": "Which pseudo-element adds content before an element?",
+    "question": "What is the primary difference between `XMLHttpRequest` and the `Fetch API`?",
     "options": [
-      ":before",
-      "::before",
-      "::first",
-      ":start"
+      "Fetch uses callbacks, while XHR uses Promises.",
+      "Fetch uses Promises, while XHR is event-based.",
+      "XHR cannot handle JSON data.",
+      "Fetch is synchronous, XHR is asynchronous."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Fetch API provides a modern, cleaner interface using Promises (then/catch) compared to the event-driven callback hell often associated with XHR."
   },
   {
-    "question": "Which CSS function is used for calculations?",
+    "question": "In Node.js, `module.exports` and `exports` initially point to the same object. What happens if you reassign `exports = { a: 1 }` directly?",
     "options": [
-      "compute()",
-      "math()",
-      "calc()",
-      "eval()"
+      "It correctly exports the object `{ a: 1 }`.",
+      "It breaks the reference to `module.exports`, and nothing is exported.",
+      "It throws a syntax error.",
+      "It exports both the old and new values."
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "`exports` is just a shortcut reference. Reassigning it breaks the link. You must assign properties to it (`exports.a = 1`) or assign to `module.exports` directly."
   },
   {
-    "question": "Which CSS property creates a flexible box layout?",
+    "question": "What is the order of execution for the following Node.js code?\n```javascript\nconsole.log('A');\nsetTimeout(() => console.log('B'), 0);\nprocess.nextTick(() => console.log('C'));\nconsole.log('D');\n```",
     "options": [
-      "display: box",
-      "display: flexible",
-      "display: flex",
-      "display: flexbox"
+      "A, B, C, D",
+      "A, D, B, C",
+      "A, D, C, B",
+      "A, C, D, B"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Synchronous code (A, D) runs first. `process.nextTick` (C) runs immediately after the current operation completes but before the Event Loop continues. `setTimeout` (B) is a macrotask and runs last."
   },
   {
-    "question": "Which CSS property creates a grid layout?",
+    "question": "Which Node.js `fs` method should you use to read a file WITHOUT blocking the main thread?",
     "options": [
-      "display: table",
-      "display: grid",
-      "display: columns",
-      "display: layout"
+      "fs.readFileSync()",
+      "fs.readFile()",
+      "fs.readStream()",
+      "fs.openSync()"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "`readFile` takes a callback and executes asynchronously. Methods ending in `Sync` block the event loop until the file operation is complete."
+  },
+  {
+    "question": "What is the purpose of `package-lock.json` in a Node.js project?",
+    "options": [
+      "To lock the project so no one else can edit it.",
+      "To store the exact version tree of dependencies to ensure consistent installs across environments.",
+      "To list only the top-level dependencies requested by the developer.",
+      "To store the API keys and passwords securely."
+    ],
+    "answer": 1,
+    "explanation": "`package.json` often uses ranges (e.g., ^1.0.0). `package-lock.json` records the exact version installed to guarantee 'Works on My Machine' applies to production too."
+  },
+  {
+    "question": "In a Node HTTP server, which event is emitted every time a new client connects?",
+    "options": [
+      "'response'",
+      "'connection'",
+      "'receive'",
+      "'init'"
+    ],
+    "answer": 1,
+    "explanation": "The `request` event is emitted for HTTP requests, but at the TCP level, the `connection` event signals a new socket connection."
+  },
+  {
+    "question": "How do you access command-line arguments passed to a Node.js script (e.g., `node app.js arg1`)?",
+    "options": [
+      "window.arguments",
+      "global.args",
+      "process.argv",
+      "module.args"
+    ],
+    "answer": 2,
+    "explanation": "`process.argv` returns an array containing the node path, the file path, and then the subsequent arguments."
+  },
+  {
+    "question": "Which of the following is NOT a valid Node.js global object?",
+    "options": [
+      "__dirname",
+      "Buffer",
+      "document",
+      "require"
+    ],
+    "answer": 2,
+    "explanation": "`document` and `window` are browser-specific globals. Node.js is server-side and has no DOM."
+  },
+  {
+    "question": "When using `async/await` in Node.js, how do you handle errors that occur during the awaited promise?",
+    "options": [
+      "Using a `.catch()` block after the function call.",
+      "Wrapping the code in a `try...catch` block.",
+      "Node.js automatically restarts the process.",
+      "By checking `if (error)` after the await line."
+    ],
+    "answer": 1,
+    "explanation": "Since `await` pauses execution until resolution or rejection, standard `try...catch` blocks are the idiomatic way to handle rejected promises."
+  },
+  {
+    "question": "In Express.js, what is the significance of the `next` argument in a middleware function?",
+    "options": [
+      "It redirects the user to the next page.",
+      "It passes control to the next matching middleware or route handler.",
+      "It restarts the server.",
+      "It is an error object."
+    ],
+    "answer": 1,
+    "explanation": "If a middleware doesn't call `next()`, the request will hang and never finish. It is essential for the middleware chain."
+  },
+  {
+    "question": "Given the Express route path `/users/:id`, how do you access the value of `id` in the request handler?",
+    "options": [
+      "req.query.id",
+      "req.body.id",
+      "req.params.id",
+      "req.route.id"
+    ],
+    "answer": 2,
+    "explanation": "`req.params` holds route parameters (defined with colon). `req.query` holds query string parameters (after ?)."
+  },
+  {
+    "question": "Why is it unsafe to modify the `state` directly in React (e.g., `this.state.count = 2`)?",
+    "options": [
+      "It throws a syntax error.",
+      "It modifies the state but does not trigger a re-render, leaving the UI out of sync.",
+      "It causes an infinite loop.",
+      "It deletes the component."
+    ],
+    "answer": 1,
+    "explanation": "React relies on `setState` (or `useState` setters) to know *when* to trigger the diffing algorithm and update the DOM."
+  },
+  {
+    "question": "In a React Functional Component, which hook serves as the equivalent to `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`?",
+    "options": [
+      "useState",
+      "useEffect",
+      "useReducer",
+      "useLifecycle"
+    ],
+    "answer": 1,
+    "explanation": "`useEffect` combines these lifecycle methods depending on the dependency array provided (empty array for Mount, values for Update, return function for Unmount)."
+  },
+  {
+    "question": "What is the purpose of the `key` prop in React lists?",
+    "options": [
+      "To style the list items uniquely.",
+      "To help React identify which items have changed, added, or removed for efficient DOM updates.",
+      "It is required by HTML standards.",
+      "To act as a unique ID for CSS selectors."
+    ],
+    "answer": 1,
+    "explanation": "Without keys, React might re-render the entire list unnecessarily. Keys allow React to reuse existing DOM nodes."
+  },
+  {
+    "question": "What is a 'Controlled Component' in React forms?",
+    "options": [
+      "A component controlled by Redux.",
+      "An input element whose value is controlled by React state.",
+      "An input that uses `ref` to access values.",
+      "A component that cannot be updated by the user."
+    ],
+    "answer": 1,
+    "explanation": "In controlled components, the form data is handled by the React component (via state), making it the 'single source of truth'."
+  },
+  {
+    "question": "What is the output of the following React state update?\n```javascript\nconst [count, setCount] = useState(0);\nconst handleClick = () => {\n  setCount(count + 1);\n  setCount(count + 1);\n  setCount(count + 1);\n};\n```",
+    "options": [
+      "count becomes 3",
+      "count becomes 1",
+      "count becomes 0",
+      "Error"
+    ],
+    "answer": 1,
+    "explanation": "State updates are batched/async. `count` refers to the value in the *current* render (0) for all three calls. To fix this, use the functional form: `setCount(prev => prev + 1)`."
+  },
+  {
+    "question": "Which React concept allows you to pass data through the component tree without having to pass props down manually at every level?",
+    "options": [
+      "Props Drilling",
+      "Context API",
+      "Higher-Order Components",
+      "Portals"
+    ],
+    "answer": 1,
+    "explanation": "Context provides a way to share values (like themes or auth user) globally without prop drilling."
+  },
+  {
+    "question": "What is the primary role of `ReactDOM.render()` (or `createRoot.render` in v18)?",
+    "options": [
+      "To compile JSX into JavaScript.",
+      "To mount the React component tree into a DOM node in the HTML file.",
+      "To creating routing logic.",
+      "To fetch data from an API."
+    ],
+    "answer": 1,
+    "explanation": "This is the entry point that connects React's Virtual DOM to the browser's actual DOM (usually at `<div id=\"root\">`)."
+  },
+  {
+    "question": "In React composition, `props.children` is used to:",
+    "options": [
+      "Access the child state.",
+      "Render whatever content is placed between the opening and closing tags of a component.",
+      "Pass data from child to parent.",
+      "Validate prop types."
+    ],
+    "answer": 1,
+    "explanation": "This pattern allows for generic wrapper components (like a generic Card or Modal) that don't know their content ahead of time."
+  },
+  {
+    "question": "What does the `useRef` hook return?",
+    "options": [
+      "The current state value.",
+      "A mutable object with a `.current` property that persists across renders.",
+      "A DOM element only.",
+      "The previous state value."
+    ],
+    "answer": 1,
+    "explanation": "While often used for DOM access, `useRef` is a generic container for any mutable value that doesn't trigger re-renders when changed."
+  },
+  {
+    "question": "In Redux, which of the following principles must a Reducer follow?",
+    "options": [
+      "It must be an asynchronous function.",
+      "It must be a pure function (no side effects, no mutation).",
+      "It must directly modify the DOM.",
+      "It must call the API."
+    ],
+    "answer": 1,
+    "explanation": "Reducers take (state, action) and return new state. They must never mutate the existing state object directly."
+  },
+  {
+    "question": "What is the purpose of a Redux 'Action'?",
+    "options": [
+      "To update the store directly.",
+      "To describe 'what happened' in the application (a plain JS object with a type).",
+      "To hold the application logic.",
+      "To connect React to Redux."
+    ],
+    "answer": 1,
+    "explanation": "Actions are payloads of information (e.g., `{ type: 'ADD_TODO', text: 'Buy milk' }`) sent from the application to the store."
+  },
+  {
+    "question": "Which library is commonly used with Redux to handle asynchronous actions (like API calls)?",
+    "options": [
+      "React Router",
+      "Redux Thunk or Redux Saga",
+      "Axios",
+      "Lodash"
+    ],
+    "answer": 1,
+    "explanation": "Redux by default only handles synchronous updates. Thunk/Saga are middleware that allow dispatching functions or handling side effects."
   }
 ]
