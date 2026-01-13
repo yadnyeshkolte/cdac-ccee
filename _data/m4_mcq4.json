@@ -1,0 +1,442 @@
+[
+    {
+        "question": "Consider the following code snippet. What is the time complexity in terms of Big O notation?\n```cpp\nfor(int i = 1; i < n; i = i * 2) {\n    printf(\"%d\", i);\n}\n```",
+        "options": [
+            "O(n)",
+            "O(n²)",
+            "O(log n)",
+            "O(1)"
+        ],
+        "answer": 2,
+        "explanation": "The loop variable 'i' is multiplied by 2 in each iteration (1, 2, 4, 8...), meaning the loop runs log₂(n) times."
+    },
+    {
+        "question": "In the context of problem-solving using computers, which phase immediately follows 'Problem Definition'?",
+        "options": [
+            "Maintenance",
+            "Coding",
+            "Problem Analysis & Design",
+            "Testing"
+        ],
+        "answer": 2,
+        "explanation": "Before writing any code or testing, the problem must be analyzed and a solution (algorithm/flowchart) must be designed."
+    },
+    {
+        "question": "Which of the following growth functions represents the most efficient algorithm for large inputs?",
+        "options": [
+            "n!",
+            "2^n",
+            "n log n",
+            "n²"
+        ],
+        "answer": 2,
+        "explanation": "O(n log n) grows much slower than polynomial (n²) or exponential (2^n, n!) times."
+    },
+    {
+        "question": "You are converting the infix expression 'A + B * C' to postfix. What is the correct result?",
+        "options": [
+            "A B C * +",
+            "A B + C *",
+            "A B C + *",
+            "+ A * B C"
+        ],
+        "answer": 0,
+        "explanation": "Multiplication (*) has higher precedence than addition (+). B and C are multiplied first (BC*), then added to A (ABC*+)."
+    },
+    {
+        "question": "In a circular queue implemented using an array of size N, with indices 0 to N-1, what is the condition to check if the queue is full?",
+        "options": [
+            "front == rear",
+            "rear == N - 1",
+            "(rear + 1) % N == front",
+            "front == rear + 1"
+        ],
+        "answer": 2,
+        "explanation": "In a circular queue, the 'full' condition occurs when the next position of rear wraps around and hits the front."
+    },
+    {
+        "question": "Which data structure is implicitly used by the compiler to manage function calls and local variables?",
+        "options": [
+            "Queue",
+            "Binary Tree",
+            "Stack",
+            "Linked List"
+        ],
+        "answer": 2,
+        "explanation": "The 'Call Stack' stores stack frames (activation records) for active subroutines."
+    },
+    {
+        "question": "Calculate the address of element A[5][4] in a 2D array of integers (size 4 bytes), stored in Row-Major order. Base address is 1000, and the array dimensions are [10][10] (indices start at 0).",
+        "options": [
+            "1216",
+            "1160",
+            "1220",
+            "1054"
+        ],
+        "answer": 0,
+        "explanation": "Formula: Base + Size * (Columns * RowIndex + ColIndex). 1000 + 4 * (10 * 5 + 4) = 1216."
+    },
+    {
+        "question": "If we implement a Queue using two Stacks (S1 and S2), what is the complexity of the Dequeue operation in the worst case?",
+        "options": [
+            "O(1)",
+            "O(n)",
+            "O(log n)",
+            "O(n²)"
+        ],
+        "answer": 1,
+        "explanation": "If S2 is empty, all elements from S1 must be popped and pushed to S2, taking O(n) time."
+    },
+    {
+        "question": "What is the primary advantage of a Doubly Linked List over a Singly Linked List?",
+        "options": [
+            "Requires less memory per node",
+            "Traversal is possible in both directions",
+            "Insertion at the beginning is faster",
+            "Searching is O(1)"
+        ],
+        "answer": 1,
+        "explanation": "Doubly linked lists store 'prev' pointers, allowing backward traversal, which is impossible in standard singly linked lists."
+    },
+    {
+        "question": "In a Circular Singly Linked List with a pointer 'last' pointing to the last node, what is the time complexity to insert a node at the beginning?",
+        "options": [
+            "O(n)",
+            "O(1)",
+            "O(log n)",
+            "O(n²)"
+        ],
+        "answer": 1,
+        "explanation": "With a pointer to 'last', the beginning is 'last->next'. We can insert O(1) without traversing."
+    },
+    {
+        "question": "To delete a node 'P' (which is not the head or tail) from a Singly Linked List given only a pointer to 'P', which logic works (assuming data copy is allowed)?",
+        "options": [
+            "P = P->next;",
+            "free(P);",
+            "P->data = P->next->data; P->next = P->next->next;",
+            "Cannot be done without pointer to previous node."
+        ],
+        "answer": 2,
+        "explanation": "Trick: Copy the data from the next node into P, then delete the next node. This simulates deleting P."
+    },
+    {
+        "question": "Which scenario favors a Linked List over an Array?",
+        "options": [
+            "Random access to elements is frequent",
+            "The number of elements is known in advance",
+            "Frequent insertions/deletions in the middle of the list",
+            "Memory is extremely scarce"
+        ],
+        "answer": 2,
+        "explanation": "Arrays require shifting elements O(n) for middle insertion/deletion. Linked Lists just change pointers O(1) (after traversal)."
+    },
+    {
+        "question": "What happens if a recursive function lacks a base case?",
+        "options": [
+            "It returns 0",
+            "It runs once and stops",
+            "Stack Overflow Error",
+            "Syntax Error"
+        ],
+        "answer": 2,
+        "explanation": "Without a base case, the function calls itself infinitely until the system stack memory is exhausted."
+    },
+    {
+        "question": "What does the following function return for fun(5)?\n```cpp\nint fun(int n) {\n  if(n == 1) return 1;\n  return n + fun(n-1);\n}\n```",
+        "options": [
+            "15",
+            "10",
+            "25",
+            "120"
+        ],
+        "answer": 0,
+        "explanation": "This function calculates the sum of 1 to n. 5+4+3+2+1 = 15."
+    },
+    {
+        "question": "A function is called 'Tail Recursive' if:",
+        "options": [
+            "It calls itself multiple times",
+            "The recursive call is the very last action performed",
+            "It uses a static variable",
+            "It has no base case"
+        ],
+        "answer": 1,
+        "explanation": "Tail recursion allows compilers to optimize stack usage (Tail Call Optimization) because no computation follows the return."
+    },
+    {
+        "question": "Which traversal of a Binary Search Tree (BST) always results in a sorted sequence?",
+        "options": [
+            "Preorder",
+            "Inorder",
+            "Postorder",
+            "Level Order"
+        ],
+        "answer": 1,
+        "explanation": "Inorder traversal (Left-Root-Right) visits nodes in non-decreasing order for a valid BST."
+    },
+    {
+        "question": "The maximum number of nodes in a binary tree of height 'h' (assuming root is at height 1) is:",
+        "options": [
+            "2^h",
+            "2^h - 1",
+            "2^(h-1)",
+            "h^2"
+        ],
+        "answer": 1,
+        "explanation": "A full binary tree has 2^h - 1 nodes. E.g., height 3 (1, 2, 4 nodes) -> 1+2+4 = 7 = 2^3 - 1."
+    },
+    {
+        "question": "In an AVL tree, the balance factor of every node must be:",
+        "options": [
+            "Exactly 0",
+            "Between -1 and 1",
+            "Any integer",
+            "Positive only"
+        ],
+        "answer": 1,
+        "explanation": "AVL trees are height-balanced; the height difference between left and right subtrees must be {-1, 0, 1}."
+    },
+    {
+        "question": "In an array implementation of a Complete Binary Tree, if a node is at index `i` (0-based), its left child is at:",
+        "options": [
+            "2i",
+            "2i + 1",
+            "2i + 2",
+            "i/2"
+        ],
+        "answer": 1,
+        "explanation": "For 0-based indexing: Left child is 2i+1, Right child is 2i+2, Parent is floor((i-1)/2)."
+    },
+    {
+        "question": "What is the worst-case time complexity for searching in a Binary Search Tree?",
+        "options": [
+            "O(1)",
+            "O(log n)",
+            "O(n)",
+            "O(n log n)"
+        ],
+        "answer": 2,
+        "explanation": "In the worst case (a skewed tree like a linked list), you must visit every node, resulting in O(n)."
+    },
+    {
+        "question": "Binary Search can only be applied on:",
+        "options": [
+            "Sorted arrays",
+            "Unsorted arrays",
+            "Linked Lists",
+            "Hash Tables"
+        ],
+        "answer": 0,
+        "explanation": "Binary search relies on the property that the data is ordered to divide the search space in half."
+    },
+    {
+        "question": "Which sorting algorithm has a worst-case time complexity of O(n²)?",
+        "options": [
+            "Merge Sort",
+            "Heap Sort",
+            "Quick Sort",
+            "Radix Sort"
+        ],
+        "answer": 2,
+        "explanation": "While Quick Sort is O(n log n) on average, its worst case (already sorted/reverse sorted with bad pivot) is O(n²)."
+    },
+    {
+        "question": "A sorting algorithm is considered 'stable' if:",
+        "options": [
+            "It uses constant extra space",
+            "It runs in O(n log n)",
+            "It maintains the relative order of records with equal keys",
+            "It sorts in place"
+        ],
+        "answer": 2,
+        "explanation": "Stability ensures that if A comes before B and A == B, A remains before B after sorting."
+    },
+    {
+        "question": "Insertion sort is the most efficient algorithm for which type of data?",
+        "options": [
+            "Large unsorted datasets",
+            "Reverse sorted datasets",
+            "Small or nearly sorted datasets",
+            "Data with many duplicates"
+        ],
+        "answer": 2,
+        "explanation": "Insertion sort runs in O(n) for nearly sorted data and has low overhead for very small N."
+    },
+    {
+        "question": "In the first pass of Bubble Sort, what is guaranteed?",
+        "options": [
+            "The smallest element is at the start",
+            "The largest element is bubbled to the end",
+            "The array is half sorted",
+            "No guarantee"
+        ],
+        "answer": 1,
+        "explanation": "Bubble sort repeatedly swaps adjacent elements. After Pass 1, the maximum element is guaranteed to be in the last position."
+    },
+    {
+        "question": "Which technique resolves hash collisions by placing the new key in the next available slot?",
+        "options": [
+            "Chaining",
+            "Linear Probing",
+            "Double Hashing",
+            "Quadratic Probing"
+        ],
+        "answer": 1,
+        "explanation": "Linear probing looks for index i, i+1, i+2... until an empty slot is found."
+    },
+    {
+        "question": "What is the primary characteristic of a good hash function?",
+        "options": [
+            "It returns random numbers",
+            "It is complex to calculate",
+            "It distributes keys uniformly across the table",
+            "It always returns 0"
+        ],
+        "answer": 2,
+        "explanation": "Uniform distribution minimizes collisions and ensures O(1) average access time."
+    },
+    {
+        "question": "What is the average case time complexity for search in a Hash Table?",
+        "options": [
+            "O(1)",
+            "O(n)",
+            "O(log n)",
+            "O(n log n)"
+        ],
+        "answer": 0,
+        "explanation": "Assuming a good hash function and low load factor, hashing provides constant time O(1) access."
+    },
+    {
+        "question": "Which data structure is used to implement Breadth First Search (BFS) in a graph?",
+        "options": [
+            "Stack",
+            "Queue",
+            "Priority Queue",
+            "Tree"
+        ],
+        "answer": 1,
+        "explanation": "BFS explores neighbors level by level, requiring a Queue to manage the First-In-First-Out processing order."
+    },
+    {
+        "question": "Dijkstra's algorithm may fail if the graph contains:",
+        "options": [
+            "Cycles",
+            "Negative weight edges",
+            "Directed edges",
+            "Disconnected nodes"
+        ],
+        "answer": 1,
+        "explanation": "Dijkstra's greedy approach assumes adding an edge never decreases the total path cost, which fails with negative weights."
+    },
+    {
+        "question": "For a sparse graph (few edges), which representation is more space-efficient?",
+        "options": [
+            "Adjacency Matrix",
+            "Adjacency List",
+            "Incidence Matrix",
+            "2D Array"
+        ],
+        "answer": 1,
+        "explanation": "Adjacency List uses O(V+E) space, whereas Matrix uses O(V²). For sparse graphs E << V², so List is better."
+    },
+    {
+        "question": "Which algorithm builds a Minimum Spanning Tree by always choosing the smallest edge that doesn't form a cycle?",
+        "options": [
+            "Prim's Algorithm",
+            "Kruskal's Algorithm",
+            "Floyd-Warshall",
+            "DFS"
+        ],
+        "answer": 1,
+        "explanation": "Kruskal's algorithm sorts all edges by weight and adds them if they connect two previously unconnected components."
+    },
+    {
+        "question": "Topological sorting is only possible for which type of graph?",
+        "options": [
+            "Undirected Cyclic",
+            "Directed Acyclic Graph (DAG)",
+            "Complete Graph",
+            "Any Graph"
+        ],
+        "answer": 1,
+        "explanation": "Topological sort requires a directed graph with no cycles (dependencies must be resolvable)."
+    },
+    {
+        "question": "The 'Fractional Knapsack' problem is best solved using which approach?",
+        "options": [
+            "Dynamic Programming",
+            "Greedy Method",
+            "Backtracking",
+            "Divide and Conquer"
+        ],
+        "answer": 1,
+        "explanation": "Since we can take fractions of items, picking the item with the highest value/weight ratio (Greedy) works optimally."
+    },
+    {
+        "question": "Which of the following standard algorithms uses the Divide and Conquer strategy?",
+        "options": [
+            "Bubble Sort",
+            "Merge Sort",
+            "Prim's Algorithm",
+            "BFS"
+        ],
+        "answer": 1,
+        "explanation": "Merge Sort recursively divides the array into halves, sorts them, and merges them back."
+    },
+    {
+        "question": "Dynamic Programming is distinguished from Recursion by:",
+        "options": [
+            "Using iteration only",
+            "Storing results of subproblems (Memoization)",
+            "Using a Stack",
+            "Always taking O(n) time"
+        ],
+        "answer": 1,
+        "explanation": "DP optimizes recursion by storing solutions to overlapping subproblems to avoid re-computation."
+    },
+    {
+        "question": "The N-Queens problem is a classic example of:",
+        "options": [
+            "Greedy Algorithm",
+            "Dynamic Programming",
+            "Backtracking",
+            "Randomized Algorithm"
+        ],
+        "answer": 2,
+        "explanation": "Backtracking builds a solution incrementally and abandons ('backtracks') partial solutions that fail constraints."
+    },
+    {
+        "question": "An algorithm that yields the correct solution eventually but the runtime varies randomly is called a:",
+        "options": [
+            "Monte Carlo Algorithm",
+            "Las Vegas Algorithm",
+            "Deterministic Algorithm",
+            "Heuristic"
+        ],
+        "answer": 1,
+        "explanation": "Las Vegas algorithms always produce correct results, but time varies. Monte Carlo has fixed time but may be incorrect."
+    },
+    {
+        "question": "The Floyd-Warshall algorithm is used for:",
+        "options": [
+            "Single Source Shortest Path",
+            "All-Pairs Shortest Path",
+            "Minimum Spanning Tree",
+            "Sorting"
+        ],
+        "answer": 1,
+        "explanation": "It computes shortest paths between every pair of vertices in O(V³)."
+    },
+    {
+        "question": "Binary Search is an example of:",
+        "options": [
+            "Greedy Approach",
+            "Dynamic Programming",
+            "Divide and Conquer",
+            "Backtracking"
+        ],
+        "answer": 2,
+        "explanation": "It divides the problem instance (array) into a smaller instance (half the array) at each step."
+    }
+]
