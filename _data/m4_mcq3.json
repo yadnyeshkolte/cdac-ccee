@@ -1,0 +1,442 @@
+[
+    {
+        "question": "In the context of computational thinking, which phase involves ignoring irrelevant details to focus on the essential features of a problem?",
+        "options": [
+            "Decomposition",
+            "Pattern Recognition",
+            "Abstraction",
+            "Algorithm Design"
+        ],
+        "answer": 2,
+        "explanation": "Abstraction involves filtering out the unnecessary details to focus on the essential characteristics needed to solve a problem."
+    },
+    {
+        "question": "You are designing a system to track student attendance. You identify that the specific color of the student's shirt is irrelevant to the attendance logic. This is an example of:",
+        "options": [
+            "Heuristic search",
+            "Data Abstraction",
+            "Top-down stepwise refinement",
+            "Modularization"
+        ],
+        "answer": 1,
+        "explanation": "Data Abstraction is the process of hiding irrelevant details (like shirt color) while exposing only the essential attributes (like student ID, attendance status)."
+    },
+    {
+        "question": "Consider the following code snippet. What is the time complexity?\n```cpp\nfor(int i = 1; i < n; i = i * 2) {\n  for(int j = 0; j < i; j++) {\n    print(j);\n  }\n}\n```",
+        "options": [
+            "O(n log n)",
+            "O(n)",
+            "O(n²)",
+            "O(log n)"
+        ],
+        "answer": 1,
+        "explanation": "The outer loop runs log n times (i doubles each time). The inner loop runs 1 + 2 + 4 + ... + n/2 = n-1 times total. This is a geometric series summing to O(n)."
+    },
+    {
+        "question": "Which of the following Abstract Data Types (ADT) is best suited for implementing a 'Redo' operation in a text editor?",
+        "options": [
+            "Queue",
+            "Stack",
+            "Priority Queue",
+            "Circular Linked List"
+        ],
+        "answer": 1,
+        "explanation": "A Stack follows LIFO (Last In First Out) principle, which is perfect for redo operations where the most recent undone action should be redone first."
+    },
+    {
+        "question": "In a Circular Queue implemented with an array of size `N`, where `front` and `rear` track indices. The queue is considered FULL when:",
+        "options": [
+            "rear == N - 1",
+            "front == (rear + 1) % N",
+            "front == rear + 1",
+            "(front + 1) % N == rear"
+        ],
+        "answer": 1,
+        "explanation": "In a circular queue, the queue is full when the next position after rear equals front: front == (rear + 1) % N."
+    },
+    {
+        "question": "You have a 2D array `A[5][5]` stored in row-major order. The memory address of `A[0][0]` is 1000 and each integer takes 4 bytes. What is the address of `A[2][3]`?",
+        "options": [
+            "1044",
+            "1052",
+            "1048",
+            "1060"
+        ],
+        "answer": 1,
+        "explanation": "Address = Base + ((row * num_cols) + col) * size. Address = 1000 + ((2 * 5) + 3) * 4 = 1000 + (13 * 4) = 1000 + 52 = 1052."
+    },
+    {
+        "question": "When deleting a node `P` from a Doubly Linked List (where `P` is not the head or tail), which operation correctly unlinks `P`?",
+        "options": [
+            "P->prev->next = P->next; P->next->prev = P->prev;",
+            "P->next = P->prev; P->prev = P->next;",
+            "P->prev->next = P->next->prev;",
+            "P->next->prev = P->prev->next;"
+        ],
+        "answer": 0,
+        "explanation": "To remove P, we need to link P's previous node to P's next node, and P's next node back to P's previous node."
+    },
+    {
+        "question": "Which scenario presents a significant performance advantage for a Linked List over a dynamic Array (e.g., ArrayList)?",
+        "options": [
+            "Random access of elements at index k",
+            "Sorting the data",
+            "Insertion at the beginning of the collection",
+            "Binary Search implementation"
+        ],
+        "answer": 2,
+        "explanation": "Linked Lists can insert at the beginning in O(1) time, while dynamic arrays require shifting all elements, taking O(n) time."
+    },
+    {
+        "question": "In a Circular Singly Linked List with a pointer `last` pointing to the last node, what is the complexity of inserting a node at the beginning of the list?",
+        "options": [
+            "O(n)",
+            "O(1)",
+            "O(log n)",
+            "O(n²)"
+        ],
+        "answer": 1,
+        "explanation": "With `last` pointer, head is `last->next`. To insert at beginning: newNode->next = last->next, then last->next = newNode. This is O(1)."
+    },
+    {
+        "question": "Which of the following statements about Tail Recursion is TRUE?\n```cpp\nvoid fun(int n) {\n  if (n > 0) {\n    fun(n - 2);\n    printf(\"%d \", n);\n    fun(n - 1);\n  }\n}\n```",
+        "options": [
+            "Tail recursion uses more stack space than non-tail recursion.",
+            "Compilers can optimize tail recursion to use O(1) auxiliary space.",
+            "Tail recursion performs the recursive call before processing data.",
+            "Tail recursion is impossible to convert to an iterative loop."
+        ],
+        "answer": 1,
+        "explanation": "Tail recursion is when the recursive call is the last operation. Compilers can optimize it to reuse the same stack frame, achieving O(1) space."
+    },
+    {
+        "question": "If a recursive function lacks a proper base case, what specific runtime error will eventually occur?",
+        "options": [
+            "Heap Corruption",
+            "Stack Overflow",
+            "Segmentation Fault (Null Pointer)",
+            "Infinite Loop (CPU 100% but no crash)"
+        ],
+        "answer": 1,
+        "explanation": "Without a base case, the function keeps calling itself infinitely, exhausting the call stack memory, resulting in a Stack Overflow."
+    },
+    {
+        "question": "What is the maximum number of nodes in a binary tree of height `h` (where the root is at height 0)?",
+        "options": [
+            "2^h - 1",
+            "2^(h+1) - 1",
+            "2^h",
+            "h^2"
+        ],
+        "answer": 1,
+        "explanation": "A perfect binary tree of height h has 2^(h+1) - 1 nodes. Level 0 has 1 node, level 1 has 2, etc., summing to 2^0 + 2^1 + ... + 2^h = 2^(h+1) - 1."
+    },
+    {
+        "question": "Which tree traversal algorithm inherently sorts the values of a Binary Search Tree (BST) in ascending order?",
+        "options": [
+            "Preorder",
+            "Postorder",
+            "Inorder",
+            "Breadth-First Search"
+        ],
+        "answer": 2,
+        "explanation": "Inorder traversal (Left-Root-Right) of a BST visits nodes in ascending order because left subtree values < root < right subtree values."
+    },
+    {
+        "question": "In an AVL tree, if the balance factor of a node is -2 and its right child has a balance factor of +1, which rotation is required?",
+        "options": [
+            "Left Rotation (LL)",
+            "Right Rotation (RR)",
+            "Left-Right Rotation (LR)",
+            "Right-Left Rotation (RL)"
+        ],
+        "answer": 3,
+        "explanation": "Balance factor -2 indicates right-heavy. Right child with +1 indicates its left subtree is heavy. This is a Right-Left (RL) case requiring a right rotation on right child, then left rotation on node."
+    },
+    {
+        "question": "When deleting a node with two children from a Binary Search Tree, the node is typically replaced by:",
+        "options": [
+            "Its Inorder Predecessor or Inorder Successor",
+            "Its Parent",
+            "The largest node in the right subtree",
+            "The smallest node in the left subtree"
+        ],
+        "answer": 0,
+        "explanation": "The inorder predecessor (largest in left subtree) or inorder successor (smallest in right subtree) maintains BST properties after deletion."
+    },
+    {
+        "question": "An 'Almost Complete Binary Tree' (ACBT) is the structural basis for which data structure?",
+        "options": [
+            "AVL Tree",
+            "Binary Heap",
+            "B-Tree",
+            "Red-Black Tree"
+        ],
+        "answer": 1,
+        "explanation": "A Binary Heap is implemented as an Almost Complete Binary Tree (all levels filled except possibly the last, filled left to right) for efficient array representation."
+    },
+    {
+        "question": "Which of the following sorting algorithms is NOT stable?",
+        "options": [
+            "Merge Sort",
+            "Insertion Sort",
+            "Bubble Sort",
+            "Quick Sort"
+        ],
+        "answer": 3,
+        "explanation": "Quick Sort is not stable because during partitioning, equal elements may change their relative order. Merge Sort, Insertion Sort, and Bubble Sort are stable."
+    },
+    {
+        "question": "What is the worst-case time complexity of Quick Sort, and when does it occur?",
+        "options": [
+            "O(n log n) always",
+            "O(n²) when the pivot is the median",
+            "O(n²) when the array is already sorted (or reverse sorted) and pivot is end/start",
+            "O(n) when array is random"
+        ],
+        "answer": 2,
+        "explanation": "When the pivot is always the smallest or largest element (sorted/reverse-sorted arrays with first/last element pivot), partitioning is maximally unbalanced: O(n²)."
+    },
+    {
+        "question": "Binary Search is applied to a sorted array of 1024 elements. What is the maximum number of comparisons required to find an element?",
+        "options": [
+            "1024",
+            "10",
+            "11",
+            "512"
+        ],
+        "answer": 2,
+        "explanation": "Binary Search takes at most log₂(n) + 1 comparisons. log₂(1024) = 10, so maximum comparisons = 10 + 1 = 11."
+    },
+    {
+        "question": "You have a dataset that is 'almost sorted' (only a few elements are out of place). Which algorithm is most efficient?",
+        "options": [
+            "Selection Sort",
+            "Insertion Sort",
+            "Quick Sort",
+            "Merge Sort"
+        ],
+        "answer": 1,
+        "explanation": "Insertion Sort has O(n) best-case complexity for nearly sorted data, as few elements need to be shifted. Other algorithms don't benefit as much from nearly sorted input."
+    },
+    {
+        "question": "In Open Addressing, what is the primary disadvantage of Linear Probing?",
+        "options": [
+            "It requires linked lists.",
+            "Primary Clustering.",
+            "Secondary Clustering.",
+            "It cannot handle string keys."
+        ],
+        "answer": 1,
+        "explanation": "Linear Probing causes Primary Clustering: contiguous occupied slots form clusters, making subsequent insertions slower as probes must traverse the entire cluster."
+    },
+    {
+        "question": "Given a Hash Table of size 10 with hash function h(k) = k % 10. Using Linear Probing, insert keys: 12, 22, 32. Where does 32 end up?",
+        "options": [
+            "Index 2",
+            "Index 3",
+            "Index 4",
+            "Index 0"
+        ],
+        "answer": 2,
+        "explanation": "12 % 10 = 2 (slot 2). 22 % 10 = 2 (collision, probe to 3). 32 % 10 = 2 (collision at 2, 3 occupied, probe to 4)."
+    },
+    {
+        "question": "To minimize collisions in hashing, the table size is usually chosen to be:",
+        "options": [
+            "An even number",
+            "A power of 2",
+            "A Prime Number",
+            "A multiple of 10"
+        ],
+        "answer": 2,
+        "explanation": "Prime numbers help distribute hash values more uniformly, reducing clustering and collisions. Powers of 2 can cause patterns when keys have common factors."
+    },
+    {
+        "question": "For a sparse graph with V vertices and E edges (where E << V²), which representation saves the most space?",
+        "options": [
+            "Adjacency Matrix",
+            "Adjacency List",
+            "Incidence Matrix",
+            "2D Array"
+        ],
+        "answer": 1,
+        "explanation": "Adjacency List uses O(V + E) space, which is much less than O(V²) for adjacency matrix when E << V²."
+    },
+    {
+        "question": "Breadth-First Search (BFS) typically uses which data structure for implementation?",
+        "options": [
+            "Stack",
+            "Queue",
+            "Priority Queue",
+            "Hash Table"
+        ],
+        "answer": 1,
+        "explanation": "BFS uses a Queue to explore nodes level by level. Nodes are dequeued in FIFO order, ensuring all neighbors at current level are visited before deeper levels."
+    },
+    {
+        "question": "Why does Dijkstra's Algorithm fail for graphs with negative weight edges?",
+        "options": [
+            "It uses a Queue instead of a Stack.",
+            "It greedily finalizes a node's distance; a negative edge could later reveal a shorter path back to an 'already visited' node.",
+            "It only works on Trees.",
+            "It exceeds O(V²) complexity."
+        ],
+        "answer": 1,
+        "explanation": "Dijkstra greedily marks nodes as 'visited' with their shortest distance. A negative edge later could create a shorter path to an already-finalized node, which Dijkstra won't reprocess."
+    },
+    {
+        "question": "Kruskal's Algorithm for Minimum Spanning Tree (MST) builds the tree by:",
+        "options": [
+            "Growing from a single source vertex.",
+            "Adding edges in increasing order of weight, avoiding cycles.",
+            "Adding edges in decreasing order of weight.",
+            "Using the shortest path from the root."
+        ],
+        "answer": 1,
+        "explanation": "Kruskal's sorts all edges by weight and greedily adds the smallest edge that doesn't form a cycle (using Union-Find to detect cycles)."
+    },
+    {
+        "question": "If a Graph is disconnected, which traversal algorithm can be used to count the number of connected components?",
+        "options": [
+            "Only BFS",
+            "Only DFS",
+            "Both BFS and DFS",
+            "Neither"
+        ],
+        "answer": 2,
+        "explanation": "Both BFS and DFS can count connected components by starting a new traversal from each unvisited node. Each traversal marks one component."
+    },
+    {
+        "question": "The 'Knapsack Problem' where items can be broken (Fractional Knapsack) is solved optimally using:",
+        "options": [
+            "Dynamic Programming",
+            "Greedy Approach",
+            "Backtracking",
+            "Divide and Conquer"
+        ],
+        "answer": 1,
+        "explanation": "Fractional Knapsack allows taking fractions of items. The Greedy approach (sort by value/weight ratio, take highest first) gives optimal solution."
+    },
+    {
+        "question": "Merge Sort and Quick Sort are examples of which design paradigm?",
+        "options": [
+            "Greedy",
+            "Dynamic Programming",
+            "Divide and Conquer",
+            "Backtracking"
+        ],
+        "answer": 2,
+        "explanation": "Both algorithms divide the problem into smaller subproblems, solve them recursively, and combine results - the essence of Divide and Conquer."
+    },
+    {
+        "question": "Which feature is essential for a problem to be solvable via Dynamic Programming?",
+        "options": [
+            "Greedy Choice Property",
+            "Overlapping Subproblems",
+            "Local Optima",
+            "Sorting"
+        ],
+        "answer": 1,
+        "explanation": "Dynamic Programming requires Overlapping Subproblems (same subproblems solved multiple times) and Optimal Substructure. It saves results to avoid recomputation."
+    },
+    {
+        "question": "The N-Queens problem is best solved using:",
+        "options": [
+            "Linear Search",
+            "Backtracking",
+            "Greedy Algorithm",
+            "Dynamic Programming"
+        ],
+        "answer": 1,
+        "explanation": "Backtracking systematically tries placing queens and backtracks when a conflict is found, exploring all valid configurations efficiently."
+    },
+    {
+        "question": "What is the time complexity of building a Binary Heap from an unsorted array of N elements?",
+        "options": [
+            "O(N log N)",
+            "O(N)",
+            "O(log N)",
+            "O(N²)"
+        ],
+        "answer": 1,
+        "explanation": "Building a heap using heapify from bottom-up takes O(N) time due to mathematical analysis showing most nodes are near leaves (requiring minimal heapify work)."
+    },
+    {
+        "question": "Which collision resolution technique allows the Load Factor (alpha) to exceed 1?",
+        "options": [
+            "Linear Probing",
+            "Quadratic Probing",
+            "Separate Chaining",
+            "Double Hashing"
+        ],
+        "answer": 2,
+        "explanation": "Separate Chaining uses linked lists at each slot, allowing more elements than table size. Open addressing methods (probing) fail when load factor approaches 1."
+    },
+    {
+        "question": "To evaluate a Postfix expression (e.g., '2 3 +'), which data structure is used?",
+        "options": [
+            "Queue",
+            "Stack",
+            "Tree",
+            "Graph"
+        ],
+        "answer": 1,
+        "explanation": "Stack is used: push operands, pop two operands when operator is encountered, apply operator, push result back."
+    },
+    {
+        "question": "Floyd-Warshall algorithm computes:",
+        "options": [
+            "Single Source Shortest Path",
+            "All-Pairs Shortest Path",
+            "Minimum Spanning Tree",
+            "Topological Sort"
+        ],
+        "answer": 1,
+        "explanation": "Floyd-Warshall computes shortest paths between all pairs of vertices using dynamic programming in O(V³) time."
+    },
+    {
+        "question": "In a Max-Heap, where is the smallest element guaranteed to be?",
+        "options": [
+            "The root",
+            "A leaf node",
+            "The left child of root",
+            "The right child of root"
+        ],
+        "answer": 1,
+        "explanation": "In a Max-Heap, each node is greater than its children. The smallest element must be in a leaf node (no children to be greater than)."
+    },
+    {
+        "question": "An algorithm with complexity O(2^n) is considered:",
+        "options": [
+            "Polynomial Time",
+            "Logarithmic Time",
+            "Exponential Time",
+            "Linear Time"
+        ],
+        "answer": 2,
+        "explanation": "O(2^n) is Exponential Time - the running time doubles with each additional input element, making it infeasible for large inputs."
+    },
+    {
+        "question": "What is the primary disadvantage of a Doubly Linked List compared to a Singly Linked List?",
+        "options": [
+            "Lower Time Complexity for deletion",
+            "Cannot traverse backwards",
+            "Higher Memory Overhead",
+            "Fixed Size"
+        ],
+        "answer": 2,
+        "explanation": "Doubly Linked Lists store an extra pointer (prev) per node, doubling the pointer memory overhead compared to Singly Linked Lists."
+    },
+    {
+        "question": "In the 'Divide and Conquer' strategy, if the 'Combine' step is very costly (e.g., O(N²)), how does it affect the overall algorithm?",
+        "options": [
+            "It improves performance.",
+            "It may negate the benefits of dividing.",
+            "It turns the algorithm into Greedy.",
+            "It makes it O(log N)."
+        ],
+        "answer": 1,
+        "explanation": "The combine step's complexity adds to overall complexity. A costly combine step (O(N²)) can dominate, negating the efficiency gains from dividing."
+    }
+]
