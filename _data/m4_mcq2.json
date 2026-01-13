@@ -1,22 +1,442 @@
 [
   {
-    "question": "Sample Question 1 for Module 4",
+    "question": "Analyze the time complexity of the following Java code snippet:\n```java\nint count = 0;\nfor (int i = n; i > 0; i /= 2) {\n    for (int j = 0; j < i; j++) {\n        count++;\n    }\n}\n```",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "O(n log n)",
+      "O(n)",
+      "O(n²)",
+      "O(log n)"
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "The outer loop runs log(n) times. The inner loop runs 'i' times. The series is n + n/2 + n/4 + ... + 1, which is a geometric series summing to 2n. Thus, complexity is O(n)."
   },
   {
-    "question": "Sample Question 2 for Module 4",
+    "question": "Evaluate the following postfix expression: `8 2 3 ^ / 2 3 * + 5 1 * -`",
     "options": [
-      "Option A",
-      "Option B",
-      "Option C",
-      "Option D"
+      "2",
+      "6",
+      "1",
+      "7"
     ],
-    "answer": 1
+    "answer": 0,
+    "explanation": "Step-by-step: 2^3=8 → 8/8=1 → 2*3=6 → 1+6=7 → 5*1=5 → 7-5=2. Note: In typical theory exams, '^' is exponentiation."
+  },
+  {
+    "question": "A 2D array A[-2...2][2...6] is conceptually stored in row-major order. The base address is 1000 and each element size is 4 bytes. What is the address of A[0][4]?",
+    "options": [
+      "1048",
+      "1056",
+      "1064",
+      "1032"
+    ],
+    "answer": 0,
+    "explanation": "Rows range -2 to 2 (5 rows). Cols range 2 to 6 (5 cols). Target A[0][4]. Row offset: 0 - (-2) = 2. Col offset: 4 - 2 = 2. Address = Base + W * [RowOffset * NumCols + ColOffset] = 1000 + 4 * [2 * 5 + 2] = 1000 + 4 * 12 = 1048."
+  },
+  {
+    "question": "What is the output of the following Java program?\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int[] arr = {10, 20, 30, 40, 50};\n        int i = 0;\n        System.out.println(arr[i++] + arr[++i]);\n    }\n}\n```",
+    "options": [
+      "50",
+      "60",
+      "40",
+      "30"
+    ],
+    "answer": 2,
+    "explanation": "`arr[i++]`: access arr[0] (10), then i becomes 1. `arr[++i]`: increment i first (becomes 2), then access arr[2] (30). Sum = 10 + 30 = 40."
+  },
+  {
+    "question": "In a Circular Doubly Linked List with only one node, what do the 'next' and 'prev' pointers point to?",
+    "options": [
+      "null and null",
+      "The node itself and null",
+      "null and The node itself",
+      "The node itself and The node itself"
+    ],
+    "answer": 3,
+    "explanation": "In a circular doubly linked list, a single node's next and prev pointers must point back to itself to maintain circularity."
+  },
+  {
+    "question": "A circular queue is implemented using an array of size 5 (indices 0 to 4). 'front' = 3, 'rear' = 2. Which statement is true?",
+    "options": [
+      "The queue is full.",
+      "The queue is empty.",
+      "The queue has 4 elements.",
+      "The queue has 1 element."
+    ],
+    "answer": 0,
+    "explanation": "In a circular queue, the 'Full' condition is `(rear + 1) % size == front`. Here, `(2 + 1) % 5 = 3`. Since this equals `front`, the queue is considered full."
+  },
+  {
+    "question": "What does the following Java function calculate for a positive integer n?\n```java\nint fun(int n) {\n    if (n == 0) return 0;\n    return (n % 2) + 10 * fun(n / 2);\n}\n```",
+    "options": [
+      "Calculates sum of digits",
+      "Converts Binary to Decimal",
+      "Converts Decimal to Binary",
+      "Counts number of bits"
+    ],
+    "answer": 2,
+    "explanation": "This function builds a number where the digits are the binary representation of `n`. For n=2 (10 binary): `0 + 10*fun(1)` -> `0 + 10*(1 + 10*0)` -> `10`. It creates an integer that looks like the binary string."
+  },
+  {
+    "question": "What is the result of calling `f(5)` in the following class?\n```java\nclass Solver {\n    static int r = 0;\n    int f(int n) {\n        if(n <= 0) return 1;\n        if(n > 3) {\n            r = n;\n            return f(n-2) + 2;\n        }\n        return f(n-1) + r;\n    }\n}\n```",
+    "options": [
+      "18",
+      "16",
+      "12",
+      "10"
+    ],
+    "answer": 0,
+    "explanation": "Call f(5): n>3, r=5, returns f(3)+2. Call f(3): n<=3, returns f(2)+r (r is 5) -> f(2)+5. Call f(2): returns f(1)+5. Call f(1): returns f(0)+5. Call f(0): returns 1. Result: 1+5+5+5+2 = 18."
+  },
+  {
+    "question": "You are given a reference `p` to a node in a Singly Linked List. You need to delete this node, but you do not have the reference to the head node. This is possible only if:",
+    "options": [
+      "The node is the last node.",
+      "The node is not the last node.",
+      "The list is circular.",
+      "It is never possible."
+    ],
+    "answer": 1,
+    "explanation": "Trick: You can copy the data from `p.next` into `p`, then delete `p.next`. This works only if `p` is not the last node."
+  },
+  {
+    "question": "What is the maximum number of nodes in a Binary Tree of height 'h' (where root is height 0)?",
+    "options": [
+      "2^h",
+      "2^(h-1) - 1",
+      "2^(h+1) - 1",
+      "2^(h+1)"
+    ],
+    "answer": 2,
+    "explanation": "Geometric series: 2^0 + 2^1 + ... + 2^h = 2^(h+1) - 1."
+  },
+  {
+    "question": "Inorder traversal: D B E A F C. Preorder traversal: A B D E C F. What is the Postorder traversal?",
+    "options": [
+      "D E B F C A",
+      "D E F B C A",
+      "D E B C F A",
+      "D B E F C A"
+    ],
+    "answer": 0,
+    "explanation": "Root is A. Left subtree (from Inorder D B E) uses Preorder B D E -> B is root, D left, E right. Right subtree (from Inorder F C) uses Preorder C F -> C is root, F left. Postorder: Left(D E B) Right(F C) Root(A) -> D E B F C A."
+  },
+  {
+    "question": "Which of the following traversals outputs the elements of a Binary Search Tree (BST) in sorted ascending order?",
+    "options": [
+      "Preorder",
+      "Postorder",
+      "Inorder",
+      "Level Order"
+    ],
+    "answer": 2,
+    "explanation": "Inorder traversal visits Left -> Root -> Right. In a BST, Left < Root < Right, maintaining sorted order."
+  },
+  {
+    "question": "Insert the keys 10, 20, 30 into an empty AVL tree. What type of rotation is required to balance the tree?",
+    "options": [
+      "LL Rotation",
+      "RR Rotation",
+      "LR Rotation",
+      "RL Rotation"
+    ],
+    "answer": 1,
+    "explanation": "10 -> 20 (right) -> 30 (right). The tree becomes right-heavy (Right-Right skew). An RR Rotation (left rotate around 10) is needed."
+  },
+  {
+    "question": "Which sorting algorithm has the best worst-case time complexity?",
+    "options": [
+      "Quick Sort",
+      "Bubble Sort",
+      "Merge Sort",
+      "Insertion Sort"
+    ],
+    "answer": 2,
+    "explanation": "Merge Sort is O(n log n) in the worst case. Quick Sort is O(n²), Bubble and Insertion are O(n²)."
+  },
+  {
+    "question": "Which of the following sorting algorithms is NOT stable?",
+    "options": [
+      "Merge Sort",
+      "Insertion Sort",
+      "Bubble Sort",
+      "Quick Sort"
+    ],
+    "answer": 3,
+    "explanation": "Quick Sort is inherently unstable because swaps can change the relative order of equal elements over long distances."
+  },
+  {
+    "question": "Interpolation search works most efficiently when:",
+    "options": [
+      "The data is sorted and uniformly distributed.",
+      "The data is sorted but skewed.",
+      "The data is unsorted.",
+      "The data is a linked list."
+    ],
+    "answer": 0,
+    "explanation": "Interpolation search mimics a phonebook search. It achieves O(log log n) if data is uniformly distributed."
+  },
+  {
+    "question": "Given a hash table of size 7 with hash function h(k) = k % 7. Keys 15, 22, 9 are inserted using linear probing. Where is 9 inserted?",
+    "options": [
+      "Index 2",
+      "Index 3",
+      "Index 4",
+      "Index 5"
+    ],
+    "answer": 1,
+    "explanation": "15%7=1. Index 1 taken. 22%7=1. Collision -> Probe Index 2. 9%7=2. Collision -> Probe Index 3. So 9 goes to index 3."
+  },
+  {
+    "question": "Which data structure is essential for performing a Breadth First Search (BFS) on a graph?",
+    "options": [
+      "Stack",
+      "Queue",
+      "Priority Queue",
+      "Heap"
+    ],
+    "answer": 1,
+    "explanation": "BFS explores neighbors level by level, requiring a Queue (FIFO) to manage the order of visitation."
+  },
+  {
+    "question": "Dijkstra's Algorithm may fail if the graph contains:",
+    "options": [
+      "Cycles",
+      "Negative edge weights",
+      "Positive edge weights",
+      "Disconnected components"
+    ],
+    "answer": 1,
+    "explanation": "Dijkstra's algorithm assumes that adding an edge always increases path cost. Negative weights violate this."
+  },
+  {
+    "question": "The Master Theorem is used to analyze the complexity of which type of algorithms?",
+    "options": [
+      "Greedy Algorithms",
+      "Divide and Conquer",
+      "Dynamic Programming",
+      "Backtracking"
+    ],
+    "answer": 1,
+    "explanation": "Master Theorem solves recurrences of the form T(n) = aT(n/b) + f(n), characteristic of Divide and Conquer."
+  },
+  {
+    "question": "In Java, what does the expression `x & (x - 1)` do?",
+    "options": [
+      "Sets the last bit to 1",
+      "Clears the lowest set bit",
+      "Toggles all bits",
+      "Returns 0 always"
+    ],
+    "answer": 1,
+    "explanation": "Subtracting 1 flips all bits up to the lowest set bit. ANDing with original x clears that lowest set bit."
+  },
+  {
+    "question": "In the conversion of the infix expression `A + B * C` to postfix, which operator is pushed to the stack first?",
+    "options": [
+      "+",
+      "*",
+      "Both",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "Scan A. Scan + (push, stack empty). Scan B. Scan * (precedence * > +, push *). '+' is pushed first."
+  },
+  {
+    "question": "To detect a cycle in a linked list using Floyd's Cycle-Finding Algorithm (Tortoise and Hare), the pointers meet. This implies:",
+    "options": [
+      "The list has no loop",
+      "The list has a loop",
+      "The list is doubly linked",
+      "The list is empty"
+    ],
+    "answer": 1,
+    "explanation": "If the fast pointer (Hare) ever catches up to the slow pointer (Tortoise), a cycle exists."
+  },
+  {
+    "question": "In a Max-Heap implemented as an array, the parent of the node at index 'i' (0-based) is at:",
+    "options": [
+      "(i-1)/2",
+      "i/2",
+      "2*i + 1",
+      "(i+1)/2"
+    ],
+    "answer": 0,
+    "explanation": "For 0-based indexing: Left child = 2i+1, Right child = 2i+2. Parent = floor((i-1)/2)."
+  },
+  {
+    "question": "The '0/1 Knapsack Problem' is best solved using:",
+    "options": [
+      "Greedy Algorithm",
+      "Dynamic Programming",
+      "Divide and Conquer",
+      "Bubble Sort"
+    ],
+    "answer": 1,
+    "explanation": "Greedy fails 0/1 Knapsack (works for Fractional). DP is required to explore include/exclude decisions."
+  },
+  {
+    "question": "In Java, what is the size in bytes of `char` and `int` primitives respectively?",
+    "options": [
+      "1 and 2",
+      "1 and 4",
+      "2 and 4",
+      "2 and 2"
+    ],
+    "answer": 2,
+    "explanation": "In Java, `char` is 2 bytes (Unicode UTF-16) and `int` is 4 bytes."
+  },
+  {
+    "question": "Which of the following is true for a Full Binary Tree?",
+    "options": [
+      "Every node has exactly 2 children",
+      "Every node has 0 or 2 children",
+      "All leaves are at same level",
+      "It is always complete"
+    ],
+    "answer": 1,
+    "explanation": "Definition: A Full Binary Tree is a tree in which every node has either 0 or 2 children."
+  },
+  {
+    "question": "In QuickSort, if the pivot is always chosen as the smallest element in the list, the time complexity becomes:",
+    "options": [
+      "O(n log n)",
+      "O(n)",
+      "O(n²)",
+      "O(1)"
+    ],
+    "answer": 2,
+    "explanation": "This is the worst-case scenario. Partitioning creates subarrays of size 0 and n-1, leading to O(n²) recursion depth."
+  },
+  {
+    "question": "Double Hashing is a technique used for:",
+    "options": [
+      "Dynamic resizing",
+      "Collision Resolution",
+      "Sorting keys",
+      "Encrypting passwords"
+    ],
+    "answer": 1,
+    "explanation": "Double hashing uses a second hash function to calculate the step size in open addressing to resolve collisions."
+  },
+  {
+    "question": "Which traversal of a graph is equivalent to a 'Level Order Traversal' of a tree?",
+    "options": [
+      "DFS",
+      "BFS",
+      "Topological Sort",
+      "Dijkstra"
+    ],
+    "answer": 1,
+    "explanation": "BFS visits nodes layer by layer (distance 1, then distance 2...), identical to Level Order in trees."
+  },
+  {
+    "question": "What happens when the following Java code is executed?\n```java\nint[] arr = new int[5];\narr[5] = 10;\n```",
+    "options": [
+      "Compiler Error",
+      "Returns 0",
+      "Throws ArrayIndexOutOfBoundsException",
+      "Returns garbage value"
+    ],
+    "answer": 2,
+    "explanation": "Valid indices are 0 to 4. Accessing index 5 causes a runtime exception in Java."
+  },
+  {
+    "question": "Deleting a node with two children in a BST involves replacing the node with:",
+    "options": [
+      "Inorder Predecessor or Successor",
+      "The largest node in the tree",
+      "The smallest node in the tree",
+      "Its left child"
+    ],
+    "answer": 0,
+    "explanation": "To maintain BST property, replace the node with the value closest to it—either the max of left subtree (Predecessor) or min of right subtree (Successor)."
+  },
+  {
+    "question": "Which of the following functions grows the fastest for large n?",
+    "options": [
+      "n!",
+      "2^n",
+      "n^3",
+      "n log n"
+    ],
+    "answer": 0,
+    "explanation": "Growth order: O(1) < log n < n < n log n < n^k < 2^n < n!."
+  },
+  {
+    "question": "What is the time complexity to insert a node at the beginning of a Singly Linked List?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n log n)"
+    ],
+    "answer": 1,
+    "explanation": "You only need to update the new node's next pointer and the head pointer. No traversal is needed."
+  },
+  {
+    "question": "A stack is used for:",
+    "options": [
+      "CPU Scheduling",
+      "Breadth First Search",
+      "Function Call Management",
+      "Disk Scheduling"
+    ],
+    "answer": 2,
+    "explanation": "The system call stack manages function calls, local variables, and return addresses."
+  },
+  {
+    "question": "Minimum number of swaps required to sort the array `{5, 1, 2, 3, 4}` using Selection Sort?",
+    "options": [
+      "4",
+      "1",
+      "5",
+      "0"
+    ],
+    "answer": 0,
+    "explanation": "Selection sort finds min and swaps. 1) Swap 5,1 -> {1,5,2,3,4}. 2) Swap 5,2 -> {1,2,5,3,4}. 3) Swap 5,3 -> {1,2,3,5,4}. 4) Swap 5,4 -> {1,2,3,4,5}. Total 4 swaps."
+  },
+  {
+    "question": "Prim's Algorithm for Minimum Spanning Tree is most similar to which other algorithm?",
+    "options": [
+      "Kruskal's Algorithm",
+      "Dijkstra's Algorithm",
+      "Bellman-Ford",
+      "Floyd-Warshall"
+    ],
+    "answer": 1,
+    "explanation": "Prim's and Dijkstra's both use a greedy approach with a priority queue to expand from a source/current set, updating distances/costs."
+  },
+  {
+    "question": "What is the maximum allowed difference in height between left and right subtrees in an AVL tree?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Log n"
+    ],
+    "answer": 1,
+    "explanation": "The balance factor must be -1, 0, or 1. Difference > 1 triggers rebalancing."
+  },
+  {
+    "question": "Tail recursion is optimized by some compilers because:",
+    "options": [
+      "It uses less memory than iteration",
+      "The stack frame can be reused",
+      "It requires no base case",
+      "It is faster than loops"
+    ],
+    "answer": 1,
+    "explanation": "Tail Call Optimization (TCO) allows the compiler to jump to the start of the function with new arguments instead of creating a new stack frame."
+  },
+  {
+    "question": "What does `str1.compareTo(str2)` return if `str1` comes after `str2` lexicographically in Java?",
+    "options": [
+      "0",
+      "A negative value",
+      "A positive value",
+      "null"
+    ],
+    "answer": 2,
+    "explanation": "If str1 > str2 (lexicographically after), compareTo returns a positive integer."
   }
 ]
