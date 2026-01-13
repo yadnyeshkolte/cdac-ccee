@@ -265,6 +265,23 @@ When asked "Can conclusion be true?"
 | No A is B | NOT possible: Some A are B |
 | All A are B | NOT possible: No A is B |
 
+### Modern Syllogism Concepts
+**1. "Only A is B"**
+- Means: **All B are A** (and B cannot belong to anything else).
+- *Example: Only Engineers are Smart -> All Smart people are Engineers.*
+
+**2. "Only a few A are B"**
+- Means: **Some A are B** AND **Some A are NOT B**.
+- *Example: Only a few apples are red -> Some apples are red, but not all.*
+
+### Either-Or Case Conditions
+For **Conclusion I or Conclusion II** to follow:
+1. Both conclusions must be **Individually False** (or Doubtful).
+2. Subject and Predicate must be **Same**.
+3. One conclusion must be **Positive**, other **Negative**.
+4. Valid Pairs: (Some + No), (All + Some Not).
+   *Note: (All + No) is NOT an Either-Or pair usually, it's Neither-Nor unless possibilities exist.*
+
 ---
 
 ## ✍️ Practice Problems

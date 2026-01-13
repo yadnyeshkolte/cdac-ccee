@@ -154,6 +154,22 @@ flowchart TD
 | 3 coins | 8 |
 | n coins | 2ⁿ |
 
+### Calendar Probability (Leap Year)
+
+| Year Type | Days | Extra Days | P(53 Sundays) |
+|:----------|:-----|:-----------|:--------------|
+| **Ordinary Year** | 365 | 1 | 1/7 |
+| **Leap Year** | 366 | 2 | 2/7 |
+
+*Logic: 366 days = 52 weeks + 2 extra days. The 2 extra days can be (Sun,Mon), (Mon,Tue)... (Sat,Sun). 2 out of 7 cases have Sunday.*
+
+### Selection Probability (Using Combinations)
+When selecting $r$ items from $n$ items:
+> **P(E) = $\frac{\text{No. of favorable selections}}{\text{Total possible selections}} = \frac{^nC_r}{^TC_r}$**
+
+*Example: 2 Red balls from 5 Red, 3 Blue.*
+*Total = 8, Select 2. Total ways = $^8C_2$. Favorable = $^5C_2$. P = $^5C_2 / ^8C_2$.*
+
 ---
 
 ## 📈 Conditional Probability

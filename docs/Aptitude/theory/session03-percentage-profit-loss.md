@@ -51,6 +51,15 @@ flowchart LR
 | **New Value (Increase)** | Original × (1 + Rate/100) |
 | **New Value (Decrease)** | Original × (1 - Rate/100) |
 
+### Price and Consumption Rule
+If price of a commodity increases by **R%**, then the reduction in consumption so as not to increase the expenditure is:
+> **Reduction % = [ R / (100 + R) ] × 100**
+
+If price decreases by **R%**, then increase in consumption:
+> **Increase % = [ R / (100 - R) ] × 100**
+
+---
+
 ### Successive Percentage Change
 
 When a value changes by x% and then by y%:
@@ -138,6 +147,16 @@ flowchart LR
 | 10% Loss | CP × 0.90 |
 | 20% Loss | CP × 0.80 |
 | 25% Loss | CP × 0.75 |
+
+### Direct Relation MP and CP
+
+This is the **most powerful formula** for problems involving Discount and Profit simultaneously.
+
+> **MP / CP = (100 + Profit%) / (100 - Discount%)**
+
+*Example: Discount = 10%, Profit = 20%*
+*MP/CP = 120 / 90 = 4 / 3*
+*So if CP = 300, MP = 400*
 
 ---
 

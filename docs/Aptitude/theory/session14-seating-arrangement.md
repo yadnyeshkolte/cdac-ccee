@@ -138,6 +138,24 @@ flowchart TD
 | "B sits exactly in middle" | "C is between A and B" |
 | "D faces North" | "D sits 2nd from E" |
 
+### Advanced Arrangement Types
+
+**1. Square/Rectangular Table**
+- **Corners**: Usually face one direction (e.g., Center).
+- **Middle of Sides**: Usually face opposite direction (e.g., Outside).
+- **Diagram**: Draw square, mark 8 positions (4 corner, 4 mid).
+
+**2. Unknown Number of Persons (Linear)**
+- Start with connecting information.
+- Combine overlapping clues.
+- *Example: A is 3rd from left, B is 5th from right, 2 people between them.*
+  - Case 1 (Separate): Left(3) + 2 + Right(5) = 10 total.
+  - Case 2 (Overlap): L+R - Mid - 2. (Check validity).
+
+**3. Mixed Facing (Circular)**
+- Some face center, some outside.
+- **Tip**: Use arrows on the diagram (↑ for In, ↓ for Out) to avoid confusion with Left/Right.
+
 ---
 
 ## 📝 Important Terms

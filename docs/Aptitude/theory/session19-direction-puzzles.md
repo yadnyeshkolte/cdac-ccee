@@ -93,6 +93,16 @@ flowchart LR
 | South | West | East |
 | West | North | South |
 
+### Net Rotation Strategy
+When multiple turns are given:
+1. **Sum all Clockwise (CW) angles**.
+2. **Sum all Anti-clockwise (ACW) angles**.
+3. **Difference = |CW - ACW|**.
+4. Turn in the direction of the larger sum by the difference.
+
+*Example: 45° CW, 90° ACW, 135° CW.*
+*Total CW = 45+135=180. Total ACW = 90. Diff = 90 CW.*
+
 ---
 
 ## 📐 Distance Calculations
@@ -141,6 +151,21 @@ flowchart LR
 
 **If your shadow is to your right in morning → You face South**
 **If your shadow is behind you at noon → You face North (in Northern Hemisphere)**
+
+### Upside Down (Yoga) Concept
+If a person is doing yoga (Head down, Feet up):
+- **Face direction remains same** (conceptually).
+- **Left and Right are swapped** compared to standing.
+- *Trick: Visualize standing in the facing direction, then swap Left/Right.*
+- *Example: Facing West (Head down). Standing facing West -> Left is South. So head down Left is North.*
+  **(Correction: Actually, if you stand facing West, Left is South. In Head stand, Left becomes North? Let's verify. Stand West, Left hand holds South. Invert. Left hand still holds South side but body is inverted. Wait. Standard rule: If facing West head down, it's equivalent to standing facing West and swapping L/R? No.
+  Better Rule: If Head Down facing North, Left hand is East (Normal Left is West).*
+  *Simple Rule: If head down facing Direction D, Left Hand is same as Right Hand if standing in Direction D.*
+
+### Coded Direction
+- **P # Q** (P is North of Q)
+- **P $ Q** (P is East of Q)
+- Draw diagrams relative to the *second* person (Q).
 
 ---
 

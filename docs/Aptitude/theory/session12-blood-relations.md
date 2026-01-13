@@ -141,6 +141,13 @@ So A is B's mother's brother = A is B's uncle
 | **Name-based gender assumption** | Don't assume gender from names! |
 | **"Brother" vs "Brother-in-law"** | Blood relation vs marriage relation |
 
+### Ambiguous Relations
+Some terms have multiple meanings:
+- **Uncle**: Paternal (Father's brother) or Maternal (Mother's brother)
+- **Aunt**: Paternal (Father's sister) or Maternal (Mother's sister)
+- **Brother-in-Law**: Spouse's brother OR Sister's husband
+- **Sister-in-Law**: Spouse's sister OR Brother's wife
+
 ---
 
 ## 📝 Types of Questions
@@ -163,7 +170,17 @@ Answer: Son
 P is father of Q
 Q is mother of R
 So P is R's maternal grandfather
-```
+
+#### Shortcut: Generation and Gender Check
+1. **Gender Elimination**: If finding "Uncle", options ending with female relation symbols can be eliminated.
+2. **Generation Gap**: Assign values:
+   - Father/Mother: +1
+   - Grandparents: +2
+   - Child: -1
+   - Sibling/Spouse: 0
+   - *Sum the gaps to check if it matches the required relation (e.g., Grandfather needs +2).*
+
+---
 
 ### Type 3: Family Puzzle
 

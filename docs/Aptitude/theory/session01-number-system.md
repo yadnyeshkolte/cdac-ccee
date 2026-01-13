@@ -247,6 +247,13 @@ LCM = 2⁴ × 3¹ × 5¹ = 240
 
 > **a^φ(n) ≡ 1 (mod n)** where φ(n) is Euler's totient function
 
+### Wilson's Theorem
+
+> If p is a prime number, then: **(p-1)! ≡ -1 (mod p)**
+> 
+> *Example: Find permainder of 4! divided by 5.*
+> *Here p=5 (prime), so (5-1)! = 4! ≡ -1 ≡ 4 (mod 5)*
+
 ---
 
 ## ⚡ Fast Maths & Simplification
@@ -280,6 +287,15 @@ flowchart LR
 | 85² | 8×9 = 72, append 25 | 7225 |
 | 24 × 25 | 24 × 100 ÷ 4 = 600 | 600 |
 | 48 × 11 | 4_(4+8)_8 = 528 | 528 |
+
+### Base Method Multiplication (Numbers near 100)
+
+**Example: 98 × 97**
+1. Bases: 100
+2. Differences: 98 (-2), 97 (-3)
+3. Multiply differences: (-2) × (-3) = 06 (Last 2 digits)
+4. Cross add/subtract: 98 - 3 = 95 (First digits)
+5. Result: **9506**
 
 ---
 

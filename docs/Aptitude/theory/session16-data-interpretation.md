@@ -25,6 +25,15 @@ flowchart TD
     A --> F[Mixed/Caselets]
 ```
 
+### Caselet DI Strategy
+Caselets provide data in **paragraph form** instead of charts.
+**Steps:**
+1. Read the paragraph quickly to understand structure.
+2. Create a **Table** immediately.
+3. Fill known values.
+4. Calculate derived values (Total - Known).
+5. Solve questions using your table (never look back at paragraph).
+
 ---
 
 ## 📈 Tables
@@ -129,6 +138,18 @@ CAGR = [(Final / Initial)^(1/n) - 1] × 100
 **A : B = a : b, Total = T**
 - A's share = T × a/(a+b)
 - B's share = T × b/(a+b)
+
+### Speed Math: Split Percentage Method
+Instead of multiplying, split the percentage:
+- **Find 55% of 240**:
+  - 50% = 120
+  - 5% = 12
+  - Total = 132
+- **Find 17.5% of 400**:
+  - 10% = 40
+  - 5% = 20
+  - 2.5% = 10
+  - Total = 70
 
 ---
 

@@ -64,6 +64,25 @@ flowchart TD
 | 5 days | 20% per day | A does x times work per day |
 | 20 days | 5% per day | |
 
+### Unit Work Method (LCM Method)
+Steps:
+1. Find **LCM** of individual days = **Total Work Units**.
+2. Find efficiency/day for each worker = Total Units / Days.
+3. Add efficiencies to get combined rate.
+
+*Example: A in 10 days, B in 15 days.*
+*Total Work = LCM(10, 15) = 30 units.*
+*A's rate = 30/10 = 3 units/day.*
+*B's rate = 30/15 = 2 units/day.*
+*Together = 5 units/day.*
+*Time = 30/5 = 6 days.*
+
+### Alternating Work Days
+If A and B work on alternate days (A starts):
+- **Cycle**: A (1st day) + B (2nd day) = 2 days work.
+- Find how many complete cycles fit in Total Work.
+- Add remaining work by the next person in sequence.
+
 ---
 
 ## 👥 Multiple Workers
@@ -96,6 +115,11 @@ flowchart TD
 | 12 days | 18 days | 7.2 days |
 | 10 days | 20 days | 6.67 days |
 | 15 days | 20 days | 8.57 days |
+
+### 'OR' vs 'AND' Problems
+- **"10 Men OR 15 Women"**: Means 10 Men = 15 Women -> 2 Men = 3 Women. Convert all to one unit (e.g., all Women).
+- **Formula approach (for OR condition)**:
+  $$ \text{Required Days} = \frac{\text{Given Days}}{\frac{\text{Req Men}}{\text{Given Men}} + \frac{\text{Req Women}}{\text{Given Women}}} $$
 
 ---
 

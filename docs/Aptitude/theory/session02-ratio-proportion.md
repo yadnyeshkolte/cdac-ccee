@@ -62,6 +62,25 @@ flowchart TD
 | If a:b = c:d | (a+b):(a-b) = (c+d):(c-d) |
 | Ratio multiplication | Multiply/divide both terms by same number |
 
+### Combining Ratios (The 'N' or Zig-Zag Method)
+
+**To find A:B:C given A:B and B:C:**
+
+1. Write them as:
+   ```
+   A : B
+       B : C
+   ```
+2. Multiply A×B, B×B, B×C (Wait, this is if B is same).
+   Better method:
+   A : B = x : y
+   B : C = m : n
+   
+   A : B : C = (x×m) : (y×m) : (y×n)
+
+   *Example: A:B = 2:3, B:C = 4:5*
+   *A:B:C = (2×4) : (3×4) : (3×5) = 8 : 12 : 15*
+
 ---
 
 ## ⚖️ Proportion
@@ -173,6 +192,18 @@ flowchart TD
 | A invests ₹x, B invests ₹y (same time) | Profit ratio = x : y |
 | A invests ₹x for t₁, B invests ₹y for t₂ | Profit ratio = xt₁ : yt₂ |
 | A's share of profit P | A's profit = P × [A's ratio / Total ratio] |
+
+### Important Problem Types
+
+#### 1. Income-Expenditure
+> **Income = Expenditure + Savings**
+> 
+> *Tip: If savings are same for both persons, difference between ratio parts of Income and Expenditure must be same.*
+
+#### 2. Coins Problems
+> **Total Value = (No. of coins of type 1 × Value 1) + (No. of coins type 2 × Value 2) + ...**
+> 
+> *Tip: Convert all values to same unit (e.g., paise) before calculation.*
 
 ---
 

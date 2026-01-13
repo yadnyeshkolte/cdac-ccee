@@ -53,6 +53,20 @@ flowchart LR
 | Remove a value > average | Average decreases |
 | Remove a value < average | Average increases |
 
+### Important Shortcuts
+
+**1. Replacement Rule**
+If a person of weight $W_{old}$ is replaced by a new person $W_{new}$ and average increases by $x$:
+> **$W_{new} = W_{old} + (\text{Total People} \times x)$**
+
+**2. Overlap Rule (Middle Number)**
+If avg of $n$ numbers is $A$, avg of first $k$ is $A_1$, avg of last $k$ is $A_2$ (where $2k > n$):
+> **Middle Number = $(k \times A_1 + k \times A_2) - (n \times A)$**
+
+**3. Sports Averages**
+- **Batting Avg**: Total Runs / Total Innings
+- **Bowling Avg**: Total Runs Given / Total Wickets Taken
+
 ---
 
 ## ⚖️ Weighted Average

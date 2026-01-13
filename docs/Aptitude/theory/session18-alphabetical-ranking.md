@@ -79,6 +79,20 @@ For sequence of letters, **middle letter** = (First + Last) / 2
 
 Example: In ABC, middle is B = (1+3)/2 = 2
 
+### Pair Formation Concept
+**"How many pairs of letters are there in the word which have as many letters between them as in the alphabet?"**
+- **Method**: Check each letter forward and backward.
+- *Example: TEAM*
+  - Forward: T(20) no match > E(5). E(5)->F(6)->G(7). A(1)->B(2). M(13).
+  - Backward: M(13)->N(14)->O(15)->P(16). A(1)->B(2)->C(3). E(5)...
+- Count matches.
+
+### Dictionary Order
+Arrange words as per dictionary:
+1. Compare first letters.
+2. If same, compare second letters, and so on.
+3. Shorter word comes first (e.g., "Apple" before "Apples").
+
 ---
 
 ## 📊 Ranking & Ordering
@@ -112,6 +126,13 @@ flowchart TD
 
 **People between A and B = |Position_A - Position_B| - 1**
 
+### Maximum and Minimum Persons (Overlap Case)
+When positions of two persons from opposite ends are given (L and R) and 'm' persons between them:
+- **Maximum Total** = L + R + m  (Simple case)
+- **Minimum Total** = L + R - m - 2 (Overlap case)
+  - *Valid only if (L + R) > Total and (Minimum < Total)*
+
+---
 ```mermaid
 flowchart LR
     A[Person A<br>Position 5] --- B["3 people<br>between"] --- C[Person B<br>Position 9]

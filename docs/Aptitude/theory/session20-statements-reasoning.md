@@ -141,6 +141,19 @@ flowchart TD
 | **Willingness** | Assumes someone will do something |
 | **Cause-Effect** | Assumes one thing leads to another |
 
+### 🛤️ Course of Action
+A course of action is a step to investigate, solve, or minimize a problem.
+**Criteria for Valid Action:**
+1. **Solves/Reduces the problem**: Action must be effective.
+2. **Practical/Feasible**: Must be possible to implement.
+3. **No Negative Side Effects**: Shouldn't create a bigger problem.
+
+### ⚡ Cause and Effect
+Identify which statement is the **Cause** and which is the **Effect**.
+- **Cause**: The event that happens first logicallly.
+- **Effect**: The consequence of the cause.
+- *Tip: Use "Because" test. "Event B happened BECAUSE Event A happened". If it fits, A is Cause, B is Effect.*
+
 ---
 
 ## 🧮 Solved Examples

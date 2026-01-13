@@ -45,6 +45,18 @@ flowchart LR
 | 36 | 10 | 90 | 25 |
 | 54 | 15 | 108 | 30 |
 
+### Ratio Method (Constant Distance)
+If Distance is constant, Speed and Time are inversely proportional.
+> **S₁ : S₂  ::  T₂ : T₁**
+
+*Example: If Speed ratio is 3:4, Time ratio will be 4:3.*
+
+### Late / Early Concept (Time Difference)
+If a person travels at $S_1$ and reaches $t_1$ late, and at $S_2$ reaches $t_2$ early:
+> **Distance = $\frac{S_1 \times S_2}{|S_1 - S_2|} \times \Delta T$**
+
+Where $\Delta T = t_1 + t_2$ (if one late, one early).
+
 ---
 
 ## ⚡ Average Speed
@@ -135,6 +147,15 @@ flowchart TD
 | Train crosses platform | L + P | S |
 | Two trains meet (opposite) | L₁ + L₂ | S₁ + S₂ |
 | One train overtakes other | L₁ + L₂ | S₁ - S₂ |
+
+### Races and Circular Motion
+
+**1. Linear Races**
+- **"A beats B by x meters"**: When A finishes, B is x meters behind.
+- **"A beats B by t seconds"**: A finishes t seconds before B.
+
+**2. Circular Motion**
+Meeting at starting point: **LCM of times taken by each to complete one round.**
 
 ---
 

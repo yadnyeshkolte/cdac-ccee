@@ -70,6 +70,17 @@ flowchart LR
 
 **Net work per hour = Σ(1/inlet times) - Σ(1/outlet times)**
 
+### Capacity of Tank
+If an outlet pipe empties at **X gallons/min** and takes **T minutes** to empty a full tank:
+> **Capacity = X × T**
+
+*Note: Often T is found by using the combined rate logic first.*
+
+### Alternating Pipes
+If pipes work on alternate hours:
+1. **Cycles**: Calculate work for one cycle (e.g., A+B).
+2. **Caution**: If one is emptying (negative work), stop the cycles just before the tank is full, and calculate the last step manually. **Do not overshoot.**
+
 ---
 
 ## 🚣 Boats and Streams

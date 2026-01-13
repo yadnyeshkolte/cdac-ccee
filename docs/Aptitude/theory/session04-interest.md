@@ -166,6 +166,24 @@ If rates are R₁%, R₂%, R₃% for successive years:
 
 **Amount = P × (1 + R₁/100) × (1 + R₂/100) × (1 + R₃/100)**
 
+### Money Doubling Rules
+
+| Interest Type | Rule | Formula |
+|:--------------|:-----|:--------|
+| **Simple Interest** | Sum doubles when SI = P | **R × T = 100** |
+| **Compound Interest** | If sum doubles in $T$ years | Becomes $2^n$ times in $n \times T$ years |
+| **Rule of 72 (CI)** | Approx time to double | **T ≈ 72 / R** |
+
+### Installment Formulas
+
+**1. Simple Interest Installments**
+Total Debt $A$ paid in $n$ annual installments of $x$:
+$$ A = nx + \frac{x \times R}{100} \times \frac{n(n-1)}{2} $$
+
+**2. Compound Interest Installments**
+Loan $P$ paid in $n$ installments of $x$:
+$$ P = \frac{x}{(1+\frac{R}{100})} + \frac{x}{(1+\frac{R}{100})^2} + ... + \frac{x}{(1+\frac{R}{100})^n} $$
+
 ---
 
 ## ✨ Quick Calculation Tables

@@ -180,6 +180,23 @@ For word "MISSISSIPPI" (M=1, I=4, S=4, P=2, total=11):
 | At most k | C(n,0) + C(n,1) + ... + C(n,k) |
 | Exactly k from each group | C(g₁,k) × C(g₂,k) |
 
+### Miscellaneous Shortcuts
+
+**1. Geometric Applications**
+- **Handshakes**: Number of handshakes among $n$ people = **$C(n,2) = \frac{n(n-1)}{2}$**
+- **Diagonals of Polygon**: Number of diagonals in $n$-sided polygon = **$C(n,2) - n = \frac{n(n-3)}{2}$**
+
+**2. Derangements (None Correct)**
+Number of ways to arrange $n$ items such that NONE occupy their original position:
+> **$D_n = n! [1 - \frac{1}{1!} + \frac{1}{2!} - \frac{1}{3!} + ... + \frac{(-1)^n}{n!} ]$**
+- $D_3 = 2$
+- $D_4 = 9$
+- $D_5 = 44$
+
+**3. Sum of Numbers**
+Sum of all $n$-digit numbers formed by $n$ non-zero digits (without repetition):
+> **Sum = (Sum of digits) × (n-1)! × (11...1 [n times])**
+
 ---
 
 ## 🧮 Solved Examples

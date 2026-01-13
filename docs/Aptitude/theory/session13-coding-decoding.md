@@ -112,6 +112,14 @@ So: is = nix
 "sea", "deep" = "rix", "six" (order unknown)
 ```
 
+### "Is Called" vs "Means" Logic
+- **Case 1**: "Cloud is called White, White is called Rain..."
+  - Q: Color of milk?
+  - Logic: Milk is White -> White is called **Rain**. Answer: Rain. (**Forward**)
+- **Case 2**: "Cloud means White, White means Rain..."
+  - Q: Color of milk?
+  - Logic: Milk is White -> Cloud means White. Answer: **Cloud**. (**Backward**)
+
 ---
 
 ## 🔀 Mixed/Conditional Coding
@@ -132,6 +140,17 @@ flowchart TD
 - If word ends with consonant → Reverse the word
 - If word has even letters → Shift by +2
 - If word has odd letters → Shift by -1
+
+### Matrix Coding
+Given two matrices (0-4 and 5-9), a letter is represented by **Row** then **Column**.
+- Example: 'A' = 23 (Row 2, Column 3)
+- Task: Identify code for a word like "EAST".
+- **Tip**: Check options from the **last letter** backwards (usually faster).
+
+### Binary Coding
+Numbers represented by symbols (e.g., 0 = *, 1 = $).
+- Example: $3 = 11_2 = $ $
+- Example: $5 = 101_2 = $ * $
 
 ---
 

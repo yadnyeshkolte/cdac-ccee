@@ -50,6 +50,12 @@ flowchart TD
 | Ratio problems | Use ax, bx notation |
 | Family ages | Use multiple variables |
 
+### Shortcut: Ratio Method
+If present ratio A:B is $x:y$, and after $T$ years it becomes $p:q$:
+> **Common Factor (1 unit) = $\frac{T \times |p-q|}{|xq - yp|}$**
+
+*Then multiply this factor with $x$ and $y$ to get present ages.*
+
 ---
 
 ## 🕐 Clock Problems
@@ -104,6 +110,13 @@ Formula: Next coincidence = (12/11) × 60 min ≈ 65.45 min apart
 
 If a clock gains x minutes per hour:
 - Correct time after t hours = t hours by wrong clock - (xt/60) hours
+
+### Mirror Image Time
+To find the time shown in a mirror:
+> **Subtract given time from 11:60 (12:00)**
+> *If time > 12:00, subtract from 23:60 (24:00)*
+
+*Example: Mirror time of 4:10 = 11:60 - 4:10 = 7:50*
 
 ---
 
@@ -167,6 +180,14 @@ flowchart TD
 | Oct | 31 | 3 |
 | Nov | 30 | 2 |
 | Dec | 31 | 3 |
+
+### Calendar Repetition Rules
+When does a calendar repeat?
+- **Leap Year**: Repeats after **28 years**
+- **Leap Year + 1**: Repeats after **6 years**
+- **Leap Year + 2 or 3**: Repeats after **11 years**
+
+*Example: 2024 (Leap) repeats in 2052. 2025 (Leap+1) repeats in 2031.*
 
 ---
 

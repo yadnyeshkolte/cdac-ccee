@@ -147,6 +147,19 @@ Next: K+5 = P, 11+5 = 16 → P16
 (Resets and adds one more)
 ```
 
+### Solving Continuous Patterns (a_b_c...)
+**Strategy:**
+1. **Count total characters** (including blanks). Common lengths: 12, 15, 16, 20.
+2. **Divide into groups**:
+   - 12 = 3×4 or 4×3
+   - 15 = 3×5 or 5×3
+   - 16 = 4×4
+3. **Compare groups** to find missing letters.
+
+*Example: a _ b c a a b _ a a _ c*
+*Total 12. Try groups of 4: `a_bc | aab_ | aa_c`*
+*Fill: `aabc | aabc | aabc`. Missing: a, c, b.*
+
 ---
 
 ## 🧮 Problem-Solving Strategy
@@ -173,6 +186,11 @@ flowchart TD
 | Irregular gaps | Two interleaved series |
 | Prime-like | Prime number series |
 | Near squares | n² ± k pattern |
+
+### Finding Wrong Term Strategy
+1. **Check pattern from both start and end.**
+2. **Identify the "breaking point"** where logic fails.
+3. If $a, b, c, d, e$ is series and $c$ is wrong, then $(b \to c)$ and $(c \to d)$ both logical relationships will be broken.
 
 ---
 
