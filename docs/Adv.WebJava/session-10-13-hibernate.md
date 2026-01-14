@@ -375,6 +375,63 @@ private List<Employee> employees;
 private Department department;
 ```
 
+
+---
+
+## Component Mapping (@Embeddable)
+
+**Component mapping** allows a class to be embedded as part of another entity's table, rather than having its own table. It is used for value types.
+
+### Example: Address as Component
+
+```java
+// 1. Define the component (value type)
+@Embeddable
+public class Address {
+    @Column(name = "street_name")
+    private String street;
+    
+    @Column(name = "city_name")
+    private String city;
+    
+    @Column(name = "zip_code")
+    private String zipCode;
+    
+    // Getters and setters
+}
+
+// 2. Use in Entity
+@Entity
+@Table(name = "users")
+public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    private String name;
+    
+    @Embedded
+    private Address address;  // Fields of Address will be columns in 'users' table
+    
+    // Start overriding column names if needed
+    @Embedded
+    @AttributeOverrides({
+        @AttributeOverride(name = "street", column = @Column(name = "billing_street")),
+        @AttributeOverride(name = "city", column = @Column(name = "billing_city")),
+        @AttributeOverride(name = "zipCode", column = @Column(name = "billing_zip"))
+    })
+    private Address billingAddress;
+}
+```
+
+### Key Annotations
+
+| Annotation | Purpose |
+|------------|---------|
+| `@Embeddable` | Marks a class as a value type (component) |
+| `@Embedded` | Used in the entity to embed the component |
+| `@AttributeOverride` | Overrides column definitions of the component |
+
 ---
 
 ## Collection Mapping

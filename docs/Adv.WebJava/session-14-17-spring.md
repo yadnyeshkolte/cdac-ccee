@@ -614,6 +614,93 @@ welcome.message=Welcome to our application!
 welcome.message=Bienvenue dans notre application!
 ```
 
+
+---
+
+## File Upload
+
+Spring MVC makes it easy to handle file uploads using `MultipartFile` interface.
+
+### 1. Configuration
+
+**StandardServletMultipartResolver** is used (Servlet 3.0+).
+
+```java
+@Configuration
+public class AppConfig {
+    @Bean
+    public MultipartResolver multipartResolver() {
+        return new StandardServletMultipartResolver();
+    }
+}
+```
+
+In `application.properties` (Spring Boot):
+```properties
+spring.servlet.multipart.enabled=true
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB
+```
+
+### 2. Controller
+
+```java
+@Controller
+public class FileUploadController {
+
+    @PostMapping("/upload")
+    public String handleFileUpload(@RequestParam("file") MultipartFile file,
+                                   RedirectAttributes redirectAttributes) {
+
+        if (file.isEmpty()) {
+            redirectAttributes.addFlashAttribute("message", "Please select a file");
+            return "redirect:uploadStatus";
+        }
+
+        try {
+            // Get original filename
+            String fileName = file.getOriginalFilename();
+            
+            // Save file to disk
+            byte[] bytes = file.getBytes();
+            Path path = Paths.get("uploads/" + fileName);
+            Files.write(path, bytes);
+            
+            redirectAttributes.addFlashAttribute("message", 
+                "You successfully uploaded " + fileName + " (" + file.getSize() + " bytes)");
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "redirect:/uploadStatus";
+    }
+}
+```
+
+### 3. HTML Form
+
+Form must have `enctype="multipart/form-data"`.
+
+```html
+<form method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="file" name="file" /><br/><br/>
+    <input type="submit" value="Upload" />
+</form>
+```
+
+### MultipartFile Methods
+
+| Method | Description |
+|--------|-------------|
+| `getOriginalFilename()` | Original name on client's filesystem |
+| `getSize()` | Size in bytes |
+| `getContentType()` | MIME type (e.g., image/jpeg) |
+| `isEmpty()` | Check if file is empty |
+| `getBytes()` | Get file contents as byte array |
+| `getInputStream()` | Get input stream for reading |
+| `transferTo(File dest)` | Save file to destination |
+
 ---
 
 ## Key MCQ Points to Remember
