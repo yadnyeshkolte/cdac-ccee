@@ -138,7 +138,55 @@ public class FirstTest {
 }
 ```
 
+
 ---
+
+## Browser Navigation Commands
+
+Selenium provides a `Navigation` interface to handle browser history and navigation.
+
+### `get()` vs `navigate().to()`
+
+| Method | Description | Behavior |
+|--------|-------------|----------|
+| `driver.get("url")` | Load a new web page | Waits for page to load completely (DOM ready) |
+| `driver.navigate().to("url")` | Load a new web page | Same as `get()`, but part of Navigation interface |
+
+### Navigation Methods
+
+```java
+// Navigate to a URL
+driver.navigate().to("https://www.google.com");
+
+// Go back in history
+driver.navigate().back();
+
+// Go forward in history
+driver.navigate().forward();
+
+// Refresh current page
+driver.navigate().refresh();
+```
+
+### Browser Window Commands
+
+```java
+// Get title of current page
+String title = driver.getTitle();
+
+// Get current URL
+String url = driver.getCurrentUrl();
+
+// Get page source (HTML)
+String source = driver.getPageSource();
+
+// Close current window
+driver.close();
+
+// Close all windows and end session
+driver.quit();
+```
+
 
 ## Locators: Finding Elements
 

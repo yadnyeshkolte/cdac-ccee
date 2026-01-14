@@ -90,7 +90,42 @@ mindmap
 | **Team Confidence** | Automated checks provide confidence |
 | **Documentation** | Pipeline serves as deployment documentation |
 
+
 ---
+
+## Build Automation Tools
+
+### Why Build Automation?
+
+Build automation involves scripting or automating the process of compiling computer source code into binary code, packaging binary code, and running automated tests.
+
+**Key Benefits:**
+- **Productivity**: Eliminates manual tasks
+- **Quality**: Consistent build process
+- **History**: Keeps track of builds and versions
+- **Speed**: Faster feedback on changes
+
+### Popular Build Tools
+
+| Tool | Type | Language | Configuration |
+|------|------|----------|---------------|
+| **Ant** | Imperative | Java | XML (`build.xml`) |
+| **Maven** | Declarative | Java | XML (`pom.xml`) |
+| **Gradle** | Declarative/Imperative | Java/Groovy/Kotlin | DSL (`build.gradle`) |
+
+### Ant vs Maven vs Gradle
+
+| Feature | Apache Ant | Apache Maven | Gradle |
+|---------|------------|--------------|--------|
+| **Release Year** | 2000 | 2004 | 2012 |
+| **Philosophy** | Toolbox (Flexible) | Framework (Convention over Configuration) | Flexible + Convention |
+| **Configuration** | XML | XML | Groovy/Kotlin DSL |
+| **Dependency Management** | Manual (via Ivy) | Built-in (Central Repository) | Built-in (Maven/Ivy Repos) |
+| **Performance** | Fast for small projects | Slower (Linear execution) | Very Fast (Incremental builds, Daemon) |
+| **Lifecycle** | No standard lifecycle | Strict Lifecycle (validate, compile, test, package, install, deploy) | Flexible Lifecycle of tasks |
+| **Learning Curve** | Low (if you know XML) | Medium (Need to learn Lifecycle) | High (Need to learn DSL) |
+| **Usage** | Legacy projects | Enterprise standard | Modern projects (Android, Spring Boot) |
+
 
 ## Introduction to Jenkins
 
