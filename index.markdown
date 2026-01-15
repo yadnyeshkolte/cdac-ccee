@@ -74,7 +74,7 @@ permalink: /
     <p>Linux, Shell, Processes, Memory, DevOps, Docker</p>
   </a>
 
-  <a href="{{ '/docs/ASP.NET-C#/' | relative_url }}" class="module-card card-amber">
+  <a href="{{ '/docs/ASP.NET-C%23/' | relative_url }}" class="module-card card-amber">
     <div class="icon">🔷</div>
     <h3>ASP.NET & C#</h3>
     <p>.NET Framework, MVC, Entity Framework</p>
@@ -158,9 +158,9 @@ permalink: /
   <div class="access-card">
     <h3>🔷 Module 8 - ASP.NET & C#</h3>
     <div class="access-links">
-      <a href="{{ '/docs/ASP.NET-C#/' | relative_url }}" class="access-link notes">📖 All Notes</a>
-      <a href="{{ '/docs/ASP.NET-C#/practice/mcq-test-1' | relative_url }}" class="access-link mcq">🎯 MCQ Test 1</a>
-      <a href="{{ '/docs/ASP.NET-C#/practice/mcq-test-2' | relative_url }}" class="access-link mcq">🎯 MCQ Test 2</a>
+      <a href="{{ '/docs/ASP.NET-C%23/' | relative_url }}" class="access-link notes">📖 All Notes</a>
+      <a href="{{ '/docs/ASP.NET-C%23/practice/mcq-test-1' | relative_url }}" class="access-link mcq">🎯 MCQ Test 1</a>
+      <a href="{{ '/docs/ASP.NET-C%23/practice/mcq-test-2' | relative_url }}" class="access-link mcq">🎯 MCQ Test 2</a>
     </div>
   </div>
 

@@ -3,6 +3,7 @@ layout: default
 title: Module 4 - ADS
 nav_order: 4
 has_children: true
+permalink: /docs/AlgorithmsDataStructures/
 ---
 
 # Algorithms and Data Structures Using Java - CDAC CCEE 2026
@@ -76,7 +77,33 @@ Welcome to the comprehensive study notes for **Algorithms and Data Structures Us
 
 ---
 
-## 🎯 Quick Reference Materials
+## 🎯 Practice Tests
+
+<div class="module-content-grid">
+  <a href="{{ '/docs/AlgorithmsDataStructures/practice/mcq-test-1' | relative_url }}" class="content-link mcq">
+    <span class="link-icon">✅</span>
+    <span class="link-text">MCQ Test 1</span>
+  </a>
+  
+  <a href="{{ '/docs/AlgorithmsDataStructures/practice/mcq-test-2' | relative_url }}" class="content-link mcq">
+    <span class="link-icon">✅</span>
+    <span class="link-text">MCQ Test 2</span>
+  </a>
+  
+  <a href="{{ '/docs/AlgorithmsDataStructures/practice/mcq-test-3' | relative_url }}" class="content-link mcq">
+    <span class="link-icon">✅</span>
+    <span class="link-text">MCQ Test 3</span>
+  </a>
+  
+  <a href="{{ '/docs/AlgorithmsDataStructures/practice/mcq-test-4' | relative_url }}" class="content-link mcq">
+    <span class="link-icon">✅</span>
+    <span class="link-text">MCQ Test 4</span>
+  </a>
+</div>
+
+---
+
+## 📚 Quick Reference Materials
 
 ### Complexity Analysis Cheat Sheet
 
