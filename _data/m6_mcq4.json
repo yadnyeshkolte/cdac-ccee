@@ -1,283 +1,442 @@
 [
-    
-    {
-    "question": "The @Query annotation is used for:",
+  {
+    "question": "In the JDBC architecture, which interface is primarily responsible for establishing a session with the specific database?",
     "options": [
-      "Creating tables",
-      "Writing custom SQL or JPQL queries",
-      "Injecting dependencies",
-      "Defining REST endpoints"
+      "Statement",
+      "Connection",
+      "DriverManager",
+      "ResultSet"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "The Connection interface represents the session. DriverManager is a factory for connections, but the Connection object itself holds the session state."
   },
   {
-    "question": "What is the parent interface of JpaRepository?",
+    "question": "Identify the issue in the following code snippet considering performance and security:\n`String query = 'SELECT * FROM users WHERE id = ' + userId;`",
     "options": [
-      "Repository",
-      "CrudRepository",
-      "PagingAndSortingRepository",
-      "All of the above"
+      "It causes a compilation error.",
+      "It is vulnerable to SQL Injection.",
+      "It cannot execute SELECT queries.",
+      "It requires a transaction block."
     ],
-    "answer": 3
+    "answer": 1,
+    "explanation": "Concatenating strings for SQL queries allows attackers to manipulate the input (SQL Injection). PreparedStatement should be used instead."
   },
   {
-    "question": "Which method is automatically provided by JpaRepository?",
+    "question": "Which method is appropriate for executing a SQL DELETE statement via a Statement object?",
     "options": [
-      "findUserById(int id)",
-      "selectUser(int id)",
-      "get()",
-      "search()"
+      "executeQuery()",
+      "executeDelete()",
+      "executeUpdate()",
+      "executeBatch()"
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": "executeUpdate() is used for DML statements (INSERT, UPDATE, DELETE) and returns the row count (int). executeQuery is for SELECT."
   },
   {
-    "question": "Which annotation is used to define a JPA repository?",
+    "question": "In the Servlet Life Cycle, which method is called exactly once by the container when the servlet is first loaded?",
     "options": [
-      "@Repository",
-      "@Component",
-      "@JpaRepository",
-      "@Entity"
+      "service()",
+      "doGet()",
+      "init()",
+      "load()"
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": "The init() method is called only once to initialize the servlet. service() is called for every request."
   },
   {
-    "question": "What is the return type of findAll() in CrudRepository?",
+    "question": "Which annotation is used in Servlet 3.0+ to define a Servlet component without using web.xml?",
     "options": [
-      "List<Object>",
-      "Iterable<T>",
-      "void",
-      "Stream<T>"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which of the following allows pagination and sorting?",
-    "options": [
-      "CrudRepository",
-      "JpaRepository",
-      "PagingAndSortingRepository",
-      "Both B and C"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "In Spring Data, method names starting with findBy followed by field name will:",
-    "options": [
-      "Automatically create an SQL trigger",
-      "Automatically map to database column",
-      "Automatically generate the query",
-      "Throw runtime exception"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which Spring Boot starter is used for integrating JPA?",
-    "options": [
-      "spring-boot-starter-web",
-      "spring-boot-starter-data-jpa",
-      "spring-boot-starter-security",
-      "spring-boot-starter-thymeleaf"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What does AOP stand for in Spring Framework?",
-    "options": [
-      "Application Oriented Programming",
-      "Aspect Oriented Programming",
-      "Attribute Oriented Programming",
-      "Annotation Oriented Programming"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "In AOP, what is a \"Join Point\"?",
-    "options": [
-      "The code written inside an aspect",
-      "A location in the application where an aspect can be applied",
-      "A configuration point",
-      "An interface for dependency injection"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which of the following is used to define reusable functionality in AOP?",
-    "options": [
-      "Bean",
-      "JoinPoint",
-      "Aspect",
-      "Scope"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What is \"Advice\" in Spring AOP?",
-    "options": [
-      "The point where exception occurs",
-      "The action taken by an aspect at a particular join point",
-      "The controller in MVC",
-      "The view technology used"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which annotation is used to declare a class as an aspect in Spring AOP?",
-    "options": [
-      "@Aspect",
-      "@JoinPoint",
-      "@AOP",
-      "@Advice"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "Which advice type is executed after the method returns successfully?",
-    "options": [
-      "@Before",
-      "@After",
-      "@Around",
-      "@AfterReturning"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "What is the purpose of Pointcut in AOP?",
-    "options": [
-      "To define the target bean",
-      "To declare where the advice should be applied",
-      "To manage exceptions",
-      "To build REST services"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which protocol is primarily used in RESTful web services?",
-    "options": [
-      "FTP",
-      "SMTP",
-      "HTTP",
-      "TCP"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which annotation is used to define a REST controller in Spring Boot?",
-    "options": [
+      "@Servlet",
+      "@WebServlet",
       "@Controller",
-      "@RestController",
-      "@WebController",
-      "@Service"
+      "@HttpComponent"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "@WebServlet is the standard annotation to map a class extending HttpServlet to a URL pattern."
   },
   {
-    "question": "Which annotation is used to map HTTP GET requests in Spring?",
+    "question": "What happens when you call `request.setAttribute('key', value)` followed by `response.sendRedirect('nextPage.jsp')`?",
     "options": [
-      "@Get",
-      "@GetRequest",
-      "@RequestMapping(method=RequestMethod.GET)",
-      "@GET"
+      "The attribute is available in nextPage.jsp.",
+      "The attribute is lost because a new request is created.",
+      "The attribute persists for the entire session.",
+      "A 500 Internal Server Error occurs."
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "sendRedirect triggers a new HTTP request from the client browser, so request-scoped attributes from the previous request are lost."
   },
   {
-    "question": "Which format is typically used for data exchange in RESTful APIs?",
+    "question": "To prevent multiple threads from accessing a Servlet's shared resources concurrently, the deprecated approach was implementing SingleThreadModel. What is the modern best practice?",
     "options": [
-      "HTML",
-      "XML",
-      "JSON",
-      "CSV"
+      "Synchronize the service() method.",
+      "Use local variables inside doGet/doPost instead of instance variables.",
+      "Make all variables static.",
+      "Use the volatile keyword on instance variables."
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "Servlets are singletons. Using local variables ensures thread safety because each thread gets its own stack."
   },
   {
-    "question": "What tool is commonly used to test REST APIs manually?",
+    "question": "Which session tracking mechanism involves rewriting the URL to append the Session ID?",
     "options": [
-      "Eclipse",
-      "Visual Studio",
-      "Postman",
-      "GitHub"
+      "Cookies",
+      "Hidden Form Fields",
+      "URL Rewriting",
+      "HttpSession"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "URL Rewriting appends ';jsessionid=...' to the URL, used when cookies are disabled on the client."
   },
   {
-    "question": "Which annotation is used to map HTTP POST requests in Spring Boot?",
+    "question": "In JSP, which implicit object is an instance of `javax.servlet.http.HttpServletRequest`?",
     "options": [
-      "@PostMapping",
-      "@PostRequest",
-      "@RequestPost",
-      "@Post"
+      "response",
+      "application",
+      "request",
+      "pageContext"
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": "The 'request' implicit object maps directly to the HttpServletRequest of the current execution."
   },
   {
-    "question": "In REST terminology, what does CRUD stand for?",
+    "question": "What is the correct Expression Language (EL) syntax to access the 'name' property of a bean stored in the session scope under the key 'user'?",
     "options": [
-      "Create, Read, Update, Delete",
-      "Compute, Run, Update, Deploy",
-      "Create, Route, Upload, Delete",
-      "Construct, Retrieve, Use, Drop"
+      "${session.user.name}",
+      "${user.name}",
+      "<%= user.getName() %>",
+      "#{user.name}"
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "${user.name} searches scopes (page->request->session->app). If 'user' is in the session, this works. The 'session.' prefix is not used in EL, it searches scopes automatically."
   },
   {
-    "question": "Which class is used to invoke REST APIs from within Spring Boot?",
+    "question": "In the MVC design pattern using JSP and Servlet, what role does the JSP page typically play?",
     "options": [
-      "HttpClient",
-      "RestService",
-      "RestTemplate",
-      "WebSocket"
+      "Controller",
+      "Model",
+      "View",
+      "Data Access Object"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "JSP handles the presentation (View), Servlets handle logic (Controller), and JavaBeans handle data (Model)."
   },
   {
-    "question": "Which HTTP method is used to delete a resource in REST?",
+    "question": "Which Hibernate interface is considered a 'heavyweight' object and is usually created only once during application startup?",
     "options": [
-      "REMOVE",
-      "DELETE",
-      "DROP",
-      "ERASE"
+      "Session",
+      "Transaction",
+      "SessionFactory",
+      "Query"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "SessionFactory is immutable and thread-safe, intended to be a singleton. Session is lightweight and created per request."
   },
   {
-    "question": "What is the main difference between REST and SOAP?",
+    "question": "An entity object is retrieved from the database. The session is then closed. What is the current state of this entity object?",
     "options": [
-      "SOAP is faster than REST",
-      "REST uses XML only, SOAP uses JSON",
-      "REST is lightweight and uses multiple formats like JSON/XML",
-      "SOAP is used only in microservices"
+      "Transient",
+      "Persistent",
+      "Detached",
+      "Removed"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Once the session associated with a persistent object is closed, the object becomes 'Detached'. Changes to it are not synced automatically."
   },
   {
-    "question": "Which annotation is used to bind path variables in Spring REST controllers?",
+    "question": "In Hibernate Annotations, where should you place the `@Id` annotation?",
+    "options": [
+      "On the class declaration line.",
+      "Strictly on the getter method only.",
+      "Strictly on the field only.",
+      "On either the field or the getter method (consistently)."
+    ],
+    "answer": 3,
+    "explanation": "Hibernate allows field access or property (getter) access. You must place annotations consistently on one or the other."
+  },
+  {
+    "question": "What is the primary difference between `session.get()` and `session.load()`?",
+    "options": [
+      "get() throws an exception if not found; load() returns null.",
+      "get() always hits the database immediately; load() may return a proxy.",
+      "load() ignores the cache.",
+      "get() is only for HQL queries."
+    ],
+    "answer": 1,
+    "explanation": "get() returns null if the object doesn't exist and hits the DB. load() returns a proxy (lazy load) and throws ObjectNotFoundException if accessed but missing."
+  },
+  {
+    "question": "In HQL (Hibernate Query Language), queries are written against:",
+    "options": [
+      "Table names and Columns",
+      "Entity Class names and Properties",
+      "Stored Procedures",
+      "The database catalog"
+    ],
+    "answer": 1,
+    "explanation": "HQL is object-oriented. You query 'FROM Employee', not 'FROM tbl_emp'."
+  },
+  {
+    "question": "What is the default scope of a Spring Bean if not specified?",
+    "options": [
+      "Prototype",
+      "Request",
+      "Singleton",
+      "Session"
+    ],
+    "answer": 2,
+    "explanation": "Singleton is the default. One instance per Spring IoC container."
+  },
+  {
+    "question": "Which annotation is used to mark a class as a Service layer component in Spring?",
+    "options": [
+      "@Component",
+      "@Service",
+      "@Repository",
+      "@Controller"
+    ],
+    "answer": 1,
+    "explanation": "While all are @Component specializations, @Service specifically indicates business logic semantics."
+  },
+  {
+    "question": "In Dependency Injection, if a bean has a mandatory dependency, which injection type is recommended?",
+    "options": [
+      "Setter Injection",
+      "Field Injection",
+      "Constructor Injection",
+      "Interface Injection"
+    ],
+    "answer": 2,
+    "explanation": "Constructor injection ensures the bean cannot be instantiated without its required dependencies, preventing NullPointerExceptions."
+  },
+  {
+    "question": "Which component in Spring MVC is responsible for mapping an incoming request to the correct Controller method?",
+    "options": [
+      "ViewResolver",
+      "DispatcherServlet",
+      "HandlerMapping",
+      "ModelAndView"
+    ],
+    "answer": 2,
+    "explanation": "HandlerMapping inspects the request (URL, method) and determines which controller and method should handle it."
+  },
+  {
+    "question": "How do you bind a URL path variable (e.g., `/users/{id}`) to a method parameter in Spring MVC?",
     "options": [
       "@RequestParam",
       "@PathVariable",
-      "@Variable",
-      "@Param"
+      "@PathParam",
+      "@BodyParam"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "@PathVariable binds a URI template variable to a method parameter."
   },
   {
-    "question": "Which Spring Boot dependency is required for RESTful web services?",
+    "question": "The annotation `@SpringBootApplication` is a combination of which three annotations?",
     "options": [
-      "spring-boot-web-starter",
-      "spring-rest",
-      "spring-core",
-      "spring-mvc-web"
+      "@Configuration, @EnableAutoConfiguration, @ComponentScan",
+      "@Controller, @Service, @Repository",
+      "@SpringApp, @AutoConfig, @Path",
+      "@Bean, @Import, @Value"
     ],
-    "answer": 0
+    "answer": 0,
+    "explanation": "It is a meta-annotation that enables configuration, auto-configuration logic, and component scanning."
   },
   {
-    "question": "What is the correct return type of a REST API method in Spring Boot to send data as JSON?",
+    "question": "What is the default file name for externalized configuration in a Spring Boot application?",
     "options": [
-      "Model",
-      "String",
-      "ResponseEntity<?> or POJO",
-      "View"
+      "config.xml",
+      "application.properties",
+      "settings.yaml",
+      "spring.conf"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "Spring Boot automatically looks for application.properties (or application.yml) in the classpath."
+  },
+  {
+    "question": "Which dependency (Starter) is required to build a standard Spring MVC web application with embedded Tomcat?",
+    "options": [
+      "spring-boot-starter-data-jpa",
+      "spring-boot-starter-web",
+      "spring-boot-starter-test",
+      "spring-boot-starter-tomcat"
+    ],
+    "answer": 1,
+    "explanation": "spring-boot-starter-web includes Tomcat, Spring MVC, and Jackson."
+  },
+  {
+    "question": "Using Spring Data JPA, how can you define a custom query without writing implementation code?",
+    "options": [
+      "By implementing the JpaRepository interface manually.",
+      "Using Method Name Derivation (e.g., findByEmail).",
+      "Using XML mapping files only.",
+      "It is not possible; implementation is mandatory."
+    ],
+    "answer": 1,
+    "explanation": "Spring Data JPA derives the query from the method signature, e.g., findByName(String name) generates 'SELECT ... WHERE name = ?'."
+  },
+  {
+    "question": "Which annotation is used to define a JPQL or SQL query directly on a Repository method?",
+    "options": [
+      "@SQL",
+      "@Query",
+      "@Statement",
+      "@Execute"
+    ],
+    "answer": 1,
+    "explanation": "@Query allows defining custom JPQL or Native SQL for a repository method."
+  },
+  {
+    "question": "In AOP, what do we call the specific point in the code (method execution) where an Aspect can be applied?",
+    "options": [
+      "Advice",
+      "Pointcut",
+      "Join Point",
+      "Weaving"
+    ],
+    "answer": 2,
+    "explanation": "A Join Point is a candidate point in execution. A Pointcut defines *which* Join Points get the advice."
+  },
+  {
+    "question": "Which AOP advice runs regardless of whether the joined method returns normally or throws an exception?",
+    "options": [
+      "@AfterReturning",
+      "@AfterThrowing",
+      "@After",
+      "@Around"
+    ],
+    "answer": 2,
+    "explanation": "@After is akin to a 'finally' block; it runs after the method completes, success or failure."
+  },
+  {
+    "question": "Which HTTP verb is best suited for an idempotent operation that updates a resource?",
+    "options": [
+      "POST",
+      "PUT",
+      "GET",
+      "TRACE"
+    ],
+    "answer": 1,
+    "explanation": "PUT is idempotent and used for updates. POST is not idempotent (creates new resources)."
+  },
+  {
+    "question": "What is the primary purpose of `@RequestBody` in a Spring REST Controller?",
+    "options": [
+      "To send data to the view.",
+      "To bind the HTTP request body (e.g., JSON) to a Java object.",
+      "To validate the request headers.",
+      "To set the HTTP status code."
+    ],
+    "answer": 1,
+    "explanation": "It instructs Spring to deserialize the inbound HTTP body into the method parameter object."
+  },
+  {
+    "question": "Which annotation is a specialized version of `@Component` that combines `@Controller` and `@ResponseBody`?",
+    "options": [
+      "@WebController",
+      "@RestComponent",
+      "@RestController",
+      "@Service"
+    ],
+    "answer": 2,
+    "explanation": "@RestController ensures all handler methods write the return value directly to the response body (JSON/XML) instead of resolving a view."
+  },
+  {
+    "question": "Which class is traditionally used in Spring (pre-WebClient) to make synchronous client-side HTTP requests?",
+    "options": [
+      "HttpClient",
+      "RestTemplate",
+      "WebTemplate",
+      "AjaxTemplate"
+    ],
+    "answer": 1,
+    "explanation": "RestTemplate is the central Spring class for client-side HTTP access."
+  },
+  {
+    "question": "When unit testing a Spring MVC Controller using MockMvc, which method helps you simulate a GET request?",
+    "options": [
+      "perform(get('/url'))",
+      "execute(get('/url'))",
+      "run(get('/url'))",
+      "test(get('/url'))"
+    ],
+    "answer": 0,
+    "explanation": "mockMvc.perform(get(...)) is the standard API entry point."
+  },
+  {
+    "question": "What is the purpose of `@MockBean` in a Spring Boot Test?",
+    "options": [
+      "To run the real database.",
+      "To replace a Spring Bean in the ApplicationContext with a Mockito mock.",
+      "To ignore a test case.",
+      "To speed up the compiler."
+    ],
+    "answer": 1,
+    "explanation": "@MockBean adds/replaces a bean in the Spring Context with a mock, useful for isolating the layer being tested."
+  },
+  {
+    "question": "Which interface must be implemented to load user-specific data (like password and authorities) during authentication?",
+    "options": [
+      "UserDetailService",
+      "UserDetailsService",
+      "AuthenticationManager",
+      "SecurityContext"
+    ],
+    "answer": 1,
+    "explanation": "UserDetailsService has one method: loadUserByUsername(), used by the provider to fetch user data."
+  },
+  {
+    "question": "What does the HTTP status code 401 represent?",
+    "options": [
+      "Forbidden (Authenticated but no permission)",
+      "Unauthorized (Not Authenticated)",
+      "Not Found",
+      "Bad Request"
+    ],
+    "answer": 1,
+    "explanation": "401 means the user is unknown (login required). 403 means Forbidden (known user, insufficient rights)."
+  },
+  {
+    "question": "In a Microservices architecture, what is the role of 'Service Discovery' (e.g., Eureka)?",
+    "options": [
+      "To encrypt database passwords.",
+      "To allow services to find the network locations (IP/Port) of other services dynamically.",
+      "To build the frontend UI.",
+      "To compile Java code."
+    ],
+    "answer": 1,
+    "explanation": "Services register with Eureka so they don't need hardcoded URLs to communicate with each other."
+  },
+  {
+    "question": "What pattern is used to handle partial failures in microservices to prevent cascading failures (e.g., using Resilience4j)?",
+    "options": [
+      "Circuit Breaker",
+      "Front Controller",
+      "Singleton",
+      "Factory"
+    ],
+    "answer": 0,
+    "explanation": "The Circuit Breaker pattern detects failures and wraps calls, stopping requests to a failing service to allow recovery."
+  },
+  {
+    "question": "What is the purpose of an 'API Gateway' in microservices?",
+    "options": [
+      "To store all data in one place.",
+      "To act as a single entry point for clients, handling routing and cross-cutting concerns.",
+      "To replace the database.",
+      "To generate unit tests."
+    ],
+    "answer": 1,
+    "explanation": "API Gateway (like Spring Cloud Gateway) routes requests to specific microservices and handles auth, logging, etc."
+  },
+  {
+    "question": "Which Spring Boot feature provides production-ready features like health checks and metrics?",
+    "options": [
+      "Spring MVC",
+      "Spring Actuator",
+      "Spring Initializr",
+      "Spring Inspector"
+    ],
+    "answer": 1,
+    "explanation": "Spring Boot Actuator exposes endpoints (like /actuator/health) to monitor and manage the application."
   }
 ]

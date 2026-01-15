@@ -1,342 +1,442 @@
 [
   {
-    "question": "Which method is used to forward a request to another resource?",
+    "question": "You are configuring a `PreparedStatement` to insert a user record. Given the SQL `INSERT INTO users (name, email) VALUES (?, ?)`, what happens if you execute the following code?\n```java\npstmt.setString(0, \"Alice\");\npstmt.setString(1, \"alice@example.com\");\npstmt.executeUpdate();\n```",
+    "options": [
+      "The record is inserted successfully.",
+      "A SQLException is thrown indicating Invalid Column Index.",
+      "The name is set to 'Alice' but email remains null.",
+      "The first parameter is ignored, only the second is set."
+    ],
+    "answer": 1,
+    "explanation": "In JDBC `PreparedStatement`, parameter indices start at 1, not 0. Accessing index 0 throws a SQLException."
+  },
+  {
+    "question": "Analyze the following JDBC transaction block. If the `updateBalance` method throws a RuntimeException, what is the state of the database?\n```java\nConnection con = dataSource.getConnection();\ntry {\n  con.setAutoCommit(false);\n  debitAccount(con, 100);\n  updateBalance(con); // Throws Exception\n  con.commit();\n} catch (Exception e) {\n  // No explicit rollback call here\n  System.out.println(\"Error\");\n} finally {\n  con.close();\n}\n```",
+    "options": [
+      "Changes made by debitAccount are saved because the connection closed.",
+      "Changes are rolled back automatically by the database when the connection closes without a commit.",
+      "The transaction remains in a pending state indefinitely.",
+      "The debitAccount change is committed, but updateBalance is not."
+    ],
+    "answer": 1,
+    "explanation": "Most compliant JDBC drivers/databases will rollback an uncommitted transaction when the connection is closed (or returned to the pool), provided `setAutoCommit` was false."
+  },
+  {
+    "question": "Which `ResultSet` type should you choose if you need to move the cursor both forward and backward, but you want the application to see changes made by others to the underlying data while the ResultSet is open?",
+    "options": [
+      "TYPE_FORWARD_ONLY",
+      "TYPE_SCROLL_INSENSITIVE",
+      "TYPE_SCROLL_SENSITIVE",
+      "CONCUR_UPDATABLE"
+    ],
+    "answer": 2,
+    "explanation": "`TYPE_SCROLL_SENSITIVE` allows scrolling in both directions and reflects changes made by other transactions to the underlying data."
+  },
+  {
+    "question": "Which of the following code patterns acts as the primary defense against SQL Injection in a Java web application?",
+    "options": [
+      "Using `Statement` with string concatenation for dynamic queries.",
+      "Using `PreparedStatement` with bind variables (placeholders).",
+      "Using `ResultSet.updateString()` methods.",
+      "Validating input using JavaScript on the client side."
+    ],
+    "answer": 1,
+    "explanation": "`PreparedStatement` pre-compiles the SQL and treats user input strictly as data, preventing the database from interpreting input as executable SQL commands."
+  },
+  {
+    "question": "A developer overrides the `init()` method in a Servlet but forgets to call `super.init(config)`. What is the immediate consequence when `getServletConfig()` is called later in the code?",
+    "options": [
+      "It returns null.",
+      "It throws a NullPointerException (or results in null usage issues).",
+      "It returns the default configuration.",
+      "The container prevents deployment."
+    ],
+    "answer": 1,
+    "explanation": "The `GenericServlet.init(ServletConfig)` stores the config object. If you override the convenience method `init()` (no args), you are safe. If you override `init(ServletConfig)` and don't call super, the config is never stored."
+  },
+  {
+    "question": "What is the specific effect of setting `<load-on-startup>` to `-1` in the `web.xml` for a Servlet?",
+    "options": [
+      "The servlet is loaded immediately when the server starts.",
+      "The servlet is never loaded.",
+      "The container is free to load the servlet at any time, usually upon the first request.",
+      "It causes a deployment error."
+    ],
+    "answer": 2,
+    "explanation": "A negative integer (or missing tag) indicates the container is free to load the servlet whenever it chooses, typically lazy-loading on the first request. Positive integers force eager loading."
+  },
+  {
+    "question": "If a user's browser has disabled cookies, which mechanism must be explicitly used by the developer to ensure `HttpSession` works correctly?",
     "options": [
       "response.sendRedirect()",
-      "request.forward()",
-      "dispatcher.forward()",
-      "context.send()"
+      "response.encodeURL()",
+      "request.getSession(true)",
+      "Hidden Form Fields"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "`response.encodeURL()` checks if cookies are disabled and, if so, appends the `jsessionid` to the URL (URL Rewriting) to maintain the session."
   },
   {
-    "question": "Difference between forward() and sendRedirect() is:",
+    "question": "What is the key difference between `request.getRequestDispatcher(\"view.jsp\").forward(req, res)` and `response.sendRedirect(\"view.jsp\")` regarding the URL bar in the browser?",
     "options": [
-      "forward() goes via client, sendRedirect() does not",
-      "forward() is faster, internal; sendRedirect() is client-based",
-      "sendRedirect() supports session; forward() does not",
-      "Both are same"
+      "Forward changes the URL; Redirect keeps it the same.",
+      "Forward keeps the original URL; Redirect changes it to the new resource.",
+      "Both change the URL to 'view.jsp'.",
+      "Both keep the original URL."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": "Forward happens internally on the server (transparent to client). Redirect sends a 302 status to the browser, forcing it to issue a new request to the new URL."
   },
   {
-    "question": "Which of the following is true about JSP?",
-    "options": [
-      "JSP is a replacement for JavaScript",
-      "JSP is used to create static web pages",
-      "JSP separates UI from business logic",
-      "JSP is used for server installation"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What is the correct order of JSP lifecycle?",
-    "options": [
-      "service() → destroy() → init() → compile()",
-      "translate → compile → init → service → destroy",
-      "compile → service → destroy",
-      "init → translate → destroy"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which file extension is used for JSP?",
-    "options": [
-      ".java",
-      ".jsp",
-      ".xml",
-      ".jhtml"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "In MVC, the 'Controller' is typically implemented using:",
-    "options": [
-      "HTML",
-      "Servlet",
-      "JSP",
-      "JavaBean"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which component in MVC is responsible for business logic?",
-    "options": [
-      "View",
-      "Controller",
-      "Model",
-      "DAO"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which pattern does MVC follow?",
-    "options": [
-      "Singleton",
-      "Factory",
-      "Front Controller",
-      "Model-View-Controller"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "Which element is used to insert Java code into a JSP page?",
-    "options": [
-      "<% ... %>",
-      "${ ... }",
-      "<%= ... %>",
-      "<jsp:script>"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "Which element outputs value in JSP?",
-    "options": [
-      "<% out.print() %>",
-      "<%= ... %>",
-      "<scriptlet>",
-      "${ ... }"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which directive is used to include reusable code from another JSP?",
-    "options": [
-      "<%@ include file=\"...\" %>",
-      "<jsp:forward>",
-      "<jsp:include>",
-      "<include>"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "Which of the following is not an implicit object in JSP?",
+    "question": "In a JSP page, you set an attribute using `pageContext.setAttribute(\"user\", obj, PageContext.SESSION_SCOPE)`. Which implicit object can retrieve this attribute in a different JSP within the same session?",
     "options": [
       "request",
-      "response",
-      "config",
-      "system"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "Which scope is valid until the user closes the browser?",
-    "options": [
-      "page",
-      "request",
+      "pageContext",
       "session",
       "application"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Setting the scope to `SESSION_SCOPE` puts the object in the `HttpSession`. Therefore, the `session` implicit object (or `pageContext` finding it in that scope) can retrieve it."
   },
   {
-    "question": "Which scope is used for variables only within the current JSP file?",
+    "question": "You have three filters mapped to the same URL pattern. How is the execution order determined?",
     "options": [
-      "page",
-      "request",
-      "session",
-      "application"
+      "Randomly by the container.",
+      "Based on the alphabetical order of the Filter class names.",
+      "Based on the order of `<filter-mapping>` elements in web.xml.",
+      "Based on the `@Order` annotation only, ignoring web.xml."
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": "In a standard `web.xml` configuration, the order of the `<filter-mapping>` tags determines the chain order."
   },
   {
-    "question": "To handle errors in JSP, which directive is used?",
+    "question": "Why is declaring a standard instance variable (e.g., `private int counter;`) inside a Servlet class generally considered bad practice?",
     "options": [
-      "<%@ errorHandler %>",
-      "<%@ errorPage=\"error.jsp\" %>",
-      "<jsp:catch>",
-      "<error-page>"
+      "It causes a compilation error.",
+      "It consumes too much memory.",
+      "Servlets are singletons; instance variables are shared across all concurrent threads/requests, leading to race conditions.",
+      "The variable is reset to 0 on every request."
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "Servlets are typically singletons (one instance per application). Instance variables are shared state, making them thread-unsafe for request-specific data."
   },
   {
-    "question": "What does <%@ page isErrorPage=\"true\" %> do?",
+    "question": "In Expression Language (EL), what does `${param.username}` resolve to?",
     "options": [
-      "Prevents errors in JSP",
-      "Indicates the JSP is used for displaying errors",
-      "Logs errors to file",
-      "Disables Java code"
+      "A request attribute named 'username'.",
+      "A session attribute named 'username'.",
+      "The value of the query string parameter or form field named 'username'.",
+      "A bean property named 'username'."
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "`param` is an EL implicit object mapping request parameter names to single values."
   },
   {
-    "question": "Which syntax is used in Expression Language (EL)?",
+    "question": "You retrieve an entity using `session.get()`. You then close the session. You then modify a field on the entity object. What is the current state of this entity?",
     "options": [
-      "<% ... %>",
-      "${ ... }",
-      "<%= ... %>",
-      "{{ ... }}"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "In EL, ${param.name} returns:",
-    "options": [
-      "Request parameter value with name 'name'",
-      "Cookie value",
-      "Session attribute",
-      "JSP error code"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "What is the purpose of JSTL?",
-    "options": [
-      "To embed SQL directly in JSP",
-      "To simplify common tasks like loops, formatting",
-      "To design graphics",
-      "To compile Java files"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which JSTL tag is used for looping?",
-    "options": [
-      "<c:loop>",
-      "<jstl:for>",
-      "<c:forEach>",
-      "<jsp:repeat>"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which library must be included for JSTL core tags?",
-    "options": [
-      "sql.jar",
-      "javax.el",
-      "c.tld",
-      "core.tld"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "Which tag prints value of a variable in JSTL?",
-    "options": [
-      "<c:value>",
-      "<c:out>",
-      "<c:print>",
-      "<c:write>"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Hibernate is an implementation of:",
-    "options": [
-      "JDBC",
-      "ORM (Object Relational Mapping)",
-      "Servlet",
-      "SQL Parser"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which of the following is NOT a benefit of Hibernate?",
-    "options": [
-      "Automatic table creation",
-      "Portability",
-      "Reduces database interaction",
-      "Simplifies transaction handling"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which configuration file is required in a Hibernate project?",
-    "options": [
-      "hibernate.properties",
-      "persistence.xml",
-      "hibernate.cfg.xml",
-      "orm.xml"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which of the following is a core interface in Hibernate?",
-    "options": [
-      "SessionFactory",
-      "EntityResolver",
-      "JdbcContext",
-      "ORMManager"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "Hibernate Session object is used for:",
-    "options": [
-      "Compiling JSP",
-      "Performing CRUD operations",
-      "Formatting data",
-      "Generating JavaBeans"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What is the role of the Transaction interface in Hibernate?",
-    "options": [
-      "UI Rendering",
-      "Managing cache",
-      "Managing database transactions",
-      "Validating mappings"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which annotation marks a class as an entity in Hibernate?",
-    "options": [
-      "@Persistent",
-      "@Entity",
-      "@MappedClass",
-      "@HibernateClass"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which annotation is used to specify the primary key?",
-    "options": [
-      "@Id",
-      "@Primary",
-      "@PK",
-      "@Key"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "What is the first state of an object in Hibernate lifecycle?",
-    "options": [
+      "Transient",
       "Persistent",
       "Detached",
-      "Transient",
       "Removed"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "Once the session is closed, a previously persistent object becomes 'Detached'. It represents a row in the DB but is not currently managed by a Session."
   },
   {
-    "question": "Which annotation is used to map a class to a database table?",
+    "question": "You have a `User` entity with a `@OneToMany` list of `Orders`, configured with `FetchType.LAZY`. You load the User, close the session, and then try to access `user.getOrders().size()`. What happens?",
     "options": [
-      "@Table",
-      "@DatabaseTable",
-      "@JoinTable",
-      "@EntityTable"
+      "It returns 0.",
+      "It returns the correct size.",
+      "It throws a `LazyInitializationException`.",
+      "It triggers a new database connection automatically."
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": "Accessing a lazy-loaded collection after the Session is closed throws `LazyInitializationException` because the proxy cannot fetch the data."
   },
   {
-    "question": "To map a One-to-Many relationship, which annotation is used?",
+    "question": "In an HQL query `FROM Employee e WHERE e.deptId = 10`, what does 'Employee' refer to?",
     "options": [
-      "@OneToOne",
-      "@ManyToOne",
-      "@OneToMany",
-      "@RelationManyOne"
+      "The database table name (case insensitive).",
+      "The Java Entity Class name (case sensitive).",
+      "The database schema name.",
+      "The primary key column."
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "HQL operates on Entity Objects, not database tables. 'Employee' must match the Java class name mapped as an Entity."
   },
   {
-    "question": "Which annotation is used for specifying join column in relationships?",
+    "question": "Which statement about the Hibernate First-Level Cache is true?",
     "options": [
-      "@PrimaryJoinColumn",
-      "@JoinColumn",
-      "@ForeignKey",
-      "@ColumnLink"
+      "It is optional and must be enabled in `hibernate.cfg.xml`.",
+      "It is associated with the `SessionFactory` and shared across all users.",
+      "It is associated with the `Session` object and enabled by default; it cannot be globally disabled.",
+      "It uses Redis by default."
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "First-level cache is the Session cache. It is mandatory, enabled by default, and scoped to the transaction/session."
+  },
+  {
+    "question": "What is the primary difference between `session.get(Class, id)` and `session.load(Class, id)` if the row does not exist?",
+    "options": [
+      "get() throws an exception; load() returns null.",
+      "get() returns null; load() throws an ObjectNotFoundException (when accessed).",
+      "Both return null.",
+      "Both throw an exception immediately."
+    ],
+    "answer": 1,
+    "explanation": "`get()` hits the DB immediately and returns null if not found. `load()` returns a proxy (assuming existence) and throws an exception only when the proxy is accessed and data is missing."
+  },
+  {
+    "question": "When implementing `equals()` and `hashCode()` for a Hibernate Entity, which field is generally unsafe to use if the ID is generated by the database (e.g., AUTO/IDENTITY)?",
+    "options": [
+      "A natural business key (e.g., email or SSN).",
+      "The primary key (ID).",
+      "A specific UUID generated in the constructor.",
+      "Any final field."
+    ],
+    "answer": 1,
+    "explanation": "Using the ID is unsafe because it is null for a Transient object and changes to a value after persistence, altering the hashcode while the object might be in a HashSet, breaking the Set contract."
+  },
+  {
+    "question": "You have a class `ReportService` with a constructor: `public ReportService(DataSource ds) { ... }`. You define it as a bean. How does Spring handle the dependency?",
+    "options": [
+      "It fails unless you add `@Autowired` to the constructor.",
+      "If it's the only constructor, Spring automatically autowires the `DataSource`.",
+      "It defaults to Setter injection.",
+      "It creates the object with null arguments."
+    ],
+    "answer": 1,
+    "explanation": "In Spring 4.3+, if a bean has a single constructor, the `@Autowired` annotation is implicit and not required. Spring will inject the dependency automatically."
+  },
+  {
+    "question": "If you inject a `prototype` scoped bean into a `singleton` scoped bean, when is a new instance of the prototype created?",
+    "options": [
+      "Every time the singleton bean is accessed.",
+      "Every time a method is called on the singleton bean.",
+      "Only once, when the singleton bean is created and the dependency is injected.",
+      "Never, this configuration is invalid."
+    ],
+    "answer": 2,
+    "explanation": "Dependency injection happens at creation time. The singleton is created once, so the prototype is injected once. To get a new prototype every time, you need method injection or `ObjectFactory`."
+  },
+  {
+    "question": "What is the combined function of `@RestController`?",
+    "options": [
+      "@Controller + @Service",
+      "@Controller + @ResponseBody",
+      "@Component + @Path",
+      "@Controller + @Transactional"
+    ],
+    "answer": 1,
+    "explanation": "`@RestController` is a convenience annotation that adds `@Controller` and `@ResponseBody`, meaning methods return data (JSON/XML) rather than View names."
+  },
+  {
+    "question": "To extract '101' from the URL `/products/101` in a Spring MVC controller, which annotation should be used on the method argument?",
+    "options": [
+      "@RequestParam",
+      "@PathVariable",
+      "@QueryParam",
+      "@RequestBody"
+    ],
+    "answer": 1,
+    "explanation": "`@PathVariable` is used to bind a URI template variable (part of the path) to a method argument."
+  },
+  {
+    "question": "Which interface represents the Spring IoC container responsible for instantiating, configuring, and assembling beans?",
+    "options": [
+      "DispatcherServlet",
+      "ApplicationContext",
+      "HibernateTemplate",
+      "ContextLoaderListener"
+    ],
+    "answer": 1,
+    "explanation": "`ApplicationContext` (a sub-interface of `BeanFactory`) is the central interface for the Spring IoC container."
+  },
+  {
+    "question": "You have an interface `PaymentProcessor` with two implementations: `CreditCardProcessor` and `PaypalProcessor`. If you try to `@Autowired PaymentProcessor pp;`, what happens?",
+    "options": [
+      "Spring picks the first one defined alphabetically.",
+      "Spring picks the one marked `@Primary` (if exists), otherwise throws `NoUniqueBeanDefinitionException`.",
+      "Spring injects both into a list.",
+      "Spring throws `BeanCreationException` immediately without checking annotations."
+    ],
+    "answer": 1,
+    "explanation": "By default, autowiring by type fails if there are multiple candidates. You must use `@Primary` on one bean or `@Qualifier` at the injection point to resolve ambiguity."
+  },
+  {
+    "question": "The `@SpringBootApplication` annotation is a composition of which three annotations?",
+    "options": [
+      "@Configuration, @EnableAutoConfiguration, @ComponentScan",
+      "@Controller, @Service, @Repository",
+      "@SpringBootConfiguration, @EnableWebMvc, @Autowired",
+      "@Component, @Bean, @Inject"
+    ],
+    "answer": 0,
+    "explanation": "It combines configuration definition, the auto-configuration magic, and the scanning of the current package for components."
+  },
+  {
+    "question": "In `application.properties`, you want to set the server port to 9090. What is the correct key?",
+    "options": [
+      "server.host.port=9090",
+      "application.port=9090",
+      "server.port=9090",
+      "boot.port=9090"
+    ],
+    "answer": 2,
+    "explanation": "`server.port` is the standard Spring Boot property to configure the embedded web server port."
+  },
+  {
+    "question": "Which web server is embedded by default when adding `spring-boot-starter-web`?",
+    "options": [
+      "Jetty",
+      "Undertow",
+      "Tomcat",
+      "Netty"
+    ],
+    "answer": 2,
+    "explanation": "Apache Tomcat is the default embedded container in the `spring-boot-starter-web` dependency."
+  },
+  {
+    "question": "You want to execute a specific block of code exactly once immediately after the Spring Boot application starts. Which interface should you implement?",
+    "options": [
+      "Runnable",
+      "CommandLineRunner",
+      "StartupListener",
+      "MainMethod"
+    ],
+    "answer": 1,
+    "explanation": "Beans implementing `CommandLineRunner` (or `ApplicationRunner`) are executed after the application context is loaded."
+  },
+  {
+    "question": "In a `JpaRepository` interface, you write a method `List<User> findByLastNameAndAge(String ln, Integer age);`. What does Spring Data do?",
+    "options": [
+      "It throws an error because the implementation is missing.",
+      "It parses the method name and automatically generates a JPQL query: `select u from User u where u.lastName = ?1 and u.age = ?2`.",
+      "It performs an in-memory filter of all users.",
+      "It requires a `@Query` annotation to work."
+    ],
+    "answer": 1,
+    "explanation": "Spring Data JPA's 'Query Creation from Method Names' feature parses the name structure to generate the query automatically."
+  },
+  {
+    "question": "Which annotation allows you to write a custom JPQL query directly on a Repository method?",
+    "options": [
+      "@SQL",
+      "@Query",
+      "@CustomQuery",
+      "@Override"
+    ],
+    "answer": 1,
+    "explanation": "`@Query` lets you define JPQL (or native SQL with `nativeQuery=true`) directly on the interface method."
+  },
+  {
+    "question": "Which interface is the root of the Spring Data repository hierarchy, providing generic CRUD operations?",
+    "options": [
+      "JpaRepository",
+      "PagingAndSortingRepository",
+      "CrudRepository",
+      "Repository"
+    ],
+    "answer": 2,
+    "explanation": "`CrudRepository` is the base interface providing methods like `save`, `findAll`, `findById`, etc. `JpaRepository` extends it with JPA-specific features."
+  },
+  {
+    "question": "Analyze the pointcut expression: `execution(* com.cdac.service.*.*(..))`. What does it match?",
+    "options": [
+      "Any method in the `service` package, but not sub-packages.",
+      "Any method with any return type, in any class directly inside `com.cdac.service`, with any arguments.",
+      "Only void methods in the `service` package.",
+      "Any method in `com.cdac.service` and all its sub-packages."
+    ],
+    "answer": 1,
+    "explanation": "`*` return type, `com.cdac.service.*` (classes in package), `.*` (any method), `(..)` (any args). It does NOT include sub-packages (that would require `..` after service)."
+  },
+  {
+    "question": "Which Advice type wraps the target method execution, allowing you to choose whether to proceed, modify arguments, or change the return value?",
+    "options": [
+      "@Before",
+      "@AfterReturning",
+      "@Around",
+      "@AfterThrowing"
+    ],
+    "answer": 2,
+    "explanation": "`@Around` is the most powerful advice. It takes a `ProceedingJoinPoint` and must explicitly call `proceed()` to execute the actual target method."
+  },
+  {
+    "question": "According to RESTful constraints, which HTTP method should be 'Idempotent' (safe to call multiple times with the same result) but NOT 'Safe' (it modifies state)?",
+    "options": [
+      "GET",
+      "POST",
+      "PUT",
+      "HEAD"
+    ],
+    "answer": 2,
+    "explanation": "`PUT` is used for updates/replacements. Calling `PUT /users/1` with specific data 10 times results in the same state as calling it once (Idempotent), but it does modify the server (Not Safe/Read-only)."
+  },
+  {
+    "question": "In Spring Boot, which annotation deserializes the incoming JSON request body into a Java Object?",
+    "options": [
+      "@RequestParam",
+      "@ModelAttribute",
+      "@RequestBody",
+      "@JsonIgnore"
+    ],
+    "answer": 2,
+    "explanation": "`@RequestBody` tells Spring to use a message converter (like Jackson) to parse the HTTP request body into the domain object."
+  },
+  {
+    "question": "Which HTTP Status code indicates that a resource was successfully created (typically returned by a POST request)?",
+    "options": [
+      "200 OK",
+      "201 Created",
+      "202 Accepted",
+      "204 No Content"
+    ],
+    "answer": 1,
+    "explanation": "201 Created is the specific success code for resource creation, usually accompanied by a 'Location' header."
+  },
+  {
+    "question": "When unit testing a Service layer that depends on a Repository, which annotation is commonly used to create a fake/mock version of the Repository to isolate the Service?",
+    "options": [
+      "@Autowired",
+      "@MockBean",
+      "@Test",
+      "@SpringBootTest"
+    ],
+    "answer": 1,
+    "explanation": "`@MockBean` (from Spring Boot Test) replaces the bean in the ApplicationContext with a Mockito mock, allowing you to define behavior without a real database."
+  },
+  {
+    "question": "Spring Security primarily works using a chain of which Servlet component?",
+    "options": [
+      "Servlets",
+      "Filters",
+      "Listeners",
+      "Interceptors"
+    ],
+    "answer": 1,
+    "explanation": "Spring Security is implemented as a chain of Servlet Filters (DelegatingFilterProxy -> FilterChainProxy -> SecurityFilterChain)."
+  },
+  {
+    "question": "In a Microservices architecture, what is the primary role of an 'API Gateway'?",
+    "options": [
+      "To store the database for all services.",
+      "To act as a single entry point for clients, routing requests to appropriate services.",
+      "To generating HTML views.",
+      "To compile the Java code."
+    ],
+    "answer": 1,
+    "explanation": "The API Gateway pattern provides a unified interface, handling routing, cross-cutting concerns (auth, rate limiting), and protocol translation."
+  },
+  {
+    "question": "In an ecosystem using Eureka, what must a Spring Boot microservice do to register itself so others can find it?",
+    "options": [
+      "Add `@EnableDiscoveryClient` and configure the Eureka server URL.",
+      "Hardcode the IP addresses in `application.properties`.",
+      "Manually send a POST request to the Gateway.",
+      "Implement the `ServiceRegistry` interface."
+    ],
+    "answer": 0,
+    "explanation": "The `@EnableDiscoveryClient` (or `@EnableEurekaClient`) annotation, combined with configuration, registers the instance with the discovery server on startup."
   }
 ]
