@@ -1,382 +1,442 @@
 [
   {
-    "question": "Which package contains JDBC classes and interfaces?",
+    "question": "A developer executes the following JDBC code: `int result = statement.executeUpdate(\"UPDATE users SET status = 'active'\");`. If 5 rows are updated, what is the value of `result`?",
     "options": [
-      "java.sql",
-      "javax.sql",
-      "java.jdbc",
-      "org.jdbc"
+      "true",
+      "The ResultSet object",
+      "5",
+      "0"
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": ""
   },
   {
-    "question": "Which component establishes a connection with the database in JDBC?",
+    "question": "Which design pattern encapsulates data source access and manages database connections?",
     "options": [
-      "DriverManager",
-      "Statement",
-      "Connection",
-      "ResultSet"
+      "Front Controller",
+      "Data Access Object (DAO)",
+      "Singleton",
+      "View Helper"
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "What is the correct order of JDBC workflow?",
+    "question": "What is the immediate effect of `conn.setAutoCommit(false)`?",
     "options": [
-      "Connect → Execute → Load Driver → Close",
-      "Load Driver → Connect → Execute → Close",
-      "Execute → Load Driver → Connect → Close",
-      "Load Driver → Execute → Connect → Close"
+      "Connection becomes read-only",
+      "Execution pauses",
+      "A transaction block starts; explicit commit required",
+      "Prevents SQL Injection"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": ""
   },
   {
-    "question": "Which is not a valid JDBC driver type?",
+    "question": "Why is `PreparedStatement` safer against SQL Injection than `Statement`?",
     "options": [
-      "Type 1",
-      "Type 2",
-      "Type 3",
-      "Type 5"
+      "Newer driver version",
+      "Treats input as parameters, not executable code",
+      "Encrypts data",
+      "Validates data types via annotations"
     ],
-    "answer": 3
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Which class is used to execute a static SQL query?",
+    "question": "When is `init()` called for `@WebServlet(urlPatterns=\"/tasks\", loadOnStartup=1)`?",
     "options": [
-      "Statement",
-      "PreparedStatement",
-      "CallableStatement",
-      "ResultSet"
+      "On first request",
+      "During deployment/server startup",
+      "Every request",
+      "Manual instantiation only"
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "PreparedStatement is preferred over Statement because:",
+    "question": "If `doGet` sets `request.setAttribute(\"a\", 1)` then calls `response.sendRedirect(\"next.jsp\")`, what is `${a}` in JSP?",
     "options": [
-      "It is faster",
-      "It prevents SQL Injection",
-      "It supports precompilation",
-      "All of the above"
+      "1",
+      "null",
+      "Error",
+      "0"
     ],
-    "answer": 3
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "What does executeUpdate() return?",
+    "question": "Which interface monitors Session creation/destruction?",
     "options": [
-      "ResultSet",
-      "Boolean",
-      "int (number of rows affected)",
-      "void"
+      "ServletContextListener",
+      "HttpSessionListener",
+      "HttpSessionAttributeListener",
+      "ServletRequestListener"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Which interface is used to retrieve data from a database?",
+    "question": "Why are instance variables for DB Connections bad in Servlets?",
     "options": [
-      "Statement",
-      "Connection",
-      "ResultSet",
-      "DriverManager"
+      "Memory usage",
+      "Thread-safety issues (Servlets are singletons)",
+      "Garbage collection issues",
+      "Driver incompatibility"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "To execute a stored procedure using JDBC, we use:",
+    "question": "Which JSP implicit object accesses `web.xml` context parameters?",
     "options": [
-      "Statement",
-      "PreparedStatement",
-      "CallableStatement",
-      "ResultSet"
+      "config",
+      "pageContext",
+      "application",
+      "request"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": ""
   },
   {
-    "question": "Which method is used to retrieve a string from a ResultSet?",
+    "question": "In EL `${u.addr.city}`, if `addr` is null, what is displayed?",
     "options": [
-      "getValue()",
-      "getString()",
-      "getResult()",
-      "fetchString()"
+      "NullPointerException",
+      "\"null\"",
+      "Empty string (Nothing)",
+      "Error"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": ""
   },
   {
-    "question": "SQL Injection can be prevented by using:",
+    "question": "State of object after `session.save(obj)` but before commit?",
     "options": [
-      "Statement",
-      "Stored Procedures",
-      "PreparedStatement",
-      "Both b and c"
+      "Transient",
+      "Persistent",
+      "Detached",
+      "Removed"
     ],
-    "answer": 3
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Which is an example of SQL Injection?",
+    "question": "Accessing a Lazy-loaded collection after Session close results in?",
     "options": [
-      "' OR '1'='1",
-      "SELECT * FROM students",
-      "DROP TABLE users;",
-      "SELECT COUNT(*) FROM users;"
+      "Returns 0",
+      "Auto-fetch",
+      "LazyInitializationException",
+      "NullPointerException"
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": ""
   },
   {
-    "question": "PreparedStatement binds values using:",
+    "question": "Valid HQL syntax referring to a class?",
     "options": [
-      "? placeholders",
-      "${} syntax",
-      ": parameters",
-      "None of the above"
+      "SELECT * FROM emp",
+      "FROM Employee e WHERE e.name=:n",
+      "SELECT col FROM table",
+      "EXEC proc"
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Which interface is used to call stored procedures in JDBC?",
+    "question": "Annotation for Single Table inheritance strategy?",
     "options": [
-      "CallableStatement",
-      "PreparedStatement",
-      "Statement",
-      "StoredProcedure"
+      "@Inheritance(strategy=JOINED)",
+      "@Inheritance(strategy=SINGLE_TABLE)",
+      "@MappedSuperclass",
+      "@TablePerClass"
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Syntax to call a stored procedure proc_name with 2 params in JDBC:",
+    "question": "Behavior of `@Scope(\"prototype\")`?",
     "options": [
-      "{call proc_name(?, ?)}",
-      "CALL proc_name(?, ?)",
-      "EXEC proc_name(?, ?)",
-      "RUN proc_name(?, ?)"
+      "Shared instance",
+      "New instance per request",
+      "Thread-local",
+      "One per session"
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "DAO stands for:",
+    "question": "Accessing method with `@RequestParam(\"id\") int id` without the parameter?",
     "options": [
-      "Data Access Operation",
-      "Database Admin Object",
-      "Data Access Object",
-      "Direct Access Object"
+      "id=0",
+      "404",
+      "400 Bad Request",
+      "id=null"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": ""
   },
   {
-    "question": "What is the main benefit of DAO pattern?",
+    "question": "Which stereotype enables DataAccessException translation?",
     "options": [
-      "Tightly couples UI and DB",
-      "Encourages direct SQL in UI",
-      "Separation of concerns and reusability",
-      "Reduces JDBC driver size"
+      "@Service",
+      "@Repository",
+      "@Controller",
+      "@Entity"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "DAO classes primarily interact with:",
+    "question": "Role of DispatcherServlet?",
     "options": [
-      "UI classes",
+      "View generation",
+      "Front Controller",
+      "DB Connection",
+      "JSP Compiler"
+    ],
+    "answer": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Meta-annotation for `@Configuration` + `@EnableAutoConfiguration` + `@ComponentScan`?",
+    "options": [
+      "@SpringApp",
+      "@SpringBootConfig",
+      "@SpringBootApplication",
+      "@EnableMVC"
+    ],
+    "answer": 2,
+    "explanation": ""
+  },
+  {
+    "question": "Effect of `findByLastname(String l)` in Spring Data Repository?",
+    "options": [
+      "Manual SQL required",
+      "Auto-generated implementation",
+      "Compilation Error",
+      "Stored Proc call"
+    ],
+    "answer": 1,
+    "explanation": ""
+  },
+  {
+    "question": "`spring-boot-starter-web` provides?",
+    "options": [
+      "Core jars only",
+      "DB props",
+      "Spring MVC, REST, Embedded Tomcat",
+      "Security"
+    ],
+    "answer": 2,
+    "explanation": ""
+  },
+  {
+    "question": "AOP term for the *expression* matching join points?",
+    "options": [
+      "Aspect",
+      "Join Point",
+      "Pointcut",
+      "Advice"
+    ],
+    "answer": 2,
+    "explanation": ""
+  },
+  {
+    "question": "Idempotent HTTP method for updates?",
+    "options": [
+      "POST",
+      "PUT",
+      "PATCH",
+      "CREATE"
+    ],
+    "answer": 1,
+    "explanation": ""
+  },
+  {
+    "question": "Role of Service Discovery (Eureka)?",
+    "options": [
+      "Encryption",
       "Database",
-      "Network layer",
-      "Cache"
+      "Dynamic location finding (IP/Port)",
+      "UI serving"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": ""
   },
   {
-    "question": "Which method disables auto-commit in JDBC?",
+    "question": "Object holding current authenticated user details?",
     "options": [
-      "setCommit(false)",
-      "commit(false)",
-      "setAutoCommit(false)",
-      "disableCommit()"
+      "SecurityContextHolder",
+      "UserDetailsService",
+      "WebSecurityConfig",
+      "AuthManager"
     ],
-    "answer": 2
+    "answer": 0,
+    "explanation": ""
   },
   {
-    "question": "Which two methods control transaction in JDBC?",
+    "question": "Which annotation is used to bind the HTTP Request Body (JSON) to a Java Object in a RestController?",
     "options": [
-      "commit(), rollback()",
-      "begin(), close()",
-      "execute(), commit()",
-      "setSavepoint(), release()"
+      "@RequestParam",
+      "@PathVariable",
+      "@RequestBody",
+      "@ResponseBody"
     ],
-    "answer": 0
+    "answer": 2,
+    "explanation": ""
   },
   {
-    "question": "What does a J2EE container manage?",
-    "options": [
-      "UI",
-      "Database only",
-      "Components lifecycle and services",
-      "HTML rendering"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which of the following is used to package a J2EE web application?",
-    "options": [
-      ".zip",
-      ".exe",
-      ".war",
-      ".jar"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which one is NOT part of a J2EE Web Application?",
+    "question": "In Spring Boot, where are external configurations like `server.port` typically defined?",
     "options": [
       "web.xml",
-      "index.html",
-      "MyServlet.java",
-      "sqlserver.exe"
+      "pom.xml",
+      "application.properties",
+      "dispatcher-servlet.xml"
     ],
-    "answer": 3
+    "answer": 2,
+    "explanation": ""
   },
   {
-    "question": "Web application lifecycle starts with:",
+    "question": "Which interface should a Spring Boot Bean implement to execute code immediately after the application starts?",
     "options": [
-      "Server boot",
-      "User login",
-      "WAR deployment",
-      "Application exit"
+      "ServletContextListener",
+      "CommandLineRunner",
+      "Runnable",
+      "InitializingBean"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Which tool can be used to deploy a WAR file on a server?",
+    "question": "What is the return type of `CrudRepository.findById(ID id)` in recent Spring Data versions?",
     "options": [
-      "JConsole",
-      "Tomcat Manager",
-      "NetBeans",
-      "GitHub"
+      "Entity",
+      "Optional<Entity>",
+      "List<Entity>",
+      "Boolean"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Which technology is used for platform-independent web service support in J2EE?",
+    "question": "Which JPA annotation creates a primary key that auto-increments?",
     "options": [
-      "RMI",
-      "WSDL",
-      "SOAP/REST",
-      "JMX"
+      "@Id",
+      "@GeneratedValue(strategy=GenerationType.IDENTITY)",
+      "@Column(unique=true)",
+      "@NotNull"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Servlets run on which side of the web architecture?",
+    "question": "What happens if you define two Beans of the same type and try to `@Autowired` one without a `@Qualifier`?",
     "options": [
-      "Client",
-      "Server",
-      "Proxy",
-      "Database"
+      "The first defined bean is injected.",
+      "Application fails to start (NoUniqueBeanDefinitionException).",
+      "Both are injected as a List.",
+      "Null is injected."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "The correct order of Servlet Lifecycle methods is:",
+    "question": "In a REST API, which HTTP Status code represents \"Created\" (successful resource creation)?",
     "options": [
-      "service() → init() → destroy()",
-      "init() → service() → destroy()",
-      "init() → destroy() → service()",
-      "destroy() → init() → service()"
+      "200",
+      "201",
+      "204",
+      "401"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Which method is called once in the servlet lifecycle?",
+    "question": "Which Spring Security filter chain mechanism allows you to configure public vs private URLs?",
     "options": [
-      "service()",
-      "init()",
-      "doGet()",
-      "doPost()"
+      "UserDetailsService",
+      "SecurityFilterChain / HttpSecurity",
+      "PasswordEncoder",
+      "AuthenticationProvider"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Servlets are superior to CGI because they are:",
+    "question": "What is the main purpose of an API Gateway in Microservices (e.g., Spring Cloud Gateway)?",
     "options": [
-      "Platform independent",
-      "Faster (multi-threaded)",
-      "Written in Java",
-      "More secure"
+      "Store data.",
+      "Single entry point for routing requests to various microservices.",
+      "Generate HTML.",
+      "Compile Java code."
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Which class must all HTTP Servlets extend?",
+    "question": "In Hibernate, which fetch type loads the associated data immediately with the parent?",
     "options": [
-      "Servlet",
-      "HttpServlet",
-      "WebServlet",
-      "ServletContext"
+      "LAZY",
+      "EAGER",
+      "PERSIST",
+      "MERGE"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Servlet annotation to declare servlet is:",
+    "question": "Which annotation is used in JUnit/Spring Boot Test to mock a Service layer bean?",
     "options": [
-      "@WebServlet",
-      "@ServletMapping",
-      "@Controller",
-      "@ServletConfig"
+      "@Autowired",
+      "@MockBean",
+      "@TestBean",
+      "@Service"
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "HttpServletRequest is used to:",
+    "question": "What is JWT (JSON Web Token) primarily used for in modern REST APIs?",
     "options": [
-      "Send HTTP response",
-      "Send data to the browser",
-      "Read request data",
-      "Destroy the servlet"
+      "Encrypting database passwords.",
+      "Stateless Authentication and Authorization.",
+      "Compressing JSON data.",
+      "Formatting dates."
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Which of the following is not part of the Servlet API?",
+    "question": "In Spring MVC, how do you access a value from the URI path, e.g., `/users/{id}`?",
     "options": [
-      "HttpServletRequest",
-      "HttpServletResponse",
-      "JOptionPane",
-      "ServletContext"
+      "@RequestParam",
+      "@PathVariable",
+      "@MatrixVariable",
+      "@BodyParam"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "What is used to uniquely identify a session in HttpSession?",
+    "question": "Which JSTL tag is used to iterate over a list in a JSP?",
     "options": [
-      "User IP",
-      "Session ID (JSESSIONID)",
-      "Cookie path",
-      "Thread ID"
+      "<c:loop>",
+      "<c:forEach>",
+      "<jsp:iterate>",
+      "<c:while>"
     ],
-    "answer": 1
+    "answer": 1,
+    "explanation": ""
   },
   {
-    "question": "Which method is used to get session in a servlet?",
+    "question": "What does `@Transactional` do when applied to a Service method?",
     "options": [
-      "request.getSession()",
-      "response.getSession()",
-      "getServletSession()",
-      "getSessionContext()"
+      "Connects to the internet.",
+      "Wraps the method execution; commits on success, rollbacks on RuntimeException.",
+      "Logs the method execution time.",
+      "Makes the method synchronized."
     ],
-    "answer": 0
-  },
-  {
-    "question": "What happens when a cookie is disabled in the browser?",
-    "options": [
-      "Session tracking fails",
-      "HttpSession stops working",
-      "URL rewriting is used as fallback",
-      "Servlet crashes"
-    ],
-    "answer": 2
-  },
-    {
-    "question": "Which interface tracks session data server-side?",
-    "options": [
-      "CookieManager",
-      "SessionContext",
-      "HttpSession",
-      "SessionBean"
-    ],
-    "answer": 2
+    "answer": 1,
+    "explanation": ""
   }
 ]
