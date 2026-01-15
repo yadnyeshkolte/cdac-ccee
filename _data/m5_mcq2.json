@@ -1,402 +1,442 @@
 [
     {
-        "question": "In shell scripting, which keyword is used to start an if condition?",
+        "question": "In the context of Operating System structures, which of the following best describes a 'Microkernel' architecture compared to a Monolithic kernel?",
         "options": [
-            "`begin`",
-            "`if`",
-            "`when`",
-            "`check`"
+            "It runs all OS services in kernel space to maximize performance.",
+            "It moves as many operating system services as possible into user space.",
+            "It eliminates the need for inter-process communication (IPC).",
+            "It is specifically designed only for real-time operating systems."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - Microkernels minimize the kernel's footprint by running services (like file systems and drivers) in user space, communicating via IPC. Monolithic kernels run these in kernel space."
     },
     {
-        "question": "How do you end an if statement in bash?",
+        "question": "Analyze the following Shell script snippet. What is the outcome if the user inputs a directory name that does not exist?\n\n```bash\nread fname\nif [ -f $fname ]\nthen\n  echo \"Regular File\"\nelif [ -d $fname ]\nthen\n  echo \"Directory\"\nelse\n  echo \"Unknown\"\nfi\n```",
         "options": [
-            "`endif`",
-            "`fi`",
-            "`end`",
-            "`done`"
+            "It prints 'Directory' because the script expects a directory.",
+            "It throws a syntax error because the variable is unquoted.",
+            "It prints 'Unknown'.",
+            "It creates the directory automatically."
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Correct: C - The `-d` flag checks if a directory exists. If the input matches neither an existing file `-f` nor an existing directory `-d`, the `else` block executes, printing 'Unknown'."
     },
     {
-        "question": "Which command is used to test conditions in shell scripts?",
+        "question": "A system administrator needs to set permissions on 'script.sh' such that the owner has full access, the group has read and execute access, and others have only execute access. Which command achieves this?",
         "options": [
-            "`check`",
-            "`test` or `[ ]`",
-            "`verify`",
-            "`compare`"
+            "chmod 751 script.sh",
+            "chmod 761 script.sh",
+            "chmod 754 script.sh",
+            "chmod 764 script.sh"
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Correct: A - Owner (rwx = 7), Group (r-x = 5), Others (--x = 1). Therefore, 751."
     },
     {
-        "question": "What does `[ -f file.txt ]` test for?",
+        "question": "In process management, what is the primary consequence of setting the Time Quantum too large in a Round Robin scheduling algorithm?",
         "options": [
-            "If file.txt is a directory",
-            "If file.txt is a regular file",
-            "If file.txt is executable",
-            "If file.txt is empty"
+            "The system behaves exactly like First-Come, First-Served (FCFS).",
+            "The context switching overhead increases drastically.",
+            "Starvation of high-priority processes occurs.",
+            "The CPU utilization drops to zero."
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Correct: A - If the time quantum is larger than the burst time of all processes, processes finish before their slice ends, degrading Round Robin into FCFS."
     },
     {
-        "question": "What does `[ -d directory ]` test for?",
+        "question": "Consider the code below involving `fork()`. How many times will 'Hello' be printed?\n\n```c\nif(fork() == 0) {\n    if(fork()) {\n        printf(\"Hello\\n\");\n    }\n}\n```",
         "options": [
-            "If directory exists as a file",
-            "If directory exists as a directory",
-            "If directory is deleted",
-            "If directory is default"
+            "1 time",
+            "2 times",
+            "3 times",
+            "4 times"
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Correct: A - The first `fork` creates a child. Inside that child (where return is 0), another `fork` happens. The inner `fork` returns a non-zero PID to the parent (which is the first child). Thus, the inner `printf` executes only in the first child process."
     },
     {
-        "question": "Which loop continues until a condition becomes true?",
+        "question": "Regarding memory management, what is the specific purpose of the 'Dirty Bit' in a page table?",
         "options": [
-            "`while` loop",
-            "`for` loop",
-            "`until` loop",
-            "`do` loop"
+            "It indicates that the page is currently locked in memory.",
+            "It indicates that the page is shared between two processes.",
+            "It indicates that the page has been modified and must be written back to disk upon replacement.",
+            "It indicates that the page is invalid and generates a segmentation fault."
         ],
-        "answer": 2
+        "answer": 2,
+        "explanation": "Correct: C - The dirty (or modify) bit is set when a write operation occurs on a page. If chosen for replacement, a 'dirty' page must be saved to disk; a 'clean' page can simply be overwritten."
     },
     {
-        "question": "What is the correct syntax for a for loop iterating from 1 to 5?",
+        "question": "Which of the following scenarios describes 'Belady’s Anomaly'?",
         "options": [
-            "`for i in 1 2 3 4 5; do ... done`",
-            "`for (i=1; i<=5; i++) { }`",
-            "`foreach i (1..5)`",
-            "`loop i from 1 to 5`"
+            "Increasing the number of page frames results in an increase in page faults.",
+            "A deadlock occurs even when resources are available.",
+            "Priority scheduling causes a low-priority process to never execute.",
+            "Thrashing occurs due to lack of swap space."
         ],
-        "answer": 0
+        "answer": 0,
+        "explanation": "Correct: A - Belady's Anomaly is a phenomenon in FIFO page replacement where giving a process more memory (frames) actually increases the number of page faults."
     },
     {
-        "question": "Which statement is used for multiple choices in shell?",
+        "question": "In a segmented memory architecture, what does the CPU hardware compare the logical address offset against to prevent illegal access?",
         "options": [
-            "`switch`",
-            "`case`",
-            "`select`",
-            "`choose`"
+            "The Page Table Base Register.",
+            "The Segment Limit.",
+            "The Segment Base.",
+            "The Translation Look-aside Buffer (TLB)."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - In segmentation, the logical address consists of <segment-number, offset>. The offset must be less than the Segment Limit; otherwise, a trap (segmentation violation) is generated."
     },
     {
-        "question": "How do you end a case statement in bash?",
+        "question": "What is the key difference between a Mutex and a Binary Semaphore?",
         "options": [
-            "`endcase`",
-            "`esac`",
-            "`done`",
-            "`fi`"
+            "Semaphores can only be used for signaling, not locking.",
+            "Mutexes can be unlocked by any thread, whereas Semaphores have ownership.",
+            "Mutex implies ownership (only the locker can unlock), whereas a Semaphore can be signaled by any process.",
+            "There is no functional difference; they are synonyms."
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Correct: C - Mutex (Mutual Exclusion) includes the concept of ownership; the thread that locks it must unlock it. A semaphore is a signaling mechanism where any thread can `wait` or `signal`."
     },
     {
-        "question": "What does `$?` represent in shell scripting?",
+        "question": "Which condition is NOT required for a Deadlock to occur (i.e., if you remove it, deadlock is impossible)?",
         "options": [
-            "Current process ID",
-            "Exit status of last command",
-            "Number of arguments",
-            "All arguments"
+            "Mutual Exclusion",
+            "Hold and Wait",
+            "Preemption",
+            "Circular Wait"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Correct: C - The four necessary conditions are Mutual Exclusion, Hold and Wait, **No** Preemption, and Circular Wait. If Preemption *is* allowed, deadlocks can be broken."
     },
     {
-        "question": "In regular expressions, what does `^` match?",
+        "question": "In the context of 'Throttling' within I/O management, what is the primary goal?",
         "options": [
-            "End of line",
-            "Beginning of line",
-            "Any character",
-            "Newline"
+            "To speed up the disk rotation speed.",
+            "To limit the rate of I/O requests to prevent system saturation or ensure fairness.",
+            "To compress data before writing to the disk.",
+            "To bypass the CPU cache for direct memory access."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - Throttling deliberately slows down or limits requests (like I/O or network packets) to maintain stability or enforce limits."
     },
     {
-        "question": "In regular expressions, what does `$` match?",
+        "question": "A system uses 32-bit logical addresses and 4KB page size. How many entries are in the page table (assuming single-level)?",
         "options": [
-            "Beginning of line",
-            "End of line",
-            "Dollar sign literally",
-            "Any digit"
+            "1 Million entries",
+            "512 entries",
+            "1024 entries",
+            "2^20 entries"
         ],
-        "answer": 1
+        "answer": 3,
+        "explanation": "Correct: D - 4KB = 2^12. Address space = 2^32. Number of pages = 2^32 / 2^12 = 2^20 (Approx 1 Million, but 2^20 is the exact mathematical answer)."
     },
     {
-        "question": "What does `[0-9]` match in regular expressions?",
+        "question": "Which shell variable would you modify to change the default command prompt appearance in Linux?",
         "options": [
-            "The literal string 0-9",
-            "Any single digit",
-            "Zero or nine only",
-            "Any number"
+            "$PATH",
+            "$HOME",
+            "$PS1",
+            "$PROMPT"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Correct: C - $PS1 (Prompt String 1) is the primary variable used to define the appearance of the command line prompt."
     },
     {
-        "question": "How do you perform arithmetic in bash?",
+        "question": "What happens to a 'Zombie' process?",
         "options": [
-            "`result = 5 + 3`",
-            "`result=$((5 + 3))`",
-            "`result = math(5 + 3)`",
-            "`result <- 5 + 3`"
+            "It continues to consume CPU resources indefinitely.",
+            "It has finished execution but still has an entry in the process table waiting for the parent to read its exit status.",
+            "It is a process that has been orphaned and adopted by init.",
+            "It is a process stuck in an infinite loop."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - A zombie is a process that has completed execution (via exit()) but still has an entry in the process table because the parent hasn't called wait()."
     },
     {
-        "question": "What is a Process in operating systems?",
+        "question": "In the 'Banker’s Algorithm' for deadlock avoidance, a state is considered 'safe' if:",
         "options": [
-            "A file on disk",
-            "A program in execution",
-            "A hardware component",
-            "A user account"
+            "There are no cycles in the resource allocation graph.",
+            "There exists at least one sequence of process executions that allows all processes to finish.",
+            "All resources are currently available.",
+            "No process is holding more than one resource."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - A safe state means there is a 'safe sequence' where the system can allocate resources to each process in turn, allowing them to complete and release resources."
     },
     {
-        "question": "What is the difference between a Process and a Thread?",
+        "question": "In Git, you have finished work on a feature branch and want to integrate it into 'main'. You want a linear history without a merge commit bubble. Which command should you use?",
         "options": [
-            "No difference",
-            "Process has its own memory space, threads share memory within a process",
-            "Thread has its own memory space, processes share memory",
-            "Threads run on different computers"
+            "git merge main",
+            "git rebase main",
+            "git commit --amend",
+            "git stash"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - `git rebase` rewrites the commit history to place your branch changes on top of the target branch, creating a linear history unlike `git merge`."
     },
     {
-        "question": "Which of the following is a process state?",
+        "question": "Which Dockerfile instruction should be used to define the default executable of a container that cannot be easily overridden by arguments passed to `docker run`?",
         "options": [
-            "Compiled",
-            "Running",
-            "Installed",
-            "Formatted"
+            "CMD",
+            "RUN",
+            "ENTRYPOINT",
+            "EXPOSE"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Correct: C - `ENTRYPOINT` configures a container that will run as an executable. Arguments passed to `docker run` are appended to the entrypoint, whereas `CMD` is easily overridden."
     },
     {
-        "question": "What is a preemptive process scheduling?",
+        "question": "In the context of Software Design, if a change in one module requires extensive changes in another module, these modules are said to exhibit:",
         "options": [
-            "Process runs until completion without interruption",
-            "Process can be interrupted and CPU given to another process",
-            "Process never gets CPU time",
-            "Process runs only at night"
+            "High Cohesion",
+            "Low Coupling",
+            "High Coupling",
+            "Polymorphism"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Correct: C - High Coupling means modules are tightly interconnected. Good design strives for Low Coupling (independence) and High Cohesion (focused responsibility)."
     },
     {
-        "question": "What is non-preemptive scheduling?",
+        "question": "In Scrum, who is responsible for prioritizing the items in the Product Backlog?",
         "options": [
-            "Process can be interrupted anytime",
-            "Once CPU is allocated, process holds it until termination or waiting",
-            "Process never gets scheduled",
-            "Multiple processes run simultaneously"
+            "The Scrum Master",
+            "The Development Team",
+            "The Product Owner",
+            "The Project Manager"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Correct: C - The Product Owner is solely responsible for managing the Product Backlog and prioritizing work to best achieve goals and mission."
     },
     {
-        "question": "Which scheduler makes the decision about which process to run next from the ready queue?",
+        "question": "What is the primary function of a 'Pod' in Kubernetes?",
         "options": [
-            "Long-term scheduler",
-            "Medium-term scheduler",
-            "Short-term scheduler (CPU scheduler)",
-            "Disk scheduler"
+            "It is a virtual machine instance.",
+            "It is the smallest deployable unit that can hold one or more containers.",
+            "It is a firewall rule for the cluster.",
+            "It is a permanent storage volume."
         ],
-        "answer": 2
+        "answer": 1,
+        "explanation": "Correct: B - A Pod is the basic execution unit in Kubernetes. It encapsulates an application's container (or multiple tightly coupled containers), storage, and network IP."
     },
     {
-        "question": "What is the function of the long-term scheduler?",
+        "question": "When writing a Selenium test script, which Locator strategy is generally considered the most brittle (prone to breaking due to UI changes) and should be used as a last resort?",
         "options": [
-            "Selects processes for immediate CPU execution",
-            "Controls the degree of multiprogramming by selecting processes to load into memory",
-            "Schedules disk operations",
-            "Manages network connections"
+            "ID",
+            "Name",
+            "Absolute XPath",
+            "CSS Selector"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Correct: C - Absolute XPath (e.g., /html/body/div[1]/div[2]...) breaks if *any* element is added or removed in the path hierarchy. IDs are preferred."
     },
     {
-        "question": "In FCFS scheduling, which process gets CPU first?",
+        "question": "Which phase of the DevOps lifecycle involves the automated building and testing of code every time a commit is made?",
         "options": [
-            "Shortest job",
-            "First process to arrive in ready queue",
-            "Highest priority process",
-            "Process with most memory"
+            "Continuous Deployment",
+            "Continuous Integration (CI)",
+            "Continuous Monitoring",
+            "Configuration Management"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - CI is the practice of merging all developers' working copies to a shared mainline several times a day, triggering automated builds and tests."
     },
     {
-        "question": "What is the main disadvantage of FCFS scheduling?",
+        "question": "In UML Class Diagrams, what type of relationship is depicted by a solid line with a filled (black) diamond?",
         "options": [
-            "Too complex to implement",
-            "Convoy effect - short processes wait for long processes",
-            "Starvation",
-            "Requires priority assignment"
+            "Association",
+            "Aggregation",
+            "Composition",
+            "Inheritance"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Correct: C - Composition (filled diamond) implies a strong lifecycle dependency; if the container is destroyed, the contained parts are destroyed. Aggregation (hollow diamond) is weaker."
     },
     {
-        "question": "In Shortest Job First (SJF) scheduling, which process is selected?",
+        "question": "In a Jenkins Pipeline script (Declarative), which block defines the sequence of tasks (like Build, Test, Deploy) to be executed?",
         "options": [
-            "Longest burst time",
-            "Shortest burst time",
-            "First arrival",
-            "Random selection"
+            "agent",
+            "stages",
+            "post",
+            "environment"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - The `stages` block contains a sequence of one or more `stage` directives, which perform the actual work of the pipeline."
     },
     {
-        "question": "What is Belady's Anomaly?",
+        "question": "You are testing a login field that accepts passwords between 6 and 12 characters. Using Boundary Value Analysis, which set of lengths should you test?",
         "options": [
-            "More memory decreases performance",
-            "Increasing page frames can increase page faults in FIFO",
-            "CPU utilization always increases",
-            "Disk operations slow down"
+            "6, 7, 11, 12",
+            "5, 6, 12, 13",
+            "0, 6, 12, 100",
+            "6, 9, 12"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - BVA focuses on the edges. You test the boundaries (6, 12) and the immediate values outside the boundaries (5, 13) to catch off-by-one errors."
     },
     {
-        "question": "In Round Robin scheduling, what is a time quantum?",
+        "question": "In the V-Model of software testing, 'System Testing' corresponds to and validates which phase of the SDLC?",
         "options": [
-            "Total execution time",
-            "Fixed time slice allocated to each process",
-            "Wait time",
-            "Priority value"
+            "Unit Design",
+            "System Design / High-Level Design",
+            "Requirements Analysis",
+            "Coding"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Correct: C - While Unit Testing validates Coding, and Integration validates Design, System Testing validates the overall System Requirements (Functional & Non-functional)."
     },
     {
-        "question": "What happens when a process's time quantum expires in Round Robin?",
+        "question": "What does the `docker-compose up -d` command do?",
         "options": [
-            "Process is terminated",
-            "Process is moved to the back of the ready queue",
-            "Process gets more time",
-            "Process waits forever"
+            "Builds the images and stops the containers.",
+            "Starts the containers defined in the YAML file in detached mode (background).",
+            "Downloads the latest Docker version.",
+            "Deletes all containers and volumes."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - `up` builds/starts containers. The `-d` flag runs them in detached mode, returning control to the terminal."
     },
     {
-        "question": "Which scheduling algorithm can lead to starvation?",
+        "question": "In Agile methodology, what is the purpose of a 'Spike'?",
         "options": [
-            "Round Robin",
-            "FCFS",
-            "Priority Scheduling (without aging)",
-            "None of the above"
+            "To punish a developer for breaking the build.",
+            "A time-boxed investigation to reduce risk or learn about a new technology before estimating a story.",
+            "The final release of the software.",
+            "A meeting to discuss team conflicts."
         ],
-        "answer": 2
+        "answer": 1,
+        "explanation": "Correct: B - A Spike is a task aimed at answering a question or gathering information, rather than producing shippable product increment."
     },
     {
-        "question": "What is Turnaround Time?",
+        "question": "Which Git command allows you to save your uncommitted local changes temporarily so you can switch branches?",
         "options": [
-            "Time spent in CPU only",
-            "Total time from process arrival to completion",
-            "Time spent waiting",
-            "Time quantum"
+            "git stash",
+            "git commit",
+            "git push",
+            "git reset"
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Correct: A - `git stash` takes the dirty state of your working directory and saves it on a stack of unfinished changes that you can reapply later."
     },
     {
-        "question": "How is Waiting Time calculated?",
+        "question": "In YAML (used for K8s/Docker), how is hierarchy/nesting defined?",
         "options": [
-            "Burst Time - Arrival Time",
-            "Turnaround Time - Burst Time",
-            "Completion Time - Burst Time",
-            "Arrival Time - Completion Time"
+            "Using curly braces {}",
+            "Using HTML tags <>",
+            "Using consistent indentation (spaces)",
+            "Using semicolons ;"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Correct: C - YAML relies strictly on indentation (usually 2 spaces) to denote structure and hierarchy. Tabs are generally forbidden."
     },
     {
-        "question": "What is the `fork()` system call used for?",
+        "question": "What is the main difference between 'Verification' and 'Validation' in software engineering?",
         "options": [
-            "Opening files",
-            "Creating a new child process",
-            "Terminating a process",
-            "Allocating memory"
+            "Verification asks 'Are we building the product right?', Validation asks 'Are we building the right product?'",
+            "Verification is manual, Validation is automated.",
+            "Verification is done by users, Validation by developers.",
+            "There is no difference."
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Correct: A - Verification checks adherence to specifications (process). Validation checks if the software meets the user's actual needs (end product)."
     },
     {
-        "question": "What value does `fork()` return to the child process?",
+        "question": "Which design pattern is best suited for a scenario where you want to notify multiple objects when the state of one object changes (e.g., Model-View-Controller)?",
         "options": [
-            "Parent's PID",
-            "0",
-            "-1",
-            "Child's PID"
+            "Singleton Pattern",
+            "Observer Pattern",
+            "Factory Pattern",
+            "Adapter Pattern"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - The Observer pattern defines a one-to-many dependency so that when one object changes state, all its dependents are notified and updated automatically."
     },
     {
-        "question": "What value does `fork()` return to the parent process?",
+        "question": "In Selenium WebDriver, what does `driver.findElement(By.id(\"submit\")).click()` do?",
         "options": [
-            "0",
-            "Child's Process ID (PID)",
-            "-1",
-            "Parent's PID"
+            "It waits for the page to load and then closes the browser.",
+            "It locates the element with ID 'submit' and simulates a mouse click on it.",
+            "It finds all elements with ID 'submit' and counts them.",
+            "It submits the form without clicking any button."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - This is the standard syntax to locate a specific web element by its unique ID attribute and perform a click action."
     },
     {
-        "question": "What is the purpose of `exec()` system call?",
+        "question": "What is a 'Service' in Kubernetes used for?",
         "options": [
-            "Create a new process",
-            "Replace current process image with a new program",
-            "Wait for child process",
-            "Terminate a process"
+            "To restart crashed containers.",
+            "To expose an application running on a set of Pods as a network service.",
+            "To store passwords and secrets.",
+            "To build Docker images."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - Since Pods have ephemeral IPs, a Service provides a stable IP address and DNS name, and balances traffic across the set of Pods."
     },
     {
-        "question": "What does `waitpid()` do?",
+        "question": "In White Box Testing, what is 'Cyclomatic Complexity' used to calculate?",
         "options": [
-            "Creates a child process",
-            "Parent waits for a specific child process to terminate",
-            "Pauses the current process",
-            "Changes process priority"
+            "The number of lines of code.",
+            "The number of independent paths through the program source code.",
+            "The number of developers working on the project.",
+            "The execution time of the software."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - Cyclomatic Complexity is a software metric used to indicate the complexity of a program. It directly correlates to the number of test cases needed to achieve branch coverage."
     },
     {
-        "question": "What is an orphan process?",
+        "question": "Which artifact in Scrum contains the list of work required for the *current* Sprint only?",
         "options": [
-            "A process that has no children",
-            "A child process whose parent has terminated",
-            "A process waiting for CPU",
-            "A process in blocked state"
+            "Product Backlog",
+            "Sprint Backlog",
+            "Increment",
+            "Burndown Chart"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - The Sprint Backlog is the set of Product Backlog items selected for the Sprint, plus a plan for delivering the product Increment."
     },
     {
-        "question": "What is a zombie process?",
+        "question": "What is the primary benefit of using a 'staging' environment in a DevOps pipeline?",
         "options": [
-            "A process consuming 100% CPU",
-            "A terminated process that still has an entry in process table",
-            "A sleeping process",
-            "A process with high priority"
+            "To write code faster.",
+            "To mirror the production environment as closely as possible for final testing before release.",
+            "To store backup data.",
+            "To compile Java code."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - Staging allows testing in an environment that replicates production (hardware, software, data) to catch deployment issues before they affect real users."
     },
     {
-        "question": "Which process adopts orphan processes in Linux?",
+        "question": "Which command lists all local and remote branches in a Git repository?",
         "options": [
-            "Kernel",
-            "init (PID 1) or systemd",
-            "Shell",
-            "User"
+            "git branch -a",
+            "git branch",
+            "git remote show",
+            "git status"
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Correct: A - `git branch` lists local, but the `-a` (all) flag is required to see both local and remote-tracking branches."
     },
     {
-        "question": "What is a context switch?",
+        "question": "In the context of Clean Code, what does the 'DRY' principle stand for?",
         "options": [
-            "Switching between users",
-            "Saving state of current process and loading state of another",
-            "Switching between files",
-            "Changing terminals"
+            "Don't Repeat Yourself",
+            "Do Review Yourself",
+            "Data Recovery Yield",
+            "Deploy Release Yearly"
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Correct: A - DRY states that every piece of knowledge must have a single, unambiguous, authoritative representation within a system. Avoid code duplication."
     },
     {
-        "question": "Which data structure typically holds process information?",
+        "question": "When managing a project in Jira, what is an 'Epic'?",
         "options": [
-            "Stack",
-            "Process Control Block (PCB)",
-            "Heap",
-            "Array"
+            "A bug that is critical.",
+            "A large body of work that can be broken down into a number of smaller stories.",
+            "A single task that takes less than an hour.",
+            "A comment on a ticket."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Correct: B - An Epic is a large user story that cannot be delivered as defined within a single iteration or is large enough that it can be split into smaller user stories."
     }
 ]

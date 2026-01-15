@@ -1,402 +1,442 @@
 [
     {
-        "question": "What is Version Control System (VCS)?",
+        "question": "A user program attempts to directly write to the hard disk drive to save a file. What mechanism does the Operating System employ to prevent this direct hardware access?",
         "options": [
-            "A system to control software versions for sale",
-            "A system that tracks changes to files over time",
-            "A programming language",
-            "An operating system"
+            "Context Switching",
+            "Dual Mode Operation (User/Kernel)",
+            "Direct Memory Access (DMA)",
+            "Throughput Throttling"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: User programs run in User Mode and cannot access hardware directly. They must use System Calls to switch to Kernel Mode."
     },
     {
-        "question": "Which type of VCS is Git?",
+        "question": "In Linux, you need to set permissions for a script `run.sh` such that the owner can read/write/execute, the group can read/execute, and others can only read. Which command achieves this?",
         "options": [
-            "Local",
-            "Centralized",
-            "Distributed",
-            "Cloud-based only"
+            "chmod 754 run.sh",
+            "chmod 764 run.sh",
+            "chmod 751 run.sh",
+            "chmod 777 run.sh"
         ],
-        "answer": 2
+        "answer": 0,
+        "explanation": "Examiner's Note: Owner: rwx (4+2+1=7). Group: r-x (4+0+1=5). Others: r-- (4+0+0=4). Thus, 754."
     },
     {
-        "question": "What command initializes a new Git repository?",
+        "question": "Analyze the following Shell script snippet: if [ -d \"$1\" ]; then ... What condition is being tested here?",
         "options": [
-            "`git start`",
-            "`git init`",
-            "`git create`",
-            "`git new`"
+            "Checks if the first argument is a regular file",
+            "Checks if the variable $1 is defined",
+            "Checks if the first argument is a directory",
+            "Checks if the file $1 has delete permissions"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: The `-d` flag in shell test commands specifically checks for the existence of a directory."
     },
     {
-        "question": "What are the three states of files in Git?",
+        "question": "Which specific system variable defines the secondary prompt string, which appears when a command is incomplete in the shell?",
         "options": [
-            "New, Old, Deleted",
-            "Modified, Staged, Committed",
-            "Created, Updated, Removed",
-            "Local, Remote, Cloud"
+            "$PS1",
+            "$HOME",
+            "$PATH",
+            "$PS2"
         ],
-        "answer": 1
+        "answer": 3,
+        "explanation": "Examiner's Note: $PS1 is the primary prompt (user@host). $PS2 is the secondary prompt (usually '>') shown when a command line is continued."
     },
     {
-        "question": "What command adds files to the staging area?",
+        "question": "A process executes the following code: fork(); fork(); fork();. Assuming all fork calls succeed, how many TOTAL processes (including the parent) will exist after execution?",
         "options": [
-            "`git commit`",
-            "`git add`",
-            "`git stage`",
-            "`git push`"
+            "4",
+            "7",
+            "8",
+            "16"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: The formula for total processes is 2^n, where n is the number of fork calls. 2^3 = 8."
     },
     {
-        "question": "What does `git commit -m \"message\"` do?",
+        "question": "In the context of Process Scheduling, what is the 'Convoy Effect' most commonly associated with?",
         "options": [
-            "Sends code to remote server",
-            "Saves staged changes to the local repository with a message",
-            "Downloads code from server",
-            "Creates a new branch"
+            "Round Robin Scheduling",
+            "First-Come, First-Served (FCFS)",
+            "Shortest Job First (SJF)",
+            "Priority Scheduling"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Convoy effect happens in FCFS when one long CPU-bound process blocks many short I/O-bound processes."
     },
     {
-        "question": "What command shows the status of files in Git?",
+        "question": "What is the primary role of the Translation Look-aside Buffer (TLB) in memory management?",
         "options": [
-            "`git log`",
-            "`git status`",
-            "`git show`",
-            "`git info`"
+            "To store the entire Page Table in cache",
+            "To store frequently used Page-to-Frame translations",
+            "To handle segmentation faults",
+            "To perform compaction of physical memory"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: The TLB is a hardware cache that stores recent virtual-to-physical address translations to speed up paging."
     },
     {
-        "question": "What does `git clone` do?",
+        "question": "Which memory allocation problem occurs when there is enough total free space to satisfy a request, but the available space is not contiguous?",
         "options": [
-            "Creates a copy of a remote repository locally",
-            "Deletes a repository",
-            "Merges two branches",
-            "Creates a backup"
+            "Internal Fragmentation",
+            "External Fragmentation",
+            "Thrashing",
+            "Deadlock"
         ],
-        "answer": 0
+        "answer": 1,
+        "explanation": "Examiner's Note: External fragmentation happens when free memory is scattered in small blocks. Internal fragmentation happens inside an allocated block."
     },
     {
-        "question": "What command creates a new branch?",
+        "question": "In a 'producer-consumer' problem using semaphores, if the mutex semaphore is initialized to 1, what does a value of 0 indicate during execution?",
         "options": [
-            "`git new branch-name`",
-            "`git branch branch-name`",
-            "`git create branch-name`",
-            "`git make branch-name`"
+            "The critical section is free",
+            "The critical section is currently occupied",
+            "The buffer is empty",
+            "The system is in deadlock"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: A mutex is a binary semaphore. 1 means unlocked (available), 0 means locked (occupied)."
     },
     {
-        "question": "What command switches to a different branch?",
+        "question": "Which state transition is NOT valid in a standard Process Life Cycle?",
         "options": [
-            "`git branch branch-name`",
-            "`git checkout branch-name` or `git switch branch-name`",
-            "`git move branch-name`",
-            "`git goto branch-name`"
+            "Running -> Ready",
+            "Waiting -> Ready",
+            "Ready -> Running",
+            "Waiting -> Running"
         ],
-        "answer": 1
+        "answer": 3,
+        "explanation": "Examiner's Note: A process cannot go directly from Waiting to Running. It must go to the Ready queue first to be scheduled by the dispatcher."
     },
     {
-        "question": "What is the purpose of `git merge`?",
+        "question": "What is 'Belady’s Anomaly' regarding page replacement algorithms?",
         "options": [
-            "To delete a branch",
-            "To combine changes from one branch into another",
-            "To create a new repository",
-            "To push to remote"
+            "Increasing page size increases page faults",
+            "Increasing the number of frames increases page faults",
+            "LRU performs worse than FIFO",
+            "Optimal replacement is impossible to implement"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Belady's Anomaly is a phenomenon in FIFO where increasing the number of available memory frames paradoxically results in more page faults."
     },
     {
-        "question": "What does `git push` do?",
+        "question": "Which necessary condition for deadlock implies that a resource cannot be forcibly taken from a process holding it?",
         "options": [
-            "Downloads changes from remote",
-            "Uploads local commits to a remote repository",
-            "Creates a new branch",
-            "Reverts changes"
+            "Mutual Exclusion",
+            "Hold and Wait",
+            "No Preemption",
+            "Circular Wait"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: No Preemption means a resource can be released only voluntarily by the process holding it."
     },
     {
-        "question": "What does `git pull` do?",
+        "question": "In Shell programming, which command is used to read input from the user into a variable?",
         "options": [
-            "Pushes to remote",
-            "Fetches and merges changes from remote to local",
-            "Creates a branch",
-            "Deletes remote"
+            "input",
+            "get",
+            "echo",
+            "read"
         ],
-        "answer": 1
+        "answer": 3,
+        "explanation": "Examiner's Note: The `read` command pauses execution to accept input from stdin and stores it in a variable."
     },
     {
-        "question": "What is HEAD in Git?",
+        "question": "What is the difference between a Zombie process and an Orphan process?",
         "options": [
-            "The first commit",
-            "A pointer to the current branch/commit",
-            "The remote server",
-            "The repository name"
+            "Zombie has no parent; Orphan has completed execution",
+            "Zombie has completed but parent hasn't waited; Orphan's parent has died",
+            "Zombie consumes CPU; Orphan does not",
+            "Orphan is a daemon; Zombie is a user process"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: A Zombie is dead but still in the process table (parent didn't call wait). An Orphan is alive but its parent has terminated (adopted by init)."
     },
     {
-        "question": "What file specifies files to ignore in Git?",
+        "question": "Which Linux operator allows you to pass the stdout of Command A as the stdin of Command B?",
         "options": [
-            "`.gitconfig`",
-            "`.gitignore`",
-            "`.gitexclude`",
-            "`.gitskip`"
+            ">",
+            ">>",
+            "|",
+            "&"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: The Pipe operator `|` connects the output of one command to the input of another (e.g., `ls | grep txt`)."
     },
     {
-        "question": "What is Software Engineering?",
+        "question": "In Git, you have made changes to a file but have not yet staged them. Which command shows the specific lines of code that changed?",
         "options": [
-            "Writing code only",
-            "Systematic application of engineering principles to software development",
-            "Hardware design",
-            "Network configuration"
+            "git status",
+            "git diff",
+            "git log",
+            "git show"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: `git status` shows which files changed. `git diff` shows the actual content (lines) changed within those files."
     },
     {
-        "question": "What is the difference between Software Process and Software Product?",
+        "question": "According to software engineering principles, a well-designed module should possess:",
         "options": [
-            "No difference",
-            "Process is how software is built; Product is what is built",
-            "Product is how software is built",
-            "Process is the final deliverable"
+            "Low Cohesion and Low Coupling",
+            "High Cohesion and High Coupling",
+            "High Cohesion and Low Coupling",
+            "Low Cohesion and High Coupling"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: High Cohesion means the module focuses on a single task. Low Coupling means it relies minimally on other modules."
     },
     {
-        "question": "Which is the first phase of SDLC?",
+        "question": "In the context of Requirements Engineering, 'The system must respond to queries within 2 seconds' is an example of:",
         "options": [
-            "Design",
-            "Planning/Requirements",
-            "Testing",
-            "Deployment"
+            "Functional Requirement",
+            "Non-Functional Requirement",
+            "User Story",
+            "Use Case"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Functional requirements describe *what* the system does. Non-functional requirements describe *how well* it performs (speed, security, reliability)."
     },
     {
-        "question": "What is the Waterfall Model?",
+        "question": "Which Agile ceremony is primarily designed to inspect the last Sprint and adapt the plan for the next Sprint (focusing on process improvement)?",
         "options": [
-            "An iterative model",
-            "A sequential linear model where each phase must be completed before the next",
-            "An agile methodology",
-            "A testing framework"
+            "Sprint Planning",
+            "Daily Standup",
+            "Sprint Review",
+            "Sprint Retrospective"
         ],
-        "answer": 1
+        "answer": 3,
+        "explanation": "Examiner's Note: The Retrospective focuses on the team's process and how to improve. The Review focuses on the product/demo."
     },
     {
-        "question": "What is the main disadvantage of the Waterfall Model?",
+        "question": "In a Dockerfile, which instruction is mandatory and typically defines the base image for the container?",
         "options": [
-            "Too flexible",
-            "Inflexible to changes and late testing",
-            "Too fast",
-            "No documentation"
+            "RUN",
+            "IMPORT",
+            "FROM",
+            "BASE"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: `FROM` is the first instruction in a Dockerfile to specify the starting point (OS or platform)."
     },
     {
-        "question": "What does the V-Model emphasize?",
+        "question": "What is the primary role of a 'Pod' in Kubernetes?",
         "options": [
-            "Speed of development",
-            "Verification and Validation with testing at each stage",
-            "No documentation",
-            "Customer feedback"
+            "It is a hardware node",
+            "It is the smallest deployable unit representing one or more containers",
+            "It is a load balancer service",
+            "It is a storage volume"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: A Pod is the atomic unit in K8s, wrapping one or more tightly coupled containers sharing storage and network."
     },
     {
-        "question": "What is the Spiral Model known for?",
+        "question": "In Selenium WebDriver, which locator strategy is generally considered the fastest but most brittle if the DOM changes?",
         "options": [
-            "Speed",
-            "Risk analysis and iterative development",
-            "No planning",
-            "Single iteration"
+            "XPath",
+            "ID",
+            "CSS Selector",
+            "Class Name"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: ID is the fastest and most reliable if IDs are unique. XPath is powerful but slower and breaks easily if the structure changes."
     },
     {
-        "question": "What are Functional Requirements?",
+        "question": "Which testing phase verifies that individual units of source code utilize the interfaces correctly and integrate with each other?",
         "options": [
-            "How the system should perform",
-            "What the system should do - features and capabilities",
-            "System hardware needs",
-            "User interface design"
+            "Unit Testing",
+            "Integration Testing",
+            "System Testing",
+            "Acceptance Testing"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Integration testing focuses on the interaction and data flow between integrated modules."
     },
     {
-        "question": "What are Non-Functional Requirements?",
+        "question": "In Jenkins, what is a 'Build Trigger'?",
         "options": [
-            "Features of the system",
-            "Quality attributes like performance, security, usability",
-            "User stories",
-            "Test cases"
+            "A compilation error",
+            "A condition that starts a job automatically (e.g., git commit)",
+            "A plugin for Maven",
+            "A report generated after testing"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Triggers (like 'Poll SCM' or Webhooks) tell Jenkins when to automatically execute a pipeline."
     },
     {
-        "question": "What is Cohesion in software design?",
+        "question": "Which Git command is used to save your local changes temporarily without committing them, so you can switch branches cleanly?",
         "options": [
-            "Dependencies between modules",
-            "How closely related elements within a module are",
-            "Code complexity",
-            "Number of functions"
+            "git commit --amend",
+            "git checkout -f",
+            "git stash",
+            "git merge"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: `git stash` pushes dirty working directory states onto a stack, giving you a clean working directory."
     },
     {
-        "question": "What is Coupling in software design?",
+        "question": "In DevOps, what does 'Infrastructure as Code' (IaC) refer to?",
         "options": [
-            "Relatedness within a module",
-            "Degree of dependency between modules",
-            "Code documentation",
-            "Testing coverage"
+            "Writing documentation for servers",
+            "Managing and provisioning infrastructure through machine-readable definition files",
+            "Compiling the OS kernel",
+            "Using Docker containers"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: IaC allows managing tech stacks (servers, networks) via code (like YAML/JSON) rather than manual hardware configuration."
     },
     {
-        "question": "What is the ideal design goal for Cohesion and Coupling?",
+        "question": "Identify the correct syntax for a User Story in Agile:",
         "options": [
-            "High cohesion, high coupling",
-            "High cohesion, low coupling",
-            "Low cohesion, high coupling",
-            "Low cohesion, low coupling"
+            "I want feature X so that I can do Y.",
+            "As a , I want so that .",
+            "System must do X when Y happens.",
+            "Create a login page with 2 fields."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: The standard format is 'As a [Role], I want [Feature], so that [Benefit]'."
     },
     {
-        "question": "What is Modularity?",
+        "question": "Which command lists all currently running Docker containers?",
         "options": [
-            "Writing code in one file",
-            "Dividing software into separate, independent modules",
-            "Using no functions",
-            "Global variables only"
+            "docker images",
+            "docker run",
+            "docker ps",
+            "docker info"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: `docker ps` lists running containers. `docker ps -a` lists all containers (including stopped ones)."
     },
     {
-        "question": "What is UML?",
+        "question": "In the V-Model of Software Testing, 'Acceptance Testing' corresponds to which phase of the development lifecycle?",
         "options": [
-            "Universal Machine Language",
-            "Unified Modeling Language - visual language for modeling software",
-            "User Management Layer",
-            "Update Manipulation Logic"
+            "Unit Design",
+            "System Design",
+            "Requirements Analysis",
+            "Integration Design"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: The V-Model maps Acceptance Testing directly to Requirements Analysis (validating if the user's needs were met)."
     },
     {
-        "question": "What does a Use Case Diagram show?",
+        "question": "What is the primary difference between Verification and Validation?",
         "options": [
-            "Database structure",
-            "System functionality from user perspective",
-            "Code structure",
-            "Network topology"
+            "Verification: 'Are we building the right product?'; Validation: 'Are we building the product right?'",
+            "Verification: 'Are we building the product right?'; Validation: 'Are we building the right product?'",
+            "Verification is manual; Validation is automated.",
+            "There is no difference."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Verification checks against specs (logic/bugs). Validation checks against user needs (utility)."
     },
     {
-        "question": "What does a Class Diagram represent?",
+        "question": "Which Selenium command is used to simulate typing into a text box?",
         "options": [
-            "User interactions",
-            "Classes, their attributes, methods, and relationships",
-            "Time sequences",
-            "State changes"
+            "type()",
+            "click()",
+            "sendKeys()",
+            "enterText()"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: The `sendKeys()` method is used in Selenium WebDriver to simulate keystrokes."
     },
     {
-        "question": "What does a Sequence Diagram show?",
+        "question": "In a UML Use Case diagram, what does an 'Actor' represent?",
         "options": [
-            "Class hierarchies",
-            "Object interactions over time",
-            "Database tables",
-            "File structure"
+            "A specific software function",
+            "A database",
+            "An entity (user or system) that interacts with the system",
+            "The project manager"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: An Actor is external to the system and interacts with it (e.g., Customer, Admin, or an external API)."
     },
     {
-        "question": "What is Encapsulation in OOP?",
+        "question": "What is the main benefit of using a 'Slave Node' (Agent) in Jenkins?",
         "options": [
-            "Inheritance of properties",
-            "Bundling data and methods together, hiding internal details",
-            "Multiple implementations",
-            "Creating objects"
+            "To store the source code",
+            "To distribute the build workload across multiple machines",
+            "To serve the website to the public",
+            "To write the test cases"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Slave nodes allow Jenkins to offload build/test execution from the master server, enabling parallel builds and OS-specific testing."
     },
     {
-        "question": "What is Inheritance in OOP?",
+        "question": "When resolving a Git merge conflict, what do the symbols `<<<<<<<` and `>>>>>>>` indicate?",
         "options": [
-            "Hiding data",
-            "Creating new classes from existing classes",
-            "Method overloading",
-            "Object creation"
+            "The beginning and end of the conflicting code blocks",
+            "Syntax errors in the code",
+            "Hidden comments",
+            "The branch priority level"
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Examiner's Note: These markers delimit the conflicting sections: one block from the current branch (HEAD) and one from the incoming branch."
     },
     {
-        "question": "What is Polymorphism in OOP?",
+        "question": "Which design pattern ensures a class has only one instance and provides a global point of access to it?",
         "options": [
-            "Single implementation",
-            "Same interface with different implementations",
-            "Data hiding",
-            "Code reuse"
+            "Factory Pattern",
+            "Observer Pattern",
+            "Singleton Pattern",
+            "MVC Pattern"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: The Singleton pattern restricts object creation for a class to only one instance."
     },
     {
-        "question": "What is Abstraction in OOP?",
+        "question": "YAML files, often used in Kubernetes and DevOps configurations, rely strictly on what for structure?",
         "options": [
-            "Showing all details",
-            "Hiding complex details and showing only essential features",
-            "Creating duplicates",
-            "Deleting objects"
+            "Braces {}",
+            "Semicolons ;",
+            "Indentation (Spaces)",
+            "XML tags"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: YAML uses whitespace/indentation to denote structure. Tabs are generally forbidden; spaces are used."
     },
     {
-        "question": "What command shows the commit history in Git?",
+        "question": "What is 'Regression Testing' performed for?",
         "options": [
-            "`git status`",
-            "`git log`",
-            "`git history`",
-            "`git commits`"
+            "To test a new feature for the first time",
+            "To ensure that new code changes haven't adversely affected existing functionality",
+            "To test the user interface design",
+            "To test the database performance"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Regression implies checking that the software hasn't 'regressed' or broken previously working features after an update."
     },
     {
-        "question": "What is a merge conflict in Git?",
+        "question": "In Agile Scrum, who is responsible for prioritizing the Product Backlog?",
         "options": [
-            "When Git cannot automatically combine changes from different branches",
-            "A branch deletion error",
-            "A push failure",
-            "A network error"
+            "Scrum Master",
+            "Development Team",
+            "Product Owner",
+            "Project Manager"
         ],
-        "answer": 0
+        "answer": 2,
+        "explanation": "Examiner's Note: The Product Owner is the sole person responsible for managing the Product Backlog and maximizing the value of the product."
     },
     {
-        "question": "What is the Git Flow branching strategy?",
+        "question": "Which command in Docker is used to remove a stopped container?",
         "options": [
-            "Single branch development",
-            "A workflow with main, develop, feature, release, and hotfix branches",
-            "No branches used",
-            "Random branching"
+            "docker rmi",
+            "docker rm",
+            "docker del",
+            "docker kill"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: `docker rm` removes containers. `docker rmi` removes images."
     },
     {
-        "question": "What is a Git tag used for?",
+        "question": "What is the purpose of a 'Service' in Kubernetes?",
         "options": [
-            "Deleting commits",
-            "Marking specific points in history (like releases)",
-            "Creating branches",
-            "Pushing code"
+            "To run the application code",
+            "To define a stable network endpoint to access a set of Pods",
+            "To store persistent data",
+            "To build the Docker image"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Pods are ephemeral (IPs change). A Service provides a stable IP/DNS name to route traffic to the dynamic set of Pods."
     }
 ]

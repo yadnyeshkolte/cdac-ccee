@@ -1,402 +1,442 @@
 [
     {
-        "question": "What is the primary function of an Operating System?",
+        "question": "A system administrator needs to grant read, write, and execute permissions to the owner, read and execute to the group, and only execute permission to others for a script named 'deploy.sh'. Which command achieves this?",
         "options": [
-            "To compile programs",
-            "To manage hardware and software resources",
-            "To create documents",
-            "To browse the internet"
+            "chmod 751 deploy.sh",
+            "chmod 761 deploy.sh",
+            "chmod 754 deploy.sh",
+            "chmod 755 deploy.sh"
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Examiner's Note: Owner (rwx = 4+2+1 = 7), Group (r-x = 4+1 = 5), Others (--x = 1). Thus, 751."
     },
     {
-        "question": "Which of the following is NOT a component of an Operating System?",
+        "question": "Analyze the following shell script snippet:\n\n```bash\ncount=0\nuntil [ $count -gt 5 ]\ndo\n  echo $count\n  ((count++))\ndone\n```\n\nHow many times will the echo statement execute?",
         "options": [
-            "Kernel",
-            "Shell",
-            "Compiler",
-            "File System"
+            "5 times (prints 0 to 4)",
+            "6 times (prints 0 to 5)",
+            "It runs infinitely due to syntax error",
+            "0 times"
         ],
-        "answer": 2
+        "answer": 1,
+        "explanation": "Examiner's Note: The 'until' loop continues AS LONG AS the condition is FALSE. It stops when count > 5. It runs for 0, 1, 2, 3, 4, 5. When count hits 6, it stops."
     },
     {
-        "question": "The kernel operates in which mode?",
+        "question": "In a C program, if the code executes `fork()` inside a for-loop that runs 3 times (i=0 to 2), and there are no wait() calls, what is the total number of processes created (including the original parent)?",
         "options": [
-            "User mode",
-            "Kernel mode (privileged mode)",
-            "Safe mode",
-            "Debug mode"
+            "3 processes",
+            "4 processes",
+            "7 processes",
+            "8 processes"
         ],
-        "answer": 1
+        "answer": 3,
+        "explanation": "Examiner's Note: The number of processes is 2^n. Here n=3, so 2^3 = 8 processes total."
     },
     {
-        "question": "What is a system call?",
+        "question": "Which of the following scenarios describes the 'Belady's Anomaly' in page replacement algorithms?",
         "options": [
-            "A call made by the system to the user",
-            "An interface between a process and the operating system",
-            "A phone call made by the system administrator",
-            "A debugging technique"
+            "Increasing the number of frames increases the number of page faults.",
+            "Decreasing the page size decreases the number of page faults.",
+            "Using a stack-based algorithm causes thrashing.",
+            "The LRU algorithm performs worse than FIFO in all cases."
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Examiner's Note: Belady's Anomaly is specific to FIFO, where giving a process more memory (frames) actually causes it to fault more often."
     },
     {
-        "question": "Which of the following is an example of a Real-Time Operating System (RTOS)?",
+        "question": "Consider a logical address space of 32 pages with 1,024 words per page. How many bits are required for the logical address?",
         "options": [
-            "Windows 10",
-            "Ubuntu Linux",
-            "VxWorks",
-            "macOS"
+            "10 bits",
+            "15 bits",
+            "16 bits",
+            "5 bits"
         ],
-        "answer": 2
+        "answer": 1,
+        "explanation": "Examiner's Note: 32 pages = 2^5 (5 bits for page number). 1024 words = 2^10 (10 bits for offset). Total = 5 + 10 = 15 bits."
     },
     {
-        "question": "What is an interrupt in the context of operating systems?",
+        "question": "Which state transition is NOT possible in a standard Process Life Cycle?",
         "options": [
-            "A power failure",
-            "A signal to the processor indicating an event that needs attention",
-            "A user clicking the mouse",
-            "A debugging breakpoint"
+            "Running -> Ready",
+            "Blocked -> Ready",
+            "Ready -> Running",
+            "Blocked -> Running"
         ],
-        "answer": 1
+        "answer": 3,
+        "explanation": "A process transitions from Blocked to Ready when the event it was waiting for occurs. It cannot go directly to Running."
     },
     {
-        "question": "Which command is used to list files and directories in Linux?",
+        "question": "In the context of Deadlock Prevention, which condition is invalidated by requiring a process to request all its resources at once before execution begins?",
         "options": [
-            "`dir`",
-            "`ls`",
-            "`list`",
-            "`show`"
+            "Mutual Exclusion",
+            "No Preemption",
+            "Hold and Wait",
+            "Circular Wait"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: If a process grabs everything at the start, it never holds some resources while waiting for others."
     },
     {
-        "question": "What does the command `pwd` display in Linux?",
+        "question": "You created a hard link to a file named 'data.txt'. If you delete the original 'data.txt', what happens to the hard link?",
         "options": [
-            "Previous working directory",
-            "Print working directory (current directory)",
-            "Password",
-            "Power down"
+            "It becomes a dangling pointer.",
+            "It is automatically deleted.",
+            "It retains the content and remains accessible.",
+            "It becomes zero bytes in size."
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: Hard links point to the same inode. The file data is only deleted when the reference count (link count) drops to zero."
     },
     {
-        "question": "Which command is used to change the current directory in Linux?",
+        "question": "In a shell script, you want to check if a directory exists before creating it. Which test operator should you use?",
         "options": [
-            "`mv`",
-            "`cd`",
-            "`change`",
-            "`dir`"
+            "-f",
+            "-d",
+            "-r",
+            "-e"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: '-d' checks for the existence of a directory. '-f' is for regular files, '-e' is for existence of any type."
     },
     {
-        "question": "What does `chmod 755 file.txt` do?",
+        "question": "A Counting Semaphore was initialized to 10. Then, 6 P (wait) operations and 4 V (signal) operations were performed. What is the final value of the semaphore?",
         "options": [
-            "Deletes the file",
-            "Sets read, write, execute for owner; read, execute for group and others",
-            "Makes the file hidden",
-            "Changes the file owner"
+            "8",
+            "12",
+            "6",
+            "4"
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Examiner's Note: Wait (P) decrements, Signal (V) increments. 10 - 6 + 4 = 8."
     },
     {
-        "question": "In Linux file permissions, what does 'r' stand for?",
+        "question": "Which problem does 'Compaction' solve in memory management?",
         "options": [
-            "Run",
-            "Read",
-            "Root",
-            "Remove"
+            "Internal Fragmentation",
+            "External Fragmentation",
+            "Page Faults",
+            "Deadlocks"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Compaction shuffles memory contents to place all free memory together in one large block, solving external fragmentation."
     },
     {
-        "question": "Which command changes the owner of a file in Linux?",
+        "question": "When a parent process does not invoke `wait()` for a child process that has finished execution, the child process enters which state?",
         "options": [
-            "`chmod`",
-            "`chown`",
-            "`chgrp`",
-            "`chuser`"
+            "Orphan",
+            "Zombie",
+            "Blocked",
+            "Suspended"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: A zombie is a process that has completed execution but still has an entry in the process table because the parent hasn't read its exit status."
     },
     {
-        "question": "What is the purpose of the pipe operator `|` in Linux?",
+        "question": "Which variable in Linux Shell contains the exit status of the last executed command?",
         "options": [
-            "To delete files",
-            "To redirect output of one command as input to another",
-            "To create a new file",
-            "To compare two files"
+            "$$",
+            "$#",
+            "$?",
+            "$!"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: $? holds the return code (0 for success, non-zero for failure) of the most recently executed command."
     },
     {
-        "question": "Which redirection operator appends output to an existing file?",
+        "question": "In a Round Robin scheduler, what happens if the Time Quantum is very large (infinite)?",
         "options": [
-            "`>`",
-            "`>>`",
-            "`<`",
-            "`<<`"
+            "It behaves like Shortest Job First (SJF).",
+            "It behaves like First Come First Serve (FCFS).",
+            "It causes starvation of I/O bound processes.",
+            "Context switching overhead becomes maximum."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: If the quantum is larger than the burst time of all processes, the scheduler simply runs them in order of arrival."
     },
     {
-        "question": "What does the command `cat file.txt` do?",
+        "question": "What is the primary cause of 'Thrashing' in a system using demand paging?",
         "options": [
-            "Creates a new file",
-            "Displays the contents of file.txt",
-            "Compiles file.txt",
-            "Deletes file.txt"
+            "The page size is too small.",
+            "The degree of multiprogramming is too high.",
+            "The hard disk is too slow.",
+            "The CPU scheduler is using FCFS."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: When too many processes are running, the total working set size exceeds physical memory, causing continuous paging (thrashing)."
     },
     {
-        "question": "Which command is used for secure remote login in Linux?",
+        "question": "In Git, you have staged changes but realize you want to keep the changes in your file but remove them from the staging area. Which command should you use?",
         "options": [
-            "`telnet`",
-            "`ftp`",
-            "`ssh`",
-            "`rlogin`"
+            "git reset --soft HEAD",
+            "git reset HEAD",
+            "git checkout --",
+            "git clean -fd"
         ],
-        "answer": 2
+        "answer": 1,
+        "explanation": "Examiner's Note: This unstages the file but keeps the modifications in your working directory. 'checkout' would discard changes."
     },
     {
-        "question": "What is the difference between `>` and `>>` in shell redirection?",
+        "question": "During a code review, you notice a module has 'High Coupling'. Why is this considered a bad design?",
         "options": [
-            "No difference",
-            "`>` overwrites, `>>` appends",
-            "`>` appends, `>>` overwrites",
-            "Both append to the file"
+            "The module executes too slowly.",
+            "The module is too dependent on other modules, making changes difficult.",
+            "The module performs too many unrelated tasks.",
+            "The module cannot be compiled."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Coupling refers to interdependence. High coupling means changing one module likely breaks another."
     },
     {
-        "question": "Which shell is the default in most Linux distributions?",
+        "question": "Which of the following is considered a 'Non-Functional Requirement'?",
         "options": [
-            "csh",
-            "ksh",
-            "bash",
-            "zsh"
+            "The system shall allow users to log in with email.",
+            "The system shall generate a monthly PDF report.",
+            "The system shall respond to all requests within 200ms.",
+            "The system shall calculate tax based on region."
         ],
-        "answer": 2
+        "answer": 2,
+        "explanation": "Examiner's Note: This is a performance constraint (Quality Attribute), not a specific behavior or function."
     },
     {
-        "question": "What is the purpose of the `$PATH` environment variable?",
+        "question": "In Agile/Scrum, what is the primary purpose of the 'Sprint Retrospective'?",
         "options": [
-            "Stores the current user name",
-            "Contains directories where executable programs are located",
-            "Stores the home directory path",
-            "Contains the system password"
+            "To demonstrate the product to the client.",
+            "To assign tasks for the next sprint.",
+            "To inspect how the last Sprint went and plan improvements.",
+            "To calculate the team velocity."
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: The Retrospective is for process improvement (Team health, tools, communication), not for product demo (Review)."
     },
     {
-        "question": "In shell scripting, what does `$0` represent?",
+        "question": "Which Dockerfile instruction is preferred to define the default executable of a container that should not be easily overridden?",
         "options": [
-            "The first command line argument",
-            "The name of the script itself",
-            "The exit status",
-            "The number of arguments"
+            "CMD",
+            "RUN",
+            "ENTRYPOINT",
+            "expose"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: ENTRYPOINT defines the main command. Arguments passed to `docker run` are appended to it, whereas CMD is overridden by them."
     },
     {
-        "question": "What does `$#` represent in a shell script?",
+        "question": "When optimizing a Dockerfile, why is it recommended to copy `package.json` and run `npm install` *before* copying the rest of the source code?",
         "options": [
-            "The process ID",
-            "The number of command line arguments",
-            "The last argument",
-            "The script name"
+            "To prevent security vulnerabilities.",
+            "To leverage Docker's build cache mechanism.",
+            "To ensure the code compiles correctly.",
+            "It is a syntax requirement."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: If source code changes but dependencies don't, Docker can reuse the cached layer for `npm install`, speeding up builds."
     },
     {
-        "question": "Which wildcard matches any single character in shell?",
+        "question": "In Kubernetes, which object is the smallest deployable unit?",
         "options": [
-            "`*`",
-            "`?`",
-            "`#`",
-            "`@`"
+            "Node",
+            "Cluster",
+            "Pod",
+            "Service"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: A Pod represents a single instance of a running process (one or more containers) in a cluster."
     },
     {
-        "question": "Which wildcard matches zero or more characters in shell?",
+        "question": "You need to expose a Kubernetes application to the external internet with a dedicated IP address. Which Service type should you use?",
         "options": [
-            "`?`",
-            "`*`",
-            "`#`",
-            "`%`"
+            "ClusterIP",
+            "NodePort",
+            "LoadBalancer",
+            "ExternalName"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: LoadBalancer provisions an external IP (usually via cloud provider) to route traffic to the service."
     },
     {
-        "question": "What is the correct way to read user input in a shell script?",
+        "question": "What is the key difference between 'Continuous Integration' (CI) and 'Continuous Deployment' (CD)?",
         "options": [
-            "`input var`",
-            "`read var`",
-            "`get var`",
-            "`scan var`"
+            "CI is for testing; CD is for coding.",
+            "CI automates the build/test; CD automates the release to production.",
+            "CI happens once a week; CD happens daily.",
+            "CI requires Docker; CD does not."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: CI ensures code merges are valid. CD ensures the valid code reaches the users automatically."
     },
     {
-        "question": "What does the `echo` command do?",
+        "question": "In Selenium WebDriver, which locator strategy is generally the fastest and most preferred?",
         "options": [
-            "Reads input from user",
-            "Displays text or variable values to the terminal",
-            "Compiles the script",
-            "Executes another script"
+            "XPath",
+            "CSS Selector",
+            "ID",
+            "Link Text"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: IDs are unique and optimized by browsers, making them the fastest locator strategy."
     },
     {
-        "question": "What permission numeric value represents read-only?",
+        "question": "What is the role of a 'Jenkinsfile' in a DevOps pipeline?",
         "options": [
-            "1",
-            "2",
-            "4",
-            "7"
+            "It stores the user credentials.",
+            "It defines the pipeline configuration as code.",
+            "It acts as a database for build artifacts.",
+            "It is a plugin for UI testing."
         ],
-        "answer": 2
+        "answer": 1,
+        "explanation": "Examiner's Note: Jenkinsfile allows the entire build/test/deploy pipeline logic to be version-controlled along with the source code."
     },
     {
-        "question": "What does `chmod 644 file.txt` allow?",
+        "question": "In the V-Model of software testing, 'System Testing' corresponds to which development phase?",
         "options": [
-            "Owner can read/write/execute, others can read",
-            "Owner can read/write, group and others can read only",
-            "Everyone can read/write",
-            "No one can access the file"
+            "Requirement Analysis",
+            "System Design / High Level Design",
+            "Unit Design",
+            "Coding"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Requirements map to User Acceptance Testing. System Design maps to System Testing."
     },
     {
-        "question": "Which environment variable contains the home directory of the current user?",
+        "question": "Which testing technique focuses on inputs at the extreme ends of valid ranges (e.g., inputting 0, 1, 100, 101 for a range of 1-100)?",
         "options": [
-            "`$PATH`",
-            "`$HOME`",
-            "`$USER`",
-            "`$PWD`"
+            "Equivalence Partitioning",
+            "Boundary Value Analysis",
+            "State Transition Testing",
+            "Path Testing"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: BVA targets the edges of input ranges where errors are most likely to occur."
     },
     {
-        "question": "What is the purpose of PS1 variable in Linux?",
+        "question": "In UML Class Diagrams, a 'filled diamond' represents which relationship?",
         "options": [
-            "Password storage",
-            "Primary prompt string (command prompt appearance)",
-            "Process status",
-            "Path settings"
+            "Aggregation (Has-a)",
+            "Composition (Part-of, strong ownership)",
+            "Inheritance (Is-a)",
+            "Dependency"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Composition implies that if the parent is destroyed, the child is also destroyed (Strong association)."
     },
     {
-        "question": "What does the command `rm -rf directory` do?",
+        "question": "In the INVEST mnemonic for good User Stories, what does 'V' stand for?",
         "options": [
-            "Renames the directory",
-            "Recursively and forcefully removes the directory and its contents",
-            "Moves the directory",
-            "Creates a backup of the directory"
+            "Verified",
+            "Valuable",
+            "Versatile",
+            "Valid"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: The story must deliver value to the customer/user."
     },
     {
-        "question": "Which command is used to create a new directory?",
+        "question": "When using Git, what is the 'HEAD' pointer?",
         "options": [
-            "`mkdir`",
-            "`newdir`",
-            "`createdir`",
-            "`md`"
+            "The first commit in the repository.",
+            "A pointer to the remote repository.",
+            "A pointer to the latest commit of the currently checked-out branch.",
+            "The staging area."
         ],
-        "answer": 0
+        "answer": 2,
+        "explanation": "Examiner's Note: HEAD indicates your current location in the commit history."
     },
     {
-        "question": "What does the `grep` command do?",
+        "question": "Which design principle suggests that a class should have only one reason to change?",
         "options": [
-            "Compiles programs",
-            "Searches for patterns in text",
-            "Creates files",
-            "Manages processes"
+            "Open/Closed Principle",
+            "Single Responsibility Principle",
+            "Liskov Substitution Principle",
+            "Interface Segregation"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: SRP states a module should be responsible to one, and only one, actor."
     },
     {
-        "question": "How do you make a shell script executable?",
+        "question": "In White Box Testing, 'Cyclomatic Complexity' is used to measure:",
         "options": [
-            "`run script.sh`",
-            "`chmod +x script.sh`",
-            "`execute script.sh`",
-            "`./script.sh`"
+            "The number of lines of code.",
+            "The number of independent paths through the program source code.",
+            "The user interface response time.",
+            "The database connectivity speed."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: It quantifies the complexity of the control flow to determine minimum test cases needed."
     },
     {
-        "question": "What is the shebang line in a shell script?",
+        "question": "Which Selenium command waits for a certain condition to occur before proceeding, but throws an exception if the timeout is reached?",
         "options": [
-            "A comment line",
-            "`#!/bin/bash` - specifies the interpreter",
-            "An error message",
-            "A variable declaration"
+            "Thread.sleep()",
+            "Implicit Wait",
+            "Explicit Wait",
+            "Fluent Wait"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: Explicit wait halts execution until a specific condition (like element visibility) is met or timeout occurs."
     },
     {
-        "question": "Which command displays disk usage of files and directories?",
+        "question": "In a Docker Compose file, which keyword is used to link a container to a specific network?",
         "options": [
-            "`df`",
-            "`du`",
-            "`ls -l`",
-            "`disk`"
+            "links",
+            "depends_on",
+            "networks",
+            "ports"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: 'networks' defines the network bridge. 'links' is a deprecated legacy feature."
     },
     {
-        "question": "What does `df -h` display?",
+        "question": "What is the primary benefit of 'Test Driven Development' (TDD)?",
         "options": [
-            "Directory files in hidden mode",
-            "Disk filesystem information in human-readable format",
-            "Deleted files history",
-            "Debug files"
+            "It ensures the code is written before the tests.",
+            "It reduces the need for documentation.",
+            "It forces developers to think about requirements and design before writing code.",
+            "It eliminates the need for QA engineers."
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: Red-Green-Refactor cycle ensures code is written only to satisfy a specific test case."
     },
     {
-        "question": "Which command shows the current running processes?",
+        "question": "A developer executes `git commit` but forgets to add a file. They add the file and want to combine it with the previous commit to avoid a messy history. Which command helps?",
         "options": [
-            "`ls`",
-            "`ps`",
-            "`top`",
-            "Both `ps` and `top`"
+            "git commit --amend",
+            "git merge",
+            "git rebase",
+            "git stash"
         ],
-        "answer": 3
+        "answer": 0,
+        "explanation": "Examiner's Note: Amend allows you to modify the most recent commit, adding new staged files or changing the message."
     },
     {
-        "question": "What is the role of the Shell in an Operating System?",
+        "question": "Which of the following is an example of 'Regression Testing'?",
         "options": [
-            "Memory management",
-            "Command interpreter between user and kernel",
-            "Hardware driver",
-            "File compression"
+            "Testing a new feature for the first time.",
+            "Testing the entire application after fixing a bug to ensure no existing functionality is broken.",
+            "Testing the application under high load.",
+            "Testing the UI colors."
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "Examiner's Note: Regression ensures that recent code changes haven't adversely affected existing features. "
     },
     {
-        "question": "What is the difference between absolute and relative path?",
+        "question": "In YAML (used for K8s/Docker), how is hierarchy/nesting defined?",
         "options": [
-            "No difference",
-            "Absolute starts from root (/), relative from current directory",
-            "Relative starts from root, absolute from current directory",
-            "Both start from home directory"
+            "Curly braces {}",
+            "XML tags <>",
+            "Indentation (Spaces)",
+            "Semicolons ;"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: YAML relies strictly on whitespace indentation to denote structure."
     },
     {
-        "question": "Which command is used to copy files in Linux?",
+        "question": "Which Scrum artifact provides a visual representation of work left to do versus time?",
         "options": [
-            "`mv`",
-            "`cp`",
-            "`copy`",
-            "`duplicate`"
+            "Sprint Backlog",
+            "Product Backlog",
+            "Burndown Chart",
+            "Increment"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "Examiner's Note: A Burndown chart tracks the remaining effort over the sprint timeline."
     }
 ]
