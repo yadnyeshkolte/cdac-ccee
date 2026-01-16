@@ -1,202 +1,442 @@
 [
     {
-        "question": "How many ServletContext objects are available for an entire web application?",
+        "question": "Session is a concept used in:",
         "options": [
-            "One each per servlet",
-            "One each per request",
-            "One each per response",
-            "Only one"
+            "HTTP",
+            "HTML",
+            "CSS",
+            "All the above"
         ],
-        "answer": 3
+        "answer": 0,
+        "explanation": "Session tracking is a mechanism to maintain state over the stateless HTTP protocol."
     },
     {
-        "question": "In SpringBoot application the class which has main method, should be annotated with:",
+        "question": "web.xml file is present:",
         "options": [
-            "@EnableSpringApplication",
-            "@SpringApplication",
-            "@SpringBootApplication",
-            "@EnableSpringBootApplication"
+            "Inside WEB-INF folder",
+            "Outside WEB-INF folder",
+            "In Tomcat bin folder",
+            "None of the above"
         ],
-        "answer": 2
+        "answer": 0,
+        "explanation": "The deployment descriptor `web.xml` must be located in the `WEB-INF` directory of the web application."
     },
     {
-        "question": "Which of these JDBC mechanisms allows us to define checkpoints for a transaction?",
+        "question": "WAR is packaging structure for:",
         "options": [
-            "CheckPoint",
-            "CommitPoint",
-            "Savepoint",
-            "RollbackPoint"
+            "JEE applications",
+            "JSF Applications",
+            "Web applications in JEE",
+            "Database applications"
         ],
-        "answer": 2
+        "answer": 2,
+        "explanation": "WAR stands for Web Application Archive, used to distribute a collection of JSP, Servlet, Java classes, XML, etc."
     },
     {
-        "question": "What is the correct declaration of getConnection() method in DriverManager class?",
+        "question": "Expressions like <%= %> are written in:",
         "options": [
-            "getConnection(String url, String info) throws SQLException",
-            "getConnection(String urls[]) throws SQLException",
-            "getConnection(String url, String user, String password) throws SQLException",
-            "getConnection(String url) throws SQLException"
+            "JSP",
+            "HTML",
+            "Servlet",
+            "JDBC"
         ],
-        "answer": 2
+        "answer": 0,
+        "explanation": "`<%= expression %>` is a JSP Expression tag used to write the value of a Java expression to the output stream."
     },
     {
-        "question": "The ability to invoke a RESTful method multiple times without changing the state of the server on subsequent invocations is known as:",
+        "question": "Which method gets called every time a request is made for a servlet?",
         "options": [
-            "Idempotence",
-            "Immutability",
-            "Statefulness",
-            "Uniformity"
+            "init",
+            "service",
+            "destroy",
+            "None of the above"
         ],
-        "answer": 0
+        "answer": 1,
+        "explanation": "The `service()` method is invoked for every request. It then dispatches to `doGet`, `doPost`, etc."
     },
     {
-        "question": "What is TRUE about the cascading and cascade mode attributes in JPA Entities?",
+        "question": "An annotation @Override is being used on a method which is not overridden. What happens?",
         "options": [
-            "Cascade mode attributes can be specified for the association annotations (like @OneToMany) in an entity",
-            "The cascading direction is from the target entity to the source entity",
-            "PERSIST, DELETE are the only valid cascading mode attributes",
-            "Cascading is not supported in JPA"
+            "Compilation error",
+            "Runtime error",
+            "Logical error",
+            "None of the above"
         ],
-        "answer": 0
+        "answer": 0,
+        "explanation": "`@Override` instructs the compiler to verify that the method actually overrides a method from a superclass. If not, it throws a compilation error."
     },
     {
-        "question": "Which annotation can be used for testing spring boot application, which creates the entire context without starting the server?",
+        "question": "The interface commonly used during JNDI is:",
         "options": [
-            "@Test",
-            "@WebMvcTest",
-            "@SpringBootTest",
-            "@SpringBootIntegrationTest"
+            "Context",
+            "Request",
+            "Naming",
+            "Connection"
         ],
-        "answer": 2
+        "answer": 0,
+        "explanation": "`javax.naming.Context` is the core interface for JNDI naming operations."
     },
     {
-        "question": "How is the dynamic interception of requests and responses to transform the information done?",
+        "question": "InitialContext in JNDI is a:",
         "options": [
-            "servlet container",
-            "servlet config",
-            "servlet context",
-            "servlet filter"
+            "Class",
+            "Interface",
+            "Package",
+            "Method"
         ],
-        "answer": 3
+        "answer": 0,
+        "explanation": "`InitialContext` is a class that implements the `Context` interface and provides the starting point for resolving names."
     },
     {
-        "question": "What is a POM file in a Maven project?",
+        "question": "Integer.class returns us a:",
         "options": [
-            "A file that contains the compiled bytecode of the classes in your project",
-            "A package that stores resources like images for the Java project",
-            "A file that points to the media resources used by a Java project",
-            "A file that stores the structure and dependencies for your Maven project"
+            "Integer object",
+            "Class object",
+            "Object class object",
+            "None of the above"
         ],
-        "answer": 3
+        "answer": 1,
+        "explanation": "`.class` syntax evaluates to the `Class` object representing that type (e.g., `java.lang.Class<Integer>`)."
     },
     {
-        "question": "Any client request to access resources in the WEB-INF/ directory must be returned with:",
+        "question": "Runtime Annotations are processed by using:",
         "options": [
-            "BAD_REQUEST",
-            "SC_NOT_FOUND",
-            "SC_INTERNAL_SERVER_ERROR",
-            "ESC_BAD_REQUEST"
+            "Reflection",
+            "Runtime polymorphism",
+            "Static Polymorphism",
+            "None of the above"
         ],
-        "answer": 1
+        "answer": 0,
+        "explanation": "Annotations with `RetentionPolicy.RUNTIME` can be inspected at runtime using Java Reflection API."
     },
     {
-        "question": "Which type of JDBC driver makes use of the database native protocol?",
+        "question": "Only one object of the class is created. This design pattern is called as:",
         "options": [
-            "JDBC-ODBC Bridge plus ODBC driver",
-            "Native-API, partly Java driver",
-            "JDBC-Net, pure Java driver",
-            "Native-protocol, pure Java driver"
+            "Singleton",
+            "Factory",
+            "OneObject",
+            "Prototype"
         ],
-        "answer": 3
+        "answer": 0,
+        "explanation": "The Singleton pattern ensures a class has only one instance and provides a global point of access to it."
     },
     {
-        "question": "Which method is best suited to call on JDBC connection object when same SQL statement needs to be executed frequently with different parameters?",
+        "question": "Comparator example in java is an example of:",
         "options": [
-            "createStatement()",
-            "prepareStatement()",
-            "prepareCall()",
-            "nativeSQL()"
+            "Decorator pattern",
+            "Proxy pattern",
+            "Strategy pattern",
+            "Observer pattern"
         ],
-        "answer": 1
+        "answer": 2,
+        "explanation": "The `Comparator` interface allows you to define a comparison strategy, making it a classic example of the Strategy Design Pattern."
     },
     {
-        "question": "Which level of cache is represented by Hibernate Session object?",
+        "question": "XML file used by Maven is:",
         "options": [
-            "First Level Cache",
-            "Second Level Cache",
-            "Query Cache",
-            "Database Cache"
+            "Build.xml",
+            "pom.xml",
+            "Maven.xml",
+            "web.xml"
         ],
-        "answer": 0
+        "answer": 1,
+        "explanation": "Maven projects are defined by the `pom.xml` (Project Object Model) file."
     },
     {
-        "question": "In Servlet3.0 which annotation is used to declare a Servlet Component with URL pattern '/hello'?",
+        "question": "URI like https://track.hello.com/couriers?id=23344 when used in REST based web services returns:",
         "options": [
-            "@WebServlet",
-            "@Servlet(\"/hello\")",
-            "@Servlet",
-            "@WebServlet(\"/hello\")"
+            "Data (JSON/XML)",
+            "JSP Page",
+            "HTML Page",
+            "None"
         ],
-        "answer": 3
+        "answer": 0,
+        "explanation": "REST APIs typically return data representations (JSON or XML) rather than UI pages."
     },
     {
-        "question": "Before forwarding a request to 'processingservlet', which step do you need to carry out?",
+        "question": "The @Id Annotation in Hibernate is used on:",
         "options": [
-            "HttpServletResponse resp = myReq.next(\"processingservlet\");",
-            "RequestDispatcher rd = myReq.getRequestDispatcher(\"processingservlet\");",
-            "HttpServletRequest nextReq = myReq.next(\"processingservlet\");",
-            "HttpServlet htpServ = myReq.next(\"processingservlet\");"
+            "Class",
+            "Variable/Field",
+            "Function",
+            "All the above"
         ],
-        "answer": 1
+        "answer": 1,
+        "explanation": "`@Id` is placed on the field (or property accessor) that corresponds to the primary key of the database table."
     },
     {
-        "question": "Which annotation in JPA is used to link two tables through a relation table?",
+        "question": "Session object in Hibernate is obtained by using the:",
         "options": [
-            "@JoinTable",
-            "@LinkTable",
-            "@RelationTable",
-            "@JoinColumn"
+            "SessionFactory",
+            "GiveSession",
+            "GetSession",
+            "None"
         ],
-        "answer": 0
+        "answer": 0,
+        "explanation": "The `SessionFactory` creates `Session` instances using methods like `openSession()` or `getCurrentSession()`."
     },
     {
-        "question": "Which of the following is not a valid attribute of <jsp:useBean> Action tag?",
+        "question": "Object which is just created and not associated with Hibernate session is called:",
         "options": [
-            "id",
-            "class",
-            "type",
-            "property"
+            "Transient",
+            "DB Object",
+            "Persistent",
+            "Detached"
         ],
-        "answer": 3
+        "answer": 0,
+        "explanation": "A newly created instance with no database identity and not associated with a Session is in the 'Transient' state."
     },
     {
-        "question": "Which of the following cannot be supplied as automatic configuration in Spring Boot?",
+        "question": "@Entity Annotation is used at:",
         "options": [
-            "Request Handler",
-            "Dispatcher Servlet",
-            "View Resolver",
-            "Handler Mapping"
+            "Class level",
+            "Variable",
+            "Function",
+            "None"
         ],
-        "answer": 2
+        "answer": 0,
+        "explanation": "`@Entity` marks a Java class as a JPA entity representing a table in the database."
     },
     {
-        "question": "Which annotation is recommended for partial update of resource in Spring boot rest controller?",
+        "question": "@OneToMany(cascade=CascadeType.ALL) is used in:",
         "options": [
-            "@GetMapping",
-            "@PostMapping",
-            "@PutMapping",
-            "@PatchMapping"
+            "Hibernate/JPA",
+            "Spring Framework",
+            "JSP",
+            "None"
         ],
-        "answer": 3
+        "answer": 0,
+        "explanation": "This is a JPA/Hibernate annotation defining a one-to-many relationship with cascade operations."
     },
     {
-        "question": "What is correct about JSP Scriptlets?",
+        "question": "Which of the following is used in the DAO Layer of a 3-tier application?",
         "options": [
-            "A loop must start in one Scriptlet and end in it",
-            "Instructions in a Scriptlet must follow Java syntax",
-            "Semicolon is not required at the end of each statement in a Scriptlet",
-            "Both A and B are correct"
+            "JDBC",
+            "Hibernate",
+            "JPA",
+            "All of the above"
         ],
-        "answer": 1
+        "answer": 3,
+        "explanation": "The DAO (Data Access Object) layer can be implemented using raw JDBC, Hibernate, or JPA."
+    },
+    {
+        "question": "Query query = session.createQuery('from Item'); Here 'Item' is:",
+        "options": [
+            "Table name",
+            "Class name",
+            "Database name",
+            "Column name"
+        ],
+        "answer": 1,
+        "explanation": "HQL (Hibernate Query Language) operates on persistent classes and their properties, so 'Item' is the Java class name."
+    },
+    {
+        "question": "Maven typical repository location is:",
+        "options": [
+            ".m2 folder",
+            "rep folder",
+            "jar folder",
+            "None"
+        ],
+        "answer": 0,
+        "explanation": "The local Maven repository is typically located in the `.m2/repository` directory in the user's home folder."
+    },
+    {
+        "question": "JSP is a:",
+        "options": [
+            "Client side component",
+            "Server side component",
+            "Page component",
+            "None"
+        ],
+        "answer": 1,
+        "explanation": "JSP (JavaServer Pages) is a server-side technology that renders HTML to be sent to the client."
+    },
+    {
+        "question": "To work with JDBC in Spring we can consider using:",
+        "options": [
+            "PreparedStatement",
+            "JDBCSQL",
+            "JdbcTemplate",
+            "None"
+        ],
+        "answer": 2,
+        "explanation": "`JdbcTemplate` is the central class in the Spring JDBC module that simplifies JDBC code."
+    },
+    {
+        "question": "Which of the following is used for Data Access in Spring?",
+        "options": [
+            "JDBC",
+            "ORM",
+            "OXM",
+            "All the above"
+        ],
+        "answer": 3,
+        "explanation": "Spring provides support and abstraction layers for JDBC, Object-Relational Mapping (ORM), and Object-XML Mapping (OXM)."
+    },
+    {
+        "question": "Which of the following is NOT part of core Spring framework?",
+        "options": [
+            "Beans",
+            "Context",
+            "SpEL",
+            "Portlet"
+        ],
+        "answer": 3,
+        "explanation": "Beans, Context, and SpEL are core modules. Portlet MVC is a separate module (and deprecated in newer versions)."
+    },
+    {
+        "question": "context.getBean(Presentation.class) in Spring means:",
+        "options": [
+            "Creating an object",
+            "Accessing a static function",
+            "Getting the object managed by Spring",
+            "Calling a function"
+        ],
+        "answer": 2,
+        "explanation": "`getBean` retrieves an existing bean instance (or creates one if prototype) from the Spring IoC container."
+    },
+    {
+        "question": "Spring framework calling constructor functions in Java is an example of:",
+        "options": [
+            "Dependency Injection",
+            "Inversion of Control",
+            "AOP",
+            "None"
+        ],
+        "answer": 0,
+        "explanation": "Constructor-based Dependency Injection involves the container invoking a constructor with arguments representing the dependencies."
+    },
+    {
+        "question": "In MVC, the main advantage is:",
+        "options": [
+            "View is separated from controller",
+            "Model is separated from controller",
+            "Separation of concerns (View, Model, Controller)",
+            "None"
+        ],
+        "answer": 2,
+        "explanation": "MVC decouples the application into three components (Model, View, Controller), allowing for better maintainability and separation of concerns."
+    },
+    {
+        "question": "@GetMapping(value = '/student/{x}') public @ResponseBody Student getData(@PathVariable Integer x). Return type is:",
+        "options": [
+            "Student",
+            "ResponseBody",
+            "@ResponseBody",
+            "None"
+        ],
+        "answer": 0,
+        "explanation": "The method returns a `Student` object, which is then serialized to the response body by the `@ResponseBody` annotation."
+    },
+    {
+        "question": "In ModelAndView in Spring MVC, the view corresponds to:",
+        "options": [
+            "Data on the page",
+            "Name of the page/view",
+            "Type of content",
+            "None"
+        ],
+        "answer": 1,
+        "explanation": "The 'View' part of ModelAndView typically holds the logical view name (e.g., 'home'), which the ViewResolver resolves to a physical file."
+    },
+    {
+        "question": "@RequestMapping('/one') public Integer welcome() { return new Integer(3); } This program will appear in:",
+        "options": [
+            "Presentation Layer (Controller)",
+            "Service Layer",
+            "DAO Layer",
+            "None"
+        ],
+        "answer": 0,
+        "explanation": "`@RequestMapping` is used in Controllers (Presentation Layer) to map HTTP requests to handler methods."
+    },
+    {
+        "question": "Spring Boot advantages are:",
+        "options": [
+            "Many things preconfigured",
+            "Default values for settings",
+            "Standalone application capability",
+            "All the above"
+        ],
+        "answer": 3,
+        "explanation": "Spring Boot simplifies development with auto-configuration, starter dependencies, and embedded servers."
+    },
+    {
+        "question": "@Service annotation is used in:",
+        "options": [
+            "Presentation Layer",
+            "Service Layer",
+            "DAO Layer",
+            "None"
+        ],
+        "answer": 1,
+        "explanation": "`@Service` is a specialization of `@Component` used to mark classes in the Service layer holding business logic."
+    },
+    {
+        "question": "Dependency in Maven consists of:",
+        "options": [
+            "GroupId",
+            "ArtifactId",
+            "Version",
+            "All the above"
+        ],
+        "answer": 3,
+        "explanation": "A Maven dependency is uniquely identified by its coordinate: groupId, artifactId, and version."
+    },
+    {
+        "question": "@ComponentScan annotation is provided by:",
+        "options": [
+            "Spring Framework",
+            "Hibernate",
+            "Struts",
+            "None"
+        ],
+        "answer": 0,
+        "explanation": "`@ComponentScan` is a core Spring annotation used to specify the base packages to scan for Spring components."
+    },
+    {
+        "question": "JpaRepository is a:",
+        "options": [
+            "Interface",
+            "Class",
+            "Package",
+            "Library"
+        ],
+        "answer": 0,
+        "explanation": "`JpaRepository` is an interface in Spring Data JPA that provides standard CRUD methods."
+    },
+    {
+        "question": "@Component, or @Service if used on the class, object is created by:",
+        "options": [
+            "Programmer",
+            "Spring Framework",
+            "Hibernate",
+            "None"
+        ],
+        "answer": 1,
+        "explanation": "The Spring Container (IoC) is responsible for detecting these annotations, creating instances, and managing their lifecycle."
+    },
+    {
+        "question": "Which annotation is used to map a path variable in Spring MVC?",
+        "options": [
+            "@Param",
+            "@PathVariable",
+            "@RequestParam",
+            "@Path"
+        ],
+        "answer": 1,
+        "explanation": "`@PathVariable` is used to extract values from the URI path (e.g., /book/{id})."
+    },
+    {
+        "question": "What is the scope of a transaction in Spring usually defined by?",
+        "options": [
+            "@Transactional",
+            "@Scope",
+            "@Controller",
+            "@Service"
+        ],
+        "answer": 0,
+        "explanation": "`@Transactional` defines the scope of a single database transaction, ensuring all operations within it either commit or rollback together."
     }
 ]

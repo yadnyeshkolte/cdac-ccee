@@ -9,4 +9,4 @@ mcq_data: m6_mcq5
 
 # MCQ Test 5
 
-This test covers Servlets, JSP, JDBC, and Hibernate fundamentals.
+This test covers Servlets, JSP, JDBC, Hibernate, Spring Framework, REST services, and Security fundamentals (40 questions).

@@ -1,252 +1,442 @@
 [
   {
-    "question": "Which method is called only once during the life cycle of a servlet?",
+    "question": "Which of the following is not true for servlet?",
     "options": [
-      "doGet()",
-      "doPost()",
+      "It is persistent",
+      "Platform independent",
+      "It is multi threaded",
+      "It is single threaded"
+    ],
+    "answer": 3,
+    "explanation": "Servlets are designed to be multi-threaded. The container creates a single instance of the servlet and spawns a new thread for each request. Therefore, stating they are 'single threaded' is incorrect."
+  },
+  {
+    "question": "Which method of the servlet is called several times in its life?",
+    "options": [
       "init()",
-      "service()"
+      "doPost()",
+      "destroy()",
+      "None of above"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "The `init()` and `destroy()` methods are called exactly once during the servlet lifecycle (at creation and removal). `doPost()` (and `doGet`, `service`) is called once for every HTTP request the servlet receives."
   },
   {
-    "question": "What is the correct way to redirect a client to a different URL from a servlet?",
+    "question": "Which object is used to forward the request processing from one servlet to another?",
     "options": [
-      "response.forward()",
-      "request.redirect()",
-      "response.sendRedirect(\"newPage.jsp\")",
-      "RequestDispatcher.sendRedirect()"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What is the default value of session in HttpServlet?",
-    "options": [
-      "true",
-      "false",
-      "null",
-      "session is not part of HttpServlet"
-    ],
-    "answer": 0
-  },
-  {
-    "question": "Which of the following methods is used to read form data sent via GET method?",
-    "options": [
-      "getParameterValues()",
-      "getAttribute()",
-      "getInitParameter()",
-      "getParameter()"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "What is the role of web.xml in servlets?",
-    "options": [
-      "To load static resources",
-      "To define HTML templates",
-      "To configure servlet mappings",
-      "To define Java classes"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "The service() method of a servlet is:",
-    "options": [
-      "Automatically called when the servlet is instantiated",
-      "Called each time the servlet receives a request",
-      "Called once during the lifetime",
-      "Used to close the servlet"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "What is returned by request.getContextPath()?",
-    "options": [
-      "Name of servlet",
-      "Path to web.xml",
-      "Root context of web app",
-      "Complete URI"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which interface must a class implement to become a servlet?",
-    "options": [
-      "HttpServlet",
-      "Servlet",
+      "ServeltContext",
+      "ServletConfig",
       "RequestDispatcher",
-      "ServletConfig"
+      "ResponseDispatcher"
     ],
-    "answer": 1
+    "answer": 2,
+    "explanation": "`RequestDispatcher` is the interface used to forward a request to another resource (Servlet, JSP, HTML) or include the content of another resource."
   },
   {
-    "question": "Which status code is returned by default when a servlet runs successfully?",
+    "question": "The method getWriter returns an object of type PrintWriter. Which of these classes define the getWriter method?",
     "options": [
-      "200",
-      "404",
-      "500",
-      "403"
+      "HttpServletRequest",
+      "HttpServletResponse",
+      "ServletConfig",
+      "ServletContext"
     ],
-    "answer": 0
+    "answer": 1,
+    "explanation": "`getWriter()` is a method of `ServletResponse` (and thus `HttpServletResponse`) used to send character text to the client."
   },
   {
-    "question": "What is the correct way to forward a request from one servlet to another?",
+    "question": "In which file is database table configuration stored in Hibernate?",
     "options": [
-      "response.sendRedirect()",
-      "request.sendForward()",
-      "RequestDispatcher.forward()",
-      "ServletContext.include()"
+      ".dbm",
+      ".hbm.xml",
+      ".ora",
+      ".sql"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "Hibernate mapping files typically have the extension `.hbm.xml` (often referred to simply as hbm files), which map Java classes to database tables."
   },
   {
-    "question": "What does <%= %> represent in JSP?",
+    "question": "How can we get context init parameter and run some code before rest of the application can service a client?",
     "options": [
-      "Declaration tag",
-      "Directive tag",
-      "Expression tag",
-      "Scriptlet tag"
+      "ServletContextAttributeListener",
+      "ServletContextListener",
+      "HttpSessionListener",
+      "All of these"
     ],
-    "answer": 2
+    "answer": 1,
+    "explanation": "`ServletContextListener` receives notification that the web application initialization process is starting. It's the ideal place to read context init params and run startup code."
   },
   {
-    "question": "Which JSP tag is used to include another file during page translation?",
+    "question": "Suppose you want to know each time a request comes in so that you can log it. Which listener is appropriate?",
     "options": [
-      "<jsp:include>",
-      "<%@ include file=\"...\" %>",
-      "<jsp:directive>",
-      "<jsp:forward>"
+      "ServletRequestListener",
+      "ServletRequestAttributeListener",
+      "ServletContextListener",
+      "HttpRequestListener"
     ],
-    "answer": 1
+    "answer": 0,
+    "explanation": "`ServletRequestListener` has methods `requestInitialized` and `requestDestroyed` that are triggered for every request coming into the web application."
   },
   {
-    "question": "Which of the following is not an implicit object in JSP?",
+    "question": "In which of these are getAttribute() and setAttribute() methods defined?",
     "options": [
-      "application",
-      "session",
-      "request",
-      "driver"
+      "HttpSession",
+      "ServletRequest",
+      "ServletContext",
+      "All of these"
     ],
-    "answer": 3
+    "answer": 3,
+    "explanation": "All three scopes (Request, Session, and Application/Context) support attributes to store objects via `setAttribute()` and retrieve them via `getAttribute()`."
   },
   {
-    "question": "The correct syntax for a JSP declaration is:",
+    "question": "Which of the following are the valid scopes in JSP?",
     "options": [
-      "<%! int x = 10; %>",
-      "<%= int x = 10; %>",
-      "<% int x = 10; %>",
-      "<jsp:declaration>int x=10;</jsp:declaration>"
+      "request, page, context, application",
+      "response, page, session, application",
+      "request, page, session, global",
+      "request, page, session, application"
     ],
-    "answer": 0
+    "answer": 3,
+    "explanation": "The four valid JSP scopes are `page`, `request`, `session`, and `application`."
   },
   {
-    "question": "Which directive is used to define the scripting language in JSP?",
+    "question": "Which of the following method can be used to instantiate a bean using a factory?",
     "options": [
-      "<%@ language=\"java\" %>",
-      "<%@ scriptingLanguage=\"java\" %>",
-      "<%@ page language=\"java\" %>",
-      "<jsp:language=\"java\">"
+      "static factory method",
+      "default-init method",
+      "destroy method",
+      "lazy-init method"
     ],
-    "answer": 2
+    "answer": 0,
+    "explanation": "In Spring, beans can be instantiated using a static factory method specified in the configuration."
   },
   {
-    "question": "Which of the following is not a step in JDBC connection?",
+    "question": "What is the default scope of beans in Spring?",
     "options": [
-      "Load the driver",
-      "Create a database",
-      "Establish connection",
-      "Execute queries"
+      "Prototype",
+      "Session",
+      "Request",
+      "Singleton"
     ],
-    "answer": 1
+    "answer": 3,
+    "explanation": "The default scope for a Spring bean is `Singleton` (one instance per Spring IoC container)."
   },
   {
-    "question": "What does executeUpdate() return?",
+    "question": "Which Standard tag is used to store data in the JavaBeans instance?",
     "options": [
-      "Boolean",
-      "ResultSet",
-      "Object",
-      "Integer"
+      "<jsp:useBean>",
+      "<jsp:setProperty>",
+      "<jsp:getProperty>",
+      "<jsp:include>"
     ],
-    "answer": 3
+    "answer": 1,
+    "explanation": "`<jsp:setProperty>` is the standard action used to set the value of a property in a JavaBean."
   },
   {
-    "question": "Which package contains JDBC classes and interfaces?",
+    "question": "Which driver converts JDBC calls directly into the vendor-specific database protocol?",
     "options": [
-      "javax.jdbc",
-      "java.sql",
-      "org.sql",
-      "java.jdbc"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which statement is true about PreparedStatement?",
-    "options": [
-      "It is used to call stored procedures",
-      "It prevents SQL injection",
-      "It is slower than Statement",
-      "It does not allow parameters"
-    ],
-    "answer": 1
-  },
-  {
-    "question": "Which method is used to establish a connection in JDBC?",
-    "options": [
-      "Driver.getConnection()",
-      "Connection.getConnection()",
-      "DriverManager.getConnection()",
-      "ResultSet.getConnection()"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which of the following is used to configure database connection in Hibernate?",
-    "options": [
-      "hibernate.db.cfg",
-      "hibernate.xml",
-      "hibernate.cfg.xml",
-      "persistence.xml"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which annotation is used to map a class as an entity?",
-    "options": [
-      "@HibernateEntity",
-      "@Table",
-      "@Entity",
-      "@Bean"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "What is the purpose of SessionFactory in Hibernate?",
-    "options": [
-      "To store session data",
-      "To manage database connections",
-      "To create Session objects",
-      "To build tables"
-    ],
-    "answer": 2
-  },
-  {
-    "question": "Which Hibernate method is used to save an object in DB?",
-    "options": [
-      "session.store()",
-      "session.add()",
-      "session.insert()",
-      "session.save()"
-    ],
-    "answer": 3
-  },
-  {
-    "question": "What does Hibernate use to map Java classes to database tables?",
-    "options": [
-      "XML only",
-      "Annotations only",
-      "Both XML and annotations",
+      "Native-API driver",
+      "Network Protocol driver",
+      "Thin driver (Type 4)",
       "None of the above"
     ],
-    "answer": 2
+    "answer": 2,
+    "explanation": "The Type 4 driver, often called the 'Thin' driver, is a pure Java driver that translates JDBC calls directly into the vendor-specific database protocol."
+  },
+  {
+    "question": "Which interface provides methods to execute queries with the database?",
+    "options": [
+      "Connection interface",
+      "Statement interface",
+      "ResultSet interface",
+      "None of the above"
+    ],
+    "answer": 1,
+    "explanation": "The `Statement` interface (and its sub-interfaces `PreparedStatement` and `CallableStatement`) provides methods like `executeQuery` and `executeUpdate` to run SQL."
+  },
+  {
+    "question": "What are the methods of PreparedStatement interface?",
+    "options": [
+      "public void setInt()",
+      "public void setDouble()",
+      "public ResultSet executeQuery()",
+      "All of the above"
+    ],
+    "answer": 3,
+    "explanation": "`PreparedStatement` includes setter methods (setInt, setDouble) for parameters and execution methods (executeQuery, executeUpdate)."
+  },
+  {
+    "question": "Which of the following are tags of hibernate.cfg.xml?",
+    "options": [
+      "SQL variant to generate",
+      "DTD",
+      "JDBC connection",
+      "All of the options"
+    ],
+    "answer": 3,
+    "explanation": "The `hibernate.cfg.xml` file contains JDBC connection settings, dialect (SQL variant), and references to mapping resources."
+  },
+  {
+    "question": "Which element of Hibernate architecture is a factory of session and client of ConnectionProvider?",
+    "options": [
+      "Session",
+      "ConnectionProvider",
+      "Transaction",
+      "SessionFactory"
+    ],
+    "answer": 3,
+    "explanation": "`SessionFactory` is a factory for `Session` objects and is a client of `ConnectionProvider`. It typically holds the second-level cache."
+  },
+  {
+    "question": "What is dirty checking in Hibernate?",
+    "options": [
+      "Object state changes synced with DB automatically",
+      "Remove dirty data from DB",
+      "Check data when inserted",
+      "None"
+    ],
+    "answer": 0,
+    "explanation": "Dirty checking is the feature where Hibernate automatically detects changes made to persistent objects during a transaction and synchronizes them with the database without explicit `update` calls."
+  },
+  {
+    "question": "Which of the following element is used to represent a relationship in hibernate?",
+    "options": [
+      "many-to-one",
+      "many-one",
+      "ManyToOne",
+      "None of the above"
+    ],
+    "answer": 0,
+    "explanation": "`<many-to-one>` is a standard Hibernate mapping element to define a many-to-one association."
+  },
+  {
+    "question": "Which ways are used by the Log4j and Logback frameworks in hibernate to support logging?",
+    "options": [
+      "By log4j.xml file",
+      "By log4j.properties",
+      "Both of above",
+      "None of the above"
+    ],
+    "answer": 2,
+    "explanation": "Logging frameworks can typically be configured using either XML configuration files or properties files."
+  },
+  {
+    "question": "Which of these simplifies a Relational Mapping tool?",
+    "options": [
+      "Data creation",
+      "Data manipulation",
+      "Data access",
+      "All mentioned above"
+    ],
+    "answer": 3,
+    "explanation": "ORM tools like Hibernate simplify the entire lifecycle of data: creation, manipulation, and access/retrieval."
+  },
+  {
+    "question": "org.hibernate.SessionFactory can manage contextual sessions and allows retrieving them by:",
+    "options": [
+      "getSession() method",
+      "getCurrent() method",
+      "getCurrentSession() method",
+      "None of the above"
+    ],
+    "answer": 2,
+    "explanation": "`getCurrentSession()` is used for contextual sessions managed by the SessionFactory. The answer marked as getSession() in original is incorrect - getCurrentSession() is the proper method."
+  },
+  {
+    "question": "What is the 'no autowiring' mode setting?",
+    "options": [
+      "Autowire by name",
+      "Autowire by constructor",
+      "no (default)",
+      "Autowire by type"
+    ],
+    "answer": 2,
+    "explanation": "The default autowiring mode is 'no', meaning no autowiring is performed; beans must be wired explicitly."
+  },
+  {
+    "question": "Which of the following is Dependency Injection?",
+    "options": [
+      "Setter Based DI",
+      "Auto-wiring DI",
+      "Both of the above",
+      "None of the above"
+    ],
+    "answer": 2,
+    "explanation": "Spring supports both Setter-based DI and Constructor-based DI (and Field injection). Auto-wiring is a mechanism to perform DI automatically."
+  },
+  {
+    "question": "Which of the following is NOT a state of object in Hibernate?",
+    "options": [
+      "Attached",
+      "Detached",
+      "Persistent",
+      "Transient"
+    ],
+    "answer": 0,
+    "explanation": "The standard states are Transient, Persistent, and Detached. 'Attached' is not a formal state name, though it is synonymous with Persistent."
+  },
+  {
+    "question": "Which is not an ApplicationContext implementation?",
+    "options": [
+      "ClassPathXmlApplicationContext",
+      "AnnotationConfigApplicationContext",
+      "WebApplicationContext",
+      "WebPathXmlApplicationContext"
+    ],
+    "answer": 3,
+    "explanation": "`WebPathXmlApplicationContext` is not a standard Spring class name. Common ones are `XmlWebApplicationContext` or `ClassPathXmlApplicationContext`."
+  },
+  {
+    "question": "Which is a Stereotype Annotation?",
+    "options": [
+      "@Autowired",
+      "@Controller",
+      "@PreDestroy",
+      "@Qualifier"
+    ],
+    "answer": 1,
+    "explanation": "`@Controller` (along with `@Service`, `@Repository`, `@Component`) is a stereotype annotation defining the role of a class."
+  },
+  {
+    "question": "The Spring Web MVC framework is designed around:",
+    "options": [
+      "Model-Value-Class",
+      "Model-View-Controller & DispatcherServlet",
+      "Transaction Management",
+      "AOP"
+    ],
+    "answer": 1,
+    "explanation": "Spring MVC is designed around the DispatcherServlet and the Model-View-Controller architecture."
+  },
+  {
+    "question": "How to handle shut down of IoC container?",
+    "options": [
+      "Using shutdownHook()",
+      "Using shutdownHandler()",
+      "Using registerHook()",
+      "Using registerShutdownHook()"
+    ],
+    "answer": 3,
+    "explanation": "You register a shutdown hook with the JVM using `registerShutdownHook()` on the AbstractApplicationContext to ensure a graceful shutdown."
+  },
+  {
+    "question": "What is @Controller annotation?",
+    "options": [
+      "Indicates a class serves the role of a controller",
+      "Controls transaction management",
+      "Controls dependency injection",
+      "Controls aspect programming"
+    ],
+    "answer": 0,
+    "explanation": "`@Controller` marks a class as a Spring MVC controller, allowing it to handle HTTP requests."
+  },
+  {
+    "question": "Which of the following is correct about messaging in RESTful web services?",
+    "options": [
+      "Client sends Request, Server sends Response",
+      "Messages contain data and metadata",
+      "Both of the above",
+      "None of the above"
+    ],
+    "answer": 2,
+    "explanation": "REST messaging involves request/response pairs containing both the payload (data) and metadata (headers)."
+  },
+  {
+    "question": "Spring provides a factory that can export beans annotated with:",
+    "options": [
+      "javax.jws.WebService",
+      "javax.jws.WebServiceProvider",
+      "All of the mentioned",
+      "None"
+    ],
+    "answer": 2,
+    "explanation": "Spring's JAX-WS support allows exporting beans annotated with standard JAX-WS annotations as web services."
+  },
+  {
+    "question": "Factory to use our Spring bean as the implementation:",
+    "options": [
+      "jaxws:end",
+      "jaxws:endpoint",
+      "All of the mentioned",
+      "None"
+    ],
+    "answer": 1,
+    "explanation": "`jaxws:endpoint` is the configuration element used to publish a Spring bean as a JAX-WS endpoint."
+  },
+  {
+    "question": "Isolation Levels Supported by Spring:",
+    "options": [
+      "DEFAULT",
+      "READ COMMITTED",
+      "READ UNCOMMITTED",
+      "All of the mentioned"
+    ],
+    "answer": 3,
+    "explanation": "Spring transaction management supports standard isolation levels: DEFAULT, READ_COMMITTED, READ_UNCOMMITTED, REPEATABLE_READ, SERIALIZABLE."
+  },
+  {
+    "question": "Which method is used to save or update the state of the given instance in Hibernate?",
+    "options": [
+      "session.update()",
+      "session.keep()",
+      "session.saveOrUpdate()",
+      "session.Load()"
+    ],
+    "answer": 2,
+    "explanation": "`saveOrUpdate()` persists the object if it's transient or updates it if it's detached."
+  },
+  {
+    "question": "What is a bean in Spring?",
+    "options": [
+      "A component",
+      "An Object",
+      "A class",
+      "A container"
+    ],
+    "answer": 1,
+    "explanation": "In Spring, a 'bean' is an object that is instantiated, assembled, and managed by the Spring IoC container."
+  },
+  {
+    "question": "Spring's core transaction management abstraction is based on the interface:",
+    "options": [
+      "TransactionManager",
+      "PlatformTransactionManager",
+      "PlatformManager",
+      "Platform Transaction"
+    ],
+    "answer": 1,
+    "explanation": "`PlatformTransactionManager` is the central interface in Spring's transaction infrastructure."
+  },
+  {
+    "question": "Element used to specify access attributes for bean's methods in Security?",
+    "options": [
+      "security:spring",
+      "security:intercept-security",
+      "security:intercept",
+      "security:protect"
+    ],
+    "answer": 3,
+    "explanation": "`security:protect` (or `<protect>` in some configs) is used to secure individual methods."
+  },
+  {
+    "question": "doGet and doPost methods return:",
+    "options": [
+      "void",
+      "int",
+      "RequestDispatcher",
+      "None of the above"
+    ],
+    "answer": 0,
+    "explanation": "The signature is `protected void doGet(...)`. They send the response via the `HttpServletResponse` object, returning nothing."
+  },
+  {
+    "question": "<%@ taglib ... %> syntax is typically found in:",
+    "options": [
+      "JSP",
+      "HTML",
+      "Servlet",
+      "None of the above"
+    ],
+    "answer": 0,
+    "explanation": "This is a JSP directive used to declare a tag library containing custom tags."
   }
 ]
