@@ -863,3 +863,50 @@ src/
 13. **axios** = HTTP client library for React
 14. **React Router** = client-side routing
 15. **useParams** = access route parameters
+
+---
+
+## ⚛️ React within MVC Views (Mixed Mode)
+
+Instead of a full Single Page Application (SPA), you can use React components within specific MVC views.
+
+### 1. Setup
+Include React and ReactDOM scripts in your `_Layout.cshtml` or specific view.
+
+```html
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+```
+
+### 2. Create a Root Element
+In your Razor view (e.g., `Views/Home/Index.cshtml`):
+
+```html
+<div id="react-root"></div>
+
+<script type="text/babel">
+    function HelloButton() {
+        const [clicked, setClicked] = React.useState(false);
+
+        if (clicked) {
+            return <div>You clicked the button!</div>;
+        }
+
+        return (
+            <button className="btn btn-primary" onClick={() => setClicked(true)}>
+                Click me (React)
+            </button>
+        );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('react-root'));
+    root.render(<HelloButton />);
+</script>
+```
+
+### Use Case
+- Adding interactivity to legacy MVC apps.
+- Migrating to React piece by piece.
+- Dynamic widgets (calendars, complex forms) on server-rendered pages.
+

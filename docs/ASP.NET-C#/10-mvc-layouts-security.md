@@ -850,3 +850,47 @@ dotnet publish -c Release -r win-x64 --self-contained true
 13. **Razor auto-encodes** output for XSS prevention
 14. **@Html.Raw()** = outputs unencoded HTML (dangerous)
 15. **SignInAsync()** = creates authentication cookie
+
+---
+
+## 🚀 Deployment Basics
+
+### Publishing Options
+
+| Option | Description | Use Case |
+|--------|-------------|----------|
+| **Folder** | Publishes to a local folder | Manual copy to IIS/Server |
+| **Azure** | Publishes directly to Azure Cloud | Cloud deployment |
+| **Docker** | Publishes as a container image | Containers/Kubernetes |
+| **IIS** | Web Deploy to IIS Server | Windows Server hosting |
+
+### Deployment Steps (Folder Publish)
+1. Right-click Project -> **Publish**
+2. Select **Folder** target
+3. Choose location (e.g., `bin\Release\net6.0\publish`)
+4. Click **Publish** button
+5. Copy the contents of the publish folder to the web server (e.g., `C:\inetpub\wwwroot\MyApp`)
+
+### Environment Variables
+- **`ASPNETCORE_ENVIRONMENT`**: Controls the environment (Development, Staging, Production).
+  - `Development`: Shows detailed errors (Developer Exception Page).
+  - `Production`: Secure, custom error pages, optimized.
+
+### Configuration
+- **`appsettings.json`**: Base configuration.
+- **`appsettings.Production.json`**: Overrides for production (e.g., live DB connection string).
+
+```json
+// appsettings.Production.json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Error"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=ProdDB;Database=MyApp;User Id=user;Password=pass;"
+  }
+}
+```
+
