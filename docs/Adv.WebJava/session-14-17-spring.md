@@ -25,34 +25,41 @@ permalink: /docs/Adv.WebJava/session-14-17-spring/
 
 ```mermaid
 flowchart TB
-    subgraph "Core Container"
+    subgraph CoreContainer ["Core Container"]
         C[Core]
         B[Beans]
         CT[Context]
         EL[SpEL]
     end
     
-    subgraph "Data Access"
+    subgraph DataAccess ["Data Access"]
         JDBC[JDBC]
         ORM[ORM]
         TX[Transactions]
         JMS[JMS]
     end
     
-    subgraph "Web"
+    subgraph WebModule ["Web"]
         WEB[Web]
         SM[Servlet]
         WS[WebSocket]
     end
     
-    subgraph "AOP"
+    subgraph AOPModule ["AOP"]
         AOP[Aspects]
         INS[Instrumentation]
     end
     
-    subgraph "Test"
+    subgraph TestModule ["Test"]
         TEST[Test]
     end
+    
+    %% Add relationships
+    C --> JDBC
+    C --> WEB
+    C --> AOP
+    AOP --> TX
+    CT --> WEB
 ```
 
 ### Spring Modules
